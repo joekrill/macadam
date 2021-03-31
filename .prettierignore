@@ -1,3 +1,7 @@
 # Ignore artifacts:
 build
 coverage
+
+.pnp.js
+.prettierrc.json
+.yarn/

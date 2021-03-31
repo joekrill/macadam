@@ -1,0 +1,20 @@
+{
+  "name": "@saas-starter/root",
+  "version": "0.0.1",
+  "repository": "https://github.com/joekrill/saas-starter.git",
+  "author": "Joe Krill <joe@joekrill.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "husky": "^6.0.0",
+    "prettier": "2.2.1"
+  },
+  "scripts": {
+    "postinstall": "husky install",
+    "format": "yarn prettier --write .",
+    "format:check": "yarn prettier ."
+  }
+}

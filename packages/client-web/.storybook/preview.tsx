@@ -17,7 +17,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ["Saas Starter"],
+      order: [process.env.REACT_APP_NAME],
     },
   },
 };

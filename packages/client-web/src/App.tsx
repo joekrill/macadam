@@ -1,15 +1,6 @@
-import {
-  Box,
-  Button,
-  ChakraProvider,
-  Code,
-  Grid,
-  Link,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Button, Code, Grid, Link, Text, VStack } from "@chakra-ui/react";
+import { Link as RouterLink, Route, Switch } from "react-router-dom";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
-import { theme } from "./features/theme";
 
 export const App = () => (
   <Box textAlign="center" fontSize="xl">
@@ -28,15 +19,21 @@ export const App = () => (
           Learn Chakra
         </Link>
         <Button colorScheme="blue">A button</Button>
+        <Switch>
+          <Route path="/hello">
+            Hello!
+            <Link as={RouterLink} to="/">
+              Go to default
+            </Link>
+          </Route>
+          <Route>
+            Default route!
+            <Link as={RouterLink} to="/hello">
+              Go to hello
+            </Link>
+          </Route>
+        </Switch>
       </VStack>
     </Grid>
   </Box>
 );
-
-const AppContainer = () => (
-  <ChakraProvider theme={theme}>
-    <App />
-  </ChakraProvider>
-);
-
-export default AppContainer;

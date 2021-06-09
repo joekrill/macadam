@@ -1,0 +1,98 @@
+version: "3.8"
+
+networks:
+  sass-starter-net:
+
+volumes:
+  postgresd_data:
+  mail_data:
+
+services:
+  postgresd:
+    image: postgres:13
+    # image: postgis/postgis:13-3.1 # Does not work with arm yet.
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: saas-starter
+      POSTGRES_PASSWORD: saas-starter-pass
+      POSTGRES_DB: saas-starter
+    volumes:
+      - ./services/postgres/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+      - postgresd_data:/var/lib/postgresql
+    networks:
+      - sass-starter-net
+
+  kratos-migrate:
+    image: oryd/kratos:v0.6.3-alpha.1
+    command: -c /etc/config/kratos/kratos.yml migrate sql -e --yes
+    depends_on:
+      - postgresd
+    restart: on-failure
+    environment:
+      DSN: postgres://kratos:kratospass@postgresd:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
+      SQA_OPT_OUT: "true"
+      # LOG_LEVEL: debug
+    volumes:
+      - ./services/kratos:/etc/config/kratos
+    networks:
+      - sass-starter-net
+
+  kratos:
+    image: oryd/kratos:v0.6.3-alpha.1
+    depends_on:
+      - kratos-migrate
+    restart: unless-stopped
+    ports:
+      - "4433:4433" # public
+      - "4434:4434" # admin
+    environment:
+      DSN: postgres://kratos:kratospass@postgresd:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
+      LOG_LEVEL: debug # trace
+      SQA_OPT_OUT: "true"
+    command: serve -c /etc/config/kratos/kratos.yml --dev
+    volumes:
+      - ./services/kratos:/etc/config/kratos
+    networks:
+      - sass-starter-net
+
+  #  This will be needed with a future version of Kratos
+  kratos-courier:
+    image: oryd/kratos:v0.6.3-alpha.1
+    command: courier watch -c /etc/config/kratos/kratos.yml
+    depends_on:
+      - kratos-migrate
+    restart: on-failure
+    environment:
+      DSN: postgres://kratos:kratospass@postgresd:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
+      SQA_OPT_OUT: "true"
+      COURIER_SMTP_CONNECTION_URI: smtp://mail:25/?skip_ssl_verify=true
+    volumes:
+      - ./services/kratos:/etc/config/kratos
+    networks:
+      - sass-starter-net
+
+  mail:
+    image: mailhog/mailhog
+    environment:
+      MH_STORAGE: maildir
+      MH_MAILDIR_PATH: /var/mailhog
+    volumes:
+      - mail_data:/var/mailhog
+    restart: unless-stopped
+    ports:
+      - "8025:8025"
+    networks:
+      - sass-starter-net
+
+  client-web:
+    ports:
+      - 3000:3000
+    build:
+      context: .
+      dockerfile: ./packages/client-web/dev.Dockerfile
+    volumes:
+      - type: bind
+        source: .
+        target: /var/saas-starter

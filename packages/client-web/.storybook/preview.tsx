@@ -1,10 +1,10 @@
-import { useEffect } from "react";
 import {
   ChakraProvider,
-  useColorMode,
   theme as chakraDefaultTheme,
+  useColorMode,
 } from "@chakra-ui/react";
 import { StoryContext } from "@storybook/react";
+import { useEffect } from "react";
 import { theme as appTheme } from "../src/features/theme";
 
 export const parameters = {
@@ -13,6 +13,11 @@ export const parameters = {
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
+    },
+  },
+  options: {
+    storySort: {
+      order: ["Saas Starter"],
     },
   },
 };

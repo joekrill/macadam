@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   ChakraProvider,
   Code,
   Grid,
@@ -26,6 +27,7 @@ export const App = () => (
         >
           Learn Chakra
         </Link>
+        <Button colorScheme="blue">A button</Button>
       </VStack>
     </Grid>
   </Box>

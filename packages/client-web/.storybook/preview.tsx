@@ -1,7 +1,11 @@
 import { useEffect } from "react";
-import { ChakraProvider, useColorMode } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  useColorMode,
+  theme as chakraDefaultTheme,
+} from "@chakra-ui/react";
 import { StoryContext } from "@storybook/react";
-import { theme } from "../src/features/theme";
+import { theme as appTheme } from "../src/features/theme";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -14,15 +18,14 @@ export const parameters = {
 };
 
 export const globalTypes = {
-  rtl: {
-    name: "Direction",
-    description: "Reading direction",
+  theme: {
+    name: "Theme",
     defaultValue: null,
     toolbar: {
-      icon: "globe",
+      icon: "paintbrush",
       items: [
-        { value: null, title: "LTR reading direction" },
-        { value: "rtl", title: "RTL reading direction" },
+        { value: null, title: "App Theme" },
+        { value: "chakra", title: "Chakra Default Theme" },
       ],
     },
   },
@@ -38,30 +41,61 @@ export const globalTypes = {
       ],
     },
   },
+  rtl: {
+    name: "Direction",
+    description: "Reading direction",
+    defaultValue: null,
+    toolbar: {
+      icon: "globe",
+      items: [
+        { value: null, title: "LTR reading direction" },
+        { value: "rtl", title: "RTL reading direction" },
+      ],
+    },
+  },
 };
 
-const SyncColorMode = ({ colorMode: desiredColorMode }) => {
-  const { setColorMode, colorMode } = useColorMode();
+const withColorMode = (StoryFn: Function, context: StoryContext) => {
+  if (context.parameters.themingDisabled === true) {
+    return <StoryFn />;
+  }
 
+  const desiredColorMode = context.globals.darkMode ? "dark" : "light";
+  const { setColorMode, colorMode: currentColorMode } = useColorMode();
   useEffect(() => {
-    if (colorMode !== desiredColorMode) {
-      setColorMode(() => desiredColorMode);
+    if (desiredColorMode !== currentColorMode) {
+      setColorMode(desiredColorMode);
     }
+
+    // HACK: setColorMode doesn't seem to always work. This may be a chakra
+    // bug. In the meantime, this fixes things.
+    document.documentElement.style.setProperty(
+      "--chakra-ui-color-mode",
+      desiredColorMode
+    );
   });
 
-  return null;
+  return <StoryFn />;
 };
 
-const withChakra = (StoryFn: Function, context: StoryContext) => {
-  const { rtl, darkMode } = context.globals;
+const withTheme = (StoryFn: Function, context: StoryContext) => {
+  if (context.parameters.themingDisabled === true) {
+    return <StoryFn />;
+  }
+
   return (
-    <ChakraProvider theme={theme}>
-      <div dir={rtl ? "rtl" : "ltr"}>
-        <SyncColorMode colorMode={darkMode ? "dark" : "light"} />
-        <StoryFn />
-      </div>
+    <ChakraProvider
+      theme={context.globals.theme === "chakra" ? chakraDefaultTheme : appTheme}
+    >
+      <StoryFn />
     </ChakraProvider>
   );
 };
 
-export const decorators = [withChakra];
+const withRtl = (StoryFn: Function, context: StoryContext) => (
+  <div dir={context.globals.rtl ? "rtl" : "ltr"}>
+    <StoryFn />
+  </div>
+);
+
+export const decorators = [withColorMode, withTheme, withRtl];

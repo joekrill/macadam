@@ -7332,6 +7332,7 @@ __metadata:
     framer-motion: ^4.1.17
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-helmet-async: ^1.0.9
     react-icons: ^4.2.0
     react-router-dom: ^5.2.0
     react-scripts: 4.0.3
@@ -16691,7 +16692,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-helmet-async@npm:^1.0.7":
+"react-helmet-async@npm:^1.0.7, react-helmet-async@npm:^1.0.9":
   version: 1.0.9
   resolution: "react-helmet-async@npm:1.0.9"
   dependencies:

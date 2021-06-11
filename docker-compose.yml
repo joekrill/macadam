@@ -86,6 +86,39 @@ services:
     networks:
       - sass-starter-net
 
+  api-server-migrate:
+    image: node:16.3
+    command: ["yarn", "workspace", "api-server", "run", "migrate:up"]
+    working_dir: /var/saas-starter
+    depends_on:
+      - postgresd
+    restart: on-failure
+    environment:
+      DB_URL: postgres://saas-starter:saas-starter-pass@postgresd:5432/saas-starter
+    volumes:
+      - type: bind
+        source: .
+        target: /var/saas-starter
+    networks:
+      - sass-starter-net
+
+  api-server:
+    image: node:16.3
+    command: ["yarn", "workspace", "api-server", "run", "start:dev"]
+    working_dir: /var/saas-starter
+    depends_on:
+      - api-server-migrate
+    restart: unless-stopped
+    ports:
+      - 4000:4000
+    environment:
+      DB_URL: postgresql://saas-starter:saas-starter-pass@postgresd:5432/saas-starter
+      PORT: 4000
+    volumes:
+      - type: bind
+        source: .
+        target: /var/saas-starter
+
   client-web:
     ports:
       - 3000:3000

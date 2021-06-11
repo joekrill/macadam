@@ -1,3 +1,51 @@
 {
-  "name": "@sass-starter/api-server"
+  "name": "api-server",
+  "version": "0.1.0",
+  "main": "build/server.js",
+  "scripts": {
+    "start:dev": "nodemon --watch src -e ts,tsx --exec ts-node src/server.ts | pino-pretty",
+    "start": "node build/server.js",
+    "build": "tsc",
+    "test": "jest",
+    "test:coverage": "jest --collect-coverage",
+    "test:watch": "jest --watch",
+    "migrate:up": "mikro-orm migration:up",
+    "migrate:create": "mikro-orm migration:create"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "@koa/router": "^10.0.0",
+    "@mikro-orm/core": "^4.5.6",
+    "@mikro-orm/migrations": "^4.5.6",
+    "@mikro-orm/postgresql": "^4.5.6",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-helmet": "^6.1.0",
+    "pino": "^6.11.3",
+    "pino-pretty": "^5.0.2",
+    "prom-client": "^13.1.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@mikro-orm/cli": "^4.5.6",
+    "@mikro-orm/sqlite": "^4.5.6",
+    "@types/koa": "^2",
+    "@types/koa-bodyparser": "^4",
+    "@types/koa__cors": "^3",
+    "@types/koa__router": "^8.0.4",
+    "@types/node": "^15.12.2",
+    "@types/pino": "^6",
+    "@types/uuid": "^8",
+    "jest": "^27.0.4",
+    "nodemon": "^2.0.7",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/orm.config.ts",
+      "./build/orm.config.js"
+    ]
+  }
 }

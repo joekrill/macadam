@@ -40,6 +40,8 @@
     "build": "react-scripts build",
     "analyze": "source-map-explorer build/static/js/*.js",
     "test": "react-scripts test",
+    "test:coverage": "yarn run test --collect-coverage",
+    "test:watch": "yarn run test --watch",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "storybook:build": "build-storybook -s public"

@@ -6,7 +6,7 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
     CREATE DATABASE kratos;
     GRANT ALL PRIVILEGES ON DATABASE kratos TO kratos;
 
-    # CREATE USER plausible WITH PASSWORD 'plausiblepass';
-    # CREATE DATABASE plausible;
-    # GRANT ALL PRIVILEGES ON DATABASE plausible TO plausible;
+    -- CREATE USER plausible WITH PASSWORD 'plausiblepass';
+    -- CREATE DATABASE plausible;
+    -- GRANT ALL PRIVILEGES ON DATABASE plausible TO plausible;
 EOSQL

@@ -1,0 +1,17 @@
+- (api-server) Reduce amount of logging output in development
+- (api-server) Error handling (http-errors?)
+- (api-server, client-web) Choose validation framework (io-ts?)
+- (api-server) Figure out `contentSecurityPolicy` for `helmet`
+- (docker-compose) Proxy (traefik? caddy? nginx?)
+- (client-web) Auth flow: registration
+- (client-web) Auth flow: login
+- (api-server) Better koa context typing
+- (client-web) redux-toolkit
+- (client-web) Error page
+- (client-web) Not found page
+- (client-web) ErrorBoundary
+- (client-web) SVGs/images/icons (svgo)
+- (client-web) i11n
+- husky
+- commitlint
+- eslint+prettier?

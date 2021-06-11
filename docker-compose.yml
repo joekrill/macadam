@@ -4,10 +4,23 @@ networks:
   sass-starter-net:
 
 volumes:
+  caddy_data:
   postgresd_data:
   mail_data:
 
 services:
+  caddy:
+    image: caddy:2.4.1
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy_data:/data
+      - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
+    networks:
+      - sass-starter-net
+
   postgresd:
     image: postgres:13
     # image: postgis/postgis:13-3.1 # Does not work with arm yet.
@@ -33,7 +46,7 @@ services:
     environment:
       DSN: postgres://kratos:kratospass@postgresd:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
       SQA_OPT_OUT: "true"
-      # LOG_LEVEL: debug
+      LOG_LEVEL: warning
     volumes:
       - ./services/kratos:/etc/config/kratos
     networks:
@@ -51,6 +64,15 @@ services:
       DSN: postgres://kratos:kratospass@postgresd:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
       LOG_LEVEL: debug # trace
       SQA_OPT_OUT: "true"
+      SERVE_PUBLIC_BASE_URL: https://localhost/
+      SELF_SERVICE_WHITELISTED_RETURN_URLS: https://localhost,http://localhost
+      SELFSERVICE_FLOWS_LOGOUT_DEFAULT_BROWSER_RETURN_URL: https://localhost
+      SELFSERVICE_FLOWS_ERROR_UI_URL: https://localhost/auth/error
+      SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://localhost/auth/registration
+      SELFSERVICE_FLOWS_LOGIN_UI_URL: https://localhost/auth/login
+      SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localhost/auth/settings
+      SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://localhost/auth/recovery
+      SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://localhost/auth/verify
     command: serve -c /etc/config/kratos/kratos.yml --dev
     volumes:
       - ./services/kratos:/etc/config/kratos
@@ -65,6 +87,7 @@ services:
       - kratos-migrate
     restart: on-failure
     environment:
+      LOG_LEVEL: info
       DSN: postgres://kratos:kratospass@postgresd:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
       SQA_OPT_OUT: "true"
       COURIER_SMTP_CONNECTION_URI: smtp://mail:25/?skip_ssl_verify=true

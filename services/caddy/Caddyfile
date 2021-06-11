@@ -1,0 +1,13 @@
+localhost {
+  reverse_proxy /api/* api-server:4000
+  reverse_proxy /self-service/* kratos:4433
+  reverse_proxy client-web:3000
+}
+
+mail.localhost {
+  reverse_proxy mail:8025
+}
+
+kratos.localhost {
+  reverse_proxy kratos:4455
+}

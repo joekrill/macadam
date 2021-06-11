@@ -11520,16 +11520,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@testing-library/jest-dom", [
-        ["npm:5.13.0", {
-          "packageLocation": "./.yarn/cache/@testing-library-jest-dom-npm-5.13.0-cd70a650c2-6ac6435926.zip/node_modules/@testing-library/jest-dom/",
+        ["npm:5.14.1", {
+          "packageLocation": "./.yarn/cache/@testing-library-jest-dom-npm-5.14.1-1ece992419-b0c4b4ffa1.zip/node_modules/@testing-library/jest-dom/",
           "packageDependencies": [
-            ["@testing-library/jest-dom", "npm:5.13.0"],
+            ["@testing-library/jest-dom", "npm:5.14.1"],
             ["@babel/runtime", "npm:7.13.10"],
             ["@types/testing-library__jest-dom", "npm:5.9.5"],
             ["aria-query", "npm:4.2.2"],
             ["chalk", "npm:3.0.0"],
             ["css", "npm:3.0.0"],
             ["css.escape", "npm:1.5.1"],
+            ["dom-accessibility-api", "npm:0.5.6"],
             ["lodash", "npm:4.17.21"],
             ["redent", "npm:3.0.0"]
           ],
@@ -15764,7 +15765,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/node-logger", "npm:6.2.9"],
             ["@storybook/preset-create-react-app", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:3.1.7"],
             ["@storybook/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:6.2.9"],
-            ["@testing-library/jest-dom", "npm:5.13.0"],
+            ["@testing-library/jest-dom", "npm:5.14.1"],
             ["@testing-library/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:11.2.7"],
             ["@testing-library/user-event", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:13.1.9"],
             ["@types/jest", "npm:26.0.23"],
@@ -17573,6 +17574,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/dom-accessibility-api-npm-0.5.4-dd3e7035e5-39351d26a3.zip/node_modules/dom-accessibility-api/",
           "packageDependencies": [
             ["dom-accessibility-api", "npm:0.5.4"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:0.5.6", {
+          "packageLocation": "./.yarn/cache/dom-accessibility-api-npm-0.5.6-0bcdb9d71b-b579681083.zip/node_modules/dom-accessibility-api/",
+          "packageDependencies": [
+            ["dom-accessibility-api", "npm:0.5.6"]
           ],
           "linkType": "HARD",
         }]

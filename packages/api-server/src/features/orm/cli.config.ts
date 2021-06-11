@@ -1,7 +1,8 @@
-import { ormConfig } from "./entities";
+import { ormConfig } from "./config";
 
 /**
- * This file is used to configure MikroORM when it is used via the CLI (`@mikro-orm/cli`)
+ * This file is used to configure MikroORM when it is used via the
+ * `@mikro-orm/cli` CLI tool.
  */
 
 if (!process.env.DB_URL) {

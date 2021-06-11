@@ -1,7 +1,9 @@
 - (api-server) Reduce amount of logging output in development
-- (api-server) Error handling (http-errors?)
+- (api-server) Error handling (http-errors? Boom?)
 - (api-server, client-web) Choose validation framework (io-ts?)
 - (api-server) Figure out `contentSecurityPolicy` for `helmet`
+- (api-server) Graceful shutdown (close DB connections, etc)
+- (api-server) Readiness vs liveliness probes
 - (docker-compose) Proxy (traefik? caddy? nginx?)
 - (client-web) Auth flow: registration
 - (client-web) Auth flow: login
@@ -12,6 +14,11 @@
 - (client-web) ErrorBoundary
 - (client-web) SVGs/images/icons (svgo)
 - (client-web) i11n
+- (client-web) https://github.com/jbmoelker/a11y-boilerplate
+- (client-web) https://www.matuzo.at/blog/html-boilerplate/
+- (client-web) https://htmlhead.dev/
+- (client-web) Favicons: https://css-tricks.com/how-to-favicon-in-2021/
 - husky
 - commitlint
 - eslint+prettier?
+- github templates: https://github.com/cezaraugusto/github-template-guidelines

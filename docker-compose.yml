@@ -118,6 +118,8 @@ services:
       - type: bind
         source: .
         target: /var/saas-starter
+    networks:
+      - sass-starter-net
 
   client-web:
     ports:
@@ -129,3 +131,5 @@ services:
       - type: bind
         source: .
         target: /var/saas-starter
+    networks:
+      - sass-starter-net

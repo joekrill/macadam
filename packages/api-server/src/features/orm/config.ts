@@ -1,9 +1,6 @@
 import { Options } from "@mikro-orm/core";
 import { URL } from "url";
-import { Thing } from "./Thing";
-import { UuidEntity } from "./UuidEntity";
-
-export const entities = [UuidEntity, Thing];
+import { entities } from "./entities";
 
 export interface OrmConfigOptions {
   environment: string;
@@ -19,7 +16,7 @@ export const ormConfig = ({
   return {
     entities,
     migrations: {
-      path: "./src/migrations",
+      path: "./src/features/orm/migrations",
       tableName: "migrations",
       transactional: true,
       safe: true,

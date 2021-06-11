@@ -20,6 +20,7 @@
     "@mikro-orm/postgresql": "^4.5.6",
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
+    "koa-compose": "^4.1.0",
     "koa-helmet": "^6.1.0",
     "pino": "^6.11.3",
     "pino-pretty": "^5.0.2",
@@ -31,6 +32,7 @@
     "@mikro-orm/sqlite": "^4.5.6",
     "@types/koa": "^2",
     "@types/koa-bodyparser": "^4",
+    "@types/koa-compose": "^3.2.5",
     "@types/koa__cors": "^3",
     "@types/koa__router": "^8.0.4",
     "@types/node": "^15.12.2",
@@ -44,8 +46,8 @@
   "mikro-orm": {
     "useTsNode": true,
     "configPaths": [
-      "./src/orm.config.ts",
-      "./build/orm.config.js"
+      "./src/features/orm/cli.config.ts",
+      "./build/features/orm/cli.config.js"
     ]
   }
 }

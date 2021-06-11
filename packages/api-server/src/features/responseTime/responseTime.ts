@@ -7,6 +7,12 @@ export interface ResponseTimeState {
   responseTime: number;
 }
 
+/**
+ * Returns Middleware which adds a `responseTime` property to the state
+ * and adds a `Response-Time` header including the value. The value is
+ * in milliseconds.
+ */
+
 export const responseTime = (): Middleware<ResponseTimeState> => {
   return async (ctx: Context, next: () => Promise<void>): Promise<void> => {
     const start = process.hrtime();

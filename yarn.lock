@@ -5633,7 +5633,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/koa-compose@npm:*":
+"@types/koa-compose@npm:*, @types/koa-compose@npm:^3.2.5":
   version: 3.2.5
   resolution: "@types/koa-compose@npm:3.2.5"
   dependencies:
@@ -6834,6 +6834,7 @@ __metadata:
     "@mikro-orm/sqlite": ^4.5.6
     "@types/koa": ^2
     "@types/koa-bodyparser": ^4
+    "@types/koa-compose": ^3.2.5
     "@types/koa__cors": ^3
     "@types/koa__router": ^8.0.4
     "@types/node": ^15.12.2
@@ -6842,6 +6843,7 @@ __metadata:
     jest: ^27.0.4
     koa: ^2.13.1
     koa-bodyparser: ^4.3.0
+    koa-compose: ^4.1.0
     koa-helmet: ^6.1.0
     nodemon: ^2.0.7
     pino: ^6.11.3

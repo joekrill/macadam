@@ -4,31 +4,32 @@ import Koa from "koa";
 import bodyParser from "koa-bodyparser";
 import helmet from "koa-helmet";
 import { Logger } from "pino";
-import { ormConfig } from "./entities";
-import { entityManager } from "./entityManager";
-import { logging } from "./logging";
-import { metricsCollector, metricsResults } from "./metrics";
-import { requestId } from "./requestId";
-import { responseTime } from "./responseTime";
-import { router } from "./routes";
+import { apiRoutes } from "./features/api";
+import { healthRoutes } from "./features/health/health";
+import { logging } from "./features/logging/logging";
+import { metricsCollector, metricsRoutes } from "./features/metrics/metrics";
+import { ormConfig } from "./features/orm/config";
+import { entityManager } from "./features/orm/entityManager";
+import { requestId } from "./features/requestId/requestId";
+import { responseTime } from "./features/responseTime/responseTime";
 
 export interface AppOptions {
-  apiUrlPrefix: string;
+  apiPath?: string;
   dbUrl: string;
-  environment: string;
+  environment?: string;
   logger: Logger;
-  metricsPath: string;
+  healthPath?: string;
+  metricsPath?: string;
 }
 
 export const createApp = async ({
-  apiUrlPrefix,
-  environment,
+  environment = "development",
   dbUrl,
   logger,
-  metricsPath,
+  apiPath = "/api",
+  healthPath = "/health",
+  metricsPath = "/metrics",
 }: AppOptions) => {
-  const healthPath = "/healthz";
-
   const app = new Koa();
   const orm = await MikroORM.init(ormConfig({ environment, clientUrl: dbUrl }));
 
@@ -50,26 +51,27 @@ export const createApp = async ({
     })
   );
   app.use(cors());
+
+  // Metrics and health routes don't need body parsing or entity manager.
+  app.use(metricsRoutes({ path: metricsPath }));
+  app.use(healthRoutes({ path: healthPath }));
+
   app.use(
     bodyParser({
       enableTypes: ["json"],
       jsonLimit: "5mb",
       strict: true,
-      onerror: function (err, ctx) {
-        ctx.throw("body parse error", 422);
-      },
+      // onerror: function (err, ctx) {
+      //   ctx.throw("body parse error", 422);
+      // },
     })
   );
-
-  app.use(metricsResults({ path: metricsPath }));
 
   // Create a scoped entity manager for each request.
   app.use(entityManager({ orm }));
 
-  // Finally, use API routes
-  router.prefix(apiUrlPrefix);
-  app.use(router.routes());
-  app.use(router.allowedMethods());
+  // Finally, register API routes
+  app.use(apiRoutes({ prefix: apiPath }));
 
   return app;
 };

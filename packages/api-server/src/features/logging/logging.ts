@@ -1,7 +1,7 @@
 import { Middleware, ParameterizedContext } from "koa";
 import { Logger } from "pino";
-import { RequestIdState } from "./requestId";
-import { ResponseTimeState } from "./responseTime";
+import { RequestIdState } from "../requestId/requestId";
+import { ResponseTimeState } from "../responseTime/responseTime";
 
 export interface LogState {
   log: Logger;

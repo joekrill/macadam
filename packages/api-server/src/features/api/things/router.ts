@@ -1,7 +1,7 @@
 import Router from "@koa/router";
 import { EntityRepository } from "@mikro-orm/core";
-import { Thing } from "../../entities/Thing";
-import { EntityManagerState } from "../../entityManager";
+import { Thing } from "../../orm/entities/Thing";
+import { EntityManagerState } from "../../orm/entityManager";
 
 type ThingRouterState = EntityManagerState & {
   thing?: Thing;

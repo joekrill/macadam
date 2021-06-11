@@ -15,14 +15,12 @@ process.on("unhandledRejection", (reason, promise) => {
   process.exit(1);
 });
 
-const { API_URL_PREFIX, DB_URL, LISTEN_ADDRESS, METRICS_PATH, NODE_ENV, PORT } =
+const { DB_URL, HEALTH_PATH, LISTEN_ADDRESS, METRICS_PATH, NODE_ENV, PORT } =
   process.env;
 
 const environment = NODE_ENV || "development";
 const port = parseInt(PORT || "", 10) || 4000;
 const host = LISTEN_ADDRESS || "0.0.0.0";
-const metricsPath = METRICS_PATH || "/metrics";
-const apiUrlPrefix = API_URL_PREFIX || "/api";
 
 if (typeof DB_URL !== "string") {
   finalLogger.error("DB_URL environment variable not supplied");
@@ -32,11 +30,11 @@ if (typeof DB_URL !== "string") {
 (async () => {
   try {
     const app = await createApp({
-      apiUrlPrefix,
       dbUrl: DB_URL,
       environment,
+      healthPath: HEALTH_PATH,
       logger,
-      metricsPath,
+      metricsPath: METRICS_PATH,
     });
 
     const apiServer = app.listen(port, host, () => {

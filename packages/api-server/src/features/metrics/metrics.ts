@@ -1,4 +1,6 @@
+import Router from "@koa/router";
 import { Middleware, ParameterizedContext } from "koa";
+import compose from "koa-compose";
 import {
   collectDefaultMetrics,
   Counter,
@@ -6,16 +8,21 @@ import {
   register,
 } from "prom-client";
 
-export const metricsResults =
-  ({ path }: { path: string }): Middleware =>
-  (ctx, next) => {
-    if (ctx.path === path) {
-      ctx.headers["content-type"] = register.contentType;
-      ctx.body = register.metrics();
-    } else {
-      return next();
-    }
-  };
+export interface MetricsRoutesOptions {
+  path: string;
+}
+
+export const metricsRoutes = ({ path }: MetricsRoutesOptions) => {
+  const router = new Router({ prefix: path });
+
+  router.get("/", async (ctx) => {
+    ctx.state.excludeFromMetrics = true;
+    ctx.set("Content-Type", register.contentType);
+    ctx.body = await register.metrics();
+  });
+
+  return compose([router.routes(), router.allowedMethods()]);
+};
 
 export const metricsCollector = (): Middleware => {
   collectDefaultMetrics();
@@ -50,5 +57,6 @@ export const metricsCollector = (): Middleware => {
       },
       ctx.state.responseTime / 1000
     );
+    console.log("DONE");
   };
 };

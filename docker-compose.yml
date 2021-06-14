@@ -62,17 +62,22 @@ services:
       - "4434:4434" # admin
     environment:
       DSN: postgres://kratos:kratospass@postgresd:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
-      LOG_LEVEL: debug # trace
       SQA_OPT_OUT: "true"
+      LOG_FORMAT: text
+      LOG_LEVEL: debug # trace
+      LOG_LEAK_SENSITIVE_VALUES: "true"
+      SECRETS_COOKIE: PLEASE-CHANGE-ME-I-AM-VERY-INSECURE
       SERVE_PUBLIC_BASE_URL: https://localhost/
-      SELF_SERVICE_WHITELISTED_RETURN_URLS: https://localhost,http://localhost
-      SELFSERVICE_FLOWS_LOGOUT_DEFAULT_BROWSER_RETURN_URL: https://localhost
+      SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://localhost
+      SELFSERVICE_WHITELISTED_RETURN_URLS: https://localhost,http://localhost
       SELFSERVICE_FLOWS_ERROR_UI_URL: https://localhost/auth/error
-      SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://localhost/auth/registration
-      SELFSERVICE_FLOWS_LOGIN_UI_URL: https://localhost/auth/login
       SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localhost/auth/settings
       SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://localhost/auth/recovery
-      SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://localhost/auth/verify
+      SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://localhost/auth/verification
+      SELFSERVICE_FLOWS_VERIFICATION_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localhost/auth/verification
+      SELFSERVICE_FLOWS_LOGOUT_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localhost
+      SELFSERVICE_FLOWS_LOGIN_UI_URL: https://localhost/auth/login
+      SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://localhost/auth/registration
     command: serve -c /etc/config/kratos/kratos.yml --dev
     volumes:
       - ./services/kratos:/etc/config/kratos
@@ -90,7 +95,7 @@ services:
       LOG_LEVEL: info
       DSN: postgres://kratos:kratospass@postgresd:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
       SQA_OPT_OUT: "true"
-      COURIER_SMTP_CONNECTION_URI: smtp://mail:25/?skip_ssl_verify=true
+      COURIER_SMTP_CONNECTION_URI: smtp://mail:1025/?skip_ssl_verify=true
     volumes:
       - ./services/kratos:/etc/config/kratos
     networks:
@@ -98,6 +103,8 @@ services:
 
   mail:
     image: mailhog/mailhog
+    logging:
+      driver: none
     environment:
       MH_STORAGE: maildir
       MH_MAILDIR_PATH: /var/mailhog

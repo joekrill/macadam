@@ -19,6 +19,8 @@
 - (client-web) https://htmlhead.dev/
 - (client-web) Favicons: https://css-tricks.com/how-to-favicon-in-2021/
 - (kratos) enable metrics
+- (kratos) customize email templates
+- (kratos) use custom path for all kratos requests (i.e. /kratos/self-service/.. instead of /self-service)
 - husky
 - commitlint
 - eslint+prettier?

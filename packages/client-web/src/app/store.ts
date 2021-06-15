@@ -1,11 +1,13 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { selfServiceApi } from "./services/selfService";
+import { authSlice } from "../features/auth/authSlice";
+import { selfServiceApi } from "../services/selfService";
 
 export const store = configureStore({
   devTools: process.env.NODE_ENV !== "production",
   reducer: {
+    [authSlice.name]: authSlice.reducer,
     [selfServiceApi.reducerPath]: selfServiceApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

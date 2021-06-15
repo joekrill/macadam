@@ -1,30 +1,8 @@
-import { skipToken } from "@reduxjs/toolkit/query/react";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { selfServiceApi } from "../../app/services/selfService";
-import { SelfServiceUi } from "../selfService/components/SelfServiceUi";
+import { SelfService } from "../selfService/components/SelfService";
 
-export const Login = () => {
-  const { search } = useLocation();
-  const params = new URLSearchParams(search);
-  const flowId = params.get("flow");
-  const result = selfServiceApi.useGetLoginFlowQuery(flowId ?? skipToken);
-  const error = result.error as any;
-  const redirectTo = !flowId
-    ? "/self-service/login/browser"
-    : error?.data?.error?.details?.redirect_to;
-
-  useEffect(() => {
-    if (redirectTo) {
-      window.location.href = redirectTo;
-    }
-  }, [redirectTo]);
-
-  return (
-    <div>
-      <h1>Login</h1>
-      <p>Flow: {flowId}</p>
-      {result.data?.ui ? <SelfServiceUi ui={result.data?.ui} /> : null}
-    </div>
-  );
-};
+export const Login = () => (
+  <div>
+    <h1>Login</h1>
+    <SelfService flowType="login" />
+  </div>
+);

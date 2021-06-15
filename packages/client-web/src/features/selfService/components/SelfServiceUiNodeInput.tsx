@@ -60,16 +60,18 @@ export const SelfServiceUiNodeInput = ({
     //   );
     // }
     case "submit": {
+      // Since we intercept the button and submit via a `fetch` call,
+      // technically the submitter (the button, in this case) should not be
+      // included in the form data (Firefox follows the spec, but Chrome
+      // and Safari include it anyway). To ensure it's always included,
+      // this node will include an additional `hidden` input with that data.
       return (
-        <Button
-          mt={4}
-          colorScheme="blue"
-          {...attributes}
-          type="submit"
-          value={value}
-        >
-          {meta?.label.text || "Submit"}
-        </Button>
+        <>
+          <input key="input" {...attributes} type="hidden" value={value} />
+          <Button key="button" mt={4} colorScheme="blue" type="submit">
+            {meta?.label.text || "Submit"}
+          </Button>
+        </>
       );
     }
     default:

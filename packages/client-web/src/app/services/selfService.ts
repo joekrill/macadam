@@ -27,15 +27,15 @@ export const selfServiceApi = createApi({
       providesTags: (_result, _error, id) => [{ type: "RegistrationFlow", id }],
     }),
     getRecoveryFlow: build.query<RecoveryFlow, string>({
-      query: (id) => `self-service/registration/flows?id=${id}`,
+      query: (id) => `self-service/recovery/flows?id=${id}`,
       providesTags: (_result, _error, id) => [{ type: "RecoveryFlow", id }],
     }),
     getVerificationFlow: build.query<VerificationFlow, string>({
-      query: (id) => `self-service/registration/flows?id=${id}`,
+      query: (id) => `self-service/verification/flows?id=${id}`,
       providesTags: (_result, _error, id) => [{ type: "VerificationFlow", id }],
     }),
     getSettingsFlow: build.query<SettingsFlow, string>({
-      query: (id) => `self-service/registration/flows?id=${id}`,
+      query: (id) => `self-service/settings/flows?id=${id}`,
       providesTags: (_result, _error, id) => [{ type: "SettingsFlow", id }],
     }),
     whoami: build.query<Session, void>({

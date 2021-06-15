@@ -49,6 +49,9 @@ export const App = () => {
             <Link as={RouterLink} color="teal.500" to="/auth/settings">
               Settings
             </Link>
+            <Link color="teal.500" to="/self-service/browser/flows/logout">
+              Logout
+            </Link>
             <Button colorScheme="blue">A button</Button>
             <Switch>
               <Route path="/auth">

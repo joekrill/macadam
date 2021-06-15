@@ -102,17 +102,16 @@ services:
       - sass-starter-net
 
   mail:
-    image: mailhog/mailhog
-    logging:
-      driver: none
+    build:
+      context: https://github.com/maildev/maildev.git
     environment:
-      MH_STORAGE: maildir
-      MH_MAILDIR_PATH: /var/mailhog
+      MAILDEV_MAIL_DIRECTORY: /home/node/test
     volumes:
-      - mail_data:/var/mailhog
+      # mail_data has to be mounted in a directory that is owned by the
+      # `node` user defined in the maildev Dockerfile, otherwise it won't have
+      # write permission to the directory.
+      - mail_data:/home/node/test
     restart: unless-stopped
-    ports:
-      - "8025:8025"
     networks:
       - sass-starter-net
 

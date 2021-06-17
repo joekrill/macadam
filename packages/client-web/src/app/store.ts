@@ -1,17 +1,17 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { authSlice } from "../features/auth/authSlice";
-import { selfServiceApi } from "../services/selfService";
+import { identityApi } from "../features/identity/identityApi";
+import { identitySlice } from "../features/identity/identitySlice";
 
 export const store = configureStore({
   devTools: process.env.NODE_ENV !== "production",
   reducer: {
-    [authSlice.name]: authSlice.reducer,
-    [selfServiceApi.reducerPath]: selfServiceApi.reducer,
+    [identitySlice.name]: identitySlice.reducer,
+    [identityApi.reducerPath]: identityApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(selfServiceApi.middleware),
+    getDefaultMiddleware().concat(identityApi.middleware),
 });
 
 setupListeners(store.dispatch);

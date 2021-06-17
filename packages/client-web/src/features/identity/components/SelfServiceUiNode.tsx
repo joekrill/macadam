@@ -1,4 +1,4 @@
-import { UiNode } from "../types";
+import { UiNode } from "../identityTypes";
 import { SelfServiceUiNodeInput } from "./SelfServiceUiNodeInput";
 
 export interface SelfServiceUiNodeProps {

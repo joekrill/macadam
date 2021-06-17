@@ -5,7 +5,7 @@ import {
   FormLabel,
   Input,
 } from "@chakra-ui/react";
-import { UiNodeInput } from "../types";
+import { UiNodeInput } from "../identityTypes";
 
 export interface SelfServiceUiNodeInputProps {
   node: UiNodeInput;

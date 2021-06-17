@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { selfServiceApi } from "../../services/selfService";
+import { identityApi } from "./identityApi";
 
-export interface AuthState {
+export interface IdentityState {
   userId?: string;
 }
 
-export const authSlice = createSlice({
-  name: "auth",
-  initialState: {} as AuthState,
+export const identitySlice = createSlice({
+  name: "identity",
+  initialState: {} as IdentityState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addMatcher(
-      selfServiceApi.endpoints.whoami.matchFulfilled,
+      identityApi.endpoints.whoami.matchFulfilled,
       (state, { payload }) => {
         state.userId = payload.id;
       }

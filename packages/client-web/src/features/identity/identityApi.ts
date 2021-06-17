@@ -1,16 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Flow, Session } from "../features/selfService/types";
+import { SelfServiceFlow, SelfServiceFlowType, Session } from "./identityTypes";
 
-export type SelfServiceFlowType =
-  | "login"
-  | "registration"
-  | "recovery"
-  | "verification"
-  | "settings";
-
-export const selfServiceApi = createApi({
+export const identityApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "/" }),
-  tagTypes: ["Flow"],
+  tagTypes: ["SelfServiceFlow", "Session"],
   endpoints: (build) => ({
     initializeFlow: build.query<string, SelfServiceFlowType>({
       // It is currently necessary to make a "reqular" page request first to
@@ -32,10 +25,13 @@ export const selfServiceApi = createApi({
         },
       }),
     }),
-    getFlow: build.query<Flow, { type: SelfServiceFlowType; id: string }>({
+    getFlow: build.query<
+      SelfServiceFlow,
+      { type: SelfServiceFlowType; id: string }
+    >({
       query: ({ type, id }) => `self-service/${type}/flows?id=${id}`,
       providesTags: (_result, _error, { type, id }) => [
-        { type: "Flow", id: `${type}/${id}` },
+        { type: "SelfServiceFlow", id: `${type}/${id}` },
       ],
     }),
     submitFlow: build.mutation<
@@ -54,14 +50,7 @@ export const selfServiceApi = createApi({
     }),
     whoami: build.query<Session, void>({
       query: () => `/sessions/whoami`,
+      providesTags: () => [{ type: "Session", id: "CURRENT" }],
     }),
   }),
 });
-
-// export const {
-//   useGetPostQuery,
-//   useGetPostsQuery,
-//   useAddPostMutation,
-//   useUpdatePostMutation,
-//   useDeletePostMutation,
-// } = api;

@@ -1,4 +1,4 @@
-import { SelfService } from "../selfService/components/SelfService";
+import { SelfService } from "./SelfService";
 
 export const Register = () => (
   <div>

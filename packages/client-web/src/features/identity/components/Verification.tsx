@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
-import { SelfService } from "../selfService/components/SelfService";
-import { SelfServiceUi } from "../selfService/components/SelfServiceUi";
+import { SelfService } from "./SelfService";
+import { SelfServiceUi } from "./SelfServiceUi";
 
 // TODO: Handle verification flow correctly.
 export const Verification = () => {

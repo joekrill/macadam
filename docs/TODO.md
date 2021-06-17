@@ -21,6 +21,7 @@
 - (kratos) enable metrics
 - (kratos) customize email templates
 - (kratos) use custom path for all kratos requests (i.e. /kratos/self-service/.. instead of /self-service)
+- (kratos) social logins
 - husky
 - commitlint
 - eslint+prettier?

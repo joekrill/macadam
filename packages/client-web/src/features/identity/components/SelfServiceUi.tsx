@@ -1,9 +1,7 @@
 import { Spinner } from "@chakra-ui/react";
 import { useRef } from "react";
-import {
-  selfServiceApi,
-  SelfServiceFlowType,
-} from "../../../services/selfService";
+import { identityApi } from "../identityApi";
+import { SelfServiceFlowType } from "../identityTypes";
 import { SelfServiceUiNode } from "./SelfServiceUiNode";
 
 export interface SelfServiceUiProps {
@@ -13,14 +11,14 @@ export interface SelfServiceUiProps {
 
 export const SelfServiceUi = ({ flowId, flowType }: SelfServiceUiProps) => {
   const formRef = useRef<HTMLFormElement>(null);
-  const whoami = selfServiceApi.useWhoamiQuery();
-  const flowQuery = selfServiceApi.useGetFlowQuery(
+  const whoami = identityApi.useWhoamiQuery();
+  const flowQuery = identityApi.useGetFlowQuery(
     { type: flowType, id: flowId || "" },
     {
       skip: !flowId,
     }
   );
-  const [submitFlow] = selfServiceApi.useSubmitFlowMutation();
+  const [submitFlow] = identityApi.useSubmitFlowMutation();
 
   const ui = flowQuery.data?.ui;
 

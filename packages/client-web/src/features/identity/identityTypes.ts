@@ -149,7 +149,7 @@ export interface Identity {
   verifiable_addresses: Array<VerifiableIdentityAddress>;
 }
 
-export interface FlowCommon {
+export interface SelfServiceFlowCommon {
   active?: string; // CredentialsType
   id: UUID;
   ui: UiContainer;
@@ -159,7 +159,7 @@ export interface FlowCommon {
 /**
  * @see {@link https://www.ory.sh/kratos/docs/reference/api#schemaloginflow}
  */
-export interface LoginFlow extends FlowCommon {
+export interface SelfServiceLoginFlow extends SelfServiceFlowCommon {
   created_at?: string;
   expires_at: string;
   forced?: boolean;
@@ -171,7 +171,7 @@ export interface LoginFlow extends FlowCommon {
 /**
  * @see {@link https://www.ory.sh/kratos/docs/reference/api#schemaloginflow}
  */
-export interface RegistrationFlow extends FlowCommon {
+export interface SelfServiceRegistrationFlow extends SelfServiceFlowCommon {
   expires_at: string;
   issued_at: string;
   type?: "api" | "browser";
@@ -180,7 +180,7 @@ export interface RegistrationFlow extends FlowCommon {
 /**
  * @see {@link https://www.ory.sh/kratos/docs/reference/api#verificationflow}
  */
-export interface VerificationFlow extends FlowCommon {
+export interface SelfServiceVerificationFlow extends SelfServiceFlowCommon {
   expires_at?: string;
   issued_at?: string;
   state: string;
@@ -190,7 +190,7 @@ export interface VerificationFlow extends FlowCommon {
 /**
  * @see {@link https://www.ory.sh/kratos/docs/reference/api#recoveryflow}
  */
-export interface RecoveryFlow extends FlowCommon {
+export interface SelfServiceRecoveryFlow extends SelfServiceFlowCommon {
   expires_at: string;
   issued_at: string;
   state: string;
@@ -200,7 +200,7 @@ export interface RecoveryFlow extends FlowCommon {
 /**
  * @see {@link https://www.ory.sh/kratos/docs/reference/api#settingsflow}
  */
-export interface SettingsFlow extends FlowCommon {
+export interface SelfServiceSettingsFlow extends SelfServiceFlowCommon {
   expires_at: string;
   identity: Identity;
   issued_at: string;
@@ -208,12 +208,19 @@ export interface SettingsFlow extends FlowCommon {
   type?: "api" | "browser";
 }
 
-export type Flow =
-  | LoginFlow
-  | RegistrationFlow
-  | VerificationFlow
-  | RecoveryFlow
-  | SettingsFlow;
+export type SelfServiceFlow =
+  | SelfServiceLoginFlow
+  | SelfServiceRegistrationFlow
+  | SelfServiceVerificationFlow
+  | SelfServiceRecoveryFlow
+  | SelfServiceSettingsFlow;
+
+export type SelfServiceFlowType =
+  | "login"
+  | "registration"
+  | "recovery"
+  | "verification"
+  | "settings";
 
 export interface SelfServiceError {
   code?: number;

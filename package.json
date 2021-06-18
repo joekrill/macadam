@@ -22,5 +22,10 @@
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
+  },
+  "dependenciesMeta": {
+    "open@7.4.2": {
+      "unplugged": true
+    }
   }
 }

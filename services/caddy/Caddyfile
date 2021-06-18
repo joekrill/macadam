@@ -9,6 +9,10 @@ mail.localhost {
   reverse_proxy mail:1080
 }
 
+storybook.localhost {
+  reverse_proxy client-web-storybook:6006
+}
+
 kratos.localhost {
   reverse_proxy kratos:4455
 }

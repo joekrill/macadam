@@ -25,8 +25,9 @@ services:
     image: postgres:13
     # image: postgis/postgis:13-3.1 # Does not work with arm yet.
     restart: unless-stopped
-    ports:
-      - "5432:5432"
+    # Uncomment to expost postgres directly
+    # ports:
+    #   - "5432:5432"
     environment:
       POSTGRES_USER: saas-starter
       POSTGRES_PASSWORD: saas-starter-pass
@@ -57,9 +58,10 @@ services:
     depends_on:
       - kratos-migrate
     restart: unless-stopped
-    ports:
-      - "4433:4433" # public
-      - "4434:4434" # admin
+    # Uncomment to expose kratos directly
+    # ports:
+    #   - "4433:4433" # public
+    #   - "4434:4434" # admin
     environment:
       DSN: postgres://kratos:kratospass@postgresd:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
       SQA_OPT_OUT: "true"
@@ -137,8 +139,9 @@ services:
     depends_on:
       - api-server-migrate
     restart: unless-stopped
-    ports:
-      - 4000:4000
+    # Uncomment to expose api-server directly
+    # ports:
+    #   - 4000:4000
     environment:
       DB_URL: postgresql://saas-starter:saas-starter-pass@postgresd:5432/saas-starter
       PORT: 4000
@@ -150,11 +153,27 @@ services:
       - sass-starter-net
 
   client-web:
-    ports:
-      - 3000:3000
+    # Uncomment to expose client-web directly
+    # ports:
+    #   - 3000:3000
     build:
       context: .
       dockerfile: ./packages/client-web/dev.Dockerfile
+    volumes:
+      - type: bind
+        source: .
+        target: /var/saas-starter
+    networks:
+      - sass-starter-net
+
+  client-web-storybook:
+    # Uncomment to expose client-web-storybook directly
+    # ports:
+    #   - 6006:6006
+    build:
+      context: .
+      dockerfile: ./packages/client-web/dev.Dockerfile
+    command: ["yarn", "workspace", "client-web", "run", "storybook"]
     volumes:
       - type: bind
         source: .

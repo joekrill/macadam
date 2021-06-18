@@ -1,4 +1,6 @@
-import { Flex, Text, useColorMode } from "@chakra-ui/react";
+import { Flex, FlexProps, Text, useColorMode } from "@chakra-ui/react";
+
+export interface FooterProps extends FlexProps {}
 
 export const Footer = () => {
   const { colorMode } = useColorMode();

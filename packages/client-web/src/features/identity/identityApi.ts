@@ -54,3 +54,5 @@ export const identityApi = createApi({
     }),
   }),
 });
+
+export const { useWhoamiQuery } = identityApi;

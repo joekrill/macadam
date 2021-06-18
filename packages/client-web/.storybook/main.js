@@ -9,6 +9,13 @@ module.exports = {
   refs: {
     "@chakra-ui/react": { disable: true },
   },
+
+  // This is needed because of https://github.com/storybookjs/storybook/issues/15067
+  // Once that fix is merged and published this can be removed
+  typescript: {
+    reactDocgen: false,
+  },
+
   webpackFinal: async (config) => {
     return {
       ...config,

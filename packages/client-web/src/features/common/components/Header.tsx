@@ -7,16 +7,21 @@ import {
   Link,
   useColorMode,
 } from "@chakra-ui/react";
+import { createContext, useContext } from "react";
 import { Link as RouterLink } from "react-router-dom";
-import { identityApi } from "../../identity/identityApi";
+import { useWhoamiQuery } from "../../identity/identityApi";
 import { ColorModeSwitcher } from "../../theme/components/ColorModeSwitcher";
 
+export const HeaderContext = createContext({
+  useWhoamiQuery,
+});
+
 export interface HeaderProps extends FlexProps {}
+
 export const Header = (props: HeaderProps) => {
   const { colorMode } = useColorMode();
-  const whoami = identityApi.useWhoamiQuery();
-  // whoami.isError;
-  // const isAU = console.log("whoami", whoami);
+  const { useWhoamiQuery } = useContext(HeaderContext);
+  const whoami = useWhoamiQuery();
 
   return (
     <Flex

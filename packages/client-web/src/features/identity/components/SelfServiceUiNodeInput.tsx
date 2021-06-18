@@ -9,9 +9,11 @@ import { UiNodeInput } from "../identityTypes";
 
 export interface SelfServiceUiNodeInputProps {
   node: UiNodeInput;
+  isSubmitting: boolean;
 }
 
 export const SelfServiceUiNodeInput = ({
+  isSubmitting,
   node,
 }: SelfServiceUiNodeInputProps) => {
   const { meta, messages } = node;
@@ -30,12 +32,18 @@ export const SelfServiceUiNodeInput = ({
       return (
         <FormControl
           isRequired={attributes.required}
-          isDisabled={attributes.disabled}
+          isDisabled={attributes.disabled || isSubmitting}
         >
           <FormLabel>
             {meta?.label?.text || label?.text || defaultLabel}
           </FormLabel>
-          <Input {...attributes} defaultValue={value} />
+          <Input
+            {...attributes}
+            bg="white"
+            borderColor="gray.300"
+            defaultValue={value}
+            disabled={attributes.disabled || isSubmitting}
+          />
           {messages
             ?.filter((message) => message.type === "error")
             .map((message) => (
@@ -68,7 +76,14 @@ export const SelfServiceUiNodeInput = ({
       return (
         <>
           <input key="input" {...attributes} type="hidden" value={value} />
-          <Button key="button" mt={4} colorScheme="blue" type="submit">
+          <Button
+            key="button"
+            mt={4}
+            colorScheme="blue"
+            type="submit"
+            isDisabled={attributes.disabled}
+            isLoading={isSubmitting}
+          >
             {meta?.label.text || "Submit"}
           </Button>
         </>

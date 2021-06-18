@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import { Helmet } from "react-helmet-async";
 import { Route, Switch } from "react-router-dom";
 import { Login } from "./Login";
@@ -7,7 +8,7 @@ import { Settings } from "./Settings";
 import { Verification } from "./Verification";
 
 export const Auth = () => (
-  <>
+  <Box p={5}>
     <Helmet
       titleTemplate={`%s - ${process.env.REACT_APP_NAME}`}
       defaultTitle={process.env.REACT_APP_NAME}
@@ -31,5 +32,5 @@ export const Auth = () => (
       </Route>
       <Route>Something went wrong :(</Route>
     </Switch>
-  </>
+  </Box>
 );

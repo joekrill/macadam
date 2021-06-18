@@ -84,7 +84,6 @@ services:
     networks:
       - sass-starter-net
 
-  #  This will be needed with a future version of Kratos
   kratos-courier:
     image: oryd/kratos:v0.6.3-alpha.1
     command: courier watch -c /etc/config/kratos/kratos.yml

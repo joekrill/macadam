@@ -4,17 +4,15 @@
 - (api-server) Figure out `contentSecurityPolicy` for `helmet`
 - (api-server) Graceful shutdown (close DB connections, etc)
 - (api-server) Readiness vs liveliness probes
-- (docker-compose) Proxy (traefik? caddy? nginx?)
+- (api-server) Unit tests
+- (api-server) Better koa context typing
 - (client-web) Redirect after login
 - (client-web) Auth flow: verification
 - (client-web) Auth flow: settings
 - (client-web) Auth flow: recovery
 - (client-web) Handle flow request that fails (i.e. login flow requested when already logged in)
 - (client-web) Handle /sessions/whoami 401 response
-- (api-server) Better koa context typing
-- (client-web) redux-toolkit
 - (client-web) Error page
-- (client-web) Not found page
 - (client-web) ErrorBoundary
 - (client-web) SVGs/images/icons (svgo)
 - (client-web) i11n
@@ -25,11 +23,17 @@
 - (client-web) Pages: About
 - (client-web) Pages: Privacy Policy
 - (client-web) Pages: ToS
+- (client-web) Unit tests
+- (client-web) Storybook stories
 - (kratos) enable metrics
 - (kratos) customize email templates
 - (kratos) use custom path for all kratos requests (i.e. /kratos/self-service/.. instead of /self-service)
 - (kratos) social logins
+- Integration tests
 - husky
 - commitlint
 - eslint+prettier?
 - github templates: https://github.com/cezaraugusto/github-template-guidelines
+- (analytics) implement (Plausible?)
+- (metrics) implemenet (Prometheus + Grafana)
+- (docs) Better documentation (docusaurus?)

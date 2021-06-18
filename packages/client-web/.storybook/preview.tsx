@@ -5,6 +5,8 @@ import {
 } from "@chakra-ui/react";
 import { StoryContext } from "@storybook/react";
 import { useEffect } from "react";
+import { HelmetProvider } from "react-helmet-async";
+import { MemoryRouter } from "react-router-dom";
 import { theme as appTheme } from "../src/features/theme";
 
 export const parameters = {
@@ -103,4 +105,22 @@ const withRtl = (StoryFn: Function, context: StoryContext) => (
   </div>
 );
 
-export const decorators = [withColorMode, withTheme, withRtl];
+const withHelmet = (StoryFn: Function) => (
+  <HelmetProvider>
+    <StoryFn />
+  </HelmetProvider>
+);
+
+const withRouter = (StoryFn: Function) => (
+  <MemoryRouter initialEntries={["/"]}>
+    <StoryFn />
+  </MemoryRouter>
+);
+
+export const decorators = [
+  withColorMode,
+  withTheme,
+  withRtl,
+  withHelmet,
+  withRouter,
+];

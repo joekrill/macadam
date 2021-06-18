@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { theme } from "..";
 
 export default {
-  title: "Button",
+  title: "Chakra UI/Button",
   component: Button,
   argTypes: {
     colorScheme: {

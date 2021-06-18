@@ -3,6 +3,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Route, Switch } from "react-router-dom";
 import { Footer } from "../features/common/components/Footer";
 import { Header } from "../features/common/components/Header";
+import { NotFound } from "../features/common/pages/NotFound";
 import { Auth } from "../features/identity/components/Auth";
 
 export const App = () => {
@@ -25,8 +26,11 @@ export const App = () => {
           <Route path="/auth">
             <Auth />
           </Route>
-          <Route>
+          <Route path="/" exact>
             <Heading>This is home!</Heading>
+          </Route>
+          <Route>
+            <NotFound />
           </Route>
         </Switch>
       </Box>

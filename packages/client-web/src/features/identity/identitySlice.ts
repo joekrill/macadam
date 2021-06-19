@@ -16,5 +16,13 @@ export const identitySlice = createSlice({
         state.userId = payload.id;
       }
     );
+    builder.addMatcher(
+      identityApi.endpoints.whoami.matchRejected,
+      (state, { payload }) => {
+        if (payload?.status === 401) {
+          state.userId = undefined;
+        }
+      }
+    );
   },
 });

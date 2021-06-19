@@ -16,6 +16,7 @@
     "@storybook/node-logger": "^6.2.9",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.9",
+    "@testing-library/dom": "^7.31.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^13.1.9",
@@ -42,9 +43,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "analyze": "source-map-explorer build/static/js/*.js",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "test:coverage": "yarn run test --collect-coverage",
-    "test:watch": "yarn run test --watch",
+    "test:watch": "react-scripts test --watchAll=true",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "storybook:build": "build-storybook -s public"
@@ -88,5 +89,11 @@
   "devDependencies": {
     "@types/react-redux": "^7.1.16",
     "@types/react-router-dom": "^5.1.7"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.stories.{js,jsx,ts,tsx}"
+    ]
   }
 }

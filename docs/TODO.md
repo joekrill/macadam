@@ -4,8 +4,9 @@
 - (api-server) Figure out `contentSecurityPolicy` for `helmet`
 - (api-server) Graceful shutdown (close DB connections, etc)
 - (api-server) Readiness vs liveliness probes
-- (api-server) Unit tests
 - (api-server) Better koa context typing
+- (api-server) Better unit test coverage + enforce minimum
+- (client-web) Better unit test coverage + enforce minimum
 - (client-web) Redirect after login
 - (client-web) Auth flow: verification
 - (client-web) Auth flow: settings
@@ -23,7 +24,6 @@
 - (client-web) Pages: About
 - (client-web) Pages: Privacy Policy
 - (client-web) Pages: ToS
-- (client-web) Unit tests
 - (client-web) Storybook stories
 - (kratos) enable metrics
 - (kratos) customize email templates
@@ -37,3 +37,5 @@
 - (analytics) implement (Plausible?)
 - (metrics) implemenet (Prometheus + Grafana)
 - (docs) Better documentation (docusaurus?)
+- (crash-analytics) implement (Sentry? GlitchTip?)
+- (payments) implemente (stripe?)

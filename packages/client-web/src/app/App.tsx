@@ -1,14 +1,15 @@
-import { Box, Flex, Heading, useColorMode } from "@chakra-ui/react";
+import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Route, Switch } from "react-router-dom";
 import { Footer } from "../features/common/components/Footer/Footer";
-import { Header } from "../features/common/components/Header";
-import { ContactUs } from "../features/common/pages/ContactUs";
-import { NotFound } from "../features/common/pages/NotFound";
-import { PrivacyPolicy } from "../features/common/pages/PrivacyPolicy";
-import { TermsOfService } from "../features/common/pages/TermsOfService";
+import { Header } from "../features/common/components/Header/Header";
 import { Auth } from "../features/identity/components/Auth";
+import { ContactUs } from "../features/pages/ContactUs/ContactUs";
+import { Home } from "../features/pages/Home/Home";
+import { NotFound } from "../features/pages/NotFound/NotFound";
+import { PrivacyPolicy } from "../features/pages/PrivacyPolicy/PrivacyPolicy";
+import { TermsOfService } from "../features/pages/TermsOfService/TermsOfService";
 
 export const App = () => {
   const { colorMode } = useColorMode();
@@ -57,7 +58,7 @@ export const App = () => {
               <TermsOfService />
             </Route>
             <Route path="/" exact>
-              <Heading>This is the home page</Heading>
+              <Home />
             </Route>
             <Route>
               <NotFound />

@@ -75,12 +75,13 @@ export const TermsOfService = () => (
           entire agreement between You and the Company regarding the use of the
           Service. This Terms and Conditions agreement has been created with the
           help of the{" "}
-          <a
+          <Link
             href="https://www.termsfeed.com/terms-conditions-generator/"
             target="_blank"
+            isExternal
           >
             Terms and Conditions Generator
-          </a>
+          </Link>
           .
         </Text>
       </ListItem>
@@ -334,7 +335,7 @@ export const TermsOfService = () => (
       <ListItem>
         <Text>
           By visiting this page on our website:{" "}
-          <Link as={RouterLink} to="contact">
+          <Link as={RouterLink} to="/contact">
             https://www.example.com/contact
           </Link>
         </Text>

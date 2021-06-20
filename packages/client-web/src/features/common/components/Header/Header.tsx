@@ -4,13 +4,15 @@ import {
   Flex,
   FlexProps,
   HStack,
+  Icon,
   Link,
   useColorMode,
 } from "@chakra-ui/react";
 import { createContext, useContext } from "react";
+import { FaRegGem } from "react-icons/fa";
 import { Link as RouterLink } from "react-router-dom";
-import { useWhoamiQuery } from "../../identity/identityApi";
-import { ColorModeSwitcher } from "./ColorModeSwitcher";
+import { useWhoamiQuery } from "../../../identity/identityApi";
+import { ColorModeSwitcher } from "../ColorModeSwitcher/ColorModeSwitcher";
 
 export const HeaderContext = createContext({
   useWhoamiQuery,
@@ -40,6 +42,7 @@ export const Header = (props: HeaderProps) => {
           color="current"
           colorScheme="blackAlpha"
           to="/"
+          leftIcon={<Icon as={FaRegGem} />}
         >
           {process.env.REACT_APP_NAME}
         </Button>

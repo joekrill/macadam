@@ -1,6 +1,6 @@
 import * as chakra from "@chakra-ui/react";
 import userEvent from "@testing-library/user-event";
-import { render, screen } from "../../../test-utils";
+import { render, screen } from "../../../../test-utils";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 
 const toggleColorModeMock = jest.fn();

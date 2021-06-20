@@ -22,9 +22,10 @@
 - (client-web) https://htmlhead.dev/
 - (client-web) Favicons: https://css-tricks.com/how-to-favicon-in-2021/
 - (client-web) Pages: About
-- (client-web) Pages: Privacy Policy
-- (client-web) Pages: ToS
+- (client-web) Pages: Contact
+- (client-web) Pages: FAQ
 - (client-web) Storybook stories
+- (client-web) Logos
 - (kratos) enable metrics
 - (kratos) customize email templates
 - (kratos) use custom path for all kratos requests (i.e. /kratos/self-service/.. instead of /self-service)

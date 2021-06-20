@@ -10,7 +10,7 @@ import {
 import { createContext, useContext } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { useWhoamiQuery } from "../../identity/identityApi";
-import { ColorModeSwitcher } from "../../theme/components/ColorModeSwitcher";
+import { ColorModeSwitcher } from "./ColorModeSwitcher";
 
 export const HeaderContext = createContext({
   useWhoamiQuery,

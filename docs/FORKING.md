@@ -9,3 +9,10 @@ In order to use this SaaS starter for a real project, fork it and make the follo
   - `index.html` - meta description, theme color, etc...
   - `manifest.json` values
   - App icons: `favicon.ico`, `logo192.png`, `logo512.png`
+- Customize Terms of Service, Privacy Policy, etc
+  - https://www.termsfeed.com/
+  - https://termly.io/
+  - https://www.iubenda.com
+  - https://getterms.io/
+- Add social media links: `packages/client-web/src/features/common/components/Footer/SocialMediaLinks.tsx`
+-

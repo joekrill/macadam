@@ -4082,6 +4082,86 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@sentry/browser@npm:6.7.2":
+  version: 6.7.2
+  resolution: "@sentry/browser@npm:6.7.2"
+  dependencies:
+    "@sentry/core": 6.7.2
+    "@sentry/types": 6.7.2
+    "@sentry/utils": 6.7.2
+    tslib: ^1.9.3
+  checksum: e7e9b02c286252d4a650723b7d7b4b8ab85408945b9d1e4e1a39b18f99810686e940ac169154271f31eb8bab8f413e690e2c3f8863075942420d31d609cceebe
+  languageName: node
+  linkType: hard
+
+"@sentry/core@npm:6.7.2":
+  version: 6.7.2
+  resolution: "@sentry/core@npm:6.7.2"
+  dependencies:
+    "@sentry/hub": 6.7.2
+    "@sentry/minimal": 6.7.2
+    "@sentry/types": 6.7.2
+    "@sentry/utils": 6.7.2
+    tslib: ^1.9.3
+  checksum: 3a16bfe826ca81c70c2224c1c00ad8b349bff50e1787f280b843440974e3fb956f317c8c0258a762cbb2249881990f609c7861f33bc050e4fbef0ebfee74fcab
+  languageName: node
+  linkType: hard
+
+"@sentry/hub@npm:6.7.2":
+  version: 6.7.2
+  resolution: "@sentry/hub@npm:6.7.2"
+  dependencies:
+    "@sentry/types": 6.7.2
+    "@sentry/utils": 6.7.2
+    tslib: ^1.9.3
+  checksum: 0d1506469cb3785afa856b373f54bb6f9fd6637e645d2c689d5dbfed75abb713dc71db23abbbf1d56d1a5d5fe458bb771650351da2dfcbb59eec6e827ebea47d
+  languageName: node
+  linkType: hard
+
+"@sentry/minimal@npm:6.7.2":
+  version: 6.7.2
+  resolution: "@sentry/minimal@npm:6.7.2"
+  dependencies:
+    "@sentry/hub": 6.7.2
+    "@sentry/types": 6.7.2
+    tslib: ^1.9.3
+  checksum: a085b86b7c30793d18bbfb420bb694b3cd28ed7ebcf630688ef5a25eb5df0af03dc82d1399c691f2f258d7d34ebc67cb377515726d9f32044e91dd0ceaa7d7de
+  languageName: node
+  linkType: hard
+
+"@sentry/react@npm:^6.7.2":
+  version: 6.7.2
+  resolution: "@sentry/react@npm:6.7.2"
+  dependencies:
+    "@sentry/browser": 6.7.2
+    "@sentry/minimal": 6.7.2
+    "@sentry/types": 6.7.2
+    "@sentry/utils": 6.7.2
+    hoist-non-react-statics: ^3.3.2
+    tslib: ^1.9.3
+  peerDependencies:
+    react: 15.x || 16.x || 17.x
+  checksum: c6067ec30ff97829246e2fc6e9189e48609eebd8650eeff204cd32f34556be8860cf9e926f262b8c535fddc6d5fab95b2727d16fed39570794fc79847d561d5d
+  languageName: node
+  linkType: hard
+
+"@sentry/types@npm:6.7.2":
+  version: 6.7.2
+  resolution: "@sentry/types@npm:6.7.2"
+  checksum: dc483ffa396041e096f0531263dfaec1dee5a39a0745b3f660315a7d301e557bba101645844ddf1a5d522ce920c1ad17bb582105d83e8e34f38b3db0e6a6a1c7
+  languageName: node
+  linkType: hard
+
+"@sentry/utils@npm:6.7.2":
+  version: 6.7.2
+  resolution: "@sentry/utils@npm:6.7.2"
+  dependencies:
+    "@sentry/types": 6.7.2
+    tslib: ^1.9.3
+  checksum: 8a66d02063445514cdb953787456b91e07d4782dcf30e42b6d731cfda9a8ad16a3ed945a7ca5d8ed34339ebffff0ff183cb3e1d6d815db2185d97723ee57d519
+  languageName: node
+  linkType: hard
+
 "@sindresorhus/is@npm:^0.14.0":
   version: 0.14.0
   resolution: "@sindresorhus/is@npm:0.14.0"
@@ -8685,6 +8765,7 @@ __metadata:
     "@emotion/styled": ^11.3.0
     "@mdx-js/react": ^1.6.22
     "@reduxjs/toolkit": ^1.6.0
+    "@sentry/react": ^6.7.2
     "@storybook/addon-a11y": ^6.2.9
     "@storybook/addon-actions": ^6.2.9
     "@storybook/addon-docs": ^6.2.9

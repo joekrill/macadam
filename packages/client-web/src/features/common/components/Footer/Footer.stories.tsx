@@ -8,7 +8,7 @@ export default {
   parameters: {
     layout: "fullscreen",
     controls: {
-      hideNoControlsWarning: true.valueOf,
+      hideNoControlsWarning: true,
     },
   },
 } as Meta;

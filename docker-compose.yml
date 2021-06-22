@@ -166,17 +166,17 @@ services:
     networks:
       - sass-starter-net
 
-  client-web-storybook:
-    # Uncomment to expose client-web-storybook directly
-    # ports:
-    #   - 6006:6006
-    build:
-      context: .
-      dockerfile: ./packages/client-web/dev.Dockerfile
-    command: ["yarn", "workspace", "client-web", "run", "storybook"]
-    volumes:
-      - type: bind
-        source: .
-        target: /var/saas-starter
-    networks:
-      - sass-starter-net
+  # client-web-storybook:
+  #   # Uncomment to expose client-web-storybook directly
+  #   # ports:
+  #   #   - 6006:6006
+  #   build:
+  #     context: .
+  #     dockerfile: ./packages/client-web/dev.Dockerfile
+  #   command: ["yarn", "workspace", "client-web", "run", "storybook"]
+  #   volumes:
+  #     - type: bind
+  #       source: .
+  #       target: /var/saas-starter
+  #   networks:
+  #     - sass-starter-net

@@ -1,5 +1,6 @@
 import {
   Box,
+  BoxProps,
   Heading,
   Link,
   ListItem,
@@ -8,13 +9,15 @@ import {
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
+export interface TermsOfServiceProps extends BoxProps {}
+
 /**
  * Generated using TermsFeed
  * @see {@link https://app.termsfeed.com/download/c6fd0934-922e-43a1-97e3-5f53e4ba0625}
  * @see {@link https://www.termsfeed.com/live/c6fd0934-922e-43a1-97e3-5f53e4ba0625}
  */
-export const TermsOfService = () => (
-  <Box p={3}>
+export const TermsOfService = (props: TermsOfServiceProps) => (
+  <Box p={3} {...props}>
     <Heading as="h1">Terms and Conditions</Heading>
     <Text as="i">Last updated: June 20, 2021</Text>
     <Text>

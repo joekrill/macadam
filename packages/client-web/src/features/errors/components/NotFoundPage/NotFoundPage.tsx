@@ -3,9 +3,9 @@ import { Helmet } from "react-helmet-async";
 import { FaExclamationTriangle } from "react-icons/fa";
 import { Link as RouterLink } from "react-router-dom";
 
-export interface NotFoundProps {}
+export interface NotFoundPageProps {}
 
-export const NotFound = () => (
+export const NotFoundPage = () => (
   <Center p={5}>
     <Helmet>
       <title>Not Found</title>

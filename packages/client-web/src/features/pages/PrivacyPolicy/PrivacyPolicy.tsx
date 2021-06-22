@@ -1,5 +1,6 @@
 import {
   Box,
+  BoxProps,
   Heading,
   Link,
   ListItem,
@@ -8,13 +9,15 @@ import {
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 
+export interface PrivacyPolicyProps extends BoxProps {}
+
 /**
  * Generated using TermsFeed
  * @see {@link https://app.termsfeed.com/download/85bdfba8-08d8-4ba2-9c9c-d0db3ec06ec7}
  * @see {@link https://www.termsfeed.com/live/85bdfba8-08d8-4ba2-9c9c-d0db3ec06ec7}
  */
-export const PrivacyPolicy = () => (
-  <Box p={3}>
+export const PrivacyPolicy = (props: PrivacyPolicyProps) => (
+  <Box p={3} {...props}>
     <Heading as="h1">Privacy Policy</Heading>
     <Text as="i">Last updated: June 19, 2021</Text>
     <Text>

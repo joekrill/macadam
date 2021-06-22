@@ -1,4 +1,11 @@
-import { Box, Button, Heading, SimpleGrid, Text } from "@chakra-ui/react";
+import {
+  Box,
+  BoxProps,
+  Button,
+  Heading,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/react";
 import {
   FcDoughnutChart,
   FcMultipleDevices,
@@ -7,8 +14,10 @@ import {
 } from "react-icons/fc";
 import { Feature } from "./Feature";
 
-export const Home = () => (
-  <Box maxW="5xl" mx="auto">
+export interface HomeProps extends BoxProps {}
+
+export const Home = (props: HomeProps) => (
+  <Box maxW="5xl" mx="auto" {...props}>
     <Box
       maxW="2xl"
       mx="auto"

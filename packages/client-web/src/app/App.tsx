@@ -4,10 +4,10 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Route, Switch } from "react-router-dom";
 import { Footer } from "../features/common/components/Footer/Footer";
 import { Header } from "../features/common/components/Header/Header";
+import { NotFoundPage } from "../features/errors/components/NotFoundPage/NotFoundPage";
 import { Auth } from "../features/identity/components/Auth";
 import { ContactUs } from "../features/pages/ContactUs/ContactUs";
 import { Home } from "../features/pages/Home/Home";
-import { NotFound } from "../features/pages/NotFound/NotFound";
 import { PrivacyPolicy } from "../features/pages/PrivacyPolicy/PrivacyPolicy";
 import { TermsOfService } from "../features/pages/TermsOfService/TermsOfService";
 
@@ -61,7 +61,7 @@ export const App = () => {
               <Home />
             </Route>
             <Route>
-              <NotFound />
+              <NotFoundPage />
             </Route>
           </Switch>
         </Box>

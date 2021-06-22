@@ -1,3 +1,7 @@
-import { Box } from "@chakra-ui/react";
+import { Box, BoxProps } from "@chakra-ui/react";
 
-export const ContactUs = () => <Box>TODO: Contact Us form</Box>;
+export interface ContactUsProps extends BoxProps {}
+
+export const ContactUs = (props: ContactUsProps) => (
+  <Box {...props}>TODO: Contact Us form</Box>
+);

@@ -14,17 +14,32 @@ export default {
     },
     themingDisabled: true,
   },
+  argTypes: {
+    eventId: {
+      control: {
+        type: "text",
+      },
+    },
+    canResetError: {
+      control: {
+        type: "boolean",
+      },
+    },
+  },
 } as Meta;
 
-const Template: Story<UnexpectedErrorPageProps> = (args) => (
-  <UnexpectedErrorPage {...args} />
-);
+const Template: Story<UnexpectedErrorPageProps & { canResetError?: boolean }> =
+  ({ canResetError, ...args }) => (
+    <UnexpectedErrorPage
+      {...args}
+      resetError={canResetError ? () => {} : undefined}
+    />
+  );
 
 export const Default = Template.bind({});
 
 Default.args = {
   eventId: "774760b9-219c-408d-9340-9e1a0db50d0d",
-  // resetError: () => {},
 };
 
 Default.storyName = "UnexpectedErrorPage";

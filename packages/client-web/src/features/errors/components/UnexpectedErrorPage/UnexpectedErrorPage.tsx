@@ -21,12 +21,11 @@ export const UnexpectedErrorPage = ({
   resetError,
 }: UnexpectedErrorPageProps) => (
   <div
-    style={{ textAlign: "center", padding: "1em", fontFamily: "sans-serif" }}
+    style={{ textAlign: "center", padding: "3em", fontFamily: "sans-serif" }}
   >
     <h1
       style={{
-        fontSize: "8rem",
-
+        fontSize: "7rem",
         padding: 0,
         margin: "0.5rem 0 0 0",
         color: "#333",
@@ -37,7 +36,7 @@ export const UnexpectedErrorPage = ({
     <h2
       style={{
         fontSize: "2rem",
-        fontWeight: 500,
+        fontWeight: 400,
         padding: 0,
         margin: "0.5rem 0",
       }}
@@ -47,7 +46,7 @@ export const UnexpectedErrorPage = ({
 
     <p style={{ fontWeight: 400 }}>
       We're investigating. In the meantime, refresh the page
-      {resetError ? ", " : " or "} <a href="/">go home</a>
+      {resetError ? ", " : " or "} <a href="/">go to the homepage</a>
       {resetError ? ", or " : "."}
     </p>
     {resetError && (

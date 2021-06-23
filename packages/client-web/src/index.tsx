@@ -7,11 +7,11 @@ import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider as ReduxProvider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
 import { App } from "./app/App";
 import { store } from "./app/store";
 import { ErrorBoundary } from "./features/errors/components/ErrorBoundary";
 import { UnexpectedErrorPage } from "./features/errors/components/UnexpectedErrorPage/UnexpectedErrorPage";
+import { BrowserRouter } from "./features/history/BrowserRouter";
 import { theme } from "./features/theme";
 import reportWebVitals from "./reportWebVitals";
 

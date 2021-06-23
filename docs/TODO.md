@@ -36,7 +36,8 @@
 - eslint+prettier?
 - github templates: https://github.com/cezaraugusto/github-template-guidelines
 - (analytics) implement (Plausible?)
-- (metrics) implemenet (Prometheus + Grafana)
+- (metrics) implement (Prometheus + Grafana)
 - (docs) Better documentation (docusaurus?)
-- (crash-analytics) implement (Sentry? GlitchTip?)
 - (payments) implemente (stripe?)
+- Better docker-compose organization
+- (feature-toggles) implement (https://github.com/Unleash/unleash?)

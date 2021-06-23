@@ -1,5 +1,6 @@
 import cors from "@koa/cors";
 import { MikroORM } from "@mikro-orm/core";
+import * as Sentry from "@sentry/node";
 import Koa from "koa";
 import bodyParser from "koa-bodyparser";
 import helmet from "koa-helmet";
@@ -12,7 +13,6 @@ import { ormConfig } from "./features/orm/config";
 import { entityManager } from "./features/orm/entityManager";
 import { requestId } from "./features/requestId/requestId";
 import { responseTime } from "./features/responseTime/responseTime";
-
 export interface AppOptions {
   apiPath?: string;
   dbUrl: string;
@@ -20,6 +20,7 @@ export interface AppOptions {
   logger: Logger;
   healthPath?: string;
   metricsPath?: string;
+  sentryDsn?: string;
 }
 
 export const createApp = async ({
@@ -29,8 +30,27 @@ export const createApp = async ({
   apiPath = "/api",
   healthPath = "/health",
   metricsPath = "/metrics",
+  sentryDsn,
 }: AppOptions) => {
   const app = new Koa();
+
+  if (sentryDsn) {
+    // TODO: Properly shutdown: https://docs.sentry.io/platforms/node/guides/koa/configuration/draining/
+    Sentry.init({
+      dsn: sentryDsn,
+      environment,
+      release: process.env.npm_package_version,
+    });
+    app.on("error", (err, ctx) => {
+      Sentry.withScope(function (scope) {
+        scope.addEventProcessor(function (event) {
+          return Sentry.Handlers.parseRequest(event, ctx.request);
+        });
+        Sentry.captureException(err);
+      });
+    });
+  }
+
   const orm = await MikroORM.init(ormConfig({ environment, clientUrl: dbUrl }));
 
   app.use(

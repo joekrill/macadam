@@ -4,6 +4,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Route, Switch } from "react-router-dom";
 import { Footer } from "../features/common/components/Footer/Footer";
 import { Header } from "../features/common/components/Header/Header";
+import { CrashInitiator } from "../features/errors/components/CrashInitiator/CrashInitiator";
 import { NotFoundPage } from "../features/errors/components/NotFoundPage/NotFoundPage";
 import { Auth } from "../features/identity/components/Auth";
 import { ContactUs } from "../features/pages/ContactUs/ContactUs";
@@ -17,8 +18,8 @@ export const App = () => {
   return (
     <HelmetProvider>
       <Helmet
-        titleTemplate={`%s - ${process.env.REACT_APP_NAME}`}
-        defaultTitle={process.env.REACT_APP_NAME}
+        titleTemplate={`%s - ${process.env.REACT_APP_DISPLAY_NAME}`}
+        defaultTitle={process.env.REACT_APP_DISPLAY_NAME}
       />
       <Global
         // Take from the solution used here: https://github.com/postcss/postcss-100vh-fix
@@ -56,6 +57,9 @@ export const App = () => {
             </Route>
             <Route path="/terms" exact>
               <TermsOfService />
+            </Route>
+            <Route path="/crash">
+              <CrashInitiator />
             </Route>
             <Route path="/" exact>
               <Home />

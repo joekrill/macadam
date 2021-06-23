@@ -19,7 +19,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: [process.env.REACT_APP_NAME],
+      order: [process.env.REACT_APP_DISPLAY_NAME],
     },
   },
 };

@@ -4,7 +4,8 @@ In order to use this SaaS starter for a real project, fork it and make the follo
 
 - Find/replace `saas-starter` with a more appropriate identifier
 - Find/replace `example.com` with the domain to be used.
-- Update `/packages/client-web/.env`'s `REACT_APP_NAME` value
+- Update `package.json`s with more appropriate package names.
+- Update `/packages/client-web/.env`'s `REACT_APP_DISPLAY_NAME` value
 - Update `/public` files:
   - `index.html` - meta description, theme color, etc...
   - `manifest.json` values

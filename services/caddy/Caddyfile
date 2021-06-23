@@ -16,3 +16,7 @@ storybook.localhost {
 kratos.localhost {
   reverse_proxy kratos:4455
 }
+
+glitchtip.localhost {
+  reverse_proxy glitchtip-web:8000
+}

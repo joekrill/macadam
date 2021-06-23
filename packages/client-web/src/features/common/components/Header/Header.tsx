@@ -44,7 +44,7 @@ export const Header = (props: HeaderProps) => {
           to="/"
           leftIcon={<Icon as={FaRegGem} />}
         >
-          {process.env.REACT_APP_NAME}
+          {process.env.REACT_APP_DISPLAY_NAME}
         </Button>
       </HStack>
       <ButtonGroup

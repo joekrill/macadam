@@ -15,8 +15,15 @@ process.on("unhandledRejection", (reason, promise) => {
   process.exit(1);
 });
 
-const { DB_URL, HEALTH_PATH, LISTEN_ADDRESS, METRICS_PATH, NODE_ENV, PORT } =
-  process.env;
+const {
+  DB_URL,
+  HEALTH_PATH,
+  LISTEN_ADDRESS,
+  METRICS_PATH,
+  NODE_ENV,
+  PORT,
+  SENTRY_DSN,
+} = process.env;
 
 const environment = NODE_ENV || "development";
 const port = parseInt(PORT || "", 10) || 4000;
@@ -35,6 +42,7 @@ if (typeof DB_URL !== "string") {
       healthPath: HEALTH_PATH,
       logger,
       metricsPath: METRICS_PATH,
+      sentryDsn: SENTRY_DSN,
     });
 
     const apiServer = app.listen(port, host, () => {

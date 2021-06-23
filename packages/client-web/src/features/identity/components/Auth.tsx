@@ -10,8 +10,8 @@ import { Verification } from "./Verification";
 export const Auth = () => (
   <Box p={5}>
     <Helmet
-      titleTemplate={`%s - ${process.env.REACT_APP_NAME}`}
-      defaultTitle={process.env.REACT_APP_NAME}
+      titleTemplate={`%s - ${process.env.REACT_APP_DISPLAY_NAME}`}
+      defaultTitle={process.env.REACT_APP_DISPLAY_NAME}
     />
 
     <Switch>

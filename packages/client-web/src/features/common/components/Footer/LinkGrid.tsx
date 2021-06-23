@@ -36,6 +36,11 @@ export const LinkGrid = (props: SimpleGridProps) => (
         <Link as={RouterLink} to="/faq">
           FAQ
         </Link>
+        {process.env.NODE_ENV === "development" && (
+          <Link as={RouterLink} to="/crash">
+            Crash test!
+          </Link>
+        )}
       </Stack>
     </Box>
   </SimpleGrid>

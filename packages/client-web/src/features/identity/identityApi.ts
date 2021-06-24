@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { KnownError } from "../errors/KnownError";
 import { SelfServiceFlow, SelfServiceFlowType, Session } from "./identityTypes";
 
 export const identityApi = createApi({
@@ -21,7 +22,19 @@ export const identityApi = createApi({
           if (params.has("flow")) {
             return Promise.resolve(params.get("flow"));
           }
-          return Promise.reject("No flow ID returned");
+
+          if (response.redirected) {
+            // If we were redirect, the call to our kratos instance succeeded
+            // (so this isn't a network error or something similar), but we
+            // weren't given a flowId, probably because we are in an invalid
+            // state to request the given flow (i.e. we are requesting a login
+            // flow, but are already authenticated)
+            return Promise.reject(
+              new KnownError("identity/invalid_state", "Unable to start flow")
+            );
+          }
+
+          return Promise.reject(new Error("No flow ID returned"));
         },
       }),
     }),

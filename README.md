@@ -2,13 +2,15 @@
 
 - About
 - Getting started
-- Components
+- Core Services
   - Frontend Web Client
   - Backend API
   - Identity/Authentication
   - Database
+  - Crash Reporting
   - Analytics
   - Metrics
+- Development Services
   - Caddy
   - Maildev
 
@@ -36,11 +38,13 @@ SaaS Starter is a full stack software-as-a-service application meant to serve as
 
 ### Database
 
+### Crash Reporting
+
 ### Analytics
 
 ### Metrics
 
-### Development:
+### Development Services
 
 - Caddy
 - Maildev

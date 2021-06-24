@@ -1,4 +1,11 @@
-import { Container, Heading } from "@chakra-ui/react";
+import {
+  Alert,
+  AlertIcon,
+  Button,
+  Container,
+  Flex,
+  Heading,
+} from "@chakra-ui/react";
 import { ReactNode } from "react";
 import { Card } from "../../common/components/Card";
 import { identityApi } from "../identityApi";
@@ -18,7 +25,24 @@ export const SelfService = ({ title, flowType }: SelfServiceProps) => {
       <Heading as="h2" fontSize="xl">
         {title}
       </Heading>
-      <SelfServiceUi flowId={flowId.data} flowType={flowType} />
+      {flowId.isError ? (
+        <Alert
+          status="error"
+          mt={4}
+          displa="flex"
+          justifyContent="space-between"
+        >
+          <Flex>
+            <AlertIcon />
+            Something went wrong :(
+          </Flex>
+          <Button colorScheme="red" onClick={() => flowId.refetch()}>
+            Try again
+          </Button>
+        </Alert>
+      ) : (
+        <SelfServiceUi flowId={flowId.data} flowType={flowType} />
+      )}
     </Card>
   );
 };

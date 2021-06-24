@@ -7,6 +7,7 @@ import { Header } from "../features/common/components/Header/Header";
 import { CrashInitiator } from "../features/errors/components/CrashInitiator/CrashInitiator";
 import { NotFoundPage } from "../features/errors/components/NotFoundPage/NotFoundPage";
 import { Auth } from "../features/identity/components/Auth";
+import { AuthenticatedRoute } from "../features/identity/components/AuthenticatedRoute";
 import { ContactUs } from "../features/pages/ContactUs/ContactUs";
 import { Home } from "../features/pages/Home/Home";
 import { PrivacyPolicy } from "../features/pages/PrivacyPolicy/PrivacyPolicy";
@@ -61,6 +62,9 @@ export const App = () => {
             <Route path="/crash">
               <CrashInitiator />
             </Route>
+            <AuthenticatedRoute path="/user/profile">
+              TODO: user profile!
+            </AuthenticatedRoute>
             <Route path="/" exact>
               <Home />
             </Route>

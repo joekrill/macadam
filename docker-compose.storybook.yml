@@ -1,0 +1,25 @@
+# Extends docker-compose.yml adding a running storybook instance. This can be
+# used by extending the default docker-compose.yml (in which case you can visit
+# `https://storybook.localhost` to access the storybook), or standalone (in which
+# case `http://localhost:6006)
+#
+# Usage: `docker compose -f docker-compose.yml -f docker-compose.storybook.yml up`
+# Standalone: `docker compose -f docker-compose.storybook.yml up`
+
+networks:
+  sass-starter-net:
+
+services:
+  client-web-storybook:
+    ports:
+      - 6006:6006
+    build:
+      context: .
+      dockerfile: ./packages/client-web/dev.Dockerfile
+    command: ["yarn", "workspace", "client-web", "run", "storybook"]
+    volumes:
+      - type: bind
+        source: .
+        target: /var/saas-starter
+    networks:
+      - sass-starter-net

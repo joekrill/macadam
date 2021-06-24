@@ -13,8 +13,6 @@
 - (client-web) Auth flow: recovery
 - (client-web) Handle flow request that fails (i.e. login flow requested when already logged in)
 - (client-web) Handle /sessions/whoami 401 response
-- (client-web) Error page
-- (client-web) ErrorBoundary
 - (client-web) SVGs/images/icons (svgo)
 - (client-web) i11n
 - (client-web) https://github.com/jbmoelker/a11y-boilerplate
@@ -38,6 +36,5 @@
 - (analytics) implement (Plausible?)
 - (metrics) implement (Prometheus + Grafana)
 - (docs) Better documentation (docusaurus?)
-- (payments) implemente (stripe?)
-- Better docker-compose organization
+- (payments) implement (stripe?)
 - (feature-toggles) implement (https://github.com/Unleash/unleash?)

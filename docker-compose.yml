@@ -1,17 +1,38 @@
+# Base docker compose definition
+# Ideal for development work
 version: "3.8"
-
-x-service-defaults: &service_defaults
-  restart: unless-stopped
-  networks:
-    - sass-starter-net
 
 networks:
   sass-starter-net:
 
 volumes:
   caddy_data:
-  postgresd_data:
+  postgres_data:
   mail_data:
+
+x-service-defaults: &service_defaults
+  restart: unless-stopped
+  networks:
+    - sass-starter-net
+
+x-kratos-environment: &kratos_environment
+  DSN: postgres://kratos:kratos-pass@postgres:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
+  SQA_OPT_OUT: "true"
+  LOG_FORMAT: text
+  LOG_LEVEL: debug # trace
+  LOG_LEAK_SENSITIVE_VALUES: "true"
+  SECRETS_COOKIE: PLEASE-CHANGE-ME-I-AM-VERY-INSECURE
+  SERVE_PUBLIC_BASE_URL: https://localhost/
+  SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://localhost
+  SELFSERVICE_WHITELISTED_RETURN_URLS: https://localhost,http://localhost
+  SELFSERVICE_FLOWS_ERROR_UI_URL: https://localhost/auth/error
+  SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localhost/auth/settings
+  SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://localhost/auth/recovery
+  SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://localhost/auth/verification
+  SELFSERVICE_FLOWS_VERIFICATION_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localhost/auth/verification
+  SELFSERVICE_FLOWS_LOGOUT_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localhost
+  SELFSERVICE_FLOWS_LOGIN_UI_URL: https://localhost/auth/login
+  SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://localhost/auth/registration
 
 services:
   caddy:
@@ -24,7 +45,7 @@ services:
       - caddy_data:/data
       - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
 
-  postgresd:
+  postgres:
     <<: *service_defaults
     image: postgres:13
     # image: postgis/postgis:13-3.1 # Does not work with arm yet.
@@ -38,7 +59,7 @@ services:
       POSTGRES_DB: saas-starter
     volumes:
       - ./services/postgres/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
-      - postgresd_data:/var/lib/postgresql
+      - postgres_data:/var/lib/postgresql
 
   redis:
     <<: *service_defaults
@@ -49,10 +70,10 @@ services:
     image: oryd/kratos:v0.6.3-alpha.1
     command: -c /etc/config/kratos/kratos.yml migrate sql -e --yes
     depends_on:
-      - postgresd
+      - postgres
     restart: on-failure
     environment:
-      DSN: postgres://kratos:kratos-pass@postgresd:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
+      DSN: postgres://kratos:kratos-pass@postgres:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
       SQA_OPT_OUT: "true"
       LOG_LEVEL: warning
     volumes:
@@ -63,28 +84,8 @@ services:
     image: oryd/kratos:v0.6.3-alpha.1
     depends_on:
       - kratos-migrate
-    # Uncomment to expose kratos directly
-    # ports:
-    #   - "4433:4433" # public
-    #   - "4434:4434" # admin
     environment:
-      DSN: postgres://kratos:kratos-pass@postgresd:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
-      SQA_OPT_OUT: "true"
-      LOG_FORMAT: text
-      LOG_LEVEL: debug # trace
-      LOG_LEAK_SENSITIVE_VALUES: "true"
-      SECRETS_COOKIE: PLEASE-CHANGE-ME-I-AM-VERY-INSECURE
-      SERVE_PUBLIC_BASE_URL: https://localhost/
-      SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://localhost
-      SELFSERVICE_WHITELISTED_RETURN_URLS: https://localhost,http://localhost
-      SELFSERVICE_FLOWS_ERROR_UI_URL: https://localhost/auth/error
-      SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localhost/auth/settings
-      SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://localhost/auth/recovery
-      SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://localhost/auth/verification
-      SELFSERVICE_FLOWS_VERIFICATION_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localhost/auth/verification
-      SELFSERVICE_FLOWS_LOGOUT_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localhost
-      SELFSERVICE_FLOWS_LOGIN_UI_URL: https://localhost/auth/login
-      SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://localhost/auth/registration
+      <<: *kratos_environment
     command: serve -c /etc/config/kratos/kratos.yml --dev
     volumes:
       - ./services/kratos:/etc/config/kratos
@@ -97,9 +98,8 @@ services:
       - kratos-migrate
     restart: on-failure
     environment:
+      <<: *kratos_environment
       LOG_LEVEL: info
-      DSN: postgres://kratos:kratos-pass@postgresd:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
-      SQA_OPT_OUT: "true"
       COURIER_SMTP_CONNECTION_URI: smtp://mail:1025/?skip_ssl_verify=true
     volumes:
       - ./services/kratos:/etc/config/kratos
@@ -122,10 +122,10 @@ services:
     command: ["yarn", "workspace", "api-server", "run", "migrate:up"]
     working_dir: /var/saas-starter
     depends_on:
-      - postgresd
+      - postgres
     restart: on-failure
     environment:
-      DB_URL: postgres://saas-starter:saas-starter-pass@postgresd:5432/saas-starter
+      DB_URL: postgres://saas-starter:saas-starter-pass@postgres:5432/saas-starter
     volumes:
       - type: bind
         source: .
@@ -142,7 +142,7 @@ services:
     # ports:
     #   - 4000:4000
     environment:
-      DB_URL: postgresql://saas-starter:saas-starter-pass@postgresd:5432/saas-starter
+      DB_URL: postgresql://saas-starter:saas-starter-pass@postgres:5432/saas-starter
       PORT: 4000
       SENTRY_DSN: https://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip.localhost/2
     volumes:
@@ -164,63 +164,3 @@ services:
       - type: bind
         source: .
         target: /var/saas-starter
-
-  glitchtip-migrate:
-    <<: *service_defaults
-    image: glitchtip/glitchtip
-    depends_on:
-      - postgresd
-      - redis
-    command: bash -c "./manage.py migrate && ./manage.py seed_saas_starter"
-    restart: on-failure
-    volumes:
-      - ./services/glitchtip/commands/seed_saas_starter.py:/code/glitchtip/management/commands/seed_saas_starter.py
-    environment:
-      DATABASE_URL: postgresql://glitchtip:glitchtip-pass@postgresd:5432/glitchtip
-      SECRET_KEY: change_me
-
-  glitchtip-web:
-    <<: *service_defaults
-    # NOTE: On AMD64 you will be spamemd with messages like:
-    # "*** uWSGI listen queue of socket ":8000" (fd: 3) full !!! (26472960/64) ***"
-    # I can't figure out how to fix this. Rebuilding the docker image fails on
-    # AMD64 when installing symbolic (see: https://github.com/getsentry/symbolic/issues/76).
-    # There seems to be no other adverse effects, though, so I've given up on this for now.
-    image: glitchtip/glitchtip
-    depends_on:
-      - glitchtip-migrate
-    environment:
-      DATABASE_URL: postgresql://glitchtip:glitchtip-pass@postgresd:5432/glitchtip
-      SECRET_KEY: change_me
-      EMAIL_URL: smtp://mail:1025/?skip_ssl_verify=true
-      DEFAULT_FROM_EMAIL: glitchtip@example.com
-      GLITCHTIP_DOMAIN: https://glitchtip.localhost
-      PORT: 8000
-      ENABLE_OPEN_USER_REGISTRATION: "true"
-
-  glitchtip-worker:
-    <<: *service_defaults
-    image: glitchtip/glitchtip
-    command: celery -A glitchtip worker -B -l INFO
-    depends_on:
-      - glitchtip-migrate
-    environment:
-      DATABASE_URL: postgresql://glitchtip:glitchtip-pass@postgresd:5432/glitchtip
-      SECRET_KEY: change_me
-      EMAIL_URL: smtp://mail:1025/?skip_ssl_verify=true
-      GLITCHTIP_DOMAIN: https://glitchtip.localhost
-
-  # client-web-storybook:
-  #   # Uncomment to expose client-web-storybook directly
-  #   # ports:
-  #   #   - 6006:6006
-  #   build:
-  #     context: .
-  #     dockerfile: ./packages/client-web/dev.Dockerfile
-  #   command: ["yarn", "workspace", "client-web", "run", "storybook"]
-  #   volumes:
-  #     - type: bind
-  #       source: .
-  #       target: /var/saas-starter
-  #   networks:
-  #     - sass-starter-net

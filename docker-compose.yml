@@ -37,7 +37,7 @@ x-kratos-environment: &kratos_environment
 services:
   caddy:
     <<: *service_defaults
-    image: caddy:2.4.1
+    image: caddy:2
     ports:
       - "80:80"
       - "443:443"
@@ -133,7 +133,7 @@ services:
 
   api-server:
     <<: *service_defaults
-    image: node:16.3
+    image: node:16
     command: ["yarn", "workspace", "api-server", "run", "start:dev"]
     working_dir: /var/saas-starter
     depends_on:

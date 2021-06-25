@@ -9,9 +9,8 @@
 - (client-web) Better unit test coverage + enforce minimum
 - (client-web) Redirect after login
 - (client-web) Auth flow: verification
-- (client-web) Auth flow: settings
 - (client-web) Auth flow: recovery
-- (client-web) Handle flow request that fails (i.e. login flow requested when already logged in)
+- (client-web) Auth flow: make sure privileged_session_max_age works as expected (https://www.ory.sh/kratos/docs/self-service/flows/user-settings#updating-privileged-fields)
 - (client-web) Handle /sessions/whoami 401 response
 - (client-web) SVGs/images/icons (svgo)
 - (client-web) i11n

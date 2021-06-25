@@ -19,5 +19,5 @@ export const useRedirectOnLogin = ({ defaultLocation = "/" } = {}) => {
         }
       );
     }
-  }, [isSuccess, history, location.state?.from]);
+  }, [isSuccess, history, location.state?.from, defaultLocation]);
 };

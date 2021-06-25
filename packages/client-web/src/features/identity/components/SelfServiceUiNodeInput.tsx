@@ -2,6 +2,7 @@ import {
   Button,
   FormControl,
   FormErrorMessage,
+  FormHelperText,
   FormLabel,
   Input,
 } from "@chakra-ui/react";
@@ -45,6 +46,11 @@ export const SelfServiceUiNodeInput = ({
             disabled={attributes.disabled || isSubmitting}
           />
           {messages
+            ?.filter((message) => message.type === "info")
+            .map((message) => (
+              <FormHelperText key={message.id}>{message.text}</FormHelperText>
+            ))}
+          {messages
             ?.filter((message) => message.type === "error")
             .map((message) => (
               <FormErrorMessage key={message.id}>
@@ -68,25 +74,19 @@ export const SelfServiceUiNodeInput = ({
     //   );
     // }
     case "submit": {
-      // Since we intercept the button and submit via a `fetch` call,
-      // technically the submitter (the button, in this case) should not be
-      // included in the form data (Firefox follows the spec, but Chrome
-      // and Safari include it anyway). To ensure it's always included,
-      // this node will include an additional `hidden` input with that data.
       return (
-        <>
-          <input key="input" {...attributes} type="hidden" value={value} />
-          <Button
-            key="button"
-            mt={4}
-            colorScheme="blue"
-            type="submit"
-            isDisabled={attributes.disabled}
-            isLoading={isSubmitting}
-          >
-            {meta?.label.text || "Submit"}
-          </Button>
-        </>
+        <Button
+          {...attributes}
+          key="button"
+          mt={4}
+          colorScheme="blue"
+          type="submit"
+          isDisabled={attributes.disabled}
+          isLoading={isSubmitting}
+          value={value}
+        >
+          {meta?.label.text || "Submit"}
+        </Button>
       );
     }
     default:

@@ -183,7 +183,11 @@ export interface SelfServiceRegistrationFlow extends SelfServiceFlowCommon {
 export interface SelfServiceVerificationFlow extends SelfServiceFlowCommon {
   expires_at?: string;
   issued_at?: string;
-  state: string;
+
+  /**
+   * @see {@link https://github.com/ory/kratos/blob/master/selfservice/flow/verification/state.go}
+   */
+  state: "choose_method" | "sent_email" | "passed_challenge";
   type: "api" | "browser";
 }
 
@@ -193,7 +197,12 @@ export interface SelfServiceVerificationFlow extends SelfServiceFlowCommon {
 export interface SelfServiceRecoveryFlow extends SelfServiceFlowCommon {
   expires_at: string;
   issued_at: string;
-  state: string;
+
+  /**
+   * @see {@link https://github.com/ory/kratos/blob/master/selfservice/flow/recovery/state.go}
+   */
+
+  state: "choose_method" | "sent_email" | "passed_challenge";
   type?: "api" | "browser";
 }
 
@@ -204,7 +213,11 @@ export interface SelfServiceSettingsFlow extends SelfServiceFlowCommon {
   expires_at: string;
   identity: Identity;
   issued_at: string;
-  state: string;
+
+  /**
+   * @see {@link https://github.com/ory/kratos/blob/master/selfservice/flow/settings/state.go}
+   */
+  state: "show_form" | "success";
   type?: "api" | "browser";
 }
 

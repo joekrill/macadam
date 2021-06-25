@@ -27,6 +27,8 @@ selfservice:
   methods:
     password:
       enabled: true
+    profile:
+      enabled: true
 
   flows:
     error:

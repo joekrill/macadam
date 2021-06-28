@@ -68,4 +68,4 @@ export const identityApi = createApi({
   }),
 });
 
-export const { useWhoamiQuery } = identityApi;
+export const { useWhoamiQuery, useSubmitFlowMutation } = identityApi;

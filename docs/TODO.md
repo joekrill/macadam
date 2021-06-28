@@ -7,7 +7,6 @@
 - (api-server) Better koa context typing
 - (api-server) Better unit test coverage + enforce minimum
 - (client-web) Better unit test coverage + enforce minimum
-- (client-web) Redirect after login
 - (client-web) Auth flow: verification
 - (client-web) Auth flow: recovery
 - (client-web) Auth flow: make sure privileged_session_max_age works as expected (https://www.ory.sh/kratos/docs/self-service/flows/user-settings#updating-privileged-fields)
@@ -37,3 +36,4 @@
 - (docs) Better documentation (docusaurus?)
 - (payments) implement (stripe?)
 - (feature-toggles) implement (https://github.com/Unleash/unleash?)
+- set `noUncheckedIndexAccess` in tsconfig.json

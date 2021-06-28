@@ -1,6 +1,7 @@
 import {
   Alert,
   AlertIcon,
+  Box,
   Button,
   Container,
   Flex,
@@ -13,16 +14,21 @@ import { SelfServiceFlowType } from "../identityTypes";
 import { SelfServiceUi } from "./SelfServiceUi";
 
 export interface SelfServiceProps {
+  children?: ReactNode;
   flowType: SelfServiceFlowType;
   title?: ReactNode;
 }
 
-export const SelfService = ({ title, flowType }: SelfServiceProps) => {
+export const SelfService = ({
+  children,
+  title,
+  flowType,
+}: SelfServiceProps) => {
   const flowId = identityApi.useInitializeFlowQuery(flowType);
 
   return (
     <Card as={Container} maxW="container.sm">
-      <Heading as="h2" fontSize="xl">
+      <Heading as="h2" fontSize="2xl" mb={8}>
         {title}
       </Heading>
       {flowId.isError ? (
@@ -43,6 +49,7 @@ export const SelfService = ({ title, flowType }: SelfServiceProps) => {
       ) : (
         <SelfServiceUi flowId={flowId.data} flowType={flowType} />
       )}
+      <Box mt={8}>{children}</Box>
     </Card>
   );
 };

@@ -24,7 +24,9 @@ export const SelfService = ({
   title,
   flowType,
 }: SelfServiceProps) => {
-  const flowId = identityApi.useInitializeFlowQuery(flowType);
+  const flowId = identityApi.useInitializeFlowQuery(flowType, {
+    refetchOnMountOrArgChange: true,
+  });
 
   return (
     <Card as={Container} maxW="container.sm">

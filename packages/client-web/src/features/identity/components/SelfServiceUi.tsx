@@ -1,6 +1,6 @@
 import { Box, Spinner } from "@chakra-ui/react";
 import { identityApi, useWhoamiQuery } from "../identityApi";
-import { SelfServiceFlowType } from "../identityTypes";
+import { SelfServiceFlowType, SelfServiceRecoveryFlow } from "../identityTypes";
 import { SelfServiceUiMessage } from "./SelfServiceMessage";
 import { SelfServiceUiForm } from "./SelfServiceUiForm";
 
@@ -20,6 +20,11 @@ export const SelfServiceUi = ({ flowId, flowType }: SelfServiceUiProps) => {
 
   const ui = flowQuery.data?.ui;
 
+  // TODO: Refactor this logic so it lives elsewhere (in the <Recovery /> component?)
+  const hideForm =
+    flowType === "recovery" &&
+    (flowQuery.data as SelfServiceRecoveryFlow)?.state === "sent_email";
+
   // TODO: It may actually be better to break up the UI into multiple <forms />
   // based on each node's `group` (and including the "default" group nodes in
   // every form). Each group can have a distinct submit button and set of elements,
@@ -29,13 +34,15 @@ export const SelfServiceUi = ({ flowId, flowType }: SelfServiceUiProps) => {
   // being submitted.
   return flowId && ui ? (
     <>
-      <SelfServiceUiForm
-        ui={ui}
-        onSubmitComplete={() => {
-          flowQuery.refetch();
-          whoami.refetch();
-        }}
-      />
+      {!hideForm && (
+        <SelfServiceUiForm
+          ui={ui}
+          onSubmitComplete={() => {
+            flowQuery.refetch();
+            whoami.refetch();
+          }}
+        />
+      )}
       <Box mt={3}>
         {ui.messages?.map((message) => (
           <SelfServiceUiMessage key={message.id} message={message} />

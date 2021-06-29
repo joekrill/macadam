@@ -9,6 +9,10 @@
 - (client-web) Better unit test coverage + enforce minimum
 - (client-web) Auth flow: verification
 - (client-web) Auth flow: recovery
+- (client-web) Auth forms: auto-focus first field when rendering forms.
+- (client-web) Auth: add abilitiy to make password visible in forms
+- (client-web) Auth: password requirements hint (is this currently possible with Kratos?)
+- (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
 - (client-web) Auth flow: make sure privileged_session_max_age works as expected (https://www.ory.sh/kratos/docs/self-service/flows/user-settings#updating-privileged-fields)
 - (client-web) Handle /sessions/whoami 401 response
 - (client-web) SVGs/images/icons (svgo)

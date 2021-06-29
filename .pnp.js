@@ -7415,6 +7415,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/chakra-ui__system"
           ],
           "linkType": "HARD",
+        }],
+        ["virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.1.7", {
+          "packageLocation": "./.yarn/$$virtual/@chakra-ui-theme-tools-virtual-ad2bd80473/0/cache/@chakra-ui-theme-tools-npm-1.1.7-b25df89aa7-103bd9d80c.zip/node_modules/@chakra-ui/theme-tools/",
+          "packageDependencies": [
+            ["@chakra-ui/theme-tools", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.1.7"],
+            ["@chakra-ui/system", null],
+            ["@chakra-ui/utils", "npm:1.8.0"],
+            ["@types/chakra-ui__system", null],
+            ["@types/tinycolor2", "npm:1.4.2"],
+            ["tinycolor2", "npm:1.4.2"]
+          ],
+          "packagePeers": [
+            "@chakra-ui/system",
+            "@types/chakra-ui__system"
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["@chakra-ui/toast", [
@@ -16113,6 +16129,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["client-web", "workspace:packages/client-web"],
             ["@chakra-ui/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.6.4"],
+            ["@chakra-ui/theme-tools", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.1.7"],
             ["@emotion/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:11.4.0"],
             ["@emotion/styled", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:11.3.0"],
             ["@mdx-js/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.6.22"],

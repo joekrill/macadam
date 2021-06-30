@@ -43,7 +43,9 @@ services:
       - "443:443"
     volumes:
       - caddy_data:/data
-      - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - type: bind
+        source: ./services/caddy/Caddyfile
+        target: /etc/caddy/Caddyfile
 
   postgres:
     <<: *service_defaults
@@ -84,6 +86,9 @@ services:
     image: oryd/kratos:v0.6.3-alpha.1
     depends_on:
       - kratos-migrate
+    # ports:
+    #   - "4434:4434"
+    #   - "4433:4433"
     environment:
       <<: *kratos_environment
     command: serve -c /etc/config/kratos/kratos.yml --dev
@@ -93,7 +98,7 @@ services:
   kratos-courier:
     <<: *service_defaults
     image: oryd/kratos:v0.6.3-alpha.1
-    command: courier watch -c /etc/config/kratos/kratos.yml
+    command: courier watch  --expose-metrics-port 4434 -c /etc/config/kratos/kratos.yml
     depends_on:
       - kratos-migrate
     restart: on-failure

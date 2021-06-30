@@ -1,14 +1,5 @@
-# Extends docker-compose.yml, adding all additional, non-critical services:
-# - GlitchTip
-#
-# This can be rather resource intensive and isn't ideal for typical development
-# scenarios, but is useful when testing interaction with non-critical services.
-#
-# Usage: `docker compose -f docker-compose.yml -f docker-compose.complete.yml up`
-#
-# Note: this does not run Storybook, but including the `docker-compose.storybook.yml`
-# file can further be added to include that:
-# `docker compose -f docker-compose.yml -f docker-compose.complete.yml -f docker-compose.storybook.yml up`
+# Extends docker-compose.yml, adding GlitchTip for crash reporting
+# Usage: `docker compose -f docker-compose.yml -f docker-compose.glitchtip.yml up`
 
 version: "3.8"
 

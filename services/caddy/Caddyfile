@@ -13,10 +13,26 @@ storybook.localhost {
   reverse_proxy client-web-storybook:6006
 }
 
-kratos.localhost {
-  reverse_proxy kratos:4455
-}
-
 glitchtip.localhost {
   reverse_proxy glitchtip-web:8000
+}
+
+kratos.localhost {
+  reverse_proxy kratos:4433
+}
+
+kratos-admin.localhost {
+  reverse_proxy kratos:4434
+}
+
+kratos-courier.localhost {
+  reverse_proxy kratos-courier:4434
+}
+
+prometheus.localhost {
+  reverse_proxy prometheus:9090
+}
+
+grafana.localhost {
+  reverse_proxy grafana:3000
 }

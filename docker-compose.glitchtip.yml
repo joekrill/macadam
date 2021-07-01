@@ -16,14 +16,14 @@ services:
     <<: *service_defaults
     image: glitchtip/glitchtip
     depends_on:
-      - postgresd
+      - postgres
       - redis
     command: bash -c "./manage.py migrate && ./manage.py seed_saas_starter"
     restart: on-failure
     volumes:
       - ./services/glitchtip/commands/seed_saas_starter.py:/code/glitchtip/management/commands/seed_saas_starter.py
     environment:
-      DATABASE_URL: postgresql://glitchtip:glitchtip-pass@postgresd:5432/glitchtip
+      DATABASE_URL: postgresql://glitchtip:glitchtip-pass@postgres:5432/glitchtip
       SECRET_KEY: change_me
 
   glitchtip-web:
@@ -45,7 +45,7 @@ services:
           cpus: "0.0001"
           memory: 256M
     environment:
-      DATABASE_URL: postgresql://glitchtip:glitchtip-pass@postgresd:5432/glitchtip
+      DATABASE_URL: postgresql://glitchtip:glitchtip-pass@postgres:5432/glitchtip
       SECRET_KEY: change_me
       EMAIL_URL: smtp://mail:1025/?skip_ssl_verify=true
       DEFAULT_FROM_EMAIL: glitchtip@example.com
@@ -60,7 +60,7 @@ services:
     depends_on:
       - glitchtip-migrate
     environment:
-      DATABASE_URL: postgresql://glitchtip:glitchtip-pass@postgresd:5432/glitchtip
+      DATABASE_URL: postgresql://glitchtip:glitchtip-pass@postgres:5432/glitchtip
       SECRET_KEY: change_me
       EMAIL_URL: smtp://mail:1025/?skip_ssl_verify=true
       GLITCHTIP_DOMAIN: https://glitchtip.localhost

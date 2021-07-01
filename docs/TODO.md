@@ -26,7 +26,6 @@
 - (client-web) Pages: FAQ
 - (client-web) Storybook stories
 - (client-web) Logos
-- (kratos) enable metrics
 - (kratos) customize email templates
 - (kratos) use custom path for all kratos requests (i.e. /kratos/self-service/.. instead of /self-service)
 - (kratos) social logins
@@ -35,9 +34,7 @@
 - commitlint
 - eslint+prettier?
 - github templates: https://github.com/cezaraugusto/github-template-guidelines
-- (analytics) implement (Plausible?)
-- (metrics) implement (Prometheus + Grafana)
+- (metrics) add additional dashboards
 - (docs) Better documentation (docusaurus?)
 - (payments) implement (stripe?)
 - (feature-toggles) implement (https://github.com/Unleash/unleash?)
-- set `noUncheckedIndexAccess` in tsconfig.json

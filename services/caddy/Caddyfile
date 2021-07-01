@@ -29,6 +29,10 @@ kratos-courier.localhost {
   reverse_proxy kratos-courier:4434
 }
 
+plausible.localhost {
+  reverse_proxy plausible:8000
+}
+
 prometheus.localhost {
   reverse_proxy prometheus:9090
 }

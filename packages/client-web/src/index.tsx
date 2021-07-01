@@ -9,6 +9,7 @@ import ReactDOM from "react-dom";
 import { Provider as ReduxProvider } from "react-redux";
 import { App } from "./app/App";
 import { store } from "./app/store";
+import "./features/analytics";
 import { ErrorBoundary } from "./features/errors/components/ErrorBoundary";
 import { UnexpectedErrorPage } from "./features/errors/components/UnexpectedErrorPage/UnexpectedErrorPage";
 import { BrowserRouter } from "./features/history/BrowserRouter";

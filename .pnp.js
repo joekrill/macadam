@@ -16161,6 +16161,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-react-app", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:6.0.0"],
             ["framer-motion", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:4.1.17"],
             ["history", "npm:4.10.1"],
+            ["plausible-tracker", "npm:0.3.1"],
             ["react", "npm:17.0.2"],
             ["react-app-polyfill", "npm:2.0.0"],
             ["react-dom", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:17.0.2"],
@@ -27607,6 +27608,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["pkg-up", "npm:3.1.0"],
             ["find-up", "npm:3.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["plausible-tracker", [
+        ["npm:0.3.1", {
+          "packageLocation": "./.yarn/cache/plausible-tracker-npm-0.3.1-38eca118a2-51fe2a2b5b.zip/node_modules/plausible-tracker/",
+          "packageDependencies": [
+            ["plausible-tracker", "npm:0.3.1"]
           ],
           "linkType": "HARD",
         }]

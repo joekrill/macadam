@@ -3,23 +3,25 @@ import { Logger } from "pino";
 import { RequestIdState } from "../requestId/requestId";
 import { ResponseTimeState } from "../responseTime/responseTime";
 
-export interface LogState {
+export interface LoggingState {
   log: Logger;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }
 
-export interface LogOptions {
+export interface LoggingOptions {
   pathLevels: Record<string, "warn" | "info" | "debug" | "trace">;
 }
 
 export const logging =
   (
     baseLogger: Logger,
-    { pathLevels = {} }: Partial<LogOptions> = {}
-  ): Middleware<ResponseTimeState & RequestIdState & LogState> =>
+    { pathLevels = {} }: Partial<LoggingOptions> = {}
+  ): Middleware<ResponseTimeState & RequestIdState & LoggingState> =>
   async (
-    ctx: ParameterizedContext<ResponseTimeState & RequestIdState & LogState>,
+    ctx: ParameterizedContext<
+      ResponseTimeState & RequestIdState & LoggingState
+    >,
     next: () => Promise<void>
   ): Promise<void> => {
     if (!ctx.state.log) {

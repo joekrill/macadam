@@ -1,12 +1,6 @@
 import Router from "@koa/router";
 import compose from "koa-compose";
 
-let isTerminating = false;
-
-process.once("SIGTERM", () => {
-  isTerminating = true;
-});
-
 export interface HealthRoutesOptions {
   path: string;
 }
@@ -17,7 +11,7 @@ export const healthRoutes = ({ path }: HealthRoutesOptions) => {
   router.get("/", (ctx) => {
     ctx.state.excludeFromMetrics = true;
 
-    if (isTerminating || ctx.state.isTerminating === true) {
+    if (ctx.isTerminating || ctx.state.isTerminating === true) {
       ctx.status = 503;
       ctx.set("Connection", "close");
       return;

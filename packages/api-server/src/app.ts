@@ -32,10 +32,16 @@ export const createApp = async ({
   metricsPath = "/metrics",
   sentryDsn,
 }: AppOptions) => {
-  const app = new Koa();
+  const app = new Koa<{ isTerminating?: boolean }>();
+
+  app.on("shutdown", () => {
+    app.context.isTerminating = true;
+  });
+
+  process.on("SIGINT", () => app.emit("shutdown"));
+  process.on("SIGTERM", () => app.emit("shutdown"));
 
   if (sentryDsn) {
-    // TODO: Properly shutdown: https://docs.sentry.io/platforms/node/guides/koa/configuration/draining/
     Sentry.init({
       dsn: sentryDsn,
       environment,
@@ -49,9 +55,17 @@ export const createApp = async ({
         Sentry.captureException(err);
       });
     });
+
+    // TODO: Properly shutdown?: https://docs.sentry.io/platforms/node/guides/koa/configuration/draining/
+    app.on("shutdown", () => {
+      Sentry.close();
+    });
   }
 
   const orm = await MikroORM.init(ormConfig({ environment, clientUrl: dbUrl }));
+  app.on("shutdown", () => {
+    orm.close();
+  });
 
   app.use(
     logging(logger, {

@@ -53,7 +53,7 @@ if (typeof DB_URL !== "string") {
           ...addressInfo,
           environment,
         },
-        "GridTripper API server listening"
+        "SaaS Starter API server listening"
       );
     });
   } catch (error) {

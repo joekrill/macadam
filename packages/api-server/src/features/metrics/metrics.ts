@@ -5,31 +5,50 @@ import {
   collectDefaultMetrics,
   Counter,
   Histogram,
-  register,
+  Registry,
 } from "prom-client";
+import { ResponseTimeState } from "../responseTime/responseTime";
 
+export interface MetricsState {
+  /**
+   * When set to `true` (by some other middleware, for example), will cause
+   * a given request to not be included in metric collection.
+   */
+  excludeFromMetrics?: boolean;
+
+  /**
+   * The prometheus metrics registry for the current app middleware instance.
+   */
+  metricsRegister: Registry;
+}
 export interface MetricsRoutesOptions {
+  /**
+   * The URL path that should serve the metrics.
+   */
   path: string;
 }
 
 export const metricsRoutes = ({ path }: MetricsRoutesOptions) => {
   const router = new Router({ prefix: path });
 
-  router.get("/", async (ctx) => {
+  router.get("/", async (ctx: ParameterizedContext<MetricsState>) => {
     ctx.state.excludeFromMetrics = true;
-    ctx.set("Content-Type", register.contentType);
-    ctx.body = await register.metrics();
+    ctx.set("Content-Type", ctx.state.metricsRegister.contentType);
+    ctx.body = await ctx.state.metricsRegister.metrics();
   });
 
   return compose([router.routes(), router.allowedMethods()]);
 };
 
 export const metricsCollector = (): Middleware => {
-  collectDefaultMetrics();
+  const register = new Registry();
+  collectDefaultMetrics({ register });
+
   const httpRequestCount = new Counter({
     name: "http_requests_total",
     help: "Number of HTTP requests",
     labelNames: ["method", "code"],
+    registers: [register],
   });
 
   const httpRequestDurationSeconds = new Histogram({
@@ -37,12 +56,14 @@ export const metricsCollector = (): Middleware => {
     help: "Duration of HTTP requests in seconds",
     labelNames: ["code", "path"],
     buckets: [0.01, 0.1, 0.25, 0.5, 1, 1.5, 5, 10],
+    registers: [register],
   });
 
   return async (
-    ctx: ParameterizedContext,
+    ctx: ParameterizedContext<MetricsState & ResponseTimeState>,
     next: () => Promise<void>
   ): Promise<void> => {
+    ctx.state.metricsRegister = register;
     await next();
 
     if (ctx.state.excludeFromMetrics) {
@@ -57,6 +78,5 @@ export const metricsCollector = (): Middleware => {
       },
       ctx.state.responseTime / 1000
     );
-    console.log("DONE");
   };
 };

@@ -5889,6 +5889,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/cookiejar@npm:*":
+  version: 2.1.2
+  resolution: "@types/cookiejar@npm:2.1.2"
+  checksum: 4bb5d0d07e5df5866b96d20592d25075ef47a699ec6d8ac87b0f6ebec4bb30aa548b51fbbc908580ea2274e7ef0c55e25d564399751dfef70e811d04b7958280
+  languageName: node
+  linkType: hard
+
 "@types/cookies@npm:*":
   version: 0.7.6
   resolution: "@types/cookies@npm:0.7.6"
@@ -6509,6 +6516,25 @@ __metadata:
   version: 2.0.0
   resolution: "@types/stack-utils@npm:2.0.0"
   checksum: 662312302e07685c99a1c45c6753eb997b31d2af66e646c5937f62d593a63a111289503d0b06a8d1e6f3922b67fc2ed94889d84653a08861a7fee67b81ce5b92
+  languageName: node
+  linkType: hard
+
+"@types/superagent@npm:*":
+  version: 4.1.11
+  resolution: "@types/superagent@npm:4.1.11"
+  dependencies:
+    "@types/cookiejar": "*"
+    "@types/node": "*"
+  checksum: 301b21d5d3e741dec92bffbe6824f0c677f4b9b8eea6213aa838cb4941b56e58f37a75a16ffaa4d6326d1a88f5153e255ba4bfd60de293bc443f662a6900d8e6
+  languageName: node
+  linkType: hard
+
+"@types/supertest@npm:^2.0.11":
+  version: 2.0.11
+  resolution: "@types/supertest@npm:2.0.11"
+  dependencies:
+    "@types/superagent": "*"
+  checksum: a4b001038d8972d9efbfe73590961718f59923ed9c44356a0280e7a042dd1862cc9ea4c8a5c1ef3f7813f25e8b3b0b483bdafec089efe544c12207763c8ea6b1
   languageName: node
   linkType: hard
 
@@ -7349,6 +7375,7 @@ __metadata:
     "@types/koa__router": ^8.0.4
     "@types/node": ^15.12.5
     "@types/pino": ^6.3.8
+    "@types/supertest": ^2.0.11
     "@types/uuid": ^8.3.0
     jest: ^27.0.6
     koa: ^2.13.1
@@ -7359,6 +7386,7 @@ __metadata:
     pino: ^6.11.3
     pino-pretty: ^5.1.0
     prom-client: ^13.1.0
+    supertest: ^6.1.3
     ts-jest: ^27.0.3
     ts-node: ^10.0.0
     typescript: ^4.3.5
@@ -9423,7 +9451,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"component-emitter@npm:^1.2.1":
+"component-emitter@npm:^1.2.1, component-emitter@npm:^1.3.0":
   version: 1.3.0
   resolution: "component-emitter@npm:1.3.0"
   checksum: fc4edbf1014f0aed88dcec33ca02d2938734e428423f640d8a3f94975615b8e8c506c19e29b93949637c5a281353e75fa79e299e0d57732f42a9fe346cb2cad6
@@ -9602,6 +9630,13 @@ __metadata:
   version: 0.4.1
   resolution: "cookie@npm:0.4.1"
   checksum: b8e0928e3e7aba013087974b33a6eec730b0a68b7ec00fc3c089a56ba2883bcf671252fc2ed64775aa1ca64796b6e1f6fdddba25a66808aef77614d235fd3e06
+  languageName: node
+  linkType: hard
+
+"cookiejar@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "cookiejar@npm:2.1.2"
+  checksum: 4c733c15c190798bc1fb724f3044959cabc1565dee7dfc00f99219c7a4189b21cc243ccab52e0708994923f684189a4afa6b01b6b157f8c99273f1001602ac6f
   languageName: node
   linkType: hard
 
@@ -12402,6 +12437,13 @@ __metadata:
   version: 0.2.2
   resolution: "format@npm:0.2.2"
   checksum: 0740f5212144e63dad4b3b2156d84a875c0649f4976ecfa91f21b086ad007e9af575e88cf782b202c5f5783fb6d4ee3cebcd357b79aa82d556f8401dc1762f55
+  languageName: node
+  linkType: hard
+
+"formidable@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "formidable@npm:1.2.2"
+  checksum: 9fe5ef38d5881ac16cc8ca78bd3229fbf32b10e0fd3b718ec20f86ea1de7302aa0ffcfa9a9163cec02fc3f825faf9d0533f24539bb20ae6d73b580b526c25edb
   languageName: node
   linkType: hard
 
@@ -17151,7 +17193,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"mime@npm:^2.4.4":
+"mime@npm:^2.4.4, mime@npm:^2.4.6":
   version: 2.5.2
   resolution: "mime@npm:2.5.2"
   bin:
@@ -20245,7 +20287,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"qs@npm:^6.10.0, qs@npm:^6.5.2":
+"qs@npm:^6.10.0, qs@npm:^6.5.2, qs@npm:^6.9.4":
   version: 6.10.1
   resolution: "qs@npm:6.10.1"
   dependencies:
@@ -23029,6 +23071,35 @@ resolve@^2.0.0-next.3:
   version: 4.0.9
   resolution: "stylis@npm:4.0.9"
   checksum: 2cc2f8c023356c61bd41a985066cf750c982b7d0041cd62c80a2ee77c895098207136e1c2f8a1f5f5ec9cf80d90b1e9fd83230c848f25508a5e3686b6a59242d
+  languageName: node
+  linkType: hard
+
+"superagent@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "superagent@npm:6.1.0"
+  dependencies:
+    component-emitter: ^1.3.0
+    cookiejar: ^2.1.2
+    debug: ^4.1.1
+    fast-safe-stringify: ^2.0.7
+    form-data: ^3.0.0
+    formidable: ^1.2.2
+    methods: ^1.1.2
+    mime: ^2.4.6
+    qs: ^6.9.4
+    readable-stream: ^3.6.0
+    semver: ^7.3.2
+  checksum: bc21d32d9dd1dd0e33df5f5e112e6796b010ae08d4402d61cc232de6204c8fb5aaa04ed717873c217e033fc80e7c2578aa4f1b607feec54627a5f724805c1e5b
+  languageName: node
+  linkType: hard
+
+"supertest@npm:^6.1.3":
+  version: 6.1.3
+  resolution: "supertest@npm:6.1.3"
+  dependencies:
+    methods: ^1.1.2
+    superagent: ^6.1.0
+  checksum: 4a3e07881952e54ada2b67be59a91d5222b0b36410b1f23fb363fc45a956aa5a82b7a1a9a33c90a63e3cac4222b3313d41398c85fe04d9f8a7f7757bd15b370b
   languageName: node
   linkType: hard
 

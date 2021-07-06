@@ -13,14 +13,56 @@ import { ormConfig } from "./features/orm/config";
 import { entityManager } from "./features/orm/entityManager";
 import { requestId } from "./features/requestId/requestId";
 import { responseTime } from "./features/responseTime/responseTime";
+
 export interface AppOptions {
+  /**
+   * The base path to use for API endpoints.
+   */
   apiPath?: string;
+
+  /**
+   * The database URL.
+   */
   dbUrl: string;
+
+  /**
+   * The current runtime envinroment ("development", "production", etc.)
+   */
   environment?: string;
+
+  /**
+   * The logging instance to use for writing messages.
+   */
   logger: Logger;
+
+  /**
+   * The endpoint for health status.
+   */
   healthPath?: string;
+
+  /**
+   * The path to serve Prometheus-style metrics from
+   */
   metricsPath?: string;
+
+  /**
+   * The URL of the Sentry instance to send crash reports to.
+   */
   sentryDsn?: string;
+
+  /**
+   * The default amount of time (in milliseconds) to give the application
+   * to shutdown before forcefully exiting.
+   */
+  defaultShutdownWaitMs?: number;
+}
+
+export interface AppInstance extends Koa {
+  /**
+   * Gracefully shuts down the app instance, waiting a maximum of `waitMs`
+   * milliseconds before forcefully stopping.
+   */
+  shutdown: (exitcode?: number, waitMs?: number) => Promise<void>;
 }
 
 export const createApp = async ({
@@ -31,15 +73,52 @@ export const createApp = async ({
   healthPath = "/health",
   metricsPath = "/metrics",
   sentryDsn,
+  defaultShutdownWaitMs = 15000,
 }: AppOptions) => {
-  const app = new Koa<{ isTerminating?: boolean }>();
+  const app = new Koa() as AppInstance;
+
+  /**
+   * Gracefully shuts down the application, closing any open connections, etc,
+   * and calling `process.exit` on completion if an `exitCode` was provided.
+   * @param exitCode
+   * @param waitMs
+   */
+  app.shutdown = async (
+    exitCode?: number,
+    waitMs: number = defaultShutdownWaitMs
+  ) => {
+    let shutdownTimeout: NodeJS.Timeout | undefined = undefined;
+    try {
+      await Promise.race([
+        // Ideally let any processes cleanup and shutdown.
+        Promise.all(app.listeners("shutdown").map((listener) => listener())),
+
+        // This provides a maximum wait time for the above -- after `maxWait`
+        // this will resolve and win the `Promise.race`.
+        new Promise((resolve) => {
+          shutdownTimeout = setTimeout(resolve, waitMs);
+        }),
+      ]);
+    } finally {
+      clearTimeout(shutdownTimeout);
+      if (exitCode !== undefined) {
+        process.exit(exitCode);
+      }
+    }
+  };
 
   app.on("shutdown", () => {
     app.context.isTerminating = true;
   });
 
-  process.on("SIGINT", () => app.emit("shutdown"));
-  process.on("SIGTERM", () => app.emit("shutdown"));
+  // Intercept shutdowns so we can allow any listeners to cleanup,
+  // but maintain exit codes.
+  process.on("exit", (code) => app.shutdown(code));
+  process.on("SIGHUP", () => app.shutdown(128 + 1));
+  process.on("SIGINT", () => app.shutdown(128 + 2));
+  process.on("SIGQUIT", () => app.shutdown(128 + 3));
+  process.on("SIGTERM", () => app.shutdown(128 + 15));
+  process.on("SIGBREAK", () => app.shutdown(128 + 21)); // Windows only
 
   if (sentryDsn) {
     Sentry.init({
@@ -56,15 +135,15 @@ export const createApp = async ({
       });
     });
 
-    // TODO: Properly shutdown?: https://docs.sentry.io/platforms/node/guides/koa/configuration/draining/
-    app.on("shutdown", () => {
-      Sentry.close();
+    app.on("shutdown", async () => {
+      // See: https://docs.sentry.io/platforms/node/guides/koa/configuration/draining/
+      await Sentry.close();
     });
   }
 
   const orm = await MikroORM.init(ormConfig({ environment, clientUrl: dbUrl }));
-  app.on("shutdown", () => {
-    orm.close();
+  app.on("shutdown", async () => {
+    await orm.close();
   });
 
   app.use(

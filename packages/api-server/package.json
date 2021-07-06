@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "build/server.js",
   "scripts": {
-    "start:dev": "nodemon --watch src -e ts,tsx --exec ts-node src/server.ts | pino-pretty",
+    "start:dev": "nodemon --signal SIGTERM --watch src -e ts,tsx --exec ts-node src/server.ts | pino-pretty",
     "start": "node build/server.js",
     "build": "tsc",
     "test": "jest",

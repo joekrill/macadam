@@ -3,7 +3,7 @@ import { DefaultContext, Middleware, ParameterizedContext } from "koa";
 import { v4 } from "uuid";
 import { requestId, RequestIdState } from "./requestId";
 
-jest.mock("uuid");
+jest.unmock("./requestId");
 
 const v4UuidMock = v4 as jest.Mock;
 

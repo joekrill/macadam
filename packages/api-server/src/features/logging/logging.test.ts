@@ -5,6 +5,8 @@ import { RequestIdState } from "../requestId/requestId";
 import { ResponseTimeState } from "../responseTime/responseTime";
 import { logging, LoggingState } from "./logging";
 
+jest.unmock("./logging");
+
 describe("logging", () => {
   let loggingMiddleware: Middleware<
     ResponseTimeState & RequestIdState & LoggingState

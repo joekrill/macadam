@@ -1,12 +1,17 @@
 import Router from "@koa/router";
 import compose from "koa-compose";
+import { MetricsState } from "../metrics/metrics";
+
+export interface HealthState {
+  isTerminating?: boolean;
+}
 
 export interface HealthRoutesOptions {
   path: string;
 }
 
 export const healthRoutes = ({ path }: HealthRoutesOptions) => {
-  const router = new Router({ prefix: path });
+  const router = new Router<HealthState & MetricsState>({ prefix: path });
 
   router.get("/", (ctx) => {
     ctx.state.excludeFromMetrics = true;

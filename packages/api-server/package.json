@@ -9,6 +9,8 @@
     "test": "jest",
     "test:coverage": "jest --collect-coverage",
     "test:watch": "jest --watch",
+    "test:unit": "jest --projects test/unit",
+    "test:integration": "jest --projects test/integration",
     "migrate:up": "mikro-orm migration:up",
     "migrate:create": "mikro-orm migration:create"
   },

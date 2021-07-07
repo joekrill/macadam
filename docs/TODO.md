@@ -2,8 +2,7 @@
 - (api-server) Error handling (http-errors? Boom?)
 - (api-server, client-web) Choose validation framework (https://github.com/moltar/typescript-runtime-type-benchmarks)
 - (api-server) Figure out `contentSecurityPolicy` for `helmet`
-- (api-server) Readiness vs liveliness probes
-- (api-server) Better koa context typing
+- (api-server) Example protected api endpoint (UserPreferences?)
 - (api-server) Better unit test coverage + enforce minimum
 - (client-web) Better unit test coverage + enforce minimum
 - (client-web) Auth flow: verification

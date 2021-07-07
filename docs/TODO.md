@@ -37,3 +37,4 @@
 - (docs) Better documentation (docusaurus?)
 - (payments) implement (stripe?)
 - (feature-toggles) implement (https://github.com/Unleash/unleash?)
+- production/staging kubernetes deployments

@@ -1,10 +1,10 @@
-import { Context, Middleware } from "koa";
+import { Middleware } from "koa";
 
 const NANOSECONDS_PER_MILLISECOND = 1000000;
 const MILLISECOND_PER_SECOND = 1000;
 
 export interface ResponseTimeState {
-  responseTime: number;
+  responseTime?: number;
 }
 
 /**
@@ -13,8 +13,9 @@ export interface ResponseTimeState {
  * in milliseconds.
  */
 
-export const responseTime = (): Middleware<ResponseTimeState> => {
-  return async (ctx: Context, next: () => Promise<void>): Promise<void> => {
+export const responseTime =
+  (): Middleware =>
+  async (ctx, next: () => Promise<void>): Promise<void> => {
     const start = process.hrtime();
     try {
       await next();
@@ -27,4 +28,3 @@ export const responseTime = (): Middleware<ResponseTimeState> => {
       ctx.set("Response-Time", `${Math.round(ctx.state.responseTime)}ms`);
     }
   };
-};

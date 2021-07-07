@@ -1,24 +1,16 @@
 import { createMockContext } from "@shopify/jest-koa-mocks";
-import { DefaultContext, Middleware, ParameterizedContext } from "koa";
+import { Middleware, ParameterizedContext } from "koa";
 import { Logger } from "pino";
-import { RequestIdState } from "../requestId/requestId";
-import { ResponseTimeState } from "../responseTime/responseTime";
-import { logging, LoggingState } from "./logging";
+import { logging } from "./logging";
 
 jest.unmock("./logging");
 
 describe("logging", () => {
-  let loggingMiddleware: Middleware<
-    ResponseTimeState & RequestIdState & LoggingState
-  >;
+  let loggingMiddleware: Middleware;
   let baseLoggerMock: jest.Mocked<Logger>;
   let childLoggerMock: jest.Mocked<Logger>;
   const nextMock = jest.fn();
-  let contextMock: ParameterizedContext<
-    ResponseTimeState & RequestIdState & LoggingState,
-    DefaultContext,
-    any
-  >;
+  let contextMock: ParameterizedContext;
 
   beforeEach(() => {
     childLoggerMock = {

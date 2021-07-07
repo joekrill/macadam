@@ -13,13 +13,18 @@ export interface RequestIdState {
  * is taken from that; otherwise a unique UUID is generated automatically.
  */
 export const requestId =
-  (): Middleware<RequestIdState> =>
+  (): Middleware =>
   async (ctx: Context, next: () => Promise<void>): Promise<void> => {
     if (!ctx.state.requestId) {
-      ctx.state.requestId =
+      const incomingRequestIdHeader =
         ctx.request.headers["request-id"] ||
-        ctx.request.headers["x-request-id"] ||
-        v4();
+        ctx.request.headers["x-request-id"];
+
+      const incomingRequestId = Array.isArray(incomingRequestIdHeader)
+        ? incomingRequestIdHeader[0]
+        : incomingRequestIdHeader;
+
+      ctx.state.requestId = incomingRequestId || v4();
     }
 
     ctx.set("Request-ID", ctx.state.requestId);

@@ -1,5 +1,5 @@
 import Router from "@koa/router";
-import { Middleware, ParameterizedContext } from "koa";
+import { Context, DefaultState, Middleware, ParameterizedContext } from "koa";
 import compose from "koa-compose";
 import {
   collectDefaultMetrics,
@@ -19,7 +19,7 @@ export interface MetricsState {
   /**
    * The prometheus metrics registry for the current app middleware instance.
    */
-  metricsRegister: Registry;
+  metricsRegister?: Registry;
 }
 export interface MetricsRoutesOptions {
   /**
@@ -29,12 +29,17 @@ export interface MetricsRoutesOptions {
 }
 
 export const metricsRoutes = ({ path }: MetricsRoutesOptions) => {
-  const router = new Router({ prefix: path });
+  const router = new Router<DefaultState, Context>({ prefix: path });
 
-  router.get("/", async (ctx: ParameterizedContext<MetricsState>) => {
+  router.get("/", async (ctx) => {
     ctx.state.excludeFromMetrics = true;
-    ctx.set("Content-Type", ctx.state.metricsRegister.contentType);
-    ctx.body = await ctx.state.metricsRegister.metrics();
+
+    if (ctx.state.metricsRegister) {
+      ctx.set("Content-Type", ctx.state.metricsRegister.contentType);
+      ctx.body = await ctx.state.metricsRegister.metrics();
+    } else {
+      ctx.throw(500, "metricsRegister not defined on state");
+    }
   });
 
   return compose([router.routes(), router.allowedMethods()]);
@@ -71,12 +76,15 @@ export const metricsCollector = (): Middleware => {
     }
 
     httpRequestCount.inc({ method: ctx.method, code: ctx.status });
-    httpRequestDurationSeconds.observe(
-      {
-        code: String(ctx.status),
-        path: ctx.path,
-      },
-      ctx.state.responseTime / 1000
-    );
+
+    if (ctx.state.responseTime !== undefined) {
+      httpRequestDurationSeconds.observe(
+        {
+          code: String(ctx.status),
+          path: ctx.path,
+        },
+        ctx.state.responseTime / 1000
+      );
+    }
   };
 };

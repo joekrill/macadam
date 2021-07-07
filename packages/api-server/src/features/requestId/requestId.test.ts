@@ -1,16 +1,16 @@
 import { createMockContext } from "@shopify/jest-koa-mocks";
-import { DefaultContext, Middleware, ParameterizedContext } from "koa";
+import { Middleware, ParameterizedContext } from "koa";
 import { v4 } from "uuid";
-import { requestId, RequestIdState } from "./requestId";
+import { requestId } from "./requestId";
 
 jest.unmock("./requestId");
 
 const v4UuidMock = v4 as jest.Mock;
 
 describe("requestId", () => {
-  let instance: Middleware<RequestIdState>;
+  let instance: Middleware;
   const nextMock = jest.fn();
-  let contextMock: ParameterizedContext<RequestIdState, DefaultContext, any>;
+  let contextMock: ParameterizedContext;
   const mockUuid = "a41e1b45-f819-4daa-b41a-3e1594506bd3";
 
   beforeEach(() => {

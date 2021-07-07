@@ -1,8 +1,8 @@
 import { EntityManager, MikroORM } from "@mikro-orm/core";
-import { Middleware, ParameterizedContext } from "koa";
+import { Middleware } from "koa";
 
 export interface EntityManagerState {
-  entityManager: EntityManager;
+  entityManager?: EntityManager;
 }
 
 export interface EntityManagerOptions {
@@ -10,11 +10,8 @@ export interface EntityManagerOptions {
 }
 
 export const entityManager =
-  ({ orm }: EntityManagerOptions): Middleware<Partial<EntityManagerState>> =>
-  async (
-    ctx: ParameterizedContext<Partial<EntityManagerState>>,
-    next: () => Promise<void>
-  ): Promise<void> => {
+  ({ orm }: EntityManagerOptions): Middleware =>
+  async (ctx, next): Promise<void> => {
     ctx.state.entityManager = orm.em.fork(true);
     await next();
     await ctx.state.entityManager.flush();

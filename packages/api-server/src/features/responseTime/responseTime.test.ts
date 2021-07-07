@@ -1,13 +1,13 @@
 import { createMockContext } from "@shopify/jest-koa-mocks";
-import { DefaultContext, Middleware, ParameterizedContext } from "koa";
-import { responseTime, ResponseTimeState } from "./responseTime";
+import { Middleware, ParameterizedContext } from "koa";
+import { responseTime } from "./responseTime";
 
 jest.unmock("./responseTime");
 
 describe("responseTime", () => {
-  let instance: Middleware<ResponseTimeState>;
+  let instance: Middleware;
   const nextMock = jest.fn();
-  let contextMock: ParameterizedContext<ResponseTimeState, DefaultContext, any>;
+  let contextMock: ParameterizedContext;
 
   beforeEach(() => {
     instance = responseTime();

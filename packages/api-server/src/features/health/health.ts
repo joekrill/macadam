@@ -1,23 +1,24 @@
 import Router from "@koa/router";
+import { Context, DefaultState } from "koa";
 import compose from "koa-compose";
-import { MetricsState } from "../metrics/metrics";
 
-export interface HealthState {
-  isTerminating?: boolean;
-}
+export interface HealthState {}
 
 export interface HealthRoutesOptions {
   path: string;
 }
 
 export const healthRoutes = ({ path }: HealthRoutesOptions) => {
-  const router = new Router<HealthState & MetricsState>({ prefix: path });
+  const router = new Router<DefaultState, Context>({
+    prefix: path,
+  });
 
   router.get("/", (ctx) => {
     ctx.state.excludeFromMetrics = true;
 
-    if (ctx.isTerminating || ctx.state.isTerminating === true) {
+    if (ctx.isTerminating) {
       ctx.status = 503;
+      ctx.body = { status: "terminating" };
       ctx.set("Connection", "close");
       return;
     }

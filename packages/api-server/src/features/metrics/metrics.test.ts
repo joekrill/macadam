@@ -1,7 +1,7 @@
 import { createMockContext } from "@shopify/jest-koa-mocks";
-import { DefaultContext, Middleware, ParameterizedContext } from "koa";
+import { Middleware, ParameterizedContext } from "koa";
 import { Counter, Histogram, Registry } from "prom-client";
-import { metricsCollector, MetricsState } from "./metrics";
+import { metricsCollector } from "./metrics";
 
 jest.unmock("./metrics");
 
@@ -10,8 +10,8 @@ const RegistryMock = Registry as unknown as jest.Mock<Registry>;
 describe("metrics", () => {
   describe("metricsCollector", () => {
     describe("initialization", () => {
-      let instance: Middleware<MetricsState>;
-      let contextMock: ParameterizedContext<MetricsState, DefaultContext, any>;
+      let instance: Middleware;
+      let contextMock: ParameterizedContext;
 
       beforeEach(() => {
         instance = metricsCollector();

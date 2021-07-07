@@ -6303,17 +6303,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^15.14.1":
-  version: 15.14.1
-  resolution: "@types/node@npm:15.14.1"
-  checksum: 6340f64e439381a4843ac9d8087d92370caf5fac44b296d83ddb93f0212a9f8ac3ca80b38958519dac4b104d7aa8e75e4a5ae8c3fce3b1bd3cc2c86c2a9bc8b9
-  languageName: node
-  linkType: hard
-
 "@types/node@npm:^15.3.0":
   version: 15.12.2
   resolution: "@types/node@npm:15.12.2"
   checksum: 26b9170eb825656751955e919dcea7963d1be4d1eba361c67e41b51a55436c51d69d63f49ee98aaf4fe2e0e5eb3c0038408a8f542316b7583e9badf4fdd10024
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^16.0.1":
+  version: 16.0.1
+  resolution: "@types/node@npm:16.0.1"
+  checksum: 0f3d559689763cef9c2cf593a9190ead7adc8b71aeaef5c446bda96a781c22e39806780ee240c7272dddf01b82008d84e49a4298fba88b6d7726af76f00fc3ad
   languageName: node
   linkType: hard
 
@@ -7464,7 +7464,7 @@ __metadata:
     "@types/koa-compose": ^3.2.5
     "@types/koa__cors": ^3.0.3
     "@types/koa__router": ^8.0.5
-    "@types/node": ^15.14.1
+    "@types/node": ^16.0.1
     "@types/pino": ^6.3.9
     "@types/supertest": ^2.0.11
     "@types/uuid": ^8.3.1
@@ -9264,7 +9264,7 @@ __metadata:
     "@testing-library/user-event": ^13.1.9
     "@types/history": ^4.7.9
     "@types/jest": ^26.0.24
-    "@types/node": ^15.14.1
+    "@types/node": ^16.0.1
     "@types/react": ^17.0.14
     "@types/react-dom": ^17.0.9
     "@types/react-redux": ^7.1.17

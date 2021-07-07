@@ -12838,10 +12838,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:15.14.1", {
-          "packageLocation": "./.yarn/cache/@types-node-npm-15.14.1-991c0e1117-6340f64e43.zip/node_modules/@types/node/",
+        ["npm:16.0.1", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-16.0.1-e58d8b2b2f-0f3d559689.zip/node_modules/@types/node/",
           "packageDependencies": [
-            ["@types/node", "npm:15.14.1"]
+            ["@types/node", "npm:16.0.1"]
           ],
           "linkType": "HARD",
         }]
@@ -14234,7 +14234,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/koa-compose", "npm:3.2.5"],
             ["@types/koa__cors", "npm:3.0.3"],
             ["@types/koa__router", "npm:8.0.5"],
-            ["@types/node", "npm:15.14.1"],
+            ["@types/node", "npm:16.0.1"],
             ["@types/pino", "npm:6.3.9"],
             ["@types/supertest", "npm:2.0.11"],
             ["@types/uuid", "npm:8.3.1"],
@@ -16531,7 +16531,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/user-event", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:13.1.9"],
             ["@types/history", "npm:4.7.9"],
             ["@types/jest", "npm:26.0.24"],
-            ["@types/node", "npm:15.14.1"],
+            ["@types/node", "npm:16.0.1"],
             ["@types/react", "npm:17.0.14"],
             ["@types/react-dom", "npm:17.0.9"],
             ["@types/react-redux", "npm:7.1.17"],
@@ -33826,7 +33826,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node12", "npm:1.0.8"],
             ["@tsconfig/node14", "npm:1.0.1"],
             ["@tsconfig/node16", "npm:1.0.1"],
-            ["@types/node", "npm:15.14.1"],
+            ["@types/node", "npm:16.0.1"],
             ["@types/swc__core", null],
             ["@types/swc__wasm", null],
             ["@types/types__node", null],

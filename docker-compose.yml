@@ -123,7 +123,7 @@ services:
 
   api-server-migrate:
     <<: *service_defaults
-    image: node:16.3
+    image: node:16.4
     command: ["yarn", "workspace", "api-server", "run", "migrate:up"]
     working_dir: /var/saas-starter
     depends_on:
@@ -138,7 +138,7 @@ services:
 
   api-server:
     <<: *service_defaults
-    image: node:16
+    image: node:16.4
     command: ["yarn", "workspace", "api-server", "run", "start:dev"]
     working_dir: /var/saas-starter
     depends_on:

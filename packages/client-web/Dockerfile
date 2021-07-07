@@ -1,6 +1,6 @@
 # This is expected to be used in the context of the repo root directory
 
-FROM node:16.3 AS builder
+FROM node:16.4 AS builder
 
 WORKDIR /opt/saas-starter
 COPY . .

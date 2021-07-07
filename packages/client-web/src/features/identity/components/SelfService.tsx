@@ -8,7 +8,7 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
-import { Card } from "../../common/components/Card";
+import { Card } from "../../common/components/Card/Card";
 import { identityApi } from "../identityApi";
 import { SelfServiceFlowType } from "../identityTypes";
 import { SelfServiceUi } from "./SelfServiceUi";

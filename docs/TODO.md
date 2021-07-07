@@ -38,3 +38,4 @@
 - (payments) implement (stripe?)
 - (feature-toggles) implement (https://github.com/Unleash/unleash?)
 - production/staging kubernetes deployments
+- Mobile app (react-native)

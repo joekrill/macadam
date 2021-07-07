@@ -1,6 +1,6 @@
 import {
-  Box,
-  BoxProps,
+  Container,
+  ContainerProps,
   Heading,
   Link,
   ListItem,
@@ -8,8 +8,9 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
+import { ScrollToTop } from "../../common/components/ScrollToTop/ScrollToTop";
 
-export interface PrivacyPolicyProps extends BoxProps {}
+export interface PrivacyPolicyProps extends ContainerProps {}
 
 /**
  * Generated using TermsFeed
@@ -17,7 +18,8 @@ export interface PrivacyPolicyProps extends BoxProps {}
  * @see {@link https://www.termsfeed.com/live/85bdfba8-08d8-4ba2-9c9c-d0db3ec06ec7}
  */
 export const PrivacyPolicy = (props: PrivacyPolicyProps) => (
-  <Box p={3} {...props}>
+  <Container p={3} {...props}>
+    <ScrollToTop />
     <Heading as="h1">Privacy Policy</Heading>
     <Text as="i">Last updated: June 19, 2021</Text>
     <Text>
@@ -526,5 +528,5 @@ export const PrivacyPolicy = (props: PrivacyPolicyProps) => (
         </Text>
       </ListItem>
     </UnorderedList>
-  </Box>
+  </Container>
 );

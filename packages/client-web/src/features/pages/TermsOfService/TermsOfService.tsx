@@ -1,6 +1,6 @@
 import {
-  Box,
-  BoxProps,
+  Container,
+  ContainerProps,
   Heading,
   Link,
   ListItem,
@@ -8,8 +8,9 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
+import { ScrollToTop } from "../../common/components/ScrollToTop/ScrollToTop";
 
-export interface TermsOfServiceProps extends BoxProps {}
+export interface TermsOfServiceProps extends ContainerProps {}
 
 /**
  * Generated using TermsFeed
@@ -17,7 +18,8 @@ export interface TermsOfServiceProps extends BoxProps {}
  * @see {@link https://www.termsfeed.com/live/c6fd0934-922e-43a1-97e3-5f53e4ba0625}
  */
 export const TermsOfService = (props: TermsOfServiceProps) => (
-  <Box p={3} {...props}>
+  <Container p={3} {...props}>
+    <ScrollToTop />
     <Heading as="h1">Terms and Conditions</Heading>
     <Text as="i">Last updated: June 20, 2021</Text>
     <Text>
@@ -344,5 +346,5 @@ export const TermsOfService = (props: TermsOfServiceProps) => (
         </Text>
       </ListItem>
     </UnorderedList>
-  </Box>
+  </Container>
 );

@@ -87,7 +87,7 @@ export const createApp = async ({
     exitCode?: number,
     waitMs: number = defaultShutdownWaitMs
   ) => {
-    let shutdownTimeout: NodeJS.Timeout | undefined = undefined;
+    let shutdownTimeout: NodeJS.Timeout | number | undefined = undefined;
     try {
       await Promise.race([
         // Ideally let any processes cleanup and shutdown.

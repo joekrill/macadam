@@ -1,6 +1,4 @@
-import { BoxProps } from "@chakra-ui/react";
-
-export interface UnexpectedErrorPageProps extends BoxProps {
+export interface UnexpectedErrorPageProps {
   eventId: string;
   error: Error;
   componentStack: string;
@@ -8,9 +6,12 @@ export interface UnexpectedErrorPageProps extends BoxProps {
 }
 
 /**
- * A low level error page to display for unknown errors
- * Do not rely on Chakra components and theme styling here, as this is meant
- * to be a base level error page that is rendered before the ChakraProvider.
+ * A low level error page to display for unknown errors:
+ *
+ * - Do not rely on Chakra components and theme styling here, as this is meant
+ *   to be a base level error page that is rendered before the ChakraProvider.
+ * - Avoid importing external depedencies if possible, to keep this page itself
+ *   free from errors.
  *
  * SVG from unDraw: https://undraw.co
  */

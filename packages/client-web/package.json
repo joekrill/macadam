@@ -56,7 +56,8 @@
     "test:watch": "react-scripts test --watchAll=true",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "storybook:build": "build-storybook -s public"
+    "storybook:build": "build-storybook -s public",
+    "svg:optimize": "svgo -r src/"
   },
   "eslintConfig": {
     "extends": [
@@ -97,7 +98,9 @@
   "devDependencies": {
     "@types/react-redux": "^7.1.17",
     "@types/react-router": "^5.1.16",
-    "@types/react-router-dom": "^5.1.8"
+    "@types/react-router-dom": "^5.1.8",
+    "@types/svgo": "^2",
+    "svgo": "^2.3.1"
   },
   "jest": {
     "collectCoverageFrom": [

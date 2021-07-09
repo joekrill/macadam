@@ -12,8 +12,17 @@
 - (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
 - (client-web) Auth flow: make sure privileged_session_max_age works as expected (https://www.ory.sh/kratos/docs/self-service/flows/user-settings#updating-privileged-fields)
 - (client-web) Handle /sessions/whoami 401 response
-- (client-web) SVGs/images/icons (svgo)
 - (client-web) i11n
+  - Which library?
+    - React-intl https://formatjs.io/docs/react-intl/
+    - i18next https://www.i18next.com/, https://react.i18next.com/
+    - LinguiJS https://lingui.js.org/
+    - Messageformat https://messageformat.github.io/messageformat/
+    - Globalize https://github.com/globalizejs/globalize
+  - Tooling?
+    - https://github.com/mirego/accent
+    - https://github.com/ever-co/ever-traduora
+    - https://docs.weblate.org/en/latest/
 - (client-web) https://github.com/jbmoelker/a11y-boilerplate
 - (client-web) https://www.matuzo.at/blog/html-boilerplate/
 - (client-web) https://htmlhead.dev/

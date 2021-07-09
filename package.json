@@ -18,7 +18,8 @@
   "scripts": {
     "postinstall": "husky install",
     "format": "yarn prettier --write .",
-    "format:check": "yarn prettier ."
+    "format:check": "yarn prettier .",
+    "typecheck": "yarn workspaces foreach run typecheck"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"

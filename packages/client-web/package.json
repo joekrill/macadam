@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@chakra-ui/react": "^1.6.4",
-    "@chakra-ui/theme-tools": "^1.1.7",
+    "@chakra-ui/react": "^1.6.5",
+    "@chakra-ui/theme-tools": "^1.1.8",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@mdx-js/react": "^1.6.22",
@@ -12,21 +12,21 @@
     "@sentry/integrations": "^6.8.0",
     "@sentry/react": "^6.8.0",
     "@sentry/tracing": "^6.8.0",
-    "@storybook/addon-a11y": "^6.3.3",
-    "@storybook/addon-actions": "^6.3.3",
-    "@storybook/addon-docs": "^6.3.3",
-    "@storybook/addon-essentials": "^6.3.3",
-    "@storybook/addon-links": "^6.3.3",
-    "@storybook/node-logger": "^6.3.3",
+    "@storybook/addon-a11y": "^6.3.4",
+    "@storybook/addon-actions": "^6.3.4",
+    "@storybook/addon-docs": "^6.3.4",
+    "@storybook/addon-essentials": "^6.3.4",
+    "@storybook/addon-links": "^6.3.4",
+    "@storybook/node-logger": "^6.3.4",
     "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "^6.3.3",
+    "@storybook/react": "^6.3.4",
     "@testing-library/dom": "^8.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.1.9",
     "@types/history": "^4.7.9",
     "@types/jest": "^26.0.24",
-    "@types/node": "^16.0.1",
+    "@types/node": "^16.3.0",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
     "@types/testing-library__jest-dom": "^5.14.0",
@@ -57,7 +57,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "storybook:build": "build-storybook -s public",
-    "svg:optimize": "svgo -r src/"
+    "svg:optimize": "svgo -r src/",
+    "typecheck": "tsc --noEmit"
   },
   "eslintConfig": {
     "extends": [
@@ -96,10 +97,10 @@
     ]
   },
   "devDependencies": {
-    "@types/react-redux": "^7.1.17",
+    "@types/react-redux": "^7.1.18",
     "@types/react-router": "^5.1.16",
     "@types/react-router-dom": "^5.1.8",
-    "@types/svgo": "^2",
+    "@types/svgo": "^2.3.1",
     "svgo": "^2.3.1"
   },
   "jest": {

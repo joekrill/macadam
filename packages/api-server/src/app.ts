@@ -157,12 +157,7 @@ export const createApp = async ({
   app.use(metricsCollector());
   app.use(responseTime());
   app.use(requestId());
-  app.use(
-    helmet({
-      // TODO: Figure out what this should be!
-      contentSecurityPolicy: false,
-    })
-  );
+  app.use(helmet({ contentSecurityPolicy: false }));
   app.use(cors());
 
   // Metrics and health routes don't need body parsing or entity manager.

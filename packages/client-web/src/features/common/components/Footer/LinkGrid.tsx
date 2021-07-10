@@ -14,13 +14,10 @@ export const LinkGrid = (props: SimpleGridProps) => (
     {...props}
   >
     <Box minW="130px">
-      <FooterHeading mb="4">Product</FooterHeading>
+      <FooterHeading mb="4">Resources</FooterHeading>
       <Stack>
-        <Link as={RouterLink} to="/how">
-          How it works
-        </Link>
-        <Link as={RouterLink} to="/pricing">
-          Pricing
+        <Link as={RouterLink} to="/faq">
+          FAQ
         </Link>
         <Link as={RouterLink} to="/contact">
           Contact
@@ -28,16 +25,13 @@ export const LinkGrid = (props: SimpleGridProps) => (
       </Stack>
     </Box>
     <Box minW="130px">
-      <FooterHeading mb="4">Resources</FooterHeading>
+      <FooterHeading mb="4">Legal</FooterHeading>
       <Stack>
         <Link as={RouterLink} to="/privacy">
           Privacy
         </Link>
         <Link as={RouterLink} to="/terms">
           Terms
-        </Link>
-        <Link as={RouterLink} to="/faq">
-          FAQ
         </Link>
       </Stack>
     </Box>

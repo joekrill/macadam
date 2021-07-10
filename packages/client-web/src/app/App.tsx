@@ -9,6 +9,7 @@ import { NotFoundPage } from "../features/errors/components/NotFoundPage/NotFoun
 import { Auth } from "../features/identity/components/Auth";
 import { AuthenticatedRoute } from "../features/identity/components/AuthenticatedRoute";
 import { ContactUs } from "../features/pages/ContactUs/ContactUs";
+import { Faq } from "../features/pages/Faq/Faq";
 import { Home } from "../features/pages/Home/Home";
 import { PrivacyPolicy } from "../features/pages/PrivacyPolicy/PrivacyPolicy";
 import { TermsOfService } from "../features/pages/TermsOfService/TermsOfService";
@@ -52,6 +53,9 @@ export const App = () => {
             </Route>
             <Route path="/contact" exact>
               <ContactUs />
+            </Route>
+            <Route path="/faq" exact>
+              <Faq />
             </Route>
             <Route path="/privacy" exact>
               <PrivacyPolicy />

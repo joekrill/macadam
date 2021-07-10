@@ -1,8 +1,9 @@
 - (api-server) Reduce amount of logging output in development
-- (api-server) Error handling (http-errors? Boom?)
 - (api-server, client-web) Choose validation framework (https://github.com/moltar/typescript-runtime-type-benchmarks)
 - (api-server) Example protected api endpoint (UserPreferences?)
 - (api-server) Better unit test coverage + enforce minimum
+- (api-server) Rate limiting? (https://github.com/koajs/ratelimit)
+- (api-server) Uploads
 - (client-web) Better unit test coverage + enforce minimum
 - (client-web) Auth flow: verification
 - (client-web) Auth flow: recovery
@@ -27,9 +28,6 @@
 - (client-web) https://www.matuzo.at/blog/html-boilerplate/
 - (client-web) https://htmlhead.dev/
 - (client-web) Favicons: https://css-tricks.com/how-to-favicon-in-2021/
-- (client-web) Pages: About
-- (client-web) Pages: Contact
-- (client-web) Pages: FAQ
 - (client-web) Storybook stories
 - (client-web) Logos
 - (kratos) customize email templates

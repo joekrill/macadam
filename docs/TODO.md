@@ -8,7 +8,6 @@
 - (client-web) Auth flow: verification
 - (client-web) Auth flow: recovery
 - (client-web) Auth forms: auto-focus first field when rendering forms.
-- (client-web) Auth: add abilitiy to make password visible in forms
 - (client-web) Auth: password requirements hint (is this currently possible with Kratos?)
 - (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
 - (client-web) Auth flow: make sure privileged_session_max_age works as expected (https://www.ory.sh/kratos/docs/self-service/flows/user-settings#updating-privileged-fields)
@@ -39,6 +38,7 @@
 - eslint+prettier?
 - github templates: https://github.com/cezaraugusto/github-template-guidelines
 - (metrics) add additional dashboards
+- (metrics) alert manager
 - (docs) Better documentation (docusaurus?)
 - (payments) implement (stripe?)
 - (feature-toggles) implement (https://github.com/Unleash/unleash?)

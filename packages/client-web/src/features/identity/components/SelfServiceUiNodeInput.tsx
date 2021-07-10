@@ -6,6 +6,7 @@ import {
   FormLabel,
   Input,
 } from "@chakra-ui/react";
+import { PasswordInput } from "../../common/components/PasswordInput/PasswordInput";
 import { UiNodeInput } from "../identityTypes";
 
 export interface SelfServiceUiNodeInputProps {
@@ -45,6 +46,8 @@ export const SelfServiceUiNodeInput = ({
     case "password":
     case "email":
     case "text": {
+      const InputComponent =
+        attributes.type === "password" ? PasswordInput : Input;
       return (
         <FormControl
           isRequired={attributes.required}
@@ -57,7 +60,7 @@ export const SelfServiceUiNodeInput = ({
               label?.text ||
               attributes.name}
           </FormLabel>
-          <Input
+          <InputComponent
             {...attributes}
             borderColor="gray.300"
             defaultValue={value}

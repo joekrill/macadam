@@ -148,6 +148,7 @@ services:
     #   - 4000:4000
     environment:
       DB_URL: postgresql://saas-starter:saas-starter-pass@postgres:5432/saas-starter
+      REDIS_URL: redis://redis:6380/0
       PORT: 4000
       SENTRY_DSN: https://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip.localhost/2
     volumes:

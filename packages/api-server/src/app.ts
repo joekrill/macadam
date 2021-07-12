@@ -1,6 +1,7 @@
 import cors from "@koa/cors";
 import { MikroORM } from "@mikro-orm/core";
 import * as Sentry from "@sentry/node";
+import IORedis from "ioredis";
 import Koa from "koa";
 import bodyParser from "koa-bodyparser";
 import helmet from "koa-helmet";
@@ -11,6 +12,7 @@ import { logging } from "./features/logging/logging";
 import { metricsCollector, metricsRoutes } from "./features/metrics/metrics";
 import { ormConfig } from "./features/orm/config";
 import { entityManager } from "./features/orm/entityManager";
+import { rateLimit } from "./features/rateLimit/rateLimit";
 import { requestId } from "./features/requestId/requestId";
 import { responseTime } from "./features/responseTime/responseTime";
 
@@ -46,6 +48,11 @@ export interface AppOptions {
   metricsPath?: string;
 
   /**
+   * The URL to the redis instance to use (i.e. "redis://redis:6380/0")
+   */
+  redisUrl?: string;
+
+  /**
    * The URL of the Sentry instance to send crash reports to.
    */
   sentryDsn?: string;
@@ -66,14 +73,15 @@ export interface AppInstance extends Koa {
 }
 
 export const createApp = async ({
-  environment = "development",
-  dbUrl,
-  logger,
   apiPath = "/api",
-  healthPath = "/health",
-  metricsPath = "/metrics",
-  sentryDsn,
+  dbUrl,
   defaultShutdownWaitMs = 15000,
+  environment = "development",
+  healthPath = "/health",
+  logger,
+  metricsPath = "/metrics",
+  redisUrl,
+  sentryDsn,
 }: AppOptions) => {
   const app = new Koa() as AppInstance;
 
@@ -88,18 +96,28 @@ export const createApp = async ({
     waitMs: number = defaultShutdownWaitMs
   ) => {
     let shutdownTimeout: NodeJS.Timeout | number | undefined = undefined;
+    const listeners = app.listeners("shutdown");
+
     try {
+      logger.info(
+        { exitCode, waitMs, listenerCount: listeners.length },
+        `Preparing shutdown, notifying ${listeners.length} listeners`
+      );
       await Promise.race([
         // Ideally let any processes cleanup and shutdown.
-        Promise.all(app.listeners("shutdown").map((listener) => listener())),
+        Promise.all(listeners.map((listener) => listener())),
 
         // This provides a maximum wait time for the above -- after `maxWait`
         // this will resolve and win the `Promise.race`.
-        new Promise((resolve) => {
-          shutdownTimeout = setTimeout(resolve, waitMs);
+        new Promise<void>((resolve) => {
+          shutdownTimeout = setTimeout(() => {
+            logger.warn(`Forcing shutdown after waiting ${waitMs}ms`);
+            resolve();
+          }, waitMs);
         }),
       ]);
     } finally {
+      logger.info({ exitCode }, "Shutting down");
       clearTimeout(shutdownTimeout);
       if (exitCode !== undefined) {
         process.exit(exitCode);
@@ -136,15 +154,29 @@ export const createApp = async ({
     });
 
     app.on("shutdown", async () => {
+      logger.debug("Closing Sentry connection");
       // See: https://docs.sentry.io/platforms/node/guides/koa/configuration/draining/
       await Sentry.close();
+      logger.debug("Sentry connection closed");
     });
   }
 
   const orm = await MikroORM.init(ormConfig({ environment, clientUrl: dbUrl }));
   app.on("shutdown", async () => {
+    logger.debug("Closing Database connection");
     await orm.close();
+    logger.debug("Database connection closed");
   });
+
+  const redis = redisUrl ? new IORedis(redisUrl) : undefined;
+  if (redis) {
+    await redis.connect();
+    app.on("shutdown", async () => {
+      logger.debug("Closing Redis connection");
+      await redis.disconnect(false);
+      logger.debug("Redis connection closed");
+    });
+  }
 
   app.use(
     logging(logger, {
@@ -157,6 +189,7 @@ export const createApp = async ({
   app.use(metricsCollector());
   app.use(responseTime());
   app.use(requestId());
+  app.use(rateLimit({ redis }));
   app.use(helmet({ contentSecurityPolicy: false }));
   app.use(cors());
 

@@ -2,7 +2,6 @@
 - (api-server, client-web) Choose validation framework (https://github.com/moltar/typescript-runtime-type-benchmarks)
 - (api-server) Example protected api endpoint (UserPreferences?)
 - (api-server) Better unit test coverage + enforce minimum
-- (api-server) Rate limiting? (https://github.com/koajs/ratelimit)
 - (api-server) Uploads
 - (client-web) Better unit test coverage + enforce minimum
 - (client-web) Auth flow: verification

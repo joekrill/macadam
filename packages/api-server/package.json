@@ -22,6 +22,7 @@
     "@mikro-orm/migrations": "^4.5.7",
     "@mikro-orm/postgresql": "^4.5.7",
     "@sentry/node": "^6.8.0",
+    "ioredis": "^4.27.6",
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
     "koa-compose": "^4.1.0",
@@ -29,12 +30,14 @@
     "pino": "^6.11.3",
     "pino-pretty": "^5.1.1",
     "prom-client": "^13.1.0",
+    "rate-limiter-flexible": "^2.2.3",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@mikro-orm/cli": "^4.5.7",
     "@mikro-orm/sqlite": "^4.5.7",
     "@shopify/jest-koa-mocks": "^3.0.1",
+    "@types/ioredis": "^4",
     "@types/jest": "^26.0.24",
     "@types/koa": "^2.13.4",
     "@types/koa-bodyparser": "^4.3.2",

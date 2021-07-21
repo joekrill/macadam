@@ -9032,7 +9032,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.2"],
             ["react-redux", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:7.2.4"],
             ["redux", "npm:4.1.0"],
-            ["redux-thunk", "npm:2.3.0"],
+            ["redux-thunk", "virtual:2e854507e712730c7c01e7c1d44a2bb11b5d79f8b06c364addde606368559775d443d9134c2ef4d0ebd5ce388889f37c8fe571910114991b65c98737f936259e#npm:2.3.0"],
             ["reselect", "npm:4.0.0"]
           ],
           "packagePeers": [
@@ -15732,6 +15732,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-router", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:5.2.0"],
             ["react-router-dom", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:5.2.0"],
             ["react-scripts", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:4.0.3"],
+            ["redux", "npm:4.1.0"],
             ["source-map-explorer", "npm:2.5.2"],
             ["svgo", "npm:2.3.1"],
             ["typescript", "patch:typescript@npm%3A4.3.5#builtin<compat/typescript>::version=4.3.5&hash=ddfc1b"],
@@ -29921,6 +29922,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/redux-thunk-npm-2.3.0-a5eb89e35e-2d7210b88c.zip/node_modules/redux-thunk/",
           "packageDependencies": [
             ["redux-thunk", "npm:2.3.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:2e854507e712730c7c01e7c1d44a2bb11b5d79f8b06c364addde606368559775d443d9134c2ef4d0ebd5ce388889f37c8fe571910114991b65c98737f936259e#npm:2.3.0", {
+          "packageLocation": "./.yarn/$$virtual/redux-thunk-virtual-5d49e05d7c/0/cache/redux-thunk-npm-2.3.0-a5eb89e35e-2d7210b88c.zip/node_modules/redux-thunk/",
+          "packageDependencies": [
+            ["redux-thunk", "virtual:2e854507e712730c7c01e7c1d44a2bb11b5d79f8b06c364addde606368559775d443d9134c2ef4d0ebd5ce388889f37c8fe571910114991b65c98737f936259e#npm:2.3.0"],
+            ["@types/redux", null],
+            ["redux", "npm:4.1.0"]
+          ],
+          "packagePeers": [
+            "@types/redux",
+            "redux"
           ],
           "linkType": "HARD",
         }]

@@ -1,4 +1,4 @@
-import { UiNode } from "../identityTypes";
+import { UiNode } from "../schemas/ui";
 import { SelfServiceUiNodeInput } from "./SelfServiceUiNodeInput";
 
 export interface SelfServiceUiNodeProps {
@@ -6,7 +6,10 @@ export interface SelfServiceUiNodeProps {
   isSubmitting: boolean;
 }
 
-export const SelfServiceUiNode = ({ isSubmitting, node }: SelfServiceUiNodeProps) => {
+export const SelfServiceUiNode = ({
+  isSubmitting,
+  node,
+}: SelfServiceUiNodeProps) => {
   switch (node.type) {
     case "input": {
       return <SelfServiceUiNodeInput isSubmitting={isSubmitting} node={node} />;

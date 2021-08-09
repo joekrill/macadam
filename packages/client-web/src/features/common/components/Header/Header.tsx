@@ -5,12 +5,14 @@ import {
   FlexProps,
   HStack,
   Icon,
-  Link,
   useColorMode,
 } from "@chakra-ui/react";
 import { createContext, useContext } from "react";
 import { FaRegGem } from "react-icons/fa";
 import { Link as RouterLink } from "react-router-dom";
+import { LoginButton } from "../../../identity/components/LoginButton";
+import { LogoutButton } from "../../../identity/components/LogoutButton";
+import { useSession } from "../../../identity/hooks/useSession";
 import { useWhoamiQuery } from "../../../identity/identityApi";
 import { ColorModeSwitcher } from "../ColorModeSwitcher/ColorModeSwitcher";
 
@@ -23,7 +25,7 @@ export interface HeaderProps extends FlexProps {}
 export const Header = (props: HeaderProps) => {
   const { colorMode } = useColorMode();
   const { useWhoamiQuery } = useContext(HeaderContext);
-  const whoami = useWhoamiQuery();
+  const session = useSession();
 
   return (
     <Flex
@@ -55,25 +57,11 @@ export const Header = (props: HeaderProps) => {
         alignItems="center"
       >
         <ColorModeSwitcher justifySelf="flex-end" />
-        {whoami.isSuccess && (
+        {session.isLoggedIn === true && <LogoutButton />}
+        {session.isLoggedOut === true && <LoginButton />}
+        {session.isLoggedOut === true && (
           <Button
-            as={Link}
-            textDecoration="none"
-            _hover={{ textDecoration: "none" }}
-            href="/self-service/browser/flows/logout"
-          >
-            Logout
-          </Button>
-        )}
-
-        {!whoami.isSuccess && (
-          <Button disabled={whoami.isLoading} as={RouterLink} to="/auth/login">
-            Log in
-          </Button>
-        )}
-        {!whoami.isSuccess && (
-          <Button
-            disabled={whoami.isLoading}
+            disabled={session.isLoading}
             as={RouterLink}
             to="/auth/registration"
             variant="solid"

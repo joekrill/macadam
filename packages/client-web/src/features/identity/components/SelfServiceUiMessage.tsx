@@ -1,5 +1,5 @@
 import { Alert, AlertIcon, AlertProps } from "@chakra-ui/react";
-import { UiText } from "../identityTypes";
+import { UiText } from "../schemas/ui";
 
 export interface SelfServiceUiMessageProps {
   message: UiText;

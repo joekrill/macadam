@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Route, Switch } from "react-router-dom";
 import { Login } from "./Login";
 import { Recovery } from "./Recovery";
-import { Register } from "./Register";
+import { Registration } from "./Registration";
 import { Settings } from "./Settings";
 import { Verification } from "./Verification";
 
@@ -19,7 +19,7 @@ export const Auth = () => (
         <Login />
       </Route>
       <Route path="/auth/registration">
-        <Register />
+        <Registration />
       </Route>
       <Route path="/auth/recovery">
         <Recovery />

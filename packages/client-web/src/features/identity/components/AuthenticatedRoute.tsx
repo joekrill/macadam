@@ -11,6 +11,7 @@ export const AuthenticatedRoute = ({
   whileLoading,
   ...props
 }: AuthenticatedRouteProps) => {
+  // TODO: switch useSession or useIsLoggedIn?
   const whoami = useWhoamiQuery();
 
   return (

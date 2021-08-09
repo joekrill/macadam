@@ -6,14 +6,9 @@ dsn: memory
 
 serve:
   public:
-    base_url: http://saas-starter.local:4433/
-    domain_aliases:
-      - match_domain: localhost
-        base_path: /
-        scheme: http
+    base_url: http://saas-starter.local:4433/kratos/public
     cors:
       enabled: true
-
   admin:
     base_url: http://kratos:4434/
 
@@ -29,6 +24,11 @@ selfservice:
       enabled: true
     profile:
       enabled: true
+    link:
+      enabled: true
+      config:
+        # Defines how long a recovery link is valid for (default 1h)
+        lifespan: 3h # TODO: check OWASP guidance
 
   flows:
     error:
@@ -36,31 +36,40 @@ selfservice:
 
     settings:
       ui_url: http://saas-starter.local:4455/settings
-      privileged_session_max_age: 15m
+      privileged_session_max_age: 15m # TODO: check OWASP recommentation? 5m maybe?
 
     recovery:
       enabled: true
+      lifespan: 30m
       ui_url: http://saas-starter.local:4455/recovery
 
     verification:
       enabled: true
+      lifespan: 1h
       ui_url: http://saas-starter.local:4455/verify
-      after:
-        default_browser_return_url: http://saas-starter.local:4455/
 
     logout:
       after:
         default_browser_return_url: http://saas-starter.local:4455/auth/login
 
     login:
+      lifespan: 1h
       ui_url: http://saas-starter.local:4455/auth/login
-      lifespan: 10m
 
     registration:
-      lifespan: 10m
+      lifespan: 2h
       ui_url: http://saas-starter.local:4455/auth/registration
       after:
         password:
+          hooks:
+            # This hooks logs users in immediately after registration. This
+            # means an account enumeration attack will be possible.
+            # comment this out to disable, but it will require the user to
+            # manually login after registering
+            # https://www.ory.sh/kratos/docs/concepts/security#account-enumeration-attacks
+            # See here for implementation status: https://github.com/ory/kratos/issues/133
+            - hook: session
+        oidc:
           hooks:
             - hook: session
 
@@ -82,6 +91,8 @@ hashers:
     key_length: 16
 
 identity:
+  # Be sure to update the `traitsSchema` on the client to reflect any changes to
+  # the identity schema(s): `packages/client-web/src/features/identity/schemas/identity.ts`
   default_schema_url: file:///etc/config/kratos/email-password.schema.json
 
 courier:

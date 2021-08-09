@@ -10,33 +10,59 @@ volumes:
   postgres_data:
   mail_data:
 
-x-service-defaults: &service_defaults
+x-service-defaults: &service-defaults
   restart: unless-stopped
   networks:
     - sass-starter-net
 
-x-kratos-environment: &kratos_environment
-  DSN: postgres://kratos:kratos-pass@postgres:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
-  SQA_OPT_OUT: "true"
-  LOG_FORMAT: text
-  LOG_LEVEL: debug # trace
-  LOG_LEAK_SENSITIVE_VALUES: "true"
-  SECRETS_COOKIE: PLEASE-CHANGE-ME-I-AM-VERY-INSECURE
-  SERVE_PUBLIC_BASE_URL: https://localhost/
-  SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://localhost
-  SELFSERVICE_WHITELISTED_RETURN_URLS: https://localhost,http://localhost
-  SELFSERVICE_FLOWS_ERROR_UI_URL: https://localhost/auth/error
-  SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localhost/auth/settings
-  SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://localhost/auth/recovery
-  SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://localhost/auth/verification
-  SELFSERVICE_FLOWS_VERIFICATION_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localhost/auth/verification
-  SELFSERVICE_FLOWS_LOGOUT_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localhost
-  SELFSERVICE_FLOWS_LOGIN_UI_URL: https://localhost/auth/login
-  SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://localhost/auth/registration
+x-kratos-defaults: &kratos-defaults
+  <<: *service-defaults
+  image: oryd/kratos:v0.7.1-alpha.1
+  depends_on:
+    - postgres
+  environment:
+    COURIER_SMTP_CONNECTION_URI: smtp://mail:1025/?skip_ssl_verify=true
+    DSN: postgres://kratos:kratos-pass@postgres:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
+    SQA_OPT_OUT: "true"
+    LOG_FORMAT: text
+    LOG_LEVEL: debug # trace
+    LOG_LEAK_SENSITIVE_VALUES: "true"
+    SECRETS_COOKIE: PLEASE-CHANGE-ME-I-AM-VERY-INSECURE
+    SERVE_PUBLIC_BASE_URL: https://localhost/kratos/public
+    SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://localhost
+    SELFSERVICE_WHITELISTED_RETURN_URLS: https://localhost,http://localhost
+    SELFSERVICE_FLOWS_ERROR_UI_URL: https://localhost/auth/error
+    SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localhost/auth/settings
+    SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://localhost/auth/recovery
+    SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://localhost/auth/verification
+    # SELFSERVICE_FLOWS_VERIFICATION_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localhost/xxx
+    SELFSERVICE_FLOWS_LOGOUT_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localhost
+    SELFSERVICE_FLOWS_LOGIN_UI_URL: https://localhost/auth/login
+    SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://localhost/auth/registration
+  volumes:
+    - ./services/kratos:/etc/config/kratos
+
+x-api-server-defaults: &api-server-defaults
+  <<: *service-defaults
+  image: node:16.4
+  command: ["yarn", "workspace", "api-server", "run", "migrate:up"]
+  working_dir: /var/saas-starter
+  depends_on:
+    - postgres
+  restart: on-failure
+  environment:
+    DB_URL: postgresql://saas-starter:saas-starter-pass@postgres:5432/saas-starter
+    REDIS_URL: redis://redis:6380/0
+    PORT: 4000
+    SENTRY_DSN: https://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip.localhost/2
+  volumes:
+    - type: bind
+      source: .
+      target: /var/saas-starter
 
 services:
   caddy:
-    <<: *service_defaults
+    <<: *service-defaults
     image: caddy:2
     ports:
       - "80:80"
@@ -48,7 +74,7 @@ services:
         target: /etc/caddy/Caddyfile
 
   postgres:
-    <<: *service_defaults
+    <<: *service-defaults
     image: postgres:13
     # image: postgis/postgis:13-3.1 # Does not work with arm yet.
     # Uncomment to expost postgres directly
@@ -64,53 +90,32 @@ services:
       - postgres_data:/var/lib/postgresql
 
   redis:
-    <<: *service_defaults
+    <<: *service-defaults
     image: redis
 
   kratos-migrate:
-    <<: *service_defaults
-    image: oryd/kratos:v0.6.3-alpha.1
+    <<: *kratos-defaults
     command: -c /etc/config/kratos/kratos.yml migrate sql -e --yes
-    depends_on:
-      - postgres
     restart: on-failure
-    environment:
-      DSN: postgres://kratos:kratos-pass@postgres:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
-      SQA_OPT_OUT: "true"
-      LOG_LEVEL: warning
-    volumes:
-      - ./services/kratos:/etc/config/kratos
 
   kratos:
-    <<: *service_defaults
-    image: oryd/kratos:v0.6.3-alpha.1
+    <<: *kratos-defaults
+    command: serve -c /etc/config/kratos/kratos.yml --dev
     depends_on:
       - kratos-migrate
     # ports:
     #   - "4434:4434"
     #   - "4433:4433"
-    environment:
-      <<: *kratos_environment
-    command: serve -c /etc/config/kratos/kratos.yml --dev
-    volumes:
-      - ./services/kratos:/etc/config/kratos
 
   kratos-courier:
-    <<: *service_defaults
-    image: oryd/kratos:v0.6.3-alpha.1
+    <<: *kratos-defaults
     command: courier watch  --expose-metrics-port 4434 -c /etc/config/kratos/kratos.yml
+    restart: on-failure
     depends_on:
       - kratos-migrate
-    restart: on-failure
-    environment:
-      <<: *kratos_environment
-      LOG_LEVEL: info
-      COURIER_SMTP_CONNECTION_URI: smtp://mail:1025/?skip_ssl_verify=true
-    volumes:
-      - ./services/kratos:/etc/config/kratos
 
   mail:
-    <<: *service_defaults
+    <<: *service-defaults
     build:
       context: https://github.com/maildev/maildev.git
     environment:
@@ -122,42 +127,21 @@ services:
       - mail_data:/home/node/test
 
   api-server-migrate:
-    <<: *service_defaults
-    image: node:16.4
+    <<: *api-server-defaults
     command: ["yarn", "workspace", "api-server", "run", "migrate:up"]
-    working_dir: /var/saas-starter
-    depends_on:
-      - postgres
     restart: on-failure
-    environment:
-      DB_URL: postgres://saas-starter:saas-starter-pass@postgres:5432/saas-starter
-    volumes:
-      - type: bind
-        source: .
-        target: /var/saas-starter
 
   api-server:
-    <<: *service_defaults
-    image: node:16.4
+    <<: *api-server-defaults
     command: ["yarn", "workspace", "api-server", "run", "start:dev"]
-    working_dir: /var/saas-starter
     depends_on:
       - api-server-migrate
     # Uncomment to expose api-server directly
     # ports:
     #   - 4000:4000
-    environment:
-      DB_URL: postgresql://saas-starter:saas-starter-pass@postgres:5432/saas-starter
-      REDIS_URL: redis://redis:6380/0
-      PORT: 4000
-      SENTRY_DSN: https://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip.localhost/2
-    volumes:
-      - type: bind
-        source: .
-        target: /var/saas-starter
 
   client-web:
-    <<: *service_defaults
+    <<: *service-defaults
     # Uncomment to expose client-web directly
     # ports:
     #   - 3000:3000

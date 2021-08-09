@@ -7,7 +7,7 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { PasswordInput } from "../../common/components/PasswordInput/PasswordInput";
-import { UiNodeInput } from "../identityTypes";
+import { UiNodeInput } from "../schemas/ui";
 
 export interface SelfServiceUiNodeInputProps {
   node: UiNodeInput;
@@ -38,6 +38,7 @@ export const SelfServiceUiNodeInput = ({
 }: SelfServiceUiNodeInputProps) => {
   const { meta, messages } = node;
   const { label, value, ...attributes } = node.attributes;
+  const errors = messages?.filter((message) => message.type === "error") || [];
 
   switch (attributes.type) {
     case "hidden": {
@@ -50,6 +51,7 @@ export const SelfServiceUiNodeInput = ({
         attributes.type === "password" ? PasswordInput : Input;
       return (
         <FormControl
+          isInvalid={errors.length > 0}
           isRequired={attributes.required}
           isDisabled={attributes.disabled || isSubmitting}
           mb={3}
@@ -71,13 +73,9 @@ export const SelfServiceUiNodeInput = ({
             .map((message) => (
               <FormHelperText key={message.id}>{message.text}</FormHelperText>
             ))}
-          {messages
-            ?.filter((message) => message.type === "error")
-            .map((message) => (
-              <FormErrorMessage key={message.id}>
-                {message.text}
-              </FormErrorMessage>
-            ))}
+          {errors.map((message) => (
+            <FormErrorMessage key={message.id}>{message.text}</FormErrorMessage>
+          ))}
         </FormControl>
       );
     }
@@ -106,7 +104,7 @@ export const SelfServiceUiNodeInput = ({
           isLoading={isSubmitting}
           value={value}
         >
-          {meta?.label.text || "Submit"}
+          {meta?.label?.text || "Submit"}
         </Button>
       );
     }

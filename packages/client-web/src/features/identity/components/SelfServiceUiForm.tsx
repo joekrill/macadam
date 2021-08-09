@@ -1,18 +1,22 @@
 import { useRef } from "react";
-import { useSubmitFlowMutation } from "../identityApi";
-import { UiContainer, UiNodeInput } from "../identityTypes";
+import { UiContainer, UiNodeInput } from "../schemas/ui";
 import { SelfServiceUiNode } from "./SelfServiceUiNode";
 
 export interface SelfServiceUiFormProps {
   ui: UiContainer;
-  onSubmitComplete?: () => void;
+  onSubmit: (onSubmitParams: {
+    action: string;
+    method: string;
+    data: FormData;
+  }) => void;
+  isSubmitting?: boolean;
 }
 export const SelfServiceUiForm = ({
+  isSubmitting = false,
   ui,
-  onSubmitComplete,
+  onSubmit,
 }: SelfServiceUiFormProps) => {
   const formRef = useRef<HTMLFormElement>(null);
-  const [submitFlow, submitFlowResult] = useSubmitFlowMutation();
 
   return (
     <form
@@ -20,17 +24,6 @@ export const SelfServiceUiForm = ({
       action={ui.action}
       method={ui.method}
       onSubmit={(e) => {
-        console.log("submit", {
-          target: e.target,
-          currentTarget: e.currentTarget,
-          type: e.type,
-          nativeEvent: e.nativeEvent,
-          // @ts-ignore
-          method: e.currentTarget.elements.method,
-          activeElement: document.activeElement,
-        });
-        //@ts-ignore
-        window.test = e.nativeEvent;
         e.preventDefault();
         const formData = new FormData(formRef.current || undefined);
 
@@ -51,6 +44,7 @@ export const SelfServiceUiForm = ({
         const submitter = e.nativeEvent.submitter as
           | HTMLFormElement
           | undefined;
+
         if (submitter) {
           // Ideally we just use `submitter`, but this isn't universally
           // suported (looking at you, Safari).
@@ -82,14 +76,10 @@ export const SelfServiceUiForm = ({
           }
         }
 
-        submitFlow({
+        onSubmit({
           action: ui.action,
           method: ui.method,
-          body: new URLSearchParams(formData as any).toString(),
-        }).then(() => {
-          if (onSubmitComplete) {
-            onSubmitComplete();
-          }
+          data: formData,
         });
       }}
     >
@@ -97,7 +87,7 @@ export const SelfServiceUiForm = ({
         <SelfServiceUiNode
           key={index}
           node={node}
-          isSubmitting={submitFlowResult.isLoading}
+          isSubmitting={isSubmitting}
         />
       ))}
     </form>

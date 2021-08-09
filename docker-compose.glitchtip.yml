@@ -3,7 +3,7 @@
 
 version: "3.8"
 
-x-service-defaults: &service_defaults
+x-service-defaults: &service-defaults
   restart: unless-stopped
   networks:
     - sass-starter-net
@@ -13,7 +13,7 @@ networks:
 
 services:
   glitchtip-migrate:
-    <<: *service_defaults
+    <<: *service-defaults
     image: glitchtip/glitchtip
     depends_on:
       - postgres
@@ -27,7 +27,7 @@ services:
       SECRET_KEY: change_me
 
   glitchtip-web:
-    <<: *service_defaults
+    <<: *service-defaults
     # NOTE: On AMD64 you will be spamemd with messages like:
     # "*** uWSGI listen queue of socket ":8000" (fd: 3) full !!! (26472960/64) ***"
     # I can't figure out how to fix this. Rebuilding the docker image fails on
@@ -54,7 +54,7 @@ services:
       ENABLE_OPEN_USER_REGISTRATION: "true"
 
   glitchtip-worker:
-    <<: *service_defaults
+    <<: *service-defaults
     image: glitchtip/glitchtip
     command: celery -A glitchtip worker -B -l INFO
     depends_on:

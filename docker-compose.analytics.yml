@@ -3,7 +3,7 @@
 # Docs: https://plausible.io/docs/self-hosting-configuration
 version: "3.8"
 
-x-service-defaults: &service_defaults
+x-service-defaults: &service-defaults
   restart: unless-stopped
   networks:
     - sass-starter-net
@@ -21,7 +21,7 @@ services:
       REACT_APP_PLAUSIBLE_HOST: https://plausible.localhost
 
   clickhouse:
-    <<: *service_defaults
+    <<: *service-defaults
     # image: yandex/clickhouse-server:21.3
     # Use this image if running on ARM64 (i.e. Mac M1) until a multi-arch image
     # is available from yandex: https://github.com/ClickHouse/ClickHouse/issues/22222
@@ -48,7 +48,7 @@ services:
       - geoip_data:/usr/share/GeoIP
 
   plausible:
-    <<: *service_defaults
+    <<: *service-defaults
     image: plausible/analytics:v1.3
     command: sh -c "sleep 10 && /entrypoint.sh db migrate && /entrypoint.sh db init-admin && /entrypoint.sh run"
     depends_on:

@@ -9,6 +9,7 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@yarnpkg/pnpify": "^3.0.0-rc.14",
     "eslint": "^7.31.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.0.1",

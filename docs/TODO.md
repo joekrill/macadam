@@ -29,8 +29,8 @@
 - (client-web) Storybook stories
 - (client-web) Logos
 - (kratos) customize email templates
-- (kratos) use custom path for all kratos requests (i.e. /kratos/self-service/.. instead of /self-service)
-- (kratos) social logins
+- (kratos) social logins (https://github.com/ory/kratos/issues/273)
+  - WIll liklely requiring switching to localtest.me or vcap.me for local environment
 - Integration tests
 - husky
 - commitlint
@@ -43,3 +43,18 @@
 - (feature-toggles) implement (https://github.com/Unleash/unleash?)
 - production/staging kubernetes deployments
 - Mobile app (react-native)
+- "Down for Maintenance" state
+- Rename entire project (Ideas: macadam, hammada, rootdown, )
+- Vulnerability Disclosure Policy (https://github.com/disclose/dioterms/blob/master/core-terms-vdp.md)
+- Audit Log
+- Admin interface/API
+- https://jacobian.org/2021/jul/8/appsec-pagnis/
+- https://cheatsheetseries.owasp.org/index.html
+- https://www.npmjs.com/package/devcert
+- https://github.com/ory/kratos/issues/1328
+
+Reference Projects:
+
+- https://github.com/cedrickchee/saas-starter
+- https://gitlab.com/gnaar
+- https://github.com/NoQuarterTeam/boilerplate

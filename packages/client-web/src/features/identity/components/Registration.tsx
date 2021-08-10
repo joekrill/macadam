@@ -10,7 +10,7 @@ import { SelfServiceUiForm } from "./SelfServiceUiForm";
 import { SelfServiceUiMessage } from "./SelfServiceUiMessage";
 
 export const Registration = () => {
-  const { isLoggedIn, username } = useSession();
+  const { isLoggedIn } = useSession();
   const { error, ui, submit, isLoading, isSuccess, isSubmitting, restart } =
     useRegistrationFlow();
 

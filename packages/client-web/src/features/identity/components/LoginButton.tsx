@@ -14,7 +14,7 @@ export const LoginButton = ({
   ...props
 }: LoginButtonProps) => {
   const location = useLocation();
-  const session = useSession();
+  const { isLoading } = useSession();
 
   return (
     <Button
@@ -24,7 +24,7 @@ export const LoginButton = ({
         pathname: "/auth/login",
         state: { from: location },
       }}
-      isDisabled={isDisabled || session.isLoading}
+      isDisabled={isDisabled || isLoading}
     >
       {children}
     </Button>

@@ -1,10 +1,9 @@
 export interface UnexpectedErrorPageProps {
-  eventId: string;
+  eventId: string | null;
   error: Error;
-  componentStack: string;
+  componentStack: string | null;
   resetError?: () => void;
 }
-
 /**
  * A low level error page to display for unknown errors:
  *

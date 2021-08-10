@@ -13,19 +13,18 @@ import { Link as RouterLink } from "react-router-dom";
 import { LoginButton } from "../../../identity/components/LoginButton";
 import { LogoutButton } from "../../../identity/components/LogoutButton";
 import { useSession } from "../../../identity/hooks/useSession";
-import { useWhoamiQuery } from "../../../identity/identityApi";
 import { ColorModeSwitcher } from "../ColorModeSwitcher/ColorModeSwitcher";
 
 export const HeaderContext = createContext({
-  useWhoamiQuery,
+  useSession,
 });
 
 export interface HeaderProps extends FlexProps {}
 
 export const Header = (props: HeaderProps) => {
   const { colorMode } = useColorMode();
-  const { useWhoamiQuery } = useContext(HeaderContext);
-  const session = useSession();
+  const headerContext = useContext(HeaderContext);
+  const session = headerContext.useSession();
 
   return (
     <Flex

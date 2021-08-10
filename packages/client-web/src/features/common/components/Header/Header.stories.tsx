@@ -14,26 +14,32 @@ export default {
     hasIdentity: {
       control: { type: "boolean" },
     },
+    username: {
+      control: { type: "text" },
+    },
   },
 } as Meta;
 
 interface StoryProps {
   hasIdentity: boolean;
   isFetchingIdentity: boolean;
+  username: string;
 }
 
 const Template: Story<HeaderProps & StoryProps> = ({
+  username = "someone",
   hasIdentity = false,
   isFetchingIdentity = false,
   ...args
 }) => (
   <HeaderContext.Provider
     value={{
-      useWhoamiQuery: () =>
+      useSession: () =>
         ({
-          isSuccess: hasIdentity,
+          isLoggedIn: hasIdentity,
+          isLoggedOut: !hasIdentity,
           isLoading: isFetchingIdentity,
-          refetch: () => {},
+          username,
         } as any),
     }}
   >

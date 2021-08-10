@@ -39,7 +39,7 @@ export const Login = () => {
     if (isSuccess) {
       whoamiQuery.refetch();
     }
-  }, [isSuccess, whoamiQuery.refetch]);
+  }, [isSuccess, whoamiQuery]);
 
   useEffect(() => {
     if (isSuccess && isLoggedIn) {
@@ -49,12 +49,12 @@ export const Login = () => {
         }
       );
     }
-  }, [isSuccess, isLoggedIn, history.replace, location.state?.from]);
+  }, [isSuccess, isLoggedIn, history, location.state?.from]);
 
   const restart = useCallback(() => {
     loginFlowQuery.refetch();
     setIsSubmitted(false);
-  }, [loginFlowQuery.refetch, setIsSubmitted]);
+  }, [loginFlowQuery, setIsSubmitted]);
 
   return (
     <Container maxW="container.sm">

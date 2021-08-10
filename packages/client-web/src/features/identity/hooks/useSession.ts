@@ -15,12 +15,12 @@ export const useSession = () => {
   });
 
   return {
-    ...whoamiQuery,
-    data: session,
+    // ...whoamiQuery,
+    // data: session,
     isLoggedIn: lastUpdated === undefined ? undefined : !!session,
     isLoggedOut: lastUpdated === undefined ? undefined : !session,
-    lastUpdated,
-    isUninitialized: !lastUpdated,
+    // lastUpdated,
+    // isUninitialized: !lastUpdated,
     isLoading: !lastUpdated && whoamiQuery.isLoading,
     username: identity?.traits?.email,
   };

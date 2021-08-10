@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { identityApi } from "./identityApi";
 import {
   isSelfServiceLoginFlowSuccess,
-  isSelfServiceRegistrationFlowSuccess
+  isSelfServiceRegistrationFlowSuccess,
 } from "./schemas";
 import { Identity } from "./schemas/identity";
 import { Session } from "./schemas/session";

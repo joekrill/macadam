@@ -1,7 +1,7 @@
 # Extends docker-compose.yml adding a running storybook instance. This can be
 # used by extending the default docker-compose.yml (in which case you can visit
-# `https://storybook.localhost` to access the storybook), or standalone (in which
-# case `http://localhost:6006)
+# `https://storybook.localtest.me` to access the storybook), or standalone (in which
+# case `http://localtest.me:6006)
 #
 # Usage: `docker compose -f docker-compose.yml -f docker-compose.storybook.yml up`
 # Standalone: `docker compose -f docker-compose.storybook.yml up`

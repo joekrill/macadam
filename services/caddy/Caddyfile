@@ -1,46 +1,68 @@
-localhost {  
-  handle_path /kratos/public/* {
-    reverse_proxy http://kratos:4433
+*.localtest.me, localtest.me {
+  encode zstd gzip
+  tls internal
+
+  @root host localtest.me 
+  handle @root {
+    handle_path /kratos/public/* {
+      reverse_proxy http://kratos:4433
+    }
+    reverse_proxy /api/* api-server:4000
+    reverse_proxy client-web:3000
   }
 
-  reverse_proxy /api/* api-server:4000
-  reverse_proxy client-web:3000
-}
+  @www host www.localtest.me 
+  handle @www {
+    redir https://localtest.me{uri}
+  } 
 
+  @mail host mail.localtest.me
+	handle @mail {
+		reverse_proxy mail:1080
+	}
+  
+  @storybook host storybook.localtest.me 
+  handle @storybook {
+    reverse_proxy client-web-storybook:6006
+  }
 
+  @glitchtip host glitchtip.localtest.me 
+  handle @glitchtip {
+    reverse_proxy glitchtip-web:8000
+  }
 
-mail.localhost {
-  reverse_proxy mail:1080
-}
+  @kratos host kratos.localtest.me 
+  handle @kratos {
+    reverse_proxy kratos:4433
+  }
 
-storybook.localhost {
-  reverse_proxy client-web-storybook:6006
-}
+  @kratos-admin host kratos-admin.localtest.me 
+  handle @kratos-admin {
+    reverse_proxy kratos:4434
+  }
 
-glitchtip.localhost {
-  reverse_proxy glitchtip-web:8000
-}
+  @kratos-courier host kratos-courier.localtest.me 
+  handle @kratos-courier {
+    reverse_proxy kratos-courier:4434
+  }
 
-kratos.localhost {
-  reverse_proxy kratos:4433
-}
+  @plausible host plausible.localtest.me 
+  handle @plausible {
+    reverse_proxy plausible:8000
+  }
 
-kratos-admin.localhost {
-  reverse_proxy kratos:4434
-}
+  @prometheus host prometheus.localtest.me 
+  handle @prometheus {
+    reverse_proxy prometheus:9090
+  }
 
-kratos-courier.localhost {
-  reverse_proxy kratos-courier:4434
-}
-
-plausible.localhost {
-  reverse_proxy plausible:8000
-}
-
-prometheus.localhost {
-  reverse_proxy prometheus:9090
-}
-
-grafana.localhost {
-  reverse_proxy grafana:3000
+  @grafana host grafana.localtest.me 
+  handle @grafana {
+    reverse_proxy grafana:3000
+  }
+  
+  # Fallback for otherwise unhandled domains
+  handle {
+		abort
+	}
 }

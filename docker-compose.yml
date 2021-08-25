@@ -29,17 +29,17 @@ x-kratos-defaults: &kratos-defaults
     LOG_LEAK_SENSITIVE_VALUES: "true"
     SESSION_COOKIE_NAME: macadam_session_dev
     SECRETS_COOKIE: PLEASE-CHANGE-ME-I-AM-VERY-INSECURE
-    SERVE_PUBLIC_BASE_URL: https://localhost/kratos/public
-    SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://localhost
-    SELFSERVICE_WHITELISTED_RETURN_URLS: https://localhost,http://localhost
-    SELFSERVICE_FLOWS_ERROR_UI_URL: https://localhost/auth/error
-    SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localhost/auth/settings
-    SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://localhost/auth/recovery
-    SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://localhost/auth/verification
-    # SELFSERVICE_FLOWS_VERIFICATION_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localhost/xxx
-    SELFSERVICE_FLOWS_LOGOUT_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localhost
-    SELFSERVICE_FLOWS_LOGIN_UI_URL: https://localhost/auth/login
-    SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://localhost/auth/registration
+    SERVE_PUBLIC_BASE_URL: https://localtest.me/kratos/public
+    SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://localtest.me
+    SELFSERVICE_WHITELISTED_RETURN_URLS: https://localtest.me,http://localtest.me
+    SELFSERVICE_FLOWS_ERROR_UI_URL: https://localtest.me/auth/error
+    SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localtest.me/auth/settings
+    SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://localtest.me/auth/recovery
+    SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://localtest.me/auth/verification
+    # SELFSERVICE_FLOWS_VERIFICATION_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localtest.me/xxx
+    SELFSERVICE_FLOWS_LOGOUT_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localtest.me
+    SELFSERVICE_FLOWS_LOGIN_UI_URL: https://localtest.me/auth/login
+    SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://localtest.me/auth/registration
   volumes:
     - ./services/kratos:/etc/config/kratos
 
@@ -55,7 +55,7 @@ x-api-server-defaults: &api-server-defaults
     DB_URL: postgresql://macadam:macadam!@postgres:5432/macadam
     REDIS_URL: redis://redis:6380/0
     PORT: 4000
-    SENTRY_DSN: https://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip.localhost/2
+    SENTRY_DSN: https://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip.localtest.me/2
   volumes:
     - type: bind
       source: .
@@ -147,7 +147,7 @@ services:
     # ports:
     #   - 3000:3000
     environment:
-      REACT_APP_SENTRY_DSN: "https://239d589a58d24675be8159b19718b22e@glitchtip.localhost/1"
+      REACT_APP_SENTRY_DSN: "https://239d589a58d24675be8159b19718b22e@glitchtip.localtest.me/1"
     build:
       context: .
       dockerfile: ./packages/client-web/dev.Dockerfile

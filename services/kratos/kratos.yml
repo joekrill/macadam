@@ -6,18 +6,17 @@ dsn: memory
 
 serve:
   public:
-    base_url: http://macadam.local:4433/kratos/public
+    base_url: http://localhost:4433/kratos/public
     cors:
       enabled: true
   admin:
     base_url: http://kratos:4434/
 
 selfservice:
-  default_browser_return_url: http://macadam.local:4455/
+  default_browser_return_url: http://localhost:4455/
   whitelisted_return_urls:
-    - http://macadam.local/
-    - https://localhost
-    - http://localhost
+    - https://localhost/
+    - https://localtest.me
 
   methods:
     password:
@@ -35,33 +34,33 @@ selfservice:
 
   flows:
     error:
-      ui_url: http://macadam.local:4455/error
+      ui_url: http://localhost:4455/error
 
     settings:
-      ui_url: http://macadam.local:4455/settings
+      ui_url: http://localhost:4455/settings
       privileged_session_max_age: 15m # TODO: check OWASP recommentation? 5m maybe?
 
     recovery:
       enabled: true
       lifespan: 30m
-      ui_url: http://macadam.local:4455/recovery
+      ui_url: http://localhost:4455/recovery
 
     verification:
       enabled: true
       lifespan: 1h
-      ui_url: http://macadam.local:4455/verify
+      ui_url: http://localhost:4455/verify
 
     logout:
       after:
-        default_browser_return_url: http://macadam.local:4455/auth/login
+        default_browser_return_url: http://localhost:4455/auth/login
 
     login:
       lifespan: 1h
-      ui_url: http://macadam.local:4455/auth/login
+      ui_url: http://localhost:4455/auth/login
 
     registration:
       lifespan: 2h
-      ui_url: http://macadam.local:4455/auth/registration
+      ui_url: http://localhost:4455/auth/registration
       after:
         password:
           hooks:

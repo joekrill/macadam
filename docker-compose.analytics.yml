@@ -18,7 +18,7 @@ volumes:
 services:
   client-web:
     environment:
-      REACT_APP_PLAUSIBLE_HOST: https://plausible.localhost
+      REACT_APP_PLAUSIBLE_HOST: https://plausible.localtest.me
 
   clickhouse:
     <<: *service-defaults
@@ -61,7 +61,7 @@ services:
       ADMIN_USER_NAME: macadam
       ADMIN_USER_PWD: macadam!
       DISABLE_AUTH: "true"
-      BASE_URL: https://plausible.localhost
+      BASE_URL: https://plausible.localtest.me
       SECRET_KEY_BASE: USbJSimhObRflMa+UC8iku9Iqhpr1RtPeLaEl8uuJpI44X+zoha1L9Jeo/7dgKUMZtMTGnDTsgYfYxcQ40ZSAA==
       DATABASE_URL: postgresql://plausible:plausible!@postgres:5432/plausible
       CLICKHOUSE_DATABASE_URL: http://clickhouse:8123/plausible

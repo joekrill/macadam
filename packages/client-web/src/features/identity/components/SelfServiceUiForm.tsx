@@ -71,6 +71,7 @@ export const SelfServiceUiForm = ({
                 node.type === "input" &&
                 node.attributes.type === "submit"
             ) as UiNodeInput | undefined);
+
           if (submitter?.attributes.value) {
             formData.set(submitter.attributes.name, submitter.attributes.value);
           }

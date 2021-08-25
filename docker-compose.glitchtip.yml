@@ -49,7 +49,7 @@ services:
       SECRET_KEY: change_me
       EMAIL_URL: smtp://mail:1025/?skip_ssl_verify=true
       DEFAULT_FROM_EMAIL: glitchtip@example.com
-      GLITCHTIP_DOMAIN: https://glitchtip.localhost
+      GLITCHTIP_DOMAIN: https://glitchtip.localtest.me
       PORT: 8000
       ENABLE_OPEN_USER_REGISTRATION: "true"
 
@@ -63,4 +63,4 @@ services:
       DATABASE_URL: postgresql://glitchtip:glitchtip!@postgres:5432/glitchtip
       SECRET_KEY: change_me
       EMAIL_URL: smtp://mail:1025/?skip_ssl_verify=true
-      GLITCHTIP_DOMAIN: https://glitchtip.localhost
+      GLITCHTIP_DOMAIN: https://glitchtip.localtest.me

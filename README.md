@@ -23,10 +23,25 @@ Macadam is a full stack software-as-a-service application meant to serve as a co
 1. Clone the repo
 2. `docker compose up`
 
-- Web application: `https://localhost`
-- Mail interceptor: `https://mail.localhost`
-- Component Storybook: `https://storybook.localhost`
-- Kratos private API: `https://kratos.localhost`
+- Web application: `https://localtest.me`
+- Mail interceptor: `https://mail.localtest.me`
+- Component Storybook: `https://storybook.localtest.me`
+- Kratos private API: `https://kratos.localtest.me`
+
+The auto-generated certificates will not be trusted by default and you will need to manually trust them. Alternatively, you can add the underlying Caddy certificate authority as a trusted root on your local machine.
+
+```sh
+
+# On MacOS
+docker cp $(docker-compose ps -q caddy):/data/caddy/pki/authorities/local/root.crt /tmp/macadam_caddy.crt && sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain /tmp/macadam_caddy.crt
+
+# On Linux
+docker cp $(docker-compose ps -q caddy):/data/caddy/pki/authorities/local/root.crt /usr/local/share/ca-certificates/macadam_caddy.crt && sudo update-ca-certificates
+
+# Firefox on MacOS - `security.enterprise_roots.enabled` must be `true` in `about:config` (see https://support.mozilla.org/en-US/kb/setting-certificate-authorities-firefox for other OSes)
+docker cp $(docker compose ps -q caddy):/data/caddy/pki/authorities/local/root.crt ~/Library/Application\ Support/Mozilla/Certificates/macadam_caddy.crt
+
+```
 
 ## Components
 

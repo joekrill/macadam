@@ -22,12 +22,12 @@ x-kratos-defaults: &kratos-defaults
     - postgres
   environment:
     COURIER_SMTP_CONNECTION_URI: smtp://mail:1025/?skip_ssl_verify=true
-    DSN: postgres://kratos:kratos-pass@postgres:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
+    DSN: postgres://kratos:kratos!@postgres:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
     SQA_OPT_OUT: "true"
     LOG_FORMAT: text
     LOG_LEVEL: debug # trace
     LOG_LEAK_SENSITIVE_VALUES: "true"
-    SESSION_COOKIE_NAME: saas_starter_session_dev
+    SESSION_COOKIE_NAME: macadam_session_dev
     SECRETS_COOKIE: PLEASE-CHANGE-ME-I-AM-VERY-INSECURE
     SERVE_PUBLIC_BASE_URL: https://localhost/kratos/public
     SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://localhost
@@ -47,19 +47,19 @@ x-api-server-defaults: &api-server-defaults
   <<: *service-defaults
   image: node:16.4
   command: ["yarn", "workspace", "api-server", "run", "migrate:up"]
-  working_dir: /var/saas-starter
+  working_dir: /var/macadam
   depends_on:
     - postgres
   restart: on-failure
   environment:
-    DB_URL: postgresql://saas-starter:saas-starter-pass@postgres:5432/saas-starter
+    DB_URL: postgresql://macadam:macadam!@postgres:5432/macadam
     REDIS_URL: redis://redis:6380/0
     PORT: 4000
     SENTRY_DSN: https://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip.localhost/2
   volumes:
     - type: bind
       source: .
-      target: /var/saas-starter
+      target: /var/macadam
 
 services:
   caddy:
@@ -83,9 +83,9 @@ services:
     #   - "5432:5432"
     environment:
       POSTGRES_HOST_AUTH_METHOD: "trust"
-      POSTGRES_USER: saas-starter
-      POSTGRES_PASSWORD: saas-starter-pass
-      POSTGRES_DB: saas-starter
+      POSTGRES_USER: macadam
+      POSTGRES_PASSWORD: macadam!
+      POSTGRES_DB: macadam
     volumes:
       - ./services/postgres/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
       - postgres_data:/var/lib/postgresql
@@ -154,4 +154,4 @@ services:
     volumes:
       - type: bind
         source: .
-        target: /var/saas-starter
+        target: /var/macadam

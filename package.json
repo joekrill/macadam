@@ -1,7 +1,7 @@
 {
-  "name": "@saas-starter/root",
+  "name": "@macadam/root",
   "version": "0.0.1",
-  "repository": "https://github.com/joekrill/saas-starter.git",
+  "repository": "https://github.com/joekrill/macadam.git",
   "author": "Joe Krill <joe@joekrill.com>",
   "license": "UNLICENSED",
   "private": true,

@@ -19,7 +19,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     ],
     "dependencyTreeRoots": [
       {
-        "name": "@saas-starter/root",
+        "name": "@macadam/root",
         "reference": "workspace:."
       },
       {
@@ -34,7 +34,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$)",
     "fallbackExclusionList": [
-      ["@saas-starter/root", ["workspace:."]],
+      ["@macadam/root", ["workspace:."]],
       ["api-server", ["workspace:packages/api-server"]],
       ["client-web", ["workspace:packages/client-web"]]
     ],
@@ -8134,6 +8134,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@macadam/root", [
+        ["workspace:.", {
+          "packageLocation": "./",
+          "packageDependencies": [
+            ["@macadam/root", "workspace:."],
+            ["@yarnpkg/pnpify", "npm:3.0.0-rc.14"],
+            ["eslint", "npm:7.32.0"],
+            ["husky", "npm:7.0.1"],
+            ["lint-staged", "npm:11.1.2"],
+            ["prettier", "npm:2.3.2"],
+            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["@mdx-js/loader", [
         ["npm:1.6.22", {
           "packageLocation": "./.yarn/cache/@mdx-js-loader-npm-1.6.22-de9620c32e-5ce4b92824.zip/node_modules/@mdx-js/loader/",
@@ -9189,21 +9204,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "rollup"
           ],
           "linkType": "HARD",
-        }]
-      ]],
-      ["@saas-starter/root", [
-        ["workspace:.", {
-          "packageLocation": "./",
-          "packageDependencies": [
-            ["@saas-starter/root", "workspace:."],
-            ["@yarnpkg/pnpify", "npm:3.0.0-rc.14"],
-            ["eslint", "npm:7.32.0"],
-            ["husky", "npm:7.0.1"],
-            ["lint-staged", "npm:11.1.2"],
-            ["prettier", "npm:2.3.2"],
-            ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"]
-          ],
-          "linkType": "SOFT",
         }]
       ]],
       ["@sentry/browser", [

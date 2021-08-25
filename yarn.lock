@@ -3419,6 +3419,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@macadam/root@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@macadam/root@workspace:."
+  dependencies:
+    "@yarnpkg/pnpify": ^3.0.0-rc.14
+    eslint: ^7.32.0
+    husky: ^7.0.1
+    lint-staged: ^11.1.2
+    prettier: 2.3.2
+    typescript: ^4.3.5
+  dependenciesMeta:
+    open@7.4.2:
+      unplugged: true
+  languageName: unknown
+  linkType: soft
+
 "@mdx-js/loader@npm:^1.6.22":
   version: 1.6.22
   resolution: "@mdx-js/loader@npm:1.6.22"
@@ -3857,22 +3873,6 @@ __metadata:
   checksum: 8be16e27863c219edbb25a4e6ec2fe0e1e451d9e917b6a43cf2ae5bc025a6b8faaa40f82a6e53b66d0de37b58ff472c6c3d57a83037ae635041f8df959d6d9aa
   languageName: node
   linkType: hard
-
-"@saas-starter/root@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@saas-starter/root@workspace:."
-  dependencies:
-    "@yarnpkg/pnpify": ^3.0.0-rc.14
-    eslint: ^7.32.0
-    husky: ^7.0.1
-    lint-staged: ^11.1.2
-    prettier: 2.3.2
-    typescript: ^4.3.5
-  dependenciesMeta:
-    open@7.4.2:
-      unplugged: true
-  languageName: unknown
-  linkType: soft
 
 "@sentry/browser@npm:6.11.0":
   version: 6.11.0

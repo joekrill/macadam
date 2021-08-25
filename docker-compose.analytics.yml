@@ -57,13 +57,13 @@ services:
       - mail
       - geoip
     environment:
-      ADMIN_USER_EMAIL: saasstarter@example.com
-      ADMIN_USER_NAME: saasstarter
-      ADMIN_USER_PWD: saasstarter
+      ADMIN_USER_EMAIL: macadam@example.com
+      ADMIN_USER_NAME: macadam
+      ADMIN_USER_PWD: macadam!
       DISABLE_AUTH: "true"
       BASE_URL: https://plausible.localhost
       SECRET_KEY_BASE: USbJSimhObRflMa+UC8iku9Iqhpr1RtPeLaEl8uuJpI44X+zoha1L9Jeo/7dgKUMZtMTGnDTsgYfYxcQ40ZSAA==
-      DATABASE_URL: postgresql://plausible:plausible-pass@postgres:5432/plausible
+      DATABASE_URL: postgresql://plausible:plausible!@postgres:5432/plausible
       CLICKHOUSE_DATABASE_URL: http://clickhouse:8123/plausible
       SMTP_HOST_ADDR: mail
       SMTP_HOST_PORT: 1025

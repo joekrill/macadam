@@ -20,6 +20,6 @@ services:
     volumes:
       - type: bind
         source: .
-        target: /var/saas-starter
+        target: /var/macadam
     networks:
       - sass-starter-net

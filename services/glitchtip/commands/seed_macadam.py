@@ -5,25 +5,25 @@ from organizations_ext.models import Organization, OrganizationUser, Organizatio
 from teams.models import Team
 from projects.models import Project, ProjectKey
 
-USER_EMAIL = 'saasstarter@example.com'
-USER_PASS = 'saasstarter'
-USER_NAME = 'SaaS Starter'
-ORG_SLUG = 'saas-starter-org'
-ORG_NAME = 'SaaS Starter'
-TEAM_SLUG = 'saas-starter-team'
-WEB_PROJECT_SLUG = 'saas-starter-web-client'
-WEB_PROJECT_NAME = 'SaaS Starter Web Client'
+USER_EMAIL = 'macadam@example.com'
+USER_PASS = 'macadam!'
+USER_NAME = 'macadam'
+ORG_SLUG = 'macadam-org'
+ORG_NAME = 'Macadam'
+TEAM_SLUG = 'macadam-team'
+WEB_PROJECT_SLUG = 'macadam-web-client'
+WEB_PROJECT_NAME = 'Macadam Web Client'
 WEB_PROJECT_KEY = '239d589a-58d2-4675-be81-59b19718b22e'
-API_PROJECT_SLUG = 'saas-starter-api-servier'
-API_PROJECT_NAME = 'SaaS Starter API Server'
+API_PROJECT_SLUG = 'macadam-api-servier'
+API_PROJECT_NAME = 'Macadam API Server'
 API_PROJECT_KEY = '31e5d046-1ecc-46ce-9f32-af55e9f4af88'
 
 class Command(BaseCommand):
-    help = 'Creates a user, organization, team, and projects for use with SaaS Starter'
+    help = 'Creates a user, organization, team, and projects for use with Macadam'
 
     def handle(self, *args, **options):   
       if User.objects.filter(email=USER_EMAIL).count() == 0: 
-        self.stdout.write(self.style.MIGRATE_HEADING('Seeding GlitchTip for SaaS Starter...'))
+        self.stdout.write(self.style.MIGRATE_HEADING('Seeding GlitchTip for Macadam...'))
 
         user = User(email=USER_EMAIL, name=USER_NAME, is_staff=True, is_superuser=True)
         user.set_password(USER_PASS)

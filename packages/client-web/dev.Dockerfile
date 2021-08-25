@@ -2,6 +2,6 @@
 
 FROM node:16.4
 
-WORKDIR /var/saas-starter
+WORKDIR /var/macadam
 RUN yarn
 CMD ["yarn", "workspace", "client-web", "run", "start"]

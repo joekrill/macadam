@@ -43,7 +43,7 @@ services:
       - ./services/grafana/provisioning:/etc/grafana/provisioning
     environment:
       - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
-      - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin!}
       - GF_USERS_ALLOW_SIGN_UP=false
     labels:
       org.label-schema.group: "monitoring"
@@ -80,6 +80,6 @@ services:
     <<: *service-defaults
     image: wrouesnel/postgres_exporter:v0.8.0
     environment:
-      DATA_SOURCE_NAME: postgres://saas-starter:saas-starter-pass@postgres:5432/saas-starter?sslmode=disable
+      DATA_SOURCE_NAME: postgres://macadam:macadam!@postgres:5432/macadam?sslmode=disable
     labels:
       org.label-schema.group: "monitoring"

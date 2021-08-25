@@ -2,6 +2,6 @@
 
 FROM node:16.4 AS builder
 
-WORKDIR /opt/saas-starter
+WORKDIR /opt/macadam
 COPY . .
 RUN yarn && yarn workspace client-web run build

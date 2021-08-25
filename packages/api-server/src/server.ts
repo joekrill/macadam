@@ -53,7 +53,7 @@ if (typeof DB_URL !== "string") {
           ...addressInfo,
           environment,
         },
-        "SaaS Starter API server listening"
+        "🛣️ Macadam API server listening"
       );
     });
   } catch (error) {

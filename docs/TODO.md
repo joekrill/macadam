@@ -44,7 +44,6 @@
 - production/staging kubernetes deployments
 - Mobile app (react-native)
 - "Down for Maintenance" state
-- Rename entire project (Ideas: macadam, hammada, rootdown, )
 - Vulnerability Disclosure Policy (https://github.com/disclose/dioterms/blob/master/core-terms-vdp.md)
 - Audit Log
 - Admin interface/API (user management)

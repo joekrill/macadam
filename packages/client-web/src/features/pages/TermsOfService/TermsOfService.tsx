@@ -46,7 +46,7 @@ export const TermsOfService = (props: TermsOfServiceProps) => (
         <p>
           <strong>Company</strong> (referred to as either &quot;the
           Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in
-          this Agreement) refers to SaaS Starter.
+          this Agreement) refers to Macadam.
         </p>
       </li>
       <li>
@@ -87,7 +87,7 @@ export const TermsOfService = (props: TermsOfServiceProps) => (
       </li>
       <li>
         <p>
-          <strong>Website</strong> refers to SaaS Starter, accessible from{" "}
+          <strong>Website</strong> refers to Macadam, accessible from{" "}
           <a href="https://www.example.com" rel="noreferrer" target="_blank">
             https://www.example.com
           </a>

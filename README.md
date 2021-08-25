@@ -1,4 +1,4 @@
-# saas-starter
+# Macadam
 
 - About
 - Getting started
@@ -16,7 +16,7 @@
 
 ## About
 
-SaaS Starter is a full stack software-as-a-service application meant to serve as a complete, exemplary starting point for new SaaS-type projects.
+Macadam is a full stack software-as-a-service application meant to serve as a complete, exemplary starting point for new SaaS-type projects.
 
 ## Getting started
 
@@ -30,7 +30,7 @@ SaaS Starter is a full stack software-as-a-service application meant to serve as
 
 ## Components
 
-SaaS Starter is built as a series of (micro)services.
+Macadam is built as a series of (micro)services.
 
 ### Frontend Web Client
 

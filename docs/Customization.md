@@ -1,9 +1,9 @@
 # Customization
 
-In order to use this SaaS starter for a real project, fork it and make the following changes to customize it to your application:
+In order to use this Macadam for a real project, fork it and make the following changes to customize it to your application:
 
-- ☐ Replace all occurances of `saas-starter` with a more appropriate project identifier.
-- ☐ Replace all occurances of "SaaS starter" with a the project name.
+- ☐ Replace all occurances of `macadam` with a more appropriate project identifier.
+- ☐ Replace all occurances of "Macadam" with a the project name.
 - ☐ Replace all occurances of `example.com` with the domain to be used.
 - ☐ Update `/package.json`:
   - ☐ `name`

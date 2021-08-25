@@ -7,7 +7,7 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { PasswordInput } from "../../common/components/PasswordInput/PasswordInput";
-import { UiNodeInput } from "../schemas/ui";
+import { UiNodeInput } from "../schemas/flows/ui";
 
 export interface SelfServiceUiNodeInputProps {
   node: UiNodeInput;

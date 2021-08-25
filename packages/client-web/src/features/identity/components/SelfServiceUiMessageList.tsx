@@ -1,5 +1,5 @@
 import { Box, BoxProps } from "@chakra-ui/react";
-import { UiText } from "../schemas/ui";
+import { UiText } from "../schemas/flows/ui";
 import { SelfServiceUiMessage } from "./SelfServiceUiMessage";
 
 export interface SelfServiceMessageListProps extends BoxProps {

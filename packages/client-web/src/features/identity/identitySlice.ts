@@ -1,16 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { identityApi } from "./identityApi";
-import {
-  isSelfServiceLoginFlowSuccess,
-  isSelfServiceRegistrationFlowSuccess,
-} from "./schemas";
+import { isSelfServiceLoginFlowSuccess } from "./schemas/flows/login";
+import { isSelfServiceRegistrationFlowSuccess } from "./schemas/flows/registration";
 import { Identity } from "./schemas/identity";
 import { Session } from "./schemas/session";
 
 export interface IdentityState {
   session?: Omit<Session, "identity">;
   identity?: Identity;
-  sessionLastUpdated?: number;
+  lastUpdated?: number;
 }
 
 export const identitySlice = createSlice({
@@ -25,7 +23,7 @@ export const identitySlice = createSlice({
           const { identity, ...session } = payload.session;
           state.session = session;
           state.identity = identity;
-          state.sessionLastUpdated = Date.now();
+          state.lastUpdated = Date.now();
         }
       }
     );
@@ -34,13 +32,14 @@ export const identitySlice = createSlice({
       (state, { payload }) => {
         if (isSelfServiceRegistrationFlowSuccess(payload)) {
           state.identity = payload.identity;
-          state.sessionLastUpdated = Date.now();
+          state.lastUpdated = Date.now();
         }
       }
     );
     builder.addMatcher(identityApi.endpoints.logout.matchFulfilled, (state) => {
       state.session = undefined;
-      state.sessionLastUpdated = Date.now();
+      state.identity = undefined;
+      state.lastUpdated = Date.now();
     });
     builder.addMatcher(
       identityApi.endpoints.whoami.matchFulfilled,
@@ -48,7 +47,7 @@ export const identitySlice = createSlice({
         const { identity, ...session } = payload;
         state.session = session;
         state.identity = identity;
-        state.sessionLastUpdated = Date.now();
+        state.lastUpdated = Date.now();
       }
     );
     builder.addMatcher(
@@ -56,7 +55,8 @@ export const identitySlice = createSlice({
       (state, { payload }) => {
         if (payload?.status === 401) {
           state.session = undefined;
-          state.sessionLastUpdated = Date.now();
+          state.identity = undefined;
+          state.lastUpdated = Date.now();
         }
       }
     );

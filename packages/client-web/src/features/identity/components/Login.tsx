@@ -1,32 +1,57 @@
 import { Box, Container, Link, Spinner, Text } from "@chakra-ui/react";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { Link as RouterLink, useHistory, useLocation } from "react-router-dom";
+import { z } from "zod";
 import { Card } from "../../common/components/Card/Card";
-import { useIsLoggedIn } from "../hooks/useIsLoggedIn";
-import { identityApi, useWhoamiQuery } from "../identityApi";
+import { useSession } from "../hooks/useSession";
+import { identityApi } from "../identityApi";
 import {
   isSelfServiceLoginFlow,
   isSelfServiceLoginFlowSuccess,
-} from "../schemas";
+} from "../schemas/flows/login";
 import { FlowError } from "./FlowError";
 import { LoggedInNotice } from "./LoggedInNotice";
 import { SelfServiceUiForm } from "./SelfServiceUiForm";
 import { SelfServiceUiMessageList } from "./SelfServiceUiMessageList";
 
-export const Login = () => {
-  const whoamiQuery = useWhoamiQuery();
+const redirectStateSchema = z.object({
+  pathname: z.string().refine((pathname) => !pathname.startsWith("/auth")),
+  search: z.string().optional(),
+  state: z.unknown().optional(),
+  hash: z.string().optional(),
+  key: z.string().optional(),
+});
+
+export function isValidRedirect(
+  location: unknown
+): location is z.infer<typeof redirectStateSchema> {
+  return redirectStateSchema.safeParse(location).success;
+}
+
+export interface LoginProps {
+  redirectTo?: string;
+}
+
+export const Login = ({ redirectTo = "/" }: LoginProps) => {
+  const session = useSession();
   const history = useHistory();
   const location = useLocation<{ from?: Location }>();
-  const isLoggedIn = useIsLoggedIn();
+  const redirectLocation = isValidRedirect(location.state?.from)
+    ? location.state.from
+    : { pathname: redirectTo };
   const [isSubmitted, setIsSubmitted] = useState(false);
   const loginFlowQuery = identityApi.useInitializeLoginFlowQuery(undefined, {
-    skip: isLoggedIn !== false, // Don't initialize the query unless we have determined we aren't logged in already.
+    // Force a new flow to be initialized whenever the form is recreated.
+    refetchOnMountOrArgChange: true,
+
+    // Don't initialize the query unless we have determined we aren't logged in already,
+    // otherwise we'd create a flow that will never be used.
+    skip: session.isLoggedIn !== false,
   });
   const [submitLogin, submitResult] = identityApi.useSubmitLoginFlowMutation();
 
-  const isInitializing = isLoggedIn === undefined || loginFlowQuery.isLoading;
+  const isInitializing = session.isUnknown || loginFlowQuery.isLoading;
   const isLoading = isInitializing || submitResult.isLoading;
-  const isSuccess = isSelfServiceLoginFlowSuccess(submitResult.data);
 
   const data =
     (isSubmitted &&
@@ -35,22 +60,6 @@ export const Login = () => {
     loginFlowQuery.data;
   const error = (isSubmitted && submitResult.error) || loginFlowQuery.error;
 
-  useEffect(() => {
-    if (isSuccess) {
-      whoamiQuery.refetch();
-    }
-  }, [isSuccess, whoamiQuery]);
-
-  useEffect(() => {
-    if (isSuccess && isLoggedIn) {
-      history.replace(
-        location.state?.from || {
-          pathname: "/",
-        }
-      );
-    }
-  }, [isSuccess, isLoggedIn, history, location.state?.from]);
-
   const restart = useCallback(() => {
     loginFlowQuery.refetch();
     setIsSubmitted(false);
@@ -58,7 +67,7 @@ export const Login = () => {
 
   return (
     <Container maxW="container.sm">
-      {isLoggedIn && !isSubmitted ? (
+      {session.isLoggedIn && !isSubmitted ? (
         <LoggedInNotice onLogout={() => restart()} />
       ) : (
         <Card>
@@ -73,6 +82,13 @@ export const Login = () => {
                   action,
                   method,
                   body: Object.fromEntries(formData),
+                }).then((result) => {
+                  if (
+                    "data" in result &&
+                    isSelfServiceLoginFlowSuccess(result.data)
+                  ) {
+                    history.push(redirectLocation);
+                  }
                 });
               }}
             />
@@ -83,7 +99,7 @@ export const Login = () => {
             </Box>
           )}
           <SelfServiceUiMessageList mt={3} messages={data?.ui?.messages} />
-          {isLoggedIn === false && (
+          {session.isLoggedIn === false && (
             <Box
               key="other-options"
               mt={8}

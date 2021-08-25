@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { UiContainer, UiNodeInput } from "../schemas/ui";
+import { UiContainer, UiNodeInput } from "../schemas/flows/ui";
 import { SelfServiceUiNode } from "./SelfServiceUiNode";
 
 export interface SelfServiceUiFormProps {

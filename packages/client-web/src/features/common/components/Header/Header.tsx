@@ -59,12 +59,7 @@ export const Header = (props: HeaderProps) => {
         {session.isLoggedIn === true && <LogoutButton />}
         {session.isLoggedOut === true && <LoginButton />}
         {session.isLoggedOut === true && (
-          <Button
-            disabled={session.isLoading}
-            as={RouterLink}
-            to="/auth/registration"
-            variant="solid"
-          >
+          <Button as={RouterLink} to="/auth/registration" variant="solid">
             Sign Up
           </Button>
         )}

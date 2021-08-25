@@ -22,6 +22,9 @@ selfservice:
   methods:
     password:
       enabled: true
+    # TODO: OIDC
+    # oidc: 
+    #   enabled: true
     profile:
       enabled: true
     link:
@@ -95,6 +98,17 @@ identity:
   # the identity schema(s): `packages/client-web/src/features/identity/schemas/identity.ts`
   default_schema_url: file:///etc/config/kratos/email-password.schema.json
 
+session:
+  cookie:
+    name: saas_starter_session
+  lifespan: 720h # 30 days
+    
+sqa-opt-out: true
+
+expose-metrics-port: 4434
+
 courier:
   smtp:
     connection_uri: smtp://mailhog:1025/?skip_ssl_verify=true
+    # from_name: Bob # TODO
+    # from_address: aaa@a.aa # TODO

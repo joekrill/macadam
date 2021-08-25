@@ -1,4 +1,4 @@
-import { UiNode } from "../schemas/ui";
+import { UiNode } from "../schemas/flows/ui";
 import { SelfServiceUiNodeInput } from "./SelfServiceUiNodeInput";
 
 export interface SelfServiceUiNodeProps {

@@ -3,7 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { Card } from "../../common/components/Card/Card";
 import { useRegistrationFlow } from "../hooks/useRegistrationFlow";
 import { useSession } from "../hooks/useSession";
-import { UiText } from "../schemas/ui";
+import { UiText } from "../schemas/flows/ui";
 import { FlowError } from "./FlowError";
 import { LoggedInNotice } from "./LoggedInNotice";
 import { SelfServiceUiForm } from "./SelfServiceUiForm";

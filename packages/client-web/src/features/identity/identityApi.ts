@@ -1,25 +1,31 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { KnownError } from "../errors/KnownError";
+import { SelfServiceFlow, SelfServiceFlowName } from "./schemas/flows";
 import {
-  SelfServiceFlow,
-  SelfServiceFlowType,
   SelfServiceLoginFlow,
   selfServiceLoginFlowResponseSchema,
   selfServiceLoginFlowSchema,
   SelfServiceLoginFlowSuccess,
-  selfServiceLogoutUrlSchema,
+} from "./schemas/flows/login";
+import { selfServiceLogoutUrlSchema } from "./schemas/flows/logout";
+import {
   SelfServiceRecoveryFlow,
   selfServiceRecoveryFlowSchema,
+} from "./schemas/flows/recovery";
+import {
   SelfServiceRegistrationFlow,
   selfServiceRegistrationFlowResponseSchema,
   selfServiceRegistrationFlowSchema,
   SelfServiceRegistrationFlowSuccess,
+} from "./schemas/flows/registration";
+import {
   SelfServiceSettingsFlow,
   selfServiceSettingsFlowSchema,
   selfServiceSettingsFlowSubmitResponseSchema,
+} from "./schemas/flows/settings";
+import {
   SelfServiceVerificationFlow,
   selfServiceVerificationFlowSchema,
-} from "./schemas";
+} from "./schemas/flows/verification";
 import { Session, sessionSchema } from "./schemas/session";
 
 export const baseQuery = fetchBaseQuery({
@@ -31,6 +37,13 @@ export const baseQuery = fetchBaseQuery({
     return headers;
   },
 });
+
+export interface SubmitFlowPayload {
+  id: string;
+  action: string;
+  method: string;
+  body: any;
+}
 
 export const identityApi = createApi({
   baseQuery,
@@ -44,6 +57,23 @@ export const identityApi = createApi({
     "Session",
   ],
   endpoints: (build) => ({
+    initializeFlow: build.query<any, string>({
+      query: (name) => ({
+        url: `/self-service/${name}/browser`,
+        headers: {
+          Accept: "application/json",
+        },
+      }),
+    }),
+
+    submitFlow: build.mutation<any, SubmitFlowPayload>({
+      query: ({ action, method, body }) => ({
+        url: action,
+        method,
+        body,
+      }),
+    }),
+
     initializeLoginFlow: build.query<SelfServiceLoginFlow, void>({
       query: () => ({
         url: "/self-service/login/browser",
@@ -192,67 +222,14 @@ export const identityApi = createApi({
         selfServiceSettingsFlowSubmitResponseSchema.parse(response).flow,
     }),
 
-    // initializeFlow: build.query<SelfServiceFlow, SelfServiceFlowType>({
-    initializeFlow: build.query<string, SelfServiceFlowType>({
-      // query: (type) => `self-service/${type}/browser`,
-      // It is currently necessary to make a "reqular" page request first to
-      // initialze a flow in kratos, which will redirect to a URL that includes
-      // the flow ID. Soon krator will supports JSON for browser flows which
-      // should make this simpler: https://github.com/ory/kratos/issues/1138
-      query: (type) => ({
-        url: `self-service/${type}/browser`,
-        headers: {
-          "Content-Type": "text/html",
-          // Accept: "application/json",
-
-          //   "Content-Type": "text/html",
-        },
-        responseHandler: (response) => {
-          const url = new URL(response.url);
-          const params = new URLSearchParams(url.search);
-          if (params.has("flow")) {
-            return Promise.resolve(params.get("flow"));
-          }
-
-          if (response.redirected) {
-            // If we were redirect, the call to our kratos instance succeeded
-            // (so this isn't a network error or something similar), but we
-            // weren't given a flowId, probably because we are in an invalid
-            // state to request the given flow (i.e. we are requesting a login
-            // flow, but are already authenticated)
-            return Promise.reject(
-              new KnownError("identity/invalid_state", "Unable to start flow")
-            );
-          }
-
-          return Promise.reject(new Error("No flow ID returned"));
-        },
-      }),
-      providesTags: (result) =>
-        result ? [{ type: "SelfServiceFlow", id: result }] : [],
-    }),
-
     getFlow: build.query<
       SelfServiceFlow,
-      { type: SelfServiceFlowType; id: string }
+      { type: SelfServiceFlowName; id: string }
     >({
       query: ({ type, id }) => `self-service/${type}/flows?id=${id}`,
       providesTags: (_result, _error, { id }) => [
         { type: "SelfServiceFlow", id },
       ],
-    }),
-
-    submitFlow: build.mutation<
-      SelfServiceFlow,
-      { action: string; method: string; body: Object }
-    >({
-      query: ({ action, method, body }) => ({
-        url: action,
-        method,
-        body,
-      }),
-      invalidatesTags: (result, _error) =>
-        result ? [{ type: "SelfServiceFlow", id: result.id }] : [],
     }),
 
     createLogoutUrl: build.mutation<string, void>({
@@ -277,5 +254,8 @@ export const identityApi = createApi({
     }),
   }),
 });
+
+export const invalidateSession = () =>
+  identityApi.util.invalidateTags([{ type: "Session", id: "CURRENT" }]);
 
 export const { useWhoamiQuery, useSubmitFlowMutation } = identityApi;

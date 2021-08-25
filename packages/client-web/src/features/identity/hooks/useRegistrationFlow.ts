@@ -2,7 +2,7 @@ import { identityApi } from "../identityApi";
 import {
   isSelfServiceRegistrationFlow,
   isSelfServiceRegistrationFlowSuccess,
-} from "../schemas";
+} from "../schemas/flows/registration";
 
 export const useRegistrationFlow = () => {
   const registrationFlowQuery =

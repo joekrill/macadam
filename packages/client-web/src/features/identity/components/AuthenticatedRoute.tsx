@@ -1,28 +1,33 @@
 import { ComponentProps, ReactNode } from "react";
 import { Redirect, Route } from "react-router";
-import { useWhoamiQuery } from "../identityApi";
+import { useSession } from "../hooks/useSession";
 
 export interface AuthenticatedRouteProps extends ComponentProps<typeof Route> {
   whileLoading?: ReactNode;
+  allowUnverified?: boolean;
 }
 
 export const AuthenticatedRoute = ({
+  allowUnverified = false,
   children,
   whileLoading,
   ...props
 }: AuthenticatedRouteProps) => {
-  // TODO: switch useSession or useIsLoggedIn?
-  const whoami = useWhoamiQuery();
+  const { isLoggedIn, isUnknown, isVerified } = useSession();
 
   return (
     <Route
       {...props}
       render={({ location }) => {
-        if (whoami.isLoading) {
+        if (isUnknown) {
           return whileLoading;
         }
 
-        if (whoami.data?.id) {
+        if (!allowUnverified && !isVerified) {
+          // TODO: Render message about verifying email address to continue?
+        }
+
+        if (isLoggedIn) {
           return children;
         }
 

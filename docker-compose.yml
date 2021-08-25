@@ -27,6 +27,7 @@ x-kratos-defaults: &kratos-defaults
     LOG_FORMAT: text
     LOG_LEVEL: debug # trace
     LOG_LEAK_SENSITIVE_VALUES: "true"
+    SESSION_COOKIE_NAME: saas_starter_session_dev
     SECRETS_COOKIE: PLEASE-CHANGE-ME-I-AM-VERY-INSECURE
     SERVE_PUBLIC_BASE_URL: https://localhost/kratos/public
     SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://localhost

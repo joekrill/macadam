@@ -13,7 +13,7 @@ describe("metrics", () => {
         environment: "test",
         dbUrl: "sqlite::memory:",
         metricsPath: "/metrics",
-        logger: pino(),
+        logger: pino({ enabled: false }),
       });
     });
 

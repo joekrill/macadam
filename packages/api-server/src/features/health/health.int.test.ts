@@ -10,7 +10,7 @@ describe("/health", () => {
       environment: "test",
       dbUrl: "sqlite::memory:",
       healthPath: "/health",
-      logger: pino(),
+      logger: pino({ enabled: false }),
     });
   });
 

@@ -1,6 +1,6 @@
 module.exports = {
   // -- Files--
-  rootDir: "../../",
+  rootDir: "../../src",
   testMatch: ["**/*.int.test.{js,mjs,ts}"],
 
   // -- Behavior --

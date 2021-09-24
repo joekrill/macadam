@@ -8832,6 +8832,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@ory/kratos-client", [
+        ["npm:0.7.3-alpha.6", {
+          "packageLocation": "./.yarn/cache/@ory-kratos-client-npm-0.7.3-alpha.6-7d02036365-afc97a95e1.zip/node_modules/@ory/kratos-client/",
+          "packageDependencies": [
+            ["@ory/kratos-client", "npm:0.7.3-alpha.6"],
+            ["axios", "npm:0.21.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@pmmmwh/react-refresh-webpack-plugin", [
         ["npm:0.4.3", {
           "packageLocation": "./.yarn/cache/@pmmmwh-react-refresh-webpack-plugin-npm-0.4.3-5375cf6b6f-36a7b0c63f.zip/node_modules/@pmmmwh/react-refresh-webpack-plugin/",
@@ -13995,6 +14005,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mikro-orm/migrations", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:4.5.7"],
             ["@mikro-orm/postgresql", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:4.5.7"],
             ["@mikro-orm/sqlite", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:4.5.7"],
+            ["@ory/kratos-client", "npm:0.7.3-alpha.6"],
             ["@sentry/node", "npm:6.11.0"],
             ["@shopify/jest-koa-mocks", "npm:3.0.3"],
             ["@types/ioredis", "npm:4.26.7"],
@@ -14010,6 +14021,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/uuid", "npm:8.3.1"],
             ["ioredis", "npm:4.27.7"],
             ["jest", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:27.0.6"],
+            ["jest-mock-axios", "npm:4.4.0"],
             ["koa", "npm:2.13.1"],
             ["koa-bodyparser", "npm:4.3.0"],
             ["koa-compose", "npm:4.1.0"],
@@ -14476,6 +14488,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/axe-core-npm-4.2.3-0c3b888376-753487b6d5.zip/node_modules/axe-core/",
           "packageDependencies": [
             ["axe-core", "npm:4.2.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["axios", [
+        ["npm:0.21.1", {
+          "packageLocation": "./.yarn/cache/axios-npm-0.21.1-d192f6b3b3-c87915fa0b.zip/node_modules/axios/",
+          "packageDependencies": [
+            ["axios", "npm:0.21.1"],
+            ["follow-redirects", "virtual:d192f6b3b31cd5d11a443145a3883a70c04cbd7c813c53085dbaf50263735f1162f10fdbddd53c24e162ec3bc37b90966413084323739b7cf942b8bfb4da8831#npm:1.14.2"]
           ],
           "linkType": "HARD",
         }]
@@ -20252,10 +20274,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "SOFT",
         }],
+        ["npm:1.14.2", {
+          "packageLocation": "./.yarn/cache/follow-redirects-npm-1.14.2-43d57a862b-53195df4a2.zip/node_modules/follow-redirects/",
+          "packageDependencies": [
+            ["follow-redirects", "npm:1.14.2"]
+          ],
+          "linkType": "SOFT",
+        }],
         ["virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.13.3", {
           "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-66f5a556bc/0/cache/follow-redirects-npm-1.13.3-bc35dfad3e-4b5aaa91a0.zip/node_modules/follow-redirects/",
           "packageDependencies": [
             ["follow-redirects", "virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.13.3"],
+            ["debug", null]
+          ],
+          "packagePeers": [
+            "debug"
+          ],
+          "linkType": "HARD",
+        }],
+        ["virtual:d192f6b3b31cd5d11a443145a3883a70c04cbd7c813c53085dbaf50263735f1162f10fdbddd53c24e162ec3bc37b90966413084323739b7cf942b8bfb4da8831#npm:1.14.2", {
+          "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-d3b59002e6/0/cache/follow-redirects-npm-1.14.2-43d57a862b-53195df4a2.zip/node_modules/follow-redirects/",
+          "packageDependencies": [
+            ["follow-redirects", "virtual:d192f6b3b31cd5d11a443145a3883a70c04cbd7c813c53085dbaf50263735f1162f10fdbddd53c24e162ec3bc37b90966413084323739b7cf942b8bfb4da8831#npm:1.14.2"],
             ["debug", null]
           ],
           "packagePeers": [
@@ -23920,6 +23960,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-mock", "npm:27.0.6"],
             ["@jest/types", "npm:27.0.6"],
             ["@types/node", "npm:16.4.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["jest-mock-axios", [
+        ["npm:4.4.0", {
+          "packageLocation": "./.yarn/cache/jest-mock-axios-npm-4.4.0-30830cfd30-a49c4ca51d.zip/node_modules/jest-mock-axios/",
+          "packageDependencies": [
+            ["jest-mock-axios", "npm:4.4.0"],
+            ["synchronous-promise", "npm:2.0.15"]
           ],
           "linkType": "HARD",
         }]
@@ -33224,6 +33274,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["es-abstract", "npm:1.18.0"],
             ["has-symbols", "npm:1.0.2"],
             ["object.getownpropertydescriptors", "npm:2.1.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["synchronous-promise", [
+        ["npm:2.0.15", {
+          "packageLocation": "./.yarn/cache/synchronous-promise-npm-2.0.15-5311c7e3c6-6079a6acd3.zip/node_modules/synchronous-promise/",
+          "packageDependencies": [
+            ["synchronous-promise", "npm:2.0.15"]
           ],
           "linkType": "HARD",
         }]

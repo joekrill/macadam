@@ -56,6 +56,8 @@ x-api-server-defaults: &api-server-defaults
     REDIS_URL: redis://redis:6380/0
     PORT: 4000
     SENTRY_DSN: https://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip.localtest.me/2
+    KRATOS_PUBLIC_URL: http://kratos:4433/
+    KRATOS_ADMIN_URL: http://kratos:4434/
   volumes:
     - type: bind
       source: .

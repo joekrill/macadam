@@ -23,6 +23,7 @@ const {
   NODE_ENV,
   PORT,
   SENTRY_DSN,
+  KRATOS_PUBLIC_URL,
 } = process.env;
 
 const environment = NODE_ENV || "development";
@@ -31,6 +32,11 @@ const host = LISTEN_ADDRESS || "0.0.0.0";
 
 if (typeof DB_URL !== "string") {
   finalLogger.error("DB_URL environment variable not supplied");
+  process.exit(2);
+}
+
+if (typeof KRATOS_PUBLIC_URL !== "string") {
+  finalLogger.error("KRATOS_PUBLIC_URL environment variable not supplied");
   process.exit(2);
 }
 
@@ -43,6 +49,7 @@ if (typeof DB_URL !== "string") {
       logger,
       metricsPath: METRICS_PATH,
       sentryDsn: SENTRY_DSN,
+      kratosPublicUrl: KRATOS_PUBLIC_URL,
     });
 
     const apiServer = app.listen(port, host, () => {

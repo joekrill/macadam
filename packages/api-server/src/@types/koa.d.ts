@@ -1,4 +1,5 @@
 import "koa";
+import { SessionState } from "../features/auth/authentication";
 import { HealthState } from "../features/health/health";
 import { LoggingState } from "../features/logging/logging";
 import { MetricsState } from "../features/metrics/metrics";
@@ -22,5 +23,6 @@ declare module "koa" {
       LoggingState,
       MetricsState,
       RequestIdState,
-      ResponseTimeState {}
+      ResponseTimeState,
+      SessionState {}
 }

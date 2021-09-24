@@ -14,6 +14,7 @@ describe("metrics", () => {
         dbUrl: "sqlite::memory:",
         metricsPath: "/metrics",
         logger: pino({ enabled: false }),
+        kratosPublicUrl: "",
       });
     });
 

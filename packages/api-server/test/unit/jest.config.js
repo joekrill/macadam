@@ -16,10 +16,6 @@ module.exports = {
 
   // -- Coverage --
   collectCoverage: true,
-  collectCoverageFrom: [
-    "src/**/*.{js,ts}",
-    "!src/@types/*",
-    "!src/**/*.test.{js,ts}",
-  ],
+  collectCoverageFrom: ["**/*.{js,ts}", "!@types/*", "!**/*.test.{js,ts}"],
   coverageProvider: "v8",
 };

@@ -1,5 +1,4 @@
 - (api-server) Reduce amount of logging output in development
-- (api-server) Example protected api endpoint (UserPreferences?)
 - (api-server) Better unit test coverage + enforce minimum
 - (api-server) Uploads
 - (client-web) Better unit test coverage + enforce minimum
@@ -30,7 +29,7 @@
 - (client-web) Logos
 - (kratos) customize email templates
 - (kratos) social logins (https://github.com/ory/kratos/issues/273)
-  - Will liklely requiring switching to localtest.me or vcap.me for local environment
+  - This doesn't appear to be supported yet for SPA apps?
 - Integration tests
 - husky
 - commitlint
@@ -55,6 +54,7 @@
 - https://cheatsheetseries.owasp.org/index.html
 - https://www.npmjs.com/package/devcert
 - https://github.com/ory/kratos/issues/1328
+- Tracing (OpenTracing, Zipkin, Jaegar, etc)
 
 Reference Projects:
 

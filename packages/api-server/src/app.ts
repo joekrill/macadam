@@ -7,6 +7,7 @@ import bodyParser from "koa-bodyparser";
 import helmet from "koa-helmet";
 import { Logger } from "pino";
 import { apiRoutes } from "./features/api";
+import { authentication } from "./features/auth/authentication";
 import { healthRoutes } from "./features/health/health";
 import { logging } from "./features/logging/logging";
 import { metricsCollector, metricsRoutes } from "./features/metrics/metrics";
@@ -28,19 +29,30 @@ export interface AppOptions {
   dbUrl: string;
 
   /**
+   * The default amount of time (in milliseconds) to give the application
+   * to shutdown before forcefully exiting.
+   */
+  defaultShutdownWaitMs?: number;
+
+  /**
    * The current runtime envinroment ("development", "production", etc.)
    */
   environment?: string;
 
   /**
-   * The logging instance to use for writing messages.
-   */
-  logger: Logger;
-
-  /**
    * The endpoint for health status.
    */
   healthPath?: string;
+
+  /**
+   * The URL to the public API of the Kratos instance used for authentication.
+   */
+  kratosPublicUrl: string;
+
+  /**
+   * The logging instance to use for writing messages.
+   */
+  logger: Logger;
 
   /**
    * The path to serve Prometheus-style metrics from
@@ -56,12 +68,6 @@ export interface AppOptions {
    * The URL of the Sentry instance to send crash reports to.
    */
   sentryDsn?: string;
-
-  /**
-   * The default amount of time (in milliseconds) to give the application
-   * to shutdown before forcefully exiting.
-   */
-  defaultShutdownWaitMs?: number;
 }
 
 export interface AppInstance extends Koa {
@@ -78,6 +84,7 @@ export const createApp = async ({
   defaultShutdownWaitMs = 15000,
   environment = "development",
   healthPath = "/health",
+  kratosPublicUrl,
   logger,
   metricsPath = "/metrics",
   redisUrl,
@@ -207,6 +214,8 @@ export const createApp = async ({
       // },
     })
   );
+
+  app.use(authentication({ publicUrl: kratosPublicUrl }));
 
   // Create a scoped entity manager for each request.
   app.use(entityManager({ orm }));

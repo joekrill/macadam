@@ -2,6 +2,7 @@ import Router from "@koa/router";
 import { Context, DefaultState } from "koa";
 import compose from "koa-compose";
 import { router as thingsRouter } from "./things/router";
+import { router as userPreferencesRouter } from "./userPreferences/router";
 
 export interface ApiRoutesOptions {
   prefix?: string;
@@ -14,6 +15,12 @@ export const apiRoutes = ({ prefix }: ApiRoutesOptions) => {
     "/things",
     thingsRouter.routes(),
     thingsRouter.allowedMethods()
+  );
+
+  apiRouter.use(
+    "/user-preferences",
+    userPreferencesRouter.routes(),
+    userPreferencesRouter.allowedMethods()
   );
 
   return compose([apiRouter.routes(), apiRouter.allowedMethods()]);

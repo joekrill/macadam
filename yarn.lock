@@ -3707,6 +3707,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ory/kratos-client@npm:^0.7.3-alpha.6":
+  version: 0.7.3-alpha.6
+  resolution: "@ory/kratos-client@npm:0.7.3-alpha.6"
+  dependencies:
+    axios: ^0.21.1
+  checksum: afc97a95e1b397ab0011646f5bf87a58cf0de34decad222a95141b8166888a3a36f0b4ff51709b1a80bfb77aec3ad383743e48ce1f77ebb52cfe8ae17fbcf19b
+  languageName: node
+  linkType: hard
+
 "@pmmmwh/react-refresh-webpack-plugin@npm:0.4.3, @pmmmwh/react-refresh-webpack-plugin@npm:^0.4.3":
   version: 0.4.3
   resolution: "@pmmmwh/react-refresh-webpack-plugin@npm:0.4.3"
@@ -7350,6 +7359,7 @@ __metadata:
     "@mikro-orm/migrations": ^4.5.7
     "@mikro-orm/postgresql": ^4.5.7
     "@mikro-orm/sqlite": ^4.5.7
+    "@ory/kratos-client": ^0.7.3-alpha.6
     "@sentry/node": ^6.11.0
     "@shopify/jest-koa-mocks": ^3.0.3
     "@types/ioredis": ^4.26.7
@@ -7365,6 +7375,7 @@ __metadata:
     "@types/uuid": ^8.3.1
     ioredis: ^4.27.7
     jest: ^27.0.6
+    jest-mock-axios: ^4.4.0
     koa: ^2.13.1
     koa-bodyparser: ^4.3.0
     koa-compose: ^4.1.0
@@ -7765,6 +7776,15 @@ __metadata:
   version: 4.2.3
   resolution: "axe-core@npm:4.2.3"
   checksum: 753487b6d599dd478edebe8c9966c0f3ae44877b784add323e72db8c221ba8c248a841d35ef920d5b4bd6203552e15e443b36d2dd4cb3ff7d8e894cc64c5cb57
+  languageName: node
+  linkType: hard
+
+"axios@npm:^0.21.1":
+  version: 0.21.1
+  resolution: "axios@npm:0.21.1"
+  dependencies:
+    follow-redirects: ^1.10.0
+  checksum: c87915fa0b18c15c63350112b6b3563a3e2ae524d7707de0a73d2e065e0d30c5d3da8563037bc29d4cc1b7424b5a350cb7274fa52525c6c04a615fe561c6ab11
   languageName: node
   linkType: hard
 
@@ -12440,6 +12460,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"follow-redirects@npm:^1.10.0":
+  version: 1.14.2
+  resolution: "follow-redirects@npm:1.14.2"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: 53195df4a2f36202177f40a2d59d497d630f3b20e2e51e2b697ee5f9c0a5261985f164b23d3744a574e117618af668d07c0d000c2c5cb0c1546851671585ac4e
+  languageName: node
+  linkType: hard
+
 "for-in@npm:^1.0.1, for-in@npm:^1.0.2":
   version: 1.0.2
   resolution: "for-in@npm:1.0.2"
@@ -15531,6 +15561,15 @@ fsevents@^1.2.7:
     slash: ^3.0.0
     stack-utils: ^2.0.3
   checksum: ef35619ea72511216f285591878b06c6ca1fd885fbceaac91bed1e8f49a5198b08c7014f6fe2c772814107997e533ec9bd4e6fc3c1d8e3ec6c8e35151ee3e42a
+  languageName: node
+  linkType: hard
+
+"jest-mock-axios@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "jest-mock-axios@npm:4.4.0"
+  dependencies:
+    synchronous-promise: ^2.0.15
+  checksum: a49c4ca51d9a33ca07dfc40d288fcdada0ab92a571b4d0188996c8351c6904cf885c1f665c8a641b31b85fac7dc6cc2c7058fefe816600230da9cdfe8341bcb5
   languageName: node
   linkType: hard
 
@@ -23461,6 +23500,13 @@ resolve@^2.0.0-next.3:
     has-symbols: ^1.0.1
     object.getownpropertydescriptors: ^2.1.2
   checksum: 12e71b55af8d6020ce5a3758bfd6044ea877951b92af02302d5f40438490f36f4b4836d0d8bddc032af63e8e7ec2d25938b93ff759b31a25b39303e1dfb74d44
+  languageName: node
+  linkType: hard
+
+"synchronous-promise@npm:^2.0.15":
+  version: 2.0.15
+  resolution: "synchronous-promise@npm:2.0.15"
+  checksum: 6079a6acd37d02eb76f250dc7ce09009151744901b320a8cfbba056b015c3d7cbf4e7467458f2d27c6393634f68521b241ea9e35fd9640f8fb59342740550472
   languageName: node
   linkType: hard
 

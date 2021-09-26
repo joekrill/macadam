@@ -5,7 +5,7 @@ import { Thing } from "../../orm/entities/Thing";
 
 interface ThingRouterState extends DefaultState {
   thing?: Thing;
-  thingRepository: EntityRepository<Thing>;
+  thingRepository?: EntityRepository<Thing>;
 }
 
 export const router = new Router<DefaultState, Context>();
@@ -28,7 +28,7 @@ export const router = new Router<DefaultState, Context>();
     async (id, ctx: Router.RouterContext<ThingRouterState>, next) => {
       const { thingRepository } = ctx.state;
       try {
-        ctx.state.thing = await thingRepository.findOneOrFail({ id });
+        ctx.state.thing = await thingRepository!.findOneOrFail({ id });
       } catch (err) {
         return ctx.throw(404);
       }
@@ -38,7 +38,7 @@ export const router = new Router<DefaultState, Context>();
   )
   .get("/", async (ctx) => {
     const { thingRepository } = ctx.state;
-    ctx.body = await thingRepository.findAll();
+    ctx.body = await thingRepository!.findAll();
     ctx.status = 200;
   })
   .get("/:id", async (ctx) => {
@@ -53,7 +53,7 @@ export const router = new Router<DefaultState, Context>();
     }
 
     try {
-      await thingRepository.removeAndFlush(thing);
+      await thingRepository!.removeAndFlush(thing);
       ctx.status = 204;
     } catch (err) {
       ctx.status = 404;

@@ -17,7 +17,7 @@ x-service-defaults: &service-defaults
 
 x-kratos-defaults: &kratos-defaults
   <<: *service-defaults
-  image: oryd/kratos:v0.7.1-alpha.1
+  image: oryd/kratos:v0.7.6-alpha.1
   depends_on:
     - postgres
   environment:
@@ -45,7 +45,7 @@ x-kratos-defaults: &kratos-defaults
 
 x-api-server-defaults: &api-server-defaults
   <<: *service-defaults
-  image: node:16.4
+  image: node:16.10
   command: ["yarn", "workspace", "api-server", "run", "migrate:up"]
   working_dir: /var/macadam
   depends_on:

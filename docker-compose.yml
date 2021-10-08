@@ -78,7 +78,7 @@ services:
 
   postgres:
     <<: *service-defaults
-    image: postgres:13
+    image: postgres:14
     # image: postgis/postgis:13-3.1 # Does not work with arm yet.
     # Uncomment to expost postgres directly
     # ports:

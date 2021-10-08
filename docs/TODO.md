@@ -54,7 +54,8 @@
 - https://cheatsheetseries.owasp.org/index.html
 - https://www.npmjs.com/package/devcert
 - https://github.com/ory/kratos/issues/1328
-- Tracing (OpenTracing, Zipkin, Jaegar, etc)
+- Tracing (OpenTelemetry)
+- Upgrade Postgres to v14
 
 Reference Projects:
 

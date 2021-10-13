@@ -1,11 +1,11 @@
-import { Box, Container, Link, Spinner, Text } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
+import { Box, Container, Spinner, Text } from "@chakra-ui/react";
 import { Card } from "../../common/components/Card/Card";
 import { ErrorAlert } from "../../errors/components/ErrorAlert";
 import { useRegistrationFlow } from "../hooks/useRegistrationFlow";
 import { useSession } from "../hooks/useSession";
 import { UiText } from "../schemas/flows/ui";
 import { LoggedInNotice } from "./LoggedInNotice";
+import { LoginLink } from "./LoginLink";
 import { SelfServiceUiForm } from "./SelfServiceUiForm";
 import { SelfServiceUiMessage } from "./SelfServiceUiMessage";
 
@@ -60,10 +60,7 @@ export const Registration = () => {
           borderTopWidth={1}
         >
           <Text mt={2}>
-            Already have an account?{" "}
-            <Link as={RouterLink} to="/auth/login">
-              Log in
-            </Link>
+            Already have an account? <LoginLink />
           </Text>
         </Box>
       )}

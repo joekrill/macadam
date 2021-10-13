@@ -34,6 +34,7 @@
 - husky
 - commitlint
 - eslint+prettier?
+- CI script
 - github templates: https://github.com/cezaraugusto/github-template-guidelines
 - (metrics) add additional dashboards
 - (metrics) alert manager

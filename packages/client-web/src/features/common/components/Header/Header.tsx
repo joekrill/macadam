@@ -12,6 +12,7 @@ import { FaRegGem } from "react-icons/fa";
 import { Link as RouterLink } from "react-router-dom";
 import { LoginButton } from "../../../identity/components/LoginButton";
 import { LogoutButton } from "../../../identity/components/LogoutButton";
+import { SignUpButton } from "../../../identity/components/SignUpButton";
 import { useSession } from "../../../identity/hooks/useSession";
 import { ColorModeSwitcher } from "../ColorModeSwitcher/ColorModeSwitcher";
 
@@ -58,11 +59,7 @@ export const Header = (props: HeaderProps) => {
         <ColorModeSwitcher justifySelf="flex-end" />
         {session.isLoggedIn === true && <LogoutButton />}
         {session.isLoggedOut === true && <LoginButton />}
-        {session.isLoggedOut === true && (
-          <Button as={RouterLink} to="/auth/registration" variant="solid">
-            Sign Up
-          </Button>
-        )}
+        {session.isLoggedOut === true && <SignUpButton variant="solid" />}
       </ButtonGroup>
     </Flex>
   );

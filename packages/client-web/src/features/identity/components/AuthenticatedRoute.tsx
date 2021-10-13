@@ -1,5 +1,6 @@
 import { ComponentProps, ReactNode } from "react";
 import { Redirect, Route } from "react-router";
+import { useLoginLocation } from "../hooks/useLoginLocation";
 import { useSession } from "../hooks/useSession";
 
 export interface AuthenticatedRouteProps extends ComponentProps<typeof Route> {
@@ -14,6 +15,7 @@ export const AuthenticatedRoute = ({
   ...props
 }: AuthenticatedRouteProps) => {
   const { isLoggedIn, isUnknown, isVerified } = useSession();
+  const loginLocation = useLoginLocation();
 
   return (
     <Route
@@ -34,8 +36,8 @@ export const AuthenticatedRoute = ({
         return (
           <Redirect
             to={{
-              pathname: "/auth/login",
-              state: { from: location },
+              ...loginLocation,
+              state: { returnTo: location },
             }}
           />
         );

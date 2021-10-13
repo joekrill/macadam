@@ -1,9 +1,10 @@
 import { Box, Container, Link, Spinner, Text } from "@chakra-ui/react";
 import { useCallback, useState } from "react";
-import { Link as RouterLink, useHistory, useLocation } from "react-router-dom";
+import { Link as RouterLink, useHistory } from "react-router-dom";
 import { z } from "zod";
 import { Card } from "../../common/components/Card/Card";
 import { ErrorAlert } from "../../errors/components/ErrorAlert";
+import { useLoginLocation } from "../hooks/useLoginLocation";
 import { useSession } from "../hooks/useSession";
 import { identityApi } from "../identityApi";
 import {
@@ -29,16 +30,13 @@ export function isValidRedirect(
 }
 
 export interface LoginProps {
-  redirectTo?: string;
+  returnTo?: string;
 }
 
-export const Login = ({ redirectTo = "/" }: LoginProps) => {
+export const Login = ({ returnTo }: LoginProps) => {
   const session = useSession();
   const history = useHistory();
-  const location = useLocation<{ from?: Location }>();
-  const redirectLocation = isValidRedirect(location.state?.from)
-    ? location.state.from
-    : { pathname: redirectTo };
+  const loginLocation = useLoginLocation({ returnTo });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const loginFlowQuery = identityApi.useInitializeLoginFlowQuery(undefined, {
     // Force a new flow to be initialized whenever the form is recreated.
@@ -87,7 +85,7 @@ export const Login = ({ redirectTo = "/" }: LoginProps) => {
                     "data" in result &&
                     isSelfServiceLoginFlowSuccess(result.data)
                   ) {
-                    history.push(redirectLocation);
+                    history.push(loginLocation.state.returnTo);
                   }
                 });
               }}

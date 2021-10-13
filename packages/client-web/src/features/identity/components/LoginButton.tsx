@@ -1,29 +1,24 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
-import { Link as RouterLink, useLocation } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+import { useLoginLocation } from "../hooks/useLoginLocation";
 import { useSession } from "../hooks/useSession";
 
-export interface LoginButtonProps extends ButtonProps {
-  onLogoutComplete?: () => void;
-}
+export interface LoginButtonProps extends ButtonProps {}
 
 export const LoginButton = ({
   children = "Log In",
   onClick,
-  onLogoutComplete,
   isDisabled,
   ...props
 }: LoginButtonProps) => {
-  const location = useLocation();
+  const loginLocation = useLoginLocation();
   const { isUnknown } = useSession();
 
   return (
     <Button
       {...props}
       as={RouterLink}
-      to={{
-        pathname: "/auth/login",
-        state: { from: location },
-      }}
+      to={loginLocation}
       isDisabled={isDisabled || isUnknown}
     >
       {children}

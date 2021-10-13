@@ -20,7 +20,8 @@
     "postinstall": "husky install",
     "format": "yarn prettier --write .",
     "format:check": "yarn prettier .",
-    "typecheck": "yarn workspaces foreach run typecheck"
+    "typecheck": "yarn workspaces foreach run typecheck",
+    "yarn:upgrade": "yarn set version latest && yarn dlx @yarnpkg/sdks && yarn plugin import @yarnpkg/plugin-interactive-tools && yarn plugin import @yarnpkg/plugin-typescript && yarn plugin import @yarnpkg/plugin-workspace-tools"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"

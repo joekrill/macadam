@@ -3,13 +3,13 @@ import { useCallback, useState } from "react";
 import { Link as RouterLink, useHistory, useLocation } from "react-router-dom";
 import { z } from "zod";
 import { Card } from "../../common/components/Card/Card";
+import { ErrorAlert } from "../../errors/components/ErrorAlert";
 import { useSession } from "../hooks/useSession";
 import { identityApi } from "../identityApi";
 import {
   isSelfServiceLoginFlow,
   isSelfServiceLoginFlowSuccess,
 } from "../schemas/flows/login";
-import { FlowError } from "./FlowError";
 import { LoggedInNotice } from "./LoggedInNotice";
 import { SelfServiceUiForm } from "./SelfServiceUiForm";
 import { SelfServiceUiMessageList } from "./SelfServiceUiMessageList";
@@ -71,7 +71,7 @@ export const Login = ({ redirectTo = "/" }: LoginProps) => {
         <LoggedInNotice onLogout={() => restart()} />
       ) : (
         <Card>
-          {error && !isLoading && <FlowError onRetry={() => restart()} />}
+          {error && !isLoading && <ErrorAlert onRetryClick={() => restart()} />}
           {data?.ui && (
             <SelfServiceUiForm
               ui={data.ui}

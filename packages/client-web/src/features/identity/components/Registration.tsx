@@ -1,10 +1,10 @@
 import { Box, Container, Link, Spinner, Text } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { Card } from "../../common/components/Card/Card";
+import { ErrorAlert } from "../../errors/components/ErrorAlert";
 import { useRegistrationFlow } from "../hooks/useRegistrationFlow";
 import { useSession } from "../hooks/useSession";
 import { UiText } from "../schemas/flows/ui";
-import { FlowError } from "./FlowError";
 import { LoggedInNotice } from "./LoggedInNotice";
 import { SelfServiceUiForm } from "./SelfServiceUiForm";
 import { SelfServiceUiMessage } from "./SelfServiceUiMessage";
@@ -24,7 +24,7 @@ export const Registration = () => {
 
   return (
     <Card as={Container} maxW="container.sm">
-      {error && !isLoading && <FlowError onRetry={() => restart()} />}
+      {error && !isLoading && <ErrorAlert onRetryClick={() => restart()} />}
       {ui && (
         <SelfServiceUiForm
           ui={ui}

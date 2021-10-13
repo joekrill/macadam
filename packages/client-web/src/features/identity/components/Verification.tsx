@@ -1,15 +1,8 @@
-import {
-  Alert,
-  AlertIcon,
-  Box,
-  Button,
-  Container,
-  Flex,
-  Spinner,
-} from "@chakra-ui/react";
+import { Box, Container, Spinner } from "@chakra-ui/react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Card } from "../../common/components/Card/Card";
+import { ErrorAlert } from "../../errors/components/ErrorAlert";
 import { identityApi } from "../identityApi";
 import { SelfServiceUiForm } from "./SelfServiceUiForm";
 import { SelfServiceUiMessageList } from "./SelfServiceUiMessageList";
@@ -35,26 +28,13 @@ export const Verification = () => {
   return (
     <Card as={Container} maxW="container.sm">
       {error && !isLoading && (
-        <Alert
-          status="error"
+        <ErrorAlert
           mt={4}
-          displa="flex"
-          justifyContent="space-between"
-        >
-          <Flex>
-            <AlertIcon />
-            Something went wrong :(
-          </Flex>
-          <Button
-            colorScheme="red"
-            onClick={() => {
-              verificationFlowQuery.refetch();
-              setIsSubmitted(false);
-            }}
-          >
-            Try again
-          </Button>
-        </Alert>
+          onRetryClick={() => {
+            verificationFlowQuery.refetch();
+            setIsSubmitted(false);
+          }}
+        />
       )}
       {data?.ui && data?.state === "choose_method" && (
         <SelfServiceUiForm

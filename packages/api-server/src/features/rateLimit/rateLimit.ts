@@ -1,3 +1,4 @@
+import { ensure as ensureError } from "errorish";
 import IORedis from "ioredis";
 import { Middleware } from "koa";
 import {
@@ -35,7 +36,7 @@ export const rateLimit = ({
       await rateLimiter.consume(ctx.ip);
     } catch (rateLimiterRes) {
       if (!(rateLimiterRes instanceof RateLimiterRes)) {
-        return ctx.throw(rateLimiterRes);
+        return ctx.throw(ensureError(rateLimiterRes));
       }
 
       const reset = new Date(Date.now() + rateLimiterRes.msBeforeNext);

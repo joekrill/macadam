@@ -1,3 +1,4 @@
+import { ensure as ensureError } from "errorish";
 import pino, { stdSerializers } from "pino";
 import { createApp } from "./app";
 
@@ -64,7 +65,7 @@ if (typeof KRATOS_PUBLIC_URL !== "string") {
       );
     });
   } catch (error) {
-    finalLogger.error(error, "Error running server");
+    finalLogger.error(ensureError(error), "Error running server");
     process.exit(1);
   }
 })();

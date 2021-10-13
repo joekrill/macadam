@@ -1,3 +1,4 @@
+import { ensure as ensureError } from "errorish";
 import { Middleware, ParameterizedContext } from "koa";
 import { Logger } from "pino";
 import { RequestIdState } from "../requestId/requestId";
@@ -39,8 +40,10 @@ export const logging =
         },
         "request"
       );
-    } catch (error) {
-      ctx.status = error.status || 500;
+    } catch (caughtError) {
+      const error = ensureError(caughtError);
+      ctx.status =
+        typeof (error as any).status === "number" ? (error as any).status : 500;
       ctx.body = error.message;
       ctx.state.log.error(
         {

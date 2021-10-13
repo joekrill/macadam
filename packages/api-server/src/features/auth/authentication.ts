@@ -1,4 +1,5 @@
 import { Configuration, Session, V0alpha1Api } from "@ory/kratos-client";
+import { ensure as ensureError } from "errorish";
 import { Middleware } from "koa";
 
 export interface SessionState {
@@ -32,7 +33,8 @@ export const authentication = ({ publicUrl }: SessionOptions): Middleware => {
               ctx.request.headers["cookie"]
             );
             session = response.data;
-          } catch (error) {
+          } catch (caughtError) {
+            const error = ensureError(caughtError);
             ctx.state.log.error(
               {
                 stack: error.stack,

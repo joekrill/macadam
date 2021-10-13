@@ -1,6 +1,6 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { useLoginLocation } from "../hooks/useLoginLocation";
+import { useLoginReturnToLocation } from "../hooks/useLoginReturnToLocation";
 import { useSession } from "../hooks/useSession";
 
 export interface SignUpButtonProps extends ButtonProps {
@@ -14,7 +14,7 @@ export const SignUpButton = ({
   isDisabled,
   ...props
 }: SignUpButtonProps) => {
-  const loginLocation = useLoginLocation();
+  const returnTo = useLoginReturnToLocation();
   const { isUnknown } = useSession();
 
   return (
@@ -22,8 +22,8 @@ export const SignUpButton = ({
       {...props}
       as={RouterLink}
       to={{
-        ...loginLocation,
         pathname: "/auth/registration",
+        state: { returnTo },
       }}
       isDisabled={isDisabled || isUnknown}
     >

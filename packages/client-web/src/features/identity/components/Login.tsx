@@ -4,7 +4,7 @@ import { Link as RouterLink, useHistory } from "react-router-dom";
 import { z } from "zod";
 import { Card } from "../../common/components/Card/Card";
 import { ErrorAlert } from "../../errors/components/ErrorAlert";
-import { useLoginLocation } from "../hooks/useLoginLocation";
+import { useLoginReturnToLocation } from "../hooks/useLoginReturnToLocation";
 import { useSession } from "../hooks/useSession";
 import { identityApi } from "../identityApi";
 import {
@@ -29,14 +29,10 @@ export function isValidRedirect(
   return redirectStateSchema.safeParse(location).success;
 }
 
-export interface LoginProps {
-  returnTo?: string;
-}
-
-export const Login = ({ returnTo }: LoginProps) => {
+export const Login = () => {
   const session = useSession();
   const history = useHistory();
-  const loginLocation = useLoginLocation({ returnTo });
+  const returnTo = useLoginReturnToLocation();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const loginFlowQuery = identityApi.useInitializeLoginFlowQuery(undefined, {
     // Force a new flow to be initialized whenever the form is recreated.
@@ -85,7 +81,7 @@ export const Login = ({ returnTo }: LoginProps) => {
                     "data" in result &&
                     isSelfServiceLoginFlowSuccess(result.data)
                   ) {
-                    history.push(loginLocation.state.returnTo);
+                    history.push(returnTo);
                   }
                 });
               }}

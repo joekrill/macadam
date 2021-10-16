@@ -1,8 +1,8 @@
 import { ensure as ensureError } from "errorish";
-import pino, { stdSerializers } from "pino";
+import pino from "pino";
 import { createApp } from "./app";
 
-export const logger = pino({ serializers: stdSerializers });
+export const logger = pino({ serializers: pino.stdSerializers });
 
 const finalLogger = pino.final(logger);
 
@@ -61,7 +61,7 @@ if (typeof KRATOS_PUBLIC_URL !== "string") {
           ...addressInfo,
           environment,
         },
-        "🛣️ Macadam API server listening"
+        "🛣️  Macadam API server listening"
       );
     });
   } catch (error) {

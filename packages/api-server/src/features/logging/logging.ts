@@ -1,11 +1,11 @@
 import { ensure as ensureError } from "errorish";
 import { Middleware, ParameterizedContext } from "koa";
-import { Logger } from "pino";
+import pino from "pino";
 import { RequestIdState } from "../requestId/requestId";
 import { ResponseTimeState } from "../responseTime/responseTime";
 
 export interface LoggingState {
-  log: Logger;
+  log: pino.Logger;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }
@@ -16,7 +16,7 @@ export interface LoggingOptions {
 
 export const logging =
   (
-    baseLogger: Logger,
+    baseLogger: pino.Logger,
     { pathLevels = {} }: Partial<LoggingOptions> = {}
   ): Middleware<ResponseTimeState & RequestIdState & LoggingState> =>
   async (

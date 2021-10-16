@@ -5,7 +5,7 @@ import IORedis from "ioredis";
 import Koa from "koa";
 import bodyParser from "koa-bodyparser";
 import helmet from "koa-helmet";
-import { Logger } from "pino";
+import pino from "pino";
 import { apiRoutes } from "./features/api";
 import { authentication } from "./features/auth/authentication";
 import { healthRoutes } from "./features/health/health";
@@ -52,7 +52,7 @@ export interface AppOptions {
   /**
    * The logging instance to use for writing messages.
    */
-  logger: Logger;
+  logger: pino.Logger;
 
   /**
    * The path to serve Prometheus-style metrics from

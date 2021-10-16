@@ -12,7 +12,7 @@ import "./features/analytics";
 import { ErrorBoundary } from "./features/errors/components/ErrorBoundary";
 import { UnexpectedErrorPage } from "./features/errors/components/UnexpectedErrorPage/UnexpectedErrorPage";
 import { BrowserRouter } from "./features/history/BrowserRouter";
-import { theme } from "./features/theme";
+import { theme } from "./features/theme/default";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(

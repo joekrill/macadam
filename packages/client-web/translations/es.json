@@ -1,0 +1,8 @@
+{
+  "errors.genericErrorMessage": {
+    "defaultMessage": "Algo fue mal"
+  },
+  "errors.retryButtonText": {
+    "defaultMessage": "Prueba otra vez"
+  }
+}

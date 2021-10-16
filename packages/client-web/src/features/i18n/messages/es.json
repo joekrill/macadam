@@ -1,0 +1,14 @@
+{
+  "errors.genericErrorMessage": [
+    {
+      "type": 0,
+      "value": "Algo fue mal"
+    }
+  ],
+  "errors.retryButtonText": [
+    {
+      "type": 0,
+      "value": "Prueba otra vez"
+    }
+  ]
+}

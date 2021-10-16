@@ -9,3 +9,8 @@ declare namespace NodeJS {
     // REACT_APP_DOMAIN: string;
   }
 }
+
+declare module "*.json" {
+  const value: any;
+  export default value;
+}

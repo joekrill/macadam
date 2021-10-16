@@ -1,0 +1,413 @@
+{
+  "app.footer.copyrightNotice": [
+    {
+      "type": 0,
+      "value": "&copy; "
+    },
+    {
+      "style": {
+        "parsedOptions": {
+          "year": "numeric"
+        },
+        "pattern": "yyyy",
+        "type": 1
+      },
+      "type": 3,
+      "value": "now"
+    },
+    {
+      "type": 0,
+      "value": " "
+    },
+    {
+      "type": 1,
+      "value": "appName"
+    },
+    {
+      "type": 0,
+      "value": ". All rights reserved.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "app.footer.linkGroups.legal.header": [
+    {
+      "type": 0,
+      "value": "LegalSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "app.footer.linkGroups.resources.header": [
+    {
+      "type": 0,
+      "value": "ResourcesSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "app.footer.links.contact.label": [
+    {
+      "type": 0,
+      "value": "ContactSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "app.footer.links.faq.label": [
+    {
+      "type": 0,
+      "value": "FAQSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "app.footer.links.privacy.label": [
+    {
+      "type": 0,
+      "value": "PrivacySSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "app.footer.links.termsAndConditions.label": [
+    {
+      "type": 0,
+      "value": "TermsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.logInButton.label": [
+    {
+      "type": 0,
+      "value": "Log InSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.logInLink.label": [
+    {
+      "type": 0,
+      "value": "Log InSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.logOutButton.label": [
+    {
+      "type": 0,
+      "value": "Log OutSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.loggedInNotice.goToHomepageButton": [
+    {
+      "type": 0,
+      "value": "Go to the homepageSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.loggedInNotice.heading": [
+    {
+      "type": 0,
+      "value": "Already Logged InSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.loggedInNotice.messageWithUsername": [
+    {
+      "type": 0,
+      "value": "You're already logged in as "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "username"
+        }
+      ],
+      "type": 8,
+      "value": "e"
+    },
+    {
+      "type": 0,
+      "value": ".SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.loggedInNotice.messageWithoutUsername": [
+    {
+      "type": 0,
+      "value": "You're already logged in.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.login.forgotPasswordLink": [
+    {
+      "type": 0,
+      "value": "Forgot your password?SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.login.noAccountLink": [
+    {
+      "type": 0,
+      "value": "Don't have an account yet? "
+    },
+    {
+      "type": 0,
+      "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.passwordInput.togglePasswordVisibilityLabel": [
+    {
+      "options": {
+        "hide": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Mask"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+          ]
+        },
+        "show": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Reveal"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "action"
+    },
+    {
+      "type": 0,
+      "value": " passwordSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.registration.alreadyHaveAccountLink": [
+    {
+      "type": 0,
+      "value": "Already have an account? "
+    },
+    {
+      "type": 0,
+      "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.signUpButton.label": [
+    {
+      "type": 0,
+      "value": "Sign UpSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "errors.errorAlert.message": [
+    {
+      "type": 0,
+      "value": "Something went wrong :(SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "errors.errorAlert.retryButton": [
+    {
+      "type": 0,
+      "value": "Try AgainSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "errors.notFoundPage.errorCode": [
+    {
+      "type": 0,
+      "value": "Code: "
+    },
+    {
+      "type": 0,
+      "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "errors.notFoundPage.goToHomepageButton": [
+    {
+      "type": 0,
+      "value": "Go to the homepageSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "errors.notFoundPage.message": [
+    {
+      "type": 0,
+      "value": "We can't seem to find that page.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "errors.notFoundPage.pageHeading": [
+    {
+      "type": 0,
+      "value": "Ooops!SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "errors.notFoundPage.pageTitle": [
+    {
+      "type": 0,
+      "value": "Not FoundSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "i18n.localErrorToast.title": [
+    {
+      "type": 0,
+      "value": "Unable to load locale "
+    },
+    {
+      "type": 0,
+      "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.contactUs.instructions": [
+    {
+      "type": 0,
+      "value": "Email us at "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "emailAddress"
+        }
+      ],
+      "type": 8,
+      "value": "emailLink"
+    },
+    {
+      "type": 0,
+      "value": " with any feedback, questions, problems, or feature requests.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.contactUs.pageHeading": [
+    {
+      "type": 0,
+      "value": "Contact UsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.contactUs.pageTitle": [
+    {
+      "type": 0,
+      "value": "Contact UsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.faq.pageHeading": [
+    {
+      "type": 0,
+      "value": "Frequently Asked QuestionsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.faq.pageTitle": [
+    {
+      "type": 0,
+      "value": "FAQSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.home.features.alwaysUpToDate.description": [
+    {
+      "type": 0,
+      "value": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.home.features.alwaysUpToDate.title": [
+    {
+      "type": 0,
+      "value": "Always up to dateSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.home.features.multipleDevices.description": [
+    {
+      "type": 0,
+      "value": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.home.features.multipleDevices.title": [
+    {
+      "type": 0,
+      "value": "Support for multiple devicesSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.home.features.secureByDefault.description": [
+    {
+      "type": 0,
+      "value": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.home.features.secureByDefault.title": [
+    {
+      "type": 0,
+      "value": "Secure by defaultSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.home.features.statistics.description": [
+    {
+      "type": 0,
+      "value": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.home.features.statistics.title": [
+    {
+      "type": 0,
+      "value": "Incredible statisticsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.home.getStartedCtaButton": [
+    {
+      "type": 0,
+      "value": "Get startedSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.home.introductionText": [
+    {
+      "type": 0,
+      "value": "Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.home.tagLine": [
+    {
+      "type": 0,
+      "value": "A short tagline about what we do.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.privacyPolicy.pageHeading": [
+    {
+      "type": 0,
+      "value": "Privacy PolicySSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.privacyPolicy.pageTitle": [
+    {
+      "type": 0,
+      "value": "Privacy PolicySSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.termsAndConditions.pageHeading": [
+    {
+      "type": 0,
+      "value": "Terms and ConditionsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.termsAndConditions.pageTitle": [
+    {
+      "type": 0,
+      "value": "Terms and ConditionsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "theme.colorModeSwitcher.switchColorModeLabel": [
+    {
+      "type": 0,
+      "value": "Switch to "
+    },
+    {
+      "options": {
+        "dark": {
+          "value": [
+            {
+              "type": 0,
+              "value": "dark"
+            }
+          ]
+        },
+        "light": {
+          "value": [
+            {
+              "type": 0,
+              "value": "light"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+          ]
+        }
+      },
+      "type": 5,
+      "value": "mode"
+    },
+    {
+      "type": 0,
+      "value": " modeSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ]
+}

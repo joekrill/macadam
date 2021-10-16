@@ -8,6 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { FaRegGem } from "react-icons/fa";
+import { FormattedMessage } from "react-intl";
 import { LinkGrid } from "./LinkGrid";
 import { SocialMediaLinks } from "./SocialMediaLinks";
 
@@ -51,8 +52,14 @@ export const Footer = (props: FooterProps) => (
         alignItems="center"
       >
         <Text fontSize="sm">
-          &copy; {new Date().getFullYear()} {process.env.REACT_APP_DISPLAY_NAME}
-          . All rights reserved.
+          <FormattedMessage
+            id="app.footer.copyrightNotice"
+            defaultMessage="&copy; {now, date, ::yyyy} {appName}. All rights reserved."
+            values={{
+              now: new Date(),
+              appName: process.env.REACT_APP_DISPLAY_NAME,
+            }}
+          />
         </Text>
       </Stack>
     </Stack>

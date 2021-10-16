@@ -13,6 +13,8 @@ export interface UnexpectedErrorPageProps {
  *   free from errors.
  *
  * SVG from unDraw: https://undraw.co
+ *
+ * TODO: Properly localize this page? We may not have IntlProvider available.
  */
 export const UnexpectedErrorPage = ({
   eventId,

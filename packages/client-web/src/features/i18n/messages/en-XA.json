@@ -1,0 +1,419 @@
+{
+  "app.footer.copyrightNotice": [
+    {
+      "type": 0,
+      "value": "&ćŏṗẏ; "
+    },
+    {
+      "style": {
+        "parsedOptions": {
+          "year": "numeric"
+        },
+        "pattern": "yyyy",
+        "type": 1
+      },
+      "type": 3,
+      "value": "now"
+    },
+    {
+      "type": 0,
+      "value": " "
+    },
+    {
+      "type": 1,
+      "value": "appName"
+    },
+    {
+      "type": 0,
+      "value": ". Ḁĺĺ ŕíĝḫṭś ŕèśèŕṿèḋ."
+    }
+  ],
+  "app.footer.linkGroups.legal.header": [
+    {
+      "type": 0,
+      "value": "Ļèĝâĺ"
+    }
+  ],
+  "app.footer.linkGroups.resources.header": [
+    {
+      "type": 0,
+      "value": "Ŕèśŏůŕćèś"
+    }
+  ],
+  "app.footer.links.contact.label": [
+    {
+      "type": 0,
+      "value": "Ḉŏńṭâćṭ"
+    }
+  ],
+  "app.footer.links.faq.label": [
+    {
+      "type": 0,
+      "value": "ḞḀɊ"
+    }
+  ],
+  "app.footer.links.privacy.label": [
+    {
+      "type": 0,
+      "value": "Ṕŕíṿâćẏ"
+    }
+  ],
+  "app.footer.links.termsAndConditions.label": [
+    {
+      "type": 0,
+      "value": "Ṯèŕṁś"
+    }
+  ],
+  "auth.logInButton.label": [
+    {
+      "type": 0,
+      "value": "Ļŏĝ Ḭń"
+    }
+  ],
+  "auth.logInLink.label": [
+    {
+      "type": 0,
+      "value": "Ļŏĝ Ḭń"
+    }
+  ],
+  "auth.logOutButton.label": [
+    {
+      "type": 0,
+      "value": "Ļŏĝ Õůṭ"
+    }
+  ],
+  "auth.loggedInNotice.goToHomepageButton": [
+    {
+      "type": 0,
+      "value": "Ḡŏ ṭŏ ṭḫè ḫŏṁèṗâĝè"
+    }
+  ],
+  "auth.loggedInNotice.heading": [
+    {
+      "type": 0,
+      "value": "Ḁĺŕèâḋẏ Ļŏĝĝèḋ Ḭń"
+    }
+  ],
+  "auth.loggedInNotice.messageWithUsername": [
+    {
+      "type": 0,
+      "value": "Ÿŏů'ŕè âĺŕèâḋẏ ĺŏĝĝèḋ íń âś "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "username"
+        }
+      ],
+      "type": 8,
+      "value": "e"
+    },
+    {
+      "type": 0,
+      "value": "."
+    }
+  ],
+  "auth.loggedInNotice.messageWithoutUsername": [
+    {
+      "type": 0,
+      "value": "Ÿŏů'ŕè âĺŕèâḋẏ ĺŏĝĝèḋ íń."
+    }
+  ],
+  "auth.login.forgotPasswordLink": [
+    {
+      "type": 0,
+      "value": "Ḟŏŕĝŏṭ ẏŏůŕ ṗâśśẘŏŕḋ?"
+    }
+  ],
+  "auth.login.noAccountLink": [
+    {
+      "type": 0,
+      "value": "Ḋŏń'ṭ ḫâṿè âń âććŏůńṭ ẏèṭ? "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "Ṡíĝń ůṗ!"
+        }
+      ],
+      "type": 8,
+      "value": "link"
+    }
+  ],
+  "auth.passwordInput.togglePasswordVisibilityLabel": [
+    {
+      "options": {
+        "hide": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Ḿâśǩ"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+          ]
+        },
+        "show": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Ŕèṿèâĺ"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "action"
+    },
+    {
+      "type": 0,
+      "value": " ṗâśśẘŏŕḋ"
+    }
+  ],
+  "auth.registration.alreadyHaveAccountLink": [
+    {
+      "type": 0,
+      "value": "Ḁĺŕèâḋẏ ḫâṿè âń âććŏůńṭ? "
+    },
+    {
+      "type": 1,
+      "value": "loginLink"
+    }
+  ],
+  "auth.signUpButton.label": [
+    {
+      "type": 0,
+      "value": "Ṡíĝń Ũṗ"
+    }
+  ],
+  "errors.errorAlert.message": [
+    {
+      "type": 0,
+      "value": "Ṡŏṁèṭḫíńĝ ẘèńṭ ẘŕŏńĝ :("
+    }
+  ],
+  "errors.errorAlert.retryButton": [
+    {
+      "type": 0,
+      "value": "Ṯŕẏ Ḁĝâíń"
+    }
+  ],
+  "errors.notFoundPage.errorCode": [
+    {
+      "type": 0,
+      "value": "Ḉŏḋè: "
+    },
+    {
+      "type": 1,
+      "value": "code"
+    }
+  ],
+  "errors.notFoundPage.goToHomepageButton": [
+    {
+      "type": 0,
+      "value": "Ḡŏ ṭŏ ṭḫè ḫŏṁèṗâĝè"
+    }
+  ],
+  "errors.notFoundPage.message": [
+    {
+      "type": 0,
+      "value": "Ẅè ćâń'ṭ śèèṁ ṭŏ ḟíńḋ ṭḫâṭ ṗâĝè."
+    }
+  ],
+  "errors.notFoundPage.pageHeading": [
+    {
+      "type": 0,
+      "value": "Õŏŏṗś!"
+    }
+  ],
+  "errors.notFoundPage.pageTitle": [
+    {
+      "type": 0,
+      "value": "Ŋŏṭ Ḟŏůńḋ"
+    }
+  ],
+  "i18n.localErrorToast.title": [
+    {
+      "type": 0,
+      "value": "Ũńâḃĺè ṭŏ ĺŏâḋ ĺŏćâĺè "
+    },
+    {
+      "type": 1,
+      "value": "locale"
+    }
+  ],
+  "pages.contactUs.instructions": [
+    {
+      "type": 0,
+      "value": "Ḕṁâíĺ ůś âṭ "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "emailAddress"
+        }
+      ],
+      "type": 8,
+      "value": "emailLink"
+    },
+    {
+      "type": 0,
+      "value": " ẘíṭḫ âńẏ ḟèèḋḃâćǩ, ɋůèśṭíŏńś, ṗŕŏḃĺèṁś, ŏŕ ḟèâṭůŕè ŕèɋůèśṭś."
+    }
+  ],
+  "pages.contactUs.pageHeading": [
+    {
+      "type": 0,
+      "value": "Ḉŏńṭâćṭ Ũś"
+    }
+  ],
+  "pages.contactUs.pageTitle": [
+    {
+      "type": 0,
+      "value": "Ḉŏńṭâćṭ Ũś"
+    }
+  ],
+  "pages.faq.pageHeading": [
+    {
+      "type": 0,
+      "value": "Ḟŕèɋůèńṭĺẏ Ḁśǩèḋ Ɋůèśṭíŏńś"
+    }
+  ],
+  "pages.faq.pageTitle": [
+    {
+      "type": 0,
+      "value": "ḞḀɊ"
+    }
+  ],
+  "pages.home.features.alwaysUpToDate.description": [
+    {
+      "type": 0,
+      "value": "Ļŏŕèṁ íṗśůṁ ḋŏĺŏŕ śíṭ âṁèṭ, ćŏńśèṭèṭůŕ śâḋíṗśćíńĝ èĺíṭŕ, śèḋ ḋíâṁ ńŏńůṁẏ èíŕṁŏḋ ṭèṁṗŏŕ íńṿíḋůńṭ ůṭ ĺâḃŏŕè."
+    }
+  ],
+  "pages.home.features.alwaysUpToDate.title": [
+    {
+      "type": 0,
+      "value": "Ḁĺẘâẏś ůṗ ṭŏ ḋâṭè"
+    }
+  ],
+  "pages.home.features.multipleDevices.description": [
+    {
+      "type": 0,
+      "value": "Ļŏŕèṁ íṗśůṁ ḋŏĺŏŕ śíṭ âṁèṭ, ćŏńśèṭèṭůŕ śâḋíṗśćíńĝ èĺíṭŕ, śèḋ ḋíâṁ ńŏńůṁẏ èíŕṁŏḋ ṭèṁṗŏŕ íńṿíḋůńṭ ůṭ ĺâḃŏŕè."
+    }
+  ],
+  "pages.home.features.multipleDevices.title": [
+    {
+      "type": 0,
+      "value": "Ṡůṗṗŏŕṭ ḟŏŕ ṁůĺṭíṗĺè ḋèṿíćèś"
+    }
+  ],
+  "pages.home.features.secureByDefault.description": [
+    {
+      "type": 0,
+      "value": "Ḁṭ ṿèŕŏ èŏś èṭ âććůśâṁ èṭ ĵůśṭŏ ḋůŏ ḋŏĺŏŕèś èṭ èâ ŕèḃůṁ. Ṡṭèṭ ćĺíṭâ ǩâśḋ ĝůḃèŕĝŕèń, ńŏ śèâ ṭâǩíṁâṭâ śâńćṭůś."
+    }
+  ],
+  "pages.home.features.secureByDefault.title": [
+    {
+      "type": 0,
+      "value": "Ṡèćůŕè ḃẏ ḋèḟâůĺṭ"
+    }
+  ],
+  "pages.home.features.statistics.description": [
+    {
+      "type": 0,
+      "value": "Ḁṭ ṿèŕŏ èŏś èṭ âććůśâṁ èṭ ĵůśṭŏ ḋůŏ ḋŏĺŏŕèś èṭ èâ ŕèḃůṁ. Ṡṭèṭ ćĺíṭâ ǩâśḋ ĝůḃèŕĝŕèń, ńŏ śèâ ṭâǩíṁâṭâ śâńćṭůś."
+    }
+  ],
+  "pages.home.features.statistics.title": [
+    {
+      "type": 0,
+      "value": "Ḭńćŕèḋíḃĺè śṭâṭíśṭíćś"
+    }
+  ],
+  "pages.home.getStartedCtaButton": [
+    {
+      "type": 0,
+      "value": "Ḡèṭ śṭâŕṭèḋ"
+    }
+  ],
+  "pages.home.introductionText": [
+    {
+      "type": 0,
+      "value": "Ḁć èůíśṁŏḋ ṿèĺ śíṭ ṁâèćèńâś íḋ ṗèĺĺèńṭèśɋůè èů śèḋ ćŏńśèćṭèṭůŕ. Ḿâĺèśůâḋâ âḋíṗíśćíńĝ śâĝíṭṭíś ṿèĺ ńůĺĺâ ńèć."
+    }
+  ],
+  "pages.home.tagLine": [
+    {
+      "type": 0,
+      "value": "Ḁ śḫŏŕṭ ṭâĝĺíńè âḃŏůṭ ẘḫâṭ ẘè ḋŏ."
+    }
+  ],
+  "pages.privacyPolicy.pageHeading": [
+    {
+      "type": 0,
+      "value": "Ṕŕíṿâćẏ Ṕŏĺíćẏ"
+    }
+  ],
+  "pages.privacyPolicy.pageTitle": [
+    {
+      "type": 0,
+      "value": "Ṕŕíṿâćẏ Ṕŏĺíćẏ"
+    }
+  ],
+  "pages.termsAndConditions.pageHeading": [
+    {
+      "type": 0,
+      "value": "Ṯèŕṁś âńḋ Ḉŏńḋíṭíŏńś"
+    }
+  ],
+  "pages.termsAndConditions.pageTitle": [
+    {
+      "type": 0,
+      "value": "Ṯèŕṁś âńḋ Ḉŏńḋíṭíŏńś"
+    }
+  ],
+  "theme.colorModeSwitcher.switchColorModeLabel": [
+    {
+      "type": 0,
+      "value": "Ṡẘíṭćḫ ṭŏ "
+    },
+    {
+      "options": {
+        "dark": {
+          "value": [
+            {
+              "type": 0,
+              "value": "ḋâŕǩ"
+            }
+          ]
+        },
+        "light": {
+          "value": [
+            {
+              "type": 0,
+              "value": "ĺíĝḫṭ"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+          ]
+        }
+      },
+      "type": 5,
+      "value": "mode"
+    },
+    {
+      "type": 0,
+      "value": " ṁŏḋè"
+    }
+  ]
+}

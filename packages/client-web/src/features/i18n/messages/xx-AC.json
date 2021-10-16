@@ -1,0 +1,419 @@
+{
+  "app.footer.copyrightNotice": [
+    {
+      "type": 0,
+      "value": "&COPY; "
+    },
+    {
+      "style": {
+        "parsedOptions": {
+          "year": "numeric"
+        },
+        "pattern": "yyyy",
+        "type": 1
+      },
+      "type": 3,
+      "value": "now"
+    },
+    {
+      "type": 0,
+      "value": " "
+    },
+    {
+      "type": 1,
+      "value": "appName"
+    },
+    {
+      "type": 0,
+      "value": ". ALL RIGHTS RESERVED."
+    }
+  ],
+  "app.footer.linkGroups.legal.header": [
+    {
+      "type": 0,
+      "value": "LEGAL"
+    }
+  ],
+  "app.footer.linkGroups.resources.header": [
+    {
+      "type": 0,
+      "value": "RESOURCES"
+    }
+  ],
+  "app.footer.links.contact.label": [
+    {
+      "type": 0,
+      "value": "CONTACT"
+    }
+  ],
+  "app.footer.links.faq.label": [
+    {
+      "type": 0,
+      "value": "FAQ"
+    }
+  ],
+  "app.footer.links.privacy.label": [
+    {
+      "type": 0,
+      "value": "PRIVACY"
+    }
+  ],
+  "app.footer.links.termsAndConditions.label": [
+    {
+      "type": 0,
+      "value": "TERMS"
+    }
+  ],
+  "auth.logInButton.label": [
+    {
+      "type": 0,
+      "value": "LOG IN"
+    }
+  ],
+  "auth.logInLink.label": [
+    {
+      "type": 0,
+      "value": "LOG IN"
+    }
+  ],
+  "auth.logOutButton.label": [
+    {
+      "type": 0,
+      "value": "LOG OUT"
+    }
+  ],
+  "auth.loggedInNotice.goToHomepageButton": [
+    {
+      "type": 0,
+      "value": "GO TO THE HOMEPAGE"
+    }
+  ],
+  "auth.loggedInNotice.heading": [
+    {
+      "type": 0,
+      "value": "ALREADY LOGGED IN"
+    }
+  ],
+  "auth.loggedInNotice.messageWithUsername": [
+    {
+      "type": 0,
+      "value": "YOU'RE ALREADY LOGGED IN AS "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "username"
+        }
+      ],
+      "type": 8,
+      "value": "e"
+    },
+    {
+      "type": 0,
+      "value": "."
+    }
+  ],
+  "auth.loggedInNotice.messageWithoutUsername": [
+    {
+      "type": 0,
+      "value": "YOU'RE ALREADY LOGGED IN."
+    }
+  ],
+  "auth.login.forgotPasswordLink": [
+    {
+      "type": 0,
+      "value": "FORGOT YOUR PASSWORD?"
+    }
+  ],
+  "auth.login.noAccountLink": [
+    {
+      "type": 0,
+      "value": "DON'T HAVE AN ACCOUNT YET? "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "SIGN UP!"
+        }
+      ],
+      "type": 8,
+      "value": "link"
+    }
+  ],
+  "auth.passwordInput.togglePasswordVisibilityLabel": [
+    {
+      "options": {
+        "hide": {
+          "value": [
+            {
+              "type": 0,
+              "value": "MASK"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+          ]
+        },
+        "show": {
+          "value": [
+            {
+              "type": 0,
+              "value": "REVEAL"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "action"
+    },
+    {
+      "type": 0,
+      "value": " PASSWORD"
+    }
+  ],
+  "auth.registration.alreadyHaveAccountLink": [
+    {
+      "type": 0,
+      "value": "ALREADY HAVE AN ACCOUNT? "
+    },
+    {
+      "type": 1,
+      "value": "loginLink"
+    }
+  ],
+  "auth.signUpButton.label": [
+    {
+      "type": 0,
+      "value": "SIGN UP"
+    }
+  ],
+  "errors.errorAlert.message": [
+    {
+      "type": 0,
+      "value": "SOMETHING WENT WRONG :("
+    }
+  ],
+  "errors.errorAlert.retryButton": [
+    {
+      "type": 0,
+      "value": "TRY AGAIN"
+    }
+  ],
+  "errors.notFoundPage.errorCode": [
+    {
+      "type": 0,
+      "value": "CODE: "
+    },
+    {
+      "type": 1,
+      "value": "code"
+    }
+  ],
+  "errors.notFoundPage.goToHomepageButton": [
+    {
+      "type": 0,
+      "value": "GO TO THE HOMEPAGE"
+    }
+  ],
+  "errors.notFoundPage.message": [
+    {
+      "type": 0,
+      "value": "WE CAN'T SEEM TO FIND THAT PAGE."
+    }
+  ],
+  "errors.notFoundPage.pageHeading": [
+    {
+      "type": 0,
+      "value": "OOOPS!"
+    }
+  ],
+  "errors.notFoundPage.pageTitle": [
+    {
+      "type": 0,
+      "value": "NOT FOUND"
+    }
+  ],
+  "i18n.localErrorToast.title": [
+    {
+      "type": 0,
+      "value": "UNABLE TO LOAD LOCALE "
+    },
+    {
+      "type": 1,
+      "value": "locale"
+    }
+  ],
+  "pages.contactUs.instructions": [
+    {
+      "type": 0,
+      "value": "EMAIL US AT "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "emailAddress"
+        }
+      ],
+      "type": 8,
+      "value": "emailLink"
+    },
+    {
+      "type": 0,
+      "value": " WITH ANY FEEDBACK, QUESTIONS, PROBLEMS, OR FEATURE REQUESTS."
+    }
+  ],
+  "pages.contactUs.pageHeading": [
+    {
+      "type": 0,
+      "value": "CONTACT US"
+    }
+  ],
+  "pages.contactUs.pageTitle": [
+    {
+      "type": 0,
+      "value": "CONTACT US"
+    }
+  ],
+  "pages.faq.pageHeading": [
+    {
+      "type": 0,
+      "value": "FREQUENTLY ASKED QUESTIONS"
+    }
+  ],
+  "pages.faq.pageTitle": [
+    {
+      "type": 0,
+      "value": "FAQ"
+    }
+  ],
+  "pages.home.features.alwaysUpToDate.description": [
+    {
+      "type": 0,
+      "value": "LOREM IPSUM DOLOR SIT AMET, CONSETETUR SADIPSCING ELITR, SED DIAM NONUMY EIRMOD TEMPOR INVIDUNT UT LABORE."
+    }
+  ],
+  "pages.home.features.alwaysUpToDate.title": [
+    {
+      "type": 0,
+      "value": "ALWAYS UP TO DATE"
+    }
+  ],
+  "pages.home.features.multipleDevices.description": [
+    {
+      "type": 0,
+      "value": "LOREM IPSUM DOLOR SIT AMET, CONSETETUR SADIPSCING ELITR, SED DIAM NONUMY EIRMOD TEMPOR INVIDUNT UT LABORE."
+    }
+  ],
+  "pages.home.features.multipleDevices.title": [
+    {
+      "type": 0,
+      "value": "SUPPORT FOR MULTIPLE DEVICES"
+    }
+  ],
+  "pages.home.features.secureByDefault.description": [
+    {
+      "type": 0,
+      "value": "AT VERO EOS ET ACCUSAM ET JUSTO DUO DOLORES ET EA REBUM. STET CLITA KASD GUBERGREN, NO SEA TAKIMATA SANCTUS."
+    }
+  ],
+  "pages.home.features.secureByDefault.title": [
+    {
+      "type": 0,
+      "value": "SECURE BY DEFAULT"
+    }
+  ],
+  "pages.home.features.statistics.description": [
+    {
+      "type": 0,
+      "value": "AT VERO EOS ET ACCUSAM ET JUSTO DUO DOLORES ET EA REBUM. STET CLITA KASD GUBERGREN, NO SEA TAKIMATA SANCTUS."
+    }
+  ],
+  "pages.home.features.statistics.title": [
+    {
+      "type": 0,
+      "value": "INCREDIBLE STATISTICS"
+    }
+  ],
+  "pages.home.getStartedCtaButton": [
+    {
+      "type": 0,
+      "value": "GET STARTED"
+    }
+  ],
+  "pages.home.introductionText": [
+    {
+      "type": 0,
+      "value": "AC EUISMOD VEL SIT MAECENAS ID PELLENTESQUE EU SED CONSECTETUR. MALESUADA ADIPISCING SAGITTIS VEL NULLA NEC."
+    }
+  ],
+  "pages.home.tagLine": [
+    {
+      "type": 0,
+      "value": "A SHORT TAGLINE ABOUT WHAT WE DO."
+    }
+  ],
+  "pages.privacyPolicy.pageHeading": [
+    {
+      "type": 0,
+      "value": "PRIVACY POLICY"
+    }
+  ],
+  "pages.privacyPolicy.pageTitle": [
+    {
+      "type": 0,
+      "value": "PRIVACY POLICY"
+    }
+  ],
+  "pages.termsAndConditions.pageHeading": [
+    {
+      "type": 0,
+      "value": "TERMS AND CONDITIONS"
+    }
+  ],
+  "pages.termsAndConditions.pageTitle": [
+    {
+      "type": 0,
+      "value": "TERMS AND CONDITIONS"
+    }
+  ],
+  "theme.colorModeSwitcher.switchColorModeLabel": [
+    {
+      "type": 0,
+      "value": "SWITCH TO "
+    },
+    {
+      "options": {
+        "dark": {
+          "value": [
+            {
+              "type": 0,
+              "value": "DARK"
+            }
+          ]
+        },
+        "light": {
+          "value": [
+            {
+              "type": 0,
+              "value": "LIGHT"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+          ]
+        }
+      },
+      "type": 5,
+      "value": "mode"
+    },
+    {
+      "type": 0,
+      "value": " MODE"
+    }
+  ]
+}

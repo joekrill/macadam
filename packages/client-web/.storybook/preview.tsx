@@ -6,6 +6,7 @@ import {
 import { StoryContext } from "@storybook/react";
 import { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
+import { IntlProvider } from "react-intl";
 import { MemoryRouter } from "react-router-dom";
 import { theme as appTheme } from "../src/features/theme";
 
@@ -117,10 +118,17 @@ const withRouter = (StoryFn: Function) => (
   </MemoryRouter>
 );
 
+const withIntl = (StoryFn: Function) => (
+  <IntlProvider locale="en-US" defaultLocale="en">
+    <StoryFn />
+  </IntlProvider>
+);
+
 export const decorators = [
   withColorMode,
   withTheme,
   withRtl,
   withHelmet,
   withRouter,
+  withIntl,
 ];

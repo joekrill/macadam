@@ -5,6 +5,7 @@ import {
   SimpleGridProps,
   Stack,
 } from "@chakra-ui/react";
+import { FormattedMessage } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
 import { FooterHeading } from "./FooterHeading";
 
@@ -14,24 +15,46 @@ export const LinkGrid = (props: SimpleGridProps) => (
     {...props}
   >
     <Box minW="130px">
-      <FooterHeading mb="4">Resources</FooterHeading>
+      <FooterHeading mb="4">
+        <FormattedMessage
+          id="app.footer.linkGroups.resources.header"
+          defaultMessage="Resources"
+        />
+      </FooterHeading>
       <Stack>
         <Link as={RouterLink} to="/faq">
-          FAQ
+          <FormattedMessage
+            id="app.footer.links.faq.label"
+            defaultMessage="FAQ"
+          />
         </Link>
         <Link as={RouterLink} to="/contact">
-          Contact
+          <FormattedMessage
+            id="app.footer.links.contact.label"
+            defaultMessage="Contact"
+          />
         </Link>
       </Stack>
     </Box>
     <Box minW="130px">
-      <FooterHeading mb="4">Legal</FooterHeading>
+      <FooterHeading mb="4">
+        <FormattedMessage
+          id="app.footer.linkGroups.legal.header"
+          defaultMessage="Legal"
+        />
+      </FooterHeading>
       <Stack>
         <Link as={RouterLink} to="/privacy">
-          Privacy
+          <FormattedMessage
+            id="app.footer.links.privacy.label"
+            defaultMessage="Privacy"
+          />
         </Link>
         <Link as={RouterLink} to="/terms">
-          Terms
+          <FormattedMessage
+            id="app.footer.links.termsAndConditions.label"
+            defaultMessage="Terms"
+          />
         </Link>
       </Stack>
     </Box>

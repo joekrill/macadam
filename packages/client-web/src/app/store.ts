@@ -1,12 +1,14 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
+import { identityApi } from "../features/auth/identityApi";
+import { identitySlice } from "../features/auth/identitySlice";
 import { errorReduxEnhancer } from "../features/errors/middleware";
-import { identityApi } from "../features/identity/identityApi";
-import { identitySlice } from "../features/identity/identitySlice";
+import { i18nSlice } from "../features/i18n/i18nSlice";
 
 export const store = configureStore({
   devTools: process.env.NODE_ENV !== "production",
   reducer: {
+    [i18nSlice.name]: i18nSlice.reducer,
     [identitySlice.name]: identitySlice.reducer,
     [identityApi.reducerPath]: identityApi.reducer,
   },

@@ -5,7 +5,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Provider as ReduxProvider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
 import { store } from "./app/store";
-import { theme } from "./features/theme";
+import { theme } from "./features/theme/default";
 
 const AllProviders = ({ children }: { children?: React.ReactNode }) => (
   <ReduxProvider store={store}>

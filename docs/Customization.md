@@ -23,7 +23,7 @@ In order to use this Macadam for a real project, fork it and make the following 
     - ☐ `name`
     - ☐ `theme_color`
     - ☐ `background_color`
-  - ☐ Customize `PrivacyPolicy.tsx`, `TermsOfService.tsx`:
+  - ☐ Customize `PrivacyPolicy.tsx`, `TermsAndConditions.tsx`:
     - https://www.termsfeed.com/
     - https://termly.io/
     - https://www.iubenda.com

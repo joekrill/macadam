@@ -1,5 +1,5 @@
 # Extends docker-compose.yml, adding GlitchTip for crash reporting
-# Usage: `docker compose -f docker-compose.yml -f docker-compose.glitchtip.yml up`
+# Usage: `docker compose -f docker-compose.yml -f docker-compose.error-tracking.yml up`
 
 version: "3.8"
 

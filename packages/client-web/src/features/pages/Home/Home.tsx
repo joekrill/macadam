@@ -37,7 +37,7 @@ export const Home = (props: HomeProps) => {
         >
           <FormattedMessage
             id="pages.home.tagLine"
-            defaultMessage="A short tagline about what we do."
+            defaultMessage="Opinionated, production-ready, full-featured SaaS boilerplate."
           />
         </Heading>
         <Text mt="4" fontSize="lg">

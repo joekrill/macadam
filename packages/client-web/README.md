@@ -44,3 +44,68 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+#### Internationalization
+
+I18n is implemented using [Format.JS](https://formatjs.io/) and React-Intl. When possible, use the `<FormattedMessage />` or related component, or the imperative equivalents via the `useIntl()` hook. For messages be sure to use an id that makes sense. This is typically in the format of `<feature>.<component>.<part>'.
+
+```tsx
+// Using <FormattedMessage>
+
+import { FormattedMessage } from "react-intl";
+
+const MyComponent = () => (
+  <div>
+    <FormattedMessage
+      id="myFeature.MyComponent.message"
+      defaultMessage="This is my message!"
+    />
+  </div>
+);
+```
+
+```tsx
+// Using `useIntl()`
+
+import { useIntl } from "react-intl";
+
+const MyComponent = () => {
+  const { formatMessage } = useIntl();
+  return (
+    <div>
+      {formatMessage({
+        id: "myFeature.MyComponent.message",
+        defaultMessage: "his is my message!",
+      })}
+    </div>
+  );
+};
+```
+
+##### Adding a new message
+
+When adding new messages, be sure to:
+
+1. Run the message extraction script to update the `client-web/translations/en.json` file:
+
+   ```sh
+   yarn workspace client-web run i18n:extract
+   ```
+
+2. Add all necessary translations to the other language files in `client-web/translations`
+3. Run the message compilation script to update the compiled json message files in `packages/client-web/src/features/i18n/messages`:
+
+   ```sh
+   yarn workspace client-web run i18n:compile
+   ```
+
+##### Adding a new locale
+
+To add a new locale:
+
+1. Create a copy `packages/client-web/translations/en.json` named using the new locale (i.e. `fr.json`, `pt-BR.json`, `zh-Hans-HK.json`, etc.)
+2. In the new file, update the messages to use the desired translations.
+3. Run `yarn run i18n:compile` from the `client-web` directory (or `yarn workspace client-web run i18n:compile` from the project root)
+4. Update `packages/client-web/src/features/i18n/locales.ts` to include the new locale:
+   1. Add the locale code to the `SUPPORTED_LOCALES` array.
+   2. Update all `webpackInclude` magic comments in the `loadLocale` function to include the new locale code.

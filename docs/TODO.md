@@ -1,15 +1,22 @@
-- (api-server) Reduce amount of logging output in development
-- (api-server) Better unit test coverage + enforce minimum
-- (api-server) Uploads
-- (client-web) Better unit test coverage + enforce minimum
+- Tracing (OpenTelemetry)
+- Offline support
+- Upgrade Postgres to v14
+- (client-web) Handle /sessions/whoami 401 response
+- Handle logins across tabs (use localStorage to signal session changes?)
+- PWA
+- Detect session expiration and handle it somehow (modal login form?)
 - (client-web) Auth flow: verification
 - (client-web) Auth flow: recovery
 - (client-web) Auth forms: auto-focus first field when rendering forms.
-- (client-web) Auth: password requirements hint (is this currently possible with Kratos?)
-- (client-web) Auth: password strength meter?
 - (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
 - (client-web) Auth flow: make sure privileged_session_max_age works as expected (https://www.ory.sh/kratos/docs/self-service/flows/user-settings#updating-privileged-fields)
-- (client-web) Handle /sessions/whoami 401 response
+- (client-web) Auth: password requirements hint (is this currently possible with Kratos?)
+- (client-web) Auth: password strength meter?
+- (api-server) Uploads
+- Audit Log
+- (api-server) Reduce amount of logging output in development
+- (api-server) Better unit test coverage + enforce minimum
+- (client-web) Better unit test coverage + enforce minimum
 - (client-web) i18n Tooling
   - https://github.com/mirego/accent
   - https://github.com/ever-co/ever-traduora
@@ -38,18 +45,11 @@
 - Mobile app (react-native)
 - "Down for Maintenance" state
 - Vulnerability Disclosure Policy (https://github.com/disclose/dioterms/blob/master/core-terms-vdp.md)
-- Audit Log
 - Admin interface/API (user management)
-- Offline support
-- PWA
-- Handle logins across tabs (use localStorage to signal session changes?)
-- Detect session expiration and handle it somehow (modal login form?)
 - https://jacobian.org/2021/jul/8/appsec-pagnis/
 - https://cheatsheetseries.owasp.org/index.html
 - https://www.npmjs.com/package/devcert
 - https://github.com/ory/kratos/issues/1328
-- Tracing (OpenTelemetry)
-- Upgrade Postgres to v14
 
 Reference Projects:
 

@@ -154,8 +154,7 @@
           ]
         },
         "other": {
-          "value": [
-          ]
+          "value": []
         },
         "show": {
           "value": [
@@ -353,7 +352,7 @@
   "pages.home.tagLine": [
     {
       "type": 0,
-      "value": "A short tagline about what we do."
+      "value": "Opinionated, production-ready, full-featured SaaS boilerplate."
     }
   ],
   "pages.privacyPolicy.pageHeading": [
@@ -404,8 +403,7 @@
           ]
         },
         "other": {
-          "value": [
-          ]
+          "value": []
         }
       },
       "type": 5,

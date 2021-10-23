@@ -20,6 +20,7 @@
   - [Gateway Web Server](#gateway-web-server)
 - [Development Services](#development-services)
   - [Mail Interceptor](#mail-interceptor)
+  - [pgweb](#pgweb)
 
 ## About
 
@@ -187,3 +188,7 @@ In development, [Caddy](https://caddyserver.com/) acts as the gateway web server
 In development, all mail is routed through Maildev, which allows viewing emails in the browser by visiting <https://mail.localtest.me>.
 
 [Maildev](https://github.com/maildev/maildev)
+
+### pgweb
+
+[pgweb](https://sosedoff.github.io/pgweb/) is a web-based client for PostgreSQL. This allows browsing and querying the database directly to aid in debugging and development. Visit <https://pgweb.localtest.me> to access the running pgweb instance.

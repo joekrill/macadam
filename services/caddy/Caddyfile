@@ -20,6 +20,11 @@
 	handle @mail {
 		reverse_proxy mail:1080
 	}
+
+  @pgweb host pgweb.localtest.me
+	handle @pgweb {
+		reverse_proxy pgweb:8081
+	}
   
   @storybook host storybook.localtest.me 
   handle @storybook {

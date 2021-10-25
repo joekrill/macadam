@@ -3,6 +3,8 @@ import { App } from "./App";
 
 test("renders the home page", () => {
   render(<App />);
-  const linkElement = screen.getByText(/A short tagline about/i);
+  const linkElement = screen.getByText(
+    /Opinionated, production-ready, full-featured SaaS boilerplate./i
+  );
   expect(linkElement).toBeInTheDocument();
 });

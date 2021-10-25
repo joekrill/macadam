@@ -22,7 +22,7 @@ selfservice:
     password:
       enabled: true
     # TODO: OIDC
-    # oidc: 
+    # oidc:
     #   enabled: true
     profile:
       enabled: true
@@ -101,8 +101,6 @@ session:
   cookie:
     name: macadam_session
   lifespan: 720h # 30 days
-    
-sqa-opt-out: true
 
 expose-metrics-port: 4434
 

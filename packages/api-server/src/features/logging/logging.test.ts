@@ -1,14 +1,13 @@
 import { createMockContext } from "@shopify/jest-koa-mocks";
 import { Middleware, ParameterizedContext } from "koa";
-import { Logger } from "pino";
+import pino from "pino";
 import { logging } from "./logging";
 
 jest.unmock("./logging");
-
 describe("logging", () => {
   let loggingMiddleware: Middleware;
-  let baseLoggerMock: jest.Mocked<Logger>;
-  let childLoggerMock: jest.Mocked<Logger>;
+  let baseLoggerMock: jest.Mocked<pino.Logger>;
+  let childLoggerMock: jest.Mocked<pino.Logger>;
   const nextMock = jest.fn();
   let contextMock: ParameterizedContext;
 
@@ -19,10 +18,10 @@ describe("logging", () => {
       info: jest.fn(),
       debug: jest.fn(),
       trace: jest.fn(),
-    } as any as jest.Mocked<Logger>;
+    } as any as jest.Mocked<pino.Logger>;
     baseLoggerMock = {
       child: jest.fn(() => childLoggerMock),
-    } as any as jest.Mocked<Logger>;
+    } as any as jest.Mocked<pino.Logger>;
     loggingMiddleware = logging(baseLoggerMock);
     contextMock = createMockContext();
     nextMock.mockReset();

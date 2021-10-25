@@ -5,3 +5,5 @@ coverage
 .pnp.js
 .prettierrc.json
 .yarn/
+
+storybook-static/

@@ -17,4 +17,4 @@ export const useLogout = () => {
     trigger,
     isPending: logoutResult.isLoading || urlResult.isLoading,
   };
-}
+};

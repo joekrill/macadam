@@ -59,7 +59,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["prettier", "npm:2.4.1"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                 ],
                 linkType: "SOFT",
@@ -167,7 +167,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["lodash", "npm:4.17.21"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                   ["semver", "npm:5.7.1"],
                   ["source-map", "npm:0.5.7"],
@@ -200,7 +200,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["lodash", "npm:4.17.21"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                   ["semver", "npm:5.7.1"],
                   ["source-map", "npm:0.5.7"],
@@ -585,7 +585,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["lodash.debounce", "npm:4.0.8"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                   ["semver", "npm:6.3.0"],
                 ],
@@ -619,7 +619,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["lodash.debounce", "npm:4.0.8"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                   ["semver", "npm:6.3.0"],
                 ],
@@ -6589,7 +6589,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@types/babel__core", null],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                   ["semver", "npm:5.7.1"],
                 ],
@@ -12353,7 +12353,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["tslib", "npm:2.1.0"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                 ],
                 linkType: "HARD",
@@ -12465,7 +12465,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["tslib", "npm:2.1.0"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                 ],
                 packagePeers: ["@types/typescript", "typescript"],
@@ -12708,7 +12708,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["tslib", "npm:2.1.0"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                 ],
                 packagePeers: ["@types/ts-jest", "ts-jest"],
@@ -13518,7 +13518,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["prettier", "npm:2.4.1"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                 ],
                 linkType: "SOFT",
@@ -15042,7 +15042,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["is-module", "npm:1.0.0"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                   ["rollup", "npm:1.32.1"],
                 ],
@@ -16637,6 +16637,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@types/node", "npm:14.14.37"],
                   ["@types/react", "npm:17.0.32"],
                   ["@types/react-dom", "npm:17.0.10"],
+                  ["@types/typescript", null],
                   ["@types/webpack", "npm:4.41.27"],
                   ["autoprefixer", "npm:9.8.6"],
                   [
@@ -16729,6 +16730,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packagePeers: [
                   "@types/react-dom",
                   "@types/react",
+                  "@types/typescript",
                   "react-dom",
                   "react",
                   "typescript",
@@ -16868,6 +16870,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@types/node", "npm:14.14.37"],
                   ["@types/react", "npm:17.0.32"],
                   ["@types/react-dom", "npm:17.0.10"],
+                  ["@types/typescript", null],
                   ["@types/webpack", "npm:4.41.27"],
                   ["autoprefixer", "npm:9.8.6"],
                   [
@@ -16938,7 +16941,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["ts-dedent", "npm:2.1.1"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   [
                     "url-loader",
@@ -16963,6 +16966,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packagePeers: [
                   "@types/react-dom",
                   "@types/react",
+                  "@types/typescript",
                   "react-dom",
                   "react",
                   "typescript",
@@ -17316,6 +17320,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@types/react", "npm:17.0.32"],
                   ["@types/react-dom", "npm:17.0.10"],
                   ["@types/storybook__builder-webpack5", null],
+                  ["@types/typescript", null],
                   ["react", "npm:17.0.2"],
                   [
                     "react-dom",
@@ -17328,6 +17333,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   "@types/react-dom",
                   "@types/react",
                   "@types/storybook__builder-webpack5",
+                  "@types/typescript",
                   "react-dom",
                   "react",
                   "typescript",
@@ -17357,6 +17363,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@types/react", "npm:17.0.32"],
                   ["@types/react-dom", "npm:17.0.10"],
                   ["@types/storybook__builder-webpack5", null],
+                  ["@types/typescript", null],
                   ["react", "npm:17.0.2"],
                   [
                     "react-dom",
@@ -17364,7 +17371,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                 ],
                 packagePeers: [
@@ -17372,6 +17379,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   "@types/react-dom",
                   "@types/react",
                   "@types/storybook__builder-webpack5",
+                  "@types/typescript",
                   "react-dom",
                   "react",
                   "typescript",
@@ -17421,6 +17429,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   ["@types/react", "npm:17.0.32"],
                   ["@types/react-dom", "npm:17.0.10"],
+                  ["@types/typescript", null],
                   ["@types/webpack", "npm:4.41.27"],
                   ["airbnb-js-shims", "npm:2.2.1"],
                   ["ansi-to-html", "npm:0.6.14"],
@@ -17437,7 +17446,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["ts-dedent", "npm:2.1.1"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   ["unfetch", "npm:4.2.0"],
                   ["util-deprecate", "npm:1.0.2"],
@@ -17449,6 +17458,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packagePeers: [
                   "@types/react-dom",
                   "@types/react",
+                  "@types/typescript",
                   "@types/webpack",
                   "react-dom",
                   "react",
@@ -17486,6 +17496,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   ["@types/react", "npm:17.0.32"],
                   ["@types/react-dom", "npm:17.0.10"],
+                  ["@types/typescript", null],
                   ["@types/webpack", null],
                   ["airbnb-js-shims", "npm:2.2.1"],
                   ["ansi-to-html", "npm:0.6.14"],
@@ -17502,7 +17513,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["ts-dedent", "npm:2.1.1"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   ["unfetch", "npm:4.2.0"],
                   ["util-deprecate", "npm:1.0.2"],
@@ -17511,6 +17522,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packagePeers: [
                   "@types/react-dom",
                   "@types/react",
+                  "@types/typescript",
                   "@types/webpack",
                   "react-dom",
                   "react",
@@ -17548,6 +17560,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   ["@types/react", "npm:17.0.32"],
                   ["@types/react-dom", "npm:17.0.10"],
+                  ["@types/typescript", null],
                   ["@types/webpack", null],
                   ["airbnb-js-shims", "npm:2.2.1"],
                   ["ansi-to-html", "npm:0.6.14"],
@@ -17570,6 +17583,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packagePeers: [
                   "@types/react-dom",
                   "@types/react",
+                  "@types/typescript",
                   "@types/webpack",
                   "react-dom",
                   "react",
@@ -17607,6 +17621,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   ["@types/react", "npm:17.0.32"],
                   ["@types/react-dom", "npm:17.0.10"],
+                  ["@types/typescript", null],
                   ["@types/webpack", "npm:4.41.27"],
                   ["airbnb-js-shims", "npm:2.2.1"],
                   ["ansi-to-html", "npm:0.6.14"],
@@ -17632,6 +17647,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packagePeers: [
                   "@types/react-dom",
                   "@types/react",
+                  "@types/typescript",
                   "@types/webpack",
                   "react-dom",
                   "react",
@@ -17754,6 +17770,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@types/pretty-hrtime", "npm:1.0.0"],
                   ["@types/react", "npm:17.0.32"],
                   ["@types/react-dom", "npm:17.0.10"],
+                  ["@types/typescript", null],
                   [
                     "babel-loader",
                     "virtual:ab101c91035e397f24f4c28a2cd37dc89dca414b760970bff5b98573996d6fff29210ab2333daa9710c5b8fa4fdec9dcb607f4f63817412c254a24ccd86c9965#npm:8.2.2",
@@ -17797,6 +17814,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packagePeers: [
                   "@types/react-dom",
                   "@types/react",
+                  "@types/typescript",
                   "react-dom",
                   "react",
                   "typescript",
@@ -17903,6 +17921,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@types/pretty-hrtime", "npm:1.0.0"],
                   ["@types/react", "npm:17.0.32"],
                   ["@types/react-dom", "npm:17.0.10"],
+                  ["@types/typescript", null],
                   [
                     "babel-loader",
                     "virtual:ab101c91035e397f24f4c28a2cd37dc89dca414b760970bff5b98573996d6fff29210ab2333daa9710c5b8fa4fdec9dcb607f4f63817412c254a24ccd86c9965#npm:8.2.2",
@@ -17938,7 +17957,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["ts-dedent", "npm:2.1.1"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   ["util-deprecate", "npm:1.0.2"],
                   [
@@ -17949,6 +17968,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packagePeers: [
                   "@types/react-dom",
                   "@types/react",
+                  "@types/typescript",
                   "react-dom",
                   "react",
                   "typescript",
@@ -18038,6 +18058,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@types/react-dom", "npm:17.0.10"],
                   ["@types/storybook__builder-webpack5", null],
                   ["@types/storybook__manager-webpack5", null],
+                  ["@types/typescript", null],
                   ["@types/webpack", "npm:4.41.27"],
                   ["better-opn", "npm:2.1.1"],
                   ["boxen", "npm:4.2.0"],
@@ -18066,7 +18087,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["ts-dedent", "npm:2.1.1"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   ["util-deprecate", "npm:1.0.2"],
                   [
@@ -18081,6 +18102,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   "@types/react",
                   "@types/storybook__builder-webpack5",
                   "@types/storybook__manager-webpack5",
+                  "@types/typescript",
                   "react-dom",
                   "react",
                   "typescript",
@@ -18127,6 +18149,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@types/react-dom", "npm:17.0.10"],
                   ["@types/storybook__builder-webpack5", null],
                   ["@types/storybook__manager-webpack5", null],
+                  ["@types/typescript", null],
                   ["@types/webpack", "npm:4.41.27"],
                   ["better-opn", "npm:2.1.1"],
                   ["boxen", "npm:4.2.0"],
@@ -18167,6 +18190,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   "@types/react",
                   "@types/storybook__builder-webpack5",
                   "@types/storybook__manager-webpack5",
+                  "@types/typescript",
                   "react-dom",
                   "react",
                   "typescript",
@@ -18286,6 +18310,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@types/node", "npm:14.14.37"],
                   ["@types/react", "npm:17.0.32"],
                   ["@types/react-dom", "npm:17.0.10"],
+                  ["@types/typescript", null],
                   ["@types/webpack", "npm:4.41.27"],
                   [
                     "babel-loader",
@@ -18336,7 +18361,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["ts-dedent", "npm:2.1.1"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   [
                     "url-loader",
@@ -18356,6 +18381,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packagePeers: [
                   "@types/react-dom",
                   "@types/react",
+                  "@types/typescript",
                   "react-dom",
                   "react",
                   "typescript",
@@ -18406,6 +18432,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@types/node", "npm:14.14.37"],
                   ["@types/react", "npm:17.0.32"],
                   ["@types/react-dom", "npm:17.0.10"],
+                  ["@types/typescript", null],
                   ["@types/webpack", "npm:4.41.27"],
                   [
                     "babel-loader",
@@ -18473,6 +18500,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packagePeers: [
                   "@types/react-dom",
                   "@types/react",
+                  "@types/typescript",
                   "react-dom",
                   "react",
                   "typescript",
@@ -18640,6 +18668,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@types/babel__core", null],
                   ["@types/react", "npm:17.0.32"],
                   ["@types/react-dom", "npm:17.0.10"],
+                  ["@types/typescript", null],
                   ["@types/webpack-env", "npm:1.16.0"],
                   ["babel-plugin-add-react-displayname", "npm:0.0.5"],
                   [
@@ -18663,7 +18692,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["ts-dedent", "npm:2.1.1"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   [
                     "webpack",
@@ -18675,6 +18704,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   "@types/babel__core",
                   "@types/react-dom",
                   "@types/react",
+                  "@types/typescript",
                   "react-dom",
                   "react",
                   "typescript",
@@ -18779,7 +18809,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["tslib", "npm:2.1.0"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   [
                     "webpack",
@@ -21706,6 +21736,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "virtual:6baddb35968835825776847c66a653d4a4e4956a84da760677a83b196a6983e22d960b89be84736cf78409bf51ee1a3c2c329e70af1669bd55e6cbe6620a02f4#npm:4.20.0",
                   ],
                   ["@types/eslint", null],
+                  ["@types/typescript", null],
                   ["@types/typescript-eslint__parser", null],
                   [
                     "@typescript-eslint/experimental-utils",
@@ -21731,12 +21762,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                 ],
                 packagePeers: [
                   "@types/eslint",
                   "@types/typescript-eslint__parser",
+                  "@types/typescript",
                   "@typescript-eslint/parser",
                   "eslint",
                   "typescript",
@@ -21849,6 +21881,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "virtual:6baddb35968835825776847c66a653d4a4e4956a84da760677a83b196a6983e22d960b89be84736cf78409bf51ee1a3c2c329e70af1669bd55e6cbe6620a02f4#npm:4.20.0",
                   ],
                   ["@types/eslint", null],
+                  ["@types/typescript", null],
                   ["@typescript-eslint/scope-manager", "npm:4.20.0"],
                   ["@typescript-eslint/types", "npm:4.20.0"],
                   [
@@ -21862,10 +21895,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["eslint", "npm:7.31.0"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                 ],
-                packagePeers: ["@types/eslint", "eslint", "typescript"],
+                packagePeers: [
+                  "@types/eslint",
+                  "@types/typescript",
+                  "eslint",
+                  "typescript",
+                ],
                 linkType: "HARD",
               },
             ],
@@ -21951,6 +21989,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "@typescript-eslint/typescript-estree",
                     "virtual:002dd7999d1f035cf813d005fcf554fcb4d1f9edc15ca0f3ec08815192fd3161f4a9a6a30daa0d3cb21b89883407ec755dbd715049276ed771f50f6b117becc9#npm:3.10.1",
                   ],
+                  ["@types/typescript", null],
                   ["@typescript-eslint/types", "npm:3.10.1"],
                   ["@typescript-eslint/visitor-keys", "npm:3.10.1"],
                   [
@@ -21967,7 +22006,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   ["typescript", null],
                 ],
-                packagePeers: ["typescript"],
+                packagePeers: ["@types/typescript", "typescript"],
                 linkType: "HARD",
               },
             ],
@@ -21981,6 +22020,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "@typescript-eslint/typescript-estree",
                     "virtual:4223d8aefb995dd79f2db137994006c23026a545099425b801174766ef3a01080d0e3a5137ddb884f74774e2188ca7c2e38c86a0614e2e36330d1033a87b58d0#npm:4.20.0",
                   ],
+                  ["@types/typescript", null],
                   ["@typescript-eslint/types", "npm:4.20.0"],
                   ["@typescript-eslint/visitor-keys", "npm:4.20.0"],
                   [
@@ -21996,10 +22036,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                 ],
-                packagePeers: ["typescript"],
+                packagePeers: ["@types/typescript", "typescript"],
                 linkType: "HARD",
               },
             ],
@@ -22013,6 +22053,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "@typescript-eslint/typescript-estree",
                     "virtual:aeb2bc9bfbf82788ddda814b674f0e68e0c035e829d2d491d020f12f6e10eebea9b6ff49b9cebd2bc20b4963f265a3f45f4ece0fee16300cc20831be3e8c3cbd#npm:4.20.0",
                   ],
+                  ["@types/typescript", null],
                   ["@typescript-eslint/types", "npm:4.20.0"],
                   ["@typescript-eslint/visitor-keys", "npm:4.20.0"],
                   [
@@ -22028,7 +22069,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   ["typescript", null],
                 ],
-                packagePeers: ["typescript"],
+                packagePeers: ["@types/typescript", "typescript"],
                 linkType: "HARD",
               },
             ],
@@ -23481,7 +23522,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   ["uuid", "npm:8.3.2"],
                 ],
@@ -24292,7 +24333,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["eslint-visitor-keys", "npm:1.3.0"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                 ],
                 packagePeers: ["@types/eslint", "eslint"],
@@ -24720,7 +24761,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["cosmiconfig", "npm:6.0.0"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                 ],
                 linkType: "HARD",
@@ -24737,7 +24778,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["cosmiconfig", "npm:7.0.0"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                 ],
                 linkType: "HARD",
@@ -26845,7 +26886,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["braces", "npm:2.3.2"],
                   [
                     "fsevents",
-                    "patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=1cc4b2",
+                    "patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=18f3a7",
                   ],
                   ["glob-parent", "npm:3.1.0"],
                   ["inherits", "npm:2.0.4"],
@@ -26870,7 +26911,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["braces", "npm:3.0.2"],
                   [
                     "fsevents",
-                    "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=1cc4b2",
+                    "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7",
                   ],
                   ["glob-parent", "npm:5.1.2"],
                   ["is-binary-path", "npm:2.1.0"],
@@ -27278,7 +27319,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["svgo", "npm:2.7.0"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   ["web-vitals", "npm:2.1.2"],
                   ["zod", "npm:3.11.4"],
@@ -29380,10 +29421,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "debug",
                     "virtual:11708fcd8b5d4d05ff1d66e93d462ef2e0e1a37e2f059f1c5142e31570731629f92bd79531af0543bc9cc3e8328e18d21151650e1e20b8209c0416b889b286e6#npm:3.2.7",
                   ],
+                  ["@types/supports-color", null],
                   ["ms", "npm:2.1.3"],
                   ["supports-color", null],
                 ],
-                packagePeers: ["supports-color"],
+                packagePeers: ["@types/supports-color", "supports-color"],
                 linkType: "HARD",
               },
             ],
@@ -29397,10 +29439,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "debug",
                     "virtual:367562d25925b628b26c10988ed80fbe996cd3252bb01ea6df3d242282b98d20bbae1fb7bbc5f18d303b2382bb4147b4864a1a3c43564a6c40e19f8c306b3501#npm:4.3.2",
                   ],
+                  ["@types/supports-color", null],
                   ["ms", "npm:2.1.2"],
                   ["supports-color", "npm:8.1.1"],
                 ],
-                packagePeers: ["supports-color"],
+                packagePeers: ["@types/supports-color", "supports-color"],
                 linkType: "HARD",
               },
             ],
@@ -29414,10 +29457,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "debug",
                     "virtual:441dca137cba97e44bb11b6ae991779cc4cf23c61f62fa0c84d4e7ea8b9190ea647aba05cead40502709b30918d4eda728c64348a5e6bb9bfda082f91a615f92#npm:3.2.7",
                   ],
+                  ["@types/supports-color", null],
                   ["ms", "npm:2.1.3"],
                   ["supports-color", "npm:5.5.0"],
                 ],
-                packagePeers: ["supports-color"],
+                packagePeers: ["@types/supports-color", "supports-color"],
                 linkType: "HARD",
               },
             ],
@@ -29431,10 +29475,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "debug",
                     "virtual:4d66af12d208ef29dbd98c6b172ab9b9ecdd2e4f84fd711630651d700025ca65e4564006e6af69de45cde4766c1b87fa6ac352f069086ebf80b26ee73f92f2ff#npm:4.3.1",
                   ],
+                  ["@types/supports-color", null],
                   ["ms", "npm:2.1.2"],
                   ["supports-color", null],
                 ],
-                packagePeers: ["supports-color"],
+                packagePeers: ["@types/supports-color", "supports-color"],
                 linkType: "HARD",
               },
             ],
@@ -29448,10 +29493,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "debug",
                     "virtual:5328d2c5c25643aa6ffe16fdbfd6a508e742858aeceaf9cb38e10be856c6d7e2fc35f2f0d8d0a2af4e43e97a2be21bba98dc637466c11a9a2753def802539001#npm:4.3.2",
                   ],
+                  ["@types/supports-color", null],
                   ["ms", "npm:2.1.2"],
                   ["supports-color", "npm:6.1.0"],
                 ],
-                packagePeers: ["supports-color"],
+                packagePeers: ["@types/supports-color", "supports-color"],
                 linkType: "HARD",
               },
             ],
@@ -29465,10 +29511,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "debug",
                     "virtual:58c45d1abcfbfa1f01b5cd3e53439720ec2578dbff5c28038489c39241aed010924080812c1c0437781a7914d49dcd5ab8069f87498c3e84e93a3fb3ed6111b7#npm:4.3.2",
                   ],
+                  ["@types/supports-color", null],
                   ["ms", "npm:2.1.2"],
                   ["supports-color", null],
                 ],
-                packagePeers: ["supports-color"],
+                packagePeers: ["@types/supports-color", "supports-color"],
                 linkType: "HARD",
               },
             ],
@@ -29482,10 +29529,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "debug",
                     "virtual:71ea54087243fefc16fde4b11d95f9eb477e415c7421826db923917f0e4dceec4fe3d86d7bfb6c329c21b575806e6747ac2d62e670e3f6883a666e4b547ea8d6#npm:3.1.0",
                   ],
+                  ["@types/supports-color", null],
                   ["ms", "npm:2.0.0"],
                   ["supports-color", null],
                 ],
-                packagePeers: ["supports-color"],
+                packagePeers: ["@types/supports-color", "supports-color"],
                 linkType: "HARD",
               },
             ],
@@ -29499,10 +29547,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "debug",
                     "virtual:ce5f7e2bb1b7f4095649047ca6318b6ca89dc972e9361c95030a080bc15dedfcd36c6ad1bb01a681d051a8e1766899039d1a9ddceeff9d2a2c0650a4aeda303b#npm:2.6.9",
                   ],
+                  ["@types/supports-color", null],
                   ["ms", "npm:2.0.0"],
                   ["supports-color", null],
                 ],
-                packagePeers: ["supports-color"],
+                packagePeers: ["@types/supports-color", "supports-color"],
                 linkType: "HARD",
               },
             ],
@@ -31668,7 +31717,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                 ],
                 linkType: "HARD",
@@ -31770,7 +31819,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["read-pkg-up", "npm:2.0.0"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                   ["tsconfig-paths", "npm:3.9.0"],
                 ],
@@ -31903,7 +31952,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["prop-types", "npm:15.7.2"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A2.0.0-next.3#~builtin<compat/resolve>::version=2.0.0-next.3&hash=00b1ff",
+                    "patch:resolve@npm%3A2.0.0-next.3#~builtin<compat/resolve>::version=2.0.0-next.3&hash=07638b",
                   ],
                   ["string.prototype.matchall", "npm:4.0.4"],
                 ],
@@ -33467,9 +33516,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "follow-redirects",
                     "virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.13.3",
                   ],
+                  ["@types/debug", null],
                   ["debug", null],
                 ],
-                packagePeers: ["debug"],
+                packagePeers: ["@types/debug", "debug"],
                 linkType: "HARD",
               },
             ],
@@ -33483,9 +33533,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "follow-redirects",
                     "virtual:d192f6b3b31cd5d11a443145a3883a70c04cbd7c813c53085dbaf50263735f1162f10fdbddd53c24e162ec3bc37b90966413084323739b7cf942b8bfb4da8831#npm:1.14.2",
                   ],
+                  ["@types/debug", null],
                   ["debug", null],
                 ],
-                packagePeers: ["debug"],
+                packagePeers: ["@types/debug", "debug"],
                 linkType: "HARD",
               },
             ],
@@ -33632,7 +33683,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["tapable", "npm:1.1.3"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   ["vue-template-compiler", null],
                   [
@@ -33715,7 +33766,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["tapable", "npm:1.1.3"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   ["vue-template-compiler", null],
                   [
@@ -34133,14 +34184,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "fsevents",
           [
             [
-              "patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=1cc4b2",
+              "patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=18f3a7",
               {
                 packageLocation:
-                  "./.yarn/unplugged/fsevents-patch-a7944b1d53/node_modules/fsevents/",
+                  "./.yarn/unplugged/fsevents-patch-fcdf30aaca/node_modules/fsevents/",
                 packageDependencies: [
                   [
                     "fsevents",
-                    "patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=1cc4b2",
+                    "patch:fsevents@npm%3A1.2.13#~builtin<compat/fsevents>::version=1.2.13&hash=18f3a7",
                   ],
                   ["bindings", "npm:1.5.0"],
                   ["nan", "npm:2.14.2"],
@@ -34149,14 +34200,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               },
             ],
             [
-              "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=1cc4b2",
+              "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7",
               {
                 packageLocation:
-                  "./.yarn/unplugged/fsevents-patch-34a78773f2/node_modules/fsevents/",
+                  "./.yarn/unplugged/fsevents-patch-3340e2eb10/node_modules/fsevents/",
                 packageDependencies: [
                   [
                     "fsevents",
-                    "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=1cc4b2",
+                    "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7",
                   ],
                   ["node-gyp", "npm:7.1.2"],
                 ],
@@ -38795,7 +38846,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["fb-watchman", "npm:2.0.1"],
                   [
                     "fsevents",
-                    "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=1cc4b2",
+                    "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7",
                   ],
                   ["graceful-fs", "npm:4.2.6"],
                   ["jest-regex-util", "npm:26.0.0"],
@@ -38823,7 +38874,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["fb-watchman", "npm:2.0.1"],
                   [
                     "fsevents",
-                    "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=1cc4b2",
+                    "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7",
                   ],
                   ["graceful-fs", "npm:4.2.6"],
                   ["jest-regex-util", "npm:27.0.6"],
@@ -39169,7 +39220,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["read-pkg-up", "npm:7.0.1"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                   ["slash", "npm:3.0.0"],
                 ],
@@ -39194,7 +39245,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["read-pkg-up", "npm:7.0.1"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                   ["slash", "npm:3.0.0"],
                 ],
@@ -39220,7 +39271,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["jest-validate", "npm:27.3.1"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                   ["resolve.exports", "npm:1.1.0"],
                   ["slash", "npm:3.0.0"],
@@ -40898,7 +40949,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["rechoir", "npm:0.6.2"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                 ],
                 linkType: "HARD",
@@ -43257,7 +43308,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["hosted-git-info", "npm:2.8.8"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                   ["semver", "npm:5.7.1"],
                   ["validate-npm-package-license", "npm:3.0.4"],
@@ -47430,9 +47481,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "promise-inflight",
                     "virtual:0a601d06b9bb877e28dc3c2bf132b715e8c8db39518cb037053d3e960e698b842f18c4ad29c4dbd116bd79f31c565cbbc9741fa4573e2713fab36fd780658f57#npm:1.0.1",
                   ],
+                  ["@types/bluebird", null],
                   ["bluebird", "npm:3.7.2"],
                 ],
-                packagePeers: ["bluebird"],
+                packagePeers: ["@types/bluebird", "bluebird"],
                 linkType: "HARD",
               },
             ],
@@ -47446,9 +47498,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "promise-inflight",
                     "virtual:a8e1454dc86b2e862189e6c7558c296d3e67652cb7e2ca17ddada1020ff86c2e9274f967b519bed24d3daaa8a3b1f9d4ac5ad4c0932dd839e470a7c77b57bb40#npm:1.0.1",
                   ],
+                  ["@types/bluebird", null],
                   ["bluebird", null],
                 ],
-                packagePeers: ["bluebird"],
+                packagePeers: ["@types/bluebird", "bluebird"],
                 linkType: "HARD",
               },
             ],
@@ -48315,7 +48368,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["@types/typescript", null],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                 ],
                 packagePeers: ["@types/typescript", "typescript"],
@@ -48711,7 +48764,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["tslib", "npm:2.1.0"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                 ],
                 packagePeers: [
@@ -48873,6 +48926,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   ["@babel/runtime", "npm:7.14.0"],
                   ["@types/react", "npm:17.0.32"],
+                  ["@types/react-dom", "npm:17.0.10"],
+                  ["@types/react-native", null],
                   ["@types/react-redux", "npm:7.1.18"],
                   ["hoist-non-react-statics", "npm:3.3.2"],
                   ["loose-envify", "npm:1.4.0"],
@@ -48886,6 +48941,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["react-native", null],
                 ],
                 packagePeers: [
+                  "@types/react-dom",
+                  "@types/react-native",
                   "@types/react",
                   "react-dom",
                   "react-native",
@@ -49196,7 +49253,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["fs-extra", "npm:9.1.0"],
                   [
                     "fsevents",
-                    "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=1cc4b2",
+                    "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7",
                   ],
                   [
                     "html-webpack-plugin",
@@ -49231,7 +49288,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["react-refresh", "npm:0.8.3"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.18.1#~builtin<compat/resolve>::version=1.18.1&hash=00b1ff",
+                    "patch:resolve@npm%3A1.18.1#~builtin<compat/resolve>::version=1.18.1&hash=07638b",
                   ],
                   ["resolve-url-loader", "npm:3.1.2"],
                   [
@@ -49253,7 +49310,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   [
                     "url-loader",
@@ -49590,7 +49647,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["rechoir", "npm:0.6.2"],
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                 ],
                 linkType: "HARD",
@@ -50338,14 +50395,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "resolve",
           [
             [
-              "patch:resolve@npm%3A1.18.1#~builtin<compat/resolve>::version=1.18.1&hash=00b1ff",
+              "patch:resolve@npm%3A1.18.1#~builtin<compat/resolve>::version=1.18.1&hash=07638b",
               {
                 packageLocation:
-                  "./.yarn/cache/resolve-patch-53a4677ceb-3a5051499a.zip/node_modules/resolve/",
+                  "./.yarn/cache/resolve-patch-205ca44847-7439c8f3d8.zip/node_modules/resolve/",
                 packageDependencies: [
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.18.1#~builtin<compat/resolve>::version=1.18.1&hash=00b1ff",
+                    "patch:resolve@npm%3A1.18.1#~builtin<compat/resolve>::version=1.18.1&hash=07638b",
                   ],
                   ["is-core-module", "npm:2.2.0"],
                   ["path-parse", "npm:1.0.6"],
@@ -50354,14 +50411,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               },
             ],
             [
-              "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+              "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
               {
                 packageLocation:
-                  "./.yarn/cache/resolve-patch-da1bf0dd3c-bed00be983.zip/node_modules/resolve/",
+                  "./.yarn/cache/resolve-patch-b4a69197d3-a0dd7d16a8.zip/node_modules/resolve/",
                 packageDependencies: [
                   [
                     "resolve",
-                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=00b1ff",
+                    "patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b",
                   ],
                   ["is-core-module", "npm:2.2.0"],
                   ["path-parse", "npm:1.0.6"],
@@ -50370,14 +50427,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               },
             ],
             [
-              "patch:resolve@npm%3A2.0.0-next.3#~builtin<compat/resolve>::version=2.0.0-next.3&hash=00b1ff",
+              "patch:resolve@npm%3A2.0.0-next.3#~builtin<compat/resolve>::version=2.0.0-next.3&hash=07638b",
               {
                 packageLocation:
-                  "./.yarn/cache/resolve-patch-4c1e11bf79-eb88c5e538.zip/node_modules/resolve/",
+                  "./.yarn/cache/resolve-patch-00f699a708-21684b4d99.zip/node_modules/resolve/",
                 packageDependencies: [
                   [
                     "resolve",
-                    "patch:resolve@npm%3A2.0.0-next.3#~builtin<compat/resolve>::version=2.0.0-next.3&hash=00b1ff",
+                    "patch:resolve@npm%3A2.0.0-next.3#~builtin<compat/resolve>::version=2.0.0-next.3&hash=07638b",
                   ],
                   ["is-core-module", "npm:2.2.0"],
                   ["path-parse", "npm:1.0.6"],
@@ -54558,7 +54615,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["semver", "npm:7.3.5"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   ["yargs-parser", "npm:20.2.9"],
                 ],
@@ -54618,7 +54675,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["make-error", "npm:1.3.6"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                   ["yn", "npm:3.1.1"],
                 ],
@@ -54658,12 +54715,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "ts-pnp",
                     "virtual:6baddb35968835825776847c66a653d4a4e4956a84da760677a83b196a6983e22d960b89be84736cf78409bf51ee1a3c2c329e70af1669bd55e6cbe6620a02f4#npm:1.2.0",
                   ],
+                  ["@types/typescript", null],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                 ],
-                packagePeers: ["typescript"],
+                packagePeers: ["@types/typescript", "typescript"],
                 linkType: "HARD",
               },
             ],
@@ -54677,9 +54735,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "ts-pnp",
                     "virtual:c497046afcbefb679e3fe12575088ec12205b913a36c3d158b27e7cd646d448426540ab27ba98e54ddb75b1ed97de7e3ce5dc0158c9ba4e76ce942c87e5d02d8#npm:1.2.0",
                   ],
+                  ["@types/typescript", null],
                   ["typescript", null],
                 ],
-                packagePeers: ["typescript"],
+                packagePeers: ["@types/typescript", "typescript"],
                 linkType: "HARD",
               },
             ],
@@ -54768,7 +54827,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["tslib", "npm:1.14.1"],
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                 ],
                 packagePeers: ["@types/typescript", "typescript"],
@@ -55051,14 +55110,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "typescript",
           [
             [
-              "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+              "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
               {
                 packageLocation:
-                  "./.yarn/cache/typescript-patch-29eb8bf885-c97c33903f.zip/node_modules/typescript/",
+                  "./.yarn/cache/typescript-patch-d95d140154-bd629ad0da.zip/node_modules/typescript/",
                 packageDependencies: [
                   [
                     "typescript",
-                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=32657b",
+                    "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8",
                   ],
                 ],
                 linkType: "HARD",
@@ -56521,6 +56580,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "webpack",
                     "virtual:0f1b8a663247947ec3a5904dbcd2b0e688f5443bfcd092dd7ad83156f4af235d24d726030de73b938be63ec0901f33fe1b42db1a5beecf5853776acae702dcfc#npm:4.46.0",
                   ],
+                  ["@types/webpack-cli", null],
+                  ["@types/webpack-command", null],
                   ["@webassemblyjs/ast", "npm:1.9.0"],
                   ["@webassemblyjs/helper-module-context", "npm:1.9.0"],
                   ["@webassemblyjs/wasm-edit", "npm:1.9.0"],
@@ -56553,7 +56614,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["webpack-command", null],
                   ["webpack-sources", "npm:1.4.3"],
                 ],
-                packagePeers: ["webpack-cli", "webpack-command"],
+                packagePeers: [
+                  "@types/webpack-cli",
+                  "@types/webpack-command",
+                  "webpack-cli",
+                  "webpack-command",
+                ],
                 linkType: "HARD",
               },
             ],
@@ -56567,6 +56633,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "webpack",
                     "virtual:6baddb35968835825776847c66a653d4a4e4956a84da760677a83b196a6983e22d960b89be84736cf78409bf51ee1a3c2c329e70af1669bd55e6cbe6620a02f4#npm:4.44.2",
                   ],
+                  ["@types/webpack-cli", null],
+                  ["@types/webpack-command", null],
                   ["@webassemblyjs/ast", "npm:1.9.0"],
                   ["@webassemblyjs/helper-module-context", "npm:1.9.0"],
                   ["@webassemblyjs/wasm-edit", "npm:1.9.0"],
@@ -56599,7 +56667,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ["webpack-command", null],
                   ["webpack-sources", "npm:1.4.3"],
                 ],
-                packagePeers: ["webpack-cli", "webpack-command"],
+                packagePeers: [
+                  "@types/webpack-cli",
+                  "@types/webpack-command",
+                  "webpack-cli",
+                  "webpack-command",
+                ],
                 linkType: "HARD",
               },
             ],
@@ -56692,6 +56765,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     "virtual:6baddb35968835825776847c66a653d4a4e4956a84da760677a83b196a6983e22d960b89be84736cf78409bf51ee1a3c2c329e70af1669bd55e6cbe6620a02f4#npm:3.11.1",
                   ],
                   ["@types/webpack", null],
+                  ["@types/webpack-cli", null],
                   ["ansi-html", "npm:0.0.7"],
                   ["bonjour", "npm:3.5.0"],
                   ["chokidar", "npm:2.1.8"],
@@ -56740,7 +56814,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   ["yargs", "npm:13.3.2"],
                 ],
-                packagePeers: ["@types/webpack", "webpack-cli", "webpack"],
+                packagePeers: [
+                  "@types/webpack-cli",
+                  "@types/webpack",
+                  "webpack-cli",
+                  "webpack",
+                ],
                 linkType: "HARD",
               },
             ],
@@ -62536,7 +62615,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       var external_fs_ = __webpack_require__(747);
       var external_fs_default =
         /*#__PURE__*/ __webpack_require__.n(external_fs_); // CONCATENATED MODULE: external "os"
-      const external_os_namespaceObject = require("os");
+      const external_os_namespaceObject = require("os"); // CONCATENATED MODULE: ../yarnpkg-fslib/sources/constants.ts
+      const constants_S_IFMT = 0o170000;
+      const constants_S_IFDIR = 0o040000;
+      const constants_S_IFREG = 0o100000;
+      const constants_S_IFLNK = 0o120000;
+      /**
+       * Unix timestamp for `1984-06-22T21:50:00.000Z`
+       *
+       * It needs to be after 1980-01-01 because that's what Zip supports, and it
+       * needs to have a slight offset to account for different timezones (because
+       * zip assumes that all times are local to whoever writes the file, which is
+       * really silly).
+       */
+
+      const SAFE_TIME = 456789000;
       // EXTERNAL MODULE: external "path"
       var external_path_ = __webpack_require__(622);
       var external_path_default =
@@ -62612,13 +62705,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 
       function fromPortablePath(p) {
         if (process.platform !== `win32`) return p;
-        if (p.match(PORTABLE_PATH_REGEXP))
-          p = p.replace(PORTABLE_PATH_REGEXP, `$1`);
-        else if (p.match(UNC_PORTABLE_PATH_REGEXP))
-          p = p.replace(
-            UNC_PORTABLE_PATH_REGEXP,
-            (match, p1, p2) => `\\\\${p1 ? `.\\` : ``}${p2}`
-          );
+        let portablePathMatch, uncPortablePathMatch;
+        if ((portablePathMatch = p.match(PORTABLE_PATH_REGEXP)))
+          p = portablePathMatch[1];
+        else if ((uncPortablePathMatch = p.match(UNC_PORTABLE_PATH_REGEXP)))
+          p = `\\\\${uncPortablePathMatch[1] ? `.\\` : ``}${
+            uncPortablePathMatch[2]
+          }`;
         else return p;
         return p.replace(/\//g, `\\`);
       } // Path should look like "N:/berry/scripts/plugin-pack.js"
@@ -62626,13 +62719,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 
       function toPortablePath(p) {
         if (process.platform !== `win32`) return p;
-        if (p.match(WINDOWS_PATH_REGEXP))
-          p = p.replace(WINDOWS_PATH_REGEXP, `/$1`);
-        else if (p.match(UNC_WINDOWS_PATH_REGEXP))
-          p = p.replace(
-            UNC_WINDOWS_PATH_REGEXP,
-            (match, p1, p2) => `/unc/${p1 ? `.dot/` : ``}${p2}`
-          );
+        let windowsPathMatch, uncWindowsPathMatch;
+        if ((windowsPathMatch = p.match(WINDOWS_PATH_REGEXP)))
+          p = `/${windowsPathMatch[1]}`;
+        else if ((uncWindowsPathMatch = p.match(UNC_WINDOWS_PATH_REGEXP)))
+          p = `/unc/${uncWindowsPathMatch[1] ? `.dot/` : ``}${
+            uncWindowsPathMatch[2]
+          }`;
         return p.replace(/\\/g, `/`);
       }
 
@@ -62649,9 +62742,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           throw new Error(`Invalid filename: "${filename}"`);
         return filename;
       } // CONCATENATED MODULE: ../yarnpkg-fslib/sources/algorithms/copyPromise.ts
-      // 1980-01-01, like Fedora
-
-      const defaultTime = new Date(315532800 * 1000);
+      const defaultTime = new Date(SAFE_TIME * 1000);
       var LinkStrategy;
 
       (function (LinkStrategy) {
@@ -62671,10 +62762,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         const normalizedSource = sourceFs.pathUtils.normalize(source);
         const prelayout = [];
         const postlayout = [];
-        await destinationFs.mkdirPromise(
+        const referenceTime = opts.stableTime
+          ? {
+              mtime: defaultTime,
+              atime: defaultTime,
+            }
+          : await sourceFs.lstatPromise(normalizedSource);
+        await destinationFs.mkdirpPromise(
           destinationFs.pathUtils.dirname(destination),
           {
-            recursive: true,
+            utimes: [referenceTime.atime, referenceTime.mtime],
           }
         );
         const updateTime =
@@ -62850,11 +62947,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         let updated = false;
 
         if (destinationStat === null) {
-          prelayout.push(async () =>
-            destinationFs.mkdirPromise(destination, {
-              mode: sourceStat.mode,
-            })
-          );
+          prelayout.push(async () => {
+            try {
+              await destinationFs.mkdirPromise(destination, {
+                mode: sourceStat.mode,
+              });
+            } catch (err) {
+              if (err.code !== `EEXIST`) {
+                throw err;
+              }
+            }
+          });
           updated = true;
         }
 
@@ -63308,13 +63411,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 
         async changeFilePromise(p, content, opts = {}) {
           if (Buffer.isBuffer(content)) {
-            return this.changeFileBufferPromise(p, content);
+            return this.changeFileBufferPromise(p, content, opts);
           } else {
             return this.changeFileTextPromise(p, content, opts);
           }
         }
 
-        async changeFileBufferPromise(p, content) {
+        async changeFileBufferPromise(p, content, { mode } = {}) {
           let current = Buffer.alloc(0);
 
           try {
@@ -63324,10 +63427,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           }
 
           if (Buffer.compare(current, content) === 0) return;
-          await this.writeFilePromise(p, content);
+          await this.writeFilePromise(p, content, {
+            mode,
+          });
         }
 
-        async changeFileTextPromise(p, content, { automaticNewlines } = {}) {
+        async changeFileTextPromise(
+          p,
+          content,
+          { automaticNewlines, mode } = {}
+        ) {
           let current = ``;
 
           try {
@@ -63340,18 +63449,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ? normalizeLineEndings(current, content)
             : content;
           if (current === normalizedContent) return;
-          await this.writeFilePromise(p, normalizedContent);
+          await this.writeFilePromise(p, normalizedContent, {
+            mode,
+          });
         }
 
         changeFileSync(p, content, opts = {}) {
           if (Buffer.isBuffer(content)) {
-            return this.changeFileBufferSync(p, content);
+            return this.changeFileBufferSync(p, content, opts);
           } else {
             return this.changeFileTextSync(p, content, opts);
           }
         }
 
-        changeFileBufferSync(p, content) {
+        changeFileBufferSync(p, content, { mode } = {}) {
           let current = Buffer.alloc(0);
 
           try {
@@ -63361,10 +63472,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           }
 
           if (Buffer.compare(current, content) === 0) return;
-          this.writeFileSync(p, content);
+          this.writeFileSync(p, content, {
+            mode,
+          });
         }
 
-        changeFileTextSync(p, content, { automaticNewlines = false } = {}) {
+        changeFileTextSync(
+          p,
+          content,
+          { automaticNewlines = false, mode } = {}
+        ) {
           let current = ``;
 
           try {
@@ -63377,7 +63494,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ? normalizeLineEndings(current, content)
             : content;
           if (current === normalizedContent) return;
-          this.writeFileSync(p, normalizedContent);
+          this.writeFileSync(p, normalizedContent, {
+            mode,
+          });
         }
 
         async movePromise(fromP, toP) {
@@ -63538,7 +63657,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           }
         }
       }
-      FakeFS.DEFAULT_TIME = 315532800;
       class BasePortableFakeFS extends FakeFS {
         constructor() {
           super(ppath);
@@ -64695,6 +64813,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }
 
         mapToBase(p) {
+          if (p === ``) return p;
           if (this.pathUtils.isAbsolute(p)) return VirtualFS.resolveVirtual(p);
           const resolvedRoot = VirtualFS.resolveVirtual(
             this.baseFs.resolve(PortablePath.dot)
@@ -64780,11 +64899,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 
         return new CustomDir(path, nextDirent, opts);
       } // CONCATENATED MODULE: external "events"
-      const external_events_namespaceObject = require("events"); // CONCATENATED MODULE: ../yarnpkg-fslib/sources/constants.ts
-      const constants_S_IFMT = 0o170000;
-      const constants_S_IFDIR = 0o040000;
-      const constants_S_IFREG = 0o100000;
-      const constants_S_IFLNK = 0o120000; // CONCATENATED MODULE: ../yarnpkg-fslib/sources/statUtils.ts
+      const external_events_namespaceObject = require("events"); // CONCATENATED MODULE: ../yarnpkg-fslib/sources/statUtils.ts
+      const DEFAULT_MODE = constants_S_IFREG | 0o644;
       class DirEntry {
         constructor() {
           this.name = ``;
@@ -64835,7 +64951,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           this.birthtime = new Date(0);
           this.dev = 0;
           this.ino = 0;
-          this.mode = constants_S_IFREG | 0o644;
+          this.mode = DEFAULT_MODE;
           this.nlink = 1;
           this.rdev = 0;
           this.blocks = 1;
@@ -64889,7 +65005,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           this.birthtime = new Date(0);
           this.dev = BigInt(0);
           this.ino = BigInt(0);
-          this.mode = BigInt(constants_S_IFREG | 0o644);
+          this.mode = BigInt(DEFAULT_MODE);
           this.nlink = BigInt(1);
           this.rdev = BigInt(0);
           this.blocks = BigInt(1);
@@ -65087,14 +65203,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
               bigint: this.bigint,
             });
           } catch (error) {
-            if (error.code === `ENOENT`) {
-              const statInstance = this.bigint
-                ? new BigIntStatsEntry()
-                : new StatEntry();
-              return clearStats(statInstance);
-            } else {
-              throw error;
-            }
+            // From observation, all errors seem to be mostly ignored by Node.
+            // Checked with ENOENT, ENOTDIR, EPERM
+            const statInstance = this.bigint
+              ? new BigIntStatsEntry()
+              : new StatEntry();
+            return clearStats(statInstance);
           }
         }
         /**
@@ -65247,6 +65361,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         throw new Error(`Invalid time`);
       }
 
+      function makeEmptyArchive() {
+        return Buffer.from([
+          0x50, 0x4b, 0x05, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+          0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        ]);
+      }
       class ZipFS extends BasePortableFakeFS {
         constructor(source, opts) {
           super();
@@ -65270,13 +65390,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             typeof pathOptions.level !== `undefined`
               ? pathOptions.level
               : DEFAULT_COMPRESSION_LEVEL;
-
-          if (source === null) {
-            source = Buffer.from([
-              0x50, 0x4b, 0x05, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-              0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-            ]);
-          }
+          source !== null && source !== void 0
+            ? source
+            : (source = makeEmptyArchive());
 
           if (typeof source === `string`) {
             const { baseFs = new NodeFS() } = pathOptions;
@@ -65493,24 +65609,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             return;
           }
 
-          const previousMod = this.baseFs.existsSync(this.path)
-            ? this.baseFs.statSync(this.path).mode & 0o777
-            : null;
-          const rc = this.libzip.close(this.zip);
-          if (rc === -1)
-            throw this.makeLibzipError(this.libzip.getError(this.zip)); // this.libzip overrides the chmod when writing the archive, which is a weird
-          // behavior I don't totally understand (plus the umask seems bogus in some
-          // weird cases - maybe related to emscripten?)
-          //
-          // See also https://github.com/nih-at/libzip/issues/77
+          const newMode =
+            this.baseFs.existsSync(this.path) ||
+            this.stats.mode === DEFAULT_MODE
+              ? undefined
+              : this.stats.mode; // zip_close doesn't persist empty archives
 
-          if (previousMod === null)
-            this.baseFs.chmodSync(this.path, this.stats.mode);
-          else if (
-            previousMod !==
-            (this.baseFs.statSync(this.path).mode & 0o777)
-          )
-            this.baseFs.chmodSync(this.path, previousMod);
+          if (this.entries.size === 0) {
+            this.discardAndClose();
+            this.baseFs.writeFileSync(this.path, makeEmptyArchive(), {
+              mode: newMode,
+            });
+          } else {
+            const rc = this.libzip.close(this.zip);
+            if (rc === -1)
+              throw this.makeLibzipError(this.libzip.getError(this.zip));
+
+            if (typeof newMode !== `undefined`) {
+              this.baseFs.chmodSync(this.path, newMode);
+            }
+          }
+
           this.ready = false;
         }
 
@@ -65567,7 +65686,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           return this.readSync(fd, buffer, offset, length, position);
         }
 
-        readSync(fd, buffer, offset = 0, length = 0, position = -1) {
+        readSync(
+          fd,
+          buffer,
+          offset = 0,
+          length = buffer.byteLength,
+          position = -1
+        ) {
           const entry = this.fds.get(fd);
           if (typeof entry === `undefined`) throw EBADF(`read`);
           let realPosition;
@@ -66291,8 +66416,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           return this.writeFileSync(p, content, opts);
         }
 
+        fdToPath(fd, reason) {
+          var _a;
+
+          const path =
+            (_a = this.fds.get(fd)) === null || _a === void 0 ? void 0 : _a.p;
+          if (typeof path === `undefined`) throw EBADF(reason);
+          return path;
+        }
+
         async writeFilePromise(p, content, opts) {
-          const { encoding, index, resolvedP } = this.prepareWriteFile(p, opts);
+          const { encoding, mode, index, resolvedP } = this.prepareWriteFile(
+            p,
+            opts
+          );
           if (
             index !== undefined &&
             typeof opts === `object` &&
@@ -66307,14 +66444,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ]);
           if (encoding !== null) content = content.toString(encoding);
           const newIndex = this.setFileSource(resolvedP, content);
+          if (newIndex !== index) this.registerEntry(resolvedP, newIndex);
 
-          if (newIndex !== index) {
-            this.registerEntry(resolvedP, newIndex);
+          if (mode !== null) {
+            await this.chmodPromise(resolvedP, mode);
           }
         }
 
         writeFileSync(p, content, opts) {
-          const { encoding, index, resolvedP } = this.prepareWriteFile(p, opts);
+          const { encoding, mode, index, resolvedP } = this.prepareWriteFile(
+            p,
+            opts
+          );
           if (
             index !== undefined &&
             typeof opts === `object` &&
@@ -66327,24 +66468,31 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ]);
           if (encoding !== null) content = content.toString(encoding);
           const newIndex = this.setFileSource(resolvedP, content);
+          if (newIndex !== index) this.registerEntry(resolvedP, newIndex);
 
-          if (newIndex !== index) {
-            this.registerEntry(resolvedP, newIndex);
+          if (mode !== null) {
+            this.chmodSync(resolvedP, mode);
           }
         }
 
         prepareWriteFile(p, opts) {
-          if (typeof p !== `string`) throw EBADF(`read`);
+          if (typeof p === `number`) p = this.fdToPath(p, `read`);
           if (this.readOnly) throw EROFS(`open '${p}'`);
           const resolvedP = this.resolveFilename(`open '${p}'`, p);
           if (this.listings.has(resolvedP)) throw EISDIR(`open '${p}'`);
-          let encoding = null;
-          if (typeof opts === `string`) encoding = opts;
-          else if (typeof opts === `object` && opts.encoding)
-            encoding = opts.encoding;
+          let encoding = null,
+            mode = null;
+
+          if (typeof opts === `string`) {
+            encoding = opts;
+          } else if (typeof opts === `object`) {
+            ({ encoding = null, mode = null } = opts);
+          }
+
           const index = this.entries.get(resolvedP);
           return {
             encoding,
+            mode,
             resolvedP,
             index,
           };
@@ -66519,6 +66667,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             asyncDecompress: false,
           }
         ) {
+          if (typeof p === `number`) p = this.fdToPath(p, `read`);
           const resolvedP = this.resolveFilename(`open '${p}'`, p);
           if (!this.entries.has(resolvedP) && !this.listings.has(resolvedP))
             throw ENOENT(`open '${p}'`); // Ensures that the last component is a directory, if the user said so (even if it is we'll throw right after with EISDIR anyway)
@@ -66635,34 +66784,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }
 
         watchFile(p, a, b) {
-          const resolvedP = this.resolveFilename(`open '${p}'`, p);
+          const resolvedP = ppath.resolve(PortablePath.root, p);
           return watchFile(this, resolvedP, a, b);
         }
 
         unwatchFile(p, cb) {
-          const resolvedP = this.resolveFilename(`open '${p}'`, p);
+          const resolvedP = ppath.resolve(PortablePath.root, p);
           return unwatchFile(this, resolvedP, cb);
         }
       } // CONCATENATED MODULE: ../yarnpkg-fslib/sources/ZipOpenFS.ts
       const ZIP_FD = 0x80000000;
-      const DOT_ZIP = `.zip`;
       /**
-       * Extracts the archive part (ending in the first `.zip`) from a path.
+       * Extracts the archive part (ending in the first instance of `extension`) from a path.
        *
        * The indexOf-based implementation is ~3.7x faster than a RegExp-based implementation.
        */
 
-      const getArchivePart = (path) => {
-        let idx = path.indexOf(DOT_ZIP);
+      const getArchivePart = (path, extension) => {
+        let idx = path.indexOf(extension);
         if (idx <= 0) return null;
         let nextCharIdx = idx;
 
         while (idx >= 0) {
-          nextCharIdx = idx + DOT_ZIP.length;
+          nextCharIdx = idx + extension.length;
           if (path[nextCharIdx] === ppath.sep) break; // Disallow files named ".zip"
 
           if (path[idx - 1] === ppath.sep) return null;
-          idx = path.indexOf(DOT_ZIP, nextCharIdx);
+          idx = path.indexOf(extension, nextCharIdx);
         } // The path either has to end in ".zip" or contain an archive subpath (".zip/...")
 
         if (path.length > nextCharIdx && path[nextCharIdx] !== ppath.sep)
@@ -66678,6 +66826,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           readOnlyArchives = false,
           useCache = true,
           maxAge = 5000,
+          fileExtensions = null,
         }) {
           super();
           this.fdMap = new Map();
@@ -66694,6 +66843,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           this.maxOpenFiles = maxOpenFiles;
           this.readOnlyArchives = readOnlyArchives;
           this.maxAge = maxAge;
+          this.fileExtensions = fileExtensions;
         }
 
         static async openPromise(fn, opts) {
@@ -67209,7 +67359,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 () => {
                   return this.baseFs.renameSync(oldP, newP);
                 },
-                async () => {
+                () => {
                   throw Object.assign(
                     new Error(`EEXDEV: cross-device link not permitted`),
                     {
@@ -67788,7 +67938,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           let filePath = ``;
 
           while (true) {
-            const archivePart = getArchivePart(p.substr(filePath.length));
+            const pathPartWithArchive = p.substr(filePath.length);
+            let archivePart;
+
+            if (!this.fileExtensions) {
+              archivePart = getArchivePart(pathPartWithArchive, `.zip`);
+            } else {
+              for (const ext of this.fileExtensions) {
+                archivePart = getArchivePart(pathPartWithArchive, ext);
+
+                if (archivePart) {
+                  break;
+                }
+              }
+            }
+
             if (!archivePart) return null;
             filePath = this.pathUtils.join(filePath, archivePart);
 
@@ -67800,7 +67964,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   this.notZip.add(filePath);
                   continue;
                 }
-              } catch (_a) {
+              } catch {
                 return null;
               }
 
@@ -68239,6 +68403,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         `accessSync`,
         `appendFileSync`,
         `createReadStream`,
+        `createWriteStream`,
         `chmodSync`,
         `chownSync`,
         `closeSync`,
@@ -68560,20 +68725,75 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       }
       function getPathForDisplay(p) {
         return npath.normalize(npath.fromPortablePath(p));
-      } // CONCATENATED MODULE: ./sources/loader/applyPatch.ts
-      function applyPatch(pnpapi, opts) {
-        // @ts-expect-error
-        const builtinModules = new Set(
-          external_module_.Module.builtinModules ||
-            Object.keys(process.binding(`natives`))
+      } // CONCATENATED MODULE: ./sources/loader/nodeUtils.ts
+      // @ts-expect-error
+
+      const builtinModules = new Set(
+        external_module_.Module.builtinModules ||
+          Object.keys(process.binding(`natives`))
+      );
+      const isBuiltinModule = (request) =>
+        request.startsWith(`node:`) || builtinModules.has(request); // https://github.com/nodejs/node/blob/e817ba70f56c4bfd5d4a68dce8b165142312e7b6/lib/internal/modules/run_main.js#L11-L24
+
+      function resolveMainPath(main) {
+        let mainPath = external_module_.Module._findPath(
+          npath.resolve(main),
+          null,
+          true
         );
 
-        const isBuiltinModule = (request) =>
-          builtinModules.has(request) || request.startsWith(`node:`);
+        if (!mainPath) return false; // const preserveSymlinksMain = getOptionValue(`--preserve-symlinks-main`);
+        // if (!preserveSymlinksMain)
+
+        mainPath = external_fs_default().realpathSync(mainPath);
+        return mainPath;
+      } // https://github.com/nodejs/node/blob/e817ba70f56c4bfd5d4a68dce8b165142312e7b6/lib/internal/modules/run_main.js#L26-L41
+
+      function shouldUseESMLoader(mainPath) {
+        // const userLoader = getOptionValue(`--experimental-loader`);
+        // if (userLoader)
+        //   return true;
+        // const esModuleSpecifierResolution =
+        //   getOptionValue(`--experimental-specifier-resolution`);
+        // if (esModuleSpecifierResolution === `node`)
+        //   return true;
+        // Determine the module format of the main
+        if (mainPath && mainPath.endsWith(`.mjs`)) return true;
+        if (!mainPath || mainPath.endsWith(`.cjs`)) return false;
+        const pkg = readPackageScope(mainPath);
+        return pkg && pkg.data.type === `module`;
+      } // https://github.com/nodejs/node/blob/e817ba70f56c4bfd5d4a68dce8b165142312e7b6/lib/internal/modules/cjs/loader.js#L315-L330
+
+      function readPackageScope(checkPath) {
+        const rootSeparatorIndex = checkPath.indexOf(npath.sep);
+        let separatorIndex;
+
+        do {
+          separatorIndex = checkPath.lastIndexOf(npath.sep);
+          checkPath = checkPath.slice(0, separatorIndex);
+          if (checkPath.endsWith(`${npath.sep}node_modules`)) return false;
+          const pjson = readPackage(checkPath + npath.sep);
+
+          if (pjson) {
+            return {
+              data: pjson,
+              path: checkPath,
+            };
+          }
+        } while (separatorIndex > rootSeparatorIndex);
+
+        return false;
+      } // https://github.com/nodejs/node/blob/e817ba70f56c4bfd5d4a68dce8b165142312e7b6/lib/internal/modules/cjs/loader.js#L284-L313
+
+      function readPackage(requestPath) {
+        const jsonPath = npath.resolve(requestPath, `package.json`);
+        if (!external_fs_default().existsSync(jsonPath)) return null;
+        return JSON.parse(external_fs_default().readFileSync(jsonPath, `utf8`));
+      } // CONCATENATED MODULE: ./sources/loader/applyPatch.ts
+      function applyPatch(pnpapi, opts) {
         /**
          * The cache that will be used for all accesses occurring outside of a PnP context.
          */
-
         const defaultCache = {};
         /**
          * Used to disable the resolution hooks (for when we want to fallback to the previous resolution - we then need
@@ -68944,25 +69164,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         const originalFindPath = external_module_.Module._findPath;
 
         external_module_.Module._findPath = function (request, paths, isMain) {
-          if (request === `pnpapi`) return false; // Node sometimes call this function with an absolute path and a `null` set
-          // of paths. This would cause the resolution to fail. To avoid that, we
-          // fallback on the regular resolution. We only do this when `isMain` is
-          // true because the Node default resolution doesn't handle well in-zip
-          // paths, even absolute, so we try to use it as little as possible.
-
-          if (!enableNativeHooks || (isMain && npath.isAbsolute(request)))
+          if (request === `pnpapi`) return false;
+          if (!enableNativeHooks)
             return originalFindPath.call(
               external_module_.Module,
               request,
               paths,
               isMain
-            );
+            ); // https://github.com/nodejs/node/blob/e817ba70f56c4bfd5d4a68dce8b165142312e7b6/lib/internal/modules/cjs/loader.js#L490-L494
 
-          for (const path of paths || []) {
+          const isAbsolute = npath.isAbsolute(request);
+          if (isAbsolute) paths = [``];
+          else if (!paths || paths.length === 0) return false;
+
+          for (const path of paths) {
             let resolution;
 
             try {
-              const pnpApiPath = opts.manager.findApiPathFor(path);
+              const pnpApiPath = opts.manager.findApiPathFor(
+                isAbsolute ? request : path
+              );
 
               if (pnpApiPath !== null) {
                 const api = opts.manager.getApiEntry(pnpApiPath, true).instance;
@@ -68985,6 +69206,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           }
 
           return false;
+        }; // Specifying the `--experimental-loader` flag makes Node enter ESM mode so we change it to not do that
+        // https://github.com/nodejs/node/blob/e817ba70f56c4bfd5d4a68dce8b165142312e7b6/lib/internal/modules/run_main.js#L72-L81
+        // Tested by https://github.com/yarnpkg/berry/blob/d80ee2dc5298d31eb864288d77671a2264713371/packages/acceptance-tests/pkg-tests-specs/sources/pnp-esm.test.ts#L226-L244
+        // Upstream issue https://github.com/nodejs/node/issues/33226
+
+        const originalRunMain = moduleExports.runMain;
+
+        moduleExports.runMain = function (main = process.argv[1]) {
+          const resolvedMain = resolveMainPath(main);
+          const useESMLoader = resolvedMain
+            ? shouldUseESMLoader(resolvedMain)
+            : false;
+
+          if (useESMLoader) {
+            originalRunMain(main);
+          } else {
+            external_module_.Module._load(main, null, true);
+          }
         };
 
         patchFs(external_fs_default(), new PosixFS(opts.fakeFs));
@@ -69094,7 +69333,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           packageLocatorsByLocations,
           packageRegistry,
         };
-      } // CONCATENATED MODULE: ../../.yarn/cache/resolve.exports-npm-1.0.2-bbb8d62ef6-1de1e50dc6.zip/node_modules/resolve.exports/dist/index.mjs
+      } // CONCATENATED MODULE: ../../.yarn/cache/resolve.exports-npm-1.1.0-81756e03ba-52865af8ed.zip/node_modules/resolve.exports/dist/index.mjs
       /**
        * @param {object} exports
        * @param {Set<string>} keys
@@ -69152,12 +69391,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
        * @param {boolean} [options.browser]
        * @param {boolean} [options.require]
        * @param {string[]} [options.conditions]
+       * @param {boolean} [options.unsafe]
        */
       function resolve(pkg, entry = ".", options = {}) {
         let { name, exports } = pkg;
 
         if (exports) {
-          let { browser, require, conditions = [] } = options;
+          let { browser, require, unsafe, conditions = [] } = options;
 
           let target = toName(name, entry);
           if (target[0] !== ".") target = "./" + target;
@@ -69167,8 +69407,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           }
 
           let allows = new Set(["default", ...conditions]);
-          allows.add(require ? "require" : "import");
-          allows.add(browser ? "browser" : "node");
+          unsafe || allows.add(require ? "require" : "import");
+          unsafe || allows.add(browser ? "browser" : "node");
 
           let key,
             tmp,
@@ -69465,13 +69705,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 
           return false;
         }
+
+        const defaultExportsConditions = new Set([
+          `default`,
+          `node`,
+          `require`,
+        ]);
         /**
          * Implements the node resolution for the "exports" field
          *
          * @returns The remapped path or `null` if the package doesn't have a package.json or an "exports" field
          */
 
-        function applyNodeExportsResolution(unqualifiedPath) {
+        function applyNodeExportsResolution(
+          unqualifiedPath,
+          conditions = defaultExportsConditions
+        ) {
           const locator = findPackageLocator(
             ppath.join(unqualifiedPath, `internal.js`),
             {
@@ -69504,11 +69753,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
 
           if (!isRelativeRegexp.test(subpath)) subpath = `./${subpath}`;
           const resolvedExport = resolve(pkgJson, ppath.normalize(subpath), {
-            browser: false,
-            require: true,
             // TODO: implement support for the --conditions flag
             // Waiting on https://github.com/nodejs/node/issues/36935
-            conditions: [],
+            // @ts-expect-error - Type should be Iterable<string>
+            conditions,
+            unsafe: true,
           });
           if (typeof resolvedExport === `string`)
             return ppath.join(packageLocation, resolvedExport);
@@ -70189,11 +70438,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           return ppath.normalize(unqualifiedPath);
         }
 
-        function resolveUnqualifiedExport(request, unqualifiedPath) {
+        function resolveUnqualifiedExport(
+          request,
+          unqualifiedPath,
+          conditions = defaultExportsConditions
+        ) {
           // "exports" only apply when requiring a package, not when requiring via an absolute / relative path
           if (isStrictRegExp.test(request)) return unqualifiedPath;
-          const unqualifiedExportPath =
-            applyNodeExportsResolution(unqualifiedPath);
+          const unqualifiedExportPath = applyNodeExportsResolution(
+            unqualifiedPath,
+            conditions
+          );
 
           if (unqualifiedExportPath) {
             return ppath.normalize(unqualifiedExportPath);
@@ -70274,11 +70529,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         function resolveRequest(
           request,
           issuer,
-          { considerBuiltins, extensions } = {}
+          { considerBuiltins, extensions, conditions } = {}
         ) {
           const unqualifiedPath = resolveToUnqualified(request, issuer, {
             considerBuiltins,
-          });
+          }); // If the request is the pnpapi, we can just return the unqualifiedPath
+          // without having to apply the exports resolution or the extension resolution
+          // (opts.pnpapiResolution is always a full path - makeManager enforces this by stat-ing it)
+
+          if (request === `pnpapi`) return unqualifiedPath;
           if (unqualifiedPath === null) return null;
 
           const isIssuerIgnored = () =>
@@ -70287,7 +70546,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           const remappedPath =
             (!considerBuiltins || !isBuiltinModule(request)) &&
             !isIssuerIgnored()
-              ? resolveUnqualifiedExport(request, unqualifiedPath)
+              ? resolveUnqualifiedExport(request, unqualifiedPath, conditions)
               : unqualifiedPath;
 
           try {
@@ -70603,10 +70862,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           readOnlyArchives: true,
         }),
       });
+
+      class DynamicFS extends ProxiedFS {
+        constructor() {
+          super(ppath);
+          this.baseFs = defaultFsLayer;
+        }
+
+        mapToBase(p) {
+          return p;
+        }
+
+        mapFromBase(p) {
+          return p;
+        }
+      }
+
+      const dynamicFsLayer = new DynamicFS();
       let manager;
       const defaultApi = Object.assign(
         makeApi(defaultRuntimeState, {
-          fakeFs: defaultFsLayer,
+          fakeFs: dynamicFsLayer,
           pnpapiResolution: defaultPnpapiResolution,
         }),
         {
@@ -70617,7 +70893,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
            */
           makeApi: ({
             basePath = undefined,
-            fakeFs = defaultFsLayer,
+            fakeFs = dynamicFsLayer,
             pnpapiResolution = defaultPnpapiResolution,
             ...rest
           }) => {
@@ -70640,12 +70916,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             applyPatch(api || defaultApi, {
               fakeFs: defaultFsLayer,
               manager,
-            });
+            }); // Now that the `fs` module is patched we can swap the `baseFs` to
+            // a NodeFS with a live `fs` binding to pick up changes to the `fs`
+            // module allowing users to patch it
+
+            dynamicFsLayer.baseFs = new NodeFS(external_fs_default());
           },
         }
       );
       manager = makeManager(defaultApi, {
-        fakeFs: defaultFsLayer,
+        fakeFs: dynamicFsLayer,
       }); // eslint-disable-next-line arca/no-default-export
 
       /* harmony default export */ const _entryPoint = defaultApi;

@@ -1,0 +1,51 @@
+import { UiNode } from "../../schemas/flows/ui";
+import { SelfServiceUiNodeScript } from "./SelfServiceNodeScript";
+import { SelfServiceUiNodeAnchor } from "./SelfServiceUiNodeAnchor";
+import { SelfServiceUiNodeImage } from "./SelfServiceUiNodeImage";
+import { SelfServiceUiNodeInput } from "./SelfServiceUiNodeInput";
+import { SelfServiceUiNodeText } from "./SelfServiceUiNodeText";
+
+export interface SelfServiceUiNodeProps {
+  node: UiNode;
+  isSubmitting: boolean;
+  value?: any;
+  onChange: (newValue: any) => void;
+  flowType?: string;
+}
+
+export const SelfServiceUiNode = ({
+  flowType,
+  isSubmitting,
+  node,
+  onChange,
+  value,
+}: SelfServiceUiNodeProps) => {
+  switch (node.type) {
+    case "input": {
+      return (
+        <SelfServiceUiNodeInput
+          flowType={flowType}
+          isSubmitting={isSubmitting}
+          node={node}
+          value={value}
+          onChange={onChange}
+        />
+      );
+    }
+    case "img": {
+      return <SelfServiceUiNodeImage node={node} />;
+    }
+    case "anchor": {
+      return <SelfServiceUiNodeAnchor node={node} />;
+    }
+    case "text": {
+      return <SelfServiceUiNodeText node={node} />;
+    }
+    case "script": {
+      return <SelfServiceUiNodeScript node={node} />;
+    }
+    default: {
+      return null;
+    }
+  }
+};

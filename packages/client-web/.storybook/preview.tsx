@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { IntlProvider } from "react-intl";
 import { MemoryRouter } from "react-router-dom";
-import { theme as appTheme } from "../src/features/theme";
+import { theme as appTheme } from "../src/features/theme/default";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

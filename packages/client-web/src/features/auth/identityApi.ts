@@ -1,36 +1,33 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { SelfServiceFlow, SelfServiceFlowName } from "./schemas/flows";
+import snakecaseKeys from "snakecase-keys";
+import { InitializeFlowParams } from "./schemas/flows/common";
 import {
-  SelfServiceLoginFlow,
-  selfServiceLoginFlowResponseSchema,
-  selfServiceLoginFlowSchema,
-  SelfServiceLoginFlowSuccess,
+  InitializeLoginFlowParams,
+  isLoginFlow,
+  isLoginFlowSuccess,
+  LoginFlow,
+  LoginFlowResponse,
+  loginFlowResponseSchema,
+  loginFlowSchema,
 } from "./schemas/flows/login";
 import { selfServiceLogoutUrlSchema } from "./schemas/flows/logout";
+import { RecoveryFlow, recoveryFlowSchema } from "./schemas/flows/recovery";
 import {
-  SelfServiceRecoveryFlow,
-  selfServiceRecoveryFlowSchema,
-} from "./schemas/flows/recovery";
-import {
-  SelfServiceRegistrationFlow,
-  selfServiceRegistrationFlowResponseSchema,
-  selfServiceRegistrationFlowSchema,
-  SelfServiceRegistrationFlowSuccess,
+  isRegistrationFlow,
+  isRegistrationFlowSuccess,
+  RegistrationFlow,
+  RegistrationFlowResponse,
+  registrationFlowResponseSchema,
+  registrationFlowSchema,
 } from "./schemas/flows/registration";
+import { SettingsFlow, settingsFlowSchema } from "./schemas/flows/settings";
 import {
-  SelfServiceSettingsFlow,
-  selfServiceSettingsFlowSchema,
-  selfServiceSettingsFlowSubmitResponseSchema,
-} from "./schemas/flows/settings";
-import {
-  SelfServiceVerificationFlow,
-  selfServiceVerificationFlowSchema,
+  VerificationFlow,
+  verificationFlowSchema,
 } from "./schemas/flows/verification";
 import { Session, sessionSchema } from "./schemas/session";
 
 export const baseQuery = fetchBaseQuery({
-  // NOTE: if kratos instance is at a different origin, make sure to enable:
-  // credentials: "include",
   baseUrl: "/kratos/public",
   prepareHeaders: (headers) => {
     headers.set("Accept", "application/json");
@@ -39,198 +36,275 @@ export const baseQuery = fetchBaseQuery({
 });
 
 export interface SubmitFlowPayload {
-  id: string;
   action: string;
   method: string;
   body: any;
 }
 
 export const identityApi = createApi({
+  reducerPath: "identityApi",
   baseQuery,
-  tagTypes: [
-    "SelfServiceLoginFlow",
-    "SelfServiceRegistrationFlow",
-    "SelfServiceVerificationFlow",
-    "SelfServiceRecoveryFlow",
-    "SelfServiceSettingsFlow",
-    "SelfServiceFlow",
-    "Session",
-  ],
+  tagTypes: ["Session"],
   endpoints: (build) => ({
-    initializeFlow: build.query<any, string>({
-      query: (name) => ({
-        url: `/self-service/${name}/browser`,
-        headers: {
-          Accept: "application/json",
-        },
-      }),
+    /************************************************************
+     * whoami
+     ************************************************************/
+
+    whoami: build.query<Session, void>({
+      query: () => `/sessions/whoami`,
+      transformResponse: (response) => sessionSchema.parse(response),
+      providesTags: () => [{ type: "Session", id: "CURRENT" }],
     }),
 
-    submitFlow: build.mutation<any, SubmitFlowPayload>({
-      query: ({ action, method, body }) => ({
-        url: action,
-        method,
-        body,
-      }),
+    /************************************************************
+     * login
+     ************************************************************/
+
+    getLoginFlow: build.query<LoginFlow, string>({
+      query: (id) => `/self-service/login/flows?id=${encodeURIComponent(id)}`,
+      transformResponse: (response) => loginFlowSchema.parse(response),
     }),
 
-    initializeLoginFlow: build.query<SelfServiceLoginFlow, void>({
-      query: () => ({
-        url: "/self-service/login/browser",
-        headers: {
-          Accept: "application/json",
-        },
-      }),
-      transformResponse: (response) => {
-        return selfServiceLoginFlowSchema.parse(response);
-      },
-      providesTags: (result) =>
-        result ? [{ type: "SelfServiceLoginFlow", id: result.id }] : [],
-    }),
-
-    submitLoginFlow: build.mutation<
-      SelfServiceLoginFlowSuccess | SelfServiceLoginFlow,
-      { action: string; method: string; body: any }
+    initializeLoginFlow: build.mutation<
+      LoginFlow,
+      InitializeLoginFlowParams | undefined
     >({
+      query: (params = {}) => ({
+        url: "/self-service/login/browser",
+        params: snakecaseKeys(params),
+      }),
+      transformResponse: (response) => loginFlowSchema.parse(response),
+    }),
+
+    submitLoginFlow: build.mutation<LoginFlowResponse, SubmitFlowPayload>({
       query: ({ action, method, body }) => ({
         url: action,
         method,
         body,
         validateStatus: (_response, body) =>
-          selfServiceLoginFlowResponseSchema.safeParse(body).success,
+          loginFlowResponseSchema.safeParse(body).success,
       }),
-      transformResponse: (response) =>
-        selfServiceLoginFlowResponseSchema.parse(response),
+      transformResponse: (response) => loginFlowResponseSchema.parse(response),
+      async onQueryStarted(_params, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled;
+          if (isLoginFlow(data)) {
+            dispatch(
+              identityApi.util.updateQueryData(
+                "getLoginFlow",
+                data.id,
+                () => data
+              )
+            );
+          } else if (isLoginFlowSuccess(data)) {
+            dispatch(
+              identityApi.util.updateQueryData(
+                "whoami",
+                undefined,
+                () => data.session
+              )
+            );
+          }
+        } catch {}
+      },
     }),
 
-    initializeRegistrationFlow: build.query<SelfServiceRegistrationFlow, void>({
-      query: () => ({
+    /************************************************************
+     * registration
+     ************************************************************/
+
+    getRegistrationFlow: build.query<RegistrationFlow, string>({
+      query: (id) =>
+        `/self-service/registration/flows?id=${encodeURIComponent(id)}`,
+      transformResponse: (response) => registrationFlowSchema.parse(response),
+    }),
+
+    initializeRegistrationFlow: build.mutation<
+      RegistrationFlow,
+      InitializeFlowParams | undefined
+    >({
+      query: (params = {}) => ({
         url: "/self-service/registration/browser",
-        headers: {
-          Accept: "application/json",
-        },
+        params: snakecaseKeys(params),
       }),
-      transformResponse: (response) => {
-        return selfServiceRegistrationFlowSchema.parse(response);
-      },
-      providesTags: (result) =>
-        result ? [{ type: "SelfServiceRegistrationFlow", id: result.id }] : [],
+      transformResponse: (response) => registrationFlowSchema.parse(response),
     }),
 
     submitRegistrationFlow: build.mutation<
-      SelfServiceRegistrationFlowSuccess | SelfServiceRegistrationFlow,
-      { action: string; method: string; body: any }
+      RegistrationFlowResponse,
+      SubmitFlowPayload
     >({
       query: ({ action, method, body }) => ({
         url: action,
         method,
         body,
         validateStatus: (_response, body) =>
-          selfServiceRegistrationFlowResponseSchema.safeParse(body).success,
+          registrationFlowResponseSchema.safeParse(body).success,
       }),
       transformResponse: (response) =>
-        selfServiceRegistrationFlowResponseSchema.parse(response),
-    }),
-
-    getVerificationFlow: build.query<
-      SelfServiceVerificationFlow,
-      string | undefined | null
-    >({
-      query: (id) =>
-        id
-          ? `self-service/verification/flows?id=${id}`
-          : "/self-service/verification/browser",
-      transformResponse: (response) => {
-        return selfServiceVerificationFlowSchema.parse(response);
+        registrationFlowResponseSchema.parse(response),
+      async onQueryStarted(_params, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled;
+          if (isRegistrationFlow(data)) {
+            dispatch(
+              identityApi.util.updateQueryData(
+                "getRegistrationFlow",
+                data.id,
+                () => data
+              )
+            );
+          } else if (isRegistrationFlowSuccess(data) && data.session) {
+            dispatch(
+              identityApi.util.updateQueryData(
+                "whoami",
+                undefined,
+                () => data.session
+              )
+            );
+          }
+        } catch {}
       },
-      providesTags: (result) =>
-        result ? [{ type: "SelfServiceVerificationFlow", id: result.id }] : [],
     }),
 
-    submitVerificationFlow: build.mutation<
-      SelfServiceVerificationFlow,
-      { action: string; method: string; body: any }
-    >({
-      query: ({ action, method, body }) => ({
-        url: action,
-        method,
-        body,
-        validateStatus: (_response, body) =>
-          selfServiceVerificationFlowSchema.safeParse(body).success,
-      }),
-      transformResponse: (response) =>
-        selfServiceVerificationFlowSchema.parse(response),
-    }),
+    /************************************************************
+     * verification
+     ************************************************************/
 
-    getRecoveryFlow: build.query<
-      SelfServiceRecoveryFlow,
-      string | undefined | null
-    >({
+    getVerificationFlow: build.query<VerificationFlow, string>({
       query: (id) =>
-        id
-          ? `self-service/recovery/flows?id=${id}`
-          : "/self-service/recovery/browser",
-      transformResponse: (response) => {
-        return selfServiceRecoveryFlowSchema.parse(response);
-      },
-      providesTags: (result) =>
-        result ? [{ type: "SelfServiceRecoveryFlow", id: result.id }] : [],
+        `/self-service/verification/flows?id=${encodeURIComponent(id)}`,
+      transformResponse: (response) => verificationFlowSchema.parse(response),
     }),
 
-    submitRecoveryFlow: build.mutation<
-      SelfServiceRecoveryFlow,
-      { action: string; method: string; body: any }
+    initializeVerificationFlow: build.mutation<
+      VerificationFlow,
+      InitializeFlowParams | undefined
     >({
-      query: ({ action, method, body }) => ({
-        url: action,
-        method,
-        body,
-        validateStatus: (_response, body) =>
-          selfServiceRecoveryFlowSchema.safeParse(body).success,
+      query: (params = {}) => ({
+        url: "/self-service/verification/browser",
+        params: snakecaseKeys(params),
       }),
-      transformResponse: (response) =>
-        selfServiceRecoveryFlowSchema.parse(response),
+      transformResponse: (response) => verificationFlowSchema.parse(response),
     }),
 
-    getSettingsFlow: build.query<
-      SelfServiceSettingsFlow,
-      string | undefined | null
-    >({
+    submitVerificationFlow: build.mutation<VerificationFlow, SubmitFlowPayload>(
+      {
+        query: ({ action, method, body }) => ({
+          url: action,
+          method,
+          body,
+          validateStatus: (_response, body) =>
+            verificationFlowSchema.safeParse(body).success,
+        }),
+        transformResponse: (response) => verificationFlowSchema.parse(response),
+        async onQueryStarted(_params, { dispatch, queryFulfilled }) {
+          try {
+            const { data } = await queryFulfilled;
+            dispatch(
+              identityApi.util.updateQueryData(
+                "getVerificationFlow",
+                data.id,
+                () => data
+              )
+            );
+          } catch {}
+        },
+      }
+    ),
+
+    /************************************************************
+     * recovery
+     ************************************************************/
+
+    getRecoveryFlow: build.query<RecoveryFlow, string>({
       query: (id) =>
-        id
-          ? `self-service/settings/flows?id=${id}`
-          : "/self-service/settings/browser",
-      transformResponse: (response) => {
-        return selfServiceSettingsFlowSchema.parse(response);
-      },
-      providesTags: (result) =>
-        result ? [{ type: "SelfServiceSettingsFlow", id: result.id }] : [],
+        `/self-service/recovery/flows?id=${encodeURIComponent(id)}`,
+      transformResponse: (response) => recoveryFlowSchema.parse(response),
     }),
 
-    submitSettingsFlow: build.mutation<
-      SelfServiceSettingsFlow,
-      { action: string; method: string; body: any }
+    initializeRecoveryFlow: build.mutation<
+      RecoveryFlow,
+      InitializeFlowParams | undefined
     >({
+      query: (params = {}) => ({
+        url: "/self-service/recovery/browser",
+        params: snakecaseKeys(params),
+      }),
+      transformResponse: (response) => recoveryFlowSchema.parse(response),
+    }),
+
+    submitRecoveryFlow: build.mutation<RecoveryFlow, SubmitFlowPayload>({
       query: ({ action, method, body }) => ({
         url: action,
         method,
         body,
         validateStatus: (_response, body) =>
-          selfServiceSettingsFlowSubmitResponseSchema.safeParse(body).success,
+          recoveryFlowSchema.safeParse(body).success,
       }),
-      transformResponse: (response) =>
-        selfServiceSettingsFlowSubmitResponseSchema.parse(response).flow,
+      transformResponse: (response) => recoveryFlowSchema.parse(response),
+      async onQueryStarted(_params, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled;
+          dispatch(
+            identityApi.util.updateQueryData(
+              "getRecoveryFlow",
+              data.id,
+              () => data
+            )
+          );
+        } catch {}
+      },
     }),
 
-    getFlow: build.query<
-      SelfServiceFlow,
-      { type: SelfServiceFlowName; id: string }
-    >({
-      query: ({ type, id }) => `self-service/${type}/flows?id=${id}`,
-      providesTags: (_result, _error, { id }) => [
-        { type: "SelfServiceFlow", id },
-      ],
+    /************************************************************
+     * settings
+     ************************************************************/
+
+    getSettingsFlow: build.query<SettingsFlow, string>({
+      query: (id) =>
+        `/self-service/settings/flows?id=${encodeURIComponent(id)}`,
+      transformResponse: (response) => settingsFlowSchema.parse(response),
     }),
+
+    initializeSettingsFlow: build.mutation<
+      SettingsFlow,
+      InitializeFlowParams | undefined
+    >({
+      query: (params = {}) => ({
+        url: "/self-service/settings/browser",
+        params: snakecaseKeys(params),
+      }),
+      transformResponse: (response) => settingsFlowSchema.parse(response),
+    }),
+
+    submitSettingsFlow: build.mutation<SettingsFlow, SubmitFlowPayload>({
+      query: ({ action, method, body }) => ({
+        url: action,
+        method,
+        body,
+        validateStatus: (_response, body) =>
+          settingsFlowSchema.safeParse(body).success,
+      }),
+      transformResponse: (response) => settingsFlowSchema.parse(response),
+      async onQueryStarted(_params, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled;
+          dispatch(
+            identityApi.util.updateQueryData(
+              "getSettingsFlow",
+              data.id,
+              () => data
+            )
+          );
+          dispatch(invalidateSession());
+        } catch {}
+      },
+    }),
+
+    /************************************************************
+     * logout
+     ************************************************************/
 
     createLogoutUrl: build.mutation<string, void>({
       query: () => ({
@@ -246,16 +320,10 @@ export const identityApi = createApi({
       invalidatesTags: (_, error) =>
         error ? [] : [{ type: "Session", id: "CURRENT" }],
     }),
-
-    whoami: build.query<Session, void>({
-      query: () => `/sessions/whoami`,
-      transformResponse: (response) => sessionSchema.parse(response),
-      providesTags: () => [{ type: "Session", id: "CURRENT" }],
-    }),
   }),
 });
 
 export const invalidateSession = () =>
   identityApi.util.invalidateTags([{ type: "Session", id: "CURRENT" }]);
 
-export const { useWhoamiQuery, useSubmitFlowMutation } = identityApi;
+export const { useWhoamiQuery, useSubmitLoginFlowMutation } = identityApi;

@@ -64,34 +64,98 @@
       "value": "TermsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.logInButton.label": [
+  "auth.flowError.redirecting": [
+    {
+      "options": {
+        "browser_location_change_required": {
+          "value": [
+          ]
+        },
+        "other": {
+          "value": [
+          ]
+        },
+        "session_aal2_required": {
+          "value": [
+            {
+              "type": 0,
+              "value": "2FA required. "
+            }
+          ]
+        },
+        "session_refresh_required": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Reauthentication required. "
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "reason"
+    },
     {
       "type": 0,
-      "value": "Log InSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Redirecting...SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.logInLink.label": [
+  "auth.flowRestarted.message": [
     {
       "type": 0,
-      "value": "Log InSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.logOutButton.label": [
+      "value": "The form had to be reloaded"
+    },
+    {
+      "options": {
+        "other": {
+          "value": [
+          ]
+        },
+        "security_csrf_violation": {
+          "value": [
+            {
+              "type": 0,
+              "value": " because the security token expired."
+            }
+          ]
+        },
+        "security_identity_mismatch": {
+          "value": [
+            {
+              "type": 0,
+              "value": " because your session changed"
+            }
+          ]
+        },
+        "self_service_flow_expired": {
+          "value": [
+            {
+              "type": 0,
+              "value": " because the form expired"
+            }
+          ]
+        },
+        "self_service_flow_return_to_forbidden": {
+          "value": [
+            {
+              "type": 0,
+              "value": " because the return URL is invalid"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "reason"
+    },
     {
       "type": 0,
-      "value": "Log OutSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": ". Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.loggedInNotice.goToHomepageButton": [
+  "auth.hompageButton.label": [
     {
       "type": 0,
       "value": "Go to the homepageSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.loggedInNotice.heading": [
-    {
-      "type": 0,
-      "value": "Already Logged InSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "auth.loggedInNotice.messageWithUsername": [
@@ -120,10 +184,22 @@
       "value": "You're already logged in.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.login.forgotPasswordLink": [
+  "auth.login.2faTitle": [
     {
       "type": 0,
-      "value": "Forgot your password?SSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Two-Factor AuthenticationSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.login.confirmAccessTitle": [
+    {
+      "type": 0,
+      "value": "Confirm accessSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.login.loginTitle": [
+    {
+      "type": 0,
+      "value": "Log in to your accountSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "auth.login.noAccountLink": [
@@ -134,6 +210,30 @@
     {
       "type": 0,
       "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.login.oidcHeaderText": [
+    {
+      "type": 0,
+      "value": "orSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.loginButton.label": [
+    {
+      "type": 0,
+      "value": "Log InSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.loginLink.label": [
+    {
+      "type": 0,
+      "value": "Log InSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.logoutButton.label": [
+    {
+      "type": 0,
+      "value": "Log OutSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "auth.passwordInput.togglePasswordVisibilityLabel": [
@@ -148,7 +248,8 @@
           ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         },
         "show": {
           "value": [
@@ -167,6 +268,18 @@
       "value": " passwordSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "auth.recovery.title": [
+    {
+      "type": 0,
+      "value": "Recover your accountSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.recoveryLink.label": [
+    {
+      "type": 0,
+      "value": "Forgot your password?SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "auth.registration.alreadyHaveAccountLink": [
     {
       "type": 0,
@@ -177,10 +290,58 @@
       "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "auth.registration.oidcTItle": [
+    {
+      "type": 0,
+      "value": "orSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.registration.title": [
+    {
+      "type": 0,
+      "value": "Create your accountSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.settings.oidcTitle": [
+    {
+      "type": 0,
+      "value": "3rd Party Log-inSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.settings.passwordTitle": [
+    {
+      "type": 0,
+      "value": "Change PasswordSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.settings.title": [
+    {
+      "type": 0,
+      "value": "Profile SettingsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.settings.totpTitle": [
+    {
+      "type": 0,
+      "value": "Two-factor authenticationSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.settings.webauthnTitle": [
+    {
+      "type": 0,
+      "value": "Hardware Tokens and BiometricsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "auth.signUpButton.label": [
     {
       "type": 0,
       "value": "Sign UpSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.verification.title": [
+    {
+      "type": 0,
+      "value": "Verify your accountSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "errors.errorAlert.message": [
@@ -397,7 +558,8 @@
           ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         }
       },
       "type": 5,

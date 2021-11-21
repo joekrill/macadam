@@ -1,10 +1,10 @@
 import { z } from "zod";
-import { selfServiceLoginFlowSchema } from "./login";
-import { selfServiceRecoveryFlowSchema } from "./recovery";
-import { selfServiceRegistrationFlowSchema } from "./registration";
-import { selfServiceSettingsFlowSchema } from "./settings";
+import { loginFlowSchema } from "./login";
+import { recoveryFlowSchema } from "./recovery";
+import { registrationFlowSchema } from "./registration";
+import { settingsFlowSchema } from "./settings";
 import { UiContainer } from "./ui";
-import { selfServiceVerificationFlowSchema } from "./verification";
+import { verificationFlowSchema } from "./verification";
 
 export type SelfServiceFlowName =
   | "login"
@@ -18,11 +18,11 @@ export const hasError = (ui: UiContainer, error: number) => {
 };
 
 export const selfServiceFlowSchema = z.union([
-  selfServiceLoginFlowSchema,
-  selfServiceRegistrationFlowSchema,
-  selfServiceVerificationFlowSchema,
-  selfServiceRecoveryFlowSchema,
-  selfServiceSettingsFlowSchema,
+  loginFlowSchema,
+  registrationFlowSchema,
+  verificationFlowSchema,
+  recoveryFlowSchema,
+  settingsFlowSchema,
 ]);
 
 export type SelfServiceFlow = z.infer<typeof selfServiceFlowSchema>;

@@ -62,11 +62,17 @@ export const recoveryAddressSchema = z.object({
   via: z.string(),
 });
 
+export const identityCredentialsTypeSchema = z.union([
+  z.literal("password"),
+  z.literal("totp"),
+  z.literal("oidc"),
+]);
+
 /**
  * Credentials represents a specific credential type
  */
 export const identityCredentialsSchema = z.object({
-  config: z.unknown().nullish(),
+  config: z.object({}).passthrough().nullish(),
 
   created_at: z.string().nullish(),
 
@@ -75,7 +81,7 @@ export const identityCredentialsSchema = z.object({
    */
   identifiers: z.array(z.string()).nullish(),
 
-  type: z.string().nullish(),
+  type: identityCredentialsTypeSchema.nullish(),
 
   /**
    * UpdatedAt is a helper struct field for gobuffalo.pop.
@@ -88,6 +94,9 @@ export const identityStateSchema = z.union([
   z.literal("inactive"),
 ]);
 
+/**
+ * An identity can be a real human, a service, an IoT device - everything that can be described as an \"actor\" in a system.
+ */
 export const identitySchema = z.object({
   created_at: z.string().nullish(),
 
@@ -123,7 +132,7 @@ export const identitySchema = z.object({
   /**
    * Traits represent an identity\'s traits. The identity is able to create, modify, and delete traits in a self-service manner. The input will always be validated against the JSON Schema defined in `schema_url`.
    */
-  traits: traitsSchema,
+  traits: traitsSchema.nullish(),
 
   /**
    * UpdatedAt is a helper struct field for gobuffalo.pop.

@@ -64,34 +64,98 @@
       "value": "[!! Ṯèŕŕŕṁś !!]"
     }
   ],
-  "auth.logInButton.label": [
+  "auth.flowError.redirecting": [
+    {
+      "options": {
+        "browser_location_change_required": {
+          "value": [
+          ]
+        },
+        "other": {
+          "value": [
+          ]
+        },
+        "session_aal2_required": {
+          "value": [
+            {
+              "type": 0,
+              "value": "[!! 2ḞḀḀḀ ŕèèèɋůíííŕèḋḋḋ.  !!]"
+            }
+          ]
+        },
+        "session_refresh_required": {
+          "value": [
+            {
+              "type": 0,
+              "value": "[!! Ŕèâââůṭḫḫḫèńṭṭṭíćâââṭíŏŏŏń ŕŕŕèɋůůůíŕèèèḋ.  !!]"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "reason"
+    },
     {
       "type": 0,
-      "value": "[!! Ļŏĝĝĝ Ḭńńń !!]"
+      "value": "[!! Ŕèḋḋḋíŕèèèćṭíííńĝ... !!]"
     }
   ],
-  "auth.logInLink.label": [
+  "auth.flowRestarted.message": [
     {
       "type": 0,
-      "value": "[!! Ļŏĝĝĝ Ḭńńń !!]"
-    }
-  ],
-  "auth.logOutButton.label": [
+      "value": "[!! Ṯḫèèè ḟŏŏŏŕṁ ḫâḋḋḋ ṭŏŏŏ ḃèèè ŕèèèĺŏâââḋèḋḋḋ !!]"
+    },
+    {
+      "options": {
+        "other": {
+          "value": [
+          ]
+        },
+        "security_csrf_violation": {
+          "value": [
+            {
+              "type": 0,
+              "value": "[!!  ḃèèèćâůůůśè ṭḫèèè śèèèćůŕŕŕíṭẏẏẏ ṭŏŏŏǩèńńń èẋẋẋṗíŕŕŕèḋ. !!]"
+            }
+          ]
+        },
+        "security_identity_mismatch": {
+          "value": [
+            {
+              "type": 0,
+              "value": "[!!  ḃèèèćâůůůśè ẏŏůůůŕ śśśèśśśśíŏńńń ćḫḫḫâńĝĝĝèḋ !!]"
+            }
+          ]
+        },
+        "self_service_flow_expired": {
+          "value": [
+            {
+              "type": 0,
+              "value": "[!!  ḃèèèćâůůůśè ṭḫèèè ḟŏŏŏŕṁ èẋṗṗṗíŕèèèḋ !!]"
+            }
+          ]
+        },
+        "self_service_flow_return_to_forbidden": {
+          "value": [
+            {
+              "type": 0,
+              "value": "[!!  ḃèèèćâůůůśè ṭḫèèè ŕèèèṭůŕŕŕń ŨŨŨŔĻ íś íńṿṿṿâĺíííḋ !!]"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "reason"
+    },
     {
       "type": 0,
-      "value": "[!! Ļŏĝĝĝ Õůůůṭ !!]"
+      "value": "[!! . ṔṔṔĺèâââśè ṭŕẏẏẏ âĝĝĝâíńńń. !!]"
     }
   ],
-  "auth.loggedInNotice.goToHomepageButton": [
+  "auth.hompageButton.label": [
     {
       "type": 0,
       "value": "[!! Ḡŏ ṭŏ ṭḫèèè ḫŏŏŏṁèṗṗṗâĝèèè !!]"
-    }
-  ],
-  "auth.loggedInNotice.heading": [
-    {
-      "type": 0,
-      "value": "[!! Ḁĺŕŕŕèâḋḋḋẏ ĻĻĻŏĝĝĝĝèḋ Ḭń !!]"
     }
   ],
   "auth.loggedInNotice.messageWithUsername": [
@@ -120,10 +184,22 @@
       "value": "[!! Ÿŏůůů'ŕèèè âĺĺĺŕèâââḋẏ ĺŏĝĝĝĝèḋḋḋ íńńń. !!]"
     }
   ],
-  "auth.login.forgotPasswordLink": [
+  "auth.login.2faTitle": [
     {
       "type": 0,
-      "value": "[!! Ḟŏŕŕŕĝŏṭṭṭ ẏŏŏŏůŕ ṗâśśśśẘŏŏŏŕḋ? !!]"
+      "value": "[!! Ṯẘŏŏŏ-Ḟâââćṭŏŏŏŕ ḀḀḀůṭḫḫḫèńṭṭṭíćâââṭíŏŏŏń !!]"
+    }
+  ],
+  "auth.login.confirmAccessTitle": [
+    {
+      "type": 0,
+      "value": "[!! Ḉŏńńńḟíŕŕŕṁ âââććèèèśś !!]"
+    }
+  ],
+  "auth.login.loginTitle": [
+    {
+      "type": 0,
+      "value": "[!! Ļŏĝĝĝ íńńń ṭŏŏŏ ẏŏŏŏůŕ âććććŏůńńńṭ !!]"
     }
   ],
   "auth.login.noAccountLink": [
@@ -142,6 +218,30 @@
       "value": "link"
     }
   ],
+  "auth.login.oidcHeaderText": [
+    {
+      "type": 0,
+      "value": "[!! ŏŕ !!]"
+    }
+  ],
+  "auth.loginButton.label": [
+    {
+      "type": 0,
+      "value": "[!! Ļŏĝĝĝ Ḭńńń !!]"
+    }
+  ],
+  "auth.loginLink.label": [
+    {
+      "type": 0,
+      "value": "[!! Ļŏĝĝĝ Ḭńńń !!]"
+    }
+  ],
+  "auth.logoutButton.label": [
+    {
+      "type": 0,
+      "value": "[!! Ļŏĝĝĝ Õůůůṭ !!]"
+    }
+  ],
   "auth.passwordInput.togglePasswordVisibilityLabel": [
     {
       "options": {
@@ -154,7 +254,8 @@
           ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         },
         "show": {
           "value": [
@@ -173,6 +274,18 @@
       "value": "[!!  ṗâââśśẘẘẘŏŕḋḋḋ !!]"
     }
   ],
+  "auth.recovery.title": [
+    {
+      "type": 0,
+      "value": "[!! Ŕèćććŏṿèèèŕ ẏẏẏŏůŕŕŕ âććććŏůůůńṭ !!]"
+    }
+  ],
+  "auth.recoveryLink.label": [
+    {
+      "type": 0,
+      "value": "[!! Ḟŏŕŕŕĝŏṭṭṭ ẏŏŏŏůŕ ṗâśśśśẘŏŏŏŕḋ? !!]"
+    }
+  ],
   "auth.registration.alreadyHaveAccountLink": [
     {
       "type": 0,
@@ -183,10 +296,58 @@
       "value": "loginLink"
     }
   ],
+  "auth.registration.oidcTItle": [
+    {
+      "type": 0,
+      "value": "[!! ŏŕ !!]"
+    }
+  ],
+  "auth.registration.title": [
+    {
+      "type": 0,
+      "value": "[!! Ḉŕèèèâṭèèè ẏŏŏŏůŕ âććććŏůńńńṭ !!]"
+    }
+  ],
+  "auth.settings.oidcTitle": [
+    {
+      "type": 0,
+      "value": "[!! 3ŕḋḋḋ Ṕâââŕṭẏẏẏ Ļŏŏŏĝ-íííń !!]"
+    }
+  ],
+  "auth.settings.passwordTitle": [
+    {
+      "type": 0,
+      "value": "[!! Ḉḫâââńĝèèè Ṕâââśśẘẘẘŏŕḋḋḋ !!]"
+    }
+  ],
+  "auth.settings.title": [
+    {
+      "type": 0,
+      "value": "[!! Ṕŕŏŏŏḟíĺĺĺè ṠṠṠèṭṭṭṭíńĝĝĝś !!]"
+    }
+  ],
+  "auth.settings.totpTitle": [
+    {
+      "type": 0,
+      "value": "[!! Ṯẘŏŏŏ-ḟâââćṭŏŏŏŕ âââůṭḫḫḫèńṭṭṭíćâââṭíŏŏŏń !!]"
+    }
+  ],
+  "auth.settings.webauthnTitle": [
+    {
+      "type": 0,
+      "value": "[!! Ḣâŕŕŕḋẘâââŕè Ṯŏǩǩǩèńśśś âńńńḋ ḂḂḂíŏṁṁṁèṭŕŕŕíćśśś !!]"
+    }
+  ],
   "auth.signUpButton.label": [
     {
       "type": 0,
       "value": "[!! Ṡíĝĝĝń ŨŨŨṗ !!]"
+    }
+  ],
+  "auth.verification.title": [
+    {
+      "type": 0,
+      "value": "[!! Ṽèŕŕŕíḟẏẏẏ ẏŏŏŏůŕ âććććŏůńńńṭ !!]"
     }
   ],
   "errors.errorAlert.message": [
@@ -352,7 +513,7 @@
   "pages.home.tagLine": [
     {
       "type": 0,
-      "value": "[!! Ḁ śśśḫŏŕŕŕṭ ṭṭṭâĝĺĺĺíńèèè âḃḃḃŏůṭṭṭ ẘḫḫḫâṭ ẘè ḋŏ. !!]"
+      "value": "[!! Õṗíííńíŏŏŏńâṭṭṭèḋ, ṗŕŕŕŏḋůůůćṭíííŏń-ŕèâââḋẏ, ḟůůůĺĺ-ḟèâââṭůŕŕŕèḋ ṠââââṠ ḃḃḃŏíĺĺĺèŕṗṗṗĺâṭṭṭè. !!]"
     }
   ],
   "pages.privacyPolicy.pageHeading": [
@@ -403,7 +564,8 @@
           ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         }
       },
       "type": 5,

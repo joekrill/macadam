@@ -21,9 +21,46 @@ selfservice:
   methods:
     password:
       enabled: true
-    # TODO: OIDC
-    # oidc:
-    #   enabled: true
+    oidc:
+      enabled: true
+      config:
+        providers:
+          - id: github
+            provider: github
+            client_id: TODO
+            client_secret: TODO
+            mapper_url: file:///etc/config/kratos/oidc.github.jsonnet
+            scope:
+              - user:email
+          - id: google
+            provider: google
+            client_id: TODO
+            client_secret: TODO
+            scope:
+              - offline
+            mapper_url: file:///etc/config/kratos/oidc.google.jsonnet
+          - id: slack
+            provider: slack
+            client_id: TODO
+            client_secret: TODO
+            mapper_url: file:///etc/config/kratos/oidc.slack.jsonnet
+            scope:
+              - identity.basic
+              - identity.email
+    lookup_secret:
+      enabled: true
+    totp:
+      enabled: true
+      config:
+        issuer: Macadam
+    webauthn:
+      config:
+        rp:
+          id: localhost
+          display_name: Macadam
+          # icon: https://www.ory.sh/an-icon.png
+          # origin: https://www.ory.sh/login
+      enabled: true
     profile:
       enabled: true
     link:
@@ -106,6 +143,6 @@ expose-metrics-port: 4434
 
 courier:
   smtp:
-    connection_uri: smtp://mailhog:1025/?skip_ssl_verify=true
+    connection_uri: smtp://mailhog:1025/?disable_starttls=true
     # from_name: Bob # TODO
     # from_address: aaa@a.aa # TODO

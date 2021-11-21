@@ -1,41 +1,41 @@
 import { z } from "zod";
 import { identitySchema } from "../identity";
-import { selfServiceFlowCommonSchema } from "./common";
+import { sessionSchema } from "../session";
+import { flowCommonSchema } from "./common";
 
-export const selfServiceRegistrationFlowSchema =
-  selfServiceFlowCommonSchema.extend({});
+export const registrationFlowSchema = flowCommonSchema.extend({});
 
-export type SelfServiceRegistrationFlow = z.infer<
-  typeof selfServiceRegistrationFlowSchema
->;
+export type RegistrationFlow = z.infer<typeof registrationFlowSchema>;
 
-export const selfServiceRegistrationFlowSuccessSchema = z.object({
+export const registrationFlowSuccessSchema = z.object({
   identity: identitySchema,
+  session: sessionSchema.optional(),
 });
 
-export type SelfServiceRegistrationFlowSuccess = z.infer<
-  typeof selfServiceRegistrationFlowSuccessSchema
+export type RegistrationFlowSuccess = z.infer<
+  typeof registrationFlowSuccessSchema
 >;
 
-export function isSelfServiceRegistrationFlowSuccess(
-  result?: SelfServiceRegistrationFlowSuccess | unknown
-): result is SelfServiceRegistrationFlowSuccess {
+export function isRegistrationFlowSuccess(
+  result?: RegistrationFlowSuccess | unknown
+): result is RegistrationFlowSuccess {
   return (
     result !== undefined &&
-    (result as SelfServiceRegistrationFlowSuccess).identity !== undefined
+    (result as RegistrationFlowSuccess).identity !== undefined
   );
 }
 
-export const selfServiceRegistrationFlowResponseSchema = z.union([
-  selfServiceRegistrationFlowSuccessSchema,
-  selfServiceRegistrationFlowSchema,
+export const registrationFlowResponseSchema = z.union([
+  registrationFlowSuccessSchema,
+  registrationFlowSchema,
 ]);
 
-export function isSelfServiceRegistrationFlow(
-  result?: SelfServiceRegistrationFlow | unknown
-): result is SelfServiceRegistrationFlow {
-  return (
-    result !== undefined &&
-    (result as SelfServiceRegistrationFlow).ui !== undefined
-  );
+export type RegistrationFlowResponse = z.infer<
+  typeof registrationFlowResponseSchema
+>;
+
+export function isRegistrationFlow(
+  result?: RegistrationFlow | unknown
+): result is RegistrationFlow {
+  return result !== undefined && (result as RegistrationFlow).ui !== undefined;
 }

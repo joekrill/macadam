@@ -1,14 +1,14 @@
+- (client-web) Remove Logout button from header (use account dropdown?)
+- (client-web) Handle /sessions/whoami 401 response
+- (client-web) Auth forms: auto-focus first field when rendering forms.
+- (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
+- (kratos) customize email templates
 - Tracing (OpenTelemetry)
 - Offline support
 - Upgrade Postgres to v14
-- (client-web) Handle /sessions/whoami 401 response
 - Handle logins across tabs (use localStorage to signal session changes?)
 - PWA
 - Detect session expiration and handle it somehow (modal login form?)
-- (client-web) Auth flow: verification
-- (client-web) Auth flow: recovery
-- (client-web) Auth forms: auto-focus first field when rendering forms.
-- (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
 - (client-web) Auth flow: make sure privileged_session_max_age works as expected (https://www.ory.sh/kratos/docs/self-service/flows/user-settings#updating-privileged-fields)
 - (client-web) Auth: password requirements hint (is this currently possible with Kratos?)
 - (client-web) Auth: password strength meter?
@@ -27,9 +27,6 @@
 - (client-web) Favicons: https://css-tricks.com/how-to-favicon-in-2021/
 - (client-web) Storybook stories
 - (client-web) Logos
-- (kratos) customize email templates
-- (kratos) social logins (https://github.com/ory/kratos/issues/273)
-  - This doesn't appear to be supported yet for SPA apps?
 - Integration tests
 - husky
 - commitlint
@@ -40,7 +37,12 @@
 - (metrics) alert manager
 - (docs) Better documentation (docusaurus?)
 - (payments) implement (stripe?)
-- (feature-toggles) implement (https://github.com/Unleash/unleash?)
+- (feature-toggles) implement
+  - https://github.com/Unleash/unleash
+  - https://github.com/Flagsmith/flagsmith
+  - https://github.com/checkr/flagr
+  - https://github.com/markphelps/flipt
+  - https://github.com/featurehub-io/featurehub
 - production/staging kubernetes deployments
 - Mobile app (react-native)
 - "Down for Maintenance" state
@@ -50,8 +52,9 @@
 - https://cheatsheetseries.owasp.org/index.html
 - https://www.npmjs.com/package/devcert
 - https://github.com/ory/kratos/issues/1328
+- https://notifire.co
 
-Reference Projects:
+  Reference Projects:
 
 - https://github.com/cedrickchee/saas-starter
 - https://gitlab.com/gnaar

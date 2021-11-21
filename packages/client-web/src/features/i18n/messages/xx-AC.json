@@ -64,34 +64,98 @@
       "value": "TERMS"
     }
   ],
-  "auth.logInButton.label": [
+  "auth.flowError.redirecting": [
+    {
+      "options": {
+        "browser_location_change_required": {
+          "value": [
+          ]
+        },
+        "other": {
+          "value": [
+          ]
+        },
+        "session_aal2_required": {
+          "value": [
+            {
+              "type": 0,
+              "value": "2FA REQUIRED. "
+            }
+          ]
+        },
+        "session_refresh_required": {
+          "value": [
+            {
+              "type": 0,
+              "value": "REAUTHENTICATION REQUIRED. "
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "reason"
+    },
     {
       "type": 0,
-      "value": "LOG IN"
+      "value": "REDIRECTING..."
     }
   ],
-  "auth.logInLink.label": [
+  "auth.flowRestarted.message": [
     {
       "type": 0,
-      "value": "LOG IN"
-    }
-  ],
-  "auth.logOutButton.label": [
+      "value": "THE FORM HAD TO BE RELOADED"
+    },
+    {
+      "options": {
+        "other": {
+          "value": [
+          ]
+        },
+        "security_csrf_violation": {
+          "value": [
+            {
+              "type": 0,
+              "value": " BECAUSE THE SECURITY TOKEN EXPIRED."
+            }
+          ]
+        },
+        "security_identity_mismatch": {
+          "value": [
+            {
+              "type": 0,
+              "value": " BECAUSE YOUR SESSION CHANGED"
+            }
+          ]
+        },
+        "self_service_flow_expired": {
+          "value": [
+            {
+              "type": 0,
+              "value": " BECAUSE THE FORM EXPIRED"
+            }
+          ]
+        },
+        "self_service_flow_return_to_forbidden": {
+          "value": [
+            {
+              "type": 0,
+              "value": " BECAUSE THE RETURN URL IS INVALID"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "reason"
+    },
     {
       "type": 0,
-      "value": "LOG OUT"
+      "value": ". PLEASE TRY AGAIN."
     }
   ],
-  "auth.loggedInNotice.goToHomepageButton": [
+  "auth.hompageButton.label": [
     {
       "type": 0,
       "value": "GO TO THE HOMEPAGE"
-    }
-  ],
-  "auth.loggedInNotice.heading": [
-    {
-      "type": 0,
-      "value": "ALREADY LOGGED IN"
     }
   ],
   "auth.loggedInNotice.messageWithUsername": [
@@ -120,10 +184,22 @@
       "value": "YOU'RE ALREADY LOGGED IN."
     }
   ],
-  "auth.login.forgotPasswordLink": [
+  "auth.login.2faTitle": [
     {
       "type": 0,
-      "value": "FORGOT YOUR PASSWORD?"
+      "value": "TWO-FACTOR AUTHENTICATION"
+    }
+  ],
+  "auth.login.confirmAccessTitle": [
+    {
+      "type": 0,
+      "value": "CONFIRM ACCESS"
+    }
+  ],
+  "auth.login.loginTitle": [
+    {
+      "type": 0,
+      "value": "LOG IN TO YOUR ACCOUNT"
     }
   ],
   "auth.login.noAccountLink": [
@@ -142,6 +218,30 @@
       "value": "link"
     }
   ],
+  "auth.login.oidcHeaderText": [
+    {
+      "type": 0,
+      "value": "OR"
+    }
+  ],
+  "auth.loginButton.label": [
+    {
+      "type": 0,
+      "value": "LOG IN"
+    }
+  ],
+  "auth.loginLink.label": [
+    {
+      "type": 0,
+      "value": "LOG IN"
+    }
+  ],
+  "auth.logoutButton.label": [
+    {
+      "type": 0,
+      "value": "LOG OUT"
+    }
+  ],
   "auth.passwordInput.togglePasswordVisibilityLabel": [
     {
       "options": {
@@ -154,7 +254,8 @@
           ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         },
         "show": {
           "value": [
@@ -173,6 +274,18 @@
       "value": " PASSWORD"
     }
   ],
+  "auth.recovery.title": [
+    {
+      "type": 0,
+      "value": "RECOVER YOUR ACCOUNT"
+    }
+  ],
+  "auth.recoveryLink.label": [
+    {
+      "type": 0,
+      "value": "FORGOT YOUR PASSWORD?"
+    }
+  ],
   "auth.registration.alreadyHaveAccountLink": [
     {
       "type": 0,
@@ -183,10 +296,58 @@
       "value": "loginLink"
     }
   ],
+  "auth.registration.oidcTItle": [
+    {
+      "type": 0,
+      "value": "OR"
+    }
+  ],
+  "auth.registration.title": [
+    {
+      "type": 0,
+      "value": "CREATE YOUR ACCOUNT"
+    }
+  ],
+  "auth.settings.oidcTitle": [
+    {
+      "type": 0,
+      "value": "3RD PARTY LOG-IN"
+    }
+  ],
+  "auth.settings.passwordTitle": [
+    {
+      "type": 0,
+      "value": "CHANGE PASSWORD"
+    }
+  ],
+  "auth.settings.title": [
+    {
+      "type": 0,
+      "value": "PROFILE SETTINGS"
+    }
+  ],
+  "auth.settings.totpTitle": [
+    {
+      "type": 0,
+      "value": "TWO-FACTOR AUTHENTICATION"
+    }
+  ],
+  "auth.settings.webauthnTitle": [
+    {
+      "type": 0,
+      "value": "HARDWARE TOKENS AND BIOMETRICS"
+    }
+  ],
   "auth.signUpButton.label": [
     {
       "type": 0,
       "value": "SIGN UP"
+    }
+  ],
+  "auth.verification.title": [
+    {
+      "type": 0,
+      "value": "VERIFY YOUR ACCOUNT"
     }
   ],
   "errors.errorAlert.message": [
@@ -352,7 +513,7 @@
   "pages.home.tagLine": [
     {
       "type": 0,
-      "value": "A SHORT TAGLINE ABOUT WHAT WE DO."
+      "value": "OPINIONATED, PRODUCTION-READY, FULL-FEATURED SAAS BOILERPLATE."
     }
   ],
   "pages.privacyPolicy.pageHeading": [
@@ -403,7 +564,8 @@
           ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         }
       },
       "type": 5,

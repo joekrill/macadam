@@ -23,7 +23,7 @@ export const LoginButton = ({
       isDisabled={isDisabled || isUnknown}
     >
       {children || (
-        <FormattedMessage id="auth.logInButton.label" defaultMessage="Log In" />
+        <FormattedMessage id="auth.loginButton.label" defaultMessage="Log In" />
       )}
     </Button>
   );

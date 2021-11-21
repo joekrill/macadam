@@ -64,34 +64,72 @@
       "value": "[javascript]Terms"
     }
   ],
-  "auth.logInButton.label": [
+  "auth.flowError.redirecting": [
     {
       "type": 0,
-      "value": "[javascript]Log In"
-    }
-  ],
-  "auth.logInLink.label": [
+      "value": "[javascript]"
+    },
     {
       "type": 0,
-      "value": "[javascript]Log In"
+      "value": "Redirecting..."
     }
   ],
-  "auth.logOutButton.label": [
+  "auth.flowRestarted.message": [
     {
       "type": 0,
-      "value": "[javascript]Log Out"
+      "value": "[javascript]The form had to be reloaded"
+    },
+    {
+      "options": {
+        "other": {
+          "value": [
+          ]
+        },
+        "security_csrf_violation": {
+          "value": [
+            {
+              "type": 0,
+              "value": " because the security token expired."
+            }
+          ]
+        },
+        "security_identity_mismatch": {
+          "value": [
+            {
+              "type": 0,
+              "value": " because your session changed"
+            }
+          ]
+        },
+        "self_service_flow_expired": {
+          "value": [
+            {
+              "type": 0,
+              "value": " because the form expired"
+            }
+          ]
+        },
+        "self_service_flow_return_to_forbidden": {
+          "value": [
+            {
+              "type": 0,
+              "value": " because the return URL is invalid"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "reason"
+    },
+    {
+      "type": 0,
+      "value": ". Please try again."
     }
   ],
-  "auth.loggedInNotice.goToHomepageButton": [
+  "auth.hompageButton.label": [
     {
       "type": 0,
       "value": "[javascript]Go to the homepage"
-    }
-  ],
-  "auth.loggedInNotice.heading": [
-    {
-      "type": 0,
-      "value": "[javascript]Already Logged In"
     }
   ],
   "auth.loggedInNotice.messageWithUsername": [
@@ -120,10 +158,22 @@
       "value": "[javascript]You're already logged in."
     }
   ],
-  "auth.login.forgotPasswordLink": [
+  "auth.login.2faTitle": [
     {
       "type": 0,
-      "value": "[javascript]Forgot your password?"
+      "value": "[javascript]Two-Factor Authentication"
+    }
+  ],
+  "auth.login.confirmAccessTitle": [
+    {
+      "type": 0,
+      "value": "[javascript]Confirm access"
+    }
+  ],
+  "auth.login.loginTitle": [
+    {
+      "type": 0,
+      "value": "[javascript]Log in to your account"
     }
   ],
   "auth.login.noAccountLink": [
@@ -142,6 +192,30 @@
       "value": "link"
     }
   ],
+  "auth.login.oidcHeaderText": [
+    {
+      "type": 0,
+      "value": "[javascript]or"
+    }
+  ],
+  "auth.loginButton.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Log In"
+    }
+  ],
+  "auth.loginLink.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Log In"
+    }
+  ],
+  "auth.logoutButton.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Log Out"
+    }
+  ],
   "auth.passwordInput.togglePasswordVisibilityLabel": [
     {
       "type": 0,
@@ -150,6 +224,18 @@
     {
       "type": 0,
       "value": " password"
+    }
+  ],
+  "auth.recovery.title": [
+    {
+      "type": 0,
+      "value": "[javascript]Recover your account"
+    }
+  ],
+  "auth.recoveryLink.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Forgot your password?"
     }
   ],
   "auth.registration.alreadyHaveAccountLink": [
@@ -162,10 +248,58 @@
       "value": "loginLink"
     }
   ],
+  "auth.registration.oidcTItle": [
+    {
+      "type": 0,
+      "value": "[javascript]or"
+    }
+  ],
+  "auth.registration.title": [
+    {
+      "type": 0,
+      "value": "[javascript]Create your account"
+    }
+  ],
+  "auth.settings.oidcTitle": [
+    {
+      "type": 0,
+      "value": "[javascript]3rd Party Log-in"
+    }
+  ],
+  "auth.settings.passwordTitle": [
+    {
+      "type": 0,
+      "value": "[javascript]Change Password"
+    }
+  ],
+  "auth.settings.title": [
+    {
+      "type": 0,
+      "value": "[javascript]Profile Settings"
+    }
+  ],
+  "auth.settings.totpTitle": [
+    {
+      "type": 0,
+      "value": "[javascript]Two-factor authentication"
+    }
+  ],
+  "auth.settings.webauthnTitle": [
+    {
+      "type": 0,
+      "value": "[javascript]Hardware Tokens and Biometrics"
+    }
+  ],
   "auth.signUpButton.label": [
     {
       "type": 0,
       "value": "[javascript]Sign Up"
+    }
+  ],
+  "auth.verification.title": [
+    {
+      "type": 0,
+      "value": "[javascript]Verify your account"
     }
   ],
   "errors.errorAlert.message": [
@@ -382,7 +516,8 @@
           ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         }
       },
       "type": 5,

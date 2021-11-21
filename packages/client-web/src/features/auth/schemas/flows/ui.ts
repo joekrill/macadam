@@ -3,16 +3,13 @@ import { z } from "zod";
 export const uiTextSchema = z.object({
   /**
    * The message\'s context. Useful when customizing messages.
-   * @type {object}
-   * @memberof UiText
    */
   context: z.unknown().nullish(),
 
   id: z.number(),
+
   /**
    * The message text. Written in american english.
-   * @type {string}
-   * @memberof UiText
    */
   text: z.string(),
 
@@ -26,26 +23,45 @@ export type UiText = z.infer<typeof uiTextSchema>;
  * @export
  * @interface Meta
  */
-export const metaSchema = z.object({
+export const uiNodeMetaSchema = z.object({
   label: uiTextSchema.nullish(),
 });
 
 export const uiNodeAnchorAttributesSchema = z.object({
-  type: z.literal("anchor"),
-
   /**
    * The link\'s href (destination) URL.  format: uri
    */
   href: z.string(),
+
+  id: z.string(),
+
+  node_type: z.string(),
+
   title: uiTextSchema,
 });
 
 export const uiNodeImageAttributesSchema = z.object({
-  type: z.literal("image"),
+  /**
+   * Height of the image
+   */
+  height: z.number().optional(),
+
+  id: z.string(),
+
+  /**
+   * A unique identifier
+   */
+  node_type: z.string(),
+
   /**
    * The image\'s source URL.  format: uri
    */
   src: z.string(),
+
+  /**
+   * Width of the image
+   */
+  width: z.number().optional(),
 });
 
 /**
@@ -65,6 +81,16 @@ export const uiNodeInputAttributesSchema = z.object({
   name: z.string(),
 
   /**
+   * A unique identifier
+   */
+  node_type: z.string(),
+
+  /**
+   * OnClick may contain javascript which should be executed on click. This is primarily used for WebAuthn.
+   */
+  onclick: z.string().optional(),
+
+  /**
    * The input's pattern.
    */
   pattern: z.string().optional(),
@@ -75,14 +101,14 @@ export const uiNodeInputAttributesSchema = z.object({
   required: z.boolean().optional(),
 
   type: z.union([
-    z.literal("hidden"),
-    z.literal("text"),
-    z.literal("password"),
-    z.literal("submit"),
+    z.literal("button"),
     z.literal("checkbox"),
     z.literal("email"),
+    z.literal("hidden"),
+    z.literal("password"),
+    z.literal("submit"),
+    z.literal("text"),
   ]),
-  // type: z.string(),
 
   /**
    * The input\'s value.
@@ -90,10 +116,51 @@ export const uiNodeInputAttributesSchema = z.object({
   value: z.any().nullable(),
 });
 
+export const uiNodeScriptAttributesSchema = z.object({
+  /**
+   * The script async type
+   */
+  async: z.boolean(),
+
+  /**
+   * The script cross origin policy
+   */
+  crossorigin: z.string(),
+
+  /**
+   * A unique identifier
+   */
+  id: z.string(),
+
+  /**
+   * The script\'s integrity hash
+   */
+  integrity: z.string(),
+
+  node_type: z.literal("script"),
+
+  /**
+   * The script referrer policy
+   */
+  referrerpolicy: z.string(),
+
+  /**
+   * The script source
+   */
+  src: z.string(),
+
+  type: z.string(),
+});
+
 export const uiNodeTextAttributesSchema = z.object({
-  type: z.literal("text"),
+  /**
+   * A unique identifier
+   */
+  id: z.string(),
 
   text: uiTextSchema,
+
+  node_type: z.literal("text"),
 });
 
 export const uiNodeAttributesSchema = z.union([
@@ -109,7 +176,7 @@ export const uiNodeAttributesSchema = z.union([
 export const uiNodeCommonSchema = z.object({
   group: z.string(),
   messages: z.array(uiTextSchema).nullish(),
-  meta: metaSchema,
+  meta: uiNodeMetaSchema,
 });
 
 export const uiNodeAnchorSchema = uiNodeCommonSchema.extend({
@@ -117,10 +184,14 @@ export const uiNodeAnchorSchema = uiNodeCommonSchema.extend({
   attributes: uiNodeAnchorAttributesSchema,
 });
 
+export type UiNodeAnchor = z.infer<typeof uiNodeAnchorSchema>;
+
 export const uiNodeImageSchema = uiNodeCommonSchema.extend({
-  type: z.literal("image"),
+  type: z.literal("img"),
   attributes: uiNodeImageAttributesSchema,
 });
+
+export type UiNodeImage = z.infer<typeof uiNodeImageSchema>;
 
 export const uiNodeInputSchema = uiNodeCommonSchema.extend({
   type: z.literal("input"),
@@ -129,16 +200,26 @@ export const uiNodeInputSchema = uiNodeCommonSchema.extend({
 
 export type UiNodeInput = z.infer<typeof uiNodeInputSchema>;
 
+export const uiNodeScriptSchema = uiNodeCommonSchema.extend({
+  type: z.literal("script"),
+  attributes: uiNodeScriptAttributesSchema,
+});
+
+export type UiNodeScript = z.infer<typeof uiNodeScriptSchema>;
+
 export const uiNodeTextSchema = uiNodeCommonSchema.extend({
   type: z.literal("text"),
   attributes: uiNodeTextAttributesSchema,
 });
+
+export type UiNodeText = z.infer<typeof uiNodeTextSchema>;
 
 export const uiNodeSchema = z.union([
   uiNodeAnchorSchema,
   uiNodeImageSchema,
   uiNodeInputSchema,
   uiNodeTextSchema,
+  uiNodeScriptSchema,
 ]);
 
 export type UiNode = z.infer<typeof uiNodeSchema>;

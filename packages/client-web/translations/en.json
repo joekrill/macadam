@@ -20,20 +20,15 @@
   "app.footer.links.termsAndConditions.label": {
     "defaultMessage": "Terms"
   },
-  "auth.logInButton.label": {
-    "defaultMessage": "Log In"
+  "auth.flowError.redirecting": {
+    "defaultMessage": "{reason, select, session_refresh_required {Reauthentication required. } browser_location_change_required {} session_aal2_required {2FA required. } other {}}Redirecting..."
   },
-  "auth.logInLink.label": {
-    "defaultMessage": "Log In"
+  "auth.flowRestarted.message": {
+    "defaultMessage": "The form had to be reloaded{reason, select, security_csrf_violation { because the security token expired.} security_identity_mismatch { because your session changed} self_service_flow_expired { because the form expired} self_service_flow_return_to_forbidden { because the return URL is invalid} other {}}. Please try again.",
+    "description": "The message telling the user that the form they submitted had to be reloaded"
   },
-  "auth.logOutButton.label": {
-    "defaultMessage": "Log Out"
-  },
-  "auth.loggedInNotice.goToHomepageButton": {
+  "auth.hompageButton.label": {
     "defaultMessage": "Go to the homepage"
-  },
-  "auth.loggedInNotice.heading": {
-    "defaultMessage": "Already Logged In"
   },
   "auth.loggedInNotice.messageWithUsername": {
     "defaultMessage": "You're already logged in as <e>{username}</e>.",
@@ -43,21 +38,83 @@
     "defaultMessage": "You're already logged in.",
     "description": "The message telling the user that they are already logged in when their username is not available"
   },
-  "auth.login.forgotPasswordLink": {
-    "defaultMessage": "Forgot your password?"
+  "auth.login.2faTitle": {
+    "defaultMessage": "Two-Factor Authentication",
+    "description": "The title displayed at the top of the login form when requesting the user's 2FA code"
+  },
+  "auth.login.confirmAccessTitle": {
+    "defaultMessage": "Confirm access",
+    "description": "The title displayed at the top of the login form when the user is already logged in but we need them to enter their password again to reconfirm their access"
+  },
+  "auth.login.loginTitle": {
+    "defaultMessage": "Log in to your account",
+    "description": "The title displayed at the top of the login form when logging in"
   },
   "auth.login.noAccountLink": {
     "defaultMessage": "Don't have an account yet? <link>Sign up!</link>"
+  },
+  "auth.login.oidcHeaderText": {
+    "defaultMessage": "or",
+    "description": "the text displayed in the divider that shows additional login options"
+  },
+  "auth.loginButton.label": {
+    "defaultMessage": "Log In"
+  },
+  "auth.loginLink.label": {
+    "defaultMessage": "Log In"
+  },
+  "auth.logoutButton.label": {
+    "defaultMessage": "Log Out"
   },
   "auth.passwordInput.togglePasswordVisibilityLabel": {
     "defaultMessage": "{action, select, hide {Mask} show {Reveal} other {}} password",
     "description": "The hint text shown when hovering over the button that toggles the visibility of the users password."
   },
+  "auth.recovery.title": {
+    "defaultMessage": "Recover your account",
+    "description": "The title displayed at the top of the recovery form"
+  },
+  "auth.recoveryLink.label": {
+    "defaultMessage": "Forgot your password?",
+    "description": "The text displayed for a link that takes you to the account recovery page"
+  },
   "auth.registration.alreadyHaveAccountLink": {
     "defaultMessage": "Already have an account? {loginLink}"
   },
+  "auth.registration.oidcTItle": {
+    "defaultMessage": "or",
+    "description": "the text displayed in the divider that shows additional registration options"
+  },
+  "auth.registration.title": {
+    "defaultMessage": "Create your account",
+    "description": "The title displayed at the top of the registration form"
+  },
+  "auth.settings.oidcTitle": {
+    "defaultMessage": "3rd Party Log-in",
+    "description": "The heading displayed at the top of the change password section of the settings form"
+  },
+  "auth.settings.passwordTitle": {
+    "defaultMessage": "Change Password",
+    "description": "The heading displayed at the top of the change password section of the settings form"
+  },
+  "auth.settings.title": {
+    "defaultMessage": "Profile Settings",
+    "description": "The title displayed at the top of the settings form"
+  },
+  "auth.settings.totpTitle": {
+    "defaultMessage": "Two-factor authentication",
+    "description": "The heading displayed at the top of the change password section of the settings form"
+  },
+  "auth.settings.webauthnTitle": {
+    "defaultMessage": "Hardware Tokens and Biometrics",
+    "description": "The heading displayed at the top of the change password section of the settings form"
+  },
   "auth.signUpButton.label": {
     "defaultMessage": "Sign Up"
+  },
+  "auth.verification.title": {
+    "defaultMessage": "Verify your account",
+    "description": "The title displayed at the top of the verification form"
   },
   "errors.errorAlert.message": {
     "defaultMessage": "Something went wrong :("

@@ -1,32 +1,70 @@
-import { identityApi } from "../identityApi";
-import {
-  isSelfServiceRegistrationFlow,
-  isSelfServiceRegistrationFlowSuccess,
-} from "../schemas/flows/registration";
+import { skipToken } from "@reduxjs/toolkit/dist/query";
+import { useCallback, useEffect, useState } from "react";
+import { identityApi, SubmitFlowPayload } from "../identityApi";
+import { FlowRestartReason } from "../schemas/errors";
+import { InitializeFlowParams } from "../schemas/flows/common";
+import { isRegistrationFlowSuccess } from "../schemas/flows/registration";
+import { useFlowError } from "./useFlowError";
 
-export const useRegistrationFlow = () => {
-  const registrationFlowQuery =
-    identityApi.useInitializeRegistrationFlowQuery();
-  const [submitRegistration, result] =
-    identityApi.useSubmitRegistrationFlowMutation();
-  const isSuccess = isSelfServiceRegistrationFlowSuccess(result.data);
+const {
+  useSubmitRegistrationFlowMutation,
+  useInitializeRegistrationFlowMutation,
+  useGetRegistrationFlowQuery,
+} = identityApi;
 
-  if (isSuccess) {
-    // TODO: Handle successful registration.
-  }
+export interface UseRegistrationFlowOptions extends InitializeFlowParams {
+  flowId?: string;
+}
+
+export const useRegistrationFlow = ({
+  flowId: flowIdProp,
+  returnTo,
+}: UseRegistrationFlowOptions = {}) => {
+  const [restartReason, setRestartReason] = useState<
+    FlowRestartReason | undefined
+  >();
+  const [initializeFlow, initializeResult] =
+    useInitializeRegistrationFlowMutation();
+  const flowId = initializeResult.data?.id || flowIdProp;
+  const [submitFlow, submitResult] = useSubmitRegistrationFlowMutation();
+  const getFlow = useGetRegistrationFlowQuery(flowId ?? skipToken);
+  const flow = getFlow.data || initializeResult.data;
+  const error = initializeResult.error || getFlow.error || submitResult.error;
+  const parsedError = useFlowError(error);
+
+  const restart = useCallback(
+    (reason?: FlowRestartReason) => {
+      // TODO: abort() any in-flight request?
+      submitResult.reset();
+      initializeFlow({ returnTo });
+      setRestartReason(reason);
+    },
+    [initializeFlow, setRestartReason, submitResult, returnTo]
+  );
+
+  const submit = useCallback(
+    (payload: SubmitFlowPayload) => {
+      submitFlow(payload);
+      setRestartReason(undefined);
+    },
+    [submitFlow, setRestartReason]
+  );
+
+  useEffect(() => {
+    if (!flowId) {
+      initializeFlow({ returnTo });
+    }
+  }, [initializeFlow, flowId, returnTo]);
 
   return {
-    // When we initialize the flow it includes the `ui`. After submitting,
-    // we are eitehr succesfully logged in, or we are given an updated `ui`
-    // which contains error messages, etc.
-    ui: isSelfServiceRegistrationFlow(result?.data)
-      ? result.data.ui
-      : registrationFlowQuery.data?.ui,
-    submit: submitRegistration,
-    restart: registrationFlowQuery.refetch,
-    isLoading: registrationFlowQuery.isLoading,
-    error: registrationFlowQuery.error,
-    isSubmitting: result.isLoading,
-    isSuccess,
+    error,
+    errorId: parsedError.id,
+    flow,
+    submit,
+    restart,
+    restartReason,
+    isSuccessful: isRegistrationFlowSuccess(submitResult.data),
+    isInitializing: initializeResult.isLoading,
+    isSubmitting: submitResult.isLoading,
   };
 };

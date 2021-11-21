@@ -4229,9 +4229,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@reduxjs/toolkit@npm:^1.6.2":
-  version: 1.6.2
-  resolution: "@reduxjs/toolkit@npm:1.6.2"
+"@reduxjs/toolkit@npm:^1.7.0-beta":
+  version: 1.7.0-beta.0
+  resolution: "@reduxjs/toolkit@npm:1.7.0-beta.0"
   dependencies:
     immer: ^9.0.6
     redux: ^4.1.0
@@ -4245,7 +4245,7 @@ __metadata:
       optional: true
     react-redux:
       optional: true
-  checksum: 895e30518dd1552c115c8a06091856f1f60394a971d214eba5c6d7fc2053c5bc2730bc172ba88aead25d240e99a25c94c3621159823bbc0d0109dc9365db456d
+  checksum: dab8503f6b4ddc2cea72d2809036740c8c53042ebf92fc0be0d2956df6c03b41f4d2b8a5a276b19117b85f489892570505d1bd2c4e3a3d098103186059b68fbc
   languageName: node
   linkType: hard
 
@@ -9816,7 +9816,7 @@ __metadata:
     "@formatjs/intl-pluralrules": ^4.1.5
     "@formatjs/intl-relativetimeformat": ^9.3.2
     "@mdx-js/react": ^1.6.22
-    "@reduxjs/toolkit": ^1.6.2
+    "@reduxjs/toolkit": ^1.7.0-beta
     "@sentry/integrations": ^6.13.3
     "@sentry/react": ^6.13.3
     "@sentry/tracing": ^6.13.3
@@ -9857,6 +9857,7 @@ __metadata:
     react-router-dom: ^5.3.0
     react-scripts: 4.0.3
     redux: ^4.1.1
+    snakecase-keys: ^5.1.2
     source-map-explorer: ^2.5.2
     svgo: ^2.7.0
     typescript: ^4.4.4
@@ -18016,6 +18017,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"map-obj@npm:^4.1.0":
+  version: 4.3.0
+  resolution: "map-obj@npm:4.3.0"
+  checksum: fbc554934d1a27a1910e842bc87b177b1a556609dd803747c85ece420692380827c6ae94a95cce4407c054fa0964be3bf8226f7f2cb2e9eeee432c7c1985684e
+  languageName: node
+  linkType: hard
+
 "map-or-similar@npm:^1.5.0":
   version: 1.5.0
   resolution: "map-or-similar@npm:1.5.0"
@@ -23629,6 +23637,27 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
+"snake-case@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "snake-case@npm:3.0.4"
+  dependencies:
+    dot-case: ^3.0.4
+    tslib: ^2.0.3
+  checksum: 0a7a79900bbb36f8aaa922cf111702a3647ac6165736d5dc96d3ef367efc50465cac70c53cd172c382b022dac72ec91710608e5393de71f76d7142e6fd80e8a3
+  languageName: node
+  linkType: hard
+
+"snakecase-keys@npm:^5.1.2":
+  version: 5.1.2
+  resolution: "snakecase-keys@npm:5.1.2"
+  dependencies:
+    map-obj: ^4.1.0
+    snake-case: ^3.0.4
+    type-fest: ^2.5.2
+  checksum: a58f84151d1bb3feca2e23175616903a25155d7106153d4281bcec077a978bf7e4a66e0b68fbbcc32953b4a23734f6a925a15a3362fdfe688203c298a297ffed
+  languageName: node
+  linkType: hard
+
 "snapdragon-node@npm:^2.0.1":
   version: 2.1.1
   resolution: "snapdragon-node@npm:2.1.1"
@@ -25352,6 +25381,13 @@ resolve@^2.0.0-next.3:
   version: 0.8.1
   resolution: "type-fest@npm:0.8.1"
   checksum: d61c4b2eba24009033ae4500d7d818a94fd6d1b481a8111612ee141400d5f1db46f199c014766b9fa9b31a6a7374d96fc748c6d688a78a3ce5a33123839becb7
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^2.5.2":
+  version: 2.5.4
+  resolution: "type-fest@npm:2.5.4"
+  checksum: ced03d6d01dd1040f3c53458d333c657d1cae0bc0331e8aacedb4c880919eb3013ce0aff8afdb8ce51718d34fc98637333ea43b3bcb29c63c7f3e1c149ddb9c3
   languageName: node
   linkType: hard
 

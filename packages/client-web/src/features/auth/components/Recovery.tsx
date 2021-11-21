@@ -1,59 +1,70 @@
-import { Box, Container, Spinner } from "@chakra-ui/react";
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
-import { Card } from "../../common/components/Card/Card";
-import { ErrorAlert } from "../../errors/components/ErrorAlert";
-import { identityApi } from "../identityApi";
-import { SelfServiceUiForm } from "./SelfServiceUiForm";
-import { SelfServiceUiMessageList } from "./SelfServiceUiMessageList";
+import { VStack } from "@chakra-ui/react";
+import { useEffect } from "react";
+import { FormattedMessage } from "react-intl";
+import { useHistory } from "react-router-dom";
+import { useLoginReturnToLocation } from "../hooks/useLoginReturnToLocation";
+import {
+  useRecoveryFlow,
+  UseRecoveryFlowOptions,
+} from "../hooks/useRecoveryFlow";
+import { FlowError } from "./FlowError";
+import { FlowHeading } from "./FlowHeading";
+import { FlowLoadingSpinner } from "./FlowLoadingSpinner";
+import { FlowRestartedAlert } from "./FlowRestartedAlert";
+import { HomepageButton } from "./HomepageButton";
+import { SelfServiceUiForm } from "./SelfServiceUi/SelfServiceUiForm";
+import { SelfServiceUiMessageList } from "./SelfServiceUi/SelfServiceUiMessageList";
 
-export const Recovery = () => {
-  const { search } = useLocation();
-  const params = new URLSearchParams(search);
-  const flowId = params.get("flow");
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const verificationFlowQuery = identityApi.useGetRecoveryFlowQuery(flowId);
-  const [submitRecovery, result] = identityApi.useSubmitRecoveryFlowMutation();
+export interface RecoveryProps extends UseRecoveryFlowOptions {}
 
-  const isLoading = isSubmitted
-    ? result.isLoading
-    : verificationFlowQuery.isLoading;
-  const error = isSubmitted ? result.error : verificationFlowQuery.error;
-  const data = (isSubmitted && result.data) || verificationFlowQuery.data;
+export const Recovery = ({ flowId, returnTo }: RecoveryProps) => {
+  const history = useHistory();
+  const returnToState = useLoginReturnToLocation();
 
-  // TODO: if logged in redirect to settings? Or show error?
+  const {
+    error,
+    flow,
+    isInitializing,
+    isSubmitting,
+    isSuccessful,
+    restart,
+    restartReason,
+    submit,
+  } = useRecoveryFlow({ flowId, returnTo });
+
+  useEffect(() => {
+    if (isSuccessful) {
+      history.push(returnTo || returnToState);
+    }
+  }, [isSuccessful, history, returnTo, returnToState]);
 
   return (
-    <Card as={Container} maxW="container.sm">
-      {error && !isLoading && (
-        <ErrorAlert
-          mt={4}
-          onRetryClick={() => {
-            verificationFlowQuery.refetch();
-            setIsSubmitted(false);
-          }}
-        />
+    <VStack align="stretch" spacing="4">
+      <FlowHeading
+        title={
+          <FormattedMessage
+            id="auth.recovery.title"
+            description="The title displayed at the top of the recovery form"
+            defaultMessage="Recover your account"
+          />
+        }
+      />
+      {restartReason && <FlowRestartedAlert reason={restartReason} />}
+      {error && (
+        <FlowError error={error} onRestartFlow={restart} flowType="recovery" />
       )}
-      {data?.ui && data?.state === "choose_method" && (
+      <SelfServiceUiMessageList mt={3} messages={flow?.ui?.messages} />
+      {flow?.state === "choose_method" && (
         <SelfServiceUiForm
-          ui={data.ui}
-          isSubmitting={result.isLoading}
-          onSubmit={({ action, method, data }) => {
-            submitRecovery({
-              action,
-              method,
-              body: Object.fromEntries(data),
-            });
-            setIsSubmitted(true);
-          }}
+          ui={flow.ui}
+          isSubmitting={isSubmitting}
+          onSubmit={submit}
         />
       )}
-      {isLoading && (
-        <Box p={6} textAlign="center">
-          <Spinner thickness="5px" color="blue.600" size="xl" />
-        </Box>
+      {(flow?.state === "passed_challenge" || flow?.state === "sent_email") && (
+        <HomepageButton />
       )}
-      <SelfServiceUiMessageList mt={3} messages={data?.ui?.messages} />
-    </Card>
+      {(isInitializing || isSubmitting) && <FlowLoadingSpinner />}
+    </VStack>
   );
 };

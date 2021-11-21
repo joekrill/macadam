@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { identityApi } from "./identityApi";
-import { isSelfServiceLoginFlowSuccess } from "./schemas/flows/login";
-import { isSelfServiceRegistrationFlowSuccess } from "./schemas/flows/registration";
+import { isLoginFlowSuccess } from "./schemas/flows/login";
+import { isRegistrationFlowSuccess } from "./schemas/flows/registration";
 import { Identity } from "./schemas/identity";
 import { Session } from "./schemas/session";
 
@@ -19,7 +19,7 @@ export const identitySlice = createSlice({
     builder.addMatcher(
       identityApi.endpoints.submitLoginFlow.matchFulfilled,
       (state, { payload }) => {
-        if (isSelfServiceLoginFlowSuccess(payload)) {
+        if (isLoginFlowSuccess(payload)) {
           const { identity, ...session } = payload.session;
           state.session = session;
           state.identity = identity;
@@ -30,10 +30,24 @@ export const identitySlice = createSlice({
     builder.addMatcher(
       identityApi.endpoints.submitRegistrationFlow.matchFulfilled,
       (state, { payload }) => {
-        if (isSelfServiceRegistrationFlowSuccess(payload)) {
+        if (isRegistrationFlowSuccess(payload)) {
           state.identity = payload.identity;
           state.lastUpdated = Date.now();
         }
+      }
+    );
+    builder.addMatcher(
+      identityApi.endpoints.getSettingsFlow.matchFulfilled,
+      (state, { payload }) => {
+        state.identity = payload.identity;
+        state.lastUpdated = Date.now();
+      }
+    );
+    builder.addMatcher(
+      identityApi.endpoints.submitSettingsFlow.matchFulfilled,
+      (state, { payload }) => {
+        state.identity = payload.identity;
+        state.lastUpdated = Date.now();
       }
     );
     builder.addMatcher(identityApi.endpoints.logout.matchFulfilled, (state) => {

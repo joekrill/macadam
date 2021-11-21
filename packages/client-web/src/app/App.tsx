@@ -2,8 +2,8 @@ import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Route, Switch } from "react-router-dom";
-import { Auth } from "../features/auth/components/Auth";
 import { AuthenticatedRoute } from "../features/auth/components/AuthenticatedRoute";
+import { AuthPage } from "../features/auth/pages/AuthPage";
 import { Footer } from "../features/common/components/Footer/Footer";
 import { Header } from "../features/common/components/Header/Header";
 import { CrashInitiator } from "../features/errors/components/CrashInitiator/CrashInitiator";
@@ -51,7 +51,7 @@ export const App = () => {
           <Box bg={colorMode === "dark" ? "gray.900" : "gray.100"} flex={1}>
             <Switch>
               <Route path="/auth">
-                <Auth />
+                <AuthPage />
               </Route>
               <Route path="/contact" exact>
                 <ContactUs />

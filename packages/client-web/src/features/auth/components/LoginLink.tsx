@@ -11,7 +11,7 @@ export const LoginLink = ({ children, onClick, ...props }: LoginLinkProps) => {
   return (
     <Link {...props} as={RouterLink} to={location}>
       {children || (
-        <FormattedMessage id="auth.logInLink.label" defaultMessage="Log In" />
+        <FormattedMessage id="auth.loginLink.label" defaultMessage="Log In" />
       )}
     </Link>
   );

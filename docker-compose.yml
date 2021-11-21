@@ -17,11 +17,11 @@ x-service-defaults: &service-defaults
 
 x-kratos-defaults: &kratos-defaults
   <<: *service-defaults
-  image: oryd/kratos:v0.7.6-alpha.1
+  image: oryd/kratos:v0.8.0
   depends_on:
     - postgres
   environment:
-    COURIER_SMTP_CONNECTION_URI: smtp://mail:1025/?skip_ssl_verify=true
+    COURIER_SMTP_CONNECTION_URI: smtp://mail:1025/?disable_starttls=true
     DSN: postgres://kratos:kratos!@postgres:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
     SQA_OPT_OUT: "true"
     LOG_FORMAT: text
@@ -40,6 +40,7 @@ x-kratos-defaults: &kratos-defaults
     SELFSERVICE_FLOWS_LOGOUT_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localtest.me
     SELFSERVICE_FLOWS_LOGIN_UI_URL: https://localtest.me/auth/login
     SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://localtest.me/auth/registration
+    SELFSERVICE_METHODS_WEBAUTHN_CONFIG_RP_ID: localtest.me
   volumes:
     - ./services/kratos:/etc/config/kratos
 

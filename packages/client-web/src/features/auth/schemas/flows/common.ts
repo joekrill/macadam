@@ -1,9 +1,13 @@
 import { z } from "zod";
 import { uiContainerSchema } from "./ui";
 
+export interface InitializeFlowParams {
+  returnTo?: string;
+}
+
 export const flowTypeSchema = z.union([z.literal("api"), z.literal("browser")]);
 
-export const selfServiceFlowCommonSchema = z.object({
+export const flowCommonSchema = z.object({
   active: z.string().optional(),
 
   /**
@@ -19,6 +23,11 @@ export const selfServiceFlowCommonSchema = z.object({
   issued_at: z.string(),
 
   request_url: z.string(),
+
+  /**
+   * ReturnTo contains the requested return_to URL.
+   */
+  return_to: z.string().optional(),
 
   /**
    * The flow type can either be `api` or `browser`.

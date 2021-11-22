@@ -9460,10 +9460,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@ory/kratos-client", [
-        ["npm:0.7.6-alpha.7", {
-          "packageLocation": "./.yarn/cache/@ory-kratos-client-npm-0.7.6-alpha.7-8ab208d101-c4c35e4625.zip/node_modules/@ory/kratos-client/",
+        ["npm:0.8.0-alpha.2", {
+          "packageLocation": "./.yarn/cache/@ory-kratos-client-npm-0.8.0-alpha.2-edb4376ff9-95dd75e774.zip/node_modules/@ory/kratos-client/",
           "packageDependencies": [
-            ["@ory/kratos-client", "npm:0.7.6-alpha.7"],
+            ["@ory/kratos-client", "npm:0.8.0-alpha.2"],
             ["axios", "npm:0.21.1"]
           ],
           "linkType": "HARD",
@@ -14886,7 +14886,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mikro-orm/migrations", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:4.5.9"],
             ["@mikro-orm/postgresql", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:4.5.9"],
             ["@mikro-orm/sqlite", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:4.5.9"],
-            ["@ory/kratos-client", "npm:0.7.6-alpha.7"],
+            ["@ory/kratos-client", "npm:0.8.0-alpha.2"],
             ["@sentry/node", "npm:6.15.0"],
             ["@shopify/jest-koa-mocks", "npm:3.0.5"],
             ["@types/ioredis", "npm:4.27.8"],

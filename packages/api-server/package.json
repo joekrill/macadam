@@ -21,7 +21,7 @@
     "@mikro-orm/core": "^4.5.9",
     "@mikro-orm/migrations": "^4.5.9",
     "@mikro-orm/postgresql": "^4.5.9",
-    "@ory/kratos-client": "0.7.6-alpha.7",
+    "@ory/kratos-client": "0.8.0-alpha.2",
     "@sentry/node": "^6.15.0",
     "errorish": "^1.0.0",
     "ioredis": "^4.28.0",

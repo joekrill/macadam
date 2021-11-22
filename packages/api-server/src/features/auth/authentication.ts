@@ -1,9 +1,9 @@
-import { Configuration, Session, V0alpha1Api } from "@ory/kratos-client";
+import { Configuration, Session, V0alpha2Api } from "@ory/kratos-client";
 import { ensure as ensureError } from "errorish";
 import { Middleware } from "koa";
 
 export interface SessionState {
-  kratos: V0alpha1Api;
+  kratos: V0alpha2Api;
   session?: Promise<Session>;
 }
 
@@ -16,7 +16,7 @@ export interface SessionOptions {
  * is a promise that attempts to return the current user session.
  */
 export const authentication = ({ publicUrl }: SessionOptions): Middleware => {
-  const kratos = new V0alpha1Api(new Configuration({ basePath: publicUrl }));
+  const kratos = new V0alpha2Api(new Configuration({ basePath: publicUrl }));
 
   return async (ctx, next: () => Promise<void>): Promise<void> => {
     ctx.state.kratos = kratos;

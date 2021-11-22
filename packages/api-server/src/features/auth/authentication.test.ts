@@ -1,4 +1,4 @@
-import { V0alpha1Api } from "@ory/kratos-client";
+import { V0alpha2Api } from "@ory/kratos-client";
 import { createMockContext } from "@shopify/jest-koa-mocks";
 import { Middleware, ParameterizedContext } from "koa";
 import P from "pino";
@@ -17,7 +17,7 @@ describe("authentication()", () => {
   };
 
   beforeEach(async () => {
-    (V0alpha1Api as jest.Mock).mockImplementation(
+    (V0alpha2Api as jest.Mock).mockImplementation(
       () => mockV0alpha1ApiInstance
     );
     instance = authentication({ publicUrl: "" });

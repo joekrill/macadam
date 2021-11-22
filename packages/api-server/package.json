@@ -38,7 +38,7 @@
   "devDependencies": {
     "@mikro-orm/cli": "^4.5.9",
     "@mikro-orm/sqlite": "^4.5.9",
-    "@shopify/jest-koa-mocks": "^3.0.5",
+    "@shopify/jest-koa-mocks": "^3.0.6",
     "@types/ioredis": "^4.27.8",
     "@types/jest": "^27.0.2",
     "@types/koa": "^2.13.4",

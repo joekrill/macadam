@@ -1,3 +1,4 @@
+- (api-server) pino.final is deprecated - figure out what should be done instead (https://github.com/pinojs/pino/issues/1232)
 - (client-web) Remove Logout button from header (use account dropdown?)
 - (client-web) Handle /sessions/whoami 401 response
 - (client-web) Auth forms: auto-focus first field when rendering forms.

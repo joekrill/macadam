@@ -3,22 +3,35 @@ import userEvent from "@testing-library/user-event";
 import { render, screen } from "../../../../test-utils";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 
-const toggleColorModeMock = jest.fn();
+const mockToggleColorMode = jest.fn();
+
+jest.mock("@chakra-ui/react", () => ({
+  ...jest.requireActual("@chakra-ui/react"),
+  useColorMode: jest.fn(),
+  useColorModeValue: jest.fn(),
+}));
+
+let useColorModeSpy: jest.SpyInstance;
 let useColorModeValueSpy: jest.SpyInstance;
 
 beforeEach(() => {
-  toggleColorModeMock.mockReset();
-  jest.spyOn(chakra, "useColorMode").mockImplementation(() => ({
-    toggleColorMode: toggleColorModeMock,
-    colorMode: "dark",
-    setColorMode: jest.fn(),
-  }));
+  mockToggleColorMode.mockReset();
+  useColorModeSpy = jest
+    .spyOn(chakra, "useColorMode")
+    .mockImplementation(() => ({
+      toggleColorMode: mockToggleColorMode,
+      colorMode: "dark",
+      setColorMode: jest.fn(),
+    }));
 
-  useColorModeValueSpy = jest.spyOn(chakra, "useColorModeValue");
+  useColorModeValueSpy = jest
+    .spyOn(chakra, "useColorModeValue")
+    .mockImplementation((_light, dark) => dark);
 });
 
 afterEach(() => {
   useColorModeValueSpy.mockRestore();
+  useColorModeSpy.mockRestore();
 });
 
 test("renders the expected aria label when in dark mode", () => {
@@ -39,5 +52,5 @@ test("toggles color mode when clicked", () => {
   render(<ColorModeSwitcher />);
   const button = screen.getByRole("button");
   userEvent.click(button);
-  expect(toggleColorModeMock).toHaveBeenCalledTimes(1);
+  expect(mockToggleColorMode).toHaveBeenCalledTimes(1);
 });

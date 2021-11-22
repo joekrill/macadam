@@ -12,6 +12,7 @@
 - (client-web) Auth flow: make sure privileged_session_max_age works as expected (https://www.ory.sh/kratos/docs/self-service/flows/user-settings#updating-privileged-fields)
 - (client-web) Auth: password requirements hint (is this currently possible with Kratos?)
 - (client-web) Auth: password strength meter?
+- (client-web) Sentry: use tunnel? (https://docs.sentry.io/platforms/javascript/troubleshooting/#dealing-with-ad-blockers)
 - (api-server) Uploads
 - Audit Log
 - (api-server) Reduce amount of logging output in development

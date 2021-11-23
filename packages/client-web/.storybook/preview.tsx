@@ -15,7 +15,7 @@ import { theme as appTheme } from "../src/features/theme/default";
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
-    exclude: /(^_.*|as)/,
+    exclude: /^_.+$/,
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,

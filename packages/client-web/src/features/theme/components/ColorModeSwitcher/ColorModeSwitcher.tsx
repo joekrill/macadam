@@ -7,7 +7,7 @@ import {
 import { FaMoon, FaSun } from "react-icons/fa";
 import { useIntl } from "react-intl";
 
-type ColorModeSwitcherProps = Omit<IconButtonProps, "aria-label">;
+export type ColorModeSwitcherProps = Omit<IconButtonProps, "aria-label">;
 
 export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = (props) => {
   const { formatMessage } = useIntl();

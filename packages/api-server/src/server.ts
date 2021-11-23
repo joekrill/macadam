@@ -2,17 +2,18 @@ import { ensure as ensureError } from "errorish";
 import pino from "pino";
 import { createApp } from "./app";
 
-export const logger = pino({ serializers: pino.stdSerializers });
-
-const finalLogger = pino.final(logger);
+export const logger = pino(
+  { serializers: pino.stdSerializers },
+  pino.destination({ sync: false })
+);
 
 process.on("uncaughtException", (error) => {
-  finalLogger.error(error, "uncaughtException");
+  logger.error(error, "uncaughtException");
   process.exit(1);
 });
 
 process.on("unhandledRejection", (reason, promise) => {
-  finalLogger.error({ reason, promise }, "unhandledRejection");
+  logger.error({ reason, promise }, "unhandledRejection");
   process.exit(1);
 });
 
@@ -32,12 +33,12 @@ const port = parseInt(PORT || "", 10) || 4000;
 const host = LISTEN_ADDRESS || "0.0.0.0";
 
 if (typeof DB_URL !== "string") {
-  finalLogger.error("DB_URL environment variable not supplied");
+  logger.error("DB_URL environment variable not supplied");
   process.exit(2);
 }
 
 if (typeof KRATOS_PUBLIC_URL !== "string") {
-  finalLogger.error("KRATOS_PUBLIC_URL environment variable not supplied");
+  logger.error("KRATOS_PUBLIC_URL environment variable not supplied");
   process.exit(2);
 }
 
@@ -65,7 +66,7 @@ if (typeof KRATOS_PUBLIC_URL !== "string") {
       );
     });
   } catch (error) {
-    finalLogger.error(ensureError(error), "Error running server");
+    logger.error(ensureError(error), "Error running server");
     process.exit(1);
   }
 })();

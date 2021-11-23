@@ -3,16 +3,19 @@ import {
   theme as chakraDefaultTheme,
   useColorMode,
 } from "@chakra-ui/react";
+import { action } from "@storybook/addon-actions";
 import { StoryContext } from "@storybook/react";
 import { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { IntlProvider } from "react-intl";
+import { Provider as ReduxProvider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
 import { theme as appTheme } from "../src/features/theme/default";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
+    exclude: /(^_.*|as)/,
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
@@ -124,6 +127,25 @@ const withIntl = (StoryFn: Function) => (
   </IntlProvider>
 );
 
+const withRedux = (StoryFn: Function, context: StoryContext) => (
+  <ReduxProvider
+    store={{
+      dispatch: (a) => {
+        action("dispatch");
+        return a;
+      },
+      getState: () => context.parameters.state,
+      replaceReducer: () => 0,
+      subscribe: () => () => 0,
+      [Symbol.observable]() {
+        return this;
+      },
+    }}
+  >
+    <StoryFn />
+  </ReduxProvider>
+);
+
 export const decorators = [
   withColorMode,
   withTheme,
@@ -131,4 +153,5 @@ export const decorators = [
   withHelmet,
   withRouter,
   withIntl,
+  withRedux,
 ];

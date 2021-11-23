@@ -5,7 +5,7 @@ import { FormattedMessage } from "react-intl";
 import {
   ErrorAlert,
   ErrorAlertProps,
-} from "../../errors/components/ErrorAlert";
+} from "../../errors/components/ErrorAlert/ErrorAlert";
 import { useFlowError } from "../hooks/useFlowError";
 import {
   ERROR_SESSION_ALREADY_AVAILABLE,

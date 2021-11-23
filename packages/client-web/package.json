@@ -30,7 +30,7 @@
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-links": "^6.3.12",
     "@storybook/node-logger": "^6.3.12",
-    "@storybook/preset-create-react-app": "^4.0.0",
+    "@storybook/preset-create-react-app": "^3",
     "@storybook/react": "^6.3.12",
     "@testing-library/dom": "^8.11.1",
     "@testing-library/jest-dom": "^5.15.0",

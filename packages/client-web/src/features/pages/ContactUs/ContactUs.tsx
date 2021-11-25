@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { Helmet } from "react-helmet-async";
 import { FormattedMessage, useIntl } from "react-intl";
-import { ScrollToTop } from "../../common/components/ScrollToTop/ScrollToTop";
+import { ScrollToTop } from "../../routing/components/ScrollToTop";
 
 export interface ContactUsProps extends ContainerProps {}
 

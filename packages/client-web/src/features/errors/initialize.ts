@@ -6,7 +6,7 @@ import {
 } from "@sentry/integrations";
 import { init, reactRouterV5Instrumentation } from "@sentry/react";
 import { Integrations as TracingIntegrations } from "@sentry/tracing";
-import { history } from "../history/history";
+import { history } from "../routing/history";
 
 const IS_DEVELOPMENT_ENV = process.env.NODE_ENV === "development";
 

@@ -1,25 +1,30 @@
 import { VStack } from "@chakra-ui/react";
-import { useEffect } from "react";
 import { FormattedMessage } from "react-intl";
-import { useHistory } from "react-router-dom";
-import { useLoginReturnToLocation } from "../../hooks/useLoginReturnToLocation";
+import { Redirect } from "react-router-dom";
+import { useReturnToConsumer } from "../../../routing/hooks/useReturnToConsumer";
 import {
   useRegistrationFlow,
   UseRegistrationFlowOptions,
 } from "../../hooks/useRegistrationFlow";
+import { REGISTRATION_PATH } from "../../hooks/useRegistrationLocation";
 import { FlowError } from "../FlowError";
 import { FlowHeading } from "../FlowHeading";
 import { FlowLoadingSpinner } from "../FlowLoadingSpinner";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
-import { LoginLink } from "../LoginLink";
+import { LoginLink, LOGIN_PATH } from "../LoginLink";
 import { SelfServiceUiMessageList } from "../SelfServiceUi/SelfServiceUiMessageList";
 import { RegistrationForm } from "./RegistrationForm";
 
 export interface RegistrationProps extends UseRegistrationFlowOptions {}
 
-export const Registration = ({ flowId, returnTo }: RegistrationProps) => {
-  const history = useHistory();
-  const returnToState = useLoginReturnToLocation();
+export const Registration = ({
+  flowId,
+  returnTo: returnToProp,
+}: RegistrationProps) => {
+  const returnTo = useReturnToConsumer({
+    preferred: returnToProp,
+    forbid: [LOGIN_PATH, REGISTRATION_PATH],
+  });
 
   const {
     error,
@@ -30,16 +35,11 @@ export const Registration = ({ flowId, returnTo }: RegistrationProps) => {
     restart,
     restartReason,
     submit,
-  } = useRegistrationFlow({ flowId, returnTo });
-
-  useEffect(() => {
-    if (isSuccessful) {
-      history.push(returnTo || returnToState);
-    }
-  }, [isSuccessful, history, returnTo, returnToState]);
+  } = useRegistrationFlow({ flowId, returnTo: returnToProp });
 
   return (
     <VStack align="stretch" spacing="4">
+      {isSuccessful && <Redirect to={returnTo || "/"} />}
       <FlowHeading
         title={
           <FormattedMessage

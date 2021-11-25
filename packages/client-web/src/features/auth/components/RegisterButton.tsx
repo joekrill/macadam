@@ -1,36 +1,33 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
-import { useLoginReturnToLocation } from "../hooks/useLoginReturnToLocation";
+import { useRegistrationLocation } from "../hooks/useRegistrationLocation";
 import { useSession } from "../hooks/useSession";
 
-export interface SignUpButtonProps extends ButtonProps {
+export interface RegisterButtonProps extends ButtonProps {
   onLogoutComplete?: () => void;
 }
 
-export const SignUpButton = ({
+export const RegisterButton = ({
   children,
   onClick,
   onLogoutComplete,
   isDisabled,
   ...props
-}: SignUpButtonProps) => {
-  const returnTo = useLoginReturnToLocation();
+}: RegisterButtonProps) => {
+  const to = useRegistrationLocation();
   const { isUnknown } = useSession();
 
   return (
     <Button
       {...props}
       as={RouterLink}
-      to={{
-        pathname: "/auth/registration",
-        state: { returnTo },
-      }}
+      to={to}
       isDisabled={isDisabled || isUnknown}
     >
       {children || (
         <FormattedMessage
-          id="auth.signUpButton.label"
+          id="auth.registerButton.content"
           defaultMessage="Sign Up"
         />
       )}

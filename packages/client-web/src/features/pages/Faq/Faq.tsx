@@ -9,7 +9,7 @@ import {
 import { Helmet } from "react-helmet-async";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import { FormattedMessage, useIntl } from "react-intl";
-import { ScrollToTop } from "../../common/components/ScrollToTop/ScrollToTop";
+import { ScrollToTop } from "../../routing/components/ScrollToTop";
 
 export interface FaqProps extends ContainerProps {}
 

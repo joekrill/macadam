@@ -1,50 +1,89 @@
+import { skipToken } from "@reduxjs/toolkit/dist/query";
 import { Meta, Story } from "@storybook/react";
-import { Header, HeaderContext, HeaderProps } from "./Header";
+import { UseSessionContext } from "../../../auth/hooks/useSession";
+import { LocaleSelectContext } from "../../../i18n/components/LocaleSelect";
+import { Header, HeaderProps } from "./Header";
 
 export default {
-  title: "Common/Header",
+  title: "common/Header",
   component: Header,
   parameters: {
     layout: "fullscreen",
   },
   argTypes: {
-    isFetchingIdentity: {
+    email: {
+      defaultValue: "jdoe@example.com",
+      control: { type: "text" },
+    },
+    firstName: {
+      defaultValue: "Jane",
+      control: { type: "text" },
+    },
+    isLoadingSession: {
+      defaultValue: false,
       control: { type: "boolean" },
     },
-    hasIdentity: {
+    isLoggedIn: {
+      defaultValue: false,
       control: { type: "boolean" },
     },
-    username: {
+    lastName: {
+      defaultValue: "Doe",
       control: { type: "text" },
     },
   },
 } as Meta;
 
 interface StoryProps {
-  hasIdentity: boolean;
-  isFetchingIdentity: boolean;
-  username: string;
+  email?: string;
+  firstName?: string;
+  isLoadingSession: boolean;
+  isLoggedIn: boolean;
+  lastName?: string;
 }
 
 const Template: Story<HeaderProps & StoryProps> = ({
-  username = "someone",
-  hasIdentity = false,
-  isFetchingIdentity = false,
-  ...args
+  email,
+  firstName,
+  isLoadingSession,
+  isLoggedIn,
+  lastName,
+  ...props
 }) => (
-  <HeaderContext.Provider
+  <LocaleSelectContext.Provider
     value={{
-      useSession: () =>
-        ({
-          isLoggedIn: hasIdentity,
-          isLoggedOut: !hasIdentity,
-          isLoading: isFetchingIdentity,
-          username,
-        } as any),
+      selectCurrentLocale: () => "en",
+      selectPendingLocale: () => undefined,
     }}
   >
-    <Header {...args} />
-  </HeaderContext.Provider>
+    <UseSessionContext.Provider
+      value={{
+        selectIdentity: () =>
+          isLoggedIn
+            ? {
+                id: "",
+                schema_id: "",
+                schema_url: "",
+                state: null,
+                traits: {
+                  email: email || "",
+                  name: {
+                    first: firstName,
+                    last: lastName,
+                  },
+                },
+              }
+            : undefined,
+        selectIsVerified: () => true,
+        selectSession: () =>
+          isLoggedIn && !isLoadingSession ? { id: "" } : undefined,
+        selectSessionLastUpdated: () => (isLoadingSession ? undefined : 1),
+        whoamiQueryArg: skipToken,
+      }}
+    >
+      <Header {...props} />
+    </UseSessionContext.Provider>
+  </LocaleSelectContext.Provider>
 );
 
 export const Default = Template.bind({});

@@ -4,7 +4,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { action } from "@storybook/addon-actions";
-import { StoryContext } from "@storybook/react";
+import { Parameters, StoryContext } from "@storybook/react";
 import { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { IntlProvider } from "react-intl";
@@ -12,17 +12,44 @@ import { Provider as ReduxProvider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
 import { theme as appTheme } from "../src/features/theme/default";
 
-export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+/**
+ * Helpful links:
+ * - Storybook for React: https://storybook.js.org/docs/react/get-started/introduction
+ * - Actions: https://storybook.js.org/docs/react/essentials/actions
+ * - Controls: https://storybook.js.org/docs/react/essentials/controls
+ *   - Types: https://storybook.js.org/docs/react/essentials/controls#annotation
+ * - Icons: https://storybook.js.org/docs/react/workflows/faq#what-icons-are-available-for-my-toolbar-or-my-addon
+ */
+
+export const parameters: Parameters = {
+  actions: {
+    // Identify any prop that starts with `on` as an event handlers that
+    // will display in a story as an action.
+    argTypesRegex: "^on[A-Z].*",
+  },
+  argTypes: {
+    // By default hide the `as` prop that most Chakra components provide.
+    // This can re-enabled on a per-component basis by using:
+    // `argTypes: { as: { table: { disable: false } } }` in the story
+    // configuration.
+    as: { table: { disable: true } },
+  },
   controls: {
+    // hide all props that start with an underscore. These are usually Psuedo
+    // props provided by chakra for most components.
+    // See: https://chakra-ui.com/docs/features/style-props#pseudo
     exclude: /^_.+$/,
     matchers: {
-      color: /(background|color)$/i,
+      // Use the "color" control for components that match this regex
+      color: /(color|background|bg|fill|stroke)$/i,
+      // Use the "date" control for components that match this regex
       date: /Date$/,
     },
   },
   options: {
     storySort: {
+      // Ensure that the main application story (packages/client-web/src/app/App.stories.mdx)
+      // is displayed first.
       order: [process.env.REACT_APP_DISPLAY_NAME],
     },
   },
@@ -134,7 +161,7 @@ const withRedux = (StoryFn: Function, context: StoryContext) => (
         action("dispatch");
         return a;
       },
-      getState: () => context.parameters.state,
+      getState: () => context.parameters.state || {},
       replaceReducer: () => 0,
       subscribe: () => () => 0,
       [Symbol.observable]() {

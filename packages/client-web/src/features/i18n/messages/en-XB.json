@@ -286,6 +286,18 @@
       "value": "[!! Ḟŏŕŕŕĝŏṭṭṭ ẏŏŏŏůŕ ṗâśśśśẘŏŏŏŕḋ? !!]"
     }
   ],
+  "auth.registerButton.content": [
+    {
+      "type": 0,
+      "value": "[!! Ṡíĝĝĝń ŨŨŨṗ !!]"
+    }
+  ],
+  "auth.registerLink.content": [
+    {
+      "type": 0,
+      "value": "[!! Ṡíĝĝĝń ŨŨŨṗ !!]"
+    }
+  ],
   "auth.registration.alreadyHaveAccountLink": [
     {
       "type": 0,
@@ -336,12 +348,6 @@
     {
       "type": 0,
       "value": "[!! Ḣâŕŕŕḋẘâââŕè Ṯŏǩǩǩèńśśś âńńńḋ ḂḂḂíŏṁṁṁèṭŕŕŕíćśśś !!]"
-    }
-  ],
-  "auth.signUpButton.label": [
-    {
-      "type": 0,
-      "value": "[!! Ṡíĝĝĝń ŨŨŨṗ !!]"
     }
   ],
   "auth.verification.title": [

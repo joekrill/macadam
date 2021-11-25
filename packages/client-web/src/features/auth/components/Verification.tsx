@@ -1,8 +1,6 @@
 import { VStack } from "@chakra-ui/react";
-import { useEffect } from "react";
 import { FormattedMessage } from "react-intl";
-import { useHistory } from "react-router-dom";
-import { useLoginReturnToLocation } from "../hooks/useLoginReturnToLocation";
+import { Redirect } from "react-router-dom";
 import {
   useVerificationFlow,
   UseVerificationFlowOptions,
@@ -18,9 +16,6 @@ import { SelfServiceUiMessageList } from "./SelfServiceUi/SelfServiceUiMessageLi
 export interface VerificationProps extends UseVerificationFlowOptions {}
 
 export const Verification = ({ flowId, returnTo }: VerificationProps) => {
-  const history = useHistory();
-  const returnToState = useLoginReturnToLocation();
-
   const {
     error,
     flow,
@@ -32,14 +27,9 @@ export const Verification = ({ flowId, returnTo }: VerificationProps) => {
     submit,
   } = useVerificationFlow({ flowId, returnTo });
 
-  useEffect(() => {
-    if (isSuccessful) {
-      history.push(returnTo || returnToState);
-    }
-  }, [isSuccessful, history, returnTo, returnToState]);
-
   return (
     <VStack align="stretch" spacing="4">
+      {isSuccessful && returnTo && <Redirect to={returnTo} />}
       <FlowHeading
         title={
           <FormattedMessage

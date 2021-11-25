@@ -28,7 +28,7 @@ export const AuthPage = () => (
       <Route path="/auth/recovery">
         <RecoveryPage />
       </Route>
-      <Route path="/auth/settings">
+      <Route path="/settings">
         <SettingsPage />
       </Route>
       <Route>

@@ -33,7 +33,7 @@ x-kratos-defaults: &kratos-defaults
     SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://localtest.me
     SELFSERVICE_WHITELISTED_RETURN_URLS: https://localtest.me,http://localtest.me
     SELFSERVICE_FLOWS_ERROR_UI_URL: https://localtest.me/auth/error
-    SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localtest.me/auth/settings
+    SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localtest.me/settings
     SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://localtest.me/auth/recovery
     SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://localtest.me/auth/verification
     # SELFSERVICE_FLOWS_VERIFICATION_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localtest.me/xxx

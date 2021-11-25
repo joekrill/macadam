@@ -1,16 +1,16 @@
-import { useLoginReturnToLocation } from "./useLoginReturnToLocation";
+import { useReturnToProvider } from "../../routing/hooks/useReturnToProvider";
+import { REGISTRATION_PATH } from "./useRegistrationLocation";
 
-const LOGIN_PATH = "/auth/login";
+export const LOGIN_PATH = "/auth/login";
 
-export interface UseLoginLocationOptions {
-  returnTo?: string;
-}
+export const useLoginLocation = () => {
+  const returnTo = useReturnToProvider({
+    forbid: [LOGIN_PATH, REGISTRATION_PATH],
+    fallback: "/",
+  });
 
-export const useLoginLocation = ({
-  returnTo,
-}: UseLoginLocationOptions = {}) => ({
-  state: {
-    returnTo: useLoginReturnToLocation({ returnTo }),
-  },
-  pathname: LOGIN_PATH,
-});
+  return {
+    pathname: LOGIN_PATH,
+    state: returnTo ? { returnTo } : undefined,
+  };
+};

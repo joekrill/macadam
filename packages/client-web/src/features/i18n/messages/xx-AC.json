@@ -286,6 +286,18 @@
       "value": "FORGOT YOUR PASSWORD?"
     }
   ],
+  "auth.registerButton.content": [
+    {
+      "type": 0,
+      "value": "SIGN UP"
+    }
+  ],
+  "auth.registerLink.content": [
+    {
+      "type": 0,
+      "value": "SIGN UP"
+    }
+  ],
   "auth.registration.alreadyHaveAccountLink": [
     {
       "type": 0,
@@ -336,12 +348,6 @@
     {
       "type": 0,
       "value": "HARDWARE TOKENS AND BIOMETRICS"
-    }
-  ],
-  "auth.signUpButton.label": [
-    {
-      "type": 0,
-      "value": "SIGN UP"
     }
   ],
   "auth.verification.title": [

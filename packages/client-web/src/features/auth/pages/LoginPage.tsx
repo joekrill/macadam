@@ -1,7 +1,7 @@
 import { Container } from "@chakra-ui/react";
 import { useMemo } from "react";
 import { Card } from "../../common/components/Card/Card";
-import { useUrlSearchParams } from "../../common/hooks/useUrlSearchParams";
+import { useUrlSearchParams } from "../../routing/hooks/useUrlSearchParams";
 import { Login } from "../components/login/Login";
 import { authenticatorAssuranceLevelSchema } from "../schemas/session";
 

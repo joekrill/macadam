@@ -1,4 +1,6 @@
-- (client-web) Remove Logout button from header (use account dropdown?)
+- (client-web) show notification component whne email address is not verififed
+- (client-web) upgrade to React Router v6 (handle sentry integration, too)
+- (kratos) How to import avatar to profile / make it editable?
 - (client-web) Handle /sessions/whoami 401 response
 - (client-web) Auth forms: auto-focus first field when rendering forms.
 - (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
@@ -9,10 +11,9 @@
 - Handle logins across tabs (use localStorage to signal session changes?)
 - PWA
 - Detect session expiration and handle it somehow (modal login form?)
-- (client-web) Auth flow: make sure privileged_session_max_age works as expected (https://www.ory.sh/kratos/docs/self-service/flows/user-settings#updating-privileged-fields)
 - (client-web) Auth: password requirements hint (is this currently possible with Kratos?)
-- (client-web) Auth: password strength meter?
 - (client-web) Sentry: use tunnel? (https://docs.sentry.io/platforms/javascript/troubleshooting/#dealing-with-ad-blockers)
+- (client-web) ErrorAlert should report errors https://develop.sentry.dev/
 - (api-server) Uploads
 - Audit Log
 - (api-server) Reduce amount of logging output in development
@@ -60,3 +61,4 @@
 - https://github.com/cedrickchee/saas-starter
 - https://gitlab.com/gnaar
 - https://github.com/NoQuarterTeam/boilerplate
+- https://github.com/Saas-Starter-Kit/SAAS-Starter-Kit-Pro

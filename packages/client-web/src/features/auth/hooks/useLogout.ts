@@ -1,7 +1,15 @@
 import { useCallback } from "react";
 import { identityApi } from "../identityApi";
 
-export const useLogout = () => {
+export interface UseLogoutOptions {
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onLogoutComplete?: () => void;
+}
+
+export const useLogout = ({
+  onClick,
+  onLogoutComplete,
+}: UseLogoutOptions = {}) => {
   const [createUrl, urlResult] = identityApi.useCreateLogoutUrlMutation();
   const [logout, logoutResult] = identityApi.useLogoutMutation();
 
@@ -13,8 +21,22 @@ export const useLogout = () => {
     });
   }, [createUrl, logout]);
 
+  const onClickHandler = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      if (onClick) {
+        onClick(e);
+      }
+
+      if (!e.defaultPrevented) {
+        trigger().then(onLogoutComplete);
+      }
+    },
+    [onClick, onLogoutComplete, trigger]
+  );
+
   return {
     trigger,
-    isPending: logoutResult.isLoading || urlResult.isLoading,
+    isLoading: logoutResult.isLoading || urlResult.isLoading,
+    onClick: onClickHandler,
   };
 };

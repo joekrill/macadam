@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
 import { PolicyContainer } from "../../common/components/PolicyContainer/PolicyContainer";
-import { ScrollToTop } from "../../common/components/ScrollToTop/ScrollToTop";
+import { ScrollToTop } from "../../routing/components/ScrollToTop";
 
 export interface PrivacyPolicyProps extends ContainerProps {}
 

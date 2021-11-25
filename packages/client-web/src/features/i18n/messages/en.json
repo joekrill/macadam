@@ -286,6 +286,18 @@
       "value": "Forgot your password?"
     }
   ],
+  "auth.registerButton.content": [
+    {
+      "type": 0,
+      "value": "Sign Up"
+    }
+  ],
+  "auth.registerLink.content": [
+    {
+      "type": 0,
+      "value": "Sign Up"
+    }
+  ],
   "auth.registration.alreadyHaveAccountLink": [
     {
       "type": 0,
@@ -336,12 +348,6 @@
     {
       "type": 0,
       "value": "Hardware Tokens and Biometrics"
-    }
-  ],
-  "auth.signUpButton.label": [
-    {
-      "type": 0,
-      "value": "Sign Up"
     }
   ],
   "auth.verification.title": [

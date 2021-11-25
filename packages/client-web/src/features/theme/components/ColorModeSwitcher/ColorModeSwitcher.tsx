@@ -9,7 +9,10 @@ import { useIntl } from "react-intl";
 
 export type ColorModeSwitcherProps = Omit<IconButtonProps, "aria-label">;
 
-export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = (props) => {
+export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = ({
+  onClick,
+  ...props
+}) => {
   const { formatMessage } = useIntl();
   const { toggleColorMode } = useColorMode();
   const nextMode = useColorModeValue("dark", "light");
@@ -27,7 +30,15 @@ export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = (props) => {
     <IconButton
       variant="ghost"
       color="current"
-      onClick={toggleColorMode}
+      onClick={(e) => {
+        if (onClick) {
+          onClick(e);
+        }
+
+        if (!e.isDefaultPrevented()) {
+          toggleColorMode();
+        }
+      }}
       icon={<SwitchIcon />}
       aria-label={label}
       title={label}

@@ -1,5 +1,5 @@
 import { ComponentProps, ReactNode } from "react";
-import { Redirect, Route } from "react-router";
+import { Redirect, Route } from "react-router-dom";
 import { useLoginLocation } from "../hooks/useLoginLocation";
 import { useSession } from "../hooks/useSession";
 

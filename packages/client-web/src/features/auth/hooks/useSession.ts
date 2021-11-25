@@ -1,19 +1,37 @@
+import { skipToken } from "@reduxjs/toolkit/dist/query";
+import { createContext, useContext } from "react";
 import { useAppSelector } from "../../../app/hooks";
-import { invalidateSession, useWhoamiQuery } from "../identityApi";
+import { useWhoamiQuery } from "../identityApi";
 import { selectIdentity } from "../selectors/selectIdentity";
 import { selectIsVerified } from "../selectors/selectIsVerified";
 import { selectSession } from "../selectors/selectSession";
+import { selectSessionLastUpdated } from "../selectors/selectSessionLastUpdated";
+
+export const UseSessionContext = createContext({
+  selectSession,
+  selectIdentity,
+  selectIsVerified,
+  selectSessionLastUpdated,
+  whoamiQueryArg: undefined as void | typeof skipToken,
+});
+
+// REVISIT: Refreshing session based on user activity? https://github.com/ory/kratos/issues/615
 
 export const useSession = () => {
-  // REVISIT: Refreshing session based on user activity? https://github.com/ory/kratos/issues/615
-  const session = useAppSelector((state) => selectSession(state));
-  const identity = useAppSelector((state) => selectIdentity(state));
-  const isVerified = useAppSelector((state) => selectIsVerified(state));
-  const lastUpdated = useAppSelector((state) => state.identity.lastUpdated);
+  // This allows us to mock out various scenarios for Stories and testing
+  const ctx = useContext(UseSessionContext);
 
-  const whoamiQuery = useWhoamiQuery(undefined, {
-    skip: lastUpdated !== undefined,
-  });
+  useWhoamiQuery(ctx.whoamiQueryArg);
+
+  const session = useAppSelector((state) => ctx.selectSession(state));
+  const identity = useAppSelector((state) => ctx.selectIdentity(state));
+  const isVerified = useAppSelector((state) => ctx.selectIsVerified(state));
+  const lastUpdated = useAppSelector((state) =>
+    ctx.selectSessionLastUpdated(state)
+  );
+
+  const { name, email } = identity?.traits || {};
+  const { first, last } = name || {};
 
   return {
     /**
@@ -33,8 +51,8 @@ export const useSession = () => {
 
     isVerified,
 
-    username: identity?.traits?.email,
-    refetch: whoamiQuery.refetch,
-    invalidate: invalidateSession,
+    username: email,
+    email,
+    fullName: [first, last].filter(Boolean).join(" "),
   };
 };

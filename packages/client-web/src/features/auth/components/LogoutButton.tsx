@@ -7,23 +7,18 @@ export interface LogoutButtonProps extends ButtonProps {
 }
 
 export const LogoutButton = forwardRef<LogoutButtonProps, "button">(
-  ({ children, onClick, onLogoutComplete, isDisabled, ...props }, ref) => {
-    const { trigger, isPending } = useLogout();
+  ({ children, onClick, onLogoutComplete, ...props }, ref) => {
+    const { onClick: onClickHandler, isLoading } = useLogout({
+      onClick,
+      onLogoutComplete,
+    });
 
     return (
       <Button
         ref={ref}
         {...props}
-        onClick={(e) => {
-          if (onClick) {
-            onClick(e);
-          }
-
-          if (!e.defaultPrevented) {
-            trigger().then(onLogoutComplete);
-          }
-        }}
-        isDisabled={isDisabled || isPending}
+        onClick={onClickHandler}
+        isLoading={isLoading}
       >
         {children || (
           <FormattedMessage

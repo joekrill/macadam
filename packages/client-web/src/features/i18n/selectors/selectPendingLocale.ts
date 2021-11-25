@@ -1,3 +1,4 @@
 import { RootState } from "../../../app/store";
 
-export const selectPendingLocale = ({ i18n }: RootState) => i18n.pendingLocale;
+export const selectPendingLocale = (state: RootState) =>
+  state?.i18n.pendingLocale;

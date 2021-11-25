@@ -280,6 +280,18 @@
       "value": "Forgot your password?SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "auth.registerButton.content": [
+    {
+      "type": 0,
+      "value": "Sign UpSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.registerLink.content": [
+    {
+      "type": 0,
+      "value": "Sign UpSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "auth.registration.alreadyHaveAccountLink": [
     {
       "type": 0,
@@ -330,12 +342,6 @@
     {
       "type": 0,
       "value": "Hardware Tokens and BiometricsSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.signUpButton.label": [
-    {
-      "type": 0,
-      "value": "Sign UpSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "auth.verification.title": [

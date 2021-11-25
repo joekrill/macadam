@@ -3128,9 +3128,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/intl@npm:1.15.2":
-  version: 1.15.2
-  resolution: "@formatjs/intl@npm:1.15.2"
+"@formatjs/intl@npm:1.16.0":
+  version: 1.16.0
+  resolution: "@formatjs/intl@npm:1.16.0"
   dependencies:
     "@formatjs/ecma402-abstract": 1.10.0
     "@formatjs/fast-memoize": 1.2.0
@@ -3144,7 +3144,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: f69709d58a96eedd5eada3e0082bfd7b2d3fadf0f8fc61b32c8461b88ba7bd576c0641aa038edcada51dcba7331e0c08386a85348a98bae0085057ed01e6e1d6
+  checksum: ef11ab5a2ed135ca165d22e44ebd44c6ebef59eb44a4c268ce6ac89c48579810c6b8a5fb6da2978e9ef7bb722d395dbc4012c430d1806da36f4d98181508425a
   languageName: node
   linkType: hard
 
@@ -3709,7 +3709,7 @@ __metadata:
     eslint: ^8.3.0
     husky: ^7.0.4
     lint-staged: ^11.2.6
-    prettier: 2.4.1
+    prettier: 2.5.0
     typescript: ^4.4.4
   dependenciesMeta:
     open@7.4.2:
@@ -4287,13 +4287,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shopify/jest-koa-mocks@npm:^3.0.6":
-  version: 3.0.6
-  resolution: "@shopify/jest-koa-mocks@npm:3.0.6"
+"@shopify/jest-koa-mocks@npm:^3.0.8":
+  version: 3.0.8
+  resolution: "@shopify/jest-koa-mocks@npm:3.0.8"
   dependencies:
     koa: ^2.5.0
     node-mocks-http: ^1.5.8
-  checksum: 6f7661b7b9ee88218d3b816651f2fb88488aad4bf7d86d677044f258bdb6552a2d4fb8159324ea4088a163e98b370a2f5c9db75e4055522029bfaac86ceefdb5
+  checksum: 1e1de36377cf50d87700bbd3353b56f22a4eb5787e352014ddf500dfdb80327127cae5584ce5340c79b2bcb8a6bb8f84eabaac41c159df0e1c34ea4b3cebf12c
   languageName: node
   linkType: hard
 
@@ -5318,7 +5318,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/preset-create-react-app@npm:^3":
+"@storybook/preset-create-react-app@npm:^3.2.0":
   version: 3.2.0
   resolution: "@storybook/preset-create-react-app@npm:3.2.0"
   dependencies:
@@ -5752,9 +5752,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:^5.15.0":
-  version: 5.15.0
-  resolution: "@testing-library/jest-dom@npm:5.15.0"
+"@testing-library/jest-dom@npm:^5.15.1":
+  version: 5.15.1
+  resolution: "@testing-library/jest-dom@npm:5.15.1"
   dependencies:
     "@babel/runtime": ^7.9.2
     "@types/testing-library__jest-dom": ^5.9.1
@@ -5765,7 +5765,7 @@ __metadata:
     dom-accessibility-api: ^0.5.6
     lodash: ^4.17.15
     redent: ^3.0.0
-  checksum: fb11af2462b28bdcbbddf199f58e7f9153358358e2ec47dba311f21d88014351cc31087560e9cbacbccc78063e455361efffb31be6242edd1dbd2e21bb3f4359
+  checksum: c9fba26f9a31c17143933537e16b55fdabbf065710f96f4c4be42de682651208d89361ac55bc68247610d9973ee37736f2a9911b50431d230f480b86379c2350
   languageName: node
   linkType: hard
 
@@ -6304,12 +6304,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/koa__router@npm:^8.0.9":
-  version: 8.0.9
-  resolution: "@types/koa__router@npm:8.0.9"
+"@types/koa__router@npm:^8.0.10":
+  version: 8.0.10
+  resolution: "@types/koa__router@npm:8.0.10"
   dependencies:
     "@types/koa": "*"
-  checksum: dddecbc01b2d41d929d09e7f4c00b59a229071dc4a3eb2375f815478c65fbc3b1b2a93f2a88e23439245e60dcbd310aca0d339a0fa992b8cb6e36200b932ad1d
+  checksum: dec5907e1bc79a3206afa0823ca0500fda13747d2966302ac456c9ed70cfc7591a7f6ea3efd4adffede40dcd9fb2132bb059e7f263ba79575e9c87c9fdbd263f
   languageName: node
   linkType: hard
 
@@ -6425,10 +6425,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.11.9":
-  version: 16.11.9
-  resolution: "@types/node@npm:16.11.9"
-  checksum: baec2e6471ee58fd1e9874e6f47ab95a918a0f46b42424392e4c13e3e07f078f8b72b6b48073b0b14f710ed66c5f1b2e497df43f28151000f11f5f299382cfe2
+"@types/node@npm:^16.11.10":
+  version: 16.11.10
+  resolution: "@types/node@npm:16.11.10"
+  checksum: 9c79419c5c3d92d5825bffa30f3668533f598d8b63a73ea7fc24e47f162bdbed92b0f8e4f4261cc3314b39cee050e303366d2aa154abc95c63a572a110b8c160
   languageName: node
   linkType: hard
 
@@ -6610,14 +6610,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^17.0.36":
-  version: 17.0.36
-  resolution: "@types/react@npm:17.0.36"
+"@types/react@npm:^17.0.37":
+  version: 17.0.37
+  resolution: "@types/react@npm:17.0.37"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: feeaa484d5d7e354ba6830b06342dec6fd1a2ac87f73d21d3d4f2a3d311459de4090330a1e8af7275c8d1e7737b655a7550c8dd3dbc74ccf34ffd3fc824bbd12
+  checksum: e68b0d59aa69577fc6a6d654b25d5d8408625498f4c483f160b557fac21e840f6e8807cbde93e9f039949b6d624a019b1990d18499c1d65aecf3605c25e30242
   languageName: node
   linkType: hard
 
@@ -7820,20 +7820,20 @@ __metadata:
     "@mikro-orm/sqlite": ^4.5.9
     "@ory/kratos-client": 0.8.0-alpha.2
     "@sentry/node": ^6.15.0
-    "@shopify/jest-koa-mocks": ^3.0.6
+    "@shopify/jest-koa-mocks": ^3.0.8
     "@types/ioredis": ^4.28.1
     "@types/jest": ^27.0.3
     "@types/koa": ^2.13.4
     "@types/koa-bodyparser": ^4.3.4
     "@types/koa-compose": ^3.2.5
     "@types/koa__cors": ^3.0.3
-    "@types/koa__router": ^8.0.9
-    "@types/node": ^16.11.9
+    "@types/koa__router": ^8.0.10
+    "@types/node": ^16.11.10
     "@types/pino": ^7.0.5
     "@types/supertest": ^2.0.11
     "@types/uuid": ^8.3.3
     errorish: ^1.0.0
-    ioredis: ^4.28.0
+    ioredis: ^4.28.1
     jest: ^27.3.1
     jest-mock-axios: ^4.4.1
     koa: ^2.13.4
@@ -7841,7 +7841,7 @@ __metadata:
     koa-compose: ^4.1.0
     koa-helmet: ^6.1.0
     nodemon: ^2.0.15
-    pino: ^7.3.0
+    pino: ^7.4.1
     pino-pretty: ^7.2.0
     prom-client: ^14.0.1
     rate-limiter-flexible: ^2.3.5
@@ -9695,16 +9695,16 @@ __metadata:
     "@storybook/addon-essentials": ^6.3.12
     "@storybook/addon-links": ^6.3.12
     "@storybook/node-logger": ^6.3.12
-    "@storybook/preset-create-react-app": ^3
+    "@storybook/preset-create-react-app": ^3.2.0
     "@storybook/react": ^6.3.12
     "@testing-library/dom": ^8.11.1
-    "@testing-library/jest-dom": ^5.15.0
+    "@testing-library/jest-dom": ^5.15.1
     "@testing-library/react": ^12.1.2
     "@testing-library/user-event": ^13.5.0
     "@types/history": ^4.7.9
     "@types/jest": ^27.0.3
-    "@types/node": ^16.11.9
-    "@types/react": ^17.0.36
+    "@types/node": ^16.11.10
+    "@types/react": ^17.0.37
     "@types/react-dom": ^17.0.11
     "@types/react-redux": ^7.1.20
     "@types/react-router": ^5.1.17
@@ -9720,7 +9720,7 @@ __metadata:
     react-dom: ^17.0.2
     react-helmet-async: ^1.1.2
     react-icons: ^4.3.1
-    react-intl: ^5.21.2
+    react-intl: ^5.22.0
     react-redux: ^7.2.6
     react-router: ^5.2.1
     react-router-dom: ^5.3.0
@@ -14921,9 +14921,9 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"ioredis@npm:^4.28.0":
-  version: 4.28.0
-  resolution: "ioredis@npm:4.28.0"
+"ioredis@npm:^4.28.1":
+  version: 4.28.1
+  resolution: "ioredis@npm:4.28.1"
   dependencies:
     cluster-key-slot: ^1.1.0
     debug: ^4.3.1
@@ -14936,7 +14936,7 @@ fsevents@^1.2.7:
     redis-errors: ^1.2.0
     redis-parser: ^3.0.0
     standard-as-callback: ^2.1.0
-  checksum: d6951d3df93b94a8716090f233ccc9124fe82a244965ac695835a7d4d1795ca28025ef91abfbc014cce63b96112badfc216b8d91827722ddc406f10bd221b6ab
+  checksum: aa86fd81e71176bf6e14d5fc20bad18324ed34d70803eac8cd1c6f25cc9f61f98a337a28bf95103f6f4336583e830b735f4049ed91fc36734fed65850947f428
   languageName: node
   linkType: hard
 
@@ -19997,7 +19997,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pino@npm:*, pino@npm:^7.3.0":
+"pino@npm:*":
   version: 7.3.0
   resolution: "pino@npm:7.3.0"
   dependencies:
@@ -20015,6 +20015,27 @@ fsevents@^1.2.7:
   bin:
     pino: bin.js
   checksum: e4cb01e26955f5287c43f5afa14623c0dc1c3d34aef1277316767d55c6e87bc31920ca9926bc8d02389fb605eb9a2a278bff9954b9ba933c980791803af72d7b
+  languageName: node
+  linkType: hard
+
+"pino@npm:^7.4.1":
+  version: 7.4.1
+  resolution: "pino@npm:7.4.1"
+  dependencies:
+    fast-redact: ^3.0.0
+    fastify-warning: ^0.2.0
+    get-caller-file: ^2.0.5
+    on-exit-leak-free: ^0.2.0
+    pino-abstract-transport: v0.5.0
+    pino-std-serializers: ^4.0.0
+    quick-format-unescaped: ^4.0.3
+    real-require: ^0.1.0
+    safe-stable-stringify: ^2.1.0
+    sonic-boom: ^2.2.1
+    thread-stream: ^0.13.0
+  bin:
+    pino: bin.js
+  checksum: 270726cd5406dc52da9d4c2f5c49e51cdb8370e4e3b7ed29323c55297cb32374f8a7d1c2099e1b5345ef5023bf62dd3fccff833f845104a3d241f815301eea09
   languageName: node
   linkType: hard
 
@@ -21062,12 +21083,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.4.1":
-  version: 2.4.1
-  resolution: "prettier@npm:2.4.1"
+"prettier@npm:2.5.0":
+  version: 2.5.0
+  resolution: "prettier@npm:2.5.0"
   bin:
     prettier: bin-prettier.js
-  checksum: cc6830588b401b0d742862fe9c46bc9118204fb307c3abe0e49e95b35ed23629573807ffdf9cdd65289c252a0bb51fc0171437f6626ee36378dea80f0ee80b91
+  checksum: aad1b35b73e7c14596d389d90977a83dad0db689ba5802a0ef319c357b7867f55b885db197972aa6a56c30f53088c9f8e0d7f7930ae074c275a4e9cbe091d21d
   languageName: node
   linkType: hard
 
@@ -21829,13 +21850,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"react-intl@npm:^5.21.2":
-  version: 5.21.2
-  resolution: "react-intl@npm:5.21.2"
+"react-intl@npm:^5.22.0":
+  version: 5.22.0
+  resolution: "react-intl@npm:5.22.0"
   dependencies:
     "@formatjs/ecma402-abstract": 1.10.0
     "@formatjs/icu-messageformat-parser": 2.0.14
-    "@formatjs/intl": 1.15.2
+    "@formatjs/intl": 1.16.0
     "@formatjs/intl-displaynames": 5.2.5
     "@formatjs/intl-listformat": 6.3.5
     "@types/hoist-non-react-statics": ^3.3.1
@@ -21849,7 +21870,7 @@ fsevents@^1.2.7:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 59ec5721243b4482c917cd82dd552aa17f3efe4be1ae633eea071b3a1d815d6aeaedc350acce598910f5ec2d73a45a186bb43f884d8c3c84de8db4576baa5e07
+  checksum: b884dd1bdef3a895c40bf322cd39407922daebbac774587c8ce9531a05f0a665ca412280436512849877b1ff86f243de1300ce525bbb9718a47d7455126f254e
   languageName: node
   linkType: hard
 

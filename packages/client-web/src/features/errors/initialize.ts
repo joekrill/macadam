@@ -1,10 +1,13 @@
 import {
-  Dedupe,
   ExtraErrorData,
   Offline,
   ReportingObserver,
 } from "@sentry/integrations";
-import { init, reactRouterV5Instrumentation } from "@sentry/react";
+import {
+  defaultIntegrations,
+  init,
+  reactRouterV5Instrumentation,
+} from "@sentry/react";
 import { Integrations as TracingIntegrations } from "@sentry/tracing";
 import { history } from "../routing/history";
 
@@ -22,6 +25,8 @@ init({
   }`,
 
   integrations: [
+    ...defaultIntegrations,
+
     new TracingIntegrations.BrowserTracing({
       routingInstrumentation: reactRouterV5Instrumentation(history),
     }),
@@ -29,9 +34,6 @@ init({
     // Extracts all non-native attributes from the Error object and attaches
     // them to the event as the extra data.
     new ExtraErrorData(),
-
-    //  deduplicates certain events;
-    new Dedupe(),
 
     // attempts to save events to the web browser's client-side storage when
     // the browser reports being offline, then automatically uploads events when

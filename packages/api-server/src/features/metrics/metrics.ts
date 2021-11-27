@@ -38,7 +38,7 @@ export const metricsRoutes = ({ path }: MetricsRoutesOptions) => {
       ctx.set("Content-Type", ctx.state.metricsRegister.contentType);
       ctx.body = await ctx.state.metricsRegister.metrics();
     } else {
-      ctx.throw(500, "metricsRegister not defined on state");
+      ctx.throw(500, "metricsRegister was not defined");
     }
   });
 

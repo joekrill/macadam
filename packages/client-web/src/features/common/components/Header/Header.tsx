@@ -7,8 +7,8 @@ import {
   Icon,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { FaRegGem } from "react-icons/fa";
 import { Link as RouterLink } from "react-router-dom";
+import { ReactComponent as Logo } from "../../../../app/Logo.svg";
 import { LoginButton } from "../../../auth/components/LoginButton";
 import { RegisterButton } from "../../../auth/components/RegisterButton";
 import { useSession } from "../../../auth/hooks/useSession";
@@ -23,8 +23,8 @@ export const Header = (props: HeaderProps) => {
 
   return (
     <chakra.header
-      bg={useColorModeValue("gray.50", "gray.700")}
-      color={useColorModeValue("gray.1z00", "gray.200")}
+      bg={useColorModeValue("gray.500", "gray.700")}
+      color={useColorModeValue("gray.100", "gray.200")}
       w="full"
       px={{ base: 2, sm: 4 }}
       py={2}
@@ -38,7 +38,7 @@ export const Header = (props: HeaderProps) => {
             color="current"
             colorScheme="blackAlpha"
             to="/"
-            leftIcon={<Icon as={FaRegGem} />}
+            leftIcon={<Icon as={Logo} boxSize={20} />}
           >
             {process.env.REACT_APP_DISPLAY_NAME}
           </Button>
@@ -50,7 +50,7 @@ export const Header = (props: HeaderProps) => {
               <LoginButton size="sm" />
             </>
           )}
-          <LocaleSelect />
+          <LocaleSelect size="sm" />
           <ColorModeSwitcher justifySelf="flex-end" />
           {isLoggedIn && <CurrentUserMenu />}
         </HStack>

@@ -11,21 +11,12 @@ In order to use this Macadam for a real project, fork it and make the following 
   - ☐ `author`
   - ☐ `license`
 - ☐ `/packages/client-web`:
-  - ☐ Update `/packages/client-web/.env`:
-    - ☐ `REACT_APP_DISPLAY_NAME`
-  - ☐ Customize `public/favicon.ico`
-  - ☐ Customize `public/logo192.png` and `public/logo512.png`
-  - ☐ Update `index.html`:
-    - ☐ meta `theme-color`
-    - ☐ meta `description`
-  - ☐ Update `manifest.json`:
-    - ☐ `short_name`
-    - ☐ `name`
-    - ☐ `theme_color`
-    - ☐ `background_color`
+  - ☐ Update `.env` values
+  - ☐ Customize `src/app/Logo.svg`
+  - ☐ Run `yarn run favicons` to generate icons/manifests from `src/app/Logo.svg`
   - ☐ Customize `PrivacyPolicy.tsx`, `TermsAndConditions.tsx`:
     - https://www.termsfeed.com/
     - https://termly.io/
     - https://www.iubenda.com
     - https://getterms.io/
-  - Update/add social media links: `packages/client-web/src/features/common/components/Footer/SocialMediaLinks.tsx`
+  - Update/add social media links: `src/features/common/components/Footer/SocialMediaLinks.tsx`

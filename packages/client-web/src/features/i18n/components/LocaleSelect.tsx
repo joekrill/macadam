@@ -1,4 +1,4 @@
-import { Select, Spinner } from "@chakra-ui/react";
+import { Select, SelectProps, Spinner } from "@chakra-ui/react";
 import { createContext, useContext } from "react";
 import { useIntl } from "react-intl";
 import { useSelector } from "react-redux";
@@ -13,10 +13,12 @@ export const LocaleSelectContext = createContext({
   selectPendingLocale,
 });
 
+export interface LocaleSelectProps extends SelectProps {}
+
 /**
  * Renders a dropdown for selecting the active locale for the application.
  */
-export const LocaleSelect = () => {
+export const LocaleSelect = (props: LocaleSelectProps) => {
   const context = useContext(LocaleSelectContext);
   const currentLocale = useSelector((state) =>
     context.selectCurrentLocale(state)
@@ -29,6 +31,7 @@ export const LocaleSelect = () => {
 
   return (
     <Select
+      {...props}
       value={pendingLocale || currentLocale}
       onChange={(event) => dispatch(setLocale(event.target.value as Locale))}
       icon={pendingLocale ? <Spinner /> : undefined}

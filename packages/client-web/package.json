@@ -42,10 +42,14 @@
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "@types/testing-library__jest-dom": "^5.14.1",
+    "dotenv": "^10.0.0",
+    "dotenv-expand": "^5.1.0",
     "eslint-config-react-app": "^6.0.0",
+    "favicons": "^6.2.2",
     "framer-motion": "^4.1.17",
     "history": "^4.10.1",
     "plausible-tracker": "^0.3.4",
+    "prettier": "^2.5.0",
     "react": "^17.0.2",
     "react-app-polyfill": "^2.0.0",
     "react-dom": "^17.0.2",
@@ -59,6 +63,7 @@
     "redux": "^4.1.2",
     "snakecase-keys": "^5.1.2",
     "source-map-explorer": "^2.5.2",
+    "ts-node": "^10.4.0",
     "typescript": "^4.4.4",
     "web-vitals": "^2.1.2",
     "zod": "^3.11.6"
@@ -83,7 +88,8 @@
     "i18n:compile:pseudo:xxac": "formatjs compile 'translations/en.json' --ast --pseudo-locale xx-AC --out-file src/features/i18n/messages/xx-AC.json",
     "i18n:compile:pseudo:xxha": "formatjs compile 'translations/en.json' --ast --pseudo-locale xx-HA --out-file src/features/i18n/messages/xx-HA.json",
     "i18n:compile:pseudo": "yarn run i18n:compile:pseudo:enxa && yarn run i18n:compile:pseudo:enxb && yarn run i18n:compile:pseudo:xxls && yarn run i18n:compile:pseudo:xxac && yarn run i18n:compile:pseudo:xxha",
-    "i18n:update": "yarn run i18n:extract && yarn run i18n:compile && yarn run i18n:compile:pseudo"
+    "i18n:update": "yarn run i18n:extract && yarn run i18n:compile && yarn run i18n:compile:pseudo",
+    "favicons": "ts-node ./scripts/favicons.ts"
   },
   "eslintConfig": {
     "extends": [
@@ -130,6 +136,8 @@
     ]
   },
   "devDependencies": {
+    "@types/favicons": "^6",
+    "@types/prettier": "^2.4.2",
     "@types/react-redux": "^7.1.20",
     "@types/react-router": "^5.1.17",
     "@types/react-router-dom": "^5.3.2",

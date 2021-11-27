@@ -23,12 +23,7 @@
   - https://github.com/mirego/accent
   - https://github.com/ever-co/ever-traduora
   - https://docs.weblate.org/en/latest/
-- (client-web) https://github.com/jbmoelker/a11y-boilerplate
-- (client-web) https://www.matuzo.at/blog/html-boilerplate/
-- (client-web) https://htmlhead.dev/
-- (client-web) Favicons: https://css-tricks.com/how-to-favicon-in-2021/
 - (client-web) Storybook stories
-- (client-web) Logos
 - Integration tests
 - husky
 - commitlint
@@ -55,6 +50,7 @@
 - https://www.npmjs.com/package/devcert
 - https://github.com/ory/kratos/issues/1328
 - https://notifire.co
+- (client-web) Add OpenGraph support (http://ogp.me/)
 
   Reference Projects:
 

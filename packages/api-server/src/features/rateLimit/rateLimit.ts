@@ -14,8 +14,10 @@ export interface RateLimitOptions extends IRateLimiterOptions {
 
 /**
  * Returns Middleware which adds rate limiting to API requests.
+ *
+ * For documentation, @see {@url https://github.com/animir/node-rate-limiter-flexible/}
+ * For header information, @see {@url https://tools.ietf.org/id/draft-polli-ratelimit-headers-00.html}
  */
-
 export const rateLimit = ({
   redis,
   ...options
@@ -32,28 +34,33 @@ export const rateLimit = ({
     : new RateLimiterMemory(mergedOptions);
 
   return async (ctx, next: () => Promise<void>): Promise<void> => {
+    let rateLimiterRes: RateLimiterRes | undefined = undefined;
+
     try {
-      await rateLimiter.consume(ctx.ip);
-    } catch (rateLimiterRes) {
-      if (!(rateLimiterRes instanceof RateLimiterRes)) {
-        return ctx.throw(ensureError(rateLimiterRes));
+      rateLimiterRes = await rateLimiter.consume(ctx.ip);
+      await next();
+    } catch (error) {
+      if (!(error instanceof RateLimiterRes)) {
+        return ctx.throw(ensureError(error));
       }
 
-      const reset = new Date(Date.now() + rateLimiterRes.msBeforeNext);
+      rateLimiterRes = error;
+
       const retryAfter = rateLimiterRes.msBeforeNext / 1000;
       ctx.set("Retry-After", String(retryAfter));
-      ctx.set("RateLimit-Limit", String(rateLimiter.points));
-      ctx.set("RateLimit-Remaining", String(rateLimiterRes.remainingPoints));
-      ctx.set("RateLimit-Reset", reset.toISOString());
       ctx.status = 429;
       ctx.body = {
         status: "Too Many Requests",
         retryAfter,
       };
-
-      return;
+    } finally {
+      if (rateLimiterRes) {
+        ctx.set("RateLimit-Limit", String(rateLimiter.points));
+        ctx.set("RateLimit-Remaining", String(rateLimiterRes.remainingPoints));
+        ctx.set("RateLimit-Reset", String(rateLimiterRes.msBeforeNext / 1000));
+      } else {
+        ctx.set("Hello", "123");
+      }
     }
-
-    await next();
   };
 };

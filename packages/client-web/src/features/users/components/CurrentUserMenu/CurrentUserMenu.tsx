@@ -5,6 +5,7 @@ import {
   MenuItem,
   MenuList,
   MenuProps,
+  Portal,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
@@ -24,23 +25,25 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
       <MenuButton rounded="full" variant="link" cursor="pointer">
         <CurrentUserAvatar size="sm" />
       </MenuButton>
-      <MenuList py="1" fontSize="sm">
-        <CurrentUserMenuHeader />
-        <MenuDivider />
-        <MenuItem as={RouterLink} to="/settings">
-          Your Profile
-        </MenuItem>
-        <MenuItem
-          color={useColorModeValue("red.500", "red.300")}
-          onClick={onClick}
-          disabled={isLoading}
-        >
-          <FormattedMessage
-            id="auth.logoutButton.label"
-            defaultMessage="Log Out"
-          />
-        </MenuItem>
-      </MenuList>
+      <Portal>
+        <MenuList py="1" fontSize="sm">
+          <CurrentUserMenuHeader />
+          <MenuDivider />
+          <MenuItem as={RouterLink} to="/settings">
+            Your Profile
+          </MenuItem>
+          <MenuItem
+            color={useColorModeValue("red.500", "red.300")}
+            onClick={onClick}
+            disabled={isLoading}
+          >
+            <FormattedMessage
+              id="auth.logoutButton.label"
+              defaultMessage="Log Out"
+            />
+          </MenuItem>
+        </MenuList>
+      </Portal>
     </Menu>
   );
 };

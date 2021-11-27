@@ -20,6 +20,7 @@ export interface HeaderProps extends FlexProps {}
 
 export const Header = (props: HeaderProps) => {
   const { isLoggedIn } = useSession();
+  const buttonSchema = useColorModeValue("whiteAlpha", "gray");
 
   return (
     <chakra.header
@@ -46,8 +47,13 @@ export const Header = (props: HeaderProps) => {
         <HStack spacing={3} alignItems="center">
           {!isLoggedIn && (
             <>
-              <RegisterButton size="sm" colorScheme="blue" variant="solid" />
-              <LoginButton size="sm" />
+              <RegisterButton
+                px="5"
+                size="sm"
+                colorScheme="yellow"
+                variant="solid"
+              />
+              <LoginButton px="5" size="sm" colorScheme={buttonSchema} />
             </>
           )}
           <LocaleSelect size="sm" />

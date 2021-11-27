@@ -1,4 +1,4 @@
-import { Box, HStack, Text } from "@chakra-ui/react";
+import { Box, HStack, Text, useColorModeValue } from "@chakra-ui/react";
 import { useSession } from "../../../auth/hooks/useSession";
 import { CurrentUserAvatar } from "../CurrentUserAvatar/CurrentUserAvatar";
 
@@ -10,7 +10,11 @@ export const CurrentUserMenuHeader = () => {
       <CurrentUserAvatar size="sm" />
       <Box lineHeight="1">
         <Text fontWeight="semibold">{fullName}</Text>
-        <Text color="gray.500" fontSize="sm" mt="1">
+        <Text
+          color={useColorModeValue("gray.500", "gray.400")}
+          fontSize="sm"
+          mt="1"
+        >
           {email}
         </Text>
       </Box>

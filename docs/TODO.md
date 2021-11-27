@@ -1,36 +1,40 @@
-- (client-web) show notification component whne email address is not verififed
+- (client-web) How to deal with unverified email address
+  - (client-web) Show notification component whne email address is not verififed
+  - https://github.com/ory/kratos/issues/1328
 - (client-web) upgrade to React Router v6 (handle sentry integration, too)
 - (kratos) How to import avatar to profile / make it editable?
-- (client-web) Handle /sessions/whoami 401 response
+- (client-web) Handle /sessions/whoami 401 response (vs request failure)
 - (client-web) Auth forms: auto-focus first field when rendering forms.
 - (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
 - (kratos) customize email templates
-- Tracing (OpenTelemetry)
-- Offline support
-- Upgrade Postgres to v14
+- Tracing support (OpenTelemetry)
 - Handle logins across tabs (use localStorage to signal session changes?)
-- PWA
-- Detect session expiration and handle it somehow (modal login form?)
-- (client-web) Auth: password requirements hint (is this currently possible with Kratos?)
+- Detect session expiration and handle it somehow (modal login form? a la Gmail?)
 - (client-web) Sentry: use tunnel? (https://docs.sentry.io/platforms/javascript/troubleshooting/#dealing-with-ad-blockers)
 - (client-web) ErrorAlert should report errors https://develop.sentry.dev/
 - (api-server) Uploads
-- Audit Log
+- (api-server) Audit Logging
 - (api-server) Reduce amount of logging output in development
-- (api-server) Better unit test coverage + enforce minimum
-- (client-web) Better unit test coverage + enforce minimum
-- (client-web) i18n Tooling
-  - https://github.com/mirego/accent
-  - https://github.com/ever-co/ever-traduora
-  - https://docs.weblate.org/en/latest/
-- (client-web) Storybook stories
 - Integration tests
-- husky
 - commitlint
-- eslint+prettier?
 - CI script
+  - eslint+prettier?
 - github templates: https://github.com/cezaraugusto/github-template-guidelines
-- (metrics) add additional dashboards
+- "Down for Maintenance" state
+- Vulnerability Disclosure Policy (https://github.com/disclose/dioterms/blob/master/core-terms-vdp.md)
+- (client-web) Add OpenGraph attributes (http://ogp.me/)
+
+Pending external support
+
+- (client-web) Auth: password requirements hint (is this currently possible with Kratos?)
+
+Major Features
+
+- (client-web) Offline support
+- Upgrade Postgres to v14
+- (client-web) PWA
+- production/staging kubernetes deployments
+- (client-mobile) Mobile app (react-native)
 - (metrics) alert manager
 - (docs) Better documentation (docusaurus?)
 - (payments) implement (stripe?)
@@ -40,19 +44,24 @@
   - https://github.com/checkr/flagr
   - https://github.com/markphelps/flipt
   - https://github.com/featurehub-io/featurehub
-- production/staging kubernetes deployments
-- Mobile app (react-native)
-- "Down for Maintenance" state
-- Vulnerability Disclosure Policy (https://github.com/disclose/dioterms/blob/master/core-terms-vdp.md)
-- Admin interface/API (user management)
-- https://jacobian.org/2021/jul/8/appsec-pagnis/
-- https://cheatsheetseries.owasp.org/index.html
-- https://www.npmjs.com/package/devcert
-- https://github.com/ory/kratos/issues/1328
-- https://notifire.co
-- (client-web) Add OpenGraph support (http://ogp.me/)
+- (client-admin) Admin interface/API (user management)
+- i18n Tooling
+  - https://github.com/mirego/accent
+  - https://github.com/ever-co/ever-traduora
+  - https://docs.weblate.org/en/latest/
+- Notifications
+  - https://notifire.co
 
-  Reference Projects:
+Ongoing
+
+- (metrics) add additional dashboards
+- (client-web) Storybook stories
+- (api-server) Additional test coverage
+- (client-web) Additional test coverage + enforce minimum
+- https://cheatsheetseries.owasp.org/index.html
+- https://jacobian.org/2021/jul/8/appsec-pagnis/
+
+Reference Projects:
 
 - https://github.com/cedrickchee/saas-starter
 - https://gitlab.com/gnaar

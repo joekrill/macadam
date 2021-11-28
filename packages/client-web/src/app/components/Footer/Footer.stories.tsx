@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { Footer, FooterProps } from "./Footer";
 
 export default {
-  title: "Common/Footer",
+  title: "app/Footer",
   component: Footer,
   parameters: {
     layout: "fullscreen",

@@ -3,8 +3,6 @@ import { Global } from "@emotion/react";
 import { Route, Switch } from "react-router-dom";
 import { AuthenticatedRoute } from "../features/auth/components/AuthenticatedRoute";
 import { AuthPage } from "../features/auth/pages/AuthPage";
-import { Footer } from "../features/common/components/Footer/Footer";
-import { Header } from "../features/common/components/Header/Header";
 import { CrashInitiator } from "../features/errors/components/CrashInitiator/CrashInitiator";
 import { NotFoundPage } from "../features/errors/components/NotFoundPage/NotFoundPage";
 import { ContactUs } from "../features/pages/ContactUs/ContactUs";
@@ -12,6 +10,8 @@ import { Faq } from "../features/pages/Faq/Faq";
 import { Home } from "../features/pages/Home/Home";
 import { PrivacyPolicy } from "../features/pages/PrivacyPolicy/PrivacyPolicy";
 import { TermsAndConditions } from "../features/pages/TermsAndConditions/TermsAndConditions";
+import { Footer } from "./components/Footer/Footer";
+import { Header } from "./components/Header/Header";
 
 export const AppContent = () => {
   const { colorMode } = useColorMode();

@@ -8,13 +8,13 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { ReactComponent as Logo } from "../../../../app/Logo.svg";
-import { LoginButton } from "../../../auth/components/LoginButton";
-import { RegisterButton } from "../../../auth/components/RegisterButton";
-import { useSession } from "../../../auth/hooks/useSession";
-import { LocaleSelect } from "../../../i18n/components/LocaleSelect";
-import { ColorModeSwitcher } from "../../../theme/components/ColorModeSwitcher/ColorModeSwitcher";
-import { CurrentUserMenu } from "../../../users/components/CurrentUserMenu/CurrentUserMenu";
+import { LoginButton } from "../../../features/auth/components/LoginButton";
+import { RegisterButton } from "../../../features/auth/components/RegisterButton";
+import { useSession } from "../../../features/auth/hooks/useSession";
+import { LocaleSelect } from "../../../features/i18n/components/LocaleSelect";
+import { ColorModeSwitcher } from "../../../features/theme/components/ColorModeSwitcher/ColorModeSwitcher";
+import { CurrentUserMenu } from "../../../features/users/components/CurrentUserMenu/CurrentUserMenu";
+import { ReactComponent as Logo } from "../../Logo.svg";
 
 export interface HeaderProps extends FlexProps {}
 

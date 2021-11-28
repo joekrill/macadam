@@ -1,7 +1,7 @@
 import { skipToken } from "@reduxjs/toolkit/dist/query";
 import { Meta, Story } from "@storybook/react";
-import { UseSessionContext } from "../../../auth/hooks/useSession";
-import { LocaleSelectContext } from "../../../i18n/components/LocaleSelect";
+import { UseSessionContext } from "../../../features/auth/hooks/useSession";
+import { LocaleSelectContext } from "../../../features/i18n/components/LocaleSelect";
 import { Header, HeaderProps } from "./Header";
 
 export default {

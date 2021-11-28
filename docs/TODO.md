@@ -14,7 +14,7 @@
 - (api-server) Uploads
 - (api-server) Audit Logging
 - (api-server) Reduce amount of logging output in development
-- Integration tests
+- Integration tests (i.e. using cypress)
 - commitlint
 - CI script
   - eslint+prettier?

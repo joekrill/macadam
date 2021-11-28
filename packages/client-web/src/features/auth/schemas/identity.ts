@@ -1,15 +1,5 @@
 import { z } from "zod";
-
-// TODO: customize based on current traits.
-export const traitsSchema = z.object({
-  name: z
-    .object({
-      first: z.string().nullish(),
-      last: z.string().nullish(),
-    })
-    .nullish(),
-  email: z.string(),
-});
+import { traitsSchema } from "./traits";
 
 /**
  * VerifiableAddress is an identity\'s verifiable address

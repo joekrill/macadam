@@ -5,6 +5,12 @@ export interface CurrentUserAvatarProps extends Omit<AvatarProps, "src"> {}
 
 // TODO: Add avatar to Kratos traits and consume here.
 export const CurrentUserAvatar = (props: CurrentUserAvatarProps) => {
-  const { fullName, email } = useSession();
-  return <Avatar {...props} name={fullName || email} />;
+  const { traits } = useSession();
+  return (
+    <Avatar
+      {...props}
+      name={traits.fullName || traits.email}
+      src={traits.picture || undefined}
+    />
+  );
 };

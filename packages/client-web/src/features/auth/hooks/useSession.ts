@@ -51,8 +51,11 @@ export const useSession = () => {
 
     isVerified,
 
+    traits: {
+      ...identity?.traits,
+      fullName: [first, last].filter(Boolean).join(" "),
+    },
+
     username: email,
-    email,
-    fullName: [first, last].filter(Boolean).join(" "),
   };
 };

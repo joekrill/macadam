@@ -3,19 +3,19 @@ import { useSession } from "../../../auth/hooks/useSession";
 import { CurrentUserAvatar } from "../CurrentUserAvatar/CurrentUserAvatar";
 
 export const CurrentUserMenuHeader = () => {
-  const { email, fullName } = useSession();
+  const { traits } = useSession();
 
   return (
     <HStack px="3" py="4" alignItems="center">
       <CurrentUserAvatar size="sm" />
       <Box lineHeight="1">
-        <Text fontWeight="semibold">{fullName}</Text>
+        <Text fontWeight="semibold">{traits.fullName}</Text>
         <Text
           color={useColorModeValue("gray.500", "gray.400")}
           fontSize="sm"
           mt="1"
         >
-          {email}
+          {traits.email}
         </Text>
       </Box>
     </HStack>

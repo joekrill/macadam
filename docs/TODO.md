@@ -1,13 +1,12 @@
+- (client-web) User settings
 - (client-web) How to deal with unverified email address
   - (client-web) Show notification component whne email address is not verififed
   - https://github.com/ory/kratos/issues/1328
 - (client-web) upgrade to React Router v6 (handle sentry integration, too)
-- (kratos) How to import avatar to profile / make it editable?
 - (client-web) Handle /sessions/whoami 401 response (vs request failure)
 - (client-web) Auth forms: auto-focus first field when rendering forms.
 - (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
 - (kratos) customize email templates
-- Tracing support (OpenTelemetry)
 - Handle logins across tabs (use localStorage to signal session changes?)
 - Detect session expiration and handle it somehow (modal login form? a la Gmail?)
 - (client-web) Sentry: use tunnel? (https://docs.sentry.io/platforms/javascript/troubleshooting/#dealing-with-ad-blockers)
@@ -24,9 +23,17 @@
 - Vulnerability Disclosure Policy (https://github.com/disclose/dioterms/blob/master/core-terms-vdp.md)
 - (client-web) Add OpenGraph attributes (http://ogp.me/)
 
-Pending external support
+Blocked
 
-- (client-web) Auth: password requirements hint (is this currently possible with Kratos?)
+- (client-web) Auth: password requirements hint
+  - Not currently possible with Kratos
+  - https://github.com/ory/kratos/issues/1682
+  - https://github.com/ory/kratos/issues/1535
+- OpenTelemety
+  - Versioning issues (https://github.com/open-telemetry/opentelemetry-js-contrib/issues/749)
+- Kratos OIDC config via environment variables
+  - https://github.com/ory/x/pull/420
+- Some way to upload/change avatar (currently it is just a URL string)
 
 Major Features
 

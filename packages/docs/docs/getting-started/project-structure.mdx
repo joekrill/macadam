@@ -1,0 +1,31 @@
+---
+sidebar_position: 2
+---
+
+# Project Structure
+
+Macadam is a monorepo that uses [Yarn Package Manager](https://yarnpkg.com/) and [it's workspaces feature](https://yarnpkg.com/features/workspaces) to organize code and provide tooling and scripts.
+
+The basic folder structure highlighting the most important paths:
+
+```
+├── docs
+├── packages
+│   ├── api-server
+│   ├── client-web
+├── services
+│   ├── caddy
+│   ├── clickhouse
+│   ├── glitchtip
+│   ├── ...
+├── package.json
+├── docker-compose.yml
+```
+
+- `packages/` - the root folder that contains individual yarn workspaces
+- `packages/api-server/` - source code for the API server
+- `packages/client-web/` - source code for the frontend web client
+- `packages/docs/` - project documentation
+- `services/` - configuration, scripts, and other files needed for running external services.
+- `package.json` - root-level package.json
+- `docker-compose.yml` - docker compose definition for the default development environment.

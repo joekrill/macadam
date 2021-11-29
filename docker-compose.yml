@@ -42,7 +42,8 @@ x-kratos-defaults: &kratos-defaults
     SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://localtest.me/auth/registration
     SELFSERVICE_METHODS_WEBAUTHN_CONFIG_RP_ID: localtest.me
   volumes:
-    - ./services/kratos:/etc/config/kratos
+    - ./services/kratos/config:/etc/config/kratos
+    - ./services/kratos/templates:/conf/courier-templates
 
 x-api-server-defaults: &api-server-defaults
   <<: *service-defaults

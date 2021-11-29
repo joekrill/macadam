@@ -6,7 +6,6 @@
 - (client-web) Handle /sessions/whoami 401 response (vs request failure)
 - (client-web) Auth forms: auto-focus first field when rendering forms.
 - (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
-- (kratos) customize email templates
 - Handle logins across tabs (use localStorage to signal session changes?)
 - Detect session expiration and handle it somehow (modal login form? a la Gmail?)
 - (client-web) Sentry: use tunnel? (https://docs.sentry.io/platforms/javascript/troubleshooting/#dealing-with-ad-blockers)

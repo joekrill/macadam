@@ -108,6 +108,7 @@ export const uiNodeInputAttributesSchema = z.object({
     z.literal("password"),
     z.literal("submit"),
     z.literal("text"),
+    z.literal("url"),
   ]),
 
   /**

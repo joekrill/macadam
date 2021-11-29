@@ -146,3 +146,4 @@ courier:
     connection_uri: smtp://mailhog:1025/?disable_starttls=true
     # from_name: Bob # TODO
     # from_address: aaa@a.aa # TODO
+  template_override_path: /conf/courier-templates

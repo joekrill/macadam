@@ -56,11 +56,11 @@ export const SelfServiceUiForm = ({
       const data = new FormData();
 
       Object.keys(values).forEach((key) => {
-        data.set(key, values[key]);
+        data.set(key, values[key] || "");
       });
 
       Object.keys(additionalValues).forEach((key) => {
-        data.set(key, additionalValues[key]);
+        data.set(key, additionalValues[key] || "");
       });
 
       onSubmit({ action, method, body: Object.fromEntries(data) });
@@ -99,7 +99,9 @@ export const SelfServiceUiForm = ({
               }
             }}
             value={
-              node.type === "input" ? values[node.attributes.name] : undefined
+              node.type === "input"
+                ? values[node.attributes.name] || ""
+                : undefined
             }
           />
         ))}

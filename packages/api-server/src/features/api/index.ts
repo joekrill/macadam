@@ -9,7 +9,9 @@ export interface ApiRoutesOptions {
 }
 
 export const apiRoutes = ({ prefix }: ApiRoutesOptions) => {
-  const apiRouter = new Router<DefaultState, Context>({ prefix });
+  const apiRouter = new Router<DefaultState, Context>({
+    prefix: `${prefix}/v1`,
+  });
 
   apiRouter.use(
     "/things",

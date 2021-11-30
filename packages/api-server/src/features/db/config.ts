@@ -1,20 +1,26 @@
 import { Options } from "@mikro-orm/core";
+import pino from "pino";
 import { URL } from "url";
 import { entities } from "./entities";
 
 export interface OrmConfigOptions {
   environment: string;
   clientUrl: string;
+  logger?: pino.Logger;
 }
 
 export const ormConfig = ({
-  environment,
   clientUrl,
+  environment,
+  logger,
 }: OrmConfigOptions): Options => {
   const url = new URL(clientUrl);
+  const ormLogger = logger?.child({});
 
   return {
     entities,
+    debug: environment === "development",
+    ...(ormLogger ? { logger: (message) => ormLogger.debug(message) } : {}),
     migrations: {
       path: "./src/features/orm/migrations",
       tableName: "migrations",

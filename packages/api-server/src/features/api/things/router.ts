@@ -1,7 +1,7 @@
 import Router from "@koa/router";
 import { EntityRepository } from "@mikro-orm/core";
 import { Context, DefaultState } from "koa";
-import { Thing } from "../../orm/entities/Thing";
+import { Thing } from "../../db/entities/Thing";
 
 interface ThingRouterState extends DefaultState {
   thing?: Thing;

@@ -2,7 +2,7 @@ import Router from "@koa/router";
 import { EntityRepository } from "@mikro-orm/core";
 import { Context, DefaultState } from "koa";
 import { requireAuthenticated } from "../../auth/requireAuthenticated";
-import { UserPreference } from "../../orm/entities/UserPreference";
+import { UserPreference } from "../../db/entities/UserPreference";
 
 interface UserPreferenceRouterState extends DefaultState {
   userPreference?: UserPreference;

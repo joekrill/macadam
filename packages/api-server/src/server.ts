@@ -26,6 +26,7 @@ const {
   PORT,
   SENTRY_DSN,
   KRATOS_PUBLIC_URL,
+  LOG_LEVEL,
 } = process.env;
 
 const environment = NODE_ENV || "development";
@@ -40,6 +41,14 @@ if (typeof DB_URL !== "string") {
 if (typeof KRATOS_PUBLIC_URL !== "string") {
   logger.error("KRATOS_PUBLIC_URL environment variable not supplied");
   process.exit(2);
+}
+
+if (environment === "development") {
+  logger.level = "debug";
+}
+
+if (LOG_LEVEL && logger.levels.values[LOG_LEVEL]) {
+  logger.level = LOG_LEVEL;
 }
 
 (async () => {
@@ -61,6 +70,7 @@ if (typeof KRATOS_PUBLIC_URL !== "string") {
         {
           ...addressInfo,
           environment,
+          logLevel: logger.level,
         },
         "🛣️  Macadam API server listening"
       );

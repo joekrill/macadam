@@ -11,6 +11,9 @@ export class Migration20210610004441 extends Migration {
           table.uuid(namingStrategy.propertyToColumnName("id")).primary();
           table.string(namingStrategy.propertyToColumnName("name"));
           table
+            .uuid(namingStrategy.propertyToColumnName("createdBy"))
+            .notNullable();
+          table
             .timestamp(namingStrategy.propertyToColumnName("createdAt"))
             .notNullable();
           table

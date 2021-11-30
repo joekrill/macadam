@@ -8,11 +8,11 @@ import helmet from "koa-helmet";
 import pino from "pino";
 import { apiRoutes } from "./features/api";
 import { authentication } from "./features/auth/authentication";
+import { ormConfig } from "./features/db/config";
+import { entityManager } from "./features/db/entityManager";
 import { healthRoutes } from "./features/health/health";
 import { logging } from "./features/logging/logging";
 import { metricsCollector, metricsRoutes } from "./features/metrics/metrics";
-import { ormConfig } from "./features/orm/config";
-import { entityManager } from "./features/orm/entityManager";
 import { rateLimit } from "./features/rateLimit/rateLimit";
 import { requestId } from "./features/requestId/requestId";
 import { responseTime } from "./features/responseTime/responseTime";
@@ -168,7 +168,9 @@ export const createApp = async ({
     });
   }
 
-  const orm = await MikroORM.init(ormConfig({ environment, clientUrl: dbUrl }));
+  const orm = await MikroORM.init(
+    ormConfig({ clientUrl: dbUrl, environment, logger })
+  );
   app.on("shutdown", async () => {
     logger.debug("Closing Database connection");
     await orm.close();

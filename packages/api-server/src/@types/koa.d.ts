@@ -1,9 +1,9 @@
 import "koa";
 import { SessionState } from "../features/auth/authentication";
+import { EntityManagerState } from "../features/db/entityManager";
 import { HealthState } from "../features/health/health";
 import { LoggingState } from "../features/logging/logging";
 import { MetricsState } from "../features/metrics/metrics";
-import { EntityManagerState } from "../features/orm/entityManager";
 import { RequestIdState } from "../features/requestId/requestId";
 import { ResponseTimeState } from "../features/responseTime/responseTime";
 

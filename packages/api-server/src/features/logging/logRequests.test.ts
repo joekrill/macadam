@@ -1,11 +1,13 @@
 import { createMockContext } from "@shopify/jest-koa-mocks";
 import { Middleware, ParameterizedContext } from "koa";
 import pino from "pino";
-import { logging } from "./logging";
+import { LoggerState } from "./initializeLogger";
+import { logRequests } from "./logRequests";
 
-jest.unmock("./logging");
-describe("logging", () => {
-  let loggingMiddleware: Middleware;
+jest.unmock("./logRequests");
+
+describe("logRequests", () => {
+  let logRequestsMiddleware: Middleware;
   let baseLoggerMock: jest.Mocked<pino.Logger>;
   let childLoggerMock: jest.Mocked<pino.Logger>;
   const nextMock = jest.fn();
@@ -22,18 +24,22 @@ describe("logging", () => {
     baseLoggerMock = {
       child: jest.fn(() => childLoggerMock),
     } as any as jest.Mocked<pino.Logger>;
-    loggingMiddleware = logging(baseLoggerMock);
-    contextMock = createMockContext();
+    logRequestsMiddleware = logRequests();
+    contextMock = createMockContext<{ state: LoggerState }>({
+      state: {
+        logger: childLoggerMock,
+      },
+    });
     nextMock.mockReset();
   });
 
-  test("attaches a child logging instance to `context.state.log`", async () => {
-    await loggingMiddleware(contextMock, nextMock);
-    expect(contextMock.state.log).toBe(childLoggerMock);
-  });
+  // test("attaches a child logging instance to `context.state.log`", async () => {
+  //   await logRequestsMiddleware(contextMock, nextMock);
+  //   expect(contextMock.state.log).toBe(childLoggerMock);
+  // });
 
   test("logs the request using the `info` level", async () => {
-    await loggingMiddleware(contextMock, nextMock);
+    await logRequestsMiddleware(contextMock, nextMock);
     expect(childLoggerMock.info).toHaveBeenCalledWith(
       expect.objectContaining({
         req: contextMock.req,
@@ -53,7 +59,7 @@ describe("logging", () => {
     beforeEach(async () => {
       nextMock.mockRejectedValue(mockError);
       contextMock.app.emit = jest.fn();
-      await loggingMiddleware(contextMock, nextMock);
+      await logRequestsMiddleware(contextMock, nextMock);
     });
 
     test("logs the request using the `error` level", async () => {

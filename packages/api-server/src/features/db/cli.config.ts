@@ -1,4 +1,4 @@
-import { ormConfig } from "./config";
+import { ormConfig } from "./ormConfig";
 
 /**
  * This file is used to configure MikroORM when it is used via the

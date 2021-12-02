@@ -2,12 +2,13 @@ import Router from "@koa/router";
 import { Context, DefaultState } from "koa";
 import compose from "koa-compose";
 
-export interface HealthState {}
-
 export interface HealthRoutesOptions {
   path: string;
 }
 
+/**
+ * A router which outputs health status at it's endpoint.
+ */
 export const healthRoutes = ({ path }: HealthRoutesOptions) => {
   const router = new Router<DefaultState, Context>({
     prefix: path,

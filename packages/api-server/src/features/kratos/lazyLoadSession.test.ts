@@ -1,12 +1,12 @@
-import { V0alpha2Api } from "@ory/kratos-client";
+// import { V0alpha2Api } from "@ory/kratos-client";
 import { createMockContext } from "@shopify/jest-koa-mocks";
 import { Middleware, ParameterizedContext } from "koa";
 import P from "pino";
-import { authentication } from "./authentication";
+import { lazyLoadSession } from "./lazyLoadSession";
 
-jest.unmock("./authentication");
+jest.unmock("./lazyLoadSession");
 
-describe("authentication()", () => {
+describe("lazyLoadSession()", () => {
   const nextMock = jest.fn();
   const errorMock = jest.fn();
   const toSessionMock = jest.fn();
@@ -17,15 +17,19 @@ describe("authentication()", () => {
   };
 
   beforeEach(async () => {
-    (V0alpha2Api as jest.Mock).mockImplementation(
-      () => mockV0alpha1ApiInstance
-    );
-    instance = authentication({ publicUrl: "" });
-    contextMock = createMockContext();
+    // (V0alpha2Api as jest.Mock).mockImplementation(
+    //   () => mockV0alpha1ApiInstance
+    // );
+    instance = lazyLoadSession();
+    contextMock = createMockContext({
+      customProperties: {
+        kratosPublicApi: mockV0alpha1ApiInstance,
+      },
+    });
     contextMock.state.log = {
+      debug: jest.fn(),
       error: errorMock,
     } as unknown as P.Logger;
-    await instance(contextMock, nextMock);
   });
 
   afterEach(() => {
@@ -34,24 +38,21 @@ describe("authentication()", () => {
     toSessionMock.mockReset();
   });
 
-  describe("`context.state.kratos`", () => {
-    test("is set to the V0alpha1Api instance", async () => {
-      expect(contextMock.state.kratos).toBe(mockV0alpha1ApiInstance);
-    });
-  });
-
   describe("`context.state.session`", () => {
     test("is a Promise", async () => {
+      instance(contextMock, nextMock);
       expect(contextMock.state.session).resolves.toBeUndefined();
     });
 
     test("is lazy-loaded", async () => {
+      instance(contextMock, nextMock);
       expect(toSessionMock).not.toHaveBeenCalled();
-      expect(contextMock.state.session).resolves.toBeUndefined();
+      await contextMock.state.session;
       expect(toSessionMock).toHaveBeenCalled();
     });
 
     test("is cached", async () => {
+      instance(contextMock, nextMock);
       await contextMock.state.session;
       expect(toSessionMock).toHaveBeenCalledTimes(1);
       await contextMock.state.session;

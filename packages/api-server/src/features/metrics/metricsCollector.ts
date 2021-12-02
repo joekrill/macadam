@@ -1,15 +1,12 @@
-import Router from "@koa/router";
-import { Context, DefaultState, Middleware, ParameterizedContext } from "koa";
-import compose from "koa-compose";
+import { Middleware } from "koa";
 import {
   collectDefaultMetrics,
   Counter,
   Histogram,
   Registry,
 } from "prom-client";
-import { ResponseTimeState } from "../responseTime/responseTime";
 
-export interface MetricsState {
+export interface MetricsCollectorState {
   /**
    * When set to `true` (by some other middleware, for example), will cause
    * a given request to not be included in metric collection.
@@ -21,29 +18,6 @@ export interface MetricsState {
    */
   metricsRegister?: Registry;
 }
-export interface MetricsRoutesOptions {
-  /**
-   * The URL path that should serve the metrics.
-   */
-  path: string;
-}
-
-export const metricsRoutes = ({ path }: MetricsRoutesOptions) => {
-  const router = new Router<DefaultState, Context>({ prefix: path });
-
-  router.get("/", async (ctx) => {
-    ctx.state.excludeFromMetrics = true;
-
-    if (ctx.state.metricsRegister) {
-      ctx.set("Content-Type", ctx.state.metricsRegister.contentType);
-      ctx.body = await ctx.state.metricsRegister.metrics();
-    } else {
-      ctx.throw(500, "metricsRegister was not defined");
-    }
-  });
-
-  return compose([router.routes(), router.allowedMethods()]);
-};
 
 export const metricsCollector = (): Middleware => {
   const register = new Registry();
@@ -64,10 +38,7 @@ export const metricsCollector = (): Middleware => {
     registers: [register],
   });
 
-  return async (
-    ctx: ParameterizedContext<MetricsState & ResponseTimeState>,
-    next: () => Promise<void>
-  ): Promise<void> => {
+  return async (ctx, next): Promise<void> => {
     ctx.state.metricsRegister = register;
     await next();
 

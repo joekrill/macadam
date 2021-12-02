@@ -1,9 +1,9 @@
 import { createMockContext } from "@shopify/jest-koa-mocks";
 import { Middleware, ParameterizedContext } from "koa";
 import { Counter, Histogram, Registry } from "prom-client";
-import { metricsCollector } from "./metrics";
+import { metricsCollector } from "./metricsCollector";
 
-jest.unmock("./metrics");
+jest.unmock("./metricsCollector");
 
 const CounterMock = Counter as jest.Mock<Counter<any>, [{ name: string }]>;
 const HistogramMock = Histogram as jest.Mock<

@@ -1,9 +1,10 @@
+import Koa from "koa";
 import pino from "pino";
 import request from "supertest";
-import { AppInstance, createApp } from "../../app";
+import { createApp } from "../../app";
 
 describe("/health", () => {
-  let app: AppInstance;
+  let app: Koa;
 
   beforeEach(async () => {
     app = await createApp({
@@ -16,7 +17,7 @@ describe("/health", () => {
   });
 
   afterEach(async () => {
-    await app.shutdown();
+    await app.context.shutdown();
   });
 
   describe("GET", () => {

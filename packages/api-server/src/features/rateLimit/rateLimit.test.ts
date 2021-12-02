@@ -20,18 +20,20 @@ describe("rateLimit", () => {
   let contextMock: ParameterizedContext;
 
   beforeEach(() => {
-    contextMock = createMockContext();
-    contextMock.set = contextSetMock;
     RateLimiterMemoryMock.mockReset();
     RateLimiterRedisMock.mockReset();
   });
 
   describe("initialization", () => {
-    describe("when given a redis instance", () => {
-      const redisMock = jest.fn<IORedis.Redis, any>(() => new IORedis());
-
-      beforeEach(() => {
-        instance = rateLimit({ redis: redisMock() });
+    describe("when a redis instance is available", () => {
+      beforeEach(async () => {
+        const redisMock = jest.fn<IORedis.Redis, any>(() => new IORedis());
+        contextMock = createMockContext({
+          customProperties: { redis: redisMock },
+        });
+        contextMock.set = contextSetMock;
+        instance = rateLimit();
+        await instance(contextMock, nextMock);
       });
 
       it("Uses RateLimiterRedis", () => {
@@ -40,9 +42,12 @@ describe("rateLimit", () => {
       });
     });
 
-    describe("when not given a redis instance", () => {
-      beforeEach(() => {
-        instance = rateLimit({});
+    describe("when a redis instance is not available", () => {
+      beforeEach(async () => {
+        contextMock = createMockContext();
+        contextMock.set = contextSetMock;
+        instance = rateLimit();
+        await instance(contextMock, nextMock);
       });
       it("Uses RateLimiterMemory", () => {
         expect(RateLimiterMemoryMock).toHaveBeenCalledTimes(1);
@@ -52,6 +57,11 @@ describe("rateLimit", () => {
   });
 
   describe("middleware", () => {
+    beforeEach(() => {
+      contextMock = createMockContext();
+      contextMock.set = contextSetMock;
+    });
+
     let consumeMock: jest.Mock<Promise<RateLimiterRes>, any>;
     const rateLimiterPoints = 100;
 

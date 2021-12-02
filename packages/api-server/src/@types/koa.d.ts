@@ -1,27 +1,34 @@
 import "koa";
 import { SessionState } from "../features/auth/authentication";
-import { EntityManagerState } from "../features/db/entityManager";
-import { HealthState } from "../features/health/health";
-import { LoggingState } from "../features/logging/logging";
-import { MetricsState } from "../features/metrics/metrics";
+import { ForkEntityManagerState } from "../features/db/forkEntityManager";
+import { DbContext } from "../features/db/initializeDb";
+import {
+  KratosContext,
+  KratosState,
+} from "../features/kratos/initializeKratos";
+import {
+  LoggerContext,
+  LoggerState,
+} from "../features/logging/initializeLogger";
+import { MetricsCollectorState } from "../features/metrics/metricsCollector";
+import { RedisContext } from "../features/redis/initializeRedis";
 import { RequestIdState } from "../features/requestId/requestId";
 import { ResponseTimeState } from "../features/responseTime/responseTime";
 
 declare module "koa" {
-  interface DefaultContext {
-    /**
-     * Set to true when the app starts shutting down and no further requests
-     * should be handled.
-     */
-    isTerminating?: boolean;
-  }
+  interface DefaultContext
+    extends KratosContext,
+      LoggerContext,
+      DbContext,
+      RedisContext,
+      ShutdownContext {}
 
   // I'm not totally sure this is the best way to handle these typings.
   interface DefaultState
-    extends EntityManagerState,
-      HealthState,
-      LoggingState,
-      MetricsState,
+    extends ForkEntityManagerState,
+      KratosState,
+      LoggerState,
+      MetricsCollectorState,
       RequestIdState,
       ResponseTimeState,
       SessionState {}

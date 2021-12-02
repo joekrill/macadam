@@ -1,30 +1,32 @@
 import cors from "@koa/cors";
-import { MikroORM } from "@mikro-orm/core";
-import * as Sentry from "@sentry/node";
-import IORedis from "ioredis";
 import Koa from "koa";
 import bodyParser from "koa-bodyparser";
 import helmet from "koa-helmet";
 import pino from "pino";
 import { apiRoutes } from "./features/api";
-import { authentication } from "./features/auth/authentication";
-import { ormConfig } from "./features/db/config";
-import { entityManager } from "./features/db/entityManager";
-import { healthRoutes } from "./features/health/health";
-import { logging } from "./features/logging/logging";
-import { metricsCollector, metricsRoutes } from "./features/metrics/metrics";
+import { forkEntityManager } from "./features/db/forkEntityManager";
+import { initializeDb } from "./features/db/initializeDb";
+import { healthRoutes } from "./features/health/healthRoutes";
+import { initializeKratos } from "./features/kratos/initializeKratos";
+import { initializeLogger } from "./features/logging/initializeLogger";
+import { logRequests } from "./features/logging/logRequests";
+import { metricsCollector } from "./features/metrics/metricsCollector";
+import { metricsRoutes } from "./features/metrics/metricsRoutes";
 import { rateLimit } from "./features/rateLimit/rateLimit";
+import { initializeRedis } from "./features/redis/initializeRedis";
 import { requestId } from "./features/requestId/requestId";
 import { responseTime } from "./features/responseTime/responseTime";
+import { initializeSentry } from "./features/sentry/initializeSentry";
+import { initializeGracefulShutdown } from "./features/shutdown/initializeGracefulShutdown";
 
 export interface AppOptions {
   /**
-   * The base path to use for API endpoints.
+   * The base path to use for API endpoints. (i.e. "/api")
    */
   apiPath?: string;
 
   /**
-   * The database URL.
+   * The database connection URL.
    */
   dbUrl: string;
 
@@ -40,7 +42,7 @@ export interface AppOptions {
   environment?: string;
 
   /**
-   * The endpoint for health status.
+   * The path to serve the health status from.
    */
   healthPath?: string;
 
@@ -60,7 +62,8 @@ export interface AppOptions {
   metricsPath?: string;
 
   /**
-   * The URL to the redis instance to use (i.e. "redis://redis:6380/0")
+   * The connection URL to a redis instance to use (i.e. "redis://redis:6380/0")
+   * for caching.
    */
   redisUrl?: string;
 
@@ -68,14 +71,6 @@ export interface AppOptions {
    * The URL of the Sentry instance to send crash reports to.
    */
   sentryDsn?: string;
-}
-
-export interface AppInstance extends Koa {
-  /**
-   * Gracefully shuts down the app instance, waiting a maximum of `waitMs`
-   * milliseconds before forcefully stopping.
-   */
-  shutdown: (exitcode?: number, waitMs?: number) => Promise<void>;
 }
 
 export const createApp = async ({
@@ -90,106 +85,30 @@ export const createApp = async ({
   redisUrl,
   sentryDsn,
 }: AppOptions) => {
-  const app = new Koa() as AppInstance;
+  const app = new Koa({ env: environment });
 
-  /**
-   * Gracefully shuts down the application, closing any open connections, etc,
-   * and calling `process.exit` on completion if an `exitCode` was provided.
-   * @param exitCode
-   * @param waitMs
-   */
-  app.shutdown = async (
-    exitCode?: number,
-    waitMs: number = defaultShutdownWaitMs
-  ) => {
-    let shutdownTimeout: NodeJS.Timeout | number | undefined = undefined;
-    const listeners = app.listeners("shutdown");
-
-    try {
-      logger.info(
-        { exitCode, waitMs, listenerCount: listeners.length },
-        `Preparing shutdown, notifying ${listeners.length} listeners`
-      );
-      await Promise.race([
-        // Ideally let any processes cleanup and shutdown.
-        Promise.all(listeners.map((listener) => listener())),
-
-        // This provides a maximum wait time for the above -- after `maxWait`
-        // this will resolve and win the `Promise.race`.
-        new Promise<void>((resolve) => {
-          shutdownTimeout = setTimeout(() => {
-            logger.warn(`Forcing shutdown after waiting ${waitMs}ms`);
-            resolve();
-          }, waitMs);
-        }),
-      ]);
-    } finally {
-      logger.info({ exitCode }, "Shutting down");
-      clearTimeout(shutdownTimeout);
-      if (exitCode !== undefined) {
-        process.exit(exitCode);
-      }
-    }
-  };
-
-  app.on("shutdown", () => {
-    app.context.isTerminating = true;
-  });
-
-  // Intercept shutdowns so we can allow any listeners to cleanup,
-  // but maintain exit codes.
-  process.on("exit", (code) => app.shutdown(code));
-  process.on("SIGHUP", () => app.shutdown(128 + 1));
-  process.on("SIGINT", () => app.shutdown(128 + 2));
-  process.on("SIGQUIT", () => app.shutdown(128 + 3));
-  process.on("SIGTERM", () => app.shutdown(128 + 15));
-  process.on("SIGBREAK", () => app.shutdown(128 + 21)); // Windows only
+  initializeLogger(app, { logger });
+  initializeGracefulShutdown(app, { defaultShutdownWaitMs });
 
   if (sentryDsn) {
-    Sentry.init({
+    initializeSentry(app, {
       dsn: sentryDsn,
-      environment,
       release: process.env.npm_package_version,
-    });
-    app.on("error", (err, ctx) => {
-      Sentry.withScope(function (scope) {
-        scope.addEventProcessor(function (event) {
-          return Sentry.Handlers.parseRequest(event, ctx.request);
-        });
-        Sentry.captureException(err);
-      });
-    });
-
-    app.on("shutdown", async () => {
-      logger.debug("Closing Sentry connection");
-      // See: https://docs.sentry.io/platforms/node/guides/koa/configuration/draining/
-      await Sentry.close();
-      logger.debug("Sentry connection closed");
     });
   }
 
-  const orm = await MikroORM.init(
-    ormConfig({ clientUrl: dbUrl, environment, logger })
-  );
-  app.on("shutdown", async () => {
-    logger.debug("Closing Database connection");
-    await orm.close();
-    logger.debug("Database connection closed");
-  });
+  await initializeDb(app, { clientUrl: dbUrl });
+  await initializeKratos(app, { publicUrl: kratosPublicUrl });
 
-  const redis = redisUrl ? new IORedis(redisUrl) : undefined;
-  if (redis) {
-    await redis.connect();
-    app.on("shutdown", async () => {
-      logger.debug("Closing Redis connection");
-      await redis.disconnect(false);
-      logger.debug("Redis connection closed");
-    });
+  if (redisUrl) {
+    await initializeRedis(app, { url: redisUrl });
   }
 
   app.use(
-    logging(logger, {
+    logRequests({
       pathLevels: {
+        // Reduce logging levels for metrics and health endpoints because
+        // they are only used internally.
         [metricsPath]: "trace",
         [healthPath]: "trace",
       },
@@ -198,11 +117,12 @@ export const createApp = async ({
   app.use(metricsCollector());
   app.use(responseTime());
   app.use(requestId());
-  app.use(rateLimit({ redis }));
+  app.use(rateLimit());
   app.use(helmet({ contentSecurityPolicy: false }));
   app.use(cors());
 
-  // Metrics and health routes don't need body parsing or entity manager.
+  // Metrics and health routes don't need body parsing or entity manager,
+  // so they can be applied first.
   app.use(metricsRoutes({ path: metricsPath }));
   app.use(healthRoutes({ path: healthPath }));
 
@@ -211,18 +131,17 @@ export const createApp = async ({
       enableTypes: ["json"],
       jsonLimit: "5mb",
       strict: true,
+      // TODO: is this needed?
       // onerror: function (err, ctx) {
       //   ctx.throw("body parse error", 422);
       // },
     })
   );
 
-  app.use(authentication({ publicUrl: kratosPublicUrl }));
-
   // Create a scoped entity manager for each request.
-  app.use(entityManager({ orm }));
+  app.use(forkEntityManager());
 
-  // Finally, register API routes
+  // Lastly, register API routes
   app.use(apiRoutes({ prefix: apiPath }));
 
   return app;

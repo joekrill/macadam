@@ -12,7 +12,6 @@ export interface ResponseTimeState {
  * and adds a `Response-Time` header including the value. The value is
  * in milliseconds.
  */
-
 export const responseTime =
   (): Middleware =>
   async (ctx, next: () => Promise<void>): Promise<void> => {

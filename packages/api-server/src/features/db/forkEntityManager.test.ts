@@ -1,15 +1,16 @@
 import { MikroORM } from "@mikro-orm/core";
 import { createMockContext } from "@shopify/jest-koa-mocks";
 import { Middleware, ParameterizedContext } from "koa";
-import { entityManager } from "./entityManager";
+import { forkEntityManager } from "./forkEntityManager";
+import { DbContext } from "./initializeDb";
 
 jest.mock("@mikro-orm/core");
-jest.unmock("./entityManager");
+jest.unmock("./forkEntityManager");
 
-describe("entityManager", () => {
+describe("forkEntityManager", () => {
   let instance: Middleware;
   let contextMock: ParameterizedContext;
-  const nextMock = jest.fn();
+  const nextMock = jest.fn().mockReturnValue(Promise.resolve());
   const flushMock = jest.fn();
   const clearMock = jest.fn();
   const forkMock = jest.fn().mockImplementation(() => ({
@@ -24,9 +25,11 @@ describe("entityManager", () => {
   } as unknown as MikroORM;
 
   beforeEach(() => {
-    contextMock = createMockContext();
+    contextMock = createMockContext<DbContext>({
+      customProperties: { orm: ormMock },
+    });
     nextMock.mockReset();
-    instance = entityManager({ orm: ormMock });
+    instance = forkEntityManager();
   });
 
   it("sets the entityManager before calling next", async () => {

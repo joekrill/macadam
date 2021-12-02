@@ -13,7 +13,7 @@ export interface RateLimitOptions extends IRateLimiterOptions {
 }
 
 /**
- * Returns Middleware which adds rate limiting to API requests.
+ * Returns Middleware which adds rate limiting to requests.
  *
  * For documentation, @see {@url https://github.com/animir/node-rate-limiter-flexible/}
  * For header information, @see {@url https://tools.ietf.org/id/draft-polli-ratelimit-headers-00.html}
@@ -29,11 +29,14 @@ export const rateLimit = ({
     ...options,
   };
 
-  const rateLimiter = redis
-    ? new RateLimiterRedis({ storeClient: redis, ...mergedOptions })
-    : new RateLimiterMemory(mergedOptions);
+  let rateLimiter: RateLimiterMemory | RateLimiterRedis | undefined = undefined;
 
   return async (ctx, next: () => Promise<void>): Promise<void> => {
+    if (!rateLimiter) {
+      rateLimiter = ctx.redis
+        ? new RateLimiterRedis({ storeClient: ctx.redis, ...mergedOptions })
+        : new RateLimiterMemory(mergedOptions);
+    }
     let rateLimiterRes: RateLimiterRes | undefined = undefined;
 
     try {

@@ -1,4 +1,4 @@
-import { Context, Middleware } from "koa";
+import { Middleware } from "koa";
 import { v4 } from "uuid";
 
 export interface RequestIdState {
@@ -14,7 +14,7 @@ export interface RequestIdState {
  */
 export const requestId =
   (): Middleware =>
-  async (ctx: Context, next: () => Promise<void>): Promise<void> => {
+  async (ctx, next): Promise<void> => {
     if (!ctx.state.requestId) {
       const incomingRequestIdHeader =
         ctx.request.headers["request-id"] ||

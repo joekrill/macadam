@@ -11,6 +11,12 @@
     reverse_proxy client-web:3000
   }
 
+  # direct access to the underlying api-server
+  @api host api.localtest.me 
+	handle @api {
+		reverse_proxy api-server:4000
+	}
+
   @www host www.localtest.me 
   handle @www {
     redir https://localtest.me{uri}

@@ -1,12 +1,13 @@
+import Koa from "koa";
 import pino from "pino";
 import request from "supertest";
-import { AppInstance, createApp } from "../../app";
+import { createApp } from "../../app";
 
 jest.unmock("prom-client");
 
-describe("metrics", () => {
+describe("metricsRoutes", () => {
   describe("GET /metrics", () => {
-    let app: AppInstance;
+    let app: Koa;
 
     beforeEach(async () => {
       app = await createApp({
@@ -19,7 +20,7 @@ describe("metrics", () => {
     });
 
     afterEach(async () => {
-      await app.shutdown();
+      await app.context.shutdown();
     });
 
     describe("initially", () => {

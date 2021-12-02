@@ -40,6 +40,7 @@ export const router = new Router<DefaultState, Context>();
     const { thingRepository } = ctx.state;
     ctx.body = await thingRepository!.findAll();
     ctx.status = 200;
+    console.log("foo", ctx.body);
   })
   .get("/:id", async (ctx) => {
     ctx.body = ctx.state.thing;
@@ -59,33 +60,3 @@ export const router = new Router<DefaultState, Context>();
       ctx.status = 404;
     }
   });
-
-// router.post("/", async (ctx) => {
-//   const { thingRepository } = ctx.state;
-//   try {
-//     ctx.state.thing = thingRepository.create({ name: ctx.request.body.name as string });
-//     await thingRepository.persistAndFlush(ctx.state.thing);
-//     ctx.body = ctx.state.thing;
-//     ctx.status = 201;
-//   } catch (err) {
-//     console.error(err);
-//     ctx.status = 404;
-//   }
-// });
-
-// router.put("/:id", async (ctx) => {
-//   const { thing, thingRepository } = ctx.state;
-//   if (!thing) {
-//     return ctx.throw(404);
-//   }
-
-//   try {
-//     // TODO: Validation:
-//     thing.name = ctx.request.body.name;
-//     await thingRepository.flush();
-//     ctx.body = thing;
-//     ctx.status = 200;
-//   } catch (err) {
-//     ctx.status = 404;
-//   }
-// });

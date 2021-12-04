@@ -14,9 +14,9 @@ describe("requireAuthenticated", () => {
   });
 
   describe("when `state` includes a session", () => {
-    beforeEach(() => {
+    beforeEach(async () => {
       contextMock = createMockContext({ state: { session: {} } });
-      instance(contextMock, nextMock);
+      await instance(contextMock, nextMock);
     });
 
     it("calls next", () => {
@@ -25,9 +25,9 @@ describe("requireAuthenticated", () => {
   });
 
   describe("when `state` does not include a session", () => {
-    beforeEach(() => {
+    beforeEach(async () => {
       contextMock = createMockContext({ state: { session: undefined } });
-      instance(contextMock, nextMock);
+      await instance(contextMock, nextMock);
     });
 
     it("throws a 401 error to koa", () => {

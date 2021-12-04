@@ -16,6 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@casl/ability": "^5.4.3",
     "@koa/cors": "^3.1.0",
     "@koa/router": "^10.1.1",
     "@mikro-orm/core": "^4.5.9",
@@ -33,7 +34,8 @@
     "pino-pretty": "^7.2.0",
     "prom-client": "^14.0.1",
     "rate-limiter-flexible": "^2.3.5",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "zod": "^3.11.6"
   },
   "devDependencies": {
     "@mikro-orm/cli": "^4.5.9",

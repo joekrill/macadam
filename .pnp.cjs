@@ -4524,6 +4524,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@casl/ability", [
+        ["npm:5.4.3", {
+          "packageLocation": "./.yarn/cache/@casl-ability-npm-5.4.3-0ff9412583-f1e13f1e86.zip/node_modules/@casl/ability/",
+          "packageDependencies": [
+            ["@casl/ability", "npm:5.4.3"],
+            ["@ucast/mongo2js", "npm:1.3.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@chakra-ui/accordion", [
         ["npm:1.4.1", {
           "packageLocation": "./.yarn/cache/@chakra-ui-accordion-npm-1.4.1-2b03ce0f23-aa3f1cebe9.zip/node_modules/@chakra-ui/accordion/",
@@ -13491,6 +13501,47 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@ucast/core", [
+        ["npm:1.10.1", {
+          "packageLocation": "./.yarn/cache/@ucast-core-npm-1.10.1-36a010f8ed-3833591642.zip/node_modules/@ucast/core/",
+          "packageDependencies": [
+            ["@ucast/core", "npm:1.10.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@ucast/js", [
+        ["npm:3.0.2", {
+          "packageLocation": "./.yarn/cache/@ucast-js-npm-3.0.2-68f5b958dd-d7c6baea3d.zip/node_modules/@ucast/js/",
+          "packageDependencies": [
+            ["@ucast/js", "npm:3.0.2"],
+            ["@ucast/core", "npm:1.10.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@ucast/mongo", [
+        ["npm:2.4.2", {
+          "packageLocation": "./.yarn/cache/@ucast-mongo-npm-2.4.2-2401451432-27dddf9d24.zip/node_modules/@ucast/mongo/",
+          "packageDependencies": [
+            ["@ucast/mongo", "npm:2.4.2"],
+            ["@ucast/core", "npm:1.10.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@ucast/mongo2js", [
+        ["npm:1.3.3", {
+          "packageLocation": "./.yarn/cache/@ucast-mongo2js-npm-1.3.3-4abfc9834f-10f15ac82c.zip/node_modules/@ucast/mongo2js/",
+          "packageDependencies": [
+            ["@ucast/mongo2js", "npm:1.3.3"],
+            ["@ucast/core", "npm:1.10.1"],
+            ["@ucast/js", "npm:3.0.2"],
+            ["@ucast/mongo", "npm:2.4.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@vue/compiler-core", [
         ["npm:3.2.20", {
           "packageLocation": "./.yarn/cache/@vue-compiler-core-npm-3.2.20-816031913a-d90f9469e7.zip/node_modules/@vue/compiler-core/",
@@ -14443,6 +14494,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/api-server/",
           "packageDependencies": [
             ["api-server", "workspace:packages/api-server"],
+            ["@casl/ability", "npm:5.4.3"],
             ["@koa/cors", "npm:3.1.0"],
             ["@koa/router", "npm:10.1.1"],
             ["@mikro-orm/cli", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:4.5.9"],
@@ -14481,7 +14533,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ts-jest", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:27.0.7"],
             ["ts-node", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:10.4.0"],
             ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"],
-            ["uuid", "npm:8.3.2"]
+            ["uuid", "npm:8.3.2"],
+            ["zod", "npm:3.11.6"]
           ],
           "linkType": "SOFT",
         }]

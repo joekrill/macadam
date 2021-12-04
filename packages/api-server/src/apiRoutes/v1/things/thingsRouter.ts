@@ -1,17 +1,14 @@
 import Router from "@koa/router";
 import { EntityRepository } from "@mikro-orm/core";
-import { Context, DefaultState } from "koa";
-import { Thing } from "../../db/entities/Thing";
+import { DefaultState } from "koa";
+import { Thing } from "../../../features/db/entities/Thing";
 
 interface ThingRouterState extends DefaultState {
   thing?: Thing;
   thingRepository?: EntityRepository<Thing>;
 }
 
-export const thingsRouter = new Router<
-  DefaultState & ThingRouterState,
-  Context
->();
+export const thingsRouter = new Router();
 
 thingsRouter
   .use((ctx, next) => {

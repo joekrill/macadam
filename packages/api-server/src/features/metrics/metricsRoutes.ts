@@ -6,14 +6,14 @@ export interface MetricsRoutesOptions {
   /**
    * The URL path that should serve the metrics.
    */
-  path: string;
+  prefix: string;
 }
 
 /**
  * A router which outputs prometheus-style metrics at it's endpoint.
  */
-export const metricsRoutes = ({ path }: MetricsRoutesOptions) => {
-  const router = new Router<DefaultState, Context>({ prefix: path });
+export const metricsRoutes = ({ prefix }: MetricsRoutesOptions) => {
+  const router = new Router<DefaultState, Context>({ prefix });
 
   router.get("/", async (ctx) => {
     ctx.state.excludeFromMetrics = true;

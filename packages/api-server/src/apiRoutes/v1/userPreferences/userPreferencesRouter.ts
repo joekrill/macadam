@@ -1,15 +1,15 @@
 import Router from "@koa/router";
 import { EntityRepository } from "@mikro-orm/core";
 import { Context, DefaultState } from "koa";
-import { requireAuthenticated } from "../../auth/requireAuthenticated";
-import { UserPreference } from "../../db/entities/UserPreference";
+import { requireAuthenticated } from "../../../features/auth/requireAuthenticated";
+import { UserPreference } from "../../../features/db/entities/UserPreference";
 
 interface UserPreferenceRouterState extends DefaultState {
   userPreference?: UserPreference;
   userPreferenceRepository: EntityRepository<UserPreference>;
 }
 
-export const userPreferencesRouter = new Router<DefaultState, Context>();
+export const userPreferencesRouter = new Router();
 
 (userPreferencesRouter as unknown as Router<UserPreferenceRouterState, Context>)
   .use(requireAuthenticated())

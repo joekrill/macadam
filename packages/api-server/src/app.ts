@@ -3,7 +3,7 @@ import Koa from "koa";
 import bodyParser from "koa-bodyparser";
 import helmet from "koa-helmet";
 import pino from "pino";
-import { apiRoutes } from "./features/api";
+import { apiRoutes } from "./apiRoutes";
 import { forkEntityManager } from "./features/db/forkEntityManager";
 import { initializeDb } from "./features/db/initializeDb";
 import { healthRoutes } from "./features/health/healthRoutes";
@@ -135,8 +135,8 @@ export const createApp = async ({
 
   // Metrics and health routes don't need body parsing or entity manager,
   // so they can be applied first.
-  app.use(metricsRoutes({ path: metricsPath }));
-  app.use(healthRoutes({ path: healthPath }));
+  app.use(metricsRoutes({ prefix: metricsPath }));
+  app.use(healthRoutes({ prefix: healthPath }));
 
   app.use(
     bodyParser({

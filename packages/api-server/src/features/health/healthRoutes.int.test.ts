@@ -13,6 +13,7 @@ describe("/health", () => {
       healthPath: "/health",
       logger: pino({ enabled: false }),
       kratosPublicUrl: "",
+      kratosDbUrl: "sqlite::memory:",
     });
   });
 

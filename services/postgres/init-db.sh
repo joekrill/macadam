@@ -6,6 +6,9 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
     CREATE DATABASE kratos;
     GRANT ALL PRIVILEGES ON DATABASE kratos TO kratos;
 
+    -- Until kratos completes their API, we access the kratos db directly
+    GRANT ALL PRIVILEGES ON DATABASE kratos TO "$POSTGRES_USER";
+
     CREATE USER plausible WITH PASSWORD 'plausible!';
     CREATE DATABASE plausible;
     GRANT ALL PRIVILEGES ON DATABASE plausible TO plausible;

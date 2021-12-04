@@ -7,11 +7,13 @@ import { apiRoutes } from "./features/api";
 import { forkEntityManager } from "./features/db/forkEntityManager";
 import { initializeDb } from "./features/db/initializeDb";
 import { healthRoutes } from "./features/health/healthRoutes";
+import { forkKratosEntityManager } from "./features/kratos/forkKratosEntityManager";
 import { initializeKratos } from "./features/kratos/initializeKratos";
 import { initializeLogger } from "./features/logging/initializeLogger";
 import { logRequests } from "./features/logging/logRequests";
 import { metricsCollector } from "./features/metrics/metricsCollector";
 import { metricsRoutes } from "./features/metrics/metricsRoutes";
+import { urlSearchParams } from "./features/querystring/urlSearchParams";
 import { rateLimit } from "./features/rateLimit/rateLimit";
 import { initializeRedis } from "./features/redis/initializeRedis";
 import { requestId } from "./features/requestId/requestId";
@@ -47,6 +49,11 @@ export interface AppOptions {
   healthPath?: string;
 
   /**
+   * The connection string URl for connecting directly to the Kratos database
+   */
+  kratosDbUrl: string;
+
+  /**
    * The URL to the public API of the Kratos instance used for authentication.
    */
   kratosPublicUrl: string;
@@ -79,6 +86,7 @@ export const createApp = async ({
   defaultShutdownWaitMs = 15000,
   environment = "development",
   healthPath = "/health",
+  kratosDbUrl,
   kratosPublicUrl,
   logger,
   metricsPath = "/metrics",
@@ -98,7 +106,10 @@ export const createApp = async ({
   }
 
   await initializeDb(app, { clientUrl: dbUrl });
-  await initializeKratos(app, { publicUrl: kratosPublicUrl });
+  await initializeKratos(app, {
+    publicUrl: kratosPublicUrl,
+    clientUrl: kratosDbUrl,
+  });
 
   if (redisUrl) {
     await initializeRedis(app, { url: redisUrl });
@@ -114,6 +125,7 @@ export const createApp = async ({
       },
     })
   );
+  app.use(urlSearchParams());
   app.use(metricsCollector());
   app.use(responseTime());
   app.use(requestId());
@@ -140,6 +152,7 @@ export const createApp = async ({
 
   // Create a scoped entity manager for each request.
   app.use(forkEntityManager());
+  app.use(forkKratosEntityManager());
 
   // Lastly, register API routes
   app.use(apiRoutes({ prefix: apiPath }));

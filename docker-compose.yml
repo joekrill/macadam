@@ -55,6 +55,7 @@ x-api-server-defaults: &api-server-defaults
   restart: on-failure
   environment:
     DB_URL: postgresql://macadam:macadam!@postgres:5432/macadam
+    KRATOS_DB_URL: postgresql://macadam:macadam!@postgres:5432/kratos
     REDIS_URL: redis://redis:6380/0
     PORT: 4000
     SENTRY_DSN: https://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip.localtest.me/2

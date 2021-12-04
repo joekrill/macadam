@@ -24,7 +24,21 @@ export const initializeLogger = (
   app.context.logger = logger;
 
   app.use((ctx, next) => {
-    ctx.state.logger = logger.child({ id: ctx.state.requestId });
+    ctx.state.logger = logger.child(
+      { id: ctx.state.requestId },
+      {
+        redact: {
+          // These aren't useful at all in our output and just bloat our logs.
+          paths: [
+            "state.entityManager",
+            "state.kratosEntityManager",
+            "state.metricsRegister",
+            "state.logger",
+          ],
+          remove: true,
+        },
+      }
+    );
     return next();
   });
 };

@@ -25,6 +25,7 @@ const {
   NODE_ENV,
   PORT,
   SENTRY_DSN,
+  KRATOS_DB_URL,
   KRATOS_PUBLIC_URL,
   LOG_LEVEL,
 } = process.env;
@@ -35,6 +36,11 @@ const host = LISTEN_ADDRESS || "0.0.0.0";
 
 if (typeof DB_URL !== "string") {
   logger.error("DB_URL environment variable not supplied");
+  process.exit(2);
+}
+
+if (typeof KRATOS_DB_URL !== "string") {
+  logger.error("KRATOS_DB_URL environment variable not supplied");
   process.exit(2);
 }
 
@@ -57,6 +63,7 @@ if (LOG_LEVEL && logger.levels.values[LOG_LEVEL]) {
       dbUrl: DB_URL,
       environment,
       healthPath: HEALTH_PATH,
+      kratosDbUrl: KRATOS_DB_URL,
       logger,
       metricsPath: METRICS_PATH,
       sentryDsn: SENTRY_DSN,

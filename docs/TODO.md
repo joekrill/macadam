@@ -1,3 +1,4 @@
+- Flatten traits?
 - (client-web) User settings
 - (client-web) How to deal with unverified email address
   - (client-web) Show notification component whne email address is not verififed
@@ -6,7 +7,7 @@
 - (client-web) Handle /sessions/whoami 401 response (vs request failure)
 - (client-web) Auth forms: auto-focus first field when rendering forms.
 - (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
-- Handle logins across tabs (use localStorage to signal session changes?)
+- Handle logins across tabs (use localStorage to signal session changes? BroadcastChannel?)
 - Detect session expiration and handle it somehow (modal login form? a la Gmail?)
 - (client-web) Sentry: use tunnel? (https://docs.sentry.io/platforms/javascript/troubleshooting/#dealing-with-ad-blockers)
 - (client-web) ErrorAlert should report errors https://develop.sentry.dev/
@@ -21,6 +22,12 @@
 - "Down for Maintenance" state
 - Vulnerability Disclosure Policy (https://github.com/disclose/dioterms/blob/master/core-terms-vdp.md)
 - (client-web) Add OpenGraph attributes (http://ogp.me/)
+- (client-web) contact form
+- Data deletion (user account deletion)
+- Data download (whole account)
+- Anonymizing data
+- Background tasks
+- DB Seeding
 
 Blocked
 

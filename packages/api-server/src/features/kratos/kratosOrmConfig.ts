@@ -1,15 +1,9 @@
 import { Options } from "@mikro-orm/core";
-import pino from "pino";
 import { URL } from "url";
+import { OrmConfigOptions } from "../db/ormConfig";
 import { entities } from "./entities";
 
-export interface OrmConfigOptions {
-  environment: string;
-  clientUrl: string;
-  logger?: pino.Logger;
-}
-
-export const ormConfig = ({
+export const kratosOrmConfig = ({
   clientUrl,
   environment,
   logger,
@@ -21,17 +15,6 @@ export const ormConfig = ({
     entities: [...entities],
     debug: environment === "development",
     ...(ormLogger ? { logger: (message) => ormLogger.debug(message) } : {}),
-    migrations: {
-      path: "./src/features/orm/migrations",
-      tableName: "migrations",
-      transactional: true,
-      safe: true,
-      emit: "ts",
-      allOrNothing: true,
-    },
-
-    // When using the CLI,
-    tsNode: environment === "development",
 
     // SQLite is supported using something like `sqlite:/absolute/path/db.sqlite`
     // or `sqlite:relative/path/db.sqlite`

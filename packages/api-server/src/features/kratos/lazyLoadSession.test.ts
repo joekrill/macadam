@@ -1,10 +1,10 @@
-// import { V0alpha2Api } from "@ory/kratos-client";
 import { createMockContext } from "@shopify/jest-koa-mocks";
 import { Middleware, ParameterizedContext } from "koa";
 import P from "pino";
 import { lazyLoadSession } from "./lazyLoadSession";
 
 jest.unmock("./lazyLoadSession");
+jest.unmock("zod");
 
 describe("lazyLoadSession()", () => {
   const nextMock = jest.fn();
@@ -17,16 +17,13 @@ describe("lazyLoadSession()", () => {
   };
 
   beforeEach(async () => {
-    // (V0alpha2Api as jest.Mock).mockImplementation(
-    //   () => mockV0alpha1ApiInstance
-    // );
     instance = lazyLoadSession();
     contextMock = createMockContext({
       customProperties: {
         kratosPublicApi: mockV0alpha1ApiInstance,
       },
     });
-    contextMock.state.log = {
+    contextMock.state.logger = {
       debug: jest.fn(),
       error: errorMock,
     } as unknown as P.Logger;

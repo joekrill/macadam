@@ -25,8 +25,10 @@ describe("forkKratosEntityManager", () => {
   } as unknown as MikroORM;
 
   beforeEach(() => {
-    contextMock = createMockContext<KratosContext>({
-      customProperties: { orm: ormMock },
+    contextMock = createMockContext<Partial<KratosContext>>({
+      customProperties: {
+        kratosOrm: ormMock,
+      },
     });
     nextMock.mockReset();
     instance = forkKratosEntityManager();
@@ -35,7 +37,7 @@ describe("forkKratosEntityManager", () => {
   it("sets the entityManager before calling next", async () => {
     expect.assertions(1);
     nextMock.mockImplementation(() => {
-      expect(contextMock.state.entityManager).toBeDefined();
+      expect(contextMock.state.kratosEntityManager).toBeDefined();
       return Promise.resolve();
     });
     await instance(contextMock, nextMock);
@@ -45,6 +47,6 @@ describe("forkKratosEntityManager", () => {
     await instance(contextMock, nextMock);
     expect(flushMock).toHaveBeenCalled();
     expect(clearMock).toHaveBeenCalled();
-    expect(contextMock.state.entityManager).toBeUndefined();
+    expect(contextMock.state.kratosEntityManager).toBeUndefined();
   });
 });

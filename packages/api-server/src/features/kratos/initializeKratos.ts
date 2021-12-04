@@ -42,7 +42,7 @@ export const initializeKratos = async (
 
   app.context.addShutdownListener(async () => {
     app.context.logger.debug("Kratos Database connection closing");
-    await app.context.orm.close();
+    await app.context.kratosOrm.close();
     app.context.logger.debug("Kratos Database connection closed");
   });
 };

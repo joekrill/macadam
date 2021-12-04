@@ -1,9 +1,5 @@
 import { Context, Middleware } from "koa";
 
-export interface RequestIdState {
-  requestId?: string;
-}
-
 /**
  * Returns Middleware which ensures the current user is authenticated.
  */

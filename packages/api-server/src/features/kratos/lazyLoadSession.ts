@@ -1,6 +1,13 @@
 import { Session } from "@ory/kratos-client";
 import { ensure as ensureError } from "errorish";
 import { Middleware } from "koa";
+import { z } from "zod";
+
+const unauthorizedErrorSchema = z.object({
+  response: z.object({
+    status: z.literal(401),
+  }),
+});
 
 export const lazyLoadSession =
   (): Middleware =>
@@ -17,25 +24,26 @@ export const lazyLoadSession =
       get: async function () {
         if (!loaded) {
           try {
-            ctx.state.log.debug(
-              { cookies: ctx.request.headers["cookie"] },
-              "Fetching Kratos session"
-            );
+            ctx.state.logger.debug("Fetching Kratos session");
             const response = await ctx.kratosPublicApi.toSession(
               undefined,
               ctx.request.headers["cookie"]
             );
             session = response.data;
-            ctx.state.log.debug({ session }, "Kratos session received");
+            ctx.state.logger.debug({ session }, "Kratos session received");
           } catch (caughtError) {
-            const error = ensureError(caughtError);
-            ctx.state.log.error(
-              {
-                stack: error.stack,
-                type: error.name,
-              },
-              `Error fetching kratos session: ${error.message}`
-            );
+            if (unauthorizedErrorSchema.safeParse(caughtError).success) {
+              ctx.state.logger.debug("Kratos session not found (Unauthorized)");
+            } else {
+              const error = ensureError(caughtError);
+              ctx.state.logger.error(
+                {
+                  stack: error.stack,
+                  type: error.name,
+                },
+                `Error fetching kratos session: ${error.message}`
+              );
+            }
           } finally {
             loaded = true;
           }

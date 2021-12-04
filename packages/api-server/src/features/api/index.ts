@@ -1,8 +1,8 @@
 import Router from "@koa/router";
 import { Context, DefaultState } from "koa";
 import compose from "koa-compose";
-import { router as thingsRouter } from "./things/router";
-import { router as userPreferencesRouter } from "./userPreferences/router";
+import { thingsRouter } from "./things/thingsRouter";
+import { userPreferencesRouter } from "./userPreferences/userPreferencesRouter";
 
 export interface ApiRoutesOptions {
   prefix?: string;

@@ -9,9 +9,9 @@ interface UserPreferenceRouterState extends DefaultState {
   userPreferenceRepository: EntityRepository<UserPreference>;
 }
 
-export const router = new Router<DefaultState, Context>();
+export const userPreferencesRouter = new Router<DefaultState, Context>();
 
-(router as unknown as Router<UserPreferenceRouterState, Context>)
+(userPreferencesRouter as unknown as Router<UserPreferenceRouterState, Context>)
   .use(requireAuthenticated())
   .use(async (ctx, next) => {
     if (!ctx.state.entityManager) {

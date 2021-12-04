@@ -8,13 +8,12 @@ interface ThingRouterState extends DefaultState {
   thingRepository?: EntityRepository<Thing>;
 }
 
-export const router = new Router<DefaultState, Context>();
+export const thingsRouter = new Router<
+  DefaultState & ThingRouterState,
+  Context
+>();
 
-// This is a bit of a typescript workaround until @koa/router is typed
-// correctly to support middleware type enhancements.
-// This may help: https://github.com/DefinitelyTyped/DefinitelyTyped/pull/54209
-// But it doesn't handle `use()` and `param()` use-cases
-(router as unknown as Router<ThingRouterState, Context>)
+thingsRouter
   .use((ctx, next) => {
     if (!ctx.state.entityManager) {
       return ctx.throw(500, "entityManager is not undefined!");

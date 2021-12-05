@@ -1,9 +1,25 @@
 import { RuleToQueryConverter } from "@casl/ability/extra";
-import { AppAbility } from "./abilities";
+import deepMapKeys from "deep-map-keys";
+import { AppAbility } from "./AppAbility";
 
-// TODO: Implement this so it converts MongoQuery's to appropriate filters for MikroOrm
-// At the moment this simply passes through the conditions supplied when defining
-// abilities. So as long as those conditions are valid queries for use with MikroORM,
-// they will work correctly.
+/**
+ *
+ * This is used to convert Casl rule conditions to a database query condition
+ * that can be passed to MikroORM.
+ *
+ * TODO: MikroORM supports _most_ of the same query conditions as Casl, so most
+ * conversions should "just work", except for the following:
+ * - $all
+ * - $size
+ * - $exists
+ * - $elemMatch
+ *
+ * `$regex` in Casl is mapped to `$re` in MikroORM. This is implemented.
+ *
+ * entirely clear
+ * - https://mikro-orm.io/docs/query-conditions
+ * - https://casl.js.org/v5/en/guide/conditions-in-depth
+ * - https://casl.js.org/v5/en/api/casl-ability-extra#rules-to-query
+ */
 export const ruleToDbQuery: RuleToQueryConverter<AppAbility> = (rule) =>
-  rule.conditions || {};
+  deepMapKeys(rule.conditions || {}, (key) => (key === "$regex" ? "$re" : key));

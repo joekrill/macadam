@@ -49,6 +49,10 @@ export const initializeGracefulShutdown = (
 ) => {
   let isTerminating = false;
 
+  // This will be used to keep track of the signal listeners we add,
+  // so that we can remove them when we have finished our shutdown.
+  const processListeners: Record<string, NodeJS.SignalsListener> = {};
+
   const shutdown = async (
     exitCode?: number,
     waitMs: number = defaultShutdownWaitMs
@@ -57,6 +61,7 @@ export const initializeGracefulShutdown = (
     let shutdownTimeout: NodeJS.Timeout | number | undefined = undefined;
     isTerminating = true;
     const listeners = app.listeners("shutdown") as ShutdownListener[];
+    app.removeAllListeners("shutdown");
 
     try {
       logger.info(
@@ -83,6 +88,15 @@ export const initializeGracefulShutdown = (
     } finally {
       clearTimeout(shutdownTimeout);
       logger.info({ exitCode }, "Shutting down");
+
+      // Remove all listeneres... this is really only necessary if the process
+      // itself is not being shutdown.
+      process.off("exit", shutdown);
+
+      Object.entries(processListeners).forEach(([signal, listener]) => {
+        process.off(signal, listener);
+      });
+
       if (exitCode !== undefined) {
         process.exit(exitCode);
       }
@@ -91,12 +105,16 @@ export const initializeGracefulShutdown = (
 
   // Intercept shutdowns so we can allow any listeners to cleanup,
   // but maintain exit codes.
-  process.on("exit", (code) => shutdown(code));
-  process.on("SIGHUP", () => shutdown(128 + 1));
-  process.on("SIGINT", () => shutdown(128 + 2));
-  process.on("SIGQUIT", () => shutdown(128 + 3));
-  process.on("SIGTERM", () => shutdown(128 + 15));
-  process.on("SIGBREAK", () => shutdown(128 + 21)); // Windows only
+  processListeners.exit = () => shutdown();
+  processListeners.SIGHUP = () => shutdown(128 + 1);
+  processListeners.SIGINT = () => shutdown(128 + 2);
+  processListeners.SIGQUIT = () => shutdown(128 + 3);
+  processListeners.SIGTERM = () => shutdown(128 + 15);
+  processListeners.SIGBREAK = () => shutdown(128 + 21); // Windows only
+
+  Object.entries(processListeners).forEach(([signal, listener]) => {
+    process.on(signal, listener);
+  });
 
   const addShutdownListener = (listener: ShutdownListener) => {
     app.on("shutdown", listener);

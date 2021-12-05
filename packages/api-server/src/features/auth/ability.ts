@@ -1,14 +1,15 @@
 import { Context, Middleware } from "koa";
-import { abilityFor, AppAbility } from "./abilities";
+import { abilityFor } from "./abilityFor";
+import { AppAbility } from "./AppAbility";
 
-export interface AuthorizeState {
+export interface AbilityState {
   ability?: AppAbility;
 }
 
 /**
  * Returns Middleware which attaches the ability of the current user to state.
  */
-export const authorize =
+export const ability =
   (): Middleware =>
   async (ctx: Context, next: () => Promise<void>): Promise<void> => {
     if (!ctx.state.ability) {

@@ -8617,7 +8617,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mikro-orm/knex", "virtual:2af0d48b22764114fcfd2388002644c445f3497049d72c7472300ab363a5e19a69ee529f9e6a6ca83b9b6dfdd5a76d051b7e0bd8a1f139feadfb35a98a21f999#npm:4.5.9"],
             ["@mikro-orm/core", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:4.5.9"],
             ["@mikro-orm/entity-generator", null],
-            ["@mikro-orm/migrations", null],
+            ["@mikro-orm/migrations", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:4.5.9"],
             ["@types/mikro-orm__core", null],
             ["@types/mikro-orm__entity-generator", null],
             ["@types/mikro-orm__migrations", null],
@@ -8638,7 +8638,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [
             "@mikro-orm/core",
             "@mikro-orm/entity-generator",
-            "@mikro-orm/migrations",
             "@types/mikro-orm__core",
             "@types/mikro-orm__entity-generator",
             "@types/mikro-orm__migrations",
@@ -8661,7 +8660,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mikro-orm/knex", "virtual:3d5525a65fe62df174aba81753c52e72d3295c42ba8c6d4fa020e9fd50e75122bbb58d949f77e6d217d22d3ed8e9fb3b24fd4e8ba570d1f1d4e1ffce64ded1c7#npm:4.5.9"],
             ["@mikro-orm/core", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:4.5.9"],
             ["@mikro-orm/entity-generator", null],
-            ["@mikro-orm/migrations", null],
+            ["@mikro-orm/migrations", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:4.5.9"],
             ["@types/mikro-orm__core", null],
             ["@types/mikro-orm__entity-generator", null],
             ["@types/mikro-orm__migrations", null],
@@ -8682,7 +8681,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [
             "@mikro-orm/core",
             "@mikro-orm/entity-generator",
-            "@mikro-orm/migrations",
             "@types/mikro-orm__core",
             "@types/mikro-orm__entity-generator",
             "@types/mikro-orm__migrations",
@@ -8705,7 +8703,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mikro-orm/knex", "virtual:b89463c1df90297c8dd2e72146faed926a623a53c7ccfc8a199cdf7c89adc1f2aa902ef86be1074802c49896561a9cb01940460e411f7f5841925256808777c6#npm:4.5.9"],
             ["@mikro-orm/core", "virtual:ded0eba21d9be76893c7136ed3ce97c759b9776c4756578a48423d3602ab8055153413c6d570bc431bd3e97c5dc4b81053d0479bc0e5e11648f5cafa56d6ceaf#npm:4.5.9"],
             ["@mikro-orm/entity-generator", "virtual:ded0eba21d9be76893c7136ed3ce97c759b9776c4756578a48423d3602ab8055153413c6d570bc431bd3e97c5dc4b81053d0479bc0e5e11648f5cafa56d6ceaf#npm:4.5.9"],
-            ["@mikro-orm/migrations", null],
+            ["@mikro-orm/migrations", "virtual:ded0eba21d9be76893c7136ed3ce97c759b9776c4756578a48423d3602ab8055153413c6d570bc431bd3e97c5dc4b81053d0479bc0e5e11648f5cafa56d6ceaf#npm:4.5.9"],
             ["@types/mikro-orm__core", null],
             ["@types/mikro-orm__entity-generator", null],
             ["@types/mikro-orm__migrations", null],
@@ -8726,7 +8724,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [
             "@mikro-orm/core",
             "@mikro-orm/entity-generator",
-            "@mikro-orm/migrations",
             "@types/mikro-orm__core",
             "@types/mikro-orm__entity-generator",
             "@types/mikro-orm__migrations",
@@ -12488,6 +12485,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/http-errors", "npm:1.8.0"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:1.8.1", {
+          "packageLocation": "./.yarn/cache/@types-http-errors-npm-1.8.1-03bdc8b2cb-f0710ea284.zip/node_modules/@types/http-errors/",
+          "packageDependencies": [
+            ["@types/http-errors", "npm:1.8.1"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["@types/ioredis", [
@@ -14505,6 +14509,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@ory/kratos-client", "npm:0.8.0-alpha.2"],
             ["@sentry/node", "npm:6.15.0"],
             ["@shopify/jest-koa-mocks", "npm:3.0.8"],
+            ["@types/http-errors", "npm:1.8.1"],
             ["@types/ioredis", "npm:4.28.1"],
             ["@types/jest", "npm:27.0.3"],
             ["@types/koa", "npm:2.13.4"],
@@ -14516,7 +14521,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/pino", "npm:7.0.5"],
             ["@types/supertest", "npm:2.0.11"],
             ["@types/uuid", "npm:8.3.3"],
+            ["deep-map-keys", "npm:2.0.1"],
             ["errorish", "npm:1.0.0"],
+            ["http-errors", "npm:1.8.1"],
             ["ioredis", "npm:4.28.1"],
             ["jest", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:27.3.1"],
             ["jest-mock-axios", "npm:4.4.1"],
@@ -18621,6 +18628,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["deep-map-keys", [
+        ["npm:2.0.1", {
+          "packageLocation": "./.yarn/cache/deep-map-keys-npm-2.0.1-f99008b130-73ec515a12.zip/node_modules/deep-map-keys/",
+          "packageDependencies": [
+            ["deep-map-keys", "npm:2.0.1"],
+            ["es6-weak-map", "npm:2.0.3"],
+            ["lodash", "npm:4.17.21"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["deep-object-diff", [
         ["npm:1.1.0", {
           "packageLocation": "./.yarn/cache/deep-object-diff-npm-1.1.0-5f43b9eddc-4e7c1b7cd2.zip/node_modules/deep-object-diff/",
@@ -19634,6 +19652,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["es6-symbol", "npm:3.1.3"],
             ["d", "npm:1.0.1"],
             ["ext", "npm:1.4.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["es6-weak-map", [
+        ["npm:2.0.3", {
+          "packageLocation": "./.yarn/cache/es6-weak-map-npm-2.0.3-5e57e0b4e6-19ca15f46d.zip/node_modules/es6-weak-map/",
+          "packageDependencies": [
+            ["es6-weak-map", "npm:2.0.3"],
+            ["d", "npm:1.0.1"],
+            ["es5-ext", "npm:0.10.53"],
+            ["es6-iterator", "npm:2.0.3"],
+            ["es6-symbol", "npm:3.1.3"]
           ],
           "linkType": "HARD",
         }]
@@ -22930,6 +22961,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["setprototypeof", "npm:1.2.0"],
             ["statuses", "npm:1.5.0"],
             ["toidentifier", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:1.8.1", {
+          "packageLocation": "./.yarn/cache/http-errors-npm-1.8.1-fb60d9f6ae-d3c7e7e776.zip/node_modules/http-errors/",
+          "packageDependencies": [
+            ["http-errors", "npm:1.8.1"],
+            ["depd", "npm:1.1.2"],
+            ["inherits", "npm:2.0.4"],
+            ["setprototypeof", "npm:1.2.0"],
+            ["statuses", "npm:1.5.0"],
+            ["toidentifier", "npm:1.0.1"]
           ],
           "linkType": "HARD",
         }]
@@ -35529,6 +35572,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/toidentifier-npm-1.0.0-5dad252f90-199e6bfca1.zip/node_modules/toidentifier/",
           "packageDependencies": [
             ["toidentifier", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:1.0.1", {
+          "packageLocation": "./.yarn/cache/toidentifier-npm-1.0.1-f759712599-952c29e2a8.zip/node_modules/toidentifier/",
+          "packageDependencies": [
+            ["toidentifier", "npm:1.0.1"]
           ],
           "linkType": "HARD",
         }]

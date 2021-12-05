@@ -9,9 +9,18 @@ export class Migration20210610004441 extends Migration {
       this.getKnex()
         .schema.createTable(tableName, function (table) {
           table.uuid(namingStrategy.propertyToColumnName("id")).primary();
-          table.string(namingStrategy.propertyToColumnName("name"));
+          table
+            .string(namingStrategy.propertyToColumnName("name"))
+            .notNullable();
+          table.string(namingStrategy.propertyToColumnName("description"));
+          table
+            .boolean(namingStrategy.propertyToColumnName("private"))
+            .defaultTo(true);
           table
             .uuid(namingStrategy.propertyToColumnName("createdBy"))
+            .notNullable();
+          table
+            .uuid(namingStrategy.propertyToColumnName("updatedBy"))
             .notNullable();
           table
             .timestamp(namingStrategy.propertyToColumnName("createdAt"))

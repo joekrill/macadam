@@ -3,6 +3,7 @@
     "target": "es2020",
     "module": "commonjs",
     "lib": ["ES2020"],
+    "allowJs": true,
     "sourceMap": true,
     "outDir": "build",
     "strict": true,
@@ -14,11 +15,15 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "isolatedModules": true
   },
+  // "include": ["src"],
+  // // "exclude": ["**/*.test.ts"]
   "ts-node": {
     "files": true
-  },
-  "include": ["src"],
-  "exclude": ["**/*.test.ts"]
+  }
 }

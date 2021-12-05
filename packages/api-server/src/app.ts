@@ -3,7 +3,6 @@ import Koa from "koa";
 import bodyParser from "koa-bodyparser";
 import helmet from "koa-helmet";
 import pino from "pino";
-import { apiRoutes } from "./apiRoutes";
 import { forkEntityManager } from "./features/db/forkEntityManager";
 import { initializeDb } from "./features/db/initializeDb";
 import { healthRoutes } from "./features/health/healthRoutes";
@@ -20,6 +19,7 @@ import { requestId } from "./features/requestId/requestId";
 import { responseTime } from "./features/responseTime/responseTime";
 import { initializeSentry } from "./features/sentry/initializeSentry";
 import { initializeGracefulShutdown } from "./features/shutdown/initializeGracefulShutdown";
+import { apiRoutes } from "./routes";
 
 export interface AppOptions {
   /**

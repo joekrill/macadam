@@ -81,6 +81,10 @@ if (LOG_LEVEL && logger.levels.values[LOG_LEVEL]) {
         },
         "🛣️  Macadam API server listening"
       );
+
+      app.on("shutdown", () => {
+        apiServer.close();
+      });
     });
   } catch (error) {
     logger.error(ensureError(error), "Error running server");

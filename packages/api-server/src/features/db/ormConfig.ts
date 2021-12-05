@@ -22,12 +22,13 @@ export const ormConfig = ({
     debug: environment === "development",
     ...(ormLogger ? { logger: (message) => ormLogger.debug(message) } : {}),
     migrations: {
-      path: "./src/features/orm/migrations",
+      path: "./src/features/db/migrations",
       tableName: "migrations",
       transactional: true,
       safe: true,
       emit: "ts",
       allOrNothing: true,
+      // snapshot: true,
     },
 
     // When using the CLI,

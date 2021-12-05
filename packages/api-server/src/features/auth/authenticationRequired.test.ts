@@ -1,21 +1,23 @@
 import { createMockContext } from "@shopify/jest-koa-mocks";
 import { Middleware, ParameterizedContext } from "koa";
-import { requireAuthenticated } from "./requireAuthenticated";
+import { authenticationRequired } from "./authenticationRequired";
 
-jest.unmock("./requireAuthenticated");
+jest.unmock("./authenticationRequired");
 
-describe("requireAuthenticated", () => {
+describe("authenticationRequired", () => {
   let instance: Middleware;
   const nextMock = jest.fn();
   let contextMock: ParameterizedContext;
 
   beforeEach(() => {
-    instance = requireAuthenticated();
+    instance = authenticationRequired();
   });
 
   describe("when `state` includes a session", () => {
     beforeEach(async () => {
-      contextMock = createMockContext({ state: { session: {} } });
+      contextMock = createMockContext({
+        state: { session: { identity: { id: "123" } } },
+      });
       await instance(contextMock, nextMock);
     });
 

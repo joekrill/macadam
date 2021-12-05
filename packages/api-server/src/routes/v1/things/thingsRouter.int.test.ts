@@ -56,7 +56,7 @@ describe("authenticated", () => {
           .get("/api/v1/things")
           .send();
         expect(response.status).toBe(200);
-        expect(response.body).toEqual({
+        expect(response.body).toMatchObject({
           data: [],
         });
       });
@@ -79,13 +79,94 @@ describe("authenticated", () => {
           .get("/api/v1/things")
           .send();
         expect(response.status).toBe(200);
-        expect(response.body).toEqual({
+        expect(response.body).toMatchObject({
           data: expect.arrayContaining([
             expect.objectContaining({ name: "Item 1" }),
             expect.objectContaining({ name: "Item 2" }),
             expect.objectContaining({ name: "Item 3" }),
             expect.objectContaining({ name: "Item 4" }),
           ]),
+        });
+      });
+    });
+
+    describe("paging", () => {
+      beforeEach(async () => {
+        app.context.orm.em
+          .persist(
+            Array.from({ length: 35 }, (_, i) => new Thing("123", `Item ${i}`))
+          )
+          .flush();
+      });
+
+      describe.each([
+        [
+          "page: 4",
+          { "page[number]": 4 },
+          { count: 5, limit: 10, offset: 30, page: 4, totalPages: 4 },
+        ],
+        [
+          "no params",
+          {},
+          { count: 10, limit: 10, offset: 0, page: 1, totalPages: 4 },
+        ],
+        [
+          "limit: 4",
+          { "page[limit]": 4, "page[number]": 2 },
+          { count: 4, limit: 4, offset: 4, page: 2, totalPages: 9 },
+        ],
+      ])("%s", (_, query, pagination) => {
+        let response: request.Response;
+
+        beforeEach(async () => {
+          response = await request(app.callback())
+            .get("/api/v1/things")
+            .query(query)
+            .send();
+        });
+
+        it("is successful", () => {
+          expect(response.status).toBe(200);
+          expect(response.body.data!).toHaveLength(pagination.count);
+          expect(response.body).toMatchObject({
+            pagination: expect.objectContaining({
+              ...pagination,
+              totalCount: 35,
+            }),
+          });
+        });
+      });
+
+      it("returns 10 items by default", async () => {
+        const response = await request(app.callback())
+          .get("/api/v1/things")
+          .send();
+        expect(response.status).toBe(200);
+        expect(response.body).toMatchObject({
+          pagination: expect.objectContaining({
+            count: 10,
+            limit: 10,
+            offset: 0,
+            page: 1,
+            totalCount: 35,
+            totalPages: 4,
+          }),
+        });
+      });
+
+      it("returns pagination metadat", async () => {
+        const response = await request(app.callback())
+          .get("/api/v1/things")
+          .send();
+        expect(response.body).toMatchObject({
+          pagination: expect.objectContaining({
+            count: 10,
+            limit: 10,
+            offset: 0,
+            page: 1,
+            totalCount: 35,
+            totalPages: 4,
+          }),
         });
       });
     });

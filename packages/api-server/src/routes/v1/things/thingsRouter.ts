@@ -7,6 +7,7 @@ import {
   AuthenticationRequiredState,
 } from "../../../features/auth/authenticationRequired";
 import { Thing } from "../../../features/db/entities/Thing";
+import { OffsetPagination } from "../../../features/pagination/OffsetPagination";
 import {
   thingCreateSchema,
   thingUpdatePartialSchema,
@@ -31,8 +32,17 @@ thingsRouter
     return next();
   })
   .get("/", async (ctx) => {
+    const { ability, thingRepository, urlSearchParams } = ctx.state;
+    const pagination = new OffsetPagination(urlSearchParams);
+    const query = ability!.query("read", "Thing");
+    const [data, total] = await thingRepository!.findAndCount(
+      query,
+      pagination.findOptions()
+    );
+
     ctx.body = {
-      data: await ctx.state.thingRepository!.findAll(),
+      data,
+      ...pagination.meta(data.length, total),
     };
     ctx.status = 200;
   })

@@ -540,6 +540,18 @@
       "value": "Terms and ConditionsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "pagination.nextPage": [
+    {
+      "type": 0,
+      "value": "Next PageSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pagination.previousPage": [
+    {
+      "type": 0,
+      "value": "Previous PageSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "theme.colorModeSwitcher.switchColorModeLabel": [
     {
       "type": 0,
@@ -574,6 +586,84 @@
     {
       "type": 0,
       "value": " modeSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingDefailts.error.notFound": [
+    {
+      "type": 0,
+      "value": "The Thing you are looking for couldn't be found.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingDetails.createdField.label": [
+    {
+      "type": 0,
+      "value": "Created:SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingDetails.updatedField.label": [
+    {
+      "type": 0,
+      "value": "Updated:SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingsFilter.allThings.label": [
+    {
+      "type": 0,
+      "value": "All the thingsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingsFilter.myThings.label": [
+    {
+      "type": 0,
+      "value": "My thingsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingsList.refreshButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "RefreshSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingsList.title": [
+    {
+      "type": 0,
+      "value": "ThingsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingsTable.createdHeader.label": [
+    {
+      "type": 0,
+      "value": "CreatedSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingsTable.descriptionHeader.label": [
+    {
+      "type": 0,
+      "value": "DescriptionSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingsTable.nameHeader.label": [
+    {
+      "type": 0,
+      "value": "NameSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingsTable.privateHeader.label": [
+    {
+      "type": 0,
+      "value": "PrivateSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "user.userMenu.profileLink": [
+    {
+      "type": 0,
+      "value": "Your ProfileSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "user.userMenu.thingsLink": [
+    {
+      "type": 0,
+      "value": "Your ThingsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ]
 }

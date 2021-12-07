@@ -56,7 +56,7 @@ export class OffsetPagination {
         ...(typeof total === "number"
           ? {
               totalCount: total,
-              totalPages: total ? Math.ceil(total / this.limit) : undefined,
+              totalPages: Math.ceil(total / this.limit),
             }
           : {}),
       },

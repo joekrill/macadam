@@ -14,7 +14,7 @@ export interface ContactUsProps extends ContainerProps {}
 export const ContactUs = (props: ContactUsProps) => {
   const { formatMessage } = useIntl();
   return (
-    <Container maxW="container.lg" p={3} {...props}>
+    <Container maxW="container.lg" {...props}>
       <Helmet>
         <title>
           {formatMessage({

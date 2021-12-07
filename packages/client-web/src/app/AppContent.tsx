@@ -10,6 +10,7 @@ import { Faq } from "../features/pages/Faq/Faq";
 import { Home } from "../features/pages/Home/Home";
 import { PrivacyPolicy } from "../features/pages/PrivacyPolicy/PrivacyPolicy";
 import { TermsAndConditions } from "../features/pages/TermsAndConditions/TermsAndConditions";
+import { ThingsPage } from "../features/things/components/ThingsPage";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 
@@ -41,14 +42,19 @@ export const AppContent = () => {
         }}
       >
         <Header position="sticky" top="0px" zIndex="sticky" />
-        <Box bg={colorMode === "dark" ? "gray.900" : "gray.100"} flex={1}>
+        <Box
+          bg={colorMode === "dark" ? "gray.900" : "gray.100"}
+          flex={1}
+          px={{ base: "2", sm: "4" }}
+          py="5"
+        >
           <Switch>
             <Route path="/auth">
               <AuthPage />
             </Route>
-            <Route path="/settings">
+            <AuthenticatedRoute path="/settings">
               <AuthPage />
-            </Route>
+            </AuthenticatedRoute>
             <Route path="/contact" exact>
               <ContactUs />
             </Route>
@@ -64,9 +70,9 @@ export const AppContent = () => {
             <Route path="/crash">
               <CrashInitiator />
             </Route>
-            <AuthenticatedRoute path="/user/profile">
-              TODO: user profile!
-            </AuthenticatedRoute>
+            <Route path="/things">
+              <ThingsPage />
+            </Route>
             <Route path="/" exact>
               <Home />
             </Route>

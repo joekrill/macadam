@@ -546,6 +546,18 @@
       "value": "Ṯèŕṁś âńḋ Ḉŏńḋíṭíŏńś"
     }
   ],
+  "pagination.nextPage": [
+    {
+      "type": 0,
+      "value": "Ŋèẋṭ Ṕâĝè"
+    }
+  ],
+  "pagination.previousPage": [
+    {
+      "type": 0,
+      "value": "Ṕŕèṿíŏůś Ṕâĝè"
+    }
+  ],
   "theme.colorModeSwitcher.switchColorModeLabel": [
     {
       "type": 0,
@@ -580,6 +592,84 @@
     {
       "type": 0,
       "value": " ṁŏḋè"
+    }
+  ],
+  "thingDefailts.error.notFound": [
+    {
+      "type": 0,
+      "value": "Ṯḫè Ṯḫíńĝ ẏŏů âŕè ĺŏŏǩíńĝ ḟŏŕ ćŏůĺḋń'ṭ ḃè ḟŏůńḋ."
+    }
+  ],
+  "thingDetails.createdField.label": [
+    {
+      "type": 0,
+      "value": "Ḉŕèâṭèḋ:"
+    }
+  ],
+  "thingDetails.updatedField.label": [
+    {
+      "type": 0,
+      "value": "Ũṗḋâṭèḋ:"
+    }
+  ],
+  "thingsFilter.allThings.label": [
+    {
+      "type": 0,
+      "value": "Ḁĺĺ ṭḫè ṭḫíńĝś"
+    }
+  ],
+  "thingsFilter.myThings.label": [
+    {
+      "type": 0,
+      "value": "Ḿẏ ṭḫíńĝś"
+    }
+  ],
+  "thingsList.refreshButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Ŕèḟŕèśḫ"
+    }
+  ],
+  "thingsList.title": [
+    {
+      "type": 0,
+      "value": "Ṯḫíńĝś"
+    }
+  ],
+  "thingsTable.createdHeader.label": [
+    {
+      "type": 0,
+      "value": "Ḉŕèâṭèḋ"
+    }
+  ],
+  "thingsTable.descriptionHeader.label": [
+    {
+      "type": 0,
+      "value": "Ḋèśćŕíṗṭíŏń"
+    }
+  ],
+  "thingsTable.nameHeader.label": [
+    {
+      "type": 0,
+      "value": "Ŋâṁè"
+    }
+  ],
+  "thingsTable.privateHeader.label": [
+    {
+      "type": 0,
+      "value": "Ṕŕíṿâṭè"
+    }
+  ],
+  "user.userMenu.profileLink": [
+    {
+      "type": 0,
+      "value": "Ÿŏůŕ Ṕŕŏḟíĺè"
+    }
+  ],
+  "user.userMenu.thingsLink": [
+    {
+      "type": 0,
+      "value": "Ÿŏůŕ Ṯḫíńĝś"
     }
   ]
 }

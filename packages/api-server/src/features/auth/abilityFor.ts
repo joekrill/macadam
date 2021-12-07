@@ -18,12 +18,10 @@ export const abilityFor = (session?: Session) => {
     const userId = session.identity.id;
 
     // Users can read their own sessions.
-    builder.can("read", "KratosSession", { identity_id: userId });
+    builder.can("read", "KratosSession", { identityId: userId });
 
     builder.can("create", "Thing");
-    builder.can("read", "Thing");
     builder.can(["read", "update", "delete"], "Thing", { createdBy: userId });
-  } else {
   }
 
   return builder.build();

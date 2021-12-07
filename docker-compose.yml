@@ -54,6 +54,7 @@ x-api-server-defaults: &api-server-defaults
     - postgres
   restart: on-failure
   environment:
+    NODE_ENV: development
     DB_URL: postgresql://macadam:macadam!@postgres:5432/macadam
     KRATOS_DB_URL: postgresql://macadam:macadam!@postgres:5432/kratos
     REDIS_URL: redis://redis:6380/0

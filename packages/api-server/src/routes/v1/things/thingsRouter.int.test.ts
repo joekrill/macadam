@@ -37,6 +37,9 @@ const initApp = async ({ identityId }: { identityId?: string } = {}) => {
     kratosDbUrl: "sqlite::memory:",
   });
   await app.context.orm.getMigrator().up();
+
+  // Remove any test data
+  await app.context.orm.em.nativeDelete("Thing", {});
 };
 
 describe("authenticated", () => {
@@ -216,7 +219,9 @@ describe("authenticated", () => {
 
     beforeEach(async () => {
       ownedThing = new Thing("123", "Item 1");
+      ownedThing.private = false;
       unownedThing = new Thing("567", "Item 2");
+      unownedThing.private = false;
       app.context.orm.em.persist([ownedThing, unownedThing]).flush();
     });
 
@@ -260,7 +265,7 @@ describe("authenticated", () => {
           .send();
       });
 
-      it(`returns a 204`, () => {
+      it(`returns a 403`, () => {
         expect(response.status).toBe(403);
       });
     });
@@ -272,7 +277,9 @@ describe("authenticated", () => {
 
     beforeEach(async () => {
       ownedThing = new Thing("123", "Item 1");
+      ownedThing.private = false;
       unownedThing = new Thing("567", "Item 2");
+      unownedThing.private = false;
       app.context.orm.em.persist([ownedThing, unownedThing]).flush();
     });
 
@@ -335,7 +342,7 @@ describe("authenticated", () => {
           .send({ description: "hi there" });
       });
 
-      it(`returns a 204`, () => {
+      it(`returns a 403`, () => {
         expect(response.status).toBe(403);
       });
     });

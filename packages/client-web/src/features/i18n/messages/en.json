@@ -546,6 +546,18 @@
       "value": "Terms and Conditions"
     }
   ],
+  "pagination.nextPage": [
+    {
+      "type": 0,
+      "value": "Next Page"
+    }
+  ],
+  "pagination.previousPage": [
+    {
+      "type": 0,
+      "value": "Previous Page"
+    }
+  ],
   "theme.colorModeSwitcher.switchColorModeLabel": [
     {
       "type": 0,
@@ -580,6 +592,84 @@
     {
       "type": 0,
       "value": " mode"
+    }
+  ],
+  "thingDefailts.error.notFound": [
+    {
+      "type": 0,
+      "value": "The Thing you are looking for couldn't be found."
+    }
+  ],
+  "thingDetails.createdField.label": [
+    {
+      "type": 0,
+      "value": "Created:"
+    }
+  ],
+  "thingDetails.updatedField.label": [
+    {
+      "type": 0,
+      "value": "Updated:"
+    }
+  ],
+  "thingsFilter.allThings.label": [
+    {
+      "type": 0,
+      "value": "All the things"
+    }
+  ],
+  "thingsFilter.myThings.label": [
+    {
+      "type": 0,
+      "value": "My things"
+    }
+  ],
+  "thingsList.refreshButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Refresh"
+    }
+  ],
+  "thingsList.title": [
+    {
+      "type": 0,
+      "value": "Things"
+    }
+  ],
+  "thingsTable.createdHeader.label": [
+    {
+      "type": 0,
+      "value": "Created"
+    }
+  ],
+  "thingsTable.descriptionHeader.label": [
+    {
+      "type": 0,
+      "value": "Description"
+    }
+  ],
+  "thingsTable.nameHeader.label": [
+    {
+      "type": 0,
+      "value": "Name"
+    }
+  ],
+  "thingsTable.privateHeader.label": [
+    {
+      "type": 0,
+      "value": "Private"
+    }
+  ],
+  "user.userMenu.profileLink": [
+    {
+      "type": 0,
+      "value": "Your Profile"
+    }
+  ],
+  "user.userMenu.thingsLink": [
+    {
+      "type": 0,
+      "value": "Your Things"
     }
   ]
 }

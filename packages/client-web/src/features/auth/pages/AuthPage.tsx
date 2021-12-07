@@ -9,7 +9,7 @@ import { SettingsPage } from "./SettingsPage";
 import { VerificationPage } from "./VerificationPage";
 
 export const AuthPage = () => (
-  <Box p={5}>
+  <Box>
     <Helmet
       titleTemplate={`%s - ${process.env.REACT_APP_DISPLAY_NAME}`}
       defaultTitle={process.env.REACT_APP_DISPLAY_NAME}

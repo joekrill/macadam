@@ -17,7 +17,6 @@ export const PolicyContainer = ({
 }: PolicyContainerProps) => (
   <Container
     maxW="container.lg"
-    p={3}
     {...props}
     sx={{
       "&": {

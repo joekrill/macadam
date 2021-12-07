@@ -25,6 +25,10 @@ export const usePagination = ({
   totalPages,
 }: UsePaginationOptions) =>
   useMemo(() => {
+    if (totalPages === 0) {
+      return [currentPage];
+    }
+
     // Minimum gap between numbers for a spacer, otherwise we don't want a gap
     // If we allowed a smaller gap, we could replace just one number with a
     // spacer - which isn't saving us any space, we might as well just

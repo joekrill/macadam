@@ -35,6 +35,15 @@ thingsRouter
     const { ability, thingRepository, urlSearchParams } = ctx.state;
     const pagination = new OffsetPagination(urlSearchParams);
     const query = ability!.query("read", "Thing");
+
+    if (urlSearchParams.has("filter[owned]")) {
+      const session = await ctx.state.session;
+      query.$and = query.$and || [];
+      query.$and?.push({
+        createdBy: session?.identity.id,
+      });
+    }
+
     const [data, total] = await thingRepository!.findAndCount(
       query,
       pagination.findOptions()

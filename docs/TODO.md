@@ -1,3 +1,6 @@
+- (api-server) sorting
+- (client-web) Login after registration not working (requires hard reload)
+- (client-web) Invalidate data on logout/login
 - Flatten traits?
 - (client-web) User settings
 - (client-web) How to deal with unverified email address
@@ -43,6 +46,7 @@ Blocked
 
 Major Features
 
+- Admin panel (AdminJS? https://github.com/SoftwareBrothers/adminjs)
 - (client-web) Offline support
 - Upgrade Postgres to v14
 - (client-web) PWA

@@ -17,7 +17,7 @@ export const Faq = (props: FaqProps) => {
   const { formatMessage } = useIntl();
 
   return (
-    <Container maxW="container.lg" p={3} {...props}>
+    <Container maxW="container.lg" {...props}>
       <Helmet>
         <title>
           {formatMessage({

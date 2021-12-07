@@ -30,7 +30,16 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
           <CurrentUserMenuHeader />
           <MenuDivider />
           <MenuItem as={RouterLink} to="/settings">
-            Your Profile
+            <FormattedMessage
+              id="user.userMenu.profileLink"
+              defaultMessage="Your Profile"
+            />
+          </MenuItem>
+          <MenuItem as={RouterLink} to="/things?filter=mine">
+            <FormattedMessage
+              id="user.userMenu.thingsLink"
+              defaultMessage="Your Things"
+            />
           </MenuItem>
           <MenuItem
             color={useColorModeValue("red.500", "red.300")}

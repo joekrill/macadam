@@ -204,7 +204,52 @@
   "pages.termsAndConditions.pageTitle": {
     "defaultMessage": "Terms and Conditions"
   },
+  "pagination.nextPage": {
+    "defaultMessage": "Next Page"
+  },
+  "pagination.previousPage": {
+    "defaultMessage": "Previous Page"
+  },
   "theme.colorModeSwitcher.switchColorModeLabel": {
     "defaultMessage": "Switch to {mode, select, dark {dark} light {light} other {}} mode"
+  },
+  "thingDefailts.error.notFound": {
+    "defaultMessage": "The Thing you are looking for couldn't be found."
+  },
+  "thingDetails.createdField.label": {
+    "defaultMessage": "Created:"
+  },
+  "thingDetails.updatedField.label": {
+    "defaultMessage": "Updated:"
+  },
+  "thingsFilter.allThings.label": {
+    "defaultMessage": "All the things"
+  },
+  "thingsFilter.myThings.label": {
+    "defaultMessage": "My things"
+  },
+  "thingsList.refreshButton.ariaLabel": {
+    "defaultMessage": "Refresh"
+  },
+  "thingsList.title": {
+    "defaultMessage": "Things"
+  },
+  "thingsTable.createdHeader.label": {
+    "defaultMessage": "Created"
+  },
+  "thingsTable.descriptionHeader.label": {
+    "defaultMessage": "Description"
+  },
+  "thingsTable.nameHeader.label": {
+    "defaultMessage": "Name"
+  },
+  "thingsTable.privateHeader.label": {
+    "defaultMessage": "Private"
+  },
+  "user.userMenu.profileLink": {
+    "defaultMessage": "Your Profile"
+  },
+  "user.userMenu.thingsLink": {
+    "defaultMessage": "Your Things"
   }
 }

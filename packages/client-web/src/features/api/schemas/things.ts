@@ -1,3 +1,4 @@
+import { parseISO } from "date-fns";
 import { z } from "zod";
 import { offsetPaginationResponseSchema } from "./api/pagination";
 import { successResponseSchema } from "./api/response";
@@ -6,8 +7,8 @@ export const thingSchema = z.object({
   id: z.string(),
   name: z.string(),
   description: z.string().optional(),
-  createdAt: z.string(),
-  updatedAt: z.string(),
+  createdAt: z.string().transform((val) => parseISO(val)),
+  updatedAt: z.string().transform((val) => parseISO(val)),
   createdBy: z.string(),
   updatedBy: z.string(),
   private: z.boolean(),

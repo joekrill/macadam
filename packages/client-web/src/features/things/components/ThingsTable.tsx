@@ -46,7 +46,7 @@ export const ThingsTable = ({ data }: ThingsTableProps) => (
           </Td>
           <Td>{thing.description}</Td>
           <Td>
-            <FormattedDate dateStyle="full" value={new Date(thing.createdAt)} />
+            <FormattedDate dateStyle="full" value={thing.createdAt} />
           </Td>
           <Td>
             {" "}

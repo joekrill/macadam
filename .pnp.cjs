@@ -16969,6 +16969,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-router-dom", "npm:5.3.2"],
             ["@types/svgo", "npm:2.6.0"],
             ["@types/testing-library__jest-dom", "npm:5.14.1"],
+            ["date-fns", "npm:2.27.0"],
             ["dotenv", "npm:10.0.0"],
             ["dotenv-expand", "npm:5.1.0"],
             ["eslint-config-react-app", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:6.0.0"],
@@ -18364,6 +18365,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["abab", "npm:2.0.5"],
             ["whatwg-mimetype", "npm:2.3.0"],
             ["whatwg-url", "npm:8.5.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["date-fns", [
+        ["npm:2.27.0", {
+          "packageLocation": "./.yarn/cache/date-fns-npm-2.27.0-8177de8a5e-db62036b38.zip/node_modules/date-fns/",
+          "packageDependencies": [
+            ["date-fns", "npm:2.27.0"]
           ],
           "linkType": "HARD",
         }]

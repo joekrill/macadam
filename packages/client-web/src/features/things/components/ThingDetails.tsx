@@ -45,10 +45,7 @@ export const ThingDetails = () => {
                 defaultMessage="Created:"
               />
             </chakra.span>
-            <FormattedDate
-              dateStyle="full"
-              value={new Date(data.data.createdAt)}
-            />
+            <FormattedDate dateStyle="full" value={data.data.createdAt} />
           </Text>
           <Text>
             <chakra.span color="gray.500">
@@ -57,10 +54,7 @@ export const ThingDetails = () => {
                 defaultMessage="Updated:"
               />
             </chakra.span>{" "}
-            <FormattedDate
-              dateStyle="full"
-              value={new Date(data.data.updatedAt)}
-            />
+            <FormattedDate dateStyle="full" value={data.data.updatedAt} />
           </Text>
         </Box>
       )}

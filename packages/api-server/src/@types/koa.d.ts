@@ -20,6 +20,10 @@ import { SentryContext } from "../features/sentry/initializeSentry";
 import { ShutdownContext } from "../features/shutdown/initializeGracefulShutdown";
 
 declare module "koa" {
+  interface Request {
+    body?: unknown;
+  }
+
   interface DefaultContext
     extends DbContext,
       KratosContext,

@@ -16,6 +16,7 @@ import { URLSearchParamsState } from "../features/querystring/urlSearchParams";
 import { RedisContext } from "../features/redis/initializeRedis";
 import { RequestIdState } from "../features/requestId/requestId";
 import { ResponseTimeState } from "../features/responseTime/responseTime";
+import { SentryContext } from "../features/sentry/initializeSentry";
 import { ShutdownContext } from "../features/shutdown/initializeGracefulShutdown";
 
 declare module "koa" {
@@ -24,6 +25,7 @@ declare module "koa" {
       KratosContext,
       LoggerContext,
       RedisContext,
+      SentryContext,
       ShutdownContext {}
 
   // I'm not totally sure this is the best way to handle these typings.

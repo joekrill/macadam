@@ -35,26 +35,26 @@ describe("lazyLoadSession()", () => {
     toSessionMock.mockReset();
   });
 
-  describe("`context.state.session`", () => {
+  describe("`context.state.session()`", () => {
     test("is a Promise", async () => {
       instance(contextMock, nextMock);
-      expect(contextMock.state.session).resolves.toBeUndefined();
+      expect(contextMock.state.session()).resolves.toBeUndefined();
     });
 
     test("is lazy-loaded", async () => {
       instance(contextMock, nextMock);
       expect(toSessionMock).not.toHaveBeenCalled();
-      await contextMock.state.session;
+      await contextMock.state.session();
       expect(toSessionMock).toHaveBeenCalled();
     });
 
     test("is cached", async () => {
       instance(contextMock, nextMock);
-      await contextMock.state.session;
+      await contextMock.state.session();
       expect(toSessionMock).toHaveBeenCalledTimes(1);
-      await contextMock.state.session;
+      await contextMock.state.session();
       expect(toSessionMock).toHaveBeenCalledTimes(1);
-      await contextMock.state.session;
+      await contextMock.state.session();
       expect(toSessionMock).toHaveBeenCalledTimes(1);
     });
   });

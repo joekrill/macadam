@@ -14,7 +14,7 @@ export interface AuthenticationRequiredState {
 export const authenticationRequired =
   (): Middleware =>
   async (ctx: Context, next: () => Promise<void>): Promise<void> => {
-    const session = await ctx.state.session;
+    const session = await ctx.state.session();
 
     if (!session) {
       return ctx.throw(401);

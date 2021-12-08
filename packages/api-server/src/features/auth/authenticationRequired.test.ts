@@ -16,7 +16,7 @@ describe("authenticationRequired", () => {
   describe("when `state` includes a session", () => {
     beforeEach(async () => {
       contextMock = createMockContext({
-        state: { session: { identity: { id: "123" } } },
+        state: { session: () => ({ identity: { id: "123" } }) },
       });
       await instance(contextMock, nextMock);
     });
@@ -28,7 +28,7 @@ describe("authenticationRequired", () => {
 
   describe("when `state` does not include a session", () => {
     beforeEach(async () => {
-      contextMock = createMockContext({ state: { session: undefined } });
+      contextMock = createMockContext({ state: { session: () => undefined } });
       await instance(contextMock, nextMock);
     });
 

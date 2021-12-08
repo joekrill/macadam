@@ -1,6 +1,7 @@
+- (api-server) consider namespacing all contexts?
 - (api-server) sorting
 - (client-web) Login after registration not working (requires hard reload)
-- (client-web) Invalidate data on logout/login
+- (client-web) Invalidate data on logout/login (https://redux-toolkit.js.org/rtk-query/api/created-api/cache-management-utils#resetapistate)
 - Flatten traits?
 - (client-web) User settings
 - (client-web) How to deal with unverified email address
@@ -12,7 +13,6 @@
 - (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
 - Handle logins across tabs (use localStorage to signal session changes? BroadcastChannel?)
 - Detect session expiration and handle it somehow (modal login form? a la Gmail?)
-- (client-web) Sentry: use tunnel? (https://docs.sentry.io/platforms/javascript/troubleshooting/#dealing-with-ad-blockers)
 - (client-web) ErrorAlert should report errors https://develop.sentry.dev/
 - (api-server) Uploads
 - (api-server) Audit Logging
@@ -43,6 +43,8 @@ Blocked
 - Kratos OIDC config via environment variables
   - https://github.com/ory/x/pull/420
 - Some way to upload/change avatar (currently it is just a URL string)
+- (api-server) switch to esmodules
+  - https://github.com/node-fetch/node-fetch/issues/1279#issuecomment-915062146
 
 Major Features
 

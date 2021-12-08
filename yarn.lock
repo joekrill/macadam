@@ -6491,6 +6491,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/formidable@npm:^1.0.31":
+  version: 1.2.5
+  resolution: "@types/formidable@npm:1.2.5"
+  dependencies:
+    "@types/node": "*"
+  checksum: 2e4eea700f5bf392e98df1c2fc9afa1666204097cbdf69b826b7e13292ce194bcd77e3babcf6e41c184e9ab55d80c1a1461d369118c576dcc7cfaafc09fcf775
+  languageName: node
+  linkType: hard
+
 "@types/fs-extra@npm:^9.0.1":
   version: 9.0.13
   resolution: "@types/fs-extra@npm:9.0.13"
@@ -8307,6 +8316,7 @@ __metadata:
     "@types/pino": ^7.0.5
     "@types/supertest": ^2.0.11
     "@types/uuid": ^8.3.3
+    cross-fetch: ^3.1.4
     deep-map-keys: ^2.0.1
     errorish: ^1.0.0
     http-errors: ^1.8.1
@@ -8314,6 +8324,7 @@ __metadata:
     jest: ^27.3.1
     jest-mock-axios: ^4.4.1
     koa: ^2.13.4
+    koa-body: ^4.2.0
     koa-bodyparser: ^4.3.0
     koa-compose: ^4.1.0
     koa-helmet: ^6.1.0
@@ -9688,6 +9699,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bytes@npm:3.1.1":
+  version: 3.1.1
+  resolution: "bytes@npm:3.1.1"
+  checksum: 949ab99a385d6acf4d2c69f1afc618615dc905936e0b0b9aa94a9e94d722baaba44d6a0851536585a0892ae4d462b5a270ccb1b04c774640742cbde5538ca328
+  languageName: node
+  linkType: hard
+
 "cacache@npm:^12.0.2":
   version: 12.0.4
   resolution: "cacache@npm:12.0.4"
@@ -10422,6 +10440,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"co-body@npm:^5.1.1":
+  version: 5.2.0
+  resolution: "co-body@npm:5.2.0"
+  dependencies:
+    inflation: ^2.0.0
+    qs: ^6.4.0
+    raw-body: ^2.2.0
+    type-is: ^1.6.14
+  checksum: 48e1ffe00b8717b68154a939fa19f36d75aa66bba627f2977f28d11b732da56bdda445acda7053f7a85dfbac8a09a8aa257bceedaff7b6467cb25ab08ada9c8d
+  languageName: node
+  linkType: hard
+
 "co-body@npm:^6.0.0":
   version: 6.1.0
   resolution: "co-body@npm:6.1.0"
@@ -11060,6 +11090,15 @@ __metadata:
   version: 1.1.1
   resolution: "create-require@npm:1.1.1"
   checksum: a9a1503d4390d8b59ad86f4607de7870b39cad43d929813599a23714831e81c520bddf61bcdd1f8e30f05fd3a2b71ae8538e946eb2786dc65c2bbc520f692eff
+  languageName: node
+  linkType: hard
+
+"cross-fetch@npm:^3.1.4":
+  version: 3.1.4
+  resolution: "cross-fetch@npm:3.1.4"
+  dependencies:
+    node-fetch: 2.6.1
+  checksum: 2107e5e633aa327bdacab036b1907c7ddd28651ede0c1d4fd14db04510944d56849a8255e2f5b8f9a1da0e061b6cee943f6819fe29ed9a130195e7fadd82a4ff
   languageName: node
   linkType: hard
 
@@ -13954,6 +13993,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"formidable@npm:^1.1.1":
+  version: 1.2.6
+  resolution: "formidable@npm:1.2.6"
+  checksum: 2b68ed07ba88302b9c63f8eda94f19a460cef6017bfda48348f09f41d2a36660c9353137991618e0e4c3db115b41e4b8f6fa63bc973b7a7c91dec66acdd02a56
+  languageName: node
+  linkType: hard
+
 "formidable@npm:^1.2.2":
   version: 1.2.2
   resolution: "formidable@npm:1.2.2"
@@ -15266,6 +15312,19 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"http-errors@npm:1.8.1, http-errors@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "http-errors@npm:1.8.1"
+  dependencies:
+    depd: ~1.1.2
+    inherits: 2.0.4
+    setprototypeof: 1.2.0
+    statuses: ">= 1.5.0 < 2"
+    toidentifier: 1.0.1
+  checksum: d3c7e7e776fd51c0a812baff570bdf06fe49a5dc448b700ab6171b1250e4cf7db8b8f4c0b133e4bfe2451022a5790c1ca6c2cae4094dedd6ac8304a1267f91d2
+  languageName: node
+  linkType: hard
+
 "http-errors@npm:^1.6.3, http-errors@npm:^1.7.3":
   version: 1.8.0
   resolution: "http-errors@npm:1.8.0"
@@ -15276,19 +15335,6 @@ fsevents@^1.2.7:
     statuses: ">= 1.5.0 < 2"
     toidentifier: 1.0.0
   checksum: 873d997bada0340b31cc69cbe8376e47ee142f60375b81447fa3ad7be512dd4026afb3b46ed2257ee59472d43782a34151994b34264b204bcaad02e67ad836cb
-  languageName: node
-  linkType: hard
-
-"http-errors@npm:^1.8.1":
-  version: 1.8.1
-  resolution: "http-errors@npm:1.8.1"
-  dependencies:
-    depd: ~1.1.2
-    inherits: 2.0.4
-    setprototypeof: 1.2.0
-    statuses: ">= 1.5.0 < 2"
-    toidentifier: 1.0.1
-  checksum: d3c7e7e776fd51c0a812baff570bdf06fe49a5dc448b700ab6171b1250e4cf7db8b8f4c0b133e4bfe2451022a5790c1ca6c2cae4094dedd6ac8304a1267f91d2
   languageName: node
   linkType: hard
 
@@ -18132,6 +18178,17 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"koa-body@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "koa-body@npm:4.2.0"
+  dependencies:
+    "@types/formidable": ^1.0.31
+    co-body: ^5.1.1
+    formidable: ^1.1.1
+  checksum: 8da5eb00eb43345d9976b830df5973e2eb4d33a6b58735576284b20069a37ce84b34c8b60b18fdbff5e59aadfd6f7a9a03632a1c0c53aa3c84a07dfffd888af9
+  languageName: node
+  linkType: hard
+
 "koa-bodyparser@npm:^4.3.0":
   version: 4.3.0
   resolution: "koa-bodyparser@npm:4.3.0"
@@ -19546,7 +19603,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.1":
+"node-fetch@npm:2.6.1, node-fetch@npm:^2.6.1":
   version: 2.6.1
   resolution: "node-fetch@npm:2.6.1"
   checksum: 91075bedd57879117e310fbcc36983ad5d699e522edb1ebcdc4ee5294c982843982652925c3532729fdc86b2d64a8a827797a745f332040d91823c8752ee4d7c
@@ -22489,6 +22546,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"qs@npm:^6.4.0":
+  version: 6.10.2
+  resolution: "qs@npm:6.10.2"
+  dependencies:
+    side-channel: ^1.0.4
+  checksum: 46fcc8f75a062524b91f9bf6b3843f346135b27d91c2a2dc3eb7ef9e34435703fd52e16d927f8864fd572d4b0ebc5a40a00649535108b8e8ea845a861b414369
+  languageName: node
+  linkType: hard
+
 "qs@npm:~6.5.2":
   version: 6.5.2
   resolution: "qs@npm:6.5.2"
@@ -22622,6 +22688,18 @@ fsevents@^1.2.7:
     iconv-lite: 0.4.24
     unpipe: 1.0.0
   checksum: 6343906939e018c6e633a34a938a5d6d1e93ffcfa48646e00207d53b418e941953b521473950c079347220944dc75ba10e7b3c08bf97e3ac72c7624882db09bb
+  languageName: node
+  linkType: hard
+
+"raw-body@npm:^2.2.0":
+  version: 2.4.2
+  resolution: "raw-body@npm:2.4.2"
+  dependencies:
+    bytes: 3.1.1
+    http-errors: 1.8.1
+    iconv-lite: 0.4.24
+    unpipe: 1.0.0
+  checksum: c6f8d6a75c65c0a047f888cb29efc97f60fb36e950ba2cb31fefce694f98186e844a03367920faa7dc5bffaf33df08aee0b9dd935280e366439fa6492a5b163e
   languageName: node
   linkType: hard
 
@@ -26592,7 +26670,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"type-is@npm:^1.6.16, type-is@npm:^1.6.18, type-is@npm:~1.6.17, type-is@npm:~1.6.18":
+"type-is@npm:^1.6.14, type-is@npm:^1.6.16, type-is@npm:^1.6.18, type-is@npm:~1.6.17, type-is@npm:~1.6.18":
   version: 1.6.18
   resolution: "type-is@npm:1.6.18"
   dependencies:

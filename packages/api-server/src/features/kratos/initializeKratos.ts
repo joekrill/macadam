@@ -11,7 +11,8 @@ export interface KratosContext {
 }
 
 export interface KratosState {
-  session?: Promise<Session>;
+  session: () => Promise<Session>;
+  _session?: Session;
 }
 
 export interface InitializeKratosOptions

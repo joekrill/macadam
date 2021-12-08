@@ -1,6 +1,6 @@
 import cors from "@koa/cors";
 import Koa from "koa";
-import bodyParser from "koa-bodyparser";
+import koaBody from "koa-body";
 import helmet from "koa-helmet";
 import pino from "pino";
 import { forkEntityManager } from "./features/db/forkEntityManager";
@@ -78,6 +78,12 @@ export interface AppOptions {
    * The URL of the Sentry instance to send crash reports to.
    */
   sentryDsn?: string;
+
+  /**
+   * The URLs of any sentry DSNs that may be tunneled through the API server
+   * @see {@link https://docs.sentry.io/platforms/javascript/troubleshooting/#dealing-with-ad-blockers}
+   */
+  sentryTunnelableDsns?: string[];
 }
 
 export const createApp = async ({
@@ -92,6 +98,7 @@ export const createApp = async ({
   metricsPath = "/metrics",
   redisUrl,
   sentryDsn,
+  sentryTunnelableDsns,
 }: AppOptions) => {
   const app = new Koa({ env: environment });
 
@@ -102,6 +109,7 @@ export const createApp = async ({
     initializeSentry(app, {
       dsn: sentryDsn,
       release: process.env.npm_package_version,
+      tunnelableDsns: sentryTunnelableDsns,
     });
   }
 
@@ -138,15 +146,13 @@ export const createApp = async ({
   app.use(metricsRoutes({ prefix: metricsPath }));
   app.use(healthRoutes({ prefix: healthPath }));
 
+  // koa-body was preferred over koa-bodyparser because koa-bodyparser
+  // replaces the body _no matter what_. Even if it's not one of the
+  // "enableTypes" configured. And if it's not enabled, `rawBody` never
+  // gets set, so you have no way of accessing the body after-the-fact
   app.use(
-    bodyParser({
-      enableTypes: ["json"],
+    koaBody({
       jsonLimit: "5mb",
-      strict: true,
-      // TODO: is this needed?
-      // onerror: function (err, ctx) {
-      //   ctx.throw("body parse error", 422);
-      // },
     })
   );
 

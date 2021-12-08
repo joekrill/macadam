@@ -19,37 +19,46 @@ export const lazyLoadSession =
     let session: Session | undefined;
     let loaded = false;
 
-    // Creates a lazy-loaded "session" property on our state object
-    Object.defineProperty(ctx.state, "session", {
-      get: async function () {
-        if (!loaded) {
-          try {
-            ctx.state.logger.debug("Fetching Kratos session");
-            const response = await ctx.kratosPublicApi.toSession(
-              undefined,
-              ctx.request.headers["cookie"]
-            );
-            session = response.data;
-            ctx.state.logger.debug({ session }, "Kratos session received");
-          } catch (caughtError) {
-            if (unauthorizedErrorSchema.safeParse(caughtError).success) {
-              ctx.state.logger.debug("Kratos session not found (Unauthorized)");
-            } else {
-              const error = ensureError(caughtError);
-              ctx.state.logger.error(
-                {
-                  stack: error.stack,
-                  type: error.name,
-                },
-                `Error fetching kratos session: ${error.message}`
+    Object.defineProperties(ctx.state, {
+      // This can be used to get the session only if already fetched.
+      _session: {
+        get: () => session,
+      },
+      // Creates a lazy-loaded `session` function that ony fetches the session
+      // the first time it's accessed.
+      session: {
+        value: async function () {
+          if (!loaded) {
+            try {
+              ctx.state.logger.debug("Fetching Kratos session");
+              const response = await ctx.kratosPublicApi.toSession(
+                undefined,
+                ctx.request.headers["cookie"]
               );
+              session = response.data;
+              ctx.state.logger.debug({ session }, "Kratos session received");
+            } catch (caughtError) {
+              if (unauthorizedErrorSchema.safeParse(caughtError).success) {
+                ctx.state.logger.debug(
+                  "Kratos session not found (Unauthorized)"
+                );
+              } else {
+                const error = ensureError(caughtError);
+                ctx.state.logger.error(
+                  {
+                    stack: error.stack,
+                    type: error.name,
+                  },
+                  `Error fetching kratos session: ${error.message}`
+                );
+              }
+            } finally {
+              loaded = true;
             }
-          } finally {
-            loaded = true;
           }
-        }
 
-        return session;
+          return session;
+        },
       },
     });
 

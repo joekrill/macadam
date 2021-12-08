@@ -20,14 +20,15 @@ process.on("unhandledRejection", (reason, promise) => {
 const {
   DB_URL,
   HEALTH_PATH,
+  KRATOS_DB_URL,
+  KRATOS_PUBLIC_URL,
   LISTEN_ADDRESS,
+  LOG_LEVEL,
   METRICS_PATH,
   NODE_ENV,
   PORT,
   SENTRY_DSN,
-  KRATOS_DB_URL,
-  KRATOS_PUBLIC_URL,
-  LOG_LEVEL,
+  SENTRY_TUNNELABLE_DSNS,
 } = process.env;
 
 const environment = NODE_ENV || "development";
@@ -64,10 +65,11 @@ if (LOG_LEVEL && logger.levels.values[LOG_LEVEL]) {
       environment,
       healthPath: HEALTH_PATH,
       kratosDbUrl: KRATOS_DB_URL,
+      kratosPublicUrl: KRATOS_PUBLIC_URL,
       logger,
       metricsPath: METRICS_PATH,
       sentryDsn: SENTRY_DSN,
-      kratosPublicUrl: KRATOS_PUBLIC_URL,
+      sentryTunnelableDsns: SENTRY_TUNNELABLE_DSNS?.split(","),
     });
 
     const apiServer = app.listen(port, host, () => {

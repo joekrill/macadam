@@ -13,7 +13,7 @@ export const ability =
   (): Middleware =>
   async (ctx: Context, next: () => Promise<void>): Promise<void> => {
     if (!ctx.state.ability) {
-      const session = await ctx.state.session;
+      const session = await ctx.state.session();
       ctx.state.ability = abilityFor(session);
     }
 

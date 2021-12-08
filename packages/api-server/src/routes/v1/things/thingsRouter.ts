@@ -37,7 +37,7 @@ thingsRouter
     const query = ability!.query("read", "Thing");
 
     if (urlSearchParams.has("filter[owned]")) {
-      const session = await ctx.state.session;
+      const session = await ctx.state.session();
       query.$and = query.$and || [];
       query.$and?.push({
         createdBy: session?.identity.id,

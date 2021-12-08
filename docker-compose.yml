@@ -1,5 +1,3 @@
-# Base docker compose definition
-# Ideal for development work
 version: "3.8"
 
 networks:
@@ -36,7 +34,7 @@ x-kratos-defaults: &kratos-defaults
     SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localtest.me/settings
     SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://localtest.me/auth/recovery
     SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://localtest.me/auth/verification
-    # SELFSERVICE_FLOWS_VERIFICATION_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localtest.me/xxx
+    SELFSERVICE_FLOWS_VERIFICATION_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localtest.me
     SELFSERVICE_FLOWS_LOGOUT_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localtest.me
     SELFSERVICE_FLOWS_LOGIN_UI_URL: https://localtest.me/auth/login
     SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://localtest.me/auth/registration
@@ -59,7 +57,10 @@ x-api-server-defaults: &api-server-defaults
     KRATOS_DB_URL: postgresql://macadam:macadam!@postgres:5432/kratos
     REDIS_URL: redis://redis:6380/0
     PORT: 4000
+    # Key should match API_PROJECT_KEY in `seed_macadam.py` with dashes stripped
     SENTRY_DSN: https://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip.localtest.me/2
+    # If we tunnel glitchtip requests, make sure they are mapped to the correct internal URL
+    SENTRY_TUNNELABLE_DSNS: "https://239d589a58d24675be8159b19718b22e@glitchtip.localtest.me/1::http://glitchtip-web:8000/1"
     KRATOS_PUBLIC_URL: http://kratos:4433/
     KRATOS_ADMIN_URL: http://kratos:4434/
   volumes:
@@ -159,7 +160,9 @@ services:
     # ports:
     #   - 3000:3000
     environment:
+      # Key should WEB_PROJECT_KEY in `seed_macadam.py` with dashes stripped
       REACT_APP_SENTRY_DSN: "https://239d589a58d24675be8159b19718b22e@glitchtip.localtest.me/1"
+      REACT_APP_SENTRY_TUNNEL: "/api/v1/monitor"
     build:
       context: .
       dockerfile: ./packages/client-web/dev.Dockerfile
@@ -167,3 +170,11 @@ services:
       - type: bind
         source: .
         target: /var/macadam
+
+  # When we don't have an actual glitchtip instance running, we just "swallow"
+  # the requests using this echo server.
+  glitchtip-web: 
+    <<: *service-defaults
+    image: jmalloc/echo-server
+    environment:
+      PORT: 8000

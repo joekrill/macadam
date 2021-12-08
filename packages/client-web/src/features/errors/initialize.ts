@@ -18,6 +18,8 @@ init({
 
   dsn: process.env.REACT_APP_SENTRY_DSN,
 
+  tunnel: process.env.REACT_APP_SENTRY_TUNNEL,
+
   environment: process.env.NODE_ENV,
 
   release: `${process.env.REACT_APP_NAME}@${process.env.REACT_APP_VERSION}${

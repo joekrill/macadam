@@ -136,7 +136,16 @@ export const createApp = async ({
   app.use(urlSearchParams());
   app.use(metricsCollector());
   app.use(responseTime());
-  app.use(requestId());
+  app.use(
+    requestId({
+      incomingHeaders: [
+        "sentry-trace",
+        "x-b3-traceid",
+        "x-request-id",
+        "request-id",
+      ],
+    })
+  );
   app.use(rateLimit());
   app.use(helmet({ contentSecurityPolicy: false }));
   app.use(cors());

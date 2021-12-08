@@ -34,7 +34,7 @@ describe("requestId", () => {
   describe("when there is a `request-id` header", () => {
     const mockRequestIdHeader = "f0695ff2-9251-487f-967c-a9accc3aa331";
     beforeEach(() => {
-      contextMock.req.headers["request-id"] = mockRequestIdHeader;
+      contextMock.request.headers["request-id"] = mockRequestIdHeader;
     });
 
     test("sets `context.state.requestId` to the `request-id` header value", async () => {
@@ -60,7 +60,7 @@ describe("requestId", () => {
   describe("when there is a `x-request-id` header", () => {
     const mockXRequestIdHeader = "6d03bb89-f613-4651-9995-879d783d919f";
     beforeEach(() => {
-      contextMock.req.headers["x-request-id"] = mockXRequestIdHeader;
+      contextMock.request.headers["x-request-id"] = mockXRequestIdHeader;
     });
 
     test("sets `context.state.requestId` to the `x-request-id` header value", async () => {

@@ -13,6 +13,8 @@ import { history } from "../routing/history";
 
 const IS_DEVELOPMENT_ENV = process.env.NODE_ENV === "development";
 
+const { origin, hostname } = window.location;
+
 init({
   debug: process.env.NODE_ENV === "development",
 
@@ -31,6 +33,7 @@ init({
 
     new TracingIntegrations.BrowserTracing({
       routingInstrumentation: reactRouterV5Instrumentation(history),
+      tracingOrigins: [`${origin || hostname}/api/`],
     }),
 
     // Extracts all non-native attributes from the Error object and attaches

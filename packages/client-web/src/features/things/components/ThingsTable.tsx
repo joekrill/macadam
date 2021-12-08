@@ -1,4 +1,5 @@
 import { Icon, Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
+import { parseISO } from "date-fns";
 import { FaLock, FaUnlock } from "react-icons/fa";
 import { FormattedDate, FormattedMessage } from "react-intl";
 import { Thing } from "../../api/schemas/things";
@@ -40,13 +41,13 @@ export const ThingsTable = ({ data }: ThingsTableProps) => (
     </Thead>
     <Tbody>
       {data?.map((thing) => (
-        <Tr>
+        <Tr key={thing.id}>
           <Td>
             <RouterLink to={`/things/${thing.id}`}>{thing.name}</RouterLink>
           </Td>
           <Td>{thing.description}</Td>
           <Td>
-            <FormattedDate dateStyle="full" value={thing.createdAt} />
+            <FormattedDate dateStyle="full" value={parseISO(thing.createdAt)} />
           </Td>
           <Td>
             {" "}

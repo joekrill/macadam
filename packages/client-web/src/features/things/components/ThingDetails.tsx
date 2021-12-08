@@ -1,5 +1,6 @@
 import { Box, chakra, Heading, Icon, Spinner, Text } from "@chakra-ui/react";
 import { skipToken } from "@reduxjs/toolkit/dist/query";
+import { parseISO } from "date-fns";
 import { FaLock, FaUnlock } from "react-icons/fa";
 import { FormattedDate, FormattedMessage } from "react-intl";
 import { useParams } from "react-router-dom";
@@ -45,7 +46,10 @@ export const ThingDetails = () => {
                 defaultMessage="Created:"
               />
             </chakra.span>
-            <FormattedDate dateStyle="full" value={data.data.createdAt} />
+            <FormattedDate
+              dateStyle="full"
+              value={parseISO(data.data.createdAt)}
+            />
           </Text>
           <Text>
             <chakra.span color="gray.500">
@@ -54,7 +58,10 @@ export const ThingDetails = () => {
                 defaultMessage="Updated:"
               />
             </chakra.span>{" "}
-            <FormattedDate dateStyle="full" value={data.data.updatedAt} />
+            <FormattedDate
+              dateStyle="full"
+              value={parseISO(data.data.updatedAt)}
+            />
           </Text>
         </Box>
       )}

@@ -31,6 +31,7 @@ export const identitySlice = createSlice({
       identityApi.endpoints.submitRegistrationFlow.matchFulfilled,
       (state, { payload }) => {
         if (isRegistrationFlowSuccess(payload)) {
+          state.session = payload.session;
           state.identity = payload.identity;
           state.lastUpdated = Date.now();
         }

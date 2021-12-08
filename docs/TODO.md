@@ -1,6 +1,5 @@
 - (api-server) consider namespacing all contexts?
 - (api-server) sorting
-- (client-web) Login after registration not working (requires hard reload)
 - (client-web) Invalidate data on logout/login (https://redux-toolkit.js.org/rtk-query/api/created-api/cache-management-utils#resetapistate)
 - Flatten traits?
 - (client-web) User settings

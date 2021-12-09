@@ -11,7 +11,6 @@
 - (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
 - Handle logins across tabs (use localStorage to signal session changes? BroadcastChannel?)
 - Detect session expiration and handle it somehow (modal login form? a la Gmail?)
-- (client-web) ErrorAlert should report errors https://develop.sentry.dev/
 - (api-server) Uploads
 - (api-server) Audit Logging
 - (api-server) Reduce amount of logging output in development

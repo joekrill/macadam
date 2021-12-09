@@ -78,7 +78,7 @@ export const ThingsList = () => {
           </Stack>
         </RadioGroup>
       </Box>
-      {error && <ErrorAlert my="5" onRetryClick={refetch} />}
+      {error && <ErrorAlert my="5" onRetryClick={refetch} error={error} />}
       {data && <ThingsTable data={data.data} />}
       {data && (
         <Pagination

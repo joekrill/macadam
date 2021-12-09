@@ -58,6 +58,7 @@ export const FlowError = ({
 
     return (
       <ErrorAlert
+        error={error}
         {...errorAlertProps}
         status={hasRedirect ? "info" : "error"}
         // We _should_ have been given a redirect, but we weren't, so show the
@@ -114,6 +115,7 @@ export const FlowError = ({
     // Anything else.
     // TODO: log this with sentry?
     <ErrorAlert
+      error={error}
       status="error"
       {...errorAlertProps}
       onRetryClick={() => onRestartFlow()}

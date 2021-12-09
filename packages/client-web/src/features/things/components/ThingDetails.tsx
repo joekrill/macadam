@@ -18,7 +18,12 @@ export const ThingDetails = () => {
   return (
     <Box>
       {error && (
-        <ErrorAlert my="5" onRetryClick={isNotFound ? undefined : refetch}>
+        <ErrorAlert
+          my="5"
+          onRetryClick={isNotFound ? undefined : refetch}
+          disableCapture={isNotFound}
+          error={error}
+        >
           {isNotFound && (
             <FormattedMessage
               id="thingDefailts.error.notFound"

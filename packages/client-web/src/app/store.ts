@@ -16,7 +16,7 @@ export const store = configureStore({
   },
   enhancers: [monitoringReducEnhancer],
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(identityApi.middleware),
+    getDefaultMiddleware().concat(appApi.middleware, identityApi.middleware),
 });
 
 setupListeners(store.dispatch);

@@ -17,7 +17,7 @@ export default {
 
 const Template: Story<ErrorAlertProps> = (args) => (
   <Box maxW="xl">
-    <ErrorAlert {...args} />
+    <ErrorAlert {...args} disableCapture />
   </Box>
 );
 

@@ -28,13 +28,14 @@ export default {
   },
 } as Meta;
 
-const Template: Story<UnexpectedErrorPageProps & { canResetError?: boolean }> =
-  ({ canResetError, ...args }) => (
-    <UnexpectedErrorPage
-      {...args}
-      resetError={canResetError ? () => {} : undefined}
-    />
-  );
+const Template: Story<
+  UnexpectedErrorPageProps & { canResetError?: boolean }
+> = ({ canResetError, ...args }) => (
+  <UnexpectedErrorPage
+    {...args}
+    resetError={canResetError ? () => {} : undefined}
+  />
+);
 
 export const Default = Template.bind({});
 

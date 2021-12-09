@@ -173,7 +173,7 @@ services:
 
   # When we don't have an actual glitchtip instance running, we just "swallow"
   # the requests using this echo server.
-  glitchtip-web: 
+  glitchtip-web:
     <<: *service-defaults
     image: jmalloc/echo-server
     environment:

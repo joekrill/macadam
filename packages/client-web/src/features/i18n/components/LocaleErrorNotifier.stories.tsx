@@ -22,16 +22,17 @@ export default {
   },
 } as Meta;
 
-const Template: Story<{ error?: { locale: Locale; error: SerializedError } }> =
-  (args) => (
-    <LocaleErrorNotifierContext.Provider
-      value={{
-        selectLastError: () => args.error,
-      }}
-    >
-      <LocaleErrorNotifier />
-    </LocaleErrorNotifierContext.Provider>
-  );
+const Template: Story<{
+  error?: { locale: Locale; error: SerializedError };
+}> = (args) => (
+  <LocaleErrorNotifierContext.Provider
+    value={{
+      selectLastError: () => args.error,
+    }}
+  >
+    <LocaleErrorNotifier />
+  </LocaleErrorNotifierContext.Provider>
+);
 
 export const Default = Template.bind({});
 

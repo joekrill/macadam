@@ -7,4 +7,8 @@ tmp
 .prettierrc.json
 .yarn/
 
+# Static storybook builds
 storybook-static/
+
+#
+packages/client-web/src/features/i18n/messages/

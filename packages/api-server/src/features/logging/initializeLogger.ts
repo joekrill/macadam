@@ -1,4 +1,4 @@
-import Koa from "koa";
+import Koa, { DefaultState } from "koa";
 import pino from "pino";
 
 export interface LoggerContext {
@@ -27,13 +27,27 @@ export const initializeLogger = (
     ctx.state.logger = logger.child(
       { id: ctx.state.requestId },
       {
+        serializers: {
+          state: (state: DefaultState) =>
+            typeof state === "object"
+              ? {
+                  requestId: state.requestId,
+                  responseTime: state.responseTime,
+                  session: state._session,
+                  _keys: Object.keys(state).filter((key) => !!state[key]),
+                }
+              : `[could not serialize state: ${typeof state}]`,
+        },
         redact: {
           // These aren't useful at all in our output and just bloat our logs.
           paths: [
+            "state.ability",
             "state.entityManager",
             "state.kratosEntityManager",
-            "state.metricsRegister",
             "state.logger",
+            "state.metricsRegister",
+            "state.session",
+            "state.urlSearchParams",
           ],
           remove: true,
         },

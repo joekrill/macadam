@@ -1,4 +1,5 @@
-- (api-server) better state serializer (pino)
+## "v1" Milestone
+
 - (api-server) consider namespacing all contexts?
 - (api-server) sorting
 - (client-web) Invalidate data on logout/login (https://redux-toolkit.js.org/rtk-query/api/created-api/cache-management-utils#resetapistate)
@@ -8,29 +9,33 @@
   - (client-web) Show notification component whne email address is not verififed
   - https://github.com/ory/kratos/issues/1328
 - (client-web) Handle /sessions/whoami 401 response (vs request failure)
-- (client-web) Auth forms: auto-focus first field when rendering forms.
-- (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
-- Handle logins across tabs (use localStorage to signal session changes? BroadcastChannel?)
 - Detect session expiration and handle it somehow (modal login form? a la Gmail?)
 - (api-server) Uploads
 - (api-server) Audit Logging
-- (api-server) Reduce amount of logging output in development
 - Integration tests (i.e. using cypress)
 - commitlint
 - CI script
   - eslint+prettier?
-- github templates: https://github.com/cezaraugusto/github-template-guidelines
 - "Down for Maintenance" state
-- Vulnerability Disclosure Policy (https://github.com/disclose/dioterms/blob/master/core-terms-vdp.md)
-- (client-web) Add OpenGraph attributes (http://ogp.me/)
 - (client-web) contact form
-- Data deletion (user account deletion)
-- Data download (whole account)
-- Anonymizing data
 - Background tasks
 - DB Seeding
 
-Blocked
+## Low priority
+
+- github templates: https://github.com/cezaraugusto/github-template-guidelines
+- Vulnerability Disclosure Policy (https://github.com/disclose/dioterms/blob/master/core-terms-vdp.md)
+- Anonymizing data
+- Data deletion (user account deletion)
+- Data download (whole account)
+- (client-web) Add OpenGraph attributes (http://ogp.me/)
+- (client-web) Handle logins across tabs (use localStorage to signal session changes? BroadcastChannel?)
+- (client-web) Auth forms: auto-focus first field when rendering forms.
+- (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
+- (api-server) Reduce amount of logging output in development
+- (api-server) better `ctx.state` serializer for pino (use zod?)
+
+## Blocked
 
 - (client-web) Auth: password requirements hint
   - Not currently possible with Kratos
@@ -44,7 +49,7 @@ Blocked
 - (api-server) switch to esmodules
   - https://github.com/node-fetch/node-fetch/issues/1279#issuecomment-915062146
 
-Major Features
+## Major Features
 
 - Admin panel (AdminJS? https://github.com/SoftwareBrothers/adminjs)
 - (client-web) Offline support
@@ -69,7 +74,7 @@ Major Features
 - Notifications
   - https://notifire.co
 
-Ongoing
+## Ongoing
 
 - (metrics) add additional dashboards
 - (client-web) Storybook stories
@@ -78,7 +83,7 @@ Ongoing
 - https://cheatsheetseries.owasp.org/index.html
 - https://jacobian.org/2021/jul/8/appsec-pagnis/
 
-Reference Projects:
+## Reference Projects:
 
 - https://github.com/cedrickchee/saas-starter
 - https://gitlab.com/gnaar

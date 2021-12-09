@@ -1,3 +1,4 @@
+- (api-server) better state serializer (pino)
 - (api-server) consider namespacing all contexts?
 - (api-server) sorting
 - (client-web) Invalidate data on logout/login (https://redux-toolkit.js.org/rtk-query/api/created-api/cache-management-utils#resetapistate)

@@ -1,8 +1,9 @@
 // "react-app-polyfill" must be the first import! Be sure any auto-sorting
 // import functionality (i.e. vscode `source.organizeImports`) does not
 // reorder this!
-import React from "react";
 import "react-app-polyfill/stable";
+
+import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./app/App";
 import "./features/analytics";

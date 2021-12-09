@@ -11,4 +11,8 @@ module.exports = {
   // -- Coverage --
   collectCoverage: true,
   coverageProvider: "v8",
+  coveragePathIgnorePatterns: [
+    "/src/features/db/entities",
+    "/src/features/kratos/entities",
+  ],
 };

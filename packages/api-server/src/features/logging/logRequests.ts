@@ -34,6 +34,6 @@ export const logRequests =
       );
 
       // TODO: Do we want to do this?
-      ctx.app.emit("error", error, ctx);
+      // ctx.app.emit("error", error, ctx);
     }
   };

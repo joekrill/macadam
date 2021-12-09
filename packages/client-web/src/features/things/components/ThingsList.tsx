@@ -10,10 +10,10 @@ import { useMemo } from "react";
 import { HiRefresh } from "react-icons/hi";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
-import { appApi } from "../../api/appApi";
 import { Pagination } from "../../common/components/Pagination/Pagination";
 import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
 import { useUrlSearchParams } from "../../routing/hooks/useUrlSearchParams";
+import { thingsApi } from "../thingsApi";
 import { ThingsTable } from "./ThingsTable";
 
 export const ThingsList = () => {
@@ -27,7 +27,7 @@ export const ThingsList = () => {
   );
   const owned = params.has("mine");
 
-  const { data, isFetching, error, refetch } = appApi.useListThingsQuery({
+  const { data, isFetching, error, refetch } = thingsApi.useListThingsQuery({
     page,
     owned,
   });

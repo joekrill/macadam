@@ -4,12 +4,12 @@ import { parseISO } from "date-fns";
 import { FaLock, FaUnlock } from "react-icons/fa";
 import { FormattedDate, FormattedMessage } from "react-intl";
 import { useParams } from "react-router-dom";
-import { appApi } from "../../api/appApi";
 import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
+import { thingsApi } from "../thingsApi";
 
 export const ThingDetails = () => {
   const { id } = useParams<"id">();
-  const { data, error, isFetching, refetch } = appApi.useGetThingQuery(
+  const { data, error, isFetching, refetch } = thingsApi.useGetThingQuery(
     id || skipToken
   );
   const isNotFound =

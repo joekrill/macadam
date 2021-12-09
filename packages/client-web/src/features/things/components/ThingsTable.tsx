@@ -2,8 +2,8 @@ import { Icon, Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
 import { parseISO } from "date-fns";
 import { FaLock, FaUnlock } from "react-icons/fa";
 import { FormattedDate, FormattedMessage } from "react-intl";
-import { Thing } from "../../api/schemas/things";
 import { RouterLink } from "../../routing/components/RouterLink";
+import { Thing } from "../thingsSchemas";
 
 export interface ThingsTableProps {
   data?: Thing[];

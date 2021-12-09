@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { offsetPaginationResponseSchema } from "./api/pagination";
-import { successResponseSchema } from "./api/response";
+import { offsetPaginationResponseSchema } from "../api/schemas/pagination";
+import { successResponseSchema } from "../api/schemas/response";
 
 export const thingSchema = z.object({
   id: z.string(),

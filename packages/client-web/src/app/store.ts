@@ -3,8 +3,8 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 import { appApi } from "../features/api/appApi";
 import { identityApi } from "../features/auth/identityApi";
 import { identitySlice } from "../features/auth/identitySlice";
-import { errorReduxEnhancer } from "../features/errors/middleware";
 import { i18nSlice } from "../features/i18n/i18nSlice";
+import { monitoringReducEnhancer } from "../features/monitoring/monitoringReducEnhancer";
 
 export const store = configureStore({
   devTools: process.env.NODE_ENV !== "production",
@@ -14,7 +14,7 @@ export const store = configureStore({
     [identitySlice.name]: identitySlice.reducer,
     [identityApi.reducerPath]: identityApi.reducer,
   },
-  enhancers: [errorReduxEnhancer],
+  enhancers: [monitoringReducEnhancer],
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(identityApi.middleware),
 });

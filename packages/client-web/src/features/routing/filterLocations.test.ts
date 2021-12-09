@@ -1,14 +1,14 @@
-import { LocationDescriptor } from "history";
+import { To } from "history";
 import { filterLocations } from "./filterLocations";
 
 describe("when `forbid` is empty", () => {
   const forbid: string[] = [];
 
   describe("and `candidates` is empty", () => {
-    const candidates: LocationDescriptor[] = [];
+    const candidates: To[] = [];
 
     describe("and `fallback` is provided", () => {
-      const fallback: LocationDescriptor = "/blah";
+      const fallback: To = "/blah";
       test("returns the `fallback` value", () => {
         expect(filterLocations(candidates, { forbid, fallback })).toBe(
           fallback
@@ -24,7 +24,7 @@ describe("when `forbid` is empty", () => {
   });
 
   describe("and `candidates` is not empty", () => {
-    const candidates: LocationDescriptor[] = ["foo", "bar"];
+    const candidates: To[] = ["foo", "bar"];
 
     test("returns the first candidate", () => {
       expect(filterLocations(candidates, { forbid })).toBe(candidates[0]);
@@ -33,7 +33,7 @@ describe("when `forbid` is empty", () => {
 });
 
 describe("when `candidates` is empty", () => {
-  const candidates: LocationDescriptor[] = [];
+  const candidates: To[] = [];
 
   describe("and `fallback` is provided", () => {
     const fallback = "/fallback";
@@ -70,16 +70,21 @@ describe.each([
   ],
   [
     "string candidates, forbid first",
-    [["/foo", "/bar", "/baz"], { forbid: ["/foo"] }],
+    [["/foo", "/bar", "/baz"], { forbid: ["/foo/*"] }],
     "/bar",
   ],
   [
     "string candidates, forbid first and second",
-    [["/foo", "/bar", "/baz"], { forbid: ["/bar", "/foo"] }],
+    [["/foo", "/bar", "/baz"], { forbid: ["/bar/*", "/foo/*"] }],
     "/baz",
   ],
   [
-    "string candidates, forbid all",
+    "string candidates, forbid all exact",
+    [["/foo", "/bar", "/baz"], { forbid: ["/bar/*", "/baz/*", "/foo/*"] }],
+    undefined,
+  ],
+  [
+    "string candidates, forbid all wildcards",
     [["/foo", "/bar", "/baz"], { forbid: ["/bar", "/baz", "/foo"] }],
     undefined,
   ],
@@ -93,14 +98,14 @@ describe.each([
   ],
   [
     "non-exact string candidates",
-    [["/foo/123", "/foo", "/foo/x/123"], { forbid: ["/foo"] }],
+    [["/foo/123", "/foo", "/foo/x/123"], { forbid: ["/foo/*"] }],
     undefined,
   ],
   [
     "non-exact Location candidates",
     [
       [{ pathname: "/foo/123" }, "/foo", { pathname: "/foo/x/123" }],
-      { forbid: ["/foo"] },
+      { forbid: ["/foo/*"] },
     ],
     undefined,
   ],

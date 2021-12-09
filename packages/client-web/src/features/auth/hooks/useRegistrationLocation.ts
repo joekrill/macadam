@@ -5,7 +5,7 @@ export const REGISTRATION_PATH = "/auth/registration";
 
 export const useRegistrationLocation = () => {
   const returnTo = useReturnToProvider({
-    forbid: [REGISTRATION_PATH, LOGIN_PATH],
+    forbid: [`${LOGIN_PATH}/*`, `${REGISTRATION_PATH}/*`],
     fallback: "/",
   });
 

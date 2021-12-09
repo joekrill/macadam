@@ -3,13 +3,10 @@ import {
   Offline,
   ReportingObserver,
 } from "@sentry/integrations";
-import {
-  defaultIntegrations,
-  init,
-  reactRouterV5Instrumentation,
-} from "@sentry/react";
+import { defaultIntegrations, init } from "@sentry/react";
 import { Integrations as TracingIntegrations } from "@sentry/tracing";
 import { history } from "../routing/history";
+import { historyRoutingInstrumentation } from "./historyRoutingInstrumentation";
 
 const IS_DEVELOPMENT_ENV = process.env.NODE_ENV === "development";
 
@@ -32,7 +29,7 @@ init({
     ...defaultIntegrations,
 
     new TracingIntegrations.BrowserTracing({
-      routingInstrumentation: reactRouterV5Instrumentation(history),
+      routingInstrumentation: historyRoutingInstrumentation(history),
       tracingOrigins: [`${origin || hostname}/api/`],
     }),
 

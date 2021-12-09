@@ -1,4 +1,4 @@
-import { LocationDescriptor } from "history";
+import { To } from "history";
 import { useLocation } from "react-router-dom";
 import { filterLocations } from "../filterLocations";
 
@@ -7,7 +7,7 @@ export interface UseReturnToConsumerOptions {
    * An optional fallback value to use when an appropriate location is not
    * found based on the preferred location or the location stored in state.
    */
-  fallback?: LocationDescriptor;
+  fallback?: To;
 
   /**
    * A list of path's that should never be used as the return to value.
@@ -20,7 +20,7 @@ export interface UseReturnToConsumerOptions {
    * An optional location explicitly preferred over any value found in the
    * router state.
    */
-  preferred?: LocationDescriptor;
+  preferred?: To;
 }
 
 /**
@@ -36,7 +36,7 @@ export const useReturnToConsumer = ({
   forbid = [],
   preferred,
 }: UseReturnToConsumerOptions) => {
-  const { state } = useLocation<{ returnTo?: LocationDescriptor }>();
+  const { state } = useLocation();
 
   return filterLocations([preferred, state?.returnTo], {
     forbid,

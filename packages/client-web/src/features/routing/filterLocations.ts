@@ -1,4 +1,4 @@
-import { LocationDescriptor } from "history";
+import { To } from "history";
 import { matchPath } from "react-router-dom";
 
 export interface FilterLocationsOptions {
@@ -7,7 +7,7 @@ export interface FilterLocationsOptions {
    * found in the given candidates. This value will not be checked against
    * the forbidden locations.
    */
-  fallback?: LocationDescriptor;
+  fallback?: To;
 
   /**
    * A list of path's that should not be considered when matched by a candidate
@@ -26,7 +26,7 @@ export interface FilterLocationsOptions {
  * @returns
  */
 export const filterLocations = (
-  candidates: (LocationDescriptor | undefined)[],
+  candidates: (To | undefined)[],
   { forbid, fallback }: FilterLocationsOptions
 ) => {
   if (!forbid.length) {
@@ -46,7 +46,7 @@ export const filterLocations = (
         return false;
       }
 
-      return !forbid.some((path) => matchPath(candidatePath, { path }));
+      return !forbid.some((path) => matchPath(path, candidatePath));
     }) || fallback
   );
 };

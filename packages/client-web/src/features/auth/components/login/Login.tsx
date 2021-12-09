@@ -1,7 +1,7 @@
 import { Link, VStack } from "@chakra-ui/react";
 import { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
-import { Link as RouterLink, Redirect } from "react-router-dom";
+import { Link as RouterLink, Navigate } from "react-router-dom";
 import { useReturnToConsumer } from "../../../routing/hooks/useReturnToConsumer";
 import { useLoginFlow, UseLoginFlowOptions } from "../../hooks/useLoginFlow";
 import { REGISTRATION_PATH } from "../../hooks/useRegistrationLocation";
@@ -24,7 +24,7 @@ export const Login = ({
 }: LoginProps) => {
   const returnTo = useReturnToConsumer({
     preferred: returnToProp,
-    forbid: [LOGIN_PATH, REGISTRATION_PATH],
+    forbid: [`${LOGIN_PATH}/*`, `${REGISTRATION_PATH}/*`],
   });
 
   const {
@@ -43,7 +43,7 @@ export const Login = ({
 
   return (
     <VStack align="stretch" spacing="4">
-      {isSuccessful && <Redirect to={returnTo || "/"} />}
+      {isSuccessful && <Navigate to={returnTo || "/"} />}
       <FlowHeading
         title={<LoginFlowTitle flow={flow} />}
         subtitle={

@@ -1,8 +1,9 @@
 import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
-import { Route, Switch } from "react-router-dom";
-import { AuthenticatedRoute } from "../features/auth/components/AuthenticatedRoute";
+import { Route, Routes } from "react-router-dom";
+import { RequireAuthenticated } from "../features/auth/components/RequireAuthenticated";
 import { AuthPage } from "../features/auth/pages/AuthPage";
+import { SettingsPage } from "../features/auth/pages/SettingsPage";
 import { CrashInitiator } from "../features/errors/components/CrashInitiator/CrashInitiator";
 import { NotFoundPage } from "../features/errors/components/NotFoundPage/NotFoundPage";
 import { ContactUs } from "../features/pages/ContactUs/ContactUs";
@@ -48,38 +49,25 @@ export const AppContent = () => {
           px={{ base: "2", sm: "4" }}
           py="5"
         >
-          <Switch>
-            <Route path="/auth">
-              <AuthPage />
-            </Route>
-            <AuthenticatedRoute path="/settings">
-              <AuthPage />
-            </AuthenticatedRoute>
-            <Route path="/contact" exact>
-              <ContactUs />
-            </Route>
-            <Route path="/faq" exact>
-              <Faq />
-            </Route>
-            <Route path="/privacy" exact>
-              <PrivacyPolicy />
-            </Route>
-            <Route path="/terms" exact>
-              <TermsAndConditions />
-            </Route>
-            <Route path="/crash">
-              <CrashInitiator />
-            </Route>
-            <Route path="/things">
-              <ThingsPage />
-            </Route>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route>
-              <NotFoundPage />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/auth/*" element={<AuthPage />} />
+            <Route
+              path="/settings"
+              element={
+                <RequireAuthenticated>
+                  <SettingsPage />
+                </RequireAuthenticated>
+              }
+            />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsAndConditions />} />
+            <Route path="/crash" element={<CrashInitiator />} />
+            <Route path="/things/*" element={<ThingsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
         </Box>
         <Footer />
       </Flex>

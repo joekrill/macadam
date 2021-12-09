@@ -8,7 +8,7 @@ import { appApi } from "../../api/appApi";
 import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
 
 export const ThingDetails = () => {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams<"id">();
   const { data, error, isFetching, refetch } = appApi.useGetThingQuery(
     id || skipToken
   );

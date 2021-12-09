@@ -6,7 +6,6 @@
 - (client-web) How to deal with unverified email address
   - (client-web) Show notification component whne email address is not verififed
   - https://github.com/ory/kratos/issues/1328
-- (client-web) upgrade to React Router v6 (handle sentry integration, too)
 - (client-web) Handle /sessions/whoami 401 response (vs request failure)
 - (client-web) Auth forms: auto-focus first field when rendering forms.
 - (client-web) Auth: if email was entered in the login form, autopopulate forgot password form

@@ -1,5 +1,4 @@
-import { LocationDescriptor } from "history";
-import { useLocation } from "react-router-dom";
+import { To, useLocation } from "react-router-dom";
 import { filterLocations } from "../filterLocations";
 
 export interface UseReturnToProviderOptions {
@@ -7,7 +6,7 @@ export interface UseReturnToProviderOptions {
    * An optional fallback value to use when an appropriate location is not
    * found based on the an existing returnTo or the current location.
    */
-  fallback?: string;
+  fallback?: To;
 
   /**
    * A list of path's that should never be used as the return to value.
@@ -28,7 +27,7 @@ export const useReturnToProvider = ({
   fallback,
   forbid = [],
 }: UseReturnToProviderOptions) => {
-  const location = useLocation<{ returnTo?: LocationDescriptor }>();
+  const location = useLocation();
 
   return filterLocations([location.state?.returnTo, location], {
     forbid,

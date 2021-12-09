@@ -1,6 +1,6 @@
 import { VStack } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useReturnToConsumer } from "../../../routing/hooks/useReturnToConsumer";
 import {
   useRegistrationFlow,
@@ -23,7 +23,7 @@ export const Registration = ({
 }: RegistrationProps) => {
   const returnTo = useReturnToConsumer({
     preferred: returnToProp,
-    forbid: [LOGIN_PATH, REGISTRATION_PATH],
+    forbid: [`${LOGIN_PATH}/*`, `${REGISTRATION_PATH}/*`],
   });
 
   const {
@@ -39,7 +39,7 @@ export const Registration = ({
 
   return (
     <VStack align="stretch" spacing="4">
-      {isSuccessful && <Redirect to={returnTo || "/"} />}
+      {isSuccessful && <Navigate to={returnTo || "/"} />}
       <FlowHeading
         title={
           <FormattedMessage

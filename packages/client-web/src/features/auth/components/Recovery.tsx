@@ -1,6 +1,6 @@
 import { VStack } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import {
   useRecoveryFlow,
   UseRecoveryFlowOptions,
@@ -29,7 +29,7 @@ export const Recovery = ({ flowId, returnTo }: RecoveryProps) => {
 
   return (
     <VStack align="stretch" spacing="4">
-      {isSuccessful && returnTo && <Redirect to={returnTo} />}
+      {isSuccessful && returnTo && <Navigate to={returnTo} />}
       <FlowHeading
         title={
           <FormattedMessage

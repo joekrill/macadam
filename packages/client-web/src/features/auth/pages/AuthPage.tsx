@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { Helmet } from "react-helmet-async";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { NotFoundPage } from "../../errors/components/NotFoundPage/NotFoundPage";
 import { LoginPage } from "./LoginPage";
 import { RecoveryPage } from "./RecoveryPage";
@@ -15,25 +15,13 @@ export const AuthPage = () => (
       defaultTitle={process.env.REACT_APP_DISPLAY_NAME}
     />
 
-    <Switch>
-      <Route path="/auth/login">
-        <LoginPage />
-      </Route>
-      <Route path="/auth/registration">
-        <RegistrationPage />
-      </Route>
-      <Route path="/auth/verification">
-        <VerificationPage />
-      </Route>
-      <Route path="/auth/recovery">
-        <RecoveryPage />
-      </Route>
-      <Route path="/settings">
-        <SettingsPage />
-      </Route>
-      <Route>
-        <NotFoundPage />
-      </Route>
-    </Switch>
+    <Routes>
+      <Route path="login" element={<LoginPage />} />
+      <Route path="registration" element={<RegistrationPage />} />
+      <Route path="verification" element={<VerificationPage />} />
+      <Route path="recovery" element={<RecoveryPage />} />
+      <Route path="/settings" element={<SettingsPage />} />
+      <Route element={<NotFoundPage />} />
+    </Routes>
   </Box>
 );

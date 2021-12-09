@@ -9,7 +9,7 @@ import {
 import { useMemo } from "react";
 import { HiRefresh } from "react-icons/hi";
 import { FormattedMessage, useIntl } from "react-intl";
-import { Link as ReactRouterLink, useHistory } from "react-router-dom";
+import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
 import { appApi } from "../../api/appApi";
 import { Pagination } from "../../common/components/Pagination/Pagination";
 import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
@@ -18,7 +18,7 @@ import { ThingsTable } from "./ThingsTable";
 
 export const ThingsList = () => {
   const { formatMessage } = useIntl();
-  const history = useHistory();
+  const navigate = useNavigate();
   const params = useUrlSearchParams();
   const pageParam = params.get("page");
   const page = useMemo(
@@ -58,7 +58,7 @@ export const ThingsList = () => {
               newParams.delete("mine");
             }
             newParams.delete("page");
-            history.push(`/things/?${newParams.toString()}`);
+            navigate(`/things/?${newParams.toString()}`);
           }}
           value={owned ? "mine" : "all"}
         >

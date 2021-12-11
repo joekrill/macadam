@@ -8,6 +8,7 @@ import {
 } from "../../../features/auth/authenticationRequired";
 import { Thing } from "../../../features/db/entities/Thing";
 import { OffsetPagination } from "../../../features/pagination/OffsetPagination";
+import { sortStringToOrderBy } from "../../../features/sorting/sortStringToOrderBy";
 import {
   thingCreateSchema,
   thingUpdatePartialSchema,
@@ -32,9 +33,20 @@ thingsRouter
     return next();
   })
   .get("/", async (ctx) => {
-    const { ability, thingRepository, urlSearchParams } = ctx.state;
+    const { ability, entityManager, thingRepository, urlSearchParams } =
+      ctx.state;
+
+    const query = ability!.query("read", Thing.modelName);
     const pagination = new OffsetPagination(urlSearchParams);
-    const query = ability!.query("read", "Thing");
+    const orderBy = sortStringToOrderBy(
+      urlSearchParams.get("sort"),
+
+      // This seems to be the simplest way to get the list of property keys
+      // from the entity metadata.
+      Array.from(
+        entityManager!.getMetadata().get(Thing.name).propertyOrder.keys()
+      )
+    );
 
     if (urlSearchParams.has("filter[owned]")) {
       const session = await ctx.state.session();
@@ -44,10 +56,10 @@ thingsRouter
       });
     }
 
-    const [data, total] = await thingRepository!.findAndCount(
-      query,
-      pagination.findOptions()
-    );
+    const [data, total] = await thingRepository!.findAndCount(query, {
+      ...pagination.findOptions(),
+      orderBy,
+    });
 
     ctx.body = {
       data,

@@ -12,13 +12,13 @@ export class Thing extends UuidEntity {
   public updatedBy: string;
 
   @Property()
-  name!: string;
+  public name!: string;
 
   @Property({ nullable: true })
-  description!: string | null;
+  public description!: string | null;
 
   @Property()
-  public private = true;
+  public isPrivate = true;
 
   constructor(createdBy: string, name: string, description?: string) {
     super();

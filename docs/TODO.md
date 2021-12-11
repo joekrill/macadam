@@ -1,7 +1,9 @@
 ## "v1" Milestone
 
+- Figure out how to share logic between front-end/back-end while still having hot-reloading work and without ejecting
+- setup lint-staged
+  - apply this to other things as well? i18n updates?
 - (api-server) consider namespacing all contexts?
-- (api-server) sorting
 - (client-web) Invalidate data on logout/login (https://redux-toolkit.js.org/rtk-query/api/created-api/cache-management-utils#resetapistate)
 - Flatten traits?
 - (client-web) User settings
@@ -20,6 +22,8 @@
 - (client-web) contact form
 - Background tasks
 - DB Seeding
+- standards
+  - https://docs.devland.is/technical-overview/api-design-guide/data-definitions
 
 ## Low priority
 

@@ -14,7 +14,7 @@ export class Migration20210610004441 extends Migration {
             .notNullable();
           table.string(namingStrategy.propertyToColumnName("description"));
           table
-            .boolean(namingStrategy.propertyToColumnName("private"))
+            .boolean(namingStrategy.propertyToColumnName("isPrivate"))
             .defaultTo(true);
           table
             .uuid(namingStrategy.propertyToColumnName("createdBy"))

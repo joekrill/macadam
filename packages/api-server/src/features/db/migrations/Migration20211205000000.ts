@@ -1,4 +1,5 @@
 import { Migration } from "@mikro-orm/migrations";
+import { commerce, datatype, date } from "faker";
 import { v4 } from "uuid";
 
 export class Migration20211205000000 extends Migration {
@@ -6,7 +7,6 @@ export class Migration20211205000000 extends Migration {
     const namingStrategy = this.config.getNamingStrategy();
     const tableName = namingStrategy.classToTableName("Thing");
     const uuid = "00000000-0000-0000-0000-000000000000";
-    const date = new Date();
 
     this.addSql(
       this.getKnex()
@@ -16,11 +16,11 @@ export class Migration20211205000000 extends Migration {
             id: v4(),
             created_by: uuid,
             updated_by: uuid,
-            created_at: date,
-            updated_at: date,
-            name: `Thing ${i}`,
-            description: `Test description for thing #${i}`,
-            private: Math.random() > 0.5,
+            created_at: date.past(),
+            updated_at: date.recent(),
+            name: commerce.productName(),
+            description: commerce.productDescription(),
+            is_private: datatype.boolean(),
           }))
         )
         .toQuery()

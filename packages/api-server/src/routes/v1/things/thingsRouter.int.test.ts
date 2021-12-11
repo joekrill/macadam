@@ -219,9 +219,9 @@ describe("authenticated", () => {
 
     beforeEach(async () => {
       ownedThing = new Thing("123", "Item 1");
-      ownedThing.private = false;
+      ownedThing.isPrivate = false;
       unownedThing = new Thing("567", "Item 2");
-      unownedThing.private = false;
+      unownedThing.isPrivate = false;
       app.context.orm.em.persist([ownedThing, unownedThing]).flush();
     });
 
@@ -277,9 +277,9 @@ describe("authenticated", () => {
 
     beforeEach(async () => {
       ownedThing = new Thing("123", "Item 1");
-      ownedThing.private = false;
+      ownedThing.isPrivate = false;
       unownedThing = new Thing("567", "Item 2");
-      unownedThing.private = false;
+      unownedThing.isPrivate = false;
       app.context.orm.em.persist([ownedThing, unownedThing]).flush();
     });
 

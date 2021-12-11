@@ -12418,6 +12418,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/faker", [
+        ["npm:5.5.9", {
+          "packageLocation": "./.yarn/cache/@types-faker-npm-5.5.9-2ce4f59dc2-c2cbd082ab.zip/node_modules/@types/faker/",
+          "packageDependencies": [
+            ["@types/faker", "npm:5.5.9"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/favicons", [
         ["npm:6.2.2", {
           "packageLocation": "./.yarn/cache/@types-favicons-npm-6.2.2-baf7383103-0bf89d061b.zip/node_modules/@types/favicons/",
@@ -12981,6 +12990,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-react-syntax-highlighter-npm-11.0.5-90d671364b-8f4dce3eb5.zip/node_modules/@types/react-syntax-highlighter/",
           "packageDependencies": [
             ["@types/react-syntax-highlighter", "npm:11.0.5"],
+            ["@types/react", "npm:17.0.14"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/react-table", [
+        ["npm:7.7.9", {
+          "packageLocation": "./.yarn/cache/@types-react-table-npm-7.7.9-2777fc0c09-3f6c847c8e.zip/node_modules/@types/react-table/",
+          "packageDependencies": [
+            ["@types/react-table", "npm:7.7.9"],
             ["@types/react", "npm:17.0.14"]
           ],
           "linkType": "HARD",
@@ -14494,6 +14513,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@ory/kratos-client", "npm:0.8.0-alpha.2"],
             ["@sentry/node", "npm:6.16.0"],
             ["@shopify/jest-koa-mocks", "npm:3.0.8"],
+            ["@types/faker", "npm:5.5.9"],
             ["@types/http-errors", "npm:1.8.1"],
             ["@types/ioredis", "npm:4.28.2"],
             ["@types/jest", "npm:27.0.3"],
@@ -14508,6 +14528,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cross-fetch", "npm:3.1.4"],
             ["deep-map-keys", "npm:2.0.1"],
             ["errorish", "npm:1.0.0"],
+            ["faker", "npm:5.5.3"],
             ["http-errors", "npm:1.8.1"],
             ["ioredis", "npm:4.28.2"],
             ["jest", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:27.4.3"],
@@ -16956,6 +16977,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:17.0.37"],
             ["@types/react-dom", "npm:17.0.11"],
             ["@types/react-redux", "npm:7.1.20"],
+            ["@types/react-table", "npm:7.7.9"],
             ["@types/svgo", "npm:2.6.0"],
             ["@types/testing-library__jest-dom", "npm:5.14.2"],
             ["date-fns", "npm:2.27.0"],
@@ -16976,6 +16998,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-redux", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:7.2.6"],
             ["react-router-dom", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:6.0.2"],
             ["react-scripts", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:4.0.3"],
+            ["react-table", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:7.7.0"],
             ["redux", "npm:4.1.2"],
             ["snakecase-keys", "npm:5.1.2"],
             ["source-map-explorer", "npm:2.5.2"],
@@ -20708,6 +20731,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/extsprintf-npm-1.4.0-2b015bcaab-184dc8a413.zip/node_modules/extsprintf/",
           "packageDependencies": [
             ["extsprintf", "npm:1.4.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["faker", [
+        ["npm:5.5.3", {
+          "packageLocation": "./.yarn/cache/faker-npm-5.5.3-541ce97798-684fd64c8d.zip/node_modules/faker/",
+          "packageDependencies": [
+            ["faker", "npm:5.5.3"]
           ],
           "linkType": "HARD",
         }]
@@ -32059,6 +32091,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prismjs", "npm:1.23.0"],
             ["react", "npm:17.0.2"],
             ["refractor", "npm:3.3.1"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["react-table", [
+        ["npm:7.7.0", {
+          "packageLocation": "./.yarn/cache/react-table-npm-7.7.0-95e9357cd2-a679edecc7.zip/node_modules/react-table/",
+          "packageDependencies": [
+            ["react-table", "npm:7.7.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:7.7.0", {
+          "packageLocation": "./.yarn/__virtual__/react-table-virtual-1d2c588540/0/cache/react-table-npm-7.7.0-95e9357cd2-a679edecc7.zip/node_modules/react-table/",
+          "packageDependencies": [
+            ["react-table", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:7.7.0"],
+            ["@types/react", "npm:17.0.37"],
+            ["react", "npm:17.0.2"]
           ],
           "packagePeers": [
             "@types/react",

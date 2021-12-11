@@ -8,7 +8,7 @@ import { AppAbility } from "./AppAbility";
 export const abilityFor = (session?: Session) => {
   const builder = new AbilityBuilder(AppAbility);
 
-  builder.can("read", "Thing", { private: false });
+  builder.can("read", "Thing", { isPrivate: false });
 
   // NOTE: All conditions must either:
   // 1. be valid MikroORM queries,

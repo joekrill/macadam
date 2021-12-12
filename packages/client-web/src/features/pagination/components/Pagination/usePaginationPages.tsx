@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { usePagination } from "./usePagination";
+import { usePaginationPages } from "./usePaginationPages";
 
 jest.mock("react");
 
@@ -53,5 +53,5 @@ test.each([
   [{ currentPage: -40, maxSiblings: 1 }, [1, -1]],
   [{ currentPage: 0, maxSiblings: 2 }, [1, -1]],
 ])("usePagination(%j)", (args, expected) => {
-  expect(usePagination(args)).toEqual(expected);
+  expect(usePaginationPages(args)).toEqual(expected);
 });

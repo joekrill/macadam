@@ -14,7 +14,7 @@ import { ComponentProps } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { FormattedMessage, FormattedNumber } from "react-intl";
-import { usePagination } from "./usePagination";
+import { usePaginationPages } from "./usePaginationPages";
 
 export interface PaginationProps extends FlexProps {
   currentPage: number;
@@ -46,7 +46,7 @@ export const Pagination = ({
 
   const defaultMaxSiblings =
     useBreakpointValue({ base: 0, sm: 1, md: 2, lg: 4 }) || 0;
-  const pages = usePagination({
+  const pages = usePaginationPages({
     currentPage,
     totalPages,
     maxSiblings:

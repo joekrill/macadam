@@ -19,7 +19,7 @@ export interface UsePaginationOptions {
  *
  * A negative number indicates a "spacer" - a break in the continuity of the range.
  */
-export const usePagination = ({
+export const usePaginationPages = ({
   currentPage, //-40
   maxSiblings, //1
   totalPages,

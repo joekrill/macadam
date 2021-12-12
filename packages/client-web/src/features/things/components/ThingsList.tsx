@@ -6,30 +6,34 @@ import {
   RadioGroup,
   Stack,
 } from "@chakra-ui/react";
-import { useMemo } from "react";
 import { HiRefresh } from "react-icons/hi";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
-import { Pagination } from "../../common/components/Pagination/Pagination";
 import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
+import { Pagination } from "../../pagination/components/Pagination/Pagination";
+import {
+  DEFAULT_PAGE_PARAM_NAME,
+  usePageUrlParam,
+} from "../../pagination/hooks/usePageUrlParam";
+import { useUrlSearchParam } from "../../routing/hooks/useUrlSearchParam";
 import { useUrlSearchParams } from "../../routing/hooks/useUrlSearchParams";
+import { useSortByUrlParam } from "../../sorting/hooks/useSortByUrlParam";
 import { thingsApi } from "../thingsApi";
+import { Thing } from "../thingsSchemas";
 import { ThingsTable } from "./ThingsTable";
 
 export const ThingsList = () => {
   const { formatMessage } = useIntl();
   const navigate = useNavigate();
-  const params = useUrlSearchParams();
-  const pageParam = params.get("page");
-  const page = useMemo(
-    () => (pageParam && parseInt(pageParam, 10)) || 1,
-    [pageParam]
-  );
-  const owned = params.has("mine");
+  const urlParams = useUrlSearchParams();
+  const { page, getPageTo } = usePageUrlParam();
+  const owned = !!useUrlSearchParam("mine");
+  const { setRules, rules, paramValue: sort } = useSortByUrlParam<Thing>();
 
   const { data, isFetching, error, refetch } = thingsApi.useListThingsQuery({
     page,
     owned,
+    sort,
   });
 
   return (
@@ -51,14 +55,13 @@ export const ThingsList = () => {
       <Box>
         <RadioGroup
           onChange={(value) => {
-            const newParams = new URLSearchParams(params);
             if (value === "mine") {
-              newParams.set("mine", "1");
+              urlParams.set("mine", "1");
             } else {
-              newParams.delete("mine");
+              urlParams.delete("mine");
             }
-            newParams.delete("page");
-            navigate(`/things/?${newParams.toString()}`);
+            urlParams.delete(DEFAULT_PAGE_PARAM_NAME);
+            navigate(`/things/?${urlParams.toString()}`);
           }}
           value={owned ? "mine" : "all"}
         >
@@ -79,20 +82,21 @@ export const ThingsList = () => {
         </RadioGroup>
       </Box>
       {error && <ErrorAlert my="5" onRetryClick={refetch} error={error} />}
-      {data && <ThingsTable data={data.data} />}
+      {data && (
+        <ThingsTable
+          data={data.data}
+          onSortByChange={setRules}
+          sortBy={rules}
+        />
+      )}
       {data && (
         <Pagination
           p="3"
-          buttonProps={(page) => {
-            const linkParams = new URLSearchParams(params);
-            linkParams.set("page", String(page));
-
-            return {
-              as: ReactRouterLink,
-              to: `/things/?${linkParams.toString()}`,
-            };
-          }}
-          currentPage={data?.pagination.page || page}
+          buttonProps={(page) => ({
+            as: ReactRouterLink,
+            to: getPageTo(page),
+          })}
+          currentPage={page}
           totalPages={data?.pagination.totalPages}
         />
       )}

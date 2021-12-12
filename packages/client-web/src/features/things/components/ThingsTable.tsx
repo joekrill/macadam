@@ -1,65 +1,67 @@
-import { Icon, Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
+import { Icon } from "@chakra-ui/react";
 import { parseISO } from "date-fns";
+import { useMemo } from "react";
 import { FaLock, FaUnlock } from "react-icons/fa";
-import { FormattedDate, FormattedMessage } from "react-intl";
+import { FormattedDate, useIntl } from "react-intl";
+import { Column } from "react-table";
+import {
+  DataTable,
+  DataTableProps,
+} from "../../common/components/DataTable/DataTable";
 import { RouterLink } from "../../routing/components/RouterLink";
 import { Thing } from "../thingsSchemas";
 
-export interface ThingsTableProps {
-  data?: Thing[];
-}
+export interface ThingsTableProps extends Partial<DataTableProps<Thing>> {}
 
-export const ThingsTable = ({ data }: ThingsTableProps) => (
-  <Table>
-    <Thead>
-      <Tr>
-        <Th>
-          <FormattedMessage
-            id="thingsTable.nameHeader.label"
-            defaultMessage="Name"
+export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
+  const { formatMessage } = useIntl();
+  const columns = useMemo<Column<Thing>[]>(
+    () => [
+      {
+        Header: formatMessage({
+          id: "thingsTable.nameHeader.label",
+          defaultMessage: "Name",
+        }),
+        accessor: "name",
+        Cell: ({ value, row }) => (
+          <RouterLink to={`/things/${row.original.id}`}>{value}</RouterLink>
+        ),
+      },
+      {
+        Header: formatMessage({
+          id: "thingsTable.descriptionHeader.label",
+          defaultMessage: "Description",
+        }),
+        accessor: "description",
+      },
+      {
+        Header: formatMessage({
+          id: "thingsTable.createdHeader.label",
+          defaultMessage: "Created",
+        }),
+        accessor: "createdAt",
+        Cell: ({ value }) => (
+          <FormattedDate dateStyle="full" value={parseISO(value)} />
+        ),
+      },
+      {
+        Header: formatMessage({
+          id: "thingsTable.privateHeader.label",
+          defaultMessage: "Private",
+        }),
+        accessor: "isPrivate",
+        Cell: ({ value, row }) => (
+          <Icon
+            h="1rem"
+            w="1rem"
+            as={value ? FaLock : FaUnlock}
+            color={value ? "red.600" : "green.300"}
           />
-        </Th>
-        <Th>
-          <FormattedMessage
-            id="thingsTable.descriptionHeader.label"
-            defaultMessage="Description"
-          />
-        </Th>
-        <Th>
-          <FormattedMessage
-            id="thingsTable.createdHeader.label"
-            defaultMessage="Created"
-          />
-        </Th>
-        <Th>
-          <FormattedMessage
-            id="thingsTable.privateHeader.label"
-            defaultMessage="Private"
-          />
-        </Th>
-      </Tr>
-    </Thead>
-    <Tbody>
-      {data?.map((thing) => (
-        <Tr key={thing.id}>
-          <Td>
-            <RouterLink to={`/things/${thing.id}`}>{thing.name}</RouterLink>
-          </Td>
-          <Td>{thing.description}</Td>
-          <Td>
-            <FormattedDate dateStyle="full" value={parseISO(thing.createdAt)} />
-          </Td>
-          <Td>
-            {" "}
-            <Icon
-              h="1rem"
-              w="1rem"
-              as={thing.private ? FaLock : FaUnlock}
-              color={thing.private ? "red.600" : "green.300"}
-            />
-          </Td>
-        </Tr>
-      ))}
-    </Tbody>
-  </Table>
-);
+        ),
+      },
+    ],
+    [formatMessage]
+  );
+
+  return <DataTable {...props} data={data} columns={columns} />;
+};

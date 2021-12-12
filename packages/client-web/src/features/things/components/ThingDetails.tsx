@@ -39,8 +39,8 @@ export const ThingDetails = () => {
             <Icon
               h="1rem"
               w="1rem"
-              as={data?.data.private ? FaLock : FaUnlock}
-              color={data?.data.private ? "red.600" : "green.300"}
+              as={data?.data.isPrivate ? FaLock : FaUnlock}
+              color={data?.data.isPrivate ? "red.600" : "green.300"}
             />
           </Heading>
           <Text>{data.data?.description}</Text>

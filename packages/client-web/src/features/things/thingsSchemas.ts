@@ -10,7 +10,7 @@ export const thingSchema = z.object({
   updatedAt: z.string(),
   createdBy: z.string(),
   updatedBy: z.string(),
-  private: z.boolean(),
+  isPrivate: z.boolean(),
 });
 
 export type Thing = z.infer<typeof thingSchema>;
@@ -28,6 +28,7 @@ export type ListThingsResponse = z.infer<typeof listThingsResponseSchema>;
 export interface ListThingsParams {
   page?: number;
   owned?: boolean;
+  sort?: string;
 }
 
 /** Get */

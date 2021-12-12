@@ -10,22 +10,13 @@ module.exports = {
     "@chakra-ui/react": { disable: true },
   },
 
-  webpackFinal: async (config) => {
-    return {
-      ...config,
-      resolve: {
-        ...config.resolve,
-        alias: {
-          ...config.resolve.alias,
-
-          // HACK: Styles do not get applied in storybook correctly without
-          // these aliases. More info here: https://github.com/chakra-ui/chakra-ui/issues/2527
-          // "@emotion/core": require.resolve("@emotion/react"),
-          // "emotion-theming": require.resolve("@emotion/react"),
-          "@emotion/core": "@emotion/react",
-          "emotion-theming": "@emotion/react",
-        },
-      },
-    };
+  features: {
+    // Storybook uses emotion 10, but Chakra uses emotion 11. This causes a
+    // conflict and prevents Chakra themes from loading correctly inside
+    // sorybook. This is the workaround Storybook is currently providing
+    // for that.
+    // See https://github.com/storybookjs/storybook/blob/3e5d6601ba3de7e1d6bd64bca97917dc9d40244b/MIGRATION.md#emotion11-quasi-compatibility
+    // and https://github.com/chakra-ui/chakra-ui/issues/2527
+    emotionAlias: false,
   },
 };

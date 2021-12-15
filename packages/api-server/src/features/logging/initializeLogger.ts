@@ -1,5 +1,6 @@
-import Koa, { DefaultState } from "koa";
+import Koa from "koa";
 import pino from "pino";
+import { logOnError } from "./logOnError";
 
 export interface LoggerContext {
   logger: pino.Logger;
@@ -22,37 +23,5 @@ export const initializeLogger = (
   { logger }: InitializeLoggerOptions
 ) => {
   app.context.logger = logger;
-
-  app.use((ctx, next) => {
-    ctx.state.logger = logger.child(
-      { id: ctx.state.requestId },
-      {
-        serializers: {
-          state: (state: DefaultState) =>
-            typeof state === "object"
-              ? {
-                  requestId: state.requestId,
-                  responseTime: state.responseTime,
-                  session: state._session,
-                  _keys: Object.keys(state).filter((key) => !!state[key]),
-                }
-              : `[could not serialize state: ${typeof state}]`,
-        },
-        redact: {
-          // These aren't useful at all in our output and just bloat our logs.
-          paths: [
-            "state.ability",
-            "state.entityManager",
-            "state.kratosEntityManager",
-            "state.logger",
-            "state.metricsRegister",
-            "state.session",
-            "state.urlSearchParams",
-          ],
-          remove: true,
-        },
-      }
-    );
-    return next();
-  });
+  app.on("error", logOnError(logger));
 };

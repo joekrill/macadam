@@ -1,39 +1,51 @@
-import { ensure as ensureError } from "errorish";
-import { Middleware } from "koa";
+import { DefaultState, Middleware } from "koa";
+import pino from "pino";
 
 export interface LogRequestsOptions {
   pathLevels?: Record<string, "warn" | "info" | "debug" | "trace">;
 }
 
 export const logRequests =
-  (options?: LogRequestsOptions): Middleware =>
+  (logger: pino.Logger, options?: LogRequestsOptions): Middleware =>
   async (ctx, next): Promise<void> => {
-    try {
-      await next();
-      const logMethod = options?.pathLevels?.[ctx.path] || "info";
-      ctx.state.logger[logMethod](
-        {
-          req: ctx.req,
-          res: ctx.res,
-          responseTime: ctx.state.responseTime,
+    ctx.state.logger = logger.child(
+      { id: ctx.state.requestId },
+      {
+        serializers: {
+          state: (state: DefaultState) =>
+            typeof state === "object"
+              ? {
+                  requestId: state.requestId,
+                  responseTime: state.responseTime,
+                  session: state._session,
+                  _props: Object.keys(state).filter((key) => !!state[key]),
+                }
+              : `[could not serialize state: ${typeof state}]`,
         },
-        "request"
-      );
-    } catch (caughtError) {
-      const error = ensureError(caughtError);
-      ctx.status =
-        typeof (error as any).status === "number" ? (error as any).status : 500;
-      ctx.body = error.message;
-      ctx.state.logger.error(
-        {
-          stack: error.stack,
-          type: error.name,
-          state: ctx.state,
+        redact: {
+          // These aren't useful at all in our output and just bloat our logs.
+          paths: [
+            "state.ability",
+            "state.entityManager",
+            "state.kratosEntityManager",
+            "state.logger",
+            "state.metricsRegister",
+            "state.session",
+            "state.urlSearchParams",
+          ],
+          remove: true,
         },
-        error.message
-      );
+      }
+    );
 
-      // TODO: Do we want to do this?
-      // ctx.app.emit("error", error, ctx);
-    }
+    await next();
+    const logMethod = options?.pathLevels?.[ctx.path] || "info";
+    ctx.state.logger[logMethod](
+      {
+        req: ctx.req,
+        res: ctx.res,
+        responseTime: ctx.state.responseTime,
+      },
+      "request"
+    );
   };

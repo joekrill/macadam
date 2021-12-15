@@ -5,6 +5,7 @@ import helmet from "koa-helmet";
 import pino from "pino";
 import { forkEntityManager } from "./features/db/forkEntityManager";
 import { initializeDb } from "./features/db/initializeDb";
+import { errorHandler } from "./features/errors/errorHandler";
 import { healthRoutes } from "./features/health/healthRoutes";
 import { forkKratosEntityManager } from "./features/kratos/forkKratosEntityManager";
 import { initializeKratos } from "./features/kratos/initializeKratos";
@@ -123,8 +124,9 @@ export const createApp = async ({
     await initializeRedis(app, { url: redisUrl });
   }
 
+  app.use(errorHandler());
   app.use(
-    logRequests({
+    logRequests(logger, {
       pathLevels: {
         // Reduce logging levels for metrics and health endpoints because
         // they are only used internally.

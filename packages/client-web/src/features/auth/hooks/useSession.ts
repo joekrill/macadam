@@ -1,4 +1,4 @@
-import { skipToken } from "@reduxjs/toolkit/dist/query";
+import { skipToken } from "@reduxjs/toolkit/query";
 import { createContext, useContext } from "react";
 import { useAppSelector } from "../../../app/hooks";
 import { useWhoamiQuery } from "../identityApi";

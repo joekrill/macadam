@@ -1,4 +1,4 @@
-import { skipToken } from "@reduxjs/toolkit/dist/query";
+import { skipToken } from "@reduxjs/toolkit/query";
 import { Meta, Story } from "@storybook/react";
 import { UseSessionContext } from "../../../features/auth/hooks/useSession";
 import { LocaleSelectContext } from "../../../features/i18n/components/LocaleSelect";

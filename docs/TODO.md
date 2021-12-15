@@ -5,14 +5,16 @@
   - apply this to other things as well? i18n updates?
 - (api-server) consider namespacing all contexts?
 - (client-web) Invalidate data on logout/login (https://redux-toolkit.js.org/rtk-query/api/created-api/cache-management-utils#resetapistate)
-- Flatten traits?
+- (kratos) Flatten traits?
 - (client-web) User settings
 - (client-web) How to deal with unverified email address
   - (client-web) Show notification component whne email address is not verififed
   - https://github.com/ory/kratos/issues/1328
 - (client-web) Handle /sessions/whoami 401 response (vs request failure)
-- Detect session expiration and handle it somehow (modal login form? a la Gmail?)
+- (client-web) Detect session expiration and handle it somehow (modal login form? a la Gmail?)
 - (api-server) Uploads
+  - https://github.com/node-formidable/formidable
+  - https://hub.docker.com/r/minio/minio/
 - (api-server) Audit Logging
 - Integration tests (i.e. using cypress)
 - commitlint
@@ -21,7 +23,9 @@
 - "Down for Maintenance" state
 - (client-web) contact form
 - Background tasks
-- DB Seeding
+  - https://github.com/OptimalBits/bull
+  - https://github.com/Automattic/kue
+  - https://devcenter.heroku.com/articles/node-redis-workers
 - standards
   - https://docs.devland.is/technical-overview/api-design-guide/data-definitions
 

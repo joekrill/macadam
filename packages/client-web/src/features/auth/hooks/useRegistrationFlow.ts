@@ -1,4 +1,4 @@
-import { skipToken } from "@reduxjs/toolkit/dist/query";
+import { skipToken } from "@reduxjs/toolkit/query";
 import { useCallback, useEffect, useState } from "react";
 import { identityApi, SubmitFlowPayload } from "../identityApi";
 import { FlowRestartReason } from "../schemas/errors";

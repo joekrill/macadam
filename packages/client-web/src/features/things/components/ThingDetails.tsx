@@ -1,5 +1,5 @@
 import { Box, chakra, Heading, Icon, Spinner, Text } from "@chakra-ui/react";
-import { skipToken } from "@reduxjs/toolkit/dist/query";
+import { skipToken } from "@reduxjs/toolkit/query";
 import { parseISO } from "date-fns";
 import { FaLock, FaUnlock } from "react-icons/fa";
 import { FormattedDate, FormattedMessage } from "react-intl";

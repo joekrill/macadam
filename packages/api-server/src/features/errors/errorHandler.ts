@@ -42,7 +42,9 @@ export const errorHandler =
         };
 
         if (ctx.status < 500) {
-          // Non-server errors should not be treated as actual errors
+          // Non-server errors should not be treated as actual errors. But
+          // anything greater than or equal to 500 should fall-through and
+          // cause an error to be logged.
           return;
         }
       }

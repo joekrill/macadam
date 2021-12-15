@@ -6,6 +6,7 @@ import pino from "pino";
 import { forkEntityManager } from "./features/db/forkEntityManager";
 import { initializeDb } from "./features/db/initializeDb";
 import { errorHandler } from "./features/errors/errorHandler";
+import { notFound } from "./features/errors/notFound";
 import { healthRoutes } from "./features/health/healthRoutes";
 import { forkKratosEntityManager } from "./features/kratos/forkKratosEntityManager";
 import { initializeKratos } from "./features/kratos/initializeKratos";
@@ -173,6 +174,7 @@ export const createApp = async ({
 
   // Lastly, register API routes
   app.use(apiRoutes({ prefix: apiPath }));
+  app.use(notFound());
 
   return app;
 };

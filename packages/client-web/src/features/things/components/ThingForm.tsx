@@ -48,16 +48,8 @@ export const ThingForm = () => {
     });
   }, [validationError, setError]);
 
-  console.log("check", register("isPrivate"));
-
   return (
-    <form
-      onSubmit={handleSubmit((values) => {
-        console.log(values);
-        // return;
-        submit(values);
-      })}
-    >
+    <form onSubmit={handleSubmit(submit)}>
       <VStack alignItems="flex-start">
         <FormControl
           isInvalid={!!errors.name}

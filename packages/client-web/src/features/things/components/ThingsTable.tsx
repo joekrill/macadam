@@ -50,7 +50,8 @@ export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
           defaultMessage: "Private",
         }),
         accessor: "isPrivate",
-        Cell: ({ value, row }) => (
+        textAlign: "right",
+        Cell: ({ value }) => (
           <Icon
             h="1rem"
             w="1rem"

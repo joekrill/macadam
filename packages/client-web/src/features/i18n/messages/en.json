@@ -648,6 +648,38 @@
       "value": "Previous Page"
     }
   ],
+  "table.sortHeader.ariaLabel": [
+    {
+      "options": {
+        "asc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Sorted ascending"
+            }
+          ]
+        },
+        "desc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Sorted descending"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Not sorted"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "sort"
+    }
+  ],
   "theme.colorModeSwitcher.switchColorModeLabel": [
     {
       "type": 0,
@@ -720,28 +752,40 @@
       "value": "Name"
     }
   ],
-  "thingsFilter.allThings.label": [
-    {
-      "type": 0,
-      "value": "All the things"
-    }
-  ],
-  "thingsFilter.myThings.label": [
-    {
-      "type": 0,
-      "value": "My things"
-    }
-  ],
   "thingsList.addButton.ariaLabel": [
     {
       "type": 0,
       "value": "Add new Thing"
     }
   ],
+  "thingsList.addButton.label": [
+    {
+      "type": 0,
+      "value": "New thing"
+    }
+  ],
+  "thingsList.ownFilter.all": [
+    {
+      "type": 0,
+      "value": "All Things"
+    }
+  ],
+  "thingsList.ownFilter.mine": [
+    {
+      "type": 0,
+      "value": "My Things"
+    }
+  ],
   "thingsList.refreshButton.ariaLabel": [
     {
       "type": 0,
       "value": "Refresh"
+    }
+  ],
+  "thingsList.search.placeholder": [
+    {
+      "type": 0,
+      "value": "Filter by name or description..."
     }
   ],
   "thingsList.title": [

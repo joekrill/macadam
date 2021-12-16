@@ -648,6 +648,38 @@
       "value": "PREVIOUS PAGE"
     }
   ],
+  "table.sortHeader.ariaLabel": [
+    {
+      "options": {
+        "asc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "SORTED ASCENDING"
+            }
+          ]
+        },
+        "desc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "SORTED DESCENDING"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "NOT SORTED"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "sort"
+    }
+  ],
   "theme.colorModeSwitcher.switchColorModeLabel": [
     {
       "type": 0,
@@ -720,28 +752,40 @@
       "value": "NAME"
     }
   ],
-  "thingsFilter.allThings.label": [
-    {
-      "type": 0,
-      "value": "ALL THE THINGS"
-    }
-  ],
-  "thingsFilter.myThings.label": [
-    {
-      "type": 0,
-      "value": "MY THINGS"
-    }
-  ],
   "thingsList.addButton.ariaLabel": [
     {
       "type": 0,
       "value": "ADD NEW THING"
     }
   ],
+  "thingsList.addButton.label": [
+    {
+      "type": 0,
+      "value": "NEW THING"
+    }
+  ],
+  "thingsList.ownFilter.all": [
+    {
+      "type": 0,
+      "value": "ALL THINGS"
+    }
+  ],
+  "thingsList.ownFilter.mine": [
+    {
+      "type": 0,
+      "value": "MY THINGS"
+    }
+  ],
   "thingsList.refreshButton.ariaLabel": [
     {
       "type": 0,
       "value": "REFRESH"
+    }
+  ],
+  "thingsList.search.placeholder": [
+    {
+      "type": 0,
+      "value": "FILTER BY NAME OR DESCRIPTION..."
     }
   ],
   "thingsList.title": [

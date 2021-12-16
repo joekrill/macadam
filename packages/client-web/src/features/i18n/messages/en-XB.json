@@ -648,6 +648,38 @@
       "value": "[!! Ṕŕèèèṿíŏŏŏůś Ṕâĝĝĝè !!]"
     }
   ],
+  "table.sortHeader.ariaLabel": [
+    {
+      "options": {
+        "asc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "[!! Ṡŏŕŕŕṭèḋḋḋ âśśśćèńńńḋíńńńĝ !!]"
+            }
+          ]
+        },
+        "desc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "[!! Ṡŏŕŕŕṭèḋḋḋ ḋèèèśćèèèńḋíííńĝ !!]"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "[!! Ŋŏṭṭṭ śŏŏŏŕṭèèèḋ !!]"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "sort"
+    }
+  ],
   "theme.colorModeSwitcher.switchColorModeLabel": [
     {
       "type": 0,
@@ -720,28 +752,40 @@
       "value": "[!! Ŋâṁṁṁè !!]"
     }
   ],
-  "thingsFilter.allThings.label": [
-    {
-      "type": 0,
-      "value": "[!! Ḁĺĺĺĺ ṭḫḫḫè ṭṭṭḫíńńńĝś !!]"
-    }
-  ],
-  "thingsFilter.myThings.label": [
-    {
-      "type": 0,
-      "value": "[!! Ḿẏ ṭḫíííńĝśśś !!]"
-    }
-  ],
   "thingsList.addButton.ariaLabel": [
     {
       "type": 0,
       "value": "[!! Ḁḋḋḋḋ ńèèèẘ ṮṮṮḫíńńńĝ !!]"
     }
   ],
+  "thingsList.addButton.label": [
+    {
+      "type": 0,
+      "value": "[!! Ŋèẘẘẘ ṭḫḫḫíńĝĝĝ !!]"
+    }
+  ],
+  "thingsList.ownFilter.all": [
+    {
+      "type": 0,
+      "value": "[!! Ḁĺĺĺĺ Ṯḫḫḫíńĝĝĝś !!]"
+    }
+  ],
+  "thingsList.ownFilter.mine": [
+    {
+      "type": 0,
+      "value": "[!! Ḿẏ Ṯḫíííńĝśśś !!]"
+    }
+  ],
   "thingsList.refreshButton.ariaLabel": [
     {
       "type": 0,
       "value": "[!! Ŕèḟḟḟŕèśśśḫ !!]"
+    }
+  ],
+  "thingsList.search.placeholder": [
+    {
+      "type": 0,
+      "value": "[!! Ḟíĺĺĺṭèŕŕŕ ḃẏẏẏ ńâââṁè ŏŕ ḋèśśśćŕíííṗṭíííŏń... !!]"
     }
   ],
   "thingsList.title": [

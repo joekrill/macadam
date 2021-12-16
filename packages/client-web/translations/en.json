@@ -231,6 +231,9 @@
   "pagination.previousPage": {
     "defaultMessage": "Previous Page"
   },
+  "table.sortHeader.ariaLabel": {
+    "defaultMessage": "{sort, select, asc {Sorted ascending} desc {Sorted descending} other {Not sorted}}"
+  },
   "theme.colorModeSwitcher.switchColorModeLabel": {
     "defaultMessage": "Switch to {mode, select, dark {dark} light {light} other {}} mode"
   },
@@ -252,17 +255,23 @@
   "thingForm.name.label": {
     "defaultMessage": "Name"
   },
-  "thingsFilter.allThings.label": {
-    "defaultMessage": "All the things"
-  },
-  "thingsFilter.myThings.label": {
-    "defaultMessage": "My things"
-  },
   "thingsList.addButton.ariaLabel": {
     "defaultMessage": "Add new Thing"
   },
+  "thingsList.addButton.label": {
+    "defaultMessage": "New thing"
+  },
+  "thingsList.ownFilter.all": {
+    "defaultMessage": "All Things"
+  },
+  "thingsList.ownFilter.mine": {
+    "defaultMessage": "My Things"
+  },
   "thingsList.refreshButton.ariaLabel": {
     "defaultMessage": "Refresh"
+  },
+  "thingsList.search.placeholder": {
+    "defaultMessage": "Filter by name or description..."
   },
   "thingsList.title": {
     "defaultMessage": "Things"

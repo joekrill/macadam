@@ -20,6 +20,7 @@
 - commitlint
 - CI script
   - eslint+prettier?
+- CI/CD pipeline
 - "Down for Maintenance" state
 - (client-web) contact form
 - Background tasks
@@ -83,6 +84,7 @@
   - https://docs.weblate.org/en/latest/
 - Notifications
   - https://notifire.co
+- Log aggregation
 
 ## Ongoing
 

@@ -1,12 +1,20 @@
 import {
   Box,
+  Button,
+  ButtonGroup,
+  FormControl,
   Heading,
+  HStack,
+  Icon,
   IconButton,
-  Radio,
-  RadioGroup,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Select,
   Stack,
 } from "@chakra-ui/react";
-import { HiPlusCircle, HiRefresh } from "react-icons/hi";
+import { FaSearch } from "react-icons/fa";
+import { HiPlusSm, HiRefresh } from "react-icons/hi";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
 import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
@@ -47,50 +55,79 @@ export const ThingsList = () => {
             id: "thingsList.refreshButton.ariaLabel",
             defaultMessage: "Refresh",
           })}
+          colorScheme="whiteAlpha"
+          variant="outline"
           icon={<HiRefresh />}
           onClick={refetch}
           isLoading={isFetching}
-        />{" "}
-        <IconButton
-          isRound
-          aria-label={formatMessage({
-            id: "thingsList.addButton.ariaLabel",
-            defaultMessage: "Add new Thing",
-          })}
-          icon={<HiPlusCircle />}
-          to="new"
-          as={ReactRouterLink}
-        ></IconButton>
+        />
       </Heading>
-      <Box>
-        <RadioGroup
-          onChange={(value) => {
-            if (value === "mine") {
-              urlParams.set("mine", "1");
-            } else {
-              urlParams.delete("mine");
-            }
-            urlParams.delete(DEFAULT_PAGE_PARAM_NAME);
-            navigate(`/things/?${urlParams.toString()}`);
-          }}
-          value={owned ? "mine" : "all"}
-        >
-          <Stack direction="row">
-            <Radio value="all">
-              <FormattedMessage
-                id="thingsFilter.allThings.label"
-                defaultMessage="All the things"
+      <Stack
+        justifyContent="space-between"
+        direction={{ base: "column", md: "row" }}
+        spacing="4"
+        my="5"
+      >
+        <HStack flex="1">
+          <FormControl>
+            <InputGroup size="sm">
+              <InputLeftElement pointerEvents="none">
+                <Icon as={FaSearch} color="gray.300" />
+              </InputLeftElement>
+              <Input
+                type="search"
+                placeholder={formatMessage({
+                  id: "thingsList.search.placeholder",
+                  defaultMessage: "Filter by name or description...",
+                })}
               />
-            </Radio>
-            <Radio value="mine">
+            </InputGroup>
+          </FormControl>
+          <Select
+            size="sm"
+            width="10em"
+            value={owned ? "mine" : ""}
+            onChange={(e) => {
+              if (e.target.value === "mine") {
+                urlParams.set("mine", "1");
+              } else {
+                urlParams.delete("mine");
+              }
+              urlParams.delete(DEFAULT_PAGE_PARAM_NAME);
+              navigate(`/things/?${urlParams.toString()}`);
+            }}
+          >
+            <option value="">
               <FormattedMessage
-                id="thingsFilter.myThings.label"
-                defaultMessage="My things"
+                id="thingsList.ownFilter.all"
+                defaultMessage="All Things"
               />
-            </Radio>
-          </Stack>
-        </RadioGroup>
-      </Box>
+            </option>
+            <option value="mine">
+              <FormattedMessage
+                id="thingsList.ownFilter.mine"
+                defaultMessage="My Things"
+              />
+            </option>
+          </Select>
+        </HStack>
+        <ButtonGroup size="sm" variant="outline">
+          <Button
+            aria-label={formatMessage({
+              id: "thingsList.addButton.ariaLabel",
+              defaultMessage: "Add new Thing",
+            })}
+            leftIcon={<HiPlusSm />}
+            to="new"
+            as={ReactRouterLink}
+          >
+            <FormattedMessage
+              id="thingsList.addButton.label"
+              defaultMessage="New thing"
+            />
+          </Button>
+        </ButtonGroup>
+      </Stack>
       {error && <ErrorAlert my="5" onRetryClick={refetch} error={error} />}
       {data && (
         <ThingsTable

@@ -4,13 +4,14 @@ import {
   Table,
   Tbody,
   Td,
-  Tfoot,
   Th,
   Thead,
   Tr,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { useCallback } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { useIntl } from "react-intl";
 import {
   ActionType,
   Column,
@@ -35,6 +36,7 @@ export const DataTable = <D extends object>({
   sortBy,
   ...props
 }: DataTableProps<D>) => {
+  const { formatMessage } = useIntl();
   const controlledState = useCallback(
     (state: TableState<D>) => ({
       ...state,
@@ -45,8 +47,6 @@ export const DataTable = <D extends object>({
 
   const stateReducer = useCallback(
     (newState: TableState<D>, action: ActionType) => {
-      console.log("action:" + action.type, { action, newState });
-
       if (!onSortByChange) {
         return newState;
       }
@@ -63,44 +63,51 @@ export const DataTable = <D extends object>({
     [onSortByChange]
   );
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    footerGroups,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable<D>(
-    {
-      useControlledState: controlledState,
-      disableMultiSort,
-      disableSortRemove,
-      manualSortBy,
-      stateReducer,
-      ...props,
-    },
-    useSortBy
-  );
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable<D>(
+      {
+        useControlledState: controlledState,
+        disableMultiSort,
+        disableSortRemove,
+        manualSortBy,
+        stateReducer,
+        ...props,
+      },
+      useSortBy
+    );
 
   return (
-    <Table {...getTableProps()}>
-      <Thead>
+    <Table borderWidth="1px" {...getTableProps()}>
+      <Thead bg={useColorModeValue("gray.100", "gray.700")}>
         {headerGroups.map((headerGroup) => (
           <Tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
               <Th
                 {...column.getHeaderProps(column.getSortByToggleProps())}
                 isNumeric={column.isNumeric}
+                textAlign={column.textAlign}
               >
                 {column.render("Header")}
                 {column.canSort && (
                   <chakra.span pl="4">
-                    {column.isSorted && (
-                      <Icon
-                        as={column.isSortedDesc ? FaChevronDown : FaChevronUp}
-                        aria-label="sorted descending"
-                      />
-                    )}
+                    <Icon
+                      visibility={column.isSorted ? "visible" : "hidden"}
+                      as={column.isSortedDesc ? FaChevronDown : FaChevronUp}
+                      aria-label={formatMessage(
+                        {
+                          id: "table.sortHeader.ariaLabel",
+                          defaultMessage:
+                            "{sort, select, asc {Sorted ascending} desc {Sorted descending} other {Not sorted}}",
+                        },
+                        {
+                          sort: column.isSorted
+                            ? column.isSortedDesc
+                              ? "desc"
+                              : "asc"
+                            : "",
+                        }
+                      )}
+                    />
                   </chakra.span>
                 )}
               </Th>
@@ -114,7 +121,11 @@ export const DataTable = <D extends object>({
           return (
             <Tr {...row.getRowProps()}>
               {row.cells.map((cell) => (
-                <Td {...cell.getCellProps()} isNumeric={cell.column.isNumeric}>
+                <Td
+                  {...cell.getCellProps()}
+                  textAlign={cell.column.textAlign}
+                  isNumeric={cell.column.isNumeric}
+                >
                   {cell.render("Cell")}
                 </Td>
               ))}
@@ -122,19 +133,6 @@ export const DataTable = <D extends object>({
           );
         })}
       </Tbody>
-      {footerGroups.length > 0 && (
-        <Tfoot>
-          {footerGroups.map((footerGroup) => (
-            <Tr {...footerGroup.getFooterGroupProps()}>
-              {footerGroup.headers.map((column) => (
-                <Td {...column.getFooterProps()} isNumeric={column.isNumeric}>
-                  {column.render("Footer")}
-                </Td>
-              ))}
-            </Tr>
-          ))}
-        </Tfoot>
-      )}
     </Table>
   );
 };

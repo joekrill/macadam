@@ -600,6 +600,12 @@
       "value": "[javascript]Previous Page"
     }
   ],
+  "table.sortHeader.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[javascript]"
+    }
+  ],
   "theme.colorModeSwitcher.switchColorModeLabel": [
     {
       "type": 0,
@@ -672,28 +678,40 @@
       "value": "[javascript]Name"
     }
   ],
-  "thingsFilter.allThings.label": [
-    {
-      "type": 0,
-      "value": "[javascript]All the things"
-    }
-  ],
-  "thingsFilter.myThings.label": [
-    {
-      "type": 0,
-      "value": "[javascript]My things"
-    }
-  ],
   "thingsList.addButton.ariaLabel": [
     {
       "type": 0,
       "value": "[javascript]Add new Thing"
     }
   ],
+  "thingsList.addButton.label": [
+    {
+      "type": 0,
+      "value": "[javascript]New thing"
+    }
+  ],
+  "thingsList.ownFilter.all": [
+    {
+      "type": 0,
+      "value": "[javascript]All Things"
+    }
+  ],
+  "thingsList.ownFilter.mine": [
+    {
+      "type": 0,
+      "value": "[javascript]My Things"
+    }
+  ],
   "thingsList.refreshButton.ariaLabel": [
     {
       "type": 0,
       "value": "[javascript]Refresh"
+    }
+  ],
+  "thingsList.search.placeholder": [
+    {
+      "type": 0,
+      "value": "[javascript]Filter by name or description..."
     }
   ],
   "thingsList.title": [

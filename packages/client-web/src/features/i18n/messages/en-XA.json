@@ -648,6 +648,38 @@
       "value": "Ṕŕèṿíŏůś Ṕâĝè"
     }
   ],
+  "table.sortHeader.ariaLabel": [
+    {
+      "options": {
+        "asc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Ṡŏŕṭèḋ âśćèńḋíńĝ"
+            }
+          ]
+        },
+        "desc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Ṡŏŕṭèḋ ḋèśćèńḋíńĝ"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Ŋŏṭ śŏŕṭèḋ"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "sort"
+    }
+  ],
   "theme.colorModeSwitcher.switchColorModeLabel": [
     {
       "type": 0,
@@ -720,28 +752,40 @@
       "value": "Ŋâṁè"
     }
   ],
-  "thingsFilter.allThings.label": [
-    {
-      "type": 0,
-      "value": "Ḁĺĺ ṭḫè ṭḫíńĝś"
-    }
-  ],
-  "thingsFilter.myThings.label": [
-    {
-      "type": 0,
-      "value": "Ḿẏ ṭḫíńĝś"
-    }
-  ],
   "thingsList.addButton.ariaLabel": [
     {
       "type": 0,
       "value": "Ḁḋḋ ńèẘ Ṯḫíńĝ"
     }
   ],
+  "thingsList.addButton.label": [
+    {
+      "type": 0,
+      "value": "Ŋèẘ ṭḫíńĝ"
+    }
+  ],
+  "thingsList.ownFilter.all": [
+    {
+      "type": 0,
+      "value": "Ḁĺĺ Ṯḫíńĝś"
+    }
+  ],
+  "thingsList.ownFilter.mine": [
+    {
+      "type": 0,
+      "value": "Ḿẏ Ṯḫíńĝś"
+    }
+  ],
   "thingsList.refreshButton.ariaLabel": [
     {
       "type": 0,
       "value": "Ŕèḟŕèśḫ"
+    }
+  ],
+  "thingsList.search.placeholder": [
+    {
+      "type": 0,
+      "value": "Ḟíĺṭèŕ ḃẏ ńâṁè ŏŕ ḋèśćŕíṗṭíŏń..."
     }
   ],
   "thingsList.title": [

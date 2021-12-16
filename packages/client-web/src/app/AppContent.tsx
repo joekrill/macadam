@@ -44,7 +44,7 @@ export const AppContent = () => {
       >
         <Header position="sticky" top="0px" zIndex="sticky" />
         <Box
-          bg={colorMode === "dark" ? "gray.900" : "gray.100"}
+          bg={colorMode === "dark" ? "gray.900" : "gray.50"}
           flex={1}
           px={{ base: "2", sm: "4" }}
           py="5"

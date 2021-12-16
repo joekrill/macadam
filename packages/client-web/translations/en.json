@@ -119,6 +119,24 @@
     "defaultMessage": "Verify your account",
     "description": "The title displayed at the top of the verification form"
   },
+  "error.api.errorCode": {
+    "defaultMessage": "The server returned an unexpected resonse ({code}). Please try again."
+  },
+  "error.api.errorMessage": {
+    "defaultMessage": "Error: {message} ({code}/{name}). Please try again."
+  },
+  "error.api.fetchError": {
+    "defaultMessage": "Unexpected client error ({error}). Please try again."
+  },
+  "error.api.parsingError": {
+    "defaultMessage": "Error parsing server response ({error}). Please try again."
+  },
+  "error.api.unknown": {
+    "defaultMessage": "An unknown error occurred. Please try again."
+  },
+  "errors.apiErrorAlert.message": {
+    "defaultMessage": "Something went wrong"
+  },
   "errors.errorAlert.message": {
     "defaultMessage": "Something went wrong :("
   },
@@ -139,6 +157,9 @@
   },
   "errors.notFoundPage.pageTitle": {
     "defaultMessage": "Not Found"
+  },
+  "forms.saveButton.label": {
+    "defaultMessage": "Save"
   },
   "i18n.localErrorToast.title": {
     "defaultMessage": "Unable to load locale {locale}"
@@ -222,11 +243,23 @@
   "thingDetails.updatedField.label": {
     "defaultMessage": "Updated:"
   },
+  "thingForm.description.label": {
+    "defaultMessage": "Description"
+  },
+  "thingForm.isPrivate.label": {
+    "defaultMessage": "Private"
+  },
+  "thingForm.name.label": {
+    "defaultMessage": "Name"
+  },
   "thingsFilter.allThings.label": {
     "defaultMessage": "All the things"
   },
   "thingsFilter.myThings.label": {
     "defaultMessage": "My things"
+  },
+  "thingsList.addButton.ariaLabel": {
+    "defaultMessage": "Add new Thing"
   },
   "thingsList.refreshButton.ariaLabel": {
     "defaultMessage": "Refresh"

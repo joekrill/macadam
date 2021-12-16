@@ -42,6 +42,8 @@
 - (client-web) Auth: if email was entered in the login form, autopopulate forgot password form
 - (api-server) Reduce amount of logging output in development
 - (api-server) better `ctx.state` serializer for pino (use zod?)
+- (client-web) localize zod validation error/issue messages
+  - https://github.com/colinhacks/zod/blob/master/ERROR_HANDLING.md#customizing-errors-with-zoderrormap
 
 ## Blocked
 

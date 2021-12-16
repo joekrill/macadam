@@ -350,6 +350,90 @@
       "value": "Verify your accountSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "error.api.errorCode": [
+    {
+      "type": 0,
+      "value": "The server returned an unexpected resonse ("
+    },
+    {
+      "type": 1,
+      "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "error.api.errorMessage": [
+    {
+      "type": 0,
+      "value": "Error: "
+    },
+    {
+      "type": 1,
+      "value": "message"
+    },
+    {
+      "type": 0,
+      "value": " ("
+    },
+    {
+      "type": 1,
+      "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "/"
+    },
+    {
+      "type": 1,
+      "value": "name"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "error.api.fetchError": [
+    {
+      "type": 0,
+      "value": "Unexpected client error ("
+    },
+    {
+      "type": 1,
+      "value": "error"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "error.api.parsingError": [
+    {
+      "type": 0,
+      "value": "Error parsing server response ("
+    },
+    {
+      "type": 1,
+      "value": "error"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "error.api.unknown": [
+    {
+      "type": 0,
+      "value": "An unknown error occurred. Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "errors.apiErrorAlert.message": [
+    {
+      "type": 0,
+      "value": "Something went wrongSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "errors.errorAlert.message": [
     {
       "type": 0,
@@ -394,6 +478,12 @@
     {
       "type": 0,
       "value": "Not FoundSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "forms.saveButton.label": [
+    {
+      "type": 0,
+      "value": "SaveSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "i18n.localErrorToast.title": [
@@ -606,6 +696,24 @@
       "value": "Updated:SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "thingForm.description.label": [
+    {
+      "type": 0,
+      "value": "DescriptionSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingForm.isPrivate.label": [
+    {
+      "type": 0,
+      "value": "PrivateSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingForm.name.label": [
+    {
+      "type": 0,
+      "value": "NameSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "thingsFilter.allThings.label": [
     {
       "type": 0,
@@ -616,6 +724,12 @@
     {
       "type": 0,
       "value": "My thingsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingsList.addButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Add new ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "thingsList.refreshButton.ariaLabel": [

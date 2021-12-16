@@ -50,9 +50,9 @@ export const ErrorAlert = ({
       justifyContent="space-between"
       {...alertProps}
     >
-      <Flex>
-        <AlertIcon />
-        {title && <AlertTitle>{title}</AlertTitle>}
+      <AlertIcon boxSize="2.5em" alignSelf="flex-start" mr="3" />
+      <Flex flex="1" flexDirection="column">
+        {title && <AlertTitle mb="2">{title}</AlertTitle>}
         <AlertDescription>
           {children || (
             <FormattedMessage
@@ -63,7 +63,12 @@ export const ErrorAlert = ({
         </AlertDescription>
       </Flex>
       {onRetryClick && (
-        <Button colorScheme={BUTTON_SCHEME[status]} onClick={onRetryClick}>
+        <Button
+          alignSelf="flex-start"
+          ml="3"
+          colorScheme={BUTTON_SCHEME[status]}
+          onClick={onRetryClick}
+        >
           <FormattedMessage
             id="errors.errorAlert.retryButton"
             defaultMessage="Try Again"

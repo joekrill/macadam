@@ -3240,6 +3240,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hookform/resolvers@npm:^2.8.5":
+  version: 2.8.5
+  resolution: "@hookform/resolvers@npm:2.8.5"
+  peerDependencies:
+    react-hook-form: ^7.0.0
+  checksum: 0751f0561e00415040e45759d28378fa90b7b9482e7e112feae5fdcaf2c0e18384d2ee15b7ce444dbc2f716dcd3c5f696efaf66f5f5f37add4d9bf9c43a5fa42
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.5.0":
   version: 0.5.0
   resolution: "@humanwhocodes/config-array@npm:0.5.0"
@@ -10277,6 +10286,7 @@ __metadata:
     "@formatjs/intl-numberformat": ^7.2.6
     "@formatjs/intl-pluralrules": ^4.1.6
     "@formatjs/intl-relativetimeformat": ^9.3.3
+    "@hookform/resolvers": ^2.8.5
     "@mdx-js/react": ^1.6.22
     "@reduxjs/toolkit": ^1.7.0
     "@sentry/integrations": ^6.16.1
@@ -10317,6 +10327,7 @@ __metadata:
     react-app-polyfill: ^2.0.0
     react-dom: ^17.0.2
     react-helmet-async: ^1.2.2
+    react-hook-form: ^7.22.1
     react-icons: ^4.3.1
     react-intl: ^5.23.0
     react-redux: ^7.2.6
@@ -22879,6 +22890,15 @@ fsevents@^1.2.7:
     react: ^16.6.0 || ^17.0.0
     react-dom: ^16.6.0 || ^17.0.0
   checksum: 3251ab596143a48f9380a78a9e71f451ef729e25081bb4c1476561a1689eee23d650964e1518792bd44a8d24d95da1f9774b9b7ed80cae8eccc8119d7f5dd3f3
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^7.22.1":
+  version: 7.22.1
+  resolution: "react-hook-form@npm:7.22.1"
+  peerDependencies:
+    react: ^16.8.0 || ^17
+  checksum: 52e01875038bbc74b4cc07daa90829f2f68dcc86443ad5a2361218272de9724c18768b292f7cc136241d9e929db6dc37ba2e732e00486ad1e65a705e582b988b
   languageName: node
   linkType: hard
 

@@ -308,6 +308,90 @@
       "value": "[javascript]Verify your account"
     }
   ],
+  "error.api.errorCode": [
+    {
+      "type": 0,
+      "value": "[javascript]The server returned an unexpected resonse ("
+    },
+    {
+      "type": 1,
+      "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again."
+    }
+  ],
+  "error.api.errorMessage": [
+    {
+      "type": 0,
+      "value": "[javascript]Error: "
+    },
+    {
+      "type": 1,
+      "value": "message"
+    },
+    {
+      "type": 0,
+      "value": " ("
+    },
+    {
+      "type": 1,
+      "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "/"
+    },
+    {
+      "type": 1,
+      "value": "name"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again."
+    }
+  ],
+  "error.api.fetchError": [
+    {
+      "type": 0,
+      "value": "[javascript]Unexpected client error ("
+    },
+    {
+      "type": 1,
+      "value": "error"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again."
+    }
+  ],
+  "error.api.parsingError": [
+    {
+      "type": 0,
+      "value": "[javascript]Error parsing server response ("
+    },
+    {
+      "type": 1,
+      "value": "error"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again."
+    }
+  ],
+  "error.api.unknown": [
+    {
+      "type": 0,
+      "value": "[javascript]An unknown error occurred. Please try again."
+    }
+  ],
+  "errors.apiErrorAlert.message": [
+    {
+      "type": 0,
+      "value": "[javascript]Something went wrong"
+    }
+  ],
   "errors.errorAlert.message": [
     {
       "type": 0,
@@ -352,6 +436,12 @@
     {
       "type": 0,
       "value": "[javascript]Not Found"
+    }
+  ],
+  "forms.saveButton.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Save"
     }
   ],
   "i18n.localErrorToast.title": [
@@ -564,6 +654,24 @@
       "value": "[javascript]Updated:"
     }
   ],
+  "thingForm.description.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Description"
+    }
+  ],
+  "thingForm.isPrivate.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Private"
+    }
+  ],
+  "thingForm.name.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Name"
+    }
+  ],
   "thingsFilter.allThings.label": [
     {
       "type": 0,
@@ -574,6 +682,12 @@
     {
       "type": 0,
       "value": "[javascript]My things"
+    }
+  ],
+  "thingsList.addButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[javascript]Add new Thing"
     }
   ],
   "thingsList.refreshButton.ariaLabel": [

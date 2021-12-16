@@ -1,16 +1,16 @@
 import { z } from "zod";
 
 export const thingCreateSchema = z.object({
-  name: z.string(),
+  name: z.string().min(3),
   description: z.string().optional(),
+  isPrivate: z.boolean().default(true),
 });
 
-export const thingUpdateSchema = z.object({
-  name: z.string(),
+export const thingUpdateSchema = thingCreateSchema.extend({
   description: z.string().nullish().default(null),
 });
 
-export const thingUpdatePartialSchema = z.object({
+export const thingUpdatePartialSchema = thingCreateSchema.extend({
   name: z.string().optional(),
-  description: z.string().optional(),
+  isPrivate: z.boolean().optional(),
 });

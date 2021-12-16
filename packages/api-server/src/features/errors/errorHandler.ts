@@ -16,7 +16,12 @@ export const errorHandler =
           error: {
             name: "ValidationError",
             statusCode: 400,
-            message: error.message,
+
+            // The default message just `JSON.stringify`'s the `issues`
+            // propertyu which isn't helpful
+            // message: error.message,
+            message: "Validation failed",
+
             issues: error.issues,
           },
         };

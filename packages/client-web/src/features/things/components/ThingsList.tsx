@@ -6,7 +6,7 @@ import {
   RadioGroup,
   Stack,
 } from "@chakra-ui/react";
-import { HiRefresh } from "react-icons/hi";
+import { HiPlusCircle, HiRefresh } from "react-icons/hi";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
 import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
@@ -51,6 +51,16 @@ export const ThingsList = () => {
           onClick={refetch}
           isLoading={isFetching}
         />{" "}
+        <IconButton
+          isRound
+          aria-label={formatMessage({
+            id: "thingsList.addButton.ariaLabel",
+            defaultMessage: "Add new Thing",
+          })}
+          icon={<HiPlusCircle />}
+          to="new"
+          as={ReactRouterLink}
+        ></IconButton>
       </Heading>
       <Box>
         <RadioGroup

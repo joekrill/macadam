@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { errorSchema } from "./errors";
+import { errorSchema, validationErrorSchema } from "./errors";
 import { linksSchema } from "./links";
 
 export const successResponseSchema = z.object({
@@ -8,5 +8,9 @@ export const successResponseSchema = z.object({
 });
 
 export const errorResponseSchema = z.object({
-  errors: z.array(errorSchema).optional(),
+  error: errorSchema,
+});
+
+export const validationErrorResponseSchema = z.object({
+  error: validationErrorSchema,
 });

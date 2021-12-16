@@ -356,6 +356,90 @@
       "value": "VERIFY YOUR ACCOUNT"
     }
   ],
+  "error.api.errorCode": [
+    {
+      "type": 0,
+      "value": "THE SERVER RETURNED AN UNEXPECTED RESONSE ("
+    },
+    {
+      "type": 1,
+      "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "). PLEASE TRY AGAIN."
+    }
+  ],
+  "error.api.errorMessage": [
+    {
+      "type": 0,
+      "value": "ERROR: "
+    },
+    {
+      "type": 1,
+      "value": "message"
+    },
+    {
+      "type": 0,
+      "value": " ("
+    },
+    {
+      "type": 1,
+      "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "/"
+    },
+    {
+      "type": 1,
+      "value": "name"
+    },
+    {
+      "type": 0,
+      "value": "). PLEASE TRY AGAIN."
+    }
+  ],
+  "error.api.fetchError": [
+    {
+      "type": 0,
+      "value": "UNEXPECTED CLIENT ERROR ("
+    },
+    {
+      "type": 1,
+      "value": "error"
+    },
+    {
+      "type": 0,
+      "value": "). PLEASE TRY AGAIN."
+    }
+  ],
+  "error.api.parsingError": [
+    {
+      "type": 0,
+      "value": "ERROR PARSING SERVER RESPONSE ("
+    },
+    {
+      "type": 1,
+      "value": "error"
+    },
+    {
+      "type": 0,
+      "value": "). PLEASE TRY AGAIN."
+    }
+  ],
+  "error.api.unknown": [
+    {
+      "type": 0,
+      "value": "AN UNKNOWN ERROR OCCURRED. PLEASE TRY AGAIN."
+    }
+  ],
+  "errors.apiErrorAlert.message": [
+    {
+      "type": 0,
+      "value": "SOMETHING WENT WRONG"
+    }
+  ],
   "errors.errorAlert.message": [
     {
       "type": 0,
@@ -400,6 +484,12 @@
     {
       "type": 0,
       "value": "NOT FOUND"
+    }
+  ],
+  "forms.saveButton.label": [
+    {
+      "type": 0,
+      "value": "SAVE"
     }
   ],
   "i18n.localErrorToast.title": [
@@ -612,6 +702,24 @@
       "value": "UPDATED:"
     }
   ],
+  "thingForm.description.label": [
+    {
+      "type": 0,
+      "value": "DESCRIPTION"
+    }
+  ],
+  "thingForm.isPrivate.label": [
+    {
+      "type": 0,
+      "value": "PRIVATE"
+    }
+  ],
+  "thingForm.name.label": [
+    {
+      "type": 0,
+      "value": "NAME"
+    }
+  ],
   "thingsFilter.allThings.label": [
     {
       "type": 0,
@@ -622,6 +730,12 @@
     {
       "type": 0,
       "value": "MY THINGS"
+    }
+  ],
+  "thingsList.addButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "ADD NEW THING"
     }
   ],
   "thingsList.refreshButton.ariaLabel": [

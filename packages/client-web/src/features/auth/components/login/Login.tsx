@@ -2,12 +2,12 @@ import { Link, VStack } from "@chakra-ui/react";
 import { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { Link as RouterLink, Navigate } from "react-router-dom";
+import { LoadingSpinner } from "../../../common/components/LoadingSpinner/LoadingSpinner";
 import { useReturnToConsumer } from "../../../routing/hooks/useReturnToConsumer";
 import { useLoginFlow, UseLoginFlowOptions } from "../../hooks/useLoginFlow";
 import { REGISTRATION_PATH } from "../../hooks/useRegistrationLocation";
 import { FlowError } from "../FlowError";
 import { FlowHeading } from "../FlowHeading";
-import { FlowLoadingSpinner } from "../FlowLoadingSpinner";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
 import { LOGIN_PATH } from "../LoginLink";
 import { SelfServiceUiMessageList } from "../SelfServiceUi/SelfServiceUiMessageList";
@@ -70,7 +70,7 @@ export const Login = ({
       {flow && (
         <LoginForm flow={flow} isSubmitting={isSubmitting} onSubmit={submit} />
       )}
-      {isInitializing && <FlowLoadingSpinner />}
+      {isInitializing && <LoadingSpinner />}
     </VStack>
   );
 };

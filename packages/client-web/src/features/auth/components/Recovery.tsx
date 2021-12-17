@@ -1,13 +1,13 @@
 import { VStack } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
 import { Navigate } from "react-router-dom";
+import { LoadingSpinner } from "../../common/components/LoadingSpinner/LoadingSpinner";
 import {
   useRecoveryFlow,
   UseRecoveryFlowOptions,
 } from "../hooks/useRecoveryFlow";
 import { FlowError } from "./FlowError";
 import { FlowHeading } from "./FlowHeading";
-import { FlowLoadingSpinner } from "./FlowLoadingSpinner";
 import { FlowRestartedAlert } from "./FlowRestartedAlert";
 import { HomepageButton } from "./HomepageButton";
 import { SelfServiceUiForm } from "./SelfServiceUi/SelfServiceUiForm";
@@ -54,7 +54,7 @@ export const Recovery = ({ flowId, returnTo }: RecoveryProps) => {
       {(flow?.state === "passed_challenge" || flow?.state === "sent_email") && (
         <HomepageButton />
       )}
-      {(isInitializing || isSubmitting) && <FlowLoadingSpinner />}
+      {(isInitializing || isSubmitting) && <LoadingSpinner />}
     </VStack>
   );
 };

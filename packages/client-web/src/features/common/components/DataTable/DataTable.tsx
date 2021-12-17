@@ -86,6 +86,7 @@ export const DataTable = <D extends object>({
                 {...column.getHeaderProps(column.getSortByToggleProps())}
                 isNumeric={column.isNumeric}
                 textAlign={column.textAlign}
+                isTruncated
               >
                 {column.render("Header")}
                 {column.canSort && (

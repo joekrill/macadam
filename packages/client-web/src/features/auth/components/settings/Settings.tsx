@@ -1,12 +1,12 @@
 import { VStack } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
+import { LoadingSpinner } from "../../../common/components/LoadingSpinner/LoadingSpinner";
 import {
   useSettingsFlow,
   UseSettingsFlowOptions,
 } from "../../hooks/useSettingsFlow";
 import { FlowError } from "../FlowError";
 import { FlowHeading } from "../FlowHeading";
-import { FlowLoadingSpinner } from "../FlowLoadingSpinner";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
 import { SelfServiceUiMessageList } from "../SelfServiceUi/SelfServiceUiMessageList";
 import { SettingsForm } from "./SettingsForm";
@@ -47,7 +47,7 @@ export const Settings = ({ flowId, returnTo }: SettingsProps) => {
           onSubmit={submit}
         />
       )}
-      {isInitializing && <FlowLoadingSpinner />}
+      {isInitializing && <LoadingSpinner />}
     </VStack>
   );
 };

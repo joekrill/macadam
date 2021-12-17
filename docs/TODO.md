@@ -1,8 +1,13 @@
 ## "v1" Milestone
 
-- Figure out how to share logic between front-end/back-end while still having hot-reloading work and without ejecting
-- setup lint-staged
-  - apply this to other things as well? i18n updates?
+- (api-server) mikro-orm snapshots?
+- (client-web) consistent key naming strategy (document + implement)
+- (client-web) locale select styling (esp. dark mode)
+- (client-web) locale select should take up less space
+- (client-web) "sign up" vs " registration" vs "register" terminology and naming conventions
+- (client-web) clean up routes (esp. auth routes - don't prefix with /auth?)
+- (client-web) pass permissions from server
+- (client-web) save locale selection across reloads
 - (api-server) consider namespacing all contexts?
 - (client-web) Invalidate data on logout/login (https://redux-toolkit.js.org/rtk-query/api/created-api/cache-management-utils#resetapistate)
 - (kratos) Flatten traits?
@@ -12,12 +17,8 @@
   - https://github.com/ory/kratos/issues/1328
 - (client-web) Handle /sessions/whoami 401 response (vs request failure)
 - (client-web) Detect session expiration and handle it somehow (modal login form? a la Gmail?)
-- (api-server) Uploads
-  - https://github.com/node-formidable/formidable
-  - https://hub.docker.com/r/minio/minio/
 - (api-server) Audit Logging
 - Integration tests (i.e. using cypress)
-- commitlint
 - CI script
   - eslint+prettier?
 - CI/CD pipeline
@@ -27,8 +28,19 @@
   - https://github.com/OptimalBits/bull
   - https://github.com/Automattic/kue
   - https://devcenter.heroku.com/articles/node-redis-workers
-- standards
-  - https://docs.devland.is/technical-overview/api-design-guide/data-definitions
+- Docs/standards
+  - https://docs.devland.is
+- (client-web) review icons (for consistency)
+
+# "v1"+
+
+- Figure out how to share logic between front-end/back-end while still having hot-reloading work and without ejecting
+- setup lint-staged
+  - apply this to other things as well? i18n updates?
+- (api-server) Uploads
+  - https://github.com/node-formidable/formidable
+  - https://hub.docker.com/r/minio/minio/
+- commitlint
 
 ## Low priority
 

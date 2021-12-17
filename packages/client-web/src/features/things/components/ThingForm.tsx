@@ -8,35 +8,43 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useMemo } from "react";
-import { useForm } from "react-hook-form";
+import { SerializedError } from "@reduxjs/toolkit";
+import { FetchBaseQueryError } from "@reduxjs/toolkit/dist/query";
+import { useMemo } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { FormattedMessage } from "react-intl";
-import { useNavigate } from "react-router-dom";
 import { ApiErrorAlert } from "../../api/components/ApiErrorAlert";
 import { useValidationError } from "../../api/hooks/useValidationError";
 import { SaveButton } from "../../forms/components/SaveButton";
-import { thingsApi } from "../thingsApi";
-import { CreateThingParams, createThingParamsSchema } from "../thingsSchemas";
+import {
+  CreateThingParams,
+  createThingParamsSchema,
+  Thing,
+} from "../thingsSchemas";
 
-export const ThingForm = () => {
-  const navigate = useNavigate();
+export interface ThingFormProps {
+  error?: FetchBaseQueryError | SerializedError;
+  onSubmit: SubmitHandler<CreateThingParams>;
+  isLoading: boolean;
+  defaultValues?: Partial<Thing>;
+}
+
+export const ThingForm = ({
+  defaultValues = {},
+  error,
+  isLoading,
+  onSubmit,
+}: ThingFormProps) => {
   const { register, handleSubmit, formState, setError } =
     useForm<CreateThingParams>({
       resolver: zodResolver(createThingParamsSchema),
       defaultValues: {
         isPrivate: false,
+        ...defaultValues,
       },
     });
   const { errors, isValid } = formState;
-  const [submit, { error, isLoading, isSuccess, data }] =
-    thingsApi.useCreateThingMutation();
   const validationError = useValidationError(error);
-
-  useEffect(() => {
-    if (isSuccess && data?.data.id) {
-      navigate(`/things/${data.data.id}`);
-    }
-  }, [isSuccess, data, navigate]);
 
   useMemo(() => {
     validationError?.issues.forEach((issue) => {
@@ -49,7 +57,7 @@ export const ThingForm = () => {
   }, [validationError, setError]);
 
   return (
-    <form onSubmit={handleSubmit(submit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <VStack alignItems="flex-start">
         <FormControl
           isInvalid={!!errors.name}

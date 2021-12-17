@@ -62,14 +62,15 @@ export const ThingsList = () => {
         urlParams.delete(key);
       }
       urlParams.delete(DEFAULT_PAGE_PARAM_NAME);
-      const query = urlParams.toString();
+      const query = `?${urlParams.toString()}`;
+
       if (location.search !== query) {
-        navigate(`/things/?${query}`);
+        navigate(`/things/${query}`);
       } else {
         refetch();
       }
     },
-    [urlParams, navigate, location]
+    [urlParams, navigate, location, refetch]
   );
 
   return (
@@ -79,6 +80,7 @@ export const ThingsList = () => {
         <IconButton
           ml="3"
           isRound
+          size="sm"
           aria-label={formatMessage({
             id: "thingsList.refreshButton.ariaLabel",
             defaultMessage: "Refresh",
@@ -108,8 +110,9 @@ export const ThingsList = () => {
                 <Icon as={FaSearch} color="gray.300" />
               </InputLeftElement>
               <Input
+                rounded="md"
                 type="search"
-                value={searchInput}
+                value={searchInput || ""}
                 onChange={(e) => setSearchInput(e.currentTarget.value)}
                 placeholder={formatMessage({
                   id: "thingsList.search.placeholder",
@@ -119,6 +122,7 @@ export const ThingsList = () => {
             </InputGroup>
           </FormControl>
           <Select
+            rounded="md"
             size="sm"
             width="10em"
             value={owned ? "mine" : ""}

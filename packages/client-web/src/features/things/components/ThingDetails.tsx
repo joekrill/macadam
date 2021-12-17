@@ -4,34 +4,18 @@ import { parseISO } from "date-fns";
 import { FaLock, FaUnlock } from "react-icons/fa";
 import { FormattedDate, FormattedMessage } from "react-intl";
 import { useParams } from "react-router-dom";
-import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
 import { thingsApi } from "../thingsApi";
+import { ThingLoadError } from "./ThingLoadError";
 
 export const ThingDetails = () => {
   const { id } = useParams<"id">();
   const { data, error, isFetching, refetch } = thingsApi.useGetThingQuery(
     id || skipToken
   );
-  const isNotFound =
-    error && "originalStatus" in error && error.originalStatus === 404;
 
   return (
     <Box>
-      {error && (
-        <ErrorAlert
-          my="5"
-          onRetryClick={isNotFound ? undefined : refetch}
-          disableCapture={isNotFound}
-          error={error}
-        >
-          {isNotFound && (
-            <FormattedMessage
-              id="thingDefailts.error.notFound"
-              defaultMessage="The Thing you are looking for couldn't be found."
-            />
-          )}
-        </ErrorAlert>
-      )}
+      {error && <ThingLoadError error={error} refetch={refetch} />}
       {data && (
         <Box>
           <Heading>

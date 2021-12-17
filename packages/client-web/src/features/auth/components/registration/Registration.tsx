@@ -1,6 +1,7 @@
 import { VStack } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
 import { Navigate } from "react-router-dom";
+import { LoadingSpinner } from "../../../common/components/LoadingSpinner/LoadingSpinner";
 import { useReturnToConsumer } from "../../../routing/hooks/useReturnToConsumer";
 import {
   useRegistrationFlow,
@@ -9,7 +10,6 @@ import {
 import { REGISTRATION_PATH } from "../../hooks/useRegistrationLocation";
 import { FlowError } from "../FlowError";
 import { FlowHeading } from "../FlowHeading";
-import { FlowLoadingSpinner } from "../FlowLoadingSpinner";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
 import { LoginLink, LOGIN_PATH } from "../LoginLink";
 import { SelfServiceUiMessageList } from "../SelfServiceUi/SelfServiceUiMessageList";
@@ -74,7 +74,7 @@ export const Registration = ({
           onSubmit={submit}
         />
       )}
-      {isInitializing && <FlowLoadingSpinner />}
+      {isInitializing && <LoadingSpinner />}
     </VStack>
   );
 };

@@ -13,10 +13,15 @@ import {
   Select,
   Stack,
 } from "@chakra-ui/react";
+import { useCallback, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { HiPlusSm, HiRefresh } from "react-icons/hi";
 import { FormattedMessage, useIntl } from "react-intl";
-import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
+import {
+  Link as ReactRouterLink,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
 import { Pagination } from "../../pagination/components/Pagination/Pagination";
 import {
@@ -33,16 +38,39 @@ import { ThingsTable } from "./ThingsTable";
 export const ThingsList = () => {
   const { formatMessage } = useIntl();
   const navigate = useNavigate();
+  const location = useLocation();
   const urlParams = useUrlSearchParams();
   const { page, getPageTo } = usePageUrlParam();
   const owned = !!useUrlSearchParam("mine");
   const { setRules, rules, paramValue: sort } = useSortByUrlParam<Thing>();
+  const [searchInput, setSearchInput] = useState(
+    urlParams.get("search")?.trim()
+  );
 
   const { data, isFetching, error, refetch } = thingsApi.useListThingsQuery({
     page,
     owned,
     sort,
+    search: urlParams.get("search")?.trim(),
   });
+
+  const updateUrlParam = useCallback(
+    (key: string, value?: string) => {
+      if (value && value.trim()) {
+        urlParams.set(key, value.trim());
+      } else {
+        urlParams.delete(key);
+      }
+      urlParams.delete(DEFAULT_PAGE_PARAM_NAME);
+      const query = urlParams.toString();
+      if (location.search !== query) {
+        navigate(`/things/?${query}`);
+      } else {
+        refetch();
+      }
+    },
+    [urlParams, navigate, location]
+  );
 
   return (
     <Box>
@@ -55,10 +83,9 @@ export const ThingsList = () => {
             id: "thingsList.refreshButton.ariaLabel",
             defaultMessage: "Refresh",
           })}
-          colorScheme="whiteAlpha"
           variant="outline"
           icon={<HiRefresh />}
-          onClick={refetch}
+          onClick={() => updateUrlParam("search", searchInput)}
           isLoading={isFetching}
         />
       </Heading>
@@ -69,13 +96,21 @@ export const ThingsList = () => {
         my="5"
       >
         <HStack flex="1">
-          <FormControl>
+          <FormControl
+            as="form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              updateUrlParam("search", searchInput);
+            }}
+          >
             <InputGroup size="sm">
               <InputLeftElement pointerEvents="none">
                 <Icon as={FaSearch} color="gray.300" />
               </InputLeftElement>
               <Input
                 type="search"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.currentTarget.value)}
                 placeholder={formatMessage({
                   id: "thingsList.search.placeholder",
                   defaultMessage: "Filter by name or description...",
@@ -88,26 +123,23 @@ export const ThingsList = () => {
             width="10em"
             value={owned ? "mine" : ""}
             onChange={(e) => {
-              if (e.target.value === "mine") {
-                urlParams.set("mine", "1");
-              } else {
-                urlParams.delete("mine");
-              }
-              urlParams.delete(DEFAULT_PAGE_PARAM_NAME);
-              navigate(`/things/?${urlParams.toString()}`);
+              updateUrlParam(
+                "mine",
+                e.target.value === "mine" ? "1" : undefined
+              );
             }}
           >
             <option value="">
-              <FormattedMessage
-                id="thingsList.ownFilter.all"
-                defaultMessage="All Things"
-              />
+              {formatMessage({
+                id: "thingsList.ownFilter.all",
+                defaultMessage: "All Things",
+              })}
             </option>
             <option value="mine">
-              <FormattedMessage
-                id="thingsList.ownFilter.mine"
-                defaultMessage="My Things"
-              />
+              {formatMessage({
+                id: "thingsList.ownFilter.mine",
+                defaultMessage: "My Things",
+              })}
             </option>
           </Select>
         </HStack>

@@ -1,4 +1,5 @@
 import { Options } from "@mikro-orm/core";
+import { PostgreSqlDriver } from "@mikro-orm/postgresql";
 import pino from "pino";
 import { URL } from "url";
 import { entities } from "./entities";
@@ -13,7 +14,7 @@ export const ormConfig = ({
   clientUrl,
   environment,
   logger,
-}: OrmConfigOptions): Options => {
+}: OrmConfigOptions): Options<PostgreSqlDriver> => {
   const url = new URL(clientUrl);
   const ormLogger = logger?.child({});
 

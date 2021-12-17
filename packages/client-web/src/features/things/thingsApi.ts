@@ -20,12 +20,13 @@ export const thingsApi = appApi
   .injectEndpoints({
     endpoints: (build) => ({
       listThings: build.query<ListThingsResponse, ListThingsParams>({
-        query: ({ page = 1, owned, sort } = {}) => ({
+        query: ({ page = 1, owned, sort, search } = {}) => ({
           url: "things",
           params: {
             "page[number]": page || 1,
             sort,
             ...(owned ? { "filter[owned]": 1 } : {}),
+            ...(search ? { "filter[text]": search } : {}),
           },
         }),
         transformResponse: (result) => listThingsResponseSchema.parse(result),

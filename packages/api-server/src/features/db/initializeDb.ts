@@ -1,9 +1,10 @@
 import { MikroORM } from "@mikro-orm/core";
+import { PostgreSqlDriver } from "@mikro-orm/postgresql";
 import Koa from "koa";
 import { ormConfig, OrmConfigOptions } from "./ormConfig";
 
 export interface DbContext {
-  orm: MikroORM;
+  orm: MikroORM<PostgreSqlDriver>;
 }
 
 export interface InitializeDbOptions
@@ -15,7 +16,7 @@ export interface InitializeDbOptions
  */
 export const initializeDb = async (app: Koa, options: InitializeDbOptions) => {
   app.context.logger.debug("Database connecting");
-  app.context.orm = await MikroORM.init(
+  app.context.orm = await MikroORM.init<PostgreSqlDriver>(
     ormConfig({
       environment: app.env,
       logger: app.context.logger,

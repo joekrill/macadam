@@ -7,6 +7,7 @@ import {
   AuthenticationRequiredState,
 } from "../../../features/auth/authenticationRequired";
 import { Thing } from "../../../features/db/entities/Thing";
+import { textSearch } from "../../../features/db/filters/textSearch";
 import { OffsetPagination } from "../../../features/pagination/OffsetPagination";
 import { sortStringToOrderBy } from "../../../features/sorting/sortStringToOrderBy";
 import {
@@ -36,7 +37,7 @@ thingsRouter
     const { ability, entityManager, thingRepository, urlSearchParams } =
       ctx.state;
 
-    const query = ability!.query("read", Thing.modelName);
+    const filter = ability!.query("read", Thing.modelName);
     const pagination = new OffsetPagination(urlSearchParams);
     const orderBy = sortStringToOrderBy(
       urlSearchParams.get("sort"),
@@ -50,13 +51,25 @@ thingsRouter
 
     if (urlSearchParams.has("filter[owned]")) {
       const session = await ctx.state.session();
-      query.$and = query.$and || [];
-      query.$and?.push({
+      filter.$and = filter.$and || [];
+      filter.$and.push({
         createdBy: session?.identity.id,
       });
     }
 
-    const [data, total] = await thingRepository!.findAndCount(query, {
+    const searchTerm = urlSearchParams.get("filter[text]")?.trim();
+    if (searchTerm) {
+      filter.$and = filter.$and || [];
+      filter.$and!.push(
+        textSearch(
+          ctx.state.entityManager!,
+          ["name", "description"],
+          searchTerm
+        )
+      );
+    }
+
+    const [data, total] = await thingRepository!.findAndCount(filter, {
       ...pagination.findOptions(),
       orderBy,
     });

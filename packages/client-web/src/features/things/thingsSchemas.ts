@@ -29,6 +29,7 @@ export interface ListThingsParams {
   page?: number;
   owned?: boolean;
   sort?: string;
+  search?: string;
 }
 
 /** Get */

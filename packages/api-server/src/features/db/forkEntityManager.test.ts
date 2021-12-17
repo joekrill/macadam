@@ -1,4 +1,5 @@
 import { MikroORM } from "@mikro-orm/core";
+import { PostgreSqlDriver } from "@mikro-orm/postgresql";
 import { createMockContext } from "@shopify/jest-koa-mocks";
 import { Middleware, ParameterizedContext } from "koa";
 import { forkEntityManager } from "./forkEntityManager";
@@ -22,7 +23,7 @@ describe("forkEntityManager", () => {
     em: {
       fork: forkMock,
     },
-  } as unknown as MikroORM;
+  } as unknown as MikroORM<PostgreSqlDriver>;
 
   beforeEach(() => {
     contextMock = createMockContext<DbContext>({

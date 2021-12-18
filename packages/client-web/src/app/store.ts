@@ -1,8 +1,8 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { appApi } from "../features/api/appApi";
+import { authSlice } from "../features/auth/authSlice";
 import { identityApi } from "../features/auth/identityApi";
-import { identitySlice } from "../features/auth/identitySlice";
 import { i18nSlice } from "../features/i18n/i18nSlice";
 import { monitoringReducEnhancer } from "../features/monitoring/monitoringReducEnhancer";
 
@@ -11,7 +11,7 @@ export const store = configureStore({
   reducer: {
     [appApi.reducerPath]: appApi.reducer,
     [i18nSlice.name]: i18nSlice.reducer,
-    [identitySlice.name]: identitySlice.reducer,
+    [authSlice.name]: authSlice.reducer,
     [identityApi.reducerPath]: identityApi.reducer,
   },
   enhancers: [monitoringReducEnhancer],

@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import snakecaseKeys from "snakecase-keys";
+import { invalidateSession } from "./authApi";
 import { InitializeFlowParams } from "./schemas/flows/common";
 import {
   InitializeLoginFlowParams,
@@ -25,37 +26,26 @@ import {
   VerificationFlow,
   verificationFlowSchema,
 } from "./schemas/flows/verification";
-import { Session, sessionSchema } from "./schemas/session";
-
-export const baseQuery = fetchBaseQuery({
-  baseUrl: "/kratos/public",
-  prepareHeaders: (headers) => {
-    headers.set("Accept", "application/json");
-    return headers;
-  },
-});
-
 export interface SubmitFlowPayload {
   action: string;
   method: string;
   body: any;
 }
 
+/**
+ * The identity API is used to access Kratos API endpoints directly (as
+ * opposed to going through the api-server).
+ */
 export const identityApi = createApi({
   reducerPath: "identityApi",
-  baseQuery,
-  tagTypes: ["Session"],
+  baseQuery: fetchBaseQuery({
+    baseUrl: "/kratos/public",
+    prepareHeaders: (headers) => {
+      headers.set("Accept", "application/json");
+      return headers;
+    },
+  }),
   endpoints: (build) => ({
-    /************************************************************
-     * whoami
-     ************************************************************/
-
-    whoami: build.query<Session, void>({
-      query: () => `/sessions/whoami`,
-      transformResponse: (response) => sessionSchema.parse(response),
-      providesTags: () => [{ type: "Session", id: "CURRENT" }],
-    }),
-
     /************************************************************
      * login
      ************************************************************/
@@ -97,13 +87,7 @@ export const identityApi = createApi({
               )
             );
           } else if (isLoginFlowSuccess(data)) {
-            dispatch(
-              identityApi.util.updateQueryData(
-                "whoami",
-                undefined,
-                () => data.session
-              )
-            );
+            dispatch(invalidateSession());
           }
         } catch {}
       },
@@ -154,14 +138,8 @@ export const identityApi = createApi({
                 () => data
               )
             );
-          } else if (isRegistrationFlowSuccess(data) && data.session) {
-            dispatch(
-              identityApi.util.updateQueryData(
-                "whoami",
-                undefined,
-                () => data.session
-              )
-            );
+          } else if (isRegistrationFlowSuccess(data)) {
+            dispatch(invalidateSession());
           }
         } catch {}
       },
@@ -317,13 +295,14 @@ export const identityApi = createApi({
 
     logout: build.mutation<void, string>({
       query: (url) => url,
-      invalidatesTags: (_, error) =>
-        error ? [] : [{ type: "Session", id: "CURRENT" }],
+      async onQueryStarted(_params, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled;
+          dispatch(invalidateSession());
+        } catch {}
+      },
     }),
   }),
 });
 
-export const invalidateSession = () =>
-  identityApi.util.invalidateTags([{ type: "Session", id: "CURRENT" }]);
-
-export const { useWhoamiQuery, useSubmitLoginFlowMutation } = identityApi;
+export const { useSubmitLoginFlowMutation } = identityApi;

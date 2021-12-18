@@ -1,3 +1,3 @@
 import { RootState } from "../../../app/store";
 
-export const selectSession = (state: RootState) => state.identity.session;
+export const selectSession = (state: RootState) => state.auth.session;

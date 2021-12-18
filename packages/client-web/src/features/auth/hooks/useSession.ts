@@ -1,7 +1,7 @@
 import { skipToken } from "@reduxjs/toolkit/query";
 import { createContext, useContext } from "react";
 import { useAppSelector } from "../../../app/hooks";
-import { useWhoamiQuery } from "../identityApi";
+import { useWhoamiQuery } from "../authApi";
 import { selectIdentity } from "../selectors/selectIdentity";
 import { selectIsVerified } from "../selectors/selectIsVerified";
 import { selectSession } from "../selectors/selectSession";

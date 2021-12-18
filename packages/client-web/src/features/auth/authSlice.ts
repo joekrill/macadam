@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { authApi } from "./authApi";
 import { identityApi } from "./identityApi";
 import { isLoginFlowSuccess } from "./schemas/flows/login";
 import { isRegistrationFlowSuccess } from "./schemas/flows/registration";
@@ -9,10 +10,11 @@ export interface IdentityState {
   session?: Omit<Session, "identity">;
   identity?: Identity;
   lastUpdated?: number;
+  rules?: unknown;
 }
 
-export const identitySlice = createSlice({
-  name: "identity",
+export const authSlice = createSlice({
+  name: "auth",
   initialState: {} as IdentityState,
   reducers: {},
   extraReducers: (builder) => {
@@ -57,25 +59,20 @@ export const identitySlice = createSlice({
       state.lastUpdated = Date.now();
     });
     builder.addMatcher(
-      identityApi.endpoints.whoami.matchFulfilled,
+      authApi.endpoints.whoami.matchFulfilled,
       (state, { payload }) => {
-        const { identity, ...session } = payload;
-        state.session = session;
-        state.identity = identity;
+        state.rules = payload.data.rules;
         state.lastUpdated = Date.now();
-      }
-    );
-    builder.addMatcher(
-      identityApi.endpoints.whoami.matchRejected,
-      (state, { payload }) => {
-        if (payload?.status === 401) {
-          state.session = undefined;
-          state.identity = undefined;
-          state.lastUpdated = Date.now();
+        state.session = undefined;
+
+        if (payload.data.session) {
+          const { identity, ...session } = payload.data.session;
+          state.session = session;
+          state.identity = identity;
         }
       }
     );
   },
 });
 
-export const { name, reducer } = identitySlice;
+export const { name, reducer } = authSlice;

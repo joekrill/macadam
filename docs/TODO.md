@@ -1,5 +1,6 @@
 ## "v1" Milestone
 
+- (api-server) rename dev and monitor routes
 - (api-server) mikro-orm snapshots?
 - (client-web) consistent key naming strategy (document + implement)
 - (client-web) locale select styling (esp. dark mode)

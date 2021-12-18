@@ -297,7 +297,7 @@ export const identityApi = createApi({
       query: (url) => url,
       async onQueryStarted(_params, { dispatch, queryFulfilled }) {
         try {
-          const { data } = await queryFulfilled;
+          await queryFulfilled;
           dispatch(invalidateSession());
         } catch {}
       },

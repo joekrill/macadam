@@ -22,6 +22,7 @@ import {
   useLocation,
   useNavigate,
 } from "react-router-dom";
+import { AuthCan } from "../../auth/components/AuthCan";
 import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
 import { Pagination } from "../../pagination/components/Pagination/Pagination";
 import {
@@ -147,22 +148,24 @@ export const ThingsList = () => {
             </option>
           </Select>
         </HStack>
-        <ButtonGroup size="sm" variant="outline">
-          <Button
-            aria-label={formatMessage({
-              id: "thingsList.addButton.ariaLabel",
-              defaultMessage: "Add new Thing",
-            })}
-            leftIcon={<HiPlusSm />}
-            to="new"
-            as={ReactRouterLink}
-          >
-            <FormattedMessage
-              id="thingsList.addButton.label"
-              defaultMessage="New thing"
-            />
-          </Button>
-        </ButtonGroup>
+        <AuthCan action="create" subject="Thing">
+          <ButtonGroup size="sm" variant="outline">
+            <Button
+              aria-label={formatMessage({
+                id: "thingsList.addButton.ariaLabel",
+                defaultMessage: "Add new Thing",
+              })}
+              leftIcon={<HiPlusSm />}
+              to="new"
+              as={ReactRouterLink}
+            >
+              <FormattedMessage
+                id="thingsList.addButton.label"
+                defaultMessage="New thing"
+              />
+            </Button>
+          </ButtonGroup>
+        </AuthCan>
       </Stack>
       {error && <ErrorAlert my="5" onRetryClick={refetch} error={error} />}
       {data && (

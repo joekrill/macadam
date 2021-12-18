@@ -7,7 +7,6 @@
 - (client-web) locale select should take up less space
 - (client-web) "sign up" vs " registration" vs "register" terminology and naming conventions
 - (client-web) clean up routes (esp. auth routes - don't prefix with /auth?)
-- (client-web) pass permissions from server
 - (client-web) save locale selection across reloads
 - (api-server) consider namespacing all contexts?
 - (client-web) Invalidate data on logout/login (https://redux-toolkit.js.org/rtk-query/api/created-api/cache-management-utils#resetapistate)
@@ -16,7 +15,6 @@
 - (client-web) How to deal with unverified email address
   - (client-web) Show notification component whne email address is not verififed
   - https://github.com/ory/kratos/issues/1328
-- (client-web) Handle /sessions/whoami 401 response (vs request failure)
 - (client-web) Detect session expiration and handle it somehow (modal login form? a la Gmail?)
 - (api-server) Audit Logging
 - Integration tests (i.e. using cypress)
@@ -32,6 +30,7 @@
 - Docs/standards
   - https://docs.devland.is
 - (client-web) review icons (for consistency)
+- Upgrade kratos
 
 # "v1"+
 

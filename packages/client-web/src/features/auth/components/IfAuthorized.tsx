@@ -2,19 +2,19 @@ import { Subject } from "@casl/ability";
 import { PropsWithChildren, ReactNode } from "react";
 import { useAuth } from "./AuthContext";
 
-export type AuthCanProps = PropsWithChildren<{
+export type IfAuthorizedProps = PropsWithChildren<{
   action: string;
   subject: Subject;
   field?: string;
   otherwise?: ReactNode;
 }>;
 
-export const AuthCan = ({
+export const IfAuthorized = ({
   action,
   subject,
   field,
   children,
   otherwise,
-}: AuthCanProps) => (
+}: IfAuthorizedProps) => (
   <>{useAuth().can(action, subject, field) ? children : otherwise}</>
 );

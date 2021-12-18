@@ -22,7 +22,9 @@ import {
   useLocation,
   useNavigate,
 } from "react-router-dom";
-import { AuthCan } from "../../auth/components/AuthCan";
+import { IfAuthenticated } from "../../auth/components/IfAuthenticated";
+import { IfAuthorized } from "../../auth/components/IfAuthorized";
+import { useSession } from "../../auth/hooks/useSession";
 import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
 import { Pagination } from "../../pagination/components/Pagination/Pagination";
 import {
@@ -38,22 +40,26 @@ import { ThingsTable } from "./ThingsTable";
 
 export const ThingsList = () => {
   const { formatMessage } = useIntl();
+  const { isLoggedIn, isUnknown } = useSession();
   const navigate = useNavigate();
   const location = useLocation();
   const urlParams = useUrlSearchParams();
   const { page, getPageTo } = usePageUrlParam();
-  const owned = !!useUrlSearchParam("mine");
+  const owned = !!useUrlSearchParam("mine") && isLoggedIn;
   const { setRules, rules, paramValue: sort } = useSortByUrlParam<Thing>();
   const [searchInput, setSearchInput] = useState(
     urlParams.get("search")?.trim()
   );
 
-  const { data, isFetching, error, refetch } = thingsApi.useListThingsQuery({
-    page,
-    owned,
-    sort,
-    search: urlParams.get("search")?.trim(),
-  });
+  const { data, isFetching, error, refetch } = thingsApi.useListThingsQuery(
+    {
+      page,
+      owned,
+      sort,
+      search: urlParams.get("search")?.trim(),
+    },
+    { skip: isUnknown }
+  );
 
   const updateUrlParam = useCallback(
     (key: string, value?: string) => {
@@ -122,33 +128,35 @@ export const ThingsList = () => {
               />
             </InputGroup>
           </FormControl>
-          <Select
-            rounded="md"
-            size="sm"
-            width="10em"
-            value={owned ? "mine" : ""}
-            onChange={(e) => {
-              updateUrlParam(
-                "mine",
-                e.target.value === "mine" ? "1" : undefined
-              );
-            }}
-          >
-            <option value="">
-              {formatMessage({
-                id: "thingsList.ownFilter.all",
-                defaultMessage: "All Things",
-              })}
-            </option>
-            <option value="mine">
-              {formatMessage({
-                id: "thingsList.ownFilter.mine",
-                defaultMessage: "My Things",
-              })}
-            </option>
-          </Select>
+          <IfAuthenticated>
+            <Select
+              rounded="md"
+              size="sm"
+              width="10em"
+              value={owned ? "mine" : ""}
+              onChange={(e) => {
+                updateUrlParam(
+                  "mine",
+                  e.target.value === "mine" ? "1" : undefined
+                );
+              }}
+            >
+              <option value="">
+                {formatMessage({
+                  id: "thingsList.ownFilter.all",
+                  defaultMessage: "All Things",
+                })}
+              </option>
+              <option value="mine">
+                {formatMessage({
+                  id: "thingsList.ownFilter.mine",
+                  defaultMessage: "My Things",
+                })}
+              </option>
+            </Select>
+          </IfAuthenticated>
         </HStack>
-        <AuthCan action="create" subject="Thing">
+        <IfAuthorized action="create" subject="Thing">
           <ButtonGroup size="sm" variant="outline">
             <Button
               aria-label={formatMessage({
@@ -165,7 +173,7 @@ export const ThingsList = () => {
               />
             </Button>
           </ButtonGroup>
-        </AuthCan>
+        </IfAuthorized>
       </Stack>
       {error && <ErrorAlert my="5" onRetryClick={refetch} error={error} />}
       {data && (

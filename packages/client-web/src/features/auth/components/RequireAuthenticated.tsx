@@ -18,7 +18,7 @@ export const RequireAuthenticated = ({
   whileLoading,
 }: RequireAuthenticatedProps) => {
   const { isLoggedIn, isUnknown, isVerified } = useSession();
-  const loginLocation = useLoginLocation();
+  const { to } = useLoginLocation();
   const location = useLocation();
 
   if (isUnknown) {
@@ -26,14 +26,7 @@ export const RequireAuthenticated = ({
   }
 
   if (!isLoggedIn) {
-    return (
-      <Navigate
-        to={{
-          ...loginLocation,
-        }}
-        state={{ returnTo: location.pathname }}
-      />
-    );
+    return <Navigate to={to} state={{ returnTo: location.pathname }} />;
   }
 
   if (!allowUnverified && !isVerified) {

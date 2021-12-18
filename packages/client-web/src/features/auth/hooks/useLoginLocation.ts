@@ -10,7 +10,7 @@ export const useLoginLocation = () => {
   });
 
   return {
-    pathname: LOGIN_PATH,
+    to: LOGIN_PATH,
     state: returnTo ? { returnTo } : undefined,
   };
 };

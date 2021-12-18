@@ -18,8 +18,8 @@ export const LoginButton = ({
   return (
     <Button
       {...props}
+      {...loginLocation}
       as={RouterLink}
-      to={loginLocation}
       isDisabled={isDisabled || isUnknown}
     >
       {children || (

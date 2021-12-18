@@ -10,7 +10,7 @@ export const useRegistrationLocation = () => {
   });
 
   return {
-    pathname: REGISTRATION_PATH,
+    to: REGISTRATION_PATH,
     state: returnTo ? { returnTo } : undefined,
   };
 };

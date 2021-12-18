@@ -1,6 +1,7 @@
 import { To } from "history";
 import { useLocation } from "react-router-dom";
 import { filterLocations } from "../filterLocations";
+import { returnToStateSchema } from "./useReturnToProvider";
 
 export interface UseReturnToConsumerOptions {
   /**
@@ -38,8 +39,13 @@ export const useReturnToConsumer = ({
 }: UseReturnToConsumerOptions) => {
   const { state } = useLocation();
 
-  return filterLocations([preferred, state?.returnTo], {
-    forbid,
-    fallback,
-  });
+  const parsed = returnToStateSchema.safeParse(state);
+
+  return filterLocations(
+    [preferred, parsed.success ? parsed.data.returnTo : undefined],
+    {
+      forbid,
+      fallback,
+    }
+  );
 };

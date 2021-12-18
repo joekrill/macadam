@@ -1,5 +1,10 @@
 import { To, useLocation } from "react-router-dom";
+import { z } from "zod";
 import { filterLocations } from "../filterLocations";
+
+export const returnToStateSchema = z.object({
+  returnTo: z.string(),
+});
 
 export interface UseReturnToProviderOptions {
   /**
@@ -27,10 +32,14 @@ export const useReturnToProvider = ({
   fallback,
   forbid = [],
 }: UseReturnToProviderOptions) => {
-  const location = useLocation();
+  const { pathname, state } = useLocation();
+  const parsed = returnToStateSchema.safeParse(state);
 
-  return filterLocations([location.state?.returnTo, location], {
-    forbid,
-    fallback,
-  });
+  return filterLocations(
+    [parsed.success ? parsed.data.returnTo : undefined, pathname],
+    {
+      forbid,
+      fallback,
+    }
+  );
 };

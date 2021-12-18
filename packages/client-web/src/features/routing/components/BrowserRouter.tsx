@@ -1,8 +1,7 @@
 import { History } from "history";
-import { useLayoutEffect, useState } from "react";
 import {
   BrowserRouterProps as DefaultBrowserRouterProps,
-  Router,
+  unstable_HistoryRouter as HistoryRouter,
 } from "react-router-dom";
 
 export interface BrowserRouterProps
@@ -30,21 +29,6 @@ export const BrowserRouter = ({
   basename,
   children,
   history,
-}: BrowserRouterProps) => {
-  const [state, setState] = useState({
-    action: history.action,
-    location: history.location,
-  });
-
-  useLayoutEffect(() => history.listen(setState), [history]);
-
-  return (
-    <Router
-      basename={basename}
-      children={children}
-      location={state.location}
-      navigationType={state.action}
-      navigator={history}
-    />
-  );
-};
+}: BrowserRouterProps) => (
+  <HistoryRouter basename={basename} children={children} history={history} />
+);

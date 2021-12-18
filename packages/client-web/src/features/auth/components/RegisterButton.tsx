@@ -15,7 +15,7 @@ export const RegisterButton = ({
   isDisabled,
   ...props
 }: RegisterButtonProps) => {
-  const to = useRegistrationLocation();
+  const { to, state } = useRegistrationLocation();
   const { isUnknown } = useSession();
 
   return (
@@ -23,6 +23,7 @@ export const RegisterButton = ({
       {...props}
       as={RouterLink}
       to={to}
+      state={state}
       isDisabled={isDisabled || isUnknown}
     >
       {children || (

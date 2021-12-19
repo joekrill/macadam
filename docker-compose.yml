@@ -15,7 +15,7 @@ x-service-defaults: &service-defaults
 
 x-kratos-defaults: &kratos-defaults
   <<: *service-defaults
-  image: oryd/kratos:v0.8.0
+  image: oryd/kratos:v0.8.2-alpha.1
   depends_on:
     - postgres
   environment:

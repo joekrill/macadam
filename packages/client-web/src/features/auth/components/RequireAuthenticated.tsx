@@ -26,7 +26,7 @@ export const RequireAuthenticated = ({
   }
 
   if (!isLoggedIn) {
-    return <Navigate to={to} state={{ returnTo: location.pathname }} />;
+    return <Navigate replace to={to} state={{ returnTo: location.pathname }} />;
   }
 
   if (!allowUnverified && !isVerified) {

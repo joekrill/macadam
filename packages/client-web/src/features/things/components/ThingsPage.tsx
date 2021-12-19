@@ -1,5 +1,6 @@
 import { Container } from "@chakra-ui/react";
 import { Route, Routes } from "react-router-dom";
+import { RequireAuthenticated } from "../../auth/components/RequireAuthenticated";
 import { ThingCreate } from "./ThingCreate";
 import { ThingDetails } from "./ThingDetails";
 import { ThingEdit } from "./ThingEdit";
@@ -9,8 +10,22 @@ export const ThingsPage = () => (
   <Container maxW="container.lg">
     <Routes>
       <Route path=":id" element={<ThingDetails />} />
-      <Route path=":id/edit" element={<ThingEdit />} />
-      <Route path="new" element={<ThingCreate />} />
+      <Route
+        path=":id/edit"
+        element={
+          <RequireAuthenticated>
+            <ThingEdit />
+          </RequireAuthenticated>
+        }
+      />
+      <Route
+        path="new"
+        element={
+          <RequireAuthenticated>
+            <ThingCreate />
+          </RequireAuthenticated>
+        }
+      />
       <Route path="*" element={<ThingsList />} />
     </Routes>
   </Container>

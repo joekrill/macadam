@@ -4474,12 +4474,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ory/kratos-client@npm:0.8.0-alpha.2":
-  version: 0.8.0-alpha.2
-  resolution: "@ory/kratos-client@npm:0.8.0-alpha.2"
+"@ory/kratos-client@npm:0.8.2-alpha.1":
+  version: 0.8.2-alpha.1
+  resolution: "@ory/kratos-client@npm:0.8.2-alpha.1"
   dependencies:
     axios: ^0.21.1
-  checksum: 95dd75e7746cf5ec32ce0e8adbfb167ee81a63858c6316e559e7532b33af3776a96e8ec13c779f22f575426406c63620499810d8391cbbf28a261e472c7de884
+  checksum: d103ffdf08f76e565622abda8e748b5d17f9829c727e37a74e50b87b6d86431499b2e2f191ad2b6571202c1dea0455840585734c09b8ed923843aa7ca84f107a
   languageName: node
   linkType: hard
 
@@ -8322,7 +8322,7 @@ __metadata:
     "@mikro-orm/migrations": ^4.5.9
     "@mikro-orm/postgresql": ^4.5.9
     "@mikro-orm/sqlite": ^4.5.9
-    "@ory/kratos-client": 0.8.0-alpha.2
+    "@ory/kratos-client": 0.8.2-alpha.1
     "@sentry/node": ^6.16.1
     "@shopify/jest-koa-mocks": ^3.0.8
     "@types/faker": ^5.5.9

@@ -30,7 +30,6 @@
 - Docs/standards
   - https://docs.devland.is
 - (client-web) review icons (for consistency)
-- Upgrade kratos
 
 # "v1"+
 

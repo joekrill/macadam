@@ -2,6 +2,7 @@ import { Options } from "@mikro-orm/core";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
 import pino from "pino";
 import { URL } from "url";
+import { AuditLogSubscriber } from "./AuditLogSubscriber";
 import { entities } from "./entities";
 
 export interface OrmConfigOptions {
@@ -20,6 +21,7 @@ export const ormConfig = ({
 
   return {
     entities: [...entities],
+    subscribers: [new AuditLogSubscriber()],
     debug: environment === "development",
     ...(ormLogger ? { logger: (message) => ormLogger.debug(message) } : {}),
     migrations: {

@@ -36,6 +36,10 @@ export const lazyLoadSession =
                 ctx.request.headers["cookie"]
               );
               session = response.data;
+              ctx.state.entityManager?.setFilterParams(
+                "user",
+                session.identity
+              );
               ctx.state.logger.debug({ session }, "Kratos session received");
             } catch (caughtError) {
               if (unauthorizedErrorSchema.safeParse(caughtError).success) {

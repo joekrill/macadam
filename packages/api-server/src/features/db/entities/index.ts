@@ -1,11 +1,12 @@
+import { AuditLog } from "./AuditLog";
 import { Thing } from "./Thing";
 import { TimestampedEntity } from "./TimestampedEntity";
-import { UserPreference } from "./UserPreference";
 import { UuidEntity } from "./UuidEntity";
 
 export const entities = [
+  AuditLog,
   UuidEntity,
   TimestampedEntity,
-  UserPreference,
+  // UserPreference,
   Thing,
 ] as const;

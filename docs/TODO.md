@@ -16,7 +16,6 @@
   - (client-web) Show notification component whne email address is not verififed
   - https://github.com/ory/kratos/issues/1328
 - (client-web) Detect session expiration and handle it somehow (modal login form? a la Gmail?)
-- (api-server) Audit Logging
 - Integration tests (i.e. using cypress)
 - CI script
   - eslint+prettier?

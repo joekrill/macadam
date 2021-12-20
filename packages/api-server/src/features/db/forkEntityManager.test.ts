@@ -17,6 +17,7 @@ describe("forkEntityManager", () => {
   const forkMock = jest.fn().mockImplementation(() => ({
     flush: flushMock,
     clear: clearMock,
+    setFilterParams: jest.fn(),
   }));
 
   const ormMock = {

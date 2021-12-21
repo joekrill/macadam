@@ -1,7 +1,7 @@
 import { Link, LinkProps } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
-import { useLoginLocation } from "../hooks/useLoginLocation";
+import { useLoginLocation } from "../../hooks/useLoginLocation";
 
 export const LOGIN_PATH = "/auth/login";
 

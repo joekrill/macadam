@@ -68,12 +68,10 @@
     {
       "options": {
         "browser_location_change_required": {
-          "value": [
-          ]
+          "value": []
         },
         "other": {
-          "value": [
-          ]
+          "value": []
         },
         "session_aal2_required": {
           "value": [
@@ -108,8 +106,7 @@
     {
       "options": {
         "other": {
-          "value": [
-          ]
+          "value": []
         },
         "security_csrf_violation": {
           "value": [
@@ -248,8 +245,7 @@
           ]
         },
         "other": {
-          "value": [
-          ]
+          "value": []
         },
         "show": {
           "value": [
@@ -280,13 +276,13 @@
       "value": "Forgot your password?SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.registerButton.content": [
+  "auth.registrationButton.content": [
     {
       "type": 0,
       "value": "Sign UpSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.registerLink.content": [
+  "auth.registrationLink.content": [
     {
       "type": 0,
       "value": "Sign UpSSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -672,8 +668,7 @@
           ]
         },
         "other": {
-          "value": [
-          ]
+          "value": []
         }
       },
       "type": 5,

@@ -1,8 +1,8 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
-import { useLoginLocation } from "../hooks/useLoginLocation";
-import { useSession } from "../hooks/useSession";
+import { useLoginLocation } from "../../hooks/useLoginLocation";
+import { useSession } from "../../hooks/useSession";
 
 export interface LoginButtonProps extends ButtonProps {}
 

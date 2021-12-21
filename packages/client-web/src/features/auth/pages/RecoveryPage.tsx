@@ -1,7 +1,7 @@
 import { Container } from "@chakra-ui/react";
 import { Card } from "../../common/components/Card/Card";
 import { useUrlSearchParams } from "../../routing/hooks/useUrlSearchParams";
-import { Recovery } from "../components/Recovery";
+import { Recovery } from "../components/recovery/Recovery";
 
 export const RecoveryPage = () => {
   const params = useUrlSearchParams();

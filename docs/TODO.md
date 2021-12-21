@@ -1,8 +1,6 @@
 ## "v1" Milestone
 
 - (client-web) consistent key naming strategy (document + implement)
-- (client-web) "sign up" vs " registration" vs "register" terminology and naming conventions
-- (client-web) clean up routes (esp. auth routes - don't prefix with /auth?)
 - (client-web) save locale selection across reloads + Autodetect browser locale
 - (api-server) consider namespacing all contexts?
 - (client-web) Invalidate data on logout/login (https://redux-toolkit.js.org/rtk-query/api/created-api/cache-management-utils#resetapistate)

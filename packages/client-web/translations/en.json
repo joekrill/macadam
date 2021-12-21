@@ -78,10 +78,10 @@
     "defaultMessage": "Forgot your password?",
     "description": "The text displayed for a link that takes you to the account recovery page"
   },
-  "auth.registerButton.content": {
+  "auth.registrationButton.content": {
     "defaultMessage": "Sign Up"
   },
-  "auth.registerLink.content": {
+  "auth.registrationLink.content": {
     "defaultMessage": "Sign Up"
   },
   "auth.registration.alreadyHaveAccountLink": {

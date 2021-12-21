@@ -9,10 +9,10 @@ import { REGISTRATION_PATH } from "../../hooks/useRegistrationLocation";
 import { FlowError } from "../FlowError";
 import { FlowHeading } from "../FlowHeading";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
-import { LOGIN_PATH } from "../LoginLink";
 import { SelfServiceUiMessageList } from "../SelfServiceUi/SelfServiceUiMessageList";
 import { LoginFlowTitle } from "./LoginFlowTitle";
 import { LoginForm } from "./LoginForm";
+import { LOGIN_PATH } from "./LoginLink";
 
 export interface LoginProps extends UseLoginFlowOptions {}
 

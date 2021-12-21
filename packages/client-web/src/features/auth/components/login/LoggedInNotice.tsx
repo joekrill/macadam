@@ -10,8 +10,8 @@ import {
 import { ReactElement } from "react";
 import { FaSignOutAlt } from "react-icons/fa";
 import { FormattedMessage } from "react-intl";
+import { HomepageButton } from "../../../common/components/HomepageButton";
 import { useSession } from "../../hooks/useSession";
-import { HomepageButton } from "../HomepageButton";
 import { LogoutButton } from "../LogoutButton";
 
 export interface LoggedInNoticeProps {

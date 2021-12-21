@@ -82,8 +82,7 @@
     {
       "options": {
         "other": {
-          "value": [
-          ]
+          "value": []
         },
         "security_csrf_violation": {
           "value": [
@@ -238,13 +237,13 @@
       "value": "[javascript]Forgot your password?"
     }
   ],
-  "auth.registerButton.content": [
+  "auth.registrationButton.content": [
     {
       "type": 0,
       "value": "[javascript]Sign Up"
     }
   ],
-  "auth.registerLink.content": [
+  "auth.registrationLink.content": [
     {
       "type": 0,
       "value": "[javascript]Sign Up"
@@ -630,8 +629,7 @@
           ]
         },
         "other": {
-          "value": [
-          ]
+          "value": []
         }
       },
       "type": 5,

@@ -1,9 +1,11 @@
 import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import { Route, Routes } from "react-router-dom";
-import { RequireAuthenticated } from "../features/auth/components/RequireAuthenticated";
-import { AuthPage } from "../features/auth/pages/AuthPage";
+import { LoginPage } from "../features/auth/pages/LoginPage";
+import { RecoveryPage } from "../features/auth/pages/RecoveryPage";
+import { RegistrationPage } from "../features/auth/pages/RegistrationPage";
 import { SettingsPage } from "../features/auth/pages/SettingsPage";
+import { VerificationPage } from "../features/auth/pages/VerificationPage";
 import { CrashInitiator } from "../features/errors/components/CrashInitiator/CrashInitiator";
 import { NotFoundPage } from "../features/errors/components/NotFoundPage/NotFoundPage";
 import { ContactUs } from "../features/pages/ContactUs/ContactUs";
@@ -51,15 +53,11 @@ export const AppContent = () => {
         >
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/auth/*" element={<AuthPage />} />
-            <Route
-              path="/settings"
-              element={
-                <RequireAuthenticated>
-                  <SettingsPage />
-                </RequireAuthenticated>
-              }
-            />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<RegistrationPage />} />
+            <Route path="/account/verify" element={<VerificationPage />} />
+            <Route path="/account/settings" element={<SettingsPage />} />
+            <Route path="/account/recover" element={<RecoveryPage />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />

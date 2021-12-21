@@ -6,12 +6,7 @@ import { Link as RouterLink } from "react-router-dom";
 export interface HomepageButtonLinkProps extends ButtonProps {}
 
 /**
- * Displays a message letting the user know that they are already logged in,
- * and giving them the option of logging out, as well as proviging a link to the
- * main home page.
- *
- * This is meant to be used in the login page and is shown if the user somehow
- * gets to that page even though they are already logged in.
+ * A link button that goes to the home page.
  */
 export const HomepageButton = (props: HomepageButtonLinkProps) => (
   <Button
@@ -24,7 +19,7 @@ export const HomepageButton = (props: HomepageButtonLinkProps) => (
     to="/"
   >
     <FormattedMessage
-      id="auth.hompageButton.label"
+      id="common.hompageButton.label"
       defaultMessage="Go to the homepage"
     />
   </Button>

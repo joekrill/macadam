@@ -18,7 +18,7 @@ import {
 } from "react-icons/fa";
 import { UiNodeInput } from "../../schemas/flows/ui";
 import { PasswordInput } from "../PasswordInput/PasswordInput";
-import { RecoveryLink } from "../RecoveryLink";
+import { RecoveryLink } from "../recovery/RecoveryLink";
 
 const OIDC_ATTRIBUTES: Record<string, ButtonProps> = {
   facebook: {

@@ -1,20 +1,20 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
-import { useRegistrationLocation } from "../hooks/useRegistrationLocation";
-import { useSession } from "../hooks/useSession";
+import { useRegistrationLocation } from "../../hooks/useRegistrationLocation";
+import { useSession } from "../../hooks/useSession";
 
-export interface RegisterButtonProps extends ButtonProps {
+export interface RegistrationButtonProps extends ButtonProps {
   onLogoutComplete?: () => void;
 }
 
-export const RegisterButton = ({
+export const RegistrationButton = ({
   children,
   onClick,
   onLogoutComplete,
   isDisabled,
   ...props
-}: RegisterButtonProps) => {
+}: RegistrationButtonProps) => {
   const { to, state } = useRegistrationLocation();
   const { isUnknown } = useSession();
 
@@ -28,7 +28,7 @@ export const RegisterButton = ({
     >
       {children || (
         <FormattedMessage
-          id="auth.registerButton.content"
+          id="auth.registrationButton.content"
           defaultMessage="Sign Up"
         />
       )}

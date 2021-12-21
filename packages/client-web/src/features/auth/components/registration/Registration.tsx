@@ -11,7 +11,7 @@ import { REGISTRATION_PATH } from "../../hooks/useRegistrationLocation";
 import { FlowError } from "../FlowError";
 import { FlowHeading } from "../FlowHeading";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
-import { LoginLink, LOGIN_PATH } from "../LoginLink";
+import { LoginLink, LOGIN_PATH } from "../login/LoginLink";
 import { SelfServiceUiMessageList } from "../SelfServiceUi/SelfServiceUiMessageList";
 import { RegistrationForm } from "./RegistrationForm";
 

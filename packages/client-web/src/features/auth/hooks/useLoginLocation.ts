@@ -1,7 +1,7 @@
 import { useReturnToProvider } from "../../routing/hooks/useReturnToProvider";
 import { REGISTRATION_PATH } from "./useRegistrationLocation";
 
-export const LOGIN_PATH = "/auth/login";
+export const LOGIN_PATH = "/login";
 
 export const useLoginLocation = () => {
   const returnTo = useReturnToProvider({

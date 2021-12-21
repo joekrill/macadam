@@ -2,19 +2,22 @@ import { FormattedMessage } from "react-intl";
 import {
   RouterLink,
   RouterLinkProps,
-} from "../../routing/components/RouterLink";
-import { useRegistrationLocation } from "../hooks/useRegistrationLocation";
+} from "../../../routing/components/RouterLink";
+import { useRegistrationLocation } from "../../hooks/useRegistrationLocation";
 
-export interface RegisterLinkProps extends RouterLinkProps {}
+export interface RegistrationLinkProps extends RouterLinkProps {}
 
-export const RegisterLink = ({ children, ...props }: RegisterLinkProps) => {
+export const RegistrationLink = ({
+  children,
+  ...props
+}: RegistrationLinkProps) => {
   const { to, state } = useRegistrationLocation();
 
   return (
     <RouterLink {...props} to={to} state={state}>
       {children || (
         <FormattedMessage
-          id="auth.registerLink.content"
+          id="auth.registrationLink.content"
           defaultMessage="Sign Up"
         />
       )}

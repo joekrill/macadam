@@ -22,7 +22,10 @@ devRouter
     const codeValue = parseInt(code!, 10);
 
     if (codeValue < 600 && codeValue >= 400) {
-      throw createHttpError(codeValue, message!);
+      const error = message
+        ? createHttpError(codeValue, message)
+        : createHttpError(codeValue);
+      throw error;
     }
 
     if (codeValue < 400 && codeValue >= 200) {

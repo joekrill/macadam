@@ -3,7 +3,6 @@
 - (client-web) consistent key naming strategy (document + implement)
 - (client-web) save locale selection across reloads + Autodetect browser locale
 - (api-server) consider namespacing all contexts?
-- (client-web) Invalidate data on logout/login (https://redux-toolkit.js.org/rtk-query/api/created-api/cache-management-utils#resetapistate)
 - (kratos) Flatten traits?
 - (client-web) User settings
 - (client-web) How to deal with unverified email address

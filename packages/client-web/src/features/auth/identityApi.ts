@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import snakecaseKeys from "snakecase-keys";
+import { appApi } from "../api/appApi";
 import { invalidateSession } from "./authApi";
 import { InitializeFlowParams } from "./schemas/flows/common";
 import {
@@ -87,7 +88,8 @@ export const identityApi = createApi({
               )
             );
           } else if (isLoginFlowSuccess(data)) {
-            dispatch(invalidateSession());
+            dispatch(identityApi.util.resetApiState());
+            dispatch(appApi.util.resetApiState());
           }
         } catch {}
       },
@@ -139,7 +141,8 @@ export const identityApi = createApi({
               )
             );
           } else if (isRegistrationFlowSuccess(data)) {
-            dispatch(invalidateSession());
+            dispatch(identityApi.util.resetApiState());
+            dispatch(appApi.util.resetApiState());
           }
         } catch {}
       },
@@ -298,7 +301,8 @@ export const identityApi = createApi({
       async onQueryStarted(_params, { dispatch, queryFulfilled }) {
         try {
           await queryFulfilled;
-          dispatch(invalidateSession());
+          dispatch(identityApi.util.resetApiState());
+          dispatch(appApi.util.resetApiState());
         } catch {}
       },
     }),

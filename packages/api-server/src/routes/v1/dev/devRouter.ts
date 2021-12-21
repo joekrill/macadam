@@ -3,6 +3,10 @@ import { STATUS_CODES } from "http";
 import createHttpError from "http-errors";
 import { DefaultContext, DefaultState } from "koa";
 
+/**
+ * The devRouter provides various routes for use only during development/testing
+ * and are not exposed in other environments.
+ */
 export const devRouter = new Router<DefaultState, DefaultContext>();
 
 devRouter

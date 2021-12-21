@@ -2,7 +2,7 @@
   "app.footer.copyrightNotice": [
     {
       "type": 0,
-      "value": "[!! &ćŏŏŏṗẏ;  !!]"
+      "value": "[!! ©  !!]"
     },
     {
       "style": {
@@ -716,6 +716,12 @@
       "value": "[!!  ṁŏŏŏḋè !!]"
     }
   ],
+  "thingCreate.title": [
+    {
+      "type": 0,
+      "value": "[!! Ŋèẘẘẘ Ṯḫḫḫíńĝĝĝ !!]"
+    }
+  ],
   "thingDefailts.error.notFound": [
     {
       "type": 0,
@@ -732,6 +738,12 @@
     {
       "type": 0,
       "value": "[!! Ũṗḋḋḋâṭèèèḋ: !!]"
+    }
+  ],
+  "thingEdit.title": [
+    {
+      "type": 0,
+      "value": "[!! Ḕḋíííṭ ṮṮṮḫíńńńĝ !!]"
     }
   ],
   "thingForm.description.label": [

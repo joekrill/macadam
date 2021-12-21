@@ -13,6 +13,18 @@ export const LocaleSelectContext = createContext({
   selectPendingLocale,
 });
 
+/**
+ * Returns the display for a locale using the locale's language itself,
+ * rather than the currently selected locale.
+ */
+function getLocaleDisplayName(locale: string) {
+  try {
+    return new Intl.DisplayNames([locale], { type: "language" }).of(locale);
+  } catch (error) {
+    return undefined;
+  }
+}
+
 export interface LocaleSelectProps extends SelectProps {}
 
 /**
@@ -38,10 +50,12 @@ export const LocaleSelect = (props: LocaleSelectProps) => {
     >
       {LOCALES.map((locale) => (
         <option key={locale} value={locale}>
-          {formatDisplayName(locale, {
-            type: "language",
-            fallback: "code",
-          })}
+          {getLocaleDisplayName(locale) ||
+            formatDisplayName(locale, {
+              type: "language",
+              style: "short",
+              fallback: "code",
+            })}
         </option>
       ))}
     </Select>

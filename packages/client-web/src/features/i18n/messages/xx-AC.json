@@ -2,7 +2,7 @@
   "app.footer.copyrightNotice": [
     {
       "type": 0,
-      "value": "&COPY; "
+      "value": "© "
     },
     {
       "style": {
@@ -716,6 +716,12 @@
       "value": " MODE"
     }
   ],
+  "thingCreate.title": [
+    {
+      "type": 0,
+      "value": "NEW THING"
+    }
+  ],
   "thingDefailts.error.notFound": [
     {
       "type": 0,
@@ -732,6 +738,12 @@
     {
       "type": 0,
       "value": "UPDATED:"
+    }
+  ],
+  "thingEdit.title": [
+    {
+      "type": 0,
+      "value": "EDIT THING"
     }
   ],
   "thingForm.description.label": [

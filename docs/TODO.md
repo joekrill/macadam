@@ -1,13 +1,9 @@
 ## "v1" Milestone
 
-- (api-server) rename dev and monitor routes
-- (api-server) mikro-orm snapshots?
 - (client-web) consistent key naming strategy (document + implement)
-- (client-web) locale select styling (esp. dark mode)
-- (client-web) locale select should take up less space
 - (client-web) "sign up" vs " registration" vs "register" terminology and naming conventions
 - (client-web) clean up routes (esp. auth routes - don't prefix with /auth?)
-- (client-web) save locale selection across reloads
+- (client-web) save locale selection across reloads + Autodetect browser locale
 - (api-server) consider namespacing all contexts?
 - (client-web) Invalidate data on logout/login (https://redux-toolkit.js.org/rtk-query/api/created-api/cache-management-utils#resetapistate)
 - (kratos) Flatten traits?
@@ -29,6 +25,8 @@
 - Docs/standards
   - https://docs.devland.is
 - (client-web) review icons (for consistency)
+- (client-web) upgrade create-react-app
+- (client-web) better table styling (+responsive)
 
 # "v1"+
 
@@ -76,6 +74,10 @@
 - (client-web) Offline support
 - Upgrade Postgres to v14
 - (client-web) PWA
+  - https://developers.google.com/codelabs/project-fugu?hl=en#0
+  - https://create-react-app.dev/docs/making-a-progressive-web-app/
+  - https://github.com/GoogleChromeLabs/pwa-workshop-codelab
+  - https://web.dev/install-criteria/
 - production/staging kubernetes deployments
 - (client-mobile) Mobile app (react-native)
 - (metrics) alert manager

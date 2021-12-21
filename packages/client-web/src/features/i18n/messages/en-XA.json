@@ -2,7 +2,7 @@
   "app.footer.copyrightNotice": [
     {
       "type": 0,
-      "value": "&ćŏṗẏ; "
+      "value": "© "
     },
     {
       "style": {
@@ -716,6 +716,12 @@
       "value": " ṁŏḋè"
     }
   ],
+  "thingCreate.title": [
+    {
+      "type": 0,
+      "value": "Ŋèẘ Ṯḫíńĝ"
+    }
+  ],
   "thingDefailts.error.notFound": [
     {
       "type": 0,
@@ -732,6 +738,12 @@
     {
       "type": 0,
       "value": "Ũṗḋâṭèḋ:"
+    }
+  ],
+  "thingEdit.title": [
+    {
+      "type": 0,
+      "value": "Ḕḋíṭ Ṯḫíńĝ"
     }
   ],
   "thingForm.description.label": [

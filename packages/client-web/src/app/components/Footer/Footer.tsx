@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { FaRegGem } from "react-icons/fa";
 import { FormattedMessage } from "react-intl";
+import { LocaleSelect } from "../../../features/i18n/components/LocaleSelect";
 import { LinkGrid } from "./LinkGrid";
 import { SocialMediaLinks } from "./SocialMediaLinks";
 
@@ -27,8 +28,9 @@ export const Footer = (props: FooterProps) => (
     px={{ base: "4", md: "8" }}
     {...props}
   >
-    <Stack spacing="10" divider={<StackDivider />}>
+    <Stack spacing="8" divider={<StackDivider />}>
       <Stack
+        as="nav"
         direction={{ base: "column", lg: "row" }}
         spacing={{ base: "10", lg: "28" }}
       >
@@ -47,20 +49,23 @@ export const Footer = (props: FooterProps) => (
         </Stack>
       </Stack>
       <Stack
+        as="nav"
         direction={{ base: "column-reverse", md: "row" }}
         justifyContent="space-between"
-        alignItems="center"
+        alignItems={{ base: "flex-start", md: "center" }}
+        spacing="6"
       >
-        <Text fontSize="sm">
+        <Text fontSize="sm" flex="1">
           <FormattedMessage
             id="app.footer.copyrightNotice"
-            defaultMessage="&copy; {now, date, ::yyyy} {appName}. All rights reserved."
+            defaultMessage="© {now, date, ::yyyy} {appName}. All rights reserved."
             values={{
               now: new Date(),
               appName: process.env.REACT_APP_DISPLAY_NAME,
             }}
           />
         </Text>
+        <LocaleSelect size="sm" width="unset" />
       </Stack>
     </Stack>
   </Box>

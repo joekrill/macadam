@@ -1,6 +1,6 @@
 {
   "app.footer.copyrightNotice": {
-    "defaultMessage": "&copy; {now, date, ::yyyy} {appName}. All rights reserved."
+    "defaultMessage": "© {now, date, ::yyyy} {appName}. All rights reserved."
   },
   "app.footer.linkGroups.legal.header": {
     "defaultMessage": "Legal"
@@ -237,6 +237,9 @@
   "theme.colorModeSwitcher.switchColorModeLabel": {
     "defaultMessage": "Switch to {mode, select, dark {dark} light {light} other {}} mode"
   },
+  "thingCreate.title": {
+    "defaultMessage": "New Thing"
+  },
   "thingDefailts.error.notFound": {
     "defaultMessage": "The Thing you are looking for couldn't be found."
   },
@@ -245,6 +248,9 @@
   },
   "thingDetails.updatedField.label": {
     "defaultMessage": "Updated:"
+  },
+  "thingEdit.title": {
+    "defaultMessage": "Edit Thing"
   },
   "thingForm.description.label": {
     "defaultMessage": "Description"

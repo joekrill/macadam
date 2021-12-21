@@ -2,7 +2,7 @@
   "app.footer.copyrightNotice": [
     {
       "type": 0,
-      "value": "&copy; "
+      "value": "© "
     },
     {
       "style": {
@@ -684,6 +684,12 @@
       "value": " modeSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "thingCreate.title": [
+    {
+      "type": 0,
+      "value": "New ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "thingDefailts.error.notFound": [
     {
       "type": 0,
@@ -700,6 +706,12 @@
     {
       "type": 0,
       "value": "Updated:SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "thingEdit.title": [
+    {
+      "type": 0,
+      "value": "Edit ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "thingForm.description.label": [

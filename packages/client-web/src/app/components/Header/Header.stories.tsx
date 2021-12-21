@@ -5,7 +5,7 @@ import { LocaleSelectContext } from "../../../features/i18n/components/LocaleSel
 import { Header, HeaderProps } from "./Header";
 
 export default {
-  title: "common/Header",
+  title: "app/Header",
   component: Header,
   parameters: {
     layout: "fullscreen",

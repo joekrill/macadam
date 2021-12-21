@@ -2,7 +2,7 @@
   "app.footer.copyrightNotice": [
     {
       "type": 0,
-      "value": "[javascript]&copy; "
+      "value": "[javascript]© "
     },
     {
       "style": {
@@ -642,6 +642,12 @@
       "value": " mode"
     }
   ],
+  "thingCreate.title": [
+    {
+      "type": 0,
+      "value": "[javascript]New Thing"
+    }
+  ],
   "thingDefailts.error.notFound": [
     {
       "type": 0,
@@ -658,6 +664,12 @@
     {
       "type": 0,
       "value": "[javascript]Updated:"
+    }
+  ],
+  "thingEdit.title": [
+    {
+      "type": 0,
+      "value": "[javascript]Edit Thing"
     }
   ],
   "thingForm.description.label": [

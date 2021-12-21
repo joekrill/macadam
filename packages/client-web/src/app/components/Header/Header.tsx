@@ -11,7 +11,6 @@ import { Link as RouterLink } from "react-router-dom";
 import { LoginButton } from "../../../features/auth/components/LoginButton";
 import { RegisterButton } from "../../../features/auth/components/RegisterButton";
 import { useSession } from "../../../features/auth/hooks/useSession";
-import { LocaleSelect } from "../../../features/i18n/components/LocaleSelect";
 import { ColorModeSwitcher } from "../../../features/theme/components/ColorModeSwitcher/ColorModeSwitcher";
 import { CurrentUserMenu } from "../../../features/users/components/CurrentUserMenu/CurrentUserMenu";
 import { ReactComponent as Logo } from "../../Logo.svg";
@@ -56,7 +55,6 @@ export const Header = (props: HeaderProps) => {
               <LoginButton px="5" size="sm" colorScheme={buttonSchema} />
             </>
           )}
-          <LocaleSelect size="sm" />
           <ColorModeSwitcher justifySelf="flex-end" />
           {isLoggedIn && <CurrentUserMenu />}
         </HStack>

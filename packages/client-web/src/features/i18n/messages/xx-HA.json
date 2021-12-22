@@ -1,4 +1,88 @@
 {
+  "api.errors.fetchErrorMessage": [
+    {
+      "type": 0,
+      "value": "[javascript]Unexpected client error ("
+    },
+    {
+      "type": 1,
+      "value": "error"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again."
+    }
+  ],
+  "api.errors.genericMessage": [
+    {
+      "type": 0,
+      "value": "[javascript]An unknown error occurred. Please try again."
+    }
+  ],
+  "api.errors.genericMessageWithCode": [
+    {
+      "type": 0,
+      "value": "[javascript]The server returned an unexpected resonse ("
+    },
+    {
+      "type": 1,
+      "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again."
+    }
+  ],
+  "api.errors.genericMessageWithMessage": [
+    {
+      "type": 0,
+      "value": "[javascript]Error: "
+    },
+    {
+      "type": 1,
+      "value": "message"
+    },
+    {
+      "type": 0,
+      "value": " ("
+    },
+    {
+      "type": 1,
+      "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "/"
+    },
+    {
+      "type": 1,
+      "value": "name"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again."
+    }
+  ],
+  "api.errors.genericTitle": [
+    {
+      "type": 0,
+      "value": "[javascript]Something went wrong"
+    }
+  ],
+  "api.errors.parsingErrorMessage": [
+    {
+      "type": 0,
+      "value": "[javascript]Error parsing server response ("
+    },
+    {
+      "type": 1,
+      "value": "error"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again."
+    }
+  ],
   "app.footer.copyrightNotice": [
     {
       "type": 0,
@@ -28,13 +112,13 @@
       "value": ". All rights reserved."
     }
   ],
-  "app.footer.linkGroups.legal.header": [
+  "app.footer.linkGroups.legal": [
     {
       "type": 0,
       "value": "[javascript]Legal"
     }
   ],
-  "app.footer.linkGroups.resources.header": [
+  "app.footer.linkGroups.resources": [
     {
       "type": 0,
       "value": "[javascript]Resources"
@@ -82,7 +166,8 @@
     {
       "options": {
         "other": {
-          "value": []
+          "value": [
+          ]
         },
         "security_csrf_violation": {
           "value": [
@@ -125,13 +210,7 @@
       "value": ". Please try again."
     }
   ],
-  "auth.hompageButton.label": [
-    {
-      "type": 0,
-      "value": "[javascript]Go to the homepage"
-    }
-  ],
-  "auth.loggedInNotice.messageWithUsername": [
+  "auth.loggedInAlreadyNotice.messageWithUsername": [
     {
       "type": 0,
       "value": "[javascript]You're already logged in as "
@@ -151,31 +230,13 @@
       "value": "."
     }
   ],
-  "auth.loggedInNotice.messageWithoutUsername": [
+  "auth.loggedInAlreadyNotice.messageWithoutUsername": [
     {
       "type": 0,
       "value": "[javascript]You're already logged in."
     }
   ],
-  "auth.login.2faTitle": [
-    {
-      "type": 0,
-      "value": "[javascript]Two-Factor Authentication"
-    }
-  ],
-  "auth.login.confirmAccessTitle": [
-    {
-      "type": 0,
-      "value": "[javascript]Confirm access"
-    }
-  ],
-  "auth.login.loginTitle": [
-    {
-      "type": 0,
-      "value": "[javascript]Log in to your account"
-    }
-  ],
-  "auth.login.noAccountLink": [
+  "auth.login.signUpInsteadMessage": [
     {
       "type": 0,
       "value": "[javascript]Don't have an account yet? "
@@ -191,16 +252,28 @@
       "value": "link"
     }
   ],
-  "auth.login.oidcHeaderText": [
+  "auth.loginForm.oidcDividerText": [
     {
       "type": 0,
       "value": "[javascript]or"
     }
   ],
-  "auth.loginButton.label": [
+  "auth.loginFormTitle.2fa": [
     {
       "type": 0,
-      "value": "[javascript]Log In"
+      "value": "[javascript]Two-Factor Authentication"
+    }
+  ],
+  "auth.loginFormTitle.confirmAccess": [
+    {
+      "type": 0,
+      "value": "[javascript]Confirm access"
+    }
+  ],
+  "auth.loginFormTitle.login": [
+    {
+      "type": 0,
+      "value": "[javascript]Log in to your account"
     }
   ],
   "auth.loginLink.label": [
@@ -215,7 +288,7 @@
       "value": "[javascript]Log Out"
     }
   ],
-  "auth.passwordInput.togglePasswordVisibilityLabel": [
+  "auth.passwordInput.togglePasswordVisibility.label": [
     {
       "type": 0,
       "value": "[javascript]"
@@ -237,18 +310,6 @@
       "value": "[javascript]Forgot your password?"
     }
   ],
-  "auth.registrationButton.content": [
-    {
-      "type": 0,
-      "value": "[javascript]Sign Up"
-    }
-  ],
-  "auth.registrationLink.content": [
-    {
-      "type": 0,
-      "value": "[javascript]Sign Up"
-    }
-  ],
   "auth.registration.alreadyHaveAccountLink": [
     {
       "type": 0,
@@ -259,28 +320,28 @@
       "value": "loginLink"
     }
   ],
-  "auth.registration.oidcTItle": [
-    {
-      "type": 0,
-      "value": "[javascript]or"
-    }
-  ],
   "auth.registration.title": [
     {
       "type": 0,
       "value": "[javascript]Create your account"
     }
   ],
-  "auth.settings.oidcTitle": [
+  "auth.registrationForm.oidcDividerText": [
+    {
+      "type": 0,
+      "value": "[javascript]or"
+    }
+  ],
+  "auth.registrationLink.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Sign Up"
+    }
+  ],
+  "auth.settings.oidcSection.title": [
     {
       "type": 0,
       "value": "[javascript]3rd Party Log-in"
-    }
-  ],
-  "auth.settings.passwordTitle": [
-    {
-      "type": 0,
-      "value": "[javascript]Change Password"
     }
   ],
   "auth.settings.title": [
@@ -289,16 +350,22 @@
       "value": "[javascript]Profile Settings"
     }
   ],
-  "auth.settings.totpTitle": [
+  "auth.settings.totpSection.title": [
     {
       "type": 0,
       "value": "[javascript]Two-factor authentication"
     }
   ],
-  "auth.settings.webauthnTitle": [
+  "auth.settings.webauthnSection.title": [
     {
       "type": 0,
       "value": "[javascript]Hardware Tokens and Biometrics"
+    }
+  ],
+  "auth.settingsForm.changePasswordSection.title": [
+    {
+      "type": 0,
+      "value": "[javascript]Change Password"
     }
   ],
   "auth.verification.title": [
@@ -307,88 +374,22 @@
       "value": "[javascript]Verify your account"
     }
   ],
-  "error.api.errorCode": [
+  "common.dataTable.sortHeader.ariaLabel": [
     {
       "type": 0,
-      "value": "[javascript]The server returned an unexpected resonse ("
-    },
-    {
-      "type": 1,
-      "value": "code"
-    },
-    {
-      "type": 0,
-      "value": "). Please try again."
+      "value": "[javascript]"
     }
   ],
-  "error.api.errorMessage": [
+  "common.hompageButton.label": [
     {
       "type": 0,
-      "value": "[javascript]Error: "
-    },
-    {
-      "type": 1,
-      "value": "message"
-    },
-    {
-      "type": 0,
-      "value": " ("
-    },
-    {
-      "type": 1,
-      "value": "code"
-    },
-    {
-      "type": 0,
-      "value": "/"
-    },
-    {
-      "type": 1,
-      "value": "name"
-    },
-    {
-      "type": 0,
-      "value": "). Please try again."
+      "value": "[javascript]Go to the homepage"
     }
   ],
-  "error.api.fetchError": [
+  "common.loadingSpinner.label": [
     {
       "type": 0,
-      "value": "[javascript]Unexpected client error ("
-    },
-    {
-      "type": 1,
-      "value": "error"
-    },
-    {
-      "type": 0,
-      "value": "). Please try again."
-    }
-  ],
-  "error.api.parsingError": [
-    {
-      "type": 0,
-      "value": "[javascript]Error parsing server response ("
-    },
-    {
-      "type": 1,
-      "value": "error"
-    },
-    {
-      "type": 0,
-      "value": "). Please try again."
-    }
-  ],
-  "error.api.unknown": [
-    {
-      "type": 0,
-      "value": "[javascript]An unknown error occurred. Please try again."
-    }
-  ],
-  "errors.apiErrorAlert.message": [
-    {
-      "type": 0,
-      "value": "[javascript]Something went wrong"
+      "value": "[javascript]Loading..."
     }
   ],
   "errors.errorAlert.message": [
@@ -397,7 +398,7 @@
       "value": "[javascript]Something went wrong :("
     }
   ],
-  "errors.errorAlert.retryButton": [
+  "errors.errorAlert.retryButton.label": [
     {
       "type": 0,
       "value": "[javascript]Try Again"
@@ -413,10 +414,10 @@
       "value": "code"
     }
   ],
-  "errors.notFoundPage.goToHomepageButton": [
+  "errors.notFoundPage.heading": [
     {
       "type": 0,
-      "value": "[javascript]Go to the homepage"
+      "value": "[javascript]Ooops!"
     }
   ],
   "errors.notFoundPage.message": [
@@ -425,13 +426,7 @@
       "value": "[javascript]We can't seem to find that page."
     }
   ],
-  "errors.notFoundPage.pageHeading": [
-    {
-      "type": 0,
-      "value": "[javascript]Ooops!"
-    }
-  ],
-  "errors.notFoundPage.pageTitle": [
+  "errors.notFoundPage.title": [
     {
       "type": 0,
       "value": "[javascript]Not Found"
@@ -451,6 +446,12 @@
     {
       "type": 1,
       "value": "locale"
+    }
+  ],
+  "pages.contactUs.heading": [
+    {
+      "type": 0,
+      "value": "[javascript]Contact Us"
     }
   ],
   "pages.contactUs.instructions": [
@@ -473,25 +474,19 @@
       "value": " with any feedback, questions, problems, or feature requests."
     }
   ],
-  "pages.contactUs.pageHeading": [
+  "pages.contactUs.title": [
     {
       "type": 0,
       "value": "[javascript]Contact Us"
     }
   ],
-  "pages.contactUs.pageTitle": [
-    {
-      "type": 0,
-      "value": "[javascript]Contact Us"
-    }
-  ],
-  "pages.faq.pageHeading": [
+  "pages.faq.heading": [
     {
       "type": 0,
       "value": "[javascript]Frequently Asked Questions"
     }
   ],
-  "pages.faq.pageTitle": [
+  "pages.faq.title": [
     {
       "type": 0,
       "value": "[javascript]FAQ"
@@ -563,46 +558,40 @@
       "value": "[javascript]Opinionated, production-ready, full-featured SaaS boilerplate."
     }
   ],
-  "pages.privacyPolicy.pageHeading": [
+  "pages.privacyPolicy.heading": [
     {
       "type": 0,
       "value": "[javascript]Privacy Policy"
     }
   ],
-  "pages.privacyPolicy.pageTitle": [
+  "pages.privacyPolicy.title": [
     {
       "type": 0,
       "value": "[javascript]Privacy Policy"
     }
   ],
-  "pages.termsAndConditions.pageHeading": [
+  "pages.termsAndConditions.heading": [
     {
       "type": 0,
       "value": "[javascript]Terms and Conditions"
     }
   ],
-  "pages.termsAndConditions.pageTitle": [
+  "pages.termsAndConditions.title": [
     {
       "type": 0,
       "value": "[javascript]Terms and Conditions"
     }
   ],
-  "pagination.nextPage": [
+  "pagination.nextPage.label": [
     {
       "type": 0,
       "value": "[javascript]Next Page"
     }
   ],
-  "pagination.previousPage": [
+  "pagination.previousPage.label": [
     {
       "type": 0,
       "value": "[javascript]Previous Page"
-    }
-  ],
-  "table.sortHeader.ariaLabel": [
-    {
-      "type": 0,
-      "value": "[javascript]"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [
@@ -629,7 +618,8 @@
           ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         }
       },
       "type": 5,

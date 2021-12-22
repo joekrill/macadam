@@ -21,7 +21,7 @@ export const PrivacyPolicy = (props: PrivacyPolicyProps) => {
       <Helmet>
         <title>
           {formatMessage({
-            id: "pages.privacyPolicy.pageTitle",
+            id: "pages.privacyPolicy.title",
             defaultMessage: "Privacy Policy",
           })}
         </title>
@@ -29,7 +29,7 @@ export const PrivacyPolicy = (props: PrivacyPolicyProps) => {
       <ScrollToTop />
       <h1>
         <FormattedMessage
-          id="pages.privacyPolicy.pageHeading"
+          id="pages.privacyPolicy.heading"
           defaultMessage="Privacy Policy"
         />
       </h1>

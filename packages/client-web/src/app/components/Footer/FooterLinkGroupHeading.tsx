@@ -1,6 +1,6 @@
 import { Heading, HeadingProps, useColorModeValue } from "@chakra-ui/react";
 
-export const FooterHeading = (props: HeadingProps) => (
+export const FooterLinkGroupHeading = (props: HeadingProps) => (
   <Heading
     as="h4"
     color={useColorModeValue("gray.600", "gray.400")}

@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
+import { LogoutButtonLabel } from "../../../auth/components/LogoutButton";
 import { useLogout } from "../../../auth/hooks/useLogout";
 import { CurrentUserAvatar } from "../CurrentUserAvatar/CurrentUserAvatar";
 import { CurrentUserMenuHeader } from "./CurrentUserMenuHeader";
@@ -46,10 +47,7 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
             onClick={onClick}
             disabled={isLoading}
           >
-            <FormattedMessage
-              id="auth.logoutButton.label"
-              defaultMessage="Log Out"
-            />
+            <LogoutButtonLabel />
           </MenuItem>
         </MenuList>
       </Portal>

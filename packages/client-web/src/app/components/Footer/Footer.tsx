@@ -10,8 +10,8 @@ import {
 import { FaRegGem } from "react-icons/fa";
 import { FormattedMessage } from "react-intl";
 import { LocaleSelect } from "../../../features/i18n/components/LocaleSelect";
-import { LinkGrid } from "./LinkGrid";
-import { SocialMediaLinks } from "./SocialMediaLinks";
+import { FooterLinkGrid } from "./FooterLinkGrid";
+import { FooterSocialMediaLinks } from "./FooterSocialMediaLinks";
 
 export interface FooterProps extends BoxProps {}
 
@@ -39,13 +39,16 @@ export const Footer = (props: FooterProps) => (
             <Icon as={FaRegGem} fontSize="2xl" mr={2} />{" "}
             {process.env.REACT_APP_DISPLAY_NAME}
           </Heading>
-          <SocialMediaLinks />
+          <FooterSocialMediaLinks />
         </Stack>
         <Stack
           direction={{ base: "column", md: "row" }}
           spacing={{ base: "10", md: "20" }}
         >
-          <LinkGrid spacing={{ base: "10", md: "20", lg: "28" }} flex="1" />
+          <FooterLinkGrid
+            spacing={{ base: "10", md: "20", lg: "28" }}
+            flex="1"
+          />
         </Stack>
       </Stack>
       <Stack

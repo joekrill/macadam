@@ -22,7 +22,7 @@ export const TermsAndConditions = (props: TermsAndConditionsProps) => {
       <Helmet>
         <title>
           {formatMessage({
-            id: "pages.termsAndConditions.pageTitle",
+            id: "pages.termsAndConditions.title",
             defaultMessage: "Terms and Conditions",
           })}
         </title>
@@ -30,7 +30,7 @@ export const TermsAndConditions = (props: TermsAndConditionsProps) => {
       <ScrollToTop />
       <h1>
         <FormattedMessage
-          id="pages.termsAndConditions.pageHeading"
+          id="pages.termsAndConditions.heading"
           defaultMessage="Terms and Conditions"
         />
       </h1>

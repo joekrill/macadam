@@ -12,7 +12,7 @@ import {
   FlowRestartReason,
 } from "../schemas/errors";
 import { SelfServiceFlowName } from "../schemas/flows";
-import { LoggedInNotice } from "./login/LoggedInNotice";
+import { LoggedInAlreadyNotice } from "./login/LoggedInAlreadyNotice";
 
 export interface FlowErrorProps
   extends Omit<ErrorAlertProps, "children" | "status" | "onRetryClick"> {
@@ -47,7 +47,7 @@ export const FlowError = ({
     (flowType === "recovery" && statusCode === 400)
   ) {
     // session_already_available
-    return <LoggedInNotice onLogout={() => onRestartFlow()} />;
+    return <LoggedInAlreadyNotice onLogout={() => onRestartFlow()} />;
   }
 
   if (isRedirectToError) {

@@ -35,7 +35,7 @@ export const SettingsForm = ({
         <>
           <Heading as="h3" size="md">
             <FormattedMessage
-              id="auth.settings.passwordTitle"
+              id="auth.settingsForm.changePasswordSection.title"
               description="The heading displayed at the top of the change password section of the settings form"
               defaultMessage="Change Password"
             />
@@ -53,7 +53,7 @@ export const SettingsForm = ({
         <>
           <Heading as="h3" size="md">
             <FormattedMessage
-              id="auth.settings.oidcTitle"
+              id="auth.settings.oidcSection.title"
               description="The heading displayed at the top of the change password section of the settings form"
               defaultMessage="3rd Party Log-in"
             />
@@ -71,7 +71,7 @@ export const SettingsForm = ({
         <>
           <Heading as="h3" size="md">
             <FormattedMessage
-              id="auth.settings.totpTitle"
+              id="auth.settings.totpSection.title"
               description="The heading displayed at the top of the change password section of the settings form"
               defaultMessage="Two-factor authentication"
             />
@@ -90,7 +90,7 @@ export const SettingsForm = ({
         <>
           <Heading as="h3" size="md">
             <FormattedMessage
-              id="auth.settings.webauthnTitle"
+              id="auth.settings.webauthnSection.title"
               description="The heading displayed at the top of the change password section of the settings form"
               defaultMessage="Hardware Tokens and Biometrics"
             />

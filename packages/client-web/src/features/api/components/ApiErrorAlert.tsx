@@ -17,7 +17,7 @@ export const ApiErrorAlert = ({ error, ...props }: ApiErrorAlertProps) => {
   return (
     <ErrorAlert
       title={formatMessage({
-        id: "errors.apiErrorAlert.message",
+        id: "api.errors.genericTitle",
         defaultMessage: "Something went wrong",
       })}
       {...props}

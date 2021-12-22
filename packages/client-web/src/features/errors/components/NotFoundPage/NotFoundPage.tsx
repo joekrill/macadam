@@ -1,7 +1,7 @@
-import { Button, Center, Heading, Text, VStack } from "@chakra-ui/react";
+import { Center, Heading, Text, VStack } from "@chakra-ui/react";
 import { Helmet } from "react-helmet-async";
 import { FormattedMessage, useIntl } from "react-intl";
-import { Link as RouterLink } from "react-router-dom";
+import { HomepageButton } from "../../../common/components/HomepageButton";
 import { ReactComponent as Lost } from "./Lost.svg";
 
 export interface NotFoundPageProps {}
@@ -14,34 +14,34 @@ export const NotFoundPage = () => {
       <Helmet>
         <title>
           {formatMessage({
-            id: "errors.notFoundPage.pageTitle",
+            id: "errors.notFoundPage.title",
             defaultMessage: "Not Found",
+            description:
+              "The title shown in the browser tab/window for the not found page",
           })}
         </title>
       </Helmet>
       <VStack>
         <Heading as="h1" display="flex" fontSize="7rem">
           <FormattedMessage
-            id="errors.notFoundPage.pageHeading"
+            id="errors.notFoundPage.heading"
             defaultMessage="Ooops!"
+            description="The text shown at the top of the not found page"
           />
         </Heading>
         <Heading fontSize="3xl" fontWeight={400}>
           <FormattedMessage
             id="errors.notFoundPage.message"
             defaultMessage="We can't seem to find that page."
+            description="Error message shown on the not found page below the heading"
           />
         </Heading>
-        <Button as={RouterLink} colorScheme="blue" to="/" mt={3}>
-          <FormattedMessage
-            id="errors.notFoundPage.goToHomepageButton"
-            defaultMessage="Go to the homepage"
-          />
-        </Button>
+        <HomepageButton mt={3} />
         <Text color="gray.500">
           <FormattedMessage
             id="errors.notFoundPage.errorCode"
             defaultMessage="Code: {code}"
+            description="Additional text on the error page that indicates this is a '404' error code"
             values={{ code: 404 }}
           />
         </Text>

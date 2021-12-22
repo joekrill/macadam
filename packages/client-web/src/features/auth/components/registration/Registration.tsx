@@ -3,6 +3,7 @@ import { FormattedMessage } from "react-intl";
 import { Navigate } from "react-router-dom";
 import { LoadingSpinner } from "../../../common/components/LoadingSpinner/LoadingSpinner";
 import { useReturnToConsumer } from "../../../routing/hooks/useReturnToConsumer";
+import { LOGIN_PATH } from "../../hooks/useLoginLocation";
 import {
   useRegistrationFlow,
   UseRegistrationFlowOptions,
@@ -11,7 +12,7 @@ import { REGISTRATION_PATH } from "../../hooks/useRegistrationLocation";
 import { FlowError } from "../FlowError";
 import { FlowHeading } from "../FlowHeading";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
-import { LoginLink, LOGIN_PATH } from "../login/LoginLink";
+import { LoginLink } from "../login/LoginLink";
 import { SelfServiceUiMessageList } from "../SelfServiceUi/SelfServiceUiMessageList";
 import { RegistrationForm } from "./RegistrationForm";
 

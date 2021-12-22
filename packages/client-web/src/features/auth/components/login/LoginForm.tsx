@@ -36,8 +36,8 @@ export const LoginForm = ({ flow, isSubmitting, onSubmit }: LoginFormProps) => {
         <Flex direction="column">
           <DividerWithText>
             <FormattedMessage
-              id="auth.login.oidcHeaderText"
-              description="the text displayed in the divider that shows additional login options"
+              id="auth.loginForm.oidcDividerText"
+              description="The text displayed in the divider that shows additional login options"
               defaultMessage="or"
             />
           </DividerWithText>

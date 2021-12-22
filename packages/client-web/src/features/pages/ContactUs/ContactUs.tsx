@@ -18,7 +18,7 @@ export const ContactUs = (props: ContactUsProps) => {
       <Helmet>
         <title>
           {formatMessage({
-            id: "pages.contactUs.pageTitle",
+            id: "pages.contactUs.title",
             defaultMessage: "Contact Us",
           })}
         </title>
@@ -26,7 +26,7 @@ export const ContactUs = (props: ContactUsProps) => {
       <ScrollToTop />
       <Heading>
         <FormattedMessage
-          id="pages.contactUs.pageHeading"
+          id="pages.contactUs.heading"
           defaultMessage="Contact Us"
         />
       </Heading>
@@ -35,7 +35,7 @@ export const ContactUs = (props: ContactUsProps) => {
           id="pages.contactUs.instructions"
           defaultMessage="Email us at <emailLink>{emailAddress}</emailLink> with any feedback, questions, problems, or feature requests."
           values={{
-            emailAddress: process.env.REACT_APP_EMAIL_SUPPORT,
+            emailAddress: process.env.REACT_APP_EMAIL_CONTACT,
             emailLink: (emailAddress: string) => (
               <Link href={`mailto:${emailAddress}`}>{emailAddress}</Link>
             ),

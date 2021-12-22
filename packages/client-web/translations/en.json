@@ -1,11 +1,29 @@
 {
+  "api.errors.fetchErrorMessage": {
+    "defaultMessage": "Unexpected client error ({error}). Please try again."
+  },
+  "api.errors.genericMessage": {
+    "defaultMessage": "An unknown error occurred. Please try again."
+  },
+  "api.errors.genericMessageWithCode": {
+    "defaultMessage": "The server returned an unexpected resonse ({code}). Please try again."
+  },
+  "api.errors.genericMessageWithMessage": {
+    "defaultMessage": "Error: {message} ({code}/{name}). Please try again."
+  },
+  "api.errors.genericTitle": {
+    "defaultMessage": "Something went wrong"
+  },
+  "api.errors.parsingErrorMessage": {
+    "defaultMessage": "Error parsing server response ({error}). Please try again."
+  },
   "app.footer.copyrightNotice": {
     "defaultMessage": "© {now, date, ::yyyy} {appName}. All rights reserved."
   },
-  "app.footer.linkGroups.legal.header": {
+  "app.footer.linkGroups.legal": {
     "defaultMessage": "Legal"
   },
-  "app.footer.linkGroups.resources.header": {
+  "app.footer.linkGroups.resources": {
     "defaultMessage": "Resources"
   },
   "app.footer.links.contact.label": {
@@ -27,38 +45,33 @@
     "defaultMessage": "The form had to be reloaded{reason, select, security_csrf_violation { because the security token expired.} security_identity_mismatch { because your session changed} self_service_flow_expired { because the form expired} self_service_flow_return_to_forbidden { because the return URL is invalid} other {}}. Please try again.",
     "description": "The message telling the user that the form they submitted had to be reloaded"
   },
-  "auth.hompageButton.label": {
-    "defaultMessage": "Go to the homepage"
-  },
-  "auth.loggedInNotice.messageWithUsername": {
+  "auth.loggedInAlreadyNotice.messageWithUsername": {
     "defaultMessage": "You're already logged in as <e>{username}</e>.",
     "description": "The message telling the user that they are already logged in when their username is available"
   },
-  "auth.loggedInNotice.messageWithoutUsername": {
+  "auth.loggedInAlreadyNotice.messageWithoutUsername": {
     "defaultMessage": "You're already logged in.",
     "description": "The message telling the user that they are already logged in when their username is not available"
   },
-  "auth.login.2faTitle": {
+  "auth.login.signUpInsteadMessage": {
+    "defaultMessage": "Don't have an account yet? <link>Sign up!</link>",
+    "description": "The message shown on the login page that directs the user to create an account instead of logging in."
+  },
+  "auth.loginForm.oidcDividerText": {
+    "defaultMessage": "or",
+    "description": "The text displayed in the divider that shows additional login options"
+  },
+  "auth.loginFormTitle.2fa": {
     "defaultMessage": "Two-Factor Authentication",
     "description": "The title displayed at the top of the login form when requesting the user's 2FA code"
   },
-  "auth.login.confirmAccessTitle": {
+  "auth.loginFormTitle.confirmAccess": {
     "defaultMessage": "Confirm access",
     "description": "The title displayed at the top of the login form when the user is already logged in but we need them to enter their password again to reconfirm their access"
   },
-  "auth.login.loginTitle": {
+  "auth.loginFormTitle.login": {
     "defaultMessage": "Log in to your account",
     "description": "The title displayed at the top of the login form when logging in"
-  },
-  "auth.login.noAccountLink": {
-    "defaultMessage": "Don't have an account yet? <link>Sign up!</link>"
-  },
-  "auth.login.oidcHeaderText": {
-    "defaultMessage": "or",
-    "description": "the text displayed in the divider that shows additional login options"
-  },
-  "auth.loginButton.label": {
-    "defaultMessage": "Log In"
   },
   "auth.loginLink.label": {
     "defaultMessage": "Log In"
@@ -66,117 +79,109 @@
   "auth.logoutButton.label": {
     "defaultMessage": "Log Out"
   },
-  "auth.passwordInput.togglePasswordVisibilityLabel": {
+  "auth.passwordInput.togglePasswordVisibility.label": {
     "defaultMessage": "{action, select, hide {Mask} show {Reveal} other {}} password",
     "description": "The hint text shown when hovering over the button that toggles the visibility of the users password."
   },
   "auth.recovery.title": {
     "defaultMessage": "Recover your account",
-    "description": "The title displayed at the top of the recovery form"
+    "description": "The title displayed at the top of the password recovery form"
   },
   "auth.recoveryLink.label": {
     "defaultMessage": "Forgot your password?",
     "description": "The text displayed for a link that takes you to the account recovery page"
   },
-  "auth.registrationButton.content": {
-    "defaultMessage": "Sign Up"
-  },
-  "auth.registrationLink.content": {
-    "defaultMessage": "Sign Up"
-  },
   "auth.registration.alreadyHaveAccountLink": {
     "defaultMessage": "Already have an account? {loginLink}"
-  },
-  "auth.registration.oidcTItle": {
-    "defaultMessage": "or",
-    "description": "the text displayed in the divider that shows additional registration options"
   },
   "auth.registration.title": {
     "defaultMessage": "Create your account",
     "description": "The title displayed at the top of the registration form"
   },
-  "auth.settings.oidcTitle": {
-    "defaultMessage": "3rd Party Log-in",
-    "description": "The heading displayed at the top of the change password section of the settings form"
+  "auth.registrationForm.oidcDividerText": {
+    "defaultMessage": "or",
+    "description": "The text displayed in the divider that shows additional registration options"
   },
-  "auth.settings.passwordTitle": {
-    "defaultMessage": "Change Password",
+  "auth.registrationLink.label": {
+    "defaultMessage": "Sign Up"
+  },
+  "auth.settings.oidcSection.title": {
+    "defaultMessage": "3rd Party Log-in",
     "description": "The heading displayed at the top of the change password section of the settings form"
   },
   "auth.settings.title": {
     "defaultMessage": "Profile Settings",
     "description": "The title displayed at the top of the settings form"
   },
-  "auth.settings.totpTitle": {
+  "auth.settings.totpSection.title": {
     "defaultMessage": "Two-factor authentication",
     "description": "The heading displayed at the top of the change password section of the settings form"
   },
-  "auth.settings.webauthnTitle": {
+  "auth.settings.webauthnSection.title": {
     "defaultMessage": "Hardware Tokens and Biometrics",
+    "description": "The heading displayed at the top of the change password section of the settings form"
+  },
+  "auth.settingsForm.changePasswordSection.title": {
+    "defaultMessage": "Change Password",
     "description": "The heading displayed at the top of the change password section of the settings form"
   },
   "auth.verification.title": {
     "defaultMessage": "Verify your account",
     "description": "The title displayed at the top of the verification form"
   },
-  "error.api.errorCode": {
-    "defaultMessage": "The server returned an unexpected resonse ({code}). Please try again."
+  "common.dataTable.sortHeader.ariaLabel": {
+    "defaultMessage": "{sort, select, asc {Sorted ascending} desc {Sorted descending} other {Not sorted}}",
+    "description": "The screen reader hint to show for the sort indicator in the table header"
   },
-  "error.api.errorMessage": {
-    "defaultMessage": "Error: {message} ({code}/{name}). Please try again."
+  "common.hompageButton.label": {
+    "defaultMessage": "Go to the homepage"
   },
-  "error.api.fetchError": {
-    "defaultMessage": "Unexpected client error ({error}). Please try again."
-  },
-  "error.api.parsingError": {
-    "defaultMessage": "Error parsing server response ({error}). Please try again."
-  },
-  "error.api.unknown": {
-    "defaultMessage": "An unknown error occurred. Please try again."
-  },
-  "errors.apiErrorAlert.message": {
-    "defaultMessage": "Something went wrong"
+  "common.loadingSpinner.label": {
+    "defaultMessage": "Loading...",
+    "description": "The screen reader text to show for the spinning loading indicator"
   },
   "errors.errorAlert.message": {
     "defaultMessage": "Something went wrong :("
   },
-  "errors.errorAlert.retryButton": {
+  "errors.errorAlert.retryButton.label": {
     "defaultMessage": "Try Again"
   },
   "errors.notFoundPage.errorCode": {
-    "defaultMessage": "Code: {code}"
+    "defaultMessage": "Code: {code}",
+    "description": "Additional text on the error page that indicates this is a '404' error code"
   },
-  "errors.notFoundPage.goToHomepageButton": {
-    "defaultMessage": "Go to the homepage"
+  "errors.notFoundPage.heading": {
+    "defaultMessage": "Ooops!",
+    "description": "The text shown at the top of the not found page"
   },
   "errors.notFoundPage.message": {
-    "defaultMessage": "We can't seem to find that page."
+    "defaultMessage": "We can't seem to find that page.",
+    "description": "Error message shown on the not found page below the heading"
   },
-  "errors.notFoundPage.pageHeading": {
-    "defaultMessage": "Ooops!"
-  },
-  "errors.notFoundPage.pageTitle": {
-    "defaultMessage": "Not Found"
+  "errors.notFoundPage.title": {
+    "defaultMessage": "Not Found",
+    "description": "The title shown in the browser tab/window for the not found page"
   },
   "forms.saveButton.label": {
     "defaultMessage": "Save"
   },
   "i18n.localErrorToast.title": {
-    "defaultMessage": "Unable to load locale {locale}"
+    "defaultMessage": "Unable to load locale {locale}",
+    "description": "The toast message shown when a locale fails to load"
+  },
+  "pages.contactUs.heading": {
+    "defaultMessage": "Contact Us"
   },
   "pages.contactUs.instructions": {
     "defaultMessage": "Email us at <emailLink>{emailAddress}</emailLink> with any feedback, questions, problems, or feature requests."
   },
-  "pages.contactUs.pageHeading": {
+  "pages.contactUs.title": {
     "defaultMessage": "Contact Us"
   },
-  "pages.contactUs.pageTitle": {
-    "defaultMessage": "Contact Us"
-  },
-  "pages.faq.pageHeading": {
+  "pages.faq.heading": {
     "defaultMessage": "Frequently Asked Questions"
   },
-  "pages.faq.pageTitle": {
+  "pages.faq.title": {
     "defaultMessage": "FAQ"
   },
   "pages.home.features.alwaysUpToDate.description": {
@@ -213,26 +218,23 @@
   "pages.home.tagLine": {
     "defaultMessage": "Opinionated, production-ready, full-featured SaaS boilerplate."
   },
-  "pages.privacyPolicy.pageHeading": {
+  "pages.privacyPolicy.heading": {
     "defaultMessage": "Privacy Policy"
   },
-  "pages.privacyPolicy.pageTitle": {
+  "pages.privacyPolicy.title": {
     "defaultMessage": "Privacy Policy"
   },
-  "pages.termsAndConditions.pageHeading": {
+  "pages.termsAndConditions.heading": {
     "defaultMessage": "Terms and Conditions"
   },
-  "pages.termsAndConditions.pageTitle": {
+  "pages.termsAndConditions.title": {
     "defaultMessage": "Terms and Conditions"
   },
-  "pagination.nextPage": {
+  "pagination.nextPage.label": {
     "defaultMessage": "Next Page"
   },
-  "pagination.previousPage": {
+  "pagination.previousPage.label": {
     "defaultMessage": "Previous Page"
-  },
-  "table.sortHeader.ariaLabel": {
-    "defaultMessage": "{sort, select, asc {Sorted ascending} desc {Sorted descending} other {Not sorted}}"
   },
   "theme.colorModeSwitcher.switchColorModeLabel": {
     "defaultMessage": "Switch to {mode, select, dark {dark} light {light} other {}} mode"

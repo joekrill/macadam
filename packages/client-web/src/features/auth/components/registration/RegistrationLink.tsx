@@ -5,6 +5,10 @@ import {
 } from "../../../routing/components/RouterLink";
 import { useRegistrationLocation } from "../../hooks/useRegistrationLocation";
 
+export const RegistrationLinkLabel = () => (
+  <FormattedMessage id="auth.registrationLink.label" defaultMessage="Sign Up" />
+);
+
 export interface RegistrationLinkProps extends RouterLinkProps {}
 
 export const RegistrationLink = ({
@@ -15,12 +19,7 @@ export const RegistrationLink = ({
 
   return (
     <RouterLink {...props} to={to} state={state}>
-      {children || (
-        <FormattedMessage
-          id="auth.registrationLink.content"
-          defaultMessage="Sign Up"
-        />
-      )}
+      {children || <RegistrationLinkLabel />}
     </RouterLink>
   );
 };

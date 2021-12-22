@@ -31,13 +31,13 @@ x-kratos-defaults: &kratos-defaults
     SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://localtest.me
     SELFSERVICE_WHITELISTED_RETURN_URLS: https://localtest.me,http://localtest.me
     SELFSERVICE_FLOWS_ERROR_UI_URL: https://localtest.me/auth/error
-    SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localtest.me/settings
-    SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://localtest.me/auth/recovery
-    SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://localtest.me/auth/verification
+    SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localtest.me/account/settings
+    SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://localtest.me/account/recover
+    SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://localtest.me/account/verify
     SELFSERVICE_FLOWS_VERIFICATION_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localtest.me
     SELFSERVICE_FLOWS_LOGOUT_AFTER_DEFAULT_BROWSER_RETURN_URL: https://localtest.me
-    SELFSERVICE_FLOWS_LOGIN_UI_URL: https://localtest.me/auth/login
-    SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://localtest.me/auth/registration
+    SELFSERVICE_FLOWS_LOGIN_UI_URL: https://localtest.me/login
+    SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://localtest.me/signup
     SELFSERVICE_METHODS_WEBAUTHN_CONFIG_RP_ID: localtest.me
   volumes:
     - ./services/kratos/config:/etc/config/kratos

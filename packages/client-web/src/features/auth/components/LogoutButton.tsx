@@ -2,6 +2,10 @@ import { Button, ButtonProps, forwardRef } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
 import { useLogout } from "../hooks/useLogout";
 
+export const LogoutButtonLabel = () => (
+  <FormattedMessage id="auth.logoutButton.label" defaultMessage="Log Out" />
+);
+
 export interface LogoutButtonProps extends ButtonProps {
   onLogoutComplete?: () => void;
 }
@@ -20,12 +24,7 @@ export const LogoutButton = forwardRef<LogoutButtonProps, "button">(
         onClick={onClickHandler}
         isLoading={isLoading}
       >
-        {children || (
-          <FormattedMessage
-            id="auth.logoutButton.label"
-            defaultMessage="Log Out"
-          />
-        )}
+        {children || <LogoutButtonLabel />}
       </Button>
     );
   }

@@ -42,7 +42,7 @@ const Template: Story<StoryProps> = ({ colorMode, ...props }) => {
         </DarkMode>
       );
     }
-    case "dark": {
+    case "light": {
       return (
         <LightMode>
           <ColorModeSwitcher {...props} />

@@ -5,7 +5,7 @@ import { Link as RouterLink } from "react-router-dom";
 export interface RecoveryLinkProps extends Omit<LinkProps, "as" | "to"> {}
 
 export const RecoveryLink = ({ children, ...props }: RecoveryLinkProps) => (
-  <Link as={RouterLink} to="/auth/recovery" {...props}>
+  <Link as={RouterLink} to="/account/recovery" {...props}>
     {children || (
       <FormattedMessage
         id="auth.recoveryLink.label"

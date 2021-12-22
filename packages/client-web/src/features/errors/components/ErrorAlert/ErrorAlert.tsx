@@ -70,7 +70,7 @@ export const ErrorAlert = ({
           onClick={onRetryClick}
         >
           <FormattedMessage
-            id="errors.errorAlert.retryButton"
+            id="errors.errorAlert.retryButton.label"
             defaultMessage="Try Again"
           />
         </Button>

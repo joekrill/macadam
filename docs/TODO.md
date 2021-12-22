@@ -1,6 +1,7 @@
 ## "v1" Milestone
 
-- (client-web) consistent key naming strategy (document + implement)
+- Move pagination/sorting components to "common" feature?
+- SELFSERVICE_FLOWS_ERROR_UI_URL?
 - (client-web) save locale selection across reloads + Autodetect browser locale
 - (api-server) consider namespacing all contexts?
 - (kratos) Flatten traits?
@@ -13,7 +14,6 @@
 - CI script
   - eslint+prettier?
 - CI/CD pipeline
-- "Down for Maintenance" state
 - (client-web) contact form
 - Background tasks
   - https://github.com/OptimalBits/bull
@@ -22,11 +22,12 @@
 - Docs/standards
   - https://docs.devland.is
 - (client-web) review icons (for consistency)
-- (client-web) upgrade create-react-app
 - (client-web) better table styling (+responsive)
+- (client-web) upgrade create-react-app
 
 # "v1"+
 
+- Use svgo for SVG optimization
 - Figure out how to share logic between front-end/back-end while still having hot-reloading work and without ejecting
 - setup lint-staged
   - apply this to other things as well? i18n updates?
@@ -34,6 +35,7 @@
   - https://github.com/node-formidable/formidable
   - https://hub.docker.com/r/minio/minio/
 - commitlint
+- "Down for Maintenance" state
 
 ## Low priority
 
@@ -50,6 +52,8 @@
 - (api-server) better `ctx.state` serializer for pino (use zod?)
 - (client-web) localize zod validation error/issue messages
   - https://github.com/colinhacks/zod/blob/master/ERROR_HANDLING.md#customizing-errors-with-zoderrormap
+- (client-web) localize kratos messages (is this possible currently?)
+- Reduce number of requests made by sentry
 
 ## Blocked
 

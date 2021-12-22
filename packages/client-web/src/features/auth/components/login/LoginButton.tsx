@@ -1,8 +1,8 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
-import { FormattedMessage } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
 import { useLoginLocation } from "../../hooks/useLoginLocation";
 import { useSession } from "../../hooks/useSession";
+import { LoginLinkLabel } from "./LoginLink";
 
 export interface LoginButtonProps extends ButtonProps {}
 
@@ -22,9 +22,7 @@ export const LoginButton = ({
       as={RouterLink}
       isDisabled={isDisabled || isUnknown}
     >
-      {children || (
-        <FormattedMessage id="auth.loginButton.label" defaultMessage="Log In" />
-      )}
+      {children || <LoginLinkLabel />}
     </Button>
   );
 };

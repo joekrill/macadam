@@ -96,9 +96,11 @@ export const DataTable = <D extends object>({
                       as={column.isSortedDesc ? FaChevronDown : FaChevronUp}
                       aria-label={formatMessage(
                         {
-                          id: "table.sortHeader.ariaLabel",
+                          id: "common.dataTable.sortHeader.ariaLabel",
                           defaultMessage:
                             "{sort, select, asc {Sorted ascending} desc {Sorted descending} other {Not sorted}}",
+                          description:
+                            "The screen reader hint to show for the sort indicator in the table header",
                         },
                         {
                           sort: column.isSorted

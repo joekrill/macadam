@@ -14,7 +14,7 @@ export const useApiErrorMessage = (
       if (error.status === "PARSING_ERROR") {
         return formatMessage(
           {
-            id: "error.api.parsingError",
+            id: "api.errors.parsingErrorMessage",
             defaultMessage:
               "Error parsing server response ({error}). Please try again.",
           },
@@ -29,7 +29,7 @@ export const useApiErrorMessage = (
       if (error.status === "FETCH_ERROR") {
         return formatMessage(
           {
-            id: "error.api.fetchError",
+            id: "api.errors.fetchErrorMessage",
             defaultMessage:
               "Unexpected client error ({error}). Please try again.",
           },
@@ -68,7 +68,7 @@ export const useApiErrorMessage = (
     if (message) {
       return formatMessage(
         {
-          id: "error.api.errorMessage",
+          id: "api.errors.genericMessageWithMessage",
           defaultMessage: "Error: {message} ({code}/{name}). Please try again.",
         },
         {
@@ -82,7 +82,7 @@ export const useApiErrorMessage = (
     if (code || name) {
       return formatMessage(
         {
-          id: "error.api.errorCode",
+          id: "api.errors.genericMessageWithCode",
           defaultMessage:
             "The server returned an unexpected resonse ({code}). Please try again.",
         },
@@ -93,7 +93,7 @@ export const useApiErrorMessage = (
     }
 
     return formatMessage({
-      id: "error.api.unknown",
+      id: "api.errors.genericMessage",
       defaultMessage: "An unknown error occurred. Please try again.",
     });
   }, [error, formatMessage]);

@@ -1,4 +1,88 @@
 {
+  "api.errors.fetchErrorMessage": [
+    {
+      "type": 0,
+      "value": "Unexpected client error ("
+    },
+    {
+      "type": 1,
+      "value": "error"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "api.errors.genericMessage": [
+    {
+      "type": 0,
+      "value": "An unknown error occurred. Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "api.errors.genericMessageWithCode": [
+    {
+      "type": 0,
+      "value": "The server returned an unexpected resonse ("
+    },
+    {
+      "type": 1,
+      "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "api.errors.genericMessageWithMessage": [
+    {
+      "type": 0,
+      "value": "Error: "
+    },
+    {
+      "type": 1,
+      "value": "message"
+    },
+    {
+      "type": 0,
+      "value": " ("
+    },
+    {
+      "type": 1,
+      "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "/"
+    },
+    {
+      "type": 1,
+      "value": "name"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "api.errors.genericTitle": [
+    {
+      "type": 0,
+      "value": "Something went wrongSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "api.errors.parsingErrorMessage": [
+    {
+      "type": 0,
+      "value": "Error parsing server response ("
+    },
+    {
+      "type": 1,
+      "value": "error"
+    },
+    {
+      "type": 0,
+      "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "app.footer.copyrightNotice": [
     {
       "type": 0,
@@ -28,13 +112,13 @@
       "value": ". All rights reserved.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "app.footer.linkGroups.legal.header": [
+  "app.footer.linkGroups.legal": [
     {
       "type": 0,
       "value": "LegalSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "app.footer.linkGroups.resources.header": [
+  "app.footer.linkGroups.resources": [
     {
       "type": 0,
       "value": "ResourcesSSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -68,10 +152,12 @@
     {
       "options": {
         "browser_location_change_required": {
-          "value": []
+          "value": [
+          ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         },
         "session_aal2_required": {
           "value": [
@@ -106,7 +192,8 @@
     {
       "options": {
         "other": {
-          "value": []
+          "value": [
+          ]
         },
         "security_csrf_violation": {
           "value": [
@@ -149,13 +236,7 @@
       "value": ". Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.hompageButton.label": [
-    {
-      "type": 0,
-      "value": "Go to the homepageSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.loggedInNotice.messageWithUsername": [
+  "auth.loggedInAlreadyNotice.messageWithUsername": [
     {
       "type": 0,
       "value": "You're already logged in as "
@@ -175,31 +256,13 @@
       "value": ".SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.loggedInNotice.messageWithoutUsername": [
+  "auth.loggedInAlreadyNotice.messageWithoutUsername": [
     {
       "type": 0,
       "value": "You're already logged in.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.login.2faTitle": [
-    {
-      "type": 0,
-      "value": "Two-Factor AuthenticationSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.login.confirmAccessTitle": [
-    {
-      "type": 0,
-      "value": "Confirm accessSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.login.loginTitle": [
-    {
-      "type": 0,
-      "value": "Log in to your accountSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.login.noAccountLink": [
+  "auth.login.signUpInsteadMessage": [
     {
       "type": 0,
       "value": "Don't have an account yet? "
@@ -209,16 +272,28 @@
       "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.login.oidcHeaderText": [
+  "auth.loginForm.oidcDividerText": [
     {
       "type": 0,
       "value": "orSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.loginButton.label": [
+  "auth.loginFormTitle.2fa": [
     {
       "type": 0,
-      "value": "Log InSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Two-Factor AuthenticationSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.loginFormTitle.confirmAccess": [
+    {
+      "type": 0,
+      "value": "Confirm accessSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.loginFormTitle.login": [
+    {
+      "type": 0,
+      "value": "Log in to your accountSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "auth.loginLink.label": [
@@ -233,7 +308,7 @@
       "value": "Log OutSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.passwordInput.togglePasswordVisibilityLabel": [
+  "auth.passwordInput.togglePasswordVisibility.label": [
     {
       "options": {
         "hide": {
@@ -245,7 +320,8 @@
           ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         },
         "show": {
           "value": [
@@ -276,18 +352,6 @@
       "value": "Forgot your password?SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.registrationButton.content": [
-    {
-      "type": 0,
-      "value": "Sign UpSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.registrationLink.content": [
-    {
-      "type": 0,
-      "value": "Sign UpSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
   "auth.registration.alreadyHaveAccountLink": [
     {
       "type": 0,
@@ -298,28 +362,28 @@
       "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.registration.oidcTItle": [
-    {
-      "type": 0,
-      "value": "orSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
   "auth.registration.title": [
     {
       "type": 0,
       "value": "Create your accountSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.settings.oidcTitle": [
+  "auth.registrationForm.oidcDividerText": [
+    {
+      "type": 0,
+      "value": "orSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.registrationLink.label": [
+    {
+      "type": 0,
+      "value": "Sign UpSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.settings.oidcSection.title": [
     {
       "type": 0,
       "value": "3rd Party Log-inSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.settings.passwordTitle": [
-    {
-      "type": 0,
-      "value": "Change PasswordSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "auth.settings.title": [
@@ -328,16 +392,22 @@
       "value": "Profile SettingsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.settings.totpTitle": [
+  "auth.settings.totpSection.title": [
     {
       "type": 0,
       "value": "Two-factor authenticationSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.settings.webauthnTitle": [
+  "auth.settings.webauthnSection.title": [
     {
       "type": 0,
       "value": "Hardware Tokens and BiometricsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.settingsForm.changePasswordSection.title": [
+    {
+      "type": 0,
+      "value": "Change PasswordSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "auth.verification.title": [
@@ -346,88 +416,22 @@
       "value": "Verify your accountSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "error.api.errorCode": [
+  "common.dataTable.sortHeader.ariaLabel": [
     {
       "type": 0,
-      "value": "The server returned an unexpected resonse ("
-    },
-    {
-      "type": 1,
-      "value": "code"
-    },
-    {
-      "type": 0,
-      "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "error.api.errorMessage": [
+  "common.hompageButton.label": [
     {
       "type": 0,
-      "value": "Error: "
-    },
-    {
-      "type": 1,
-      "value": "message"
-    },
-    {
-      "type": 0,
-      "value": " ("
-    },
-    {
-      "type": 1,
-      "value": "code"
-    },
-    {
-      "type": 0,
-      "value": "/"
-    },
-    {
-      "type": 1,
-      "value": "name"
-    },
-    {
-      "type": 0,
-      "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Go to the homepageSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "error.api.fetchError": [
+  "common.loadingSpinner.label": [
     {
       "type": 0,
-      "value": "Unexpected client error ("
-    },
-    {
-      "type": 1,
-      "value": "error"
-    },
-    {
-      "type": 0,
-      "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "error.api.parsingError": [
-    {
-      "type": 0,
-      "value": "Error parsing server response ("
-    },
-    {
-      "type": 1,
-      "value": "error"
-    },
-    {
-      "type": 0,
-      "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "error.api.unknown": [
-    {
-      "type": 0,
-      "value": "An unknown error occurred. Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "errors.apiErrorAlert.message": [
-    {
-      "type": 0,
-      "value": "Something went wrongSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Loading...SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "errors.errorAlert.message": [
@@ -436,7 +440,7 @@
       "value": "Something went wrong :(SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "errors.errorAlert.retryButton": [
+  "errors.errorAlert.retryButton.label": [
     {
       "type": 0,
       "value": "Try AgainSSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -452,10 +456,10 @@
       "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "errors.notFoundPage.goToHomepageButton": [
+  "errors.notFoundPage.heading": [
     {
       "type": 0,
-      "value": "Go to the homepageSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Ooops!SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "errors.notFoundPage.message": [
@@ -464,13 +468,7 @@
       "value": "We can't seem to find that page.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "errors.notFoundPage.pageHeading": [
-    {
-      "type": 0,
-      "value": "Ooops!SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "errors.notFoundPage.pageTitle": [
+  "errors.notFoundPage.title": [
     {
       "type": 0,
       "value": "Not FoundSSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -490,6 +488,12 @@
     {
       "type": 0,
       "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "pages.contactUs.heading": [
+    {
+      "type": 0,
+      "value": "Contact UsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "pages.contactUs.instructions": [
@@ -512,25 +516,19 @@
       "value": " with any feedback, questions, problems, or feature requests.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "pages.contactUs.pageHeading": [
+  "pages.contactUs.title": [
     {
       "type": 0,
       "value": "Contact UsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "pages.contactUs.pageTitle": [
-    {
-      "type": 0,
-      "value": "Contact UsSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.faq.pageHeading": [
+  "pages.faq.heading": [
     {
       "type": 0,
       "value": "Frequently Asked QuestionsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "pages.faq.pageTitle": [
+  "pages.faq.title": [
     {
       "type": 0,
       "value": "FAQSSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -602,46 +600,40 @@
       "value": "Opinionated, production-ready, full-featured SaaS boilerplate.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "pages.privacyPolicy.pageHeading": [
+  "pages.privacyPolicy.heading": [
     {
       "type": 0,
       "value": "Privacy PolicySSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "pages.privacyPolicy.pageTitle": [
+  "pages.privacyPolicy.title": [
     {
       "type": 0,
       "value": "Privacy PolicySSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "pages.termsAndConditions.pageHeading": [
+  "pages.termsAndConditions.heading": [
     {
       "type": 0,
       "value": "Terms and ConditionsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "pages.termsAndConditions.pageTitle": [
+  "pages.termsAndConditions.title": [
     {
       "type": 0,
       "value": "Terms and ConditionsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "pagination.nextPage": [
+  "pagination.nextPage.label": [
     {
       "type": 0,
       "value": "Next PageSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "pagination.previousPage": [
+  "pagination.previousPage.label": [
     {
       "type": 0,
       "value": "Previous PageSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "table.sortHeader.ariaLabel": [
-    {
-      "type": 0,
-      "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [
@@ -668,7 +660,8 @@
           ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         }
       },
       "type": 5,

@@ -39,15 +39,16 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
 #### Internationalization
 
-I18n is implemented using [Format.JS](https://formatjs.io/) and React-Intl. When possible, use the `<FormattedMessage />` or related component, or the imperative equivalents via the `useIntl()` hook. For messages be sure to use an id that makes sense. This is typically in the format of `<feature>.<component>.<part>'.
+I18n is implemented using [Format.JS](https://formatjs.io/) and React-Intl. When possible, use the `<FormattedMessage />` or related component, or the imperative equivalents via the `useIntl()` hook.
+
+##### Message id
+
+Message `id`s should follow the format of `<feature>.<component>.<part>' or `<feature>.<component>.<subcomponent>.<part>'. Common `part` names include:
+
+- `label`
+- `ariaLabel`
 
 ```tsx
 // Using <FormattedMessage>

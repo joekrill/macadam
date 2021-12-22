@@ -21,7 +21,7 @@ export const Faq = (props: FaqProps) => {
       <Helmet>
         <title>
           {formatMessage({
-            id: "pages.faq.pageTitle",
+            id: "pages.faq.title",
             defaultMessage: "FAQ",
           })}
         </title>
@@ -29,7 +29,7 @@ export const Faq = (props: FaqProps) => {
       <ScrollToTop />
       <Heading mb={3}>
         <FormattedMessage
-          id="pages.faq.pageHeading"
+          id="pages.faq.heading"
           defaultMessage="Frequently Asked Questions"
         />
       </Heading>

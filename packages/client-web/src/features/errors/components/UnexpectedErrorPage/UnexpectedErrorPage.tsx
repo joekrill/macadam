@@ -7,8 +7,9 @@ export interface UnexpectedErrorPageProps {
 /**
  * A low level error page to display for unknown errors:
  *
- * - Do not rely on Chakra components and theme styling here, as this is meant
- *   to be a base level error page that is rendered before the ChakraProvider.
+ * - Do not rely on Chakra components, theme styling here, or other contexts
+ *   (redux, i18n, etc) as this is meant to be a base level error page that is
+ *   rendered before most context providers.
  * - Avoid importing external depedencies if possible, to keep this page itself
  *   free from errors.
  *

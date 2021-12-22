@@ -37,8 +37,8 @@ export const RegistrationForm = ({
         <>
           <DividerWithText>
             <FormattedMessage
-              id="auth.registration.oidcTItle"
-              description="the text displayed in the divider that shows additional registration options"
+              id="auth.registrationForm.oidcDividerText"
+              description="The text displayed in the divider that shows additional registration options"
               defaultMessage="or"
             />
           </DividerWithText>

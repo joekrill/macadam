@@ -3,7 +3,9 @@ import { FormattedMessage } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
 import { useLoginLocation } from "../../hooks/useLoginLocation";
 
-export const LOGIN_PATH = "/auth/login";
+export const LoginLinkLabel = () => (
+  <FormattedMessage id="auth.loginLink.label" defaultMessage="Log In" />
+);
 
 export interface LoginLinkProps extends LinkProps {}
 
@@ -12,9 +14,7 @@ export const LoginLink = ({ children, onClick, ...props }: LoginLinkProps) => {
 
   return (
     <Link {...props} {...location} as={RouterLink}>
-      {children || (
-        <FormattedMessage id="auth.loginLink.label" defaultMessage="Log In" />
-      )}
+      {children || <LoginLinkLabel />}
     </Link>
   );
 };

@@ -1,4 +1,88 @@
 {
+  "api.errors.fetchErrorMessage": [
+    {
+      "type": 0,
+      "value": "[!! Ũńèèèẋṗèèèćṭèèèḋ ćććĺíèèèńṭ èŕŕŕŕŏŕ ( !!]"
+    },
+    {
+      "type": 1,
+      "value": "error"
+    },
+    {
+      "type": 0,
+      "value": "[!! ). Ṕĺèèèâśèèè ṭŕŕŕẏ âââĝâíííń. !!]"
+    }
+  ],
+  "api.errors.genericMessage": [
+    {
+      "type": 0,
+      "value": "[!! Ḁń ůńǩǩǩńŏẘẘẘń èèèŕŕŏŏŏŕ ŏŏŏććůůůŕŕèèèḋ. Ṕĺèèèâśèèè ṭŕŕŕẏ âââĝâíííń. !!]"
+    }
+  ],
+  "api.errors.genericMessageWithCode": [
+    {
+      "type": 0,
+      "value": "[!! Ṯḫèèè śèèèŕṿèèèŕ ŕŕŕèṭůůůŕńèèèḋ âââń ůůůńèẋẋẋṗèćććṭèḋḋḋ ŕèèèśŏńńńśè ( !!]"
+    },
+    {
+      "type": 1,
+      "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "[!! ). Ṕĺèèèâśèèè ṭŕŕŕẏ âââĝâíííń. !!]"
+    }
+  ],
+  "api.errors.genericMessageWithMessage": [
+    {
+      "type": 0,
+      "value": "[!! Ḕŕŕŕŕŏŕ:  !!]"
+    },
+    {
+      "type": 1,
+      "value": "message"
+    },
+    {
+      "type": 0,
+      "value": "[!!  ( !!]"
+    },
+    {
+      "type": 1,
+      "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "[!! / !!]"
+    },
+    {
+      "type": 1,
+      "value": "name"
+    },
+    {
+      "type": 0,
+      "value": "[!! ). Ṕĺèèèâśèèè ṭŕŕŕẏ âââĝâíííń. !!]"
+    }
+  ],
+  "api.errors.genericTitle": [
+    {
+      "type": 0,
+      "value": "[!! Ṡŏṁṁṁèṭḫḫḫíńĝĝĝ ẘèèèńṭ ẘŕŏŏŏńĝ !!]"
+    }
+  ],
+  "api.errors.parsingErrorMessage": [
+    {
+      "type": 0,
+      "value": "[!! Ḕŕŕŕŕŏŕ ṗâŕŕŕśíńńńĝ śśśèŕṿṿṿèŕ ŕèśśśṗŏńńńśè ( !!]"
+    },
+    {
+      "type": 1,
+      "value": "error"
+    },
+    {
+      "type": 0,
+      "value": "[!! ). Ṕĺèèèâśèèè ṭŕŕŕẏ âââĝâíííń. !!]"
+    }
+  ],
   "app.footer.copyrightNotice": [
     {
       "type": 0,
@@ -28,13 +112,13 @@
       "value": "[!! . ḀḀḀĺĺ ŕíĝĝĝḫṭśśś ŕèèèśèŕŕŕṿèḋḋḋ. !!]"
     }
   ],
-  "app.footer.linkGroups.legal.header": [
+  "app.footer.linkGroups.legal": [
     {
       "type": 0,
       "value": "[!! Ļèĝĝĝâĺ !!]"
     }
   ],
-  "app.footer.linkGroups.resources.header": [
+  "app.footer.linkGroups.resources": [
     {
       "type": 0,
       "value": "[!! Ŕèśśśŏůŕŕŕćèśśś !!]"
@@ -68,10 +152,12 @@
     {
       "options": {
         "browser_location_change_required": {
-          "value": []
+          "value": [
+          ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         },
         "session_aal2_required": {
           "value": [
@@ -106,7 +192,8 @@
     {
       "options": {
         "other": {
-          "value": []
+          "value": [
+          ]
         },
         "security_csrf_violation": {
           "value": [
@@ -149,13 +236,7 @@
       "value": "[!! . ṔṔṔĺèâââśè ṭŕẏẏẏ âĝĝĝâíńńń. !!]"
     }
   ],
-  "auth.hompageButton.label": [
-    {
-      "type": 0,
-      "value": "[!! Ḡŏ ṭŏ ṭḫèèè ḫŏŏŏṁèṗṗṗâĝèèè !!]"
-    }
-  ],
-  "auth.loggedInNotice.messageWithUsername": [
+  "auth.loggedInAlreadyNotice.messageWithUsername": [
     {
       "type": 0,
       "value": "[!! Ÿŏůůů'ŕèèè âĺĺĺŕèâââḋẏ ĺŏĝĝĝĝèḋḋḋ íńńń âśśś  !!]"
@@ -175,31 +256,13 @@
       "value": "[!! . !!]"
     }
   ],
-  "auth.loggedInNotice.messageWithoutUsername": [
+  "auth.loggedInAlreadyNotice.messageWithoutUsername": [
     {
       "type": 0,
       "value": "[!! Ÿŏůůů'ŕèèè âĺĺĺŕèâââḋẏ ĺŏĝĝĝĝèḋḋḋ íńńń. !!]"
     }
   ],
-  "auth.login.2faTitle": [
-    {
-      "type": 0,
-      "value": "[!! Ṯẘŏŏŏ-Ḟâââćṭŏŏŏŕ ḀḀḀůṭḫḫḫèńṭṭṭíćâââṭíŏŏŏń !!]"
-    }
-  ],
-  "auth.login.confirmAccessTitle": [
-    {
-      "type": 0,
-      "value": "[!! Ḉŏńńńḟíŕŕŕṁ âââććèèèśś !!]"
-    }
-  ],
-  "auth.login.loginTitle": [
-    {
-      "type": 0,
-      "value": "[!! Ļŏĝĝĝ íńńń ṭŏŏŏ ẏŏŏŏůŕ âććććŏůńńńṭ !!]"
-    }
-  ],
-  "auth.login.noAccountLink": [
+  "auth.login.signUpInsteadMessage": [
     {
       "type": 0,
       "value": "[!! Ḋŏńńń'ṭ ḫâṿṿṿè âââń âââććŏŏŏůńṭṭṭ ẏèèèṭ?  !!]"
@@ -215,16 +278,28 @@
       "value": "link"
     }
   ],
-  "auth.login.oidcHeaderText": [
+  "auth.loginForm.oidcDividerText": [
     {
       "type": 0,
       "value": "[!! ŏŕ !!]"
     }
   ],
-  "auth.loginButton.label": [
+  "auth.loginFormTitle.2fa": [
     {
       "type": 0,
-      "value": "[!! Ļŏĝĝĝ Ḭńńń !!]"
+      "value": "[!! Ṯẘŏŏŏ-Ḟâââćṭŏŏŏŕ ḀḀḀůṭḫḫḫèńṭṭṭíćâââṭíŏŏŏń !!]"
+    }
+  ],
+  "auth.loginFormTitle.confirmAccess": [
+    {
+      "type": 0,
+      "value": "[!! Ḉŏńńńḟíŕŕŕṁ âââććèèèśś !!]"
+    }
+  ],
+  "auth.loginFormTitle.login": [
+    {
+      "type": 0,
+      "value": "[!! Ļŏĝĝĝ íńńń ṭŏŏŏ ẏŏŏŏůŕ âććććŏůńńńṭ !!]"
     }
   ],
   "auth.loginLink.label": [
@@ -239,7 +314,7 @@
       "value": "[!! Ļŏĝĝĝ Õůůůṭ !!]"
     }
   ],
-  "auth.passwordInput.togglePasswordVisibilityLabel": [
+  "auth.passwordInput.togglePasswordVisibility.label": [
     {
       "options": {
         "hide": {
@@ -251,7 +326,8 @@
           ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         },
         "show": {
           "value": [
@@ -282,18 +358,6 @@
       "value": "[!! Ḟŏŕŕŕĝŏṭṭṭ ẏŏŏŏůŕ ṗâśśśśẘŏŏŏŕḋ? !!]"
     }
   ],
-  "auth.registrationButton.content": [
-    {
-      "type": 0,
-      "value": "[!! Ṡíĝĝĝń ŨŨŨṗ !!]"
-    }
-  ],
-  "auth.registrationLink.content": [
-    {
-      "type": 0,
-      "value": "[!! Ṡíĝĝĝń ŨŨŨṗ !!]"
-    }
-  ],
   "auth.registration.alreadyHaveAccountLink": [
     {
       "type": 0,
@@ -304,28 +368,28 @@
       "value": "loginLink"
     }
   ],
-  "auth.registration.oidcTItle": [
-    {
-      "type": 0,
-      "value": "[!! ŏŕ !!]"
-    }
-  ],
   "auth.registration.title": [
     {
       "type": 0,
       "value": "[!! Ḉŕèèèâṭèèè ẏŏŏŏůŕ âććććŏůńńńṭ !!]"
     }
   ],
-  "auth.settings.oidcTitle": [
+  "auth.registrationForm.oidcDividerText": [
+    {
+      "type": 0,
+      "value": "[!! ŏŕ !!]"
+    }
+  ],
+  "auth.registrationLink.label": [
+    {
+      "type": 0,
+      "value": "[!! Ṡíĝĝĝń ŨŨŨṗ !!]"
+    }
+  ],
+  "auth.settings.oidcSection.title": [
     {
       "type": 0,
       "value": "[!! 3ŕḋḋḋ Ṕâââŕṭẏẏẏ Ļŏŏŏĝ-íííń !!]"
-    }
-  ],
-  "auth.settings.passwordTitle": [
-    {
-      "type": 0,
-      "value": "[!! Ḉḫâââńĝèèè Ṕâââśśẘẘẘŏŕḋḋḋ !!]"
     }
   ],
   "auth.settings.title": [
@@ -334,16 +398,22 @@
       "value": "[!! Ṕŕŏŏŏḟíĺĺĺè ṠṠṠèṭṭṭṭíńĝĝĝś !!]"
     }
   ],
-  "auth.settings.totpTitle": [
+  "auth.settings.totpSection.title": [
     {
       "type": 0,
       "value": "[!! Ṯẘŏŏŏ-ḟâââćṭŏŏŏŕ âââůṭḫḫḫèńṭṭṭíćâââṭíŏŏŏń !!]"
     }
   ],
-  "auth.settings.webauthnTitle": [
+  "auth.settings.webauthnSection.title": [
     {
       "type": 0,
       "value": "[!! Ḣâŕŕŕḋẘâââŕè Ṯŏǩǩǩèńśśś âńńńḋ ḂḂḂíŏṁṁṁèṭŕŕŕíćśśś !!]"
+    }
+  ],
+  "auth.settingsForm.changePasswordSection.title": [
+    {
+      "type": 0,
+      "value": "[!! Ḉḫâââńĝèèè Ṕâââśśẘẘẘŏŕḋḋḋ !!]"
     }
   ],
   "auth.verification.title": [
@@ -352,88 +422,48 @@
       "value": "[!! Ṽèŕŕŕíḟẏẏẏ ẏŏŏŏůŕ âććććŏůńńńṭ !!]"
     }
   ],
-  "error.api.errorCode": [
+  "common.dataTable.sortHeader.ariaLabel": [
     {
-      "type": 0,
-      "value": "[!! Ṯḫèèè śèèèŕṿèèèŕ ŕŕŕèṭůůůŕńèèèḋ âââń ůůůńèẋẋẋṗèćććṭèḋḋḋ ŕèèèśŏńńńśè ( !!]"
-    },
-    {
-      "type": 1,
-      "value": "code"
-    },
-    {
-      "type": 0,
-      "value": "[!! ). Ṕĺèèèâśèèè ṭŕŕŕẏ âââĝâíííń. !!]"
+      "options": {
+        "asc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "[!! Ṡŏŕŕŕṭèḋḋḋ âśśśćèńńńḋíńńńĝ !!]"
+            }
+          ]
+        },
+        "desc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "[!! Ṡŏŕŕŕṭèḋḋḋ ḋèèèśćèèèńḋíííńĝ !!]"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "[!! Ŋŏṭṭṭ śŏŏŏŕṭèèèḋ !!]"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "sort"
     }
   ],
-  "error.api.errorMessage": [
+  "common.hompageButton.label": [
     {
       "type": 0,
-      "value": "[!! Ḕŕŕŕŕŏŕ:  !!]"
-    },
-    {
-      "type": 1,
-      "value": "message"
-    },
-    {
-      "type": 0,
-      "value": "[!!  ( !!]"
-    },
-    {
-      "type": 1,
-      "value": "code"
-    },
-    {
-      "type": 0,
-      "value": "[!! / !!]"
-    },
-    {
-      "type": 1,
-      "value": "name"
-    },
-    {
-      "type": 0,
-      "value": "[!! ). Ṕĺèèèâśèèè ṭŕŕŕẏ âââĝâíííń. !!]"
+      "value": "[!! Ḡŏ ṭŏ ṭḫèèè ḫŏŏŏṁèṗṗṗâĝèèè !!]"
     }
   ],
-  "error.api.fetchError": [
+  "common.loadingSpinner.label": [
     {
       "type": 0,
-      "value": "[!! Ũńèèèẋṗèèèćṭèèèḋ ćććĺíèèèńṭ èŕŕŕŕŏŕ ( !!]"
-    },
-    {
-      "type": 1,
-      "value": "error"
-    },
-    {
-      "type": 0,
-      "value": "[!! ). Ṕĺèèèâśèèè ṭŕŕŕẏ âââĝâíííń. !!]"
-    }
-  ],
-  "error.api.parsingError": [
-    {
-      "type": 0,
-      "value": "[!! Ḕŕŕŕŕŏŕ ṗâŕŕŕśíńńńĝ śśśèŕṿṿṿèŕ ŕèśśśṗŏńńńśè ( !!]"
-    },
-    {
-      "type": 1,
-      "value": "error"
-    },
-    {
-      "type": 0,
-      "value": "[!! ). Ṕĺèèèâśèèè ṭŕŕŕẏ âââĝâíííń. !!]"
-    }
-  ],
-  "error.api.unknown": [
-    {
-      "type": 0,
-      "value": "[!! Ḁń ůńǩǩǩńŏẘẘẘń èèèŕŕŏŏŏŕ ŏŏŏććůůůŕŕèèèḋ. Ṕĺèèèâśèèè ṭŕŕŕẏ âââĝâíííń. !!]"
-    }
-  ],
-  "errors.apiErrorAlert.message": [
-    {
-      "type": 0,
-      "value": "[!! Ṡŏṁṁṁèṭḫḫḫíńĝĝĝ ẘèèèńṭ ẘŕŏŏŏńĝ !!]"
+      "value": "[!! Ļŏâââḋíńńńĝ... !!]"
     }
   ],
   "errors.errorAlert.message": [
@@ -442,7 +472,7 @@
       "value": "[!! Ṡŏṁṁṁèṭḫḫḫíńĝĝĝ ẘèèèńṭ ẘŕŏŏŏńĝ :( !!]"
     }
   ],
-  "errors.errorAlert.retryButton": [
+  "errors.errorAlert.retryButton.label": [
     {
       "type": 0,
       "value": "[!! Ṯŕẏẏẏ Ḁĝĝĝâíńńń !!]"
@@ -458,10 +488,10 @@
       "value": "code"
     }
   ],
-  "errors.notFoundPage.goToHomepageButton": [
+  "errors.notFoundPage.heading": [
     {
       "type": 0,
-      "value": "[!! Ḡŏ ṭŏ ṭḫèèè ḫŏŏŏṁèṗṗṗâĝèèè !!]"
+      "value": "[!! Õŏŏŏŏṗś! !!]"
     }
   ],
   "errors.notFoundPage.message": [
@@ -470,13 +500,7 @@
       "value": "[!! Ẅè ćâńńń'ṭ śèèèèṁ ṭṭṭŏ ḟḟḟíńḋḋḋ ṭḫḫḫâṭ ṗâĝĝĝè. !!]"
     }
   ],
-  "errors.notFoundPage.pageHeading": [
-    {
-      "type": 0,
-      "value": "[!! Õŏŏŏŏṗś! !!]"
-    }
-  ],
-  "errors.notFoundPage.pageTitle": [
+  "errors.notFoundPage.title": [
     {
       "type": 0,
       "value": "[!! Ŋŏṭṭṭ Ḟŏŏŏůńḋḋḋ !!]"
@@ -496,6 +520,12 @@
     {
       "type": 1,
       "value": "locale"
+    }
+  ],
+  "pages.contactUs.heading": [
+    {
+      "type": 0,
+      "value": "[!! Ḉŏńńńṭâćććṭ ŨŨŨś !!]"
     }
   ],
   "pages.contactUs.instructions": [
@@ -518,25 +548,19 @@
       "value": "[!!  ẘíííṭḫ âńẏẏẏ ḟèèèèḋḃḃḃâćǩǩǩ, ɋɋɋůèśśśṭíŏŏŏńś, ṗŕŕŕŏḃĺĺĺèṁśśś, ŏŏŏŕ ḟḟḟèâṭṭṭůŕèèè ŕèèèɋůèèèśṭśśś. !!]"
     }
   ],
-  "pages.contactUs.pageHeading": [
+  "pages.contactUs.title": [
     {
       "type": 0,
       "value": "[!! Ḉŏńńńṭâćććṭ ŨŨŨś !!]"
     }
   ],
-  "pages.contactUs.pageTitle": [
-    {
-      "type": 0,
-      "value": "[!! Ḉŏńńńṭâćććṭ ŨŨŨś !!]"
-    }
-  ],
-  "pages.faq.pageHeading": [
+  "pages.faq.heading": [
     {
       "type": 0,
       "value": "[!! Ḟŕèèèɋůèèèńṭĺĺĺẏ ḀḀḀśǩèèèḋ ɊɊɊůèśśśṭíŏŏŏńś !!]"
     }
   ],
-  "pages.faq.pageTitle": [
+  "pages.faq.title": [
     {
       "type": 0,
       "value": "[!! ḞḀɊɊɊ !!]"
@@ -608,72 +632,40 @@
       "value": "[!! Õṗíííńíŏŏŏńâṭṭṭèḋ, ṗŕŕŕŏḋůůůćṭíííŏń-ŕèâââḋẏ, ḟůůůĺĺ-ḟèâââṭůŕŕŕèḋ ṠââââṠ ḃḃḃŏíĺĺĺèŕṗṗṗĺâṭṭṭè. !!]"
     }
   ],
-  "pages.privacyPolicy.pageHeading": [
+  "pages.privacyPolicy.heading": [
     {
       "type": 0,
       "value": "[!! Ṕŕíííṿâćććẏ ṔṔṔŏĺíííćẏ !!]"
     }
   ],
-  "pages.privacyPolicy.pageTitle": [
+  "pages.privacyPolicy.title": [
     {
       "type": 0,
       "value": "[!! Ṕŕíííṿâćććẏ ṔṔṔŏĺíííćẏ !!]"
     }
   ],
-  "pages.termsAndConditions.pageHeading": [
+  "pages.termsAndConditions.heading": [
     {
       "type": 0,
       "value": "[!! Ṯèŕŕŕṁś âńḋḋḋ Ḉŏŏŏńḋíííṭíŏŏŏńś !!]"
     }
   ],
-  "pages.termsAndConditions.pageTitle": [
+  "pages.termsAndConditions.title": [
     {
       "type": 0,
       "value": "[!! Ṯèŕŕŕṁś âńḋḋḋ Ḉŏŏŏńḋíííṭíŏŏŏńś !!]"
     }
   ],
-  "pagination.nextPage": [
+  "pagination.nextPage.label": [
     {
       "type": 0,
       "value": "[!! Ŋèẋẋẋṭ ṔṔṔâĝèèè !!]"
     }
   ],
-  "pagination.previousPage": [
+  "pagination.previousPage.label": [
     {
       "type": 0,
       "value": "[!! Ṕŕèèèṿíŏŏŏůś Ṕâĝĝĝè !!]"
-    }
-  ],
-  "table.sortHeader.ariaLabel": [
-    {
-      "options": {
-        "asc": {
-          "value": [
-            {
-              "type": 0,
-              "value": "[!! Ṡŏŕŕŕṭèḋḋḋ âśśśćèńńńḋíńńńĝ !!]"
-            }
-          ]
-        },
-        "desc": {
-          "value": [
-            {
-              "type": 0,
-              "value": "[!! Ṡŏŕŕŕṭèḋḋḋ ḋèèèśćèèèńḋíííńĝ !!]"
-            }
-          ]
-        },
-        "other": {
-          "value": [
-            {
-              "type": 0,
-              "value": "[!! Ŋŏṭṭṭ śŏŏŏŕṭèèèḋ !!]"
-            }
-          ]
-        }
-      },
-      "type": 5,
-      "value": "sort"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [
@@ -700,7 +692,8 @@
           ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         }
       },
       "type": 5,

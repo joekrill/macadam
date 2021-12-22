@@ -70,7 +70,7 @@ export const Pagination = ({
           <Icon as={FaChevronLeft} boxSize={4} />
           <VisuallyHidden>
             <FormattedMessage
-              id="pagination.previousPage"
+              id="pagination.previousPage.label"
               defaultMessage="Previous Page"
             />
           </VisuallyHidden>
@@ -105,7 +105,7 @@ export const Pagination = ({
           <Icon as={FaChevronRight} boxSize={4} />
           <VisuallyHidden>
             <FormattedMessage
-              id="pagination.nextPage"
+              id="pagination.nextPage.label"
               defaultMessage="Next Page"
             />
           </VisuallyHidden>

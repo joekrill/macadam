@@ -7,20 +7,20 @@ import {
 } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
-import { FooterHeading } from "./FooterHeading";
+import { FooterLinkGroupHeading } from "./FooterLinkGroupHeading";
 
-export const LinkGrid = (props: SimpleGridProps) => (
+export const FooterLinkGrid = (props: SimpleGridProps) => (
   <SimpleGrid
     columns={process.env.NODE_ENV === "development" ? 3 : 2}
     {...props}
   >
     <Box minW="130px">
-      <FooterHeading mb="4">
+      <FooterLinkGroupHeading mb="4">
         <FormattedMessage
-          id="app.footer.linkGroups.resources.header"
+          id="app.footer.linkGroups.resources"
           defaultMessage="Resources"
         />
-      </FooterHeading>
+      </FooterLinkGroupHeading>
       <Stack>
         <Link as={RouterLink} to="/faq">
           <FormattedMessage
@@ -37,12 +37,12 @@ export const LinkGrid = (props: SimpleGridProps) => (
       </Stack>
     </Box>
     <Box minW="130px">
-      <FooterHeading mb="4">
+      <FooterLinkGroupHeading mb="4">
         <FormattedMessage
-          id="app.footer.linkGroups.legal.header"
+          id="app.footer.linkGroups.legal"
           defaultMessage="Legal"
         />
-      </FooterHeading>
+      </FooterLinkGroupHeading>
       <Stack>
         <Link as={RouterLink} to="/privacy">
           <FormattedMessage
@@ -60,7 +60,7 @@ export const LinkGrid = (props: SimpleGridProps) => (
     </Box>
     {process.env.NODE_ENV === "development" && (
       <Box minW="130px">
-        <FooterHeading mb="4">Testing</FooterHeading>
+        <FooterLinkGroupHeading mb="4">Testing</FooterLinkGroupHeading>
         <Stack>
           <Link as={RouterLink} to="/crash">
             Crash test

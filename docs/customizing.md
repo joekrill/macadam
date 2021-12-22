@@ -19,7 +19,6 @@ In order to use this Macadam for a real project, fork it and make the following 
     - https://termly.io/
     - https://www.iubenda.com
     - https://getterms.io/
-  - Update/add social media links: `src/features/common/components/Footer/SocialMediaLinks.tsx`
 - `/services/kratos/templates`
   - Replace all occurances of "Macadam"
   - Replace all occurances of "help@example.com"

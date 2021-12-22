@@ -1,4 +1,88 @@
 {
+  "api.errors.fetchErrorMessage": [
+    {
+      "type": 0,
+      "value": "UNEXPECTED CLIENT ERROR ("
+    },
+    {
+      "type": 1,
+      "value": "error"
+    },
+    {
+      "type": 0,
+      "value": "). PLEASE TRY AGAIN."
+    }
+  ],
+  "api.errors.genericMessage": [
+    {
+      "type": 0,
+      "value": "AN UNKNOWN ERROR OCCURRED. PLEASE TRY AGAIN."
+    }
+  ],
+  "api.errors.genericMessageWithCode": [
+    {
+      "type": 0,
+      "value": "THE SERVER RETURNED AN UNEXPECTED RESONSE ("
+    },
+    {
+      "type": 1,
+      "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "). PLEASE TRY AGAIN."
+    }
+  ],
+  "api.errors.genericMessageWithMessage": [
+    {
+      "type": 0,
+      "value": "ERROR: "
+    },
+    {
+      "type": 1,
+      "value": "message"
+    },
+    {
+      "type": 0,
+      "value": " ("
+    },
+    {
+      "type": 1,
+      "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "/"
+    },
+    {
+      "type": 1,
+      "value": "name"
+    },
+    {
+      "type": 0,
+      "value": "). PLEASE TRY AGAIN."
+    }
+  ],
+  "api.errors.genericTitle": [
+    {
+      "type": 0,
+      "value": "SOMETHING WENT WRONG"
+    }
+  ],
+  "api.errors.parsingErrorMessage": [
+    {
+      "type": 0,
+      "value": "ERROR PARSING SERVER RESPONSE ("
+    },
+    {
+      "type": 1,
+      "value": "error"
+    },
+    {
+      "type": 0,
+      "value": "). PLEASE TRY AGAIN."
+    }
+  ],
   "app.footer.copyrightNotice": [
     {
       "type": 0,
@@ -28,13 +112,13 @@
       "value": ". ALL RIGHTS RESERVED."
     }
   ],
-  "app.footer.linkGroups.legal.header": [
+  "app.footer.linkGroups.legal": [
     {
       "type": 0,
       "value": "LEGAL"
     }
   ],
-  "app.footer.linkGroups.resources.header": [
+  "app.footer.linkGroups.resources": [
     {
       "type": 0,
       "value": "RESOURCES"
@@ -68,10 +152,12 @@
     {
       "options": {
         "browser_location_change_required": {
-          "value": []
+          "value": [
+          ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         },
         "session_aal2_required": {
           "value": [
@@ -106,7 +192,8 @@
     {
       "options": {
         "other": {
-          "value": []
+          "value": [
+          ]
         },
         "security_csrf_violation": {
           "value": [
@@ -149,13 +236,7 @@
       "value": ". PLEASE TRY AGAIN."
     }
   ],
-  "auth.hompageButton.label": [
-    {
-      "type": 0,
-      "value": "GO TO THE HOMEPAGE"
-    }
-  ],
-  "auth.loggedInNotice.messageWithUsername": [
+  "auth.loggedInAlreadyNotice.messageWithUsername": [
     {
       "type": 0,
       "value": "YOU'RE ALREADY LOGGED IN AS "
@@ -175,31 +256,13 @@
       "value": "."
     }
   ],
-  "auth.loggedInNotice.messageWithoutUsername": [
+  "auth.loggedInAlreadyNotice.messageWithoutUsername": [
     {
       "type": 0,
       "value": "YOU'RE ALREADY LOGGED IN."
     }
   ],
-  "auth.login.2faTitle": [
-    {
-      "type": 0,
-      "value": "TWO-FACTOR AUTHENTICATION"
-    }
-  ],
-  "auth.login.confirmAccessTitle": [
-    {
-      "type": 0,
-      "value": "CONFIRM ACCESS"
-    }
-  ],
-  "auth.login.loginTitle": [
-    {
-      "type": 0,
-      "value": "LOG IN TO YOUR ACCOUNT"
-    }
-  ],
-  "auth.login.noAccountLink": [
+  "auth.login.signUpInsteadMessage": [
     {
       "type": 0,
       "value": "DON'T HAVE AN ACCOUNT YET? "
@@ -215,16 +278,28 @@
       "value": "link"
     }
   ],
-  "auth.login.oidcHeaderText": [
+  "auth.loginForm.oidcDividerText": [
     {
       "type": 0,
       "value": "OR"
     }
   ],
-  "auth.loginButton.label": [
+  "auth.loginFormTitle.2fa": [
     {
       "type": 0,
-      "value": "LOG IN"
+      "value": "TWO-FACTOR AUTHENTICATION"
+    }
+  ],
+  "auth.loginFormTitle.confirmAccess": [
+    {
+      "type": 0,
+      "value": "CONFIRM ACCESS"
+    }
+  ],
+  "auth.loginFormTitle.login": [
+    {
+      "type": 0,
+      "value": "LOG IN TO YOUR ACCOUNT"
     }
   ],
   "auth.loginLink.label": [
@@ -239,7 +314,7 @@
       "value": "LOG OUT"
     }
   ],
-  "auth.passwordInput.togglePasswordVisibilityLabel": [
+  "auth.passwordInput.togglePasswordVisibility.label": [
     {
       "options": {
         "hide": {
@@ -251,7 +326,8 @@
           ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         },
         "show": {
           "value": [
@@ -282,18 +358,6 @@
       "value": "FORGOT YOUR PASSWORD?"
     }
   ],
-  "auth.registrationButton.content": [
-    {
-      "type": 0,
-      "value": "SIGN UP"
-    }
-  ],
-  "auth.registrationLink.content": [
-    {
-      "type": 0,
-      "value": "SIGN UP"
-    }
-  ],
   "auth.registration.alreadyHaveAccountLink": [
     {
       "type": 0,
@@ -304,28 +368,28 @@
       "value": "loginLink"
     }
   ],
-  "auth.registration.oidcTItle": [
-    {
-      "type": 0,
-      "value": "OR"
-    }
-  ],
   "auth.registration.title": [
     {
       "type": 0,
       "value": "CREATE YOUR ACCOUNT"
     }
   ],
-  "auth.settings.oidcTitle": [
+  "auth.registrationForm.oidcDividerText": [
+    {
+      "type": 0,
+      "value": "OR"
+    }
+  ],
+  "auth.registrationLink.label": [
+    {
+      "type": 0,
+      "value": "SIGN UP"
+    }
+  ],
+  "auth.settings.oidcSection.title": [
     {
       "type": 0,
       "value": "3RD PARTY LOG-IN"
-    }
-  ],
-  "auth.settings.passwordTitle": [
-    {
-      "type": 0,
-      "value": "CHANGE PASSWORD"
     }
   ],
   "auth.settings.title": [
@@ -334,16 +398,22 @@
       "value": "PROFILE SETTINGS"
     }
   ],
-  "auth.settings.totpTitle": [
+  "auth.settings.totpSection.title": [
     {
       "type": 0,
       "value": "TWO-FACTOR AUTHENTICATION"
     }
   ],
-  "auth.settings.webauthnTitle": [
+  "auth.settings.webauthnSection.title": [
     {
       "type": 0,
       "value": "HARDWARE TOKENS AND BIOMETRICS"
+    }
+  ],
+  "auth.settingsForm.changePasswordSection.title": [
+    {
+      "type": 0,
+      "value": "CHANGE PASSWORD"
     }
   ],
   "auth.verification.title": [
@@ -352,88 +422,48 @@
       "value": "VERIFY YOUR ACCOUNT"
     }
   ],
-  "error.api.errorCode": [
+  "common.dataTable.sortHeader.ariaLabel": [
     {
-      "type": 0,
-      "value": "THE SERVER RETURNED AN UNEXPECTED RESONSE ("
-    },
-    {
-      "type": 1,
-      "value": "code"
-    },
-    {
-      "type": 0,
-      "value": "). PLEASE TRY AGAIN."
+      "options": {
+        "asc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "SORTED ASCENDING"
+            }
+          ]
+        },
+        "desc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "SORTED DESCENDING"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "NOT SORTED"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "sort"
     }
   ],
-  "error.api.errorMessage": [
+  "common.hompageButton.label": [
     {
       "type": 0,
-      "value": "ERROR: "
-    },
-    {
-      "type": 1,
-      "value": "message"
-    },
-    {
-      "type": 0,
-      "value": " ("
-    },
-    {
-      "type": 1,
-      "value": "code"
-    },
-    {
-      "type": 0,
-      "value": "/"
-    },
-    {
-      "type": 1,
-      "value": "name"
-    },
-    {
-      "type": 0,
-      "value": "). PLEASE TRY AGAIN."
+      "value": "GO TO THE HOMEPAGE"
     }
   ],
-  "error.api.fetchError": [
+  "common.loadingSpinner.label": [
     {
       "type": 0,
-      "value": "UNEXPECTED CLIENT ERROR ("
-    },
-    {
-      "type": 1,
-      "value": "error"
-    },
-    {
-      "type": 0,
-      "value": "). PLEASE TRY AGAIN."
-    }
-  ],
-  "error.api.parsingError": [
-    {
-      "type": 0,
-      "value": "ERROR PARSING SERVER RESPONSE ("
-    },
-    {
-      "type": 1,
-      "value": "error"
-    },
-    {
-      "type": 0,
-      "value": "). PLEASE TRY AGAIN."
-    }
-  ],
-  "error.api.unknown": [
-    {
-      "type": 0,
-      "value": "AN UNKNOWN ERROR OCCURRED. PLEASE TRY AGAIN."
-    }
-  ],
-  "errors.apiErrorAlert.message": [
-    {
-      "type": 0,
-      "value": "SOMETHING WENT WRONG"
+      "value": "LOADING..."
     }
   ],
   "errors.errorAlert.message": [
@@ -442,7 +472,7 @@
       "value": "SOMETHING WENT WRONG :("
     }
   ],
-  "errors.errorAlert.retryButton": [
+  "errors.errorAlert.retryButton.label": [
     {
       "type": 0,
       "value": "TRY AGAIN"
@@ -458,10 +488,10 @@
       "value": "code"
     }
   ],
-  "errors.notFoundPage.goToHomepageButton": [
+  "errors.notFoundPage.heading": [
     {
       "type": 0,
-      "value": "GO TO THE HOMEPAGE"
+      "value": "OOOPS!"
     }
   ],
   "errors.notFoundPage.message": [
@@ -470,13 +500,7 @@
       "value": "WE CAN'T SEEM TO FIND THAT PAGE."
     }
   ],
-  "errors.notFoundPage.pageHeading": [
-    {
-      "type": 0,
-      "value": "OOOPS!"
-    }
-  ],
-  "errors.notFoundPage.pageTitle": [
+  "errors.notFoundPage.title": [
     {
       "type": 0,
       "value": "NOT FOUND"
@@ -496,6 +520,12 @@
     {
       "type": 1,
       "value": "locale"
+    }
+  ],
+  "pages.contactUs.heading": [
+    {
+      "type": 0,
+      "value": "CONTACT US"
     }
   ],
   "pages.contactUs.instructions": [
@@ -518,25 +548,19 @@
       "value": " WITH ANY FEEDBACK, QUESTIONS, PROBLEMS, OR FEATURE REQUESTS."
     }
   ],
-  "pages.contactUs.pageHeading": [
+  "pages.contactUs.title": [
     {
       "type": 0,
       "value": "CONTACT US"
     }
   ],
-  "pages.contactUs.pageTitle": [
-    {
-      "type": 0,
-      "value": "CONTACT US"
-    }
-  ],
-  "pages.faq.pageHeading": [
+  "pages.faq.heading": [
     {
       "type": 0,
       "value": "FREQUENTLY ASKED QUESTIONS"
     }
   ],
-  "pages.faq.pageTitle": [
+  "pages.faq.title": [
     {
       "type": 0,
       "value": "FAQ"
@@ -608,72 +632,40 @@
       "value": "OPINIONATED, PRODUCTION-READY, FULL-FEATURED SAAS BOILERPLATE."
     }
   ],
-  "pages.privacyPolicy.pageHeading": [
+  "pages.privacyPolicy.heading": [
     {
       "type": 0,
       "value": "PRIVACY POLICY"
     }
   ],
-  "pages.privacyPolicy.pageTitle": [
+  "pages.privacyPolicy.title": [
     {
       "type": 0,
       "value": "PRIVACY POLICY"
     }
   ],
-  "pages.termsAndConditions.pageHeading": [
+  "pages.termsAndConditions.heading": [
     {
       "type": 0,
       "value": "TERMS AND CONDITIONS"
     }
   ],
-  "pages.termsAndConditions.pageTitle": [
+  "pages.termsAndConditions.title": [
     {
       "type": 0,
       "value": "TERMS AND CONDITIONS"
     }
   ],
-  "pagination.nextPage": [
+  "pagination.nextPage.label": [
     {
       "type": 0,
       "value": "NEXT PAGE"
     }
   ],
-  "pagination.previousPage": [
+  "pagination.previousPage.label": [
     {
       "type": 0,
       "value": "PREVIOUS PAGE"
-    }
-  ],
-  "table.sortHeader.ariaLabel": [
-    {
-      "options": {
-        "asc": {
-          "value": [
-            {
-              "type": 0,
-              "value": "SORTED ASCENDING"
-            }
-          ]
-        },
-        "desc": {
-          "value": [
-            {
-              "type": 0,
-              "value": "SORTED DESCENDING"
-            }
-          ]
-        },
-        "other": {
-          "value": [
-            {
-              "type": 0,
-              "value": "NOT SORTED"
-            }
-          ]
-        }
-      },
-      "type": 5,
-      "value": "sort"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [
@@ -700,7 +692,8 @@
           ]
         },
         "other": {
-          "value": []
+          "value": [
+          ]
         }
       },
       "type": 5,

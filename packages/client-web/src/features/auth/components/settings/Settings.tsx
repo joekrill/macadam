@@ -1,4 +1,4 @@
-import { VStack } from "@chakra-ui/react";
+import { TypographyProps, VStack } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
 import { LoadingSpinner } from "../../../common/components/LoadingSpinner/LoadingSpinner";
 import {
@@ -11,9 +11,15 @@ import { FlowRestartedAlert } from "../FlowRestartedAlert";
 import { SelfServiceUiMessageList } from "../SelfServiceUi/SelfServiceUiMessageList";
 import { SettingsForm } from "./SettingsForm";
 
-export interface SettingsProps extends UseSettingsFlowOptions {}
+export interface SettingsProps extends UseSettingsFlowOptions {
+  headingTextAlign?: TypographyProps["textAlign"];
+}
 
-export const Settings = ({ flowId, returnTo }: SettingsProps) => {
+export const Settings = ({
+  flowId,
+  headingTextAlign,
+  returnTo,
+}: SettingsProps) => {
   const {
     error,
     flow,
@@ -27,6 +33,7 @@ export const Settings = ({ flowId, returnTo }: SettingsProps) => {
   return (
     <VStack align="stretch" spacing="4">
       <FlowHeading
+        textAlign={headingTextAlign}
         title={
           <FormattedMessage
             id="auth.settings.title"

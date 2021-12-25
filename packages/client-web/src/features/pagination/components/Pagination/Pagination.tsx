@@ -53,8 +53,8 @@ export const Pagination = ({
       typeof maxSiblings === "number" ? maxSiblings : defaultMaxSiblings,
   });
   const spacerColor = useColorModeValue(
-    `${colorScheme}.700`,
-    `${colorScheme}.200`
+    `${colorScheme}.600`,
+    `${colorScheme}.100`
   );
 
   return (
@@ -81,6 +81,7 @@ export const Pagination = ({
               key={`${i}-${page}`}
               as={HiOutlineDotsHorizontal}
               color={spacerColor}
+              opacity={isDisabled ? 0.4 : 1}
             />
           ) : (
             <Button

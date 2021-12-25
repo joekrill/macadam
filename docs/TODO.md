@@ -1,11 +1,11 @@
 ## "v1" Milestone
 
-- Move pagination/sorting components to "common" feature?
 - SELFSERVICE_FLOWS_ERROR_UI_URL?
-- (client-web) save locale selection across reloads + Autodetect browser locale
+  - https://www.ory.sh/kratos/docs/self-service/flows/user-facing-errors
 - (api-server) consider namespacing all contexts?
 - (kratos) Flatten traits?
-- (client-web) User settings
+- (client-web) User sessions
+- (client-web) profile locale vs app locale selection
 - (client-web) How to deal with unverified email address
   - (client-web) Show notification component whne email address is not verififed
   - https://github.com/ory/kratos/issues/1328
@@ -23,10 +23,19 @@
   - https://docs.devland.is
 - (client-web) review icons (for consistency)
 - (client-web) better table styling (+responsive)
-- (client-web) upgrade create-react-app
+- production/staging kubernetes deployments
+- OpenTelemety
+  - Versioning issues (https://github.com/open-telemetry/opentelemetry-js-contrib/issues/749)
+- Review Kratos configuration
+  - https://www.ory.sh/kratos/docs/reference/configuration
+- Service accounts
+  - https://www.ory.sh/kratos/docs/concepts/identity-schema/#json-schema-vocabulary-extensions
+- Some way to upload/change avatar (currently it is just a URL string)
+- Agree to ToS on signup?
 
 # "v1"+
 
+- (client-web) upgrade create-react-app
 - Use svgo for SVG optimization
 - Figure out how to share logic between front-end/back-end while still having hot-reloading work and without ejecting
 - setup lint-staged
@@ -61,11 +70,8 @@
   - Not currently possible with Kratos
   - https://github.com/ory/kratos/issues/1682
   - https://github.com/ory/kratos/issues/1535
-- OpenTelemety
-  - Versioning issues (https://github.com/open-telemetry/opentelemetry-js-contrib/issues/749)
 - Kratos OIDC config via environment variables
   - https://github.com/ory/x/pull/420
-- Some way to upload/change avatar (currently it is just a URL string)
 - (api-server) switch to esmodules
   - https://github.com/node-fetch/node-fetch/issues/1279#issuecomment-915062146
 
@@ -73,13 +79,11 @@
 
 - Admin panel (AdminJS? https://github.com/SoftwareBrothers/adminjs)
 - (client-web) Offline support
-- Upgrade Postgres to v14
 - (client-web) PWA
   - https://developers.google.com/codelabs/project-fugu?hl=en#0
   - https://create-react-app.dev/docs/making-a-progressive-web-app/
   - https://github.com/GoogleChromeLabs/pwa-workshop-codelab
   - https://web.dev/install-criteria/
-- production/staging kubernetes deployments
 - (client-mobile) Mobile app (react-native)
 - (metrics) alert manager
 - (docs) Better documentation (docusaurus?)
@@ -98,6 +102,7 @@
 - Notifications
   - https://notifire.co
 - Log aggregation
+- Consider using Hydra? https://github.com/ory/kratos/discussions/937
 
 ## Ongoing
 

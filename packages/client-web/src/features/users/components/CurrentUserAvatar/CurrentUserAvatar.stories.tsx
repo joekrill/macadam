@@ -11,10 +11,7 @@ export default {
     email: {
       control: { type: "text" },
     },
-    firstName: {
-      control: { type: "text" },
-    },
-    lastName: {
+    name: {
       control: { type: "text" },
     },
     size: {
@@ -26,17 +23,11 @@ export default {
 } as Meta;
 
 interface StoryProps extends CurrentUserAvatarProps {
-  firstName?: string;
-  lastName?: string;
+  name?: string;
   email?: string;
 }
 
-const Template: Story<StoryProps> = ({
-  firstName,
-  lastName,
-  email = "",
-  ...props
-}) => (
+const Template: Story<StoryProps> = ({ name, email = "", ...props }) => (
   <UseSessionContext.Provider
     value={{
       selectIdentity: () => ({
@@ -46,10 +37,7 @@ const Template: Story<StoryProps> = ({
         state: null,
         traits: {
           email,
-          name: {
-            first: firstName,
-            last: lastName,
-          },
+          name,
         },
       }),
       selectIsVerified: () => true,

@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { FaRegGem } from "react-icons/fa";
 import { FormattedMessage } from "react-intl";
-import { LocaleSelect } from "../../../features/i18n/components/LocaleSelect";
+import { ActiveLocaleSelect } from "../../../features/i18n/components/ActiveLocaleSelect/ActiveLocaleSelect";
 import { FooterLinkGrid } from "./FooterLinkGrid";
 import { FooterSocialMediaLinks } from "./FooterSocialMediaLinks";
 
@@ -68,7 +68,7 @@ export const Footer = (props: FooterProps) => (
             }}
           />
         </Text>
-        <LocaleSelect size="sm" width="unset" />
+        <ActiveLocaleSelect size="sm" width="unset" />
       </Stack>
     </Stack>
   </Box>

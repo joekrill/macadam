@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Provider as ReduxProvider } from "react-redux";
 import { AuthProvider } from "../features/auth/components/AuthContext";
-import { I18nProvider } from "../features/i18n/components/I18nProvider";
+import { I18nProvider } from "../features/i18n/components/I18nProvider/I18nProvider";
 import { theme } from "../features/theme/default";
 import { store } from "./store";
 

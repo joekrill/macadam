@@ -41,7 +41,11 @@ export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
         }),
         accessor: "createdAt",
         Cell: ({ value }) => (
-          <FormattedDate dateStyle="full" value={parseISO(value)} />
+          <FormattedDate
+            dateStyle="full"
+            timeStyle="medium"
+            value={parseISO(value)}
+          />
         ),
       },
       {

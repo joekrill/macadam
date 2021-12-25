@@ -1,17 +1,21 @@
-import { Container } from "@chakra-ui/react";
 import { Card } from "../../common/components/Card/Card";
 import { useUrlSearchParams } from "../../routing/hooks/useUrlSearchParams";
 import { RequireAuthenticated } from "../components/RequireAuthenticated";
-import { Settings } from "../components/settings/Settings";
+import { Settings, SettingsProps } from "../components/settings/Settings";
 
-export const SettingsPage = () => {
+export interface SettingsPageProps {
+  headingTextAlign?: SettingsProps["headingTextAlign"];
+}
+
+export const SettingsPage = ({ headingTextAlign }: SettingsPageProps) => {
   const params = useUrlSearchParams();
 
   return (
     <RequireAuthenticated>
-      <Card as={Container} maxW="xl">
+      <Card>
         <Settings
           flowId={params.get("flow") || undefined}
+          headingTextAlign={headingTextAlign}
           returnTo={params.get("return_to") || undefined}
         />
       </Card>

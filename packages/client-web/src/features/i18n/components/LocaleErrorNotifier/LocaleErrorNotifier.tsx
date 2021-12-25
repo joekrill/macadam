@@ -2,7 +2,7 @@ import { useToast } from "@chakra-ui/react";
 import { createContext, ReactNode, useContext, useEffect } from "react";
 import { useIntl } from "react-intl";
 import { useSelector } from "react-redux";
-import { selectLastError } from "../selectors/selectLastError";
+import { selectLastError } from "../../selectors/selectLastError";
 
 export const LocaleErrorNotifierContext = createContext({
   selectLastError,

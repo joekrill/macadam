@@ -1,6 +1,6 @@
 import { SerializedError } from "@reduxjs/toolkit";
 import { Meta, Story } from "@storybook/react";
-import { Locale } from "../locales";
+import { LocaleCode } from "../../constants";
 import {
   LocaleErrorNotifier,
   LocaleErrorNotifierContext,
@@ -23,7 +23,7 @@ export default {
 } as Meta;
 
 const Template: Story<{
-  error?: { locale: Locale; error: SerializedError };
+  error?: { locale: LocaleCode; error: SerializedError };
 }> = (args) => (
   <LocaleErrorNotifierContext.Provider
     value={{

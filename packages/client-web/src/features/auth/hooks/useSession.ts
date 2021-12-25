@@ -30,9 +30,6 @@ export const useSession = () => {
     ctx.selectSessionLastUpdated(state)
   );
 
-  const { name, email } = identity?.traits || {};
-  const { first, last } = name || {};
-
   return {
     /**
      * True if logged in, false if logged out, undefined if unknown.
@@ -51,11 +48,8 @@ export const useSession = () => {
 
     isVerified,
 
-    traits: {
-      ...identity?.traits,
-      fullName: [first, last].filter(Boolean).join(" "),
-    },
+    traits: identity?.traits || {},
 
-    username: email,
+    username: identity?.traits?.email,
   };
 };

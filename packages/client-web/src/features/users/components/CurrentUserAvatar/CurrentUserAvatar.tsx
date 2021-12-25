@@ -9,7 +9,7 @@ export const CurrentUserAvatar = (props: CurrentUserAvatarProps) => {
   return (
     <Avatar
       {...props}
-      name={traits.fullName || traits.email}
+      name={traits.name || traits.email || ""}
       src={traits.picture || undefined}
     />
   );

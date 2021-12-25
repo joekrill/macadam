@@ -1,6 +1,6 @@
 import { Flex } from "@chakra-ui/react";
 import { Meta, Story } from "@storybook/react";
-import { LocaleSelectContext } from "../../../features/i18n/components/LocaleSelect";
+import { ActiveLocaleSelectContext } from "../../../features/i18n/components/ActiveLocaleSelect/ActiveLocaleSelect";
 import { Footer, FooterProps } from "./Footer";
 
 export default {
@@ -15,17 +15,18 @@ export default {
 } as Meta;
 
 const Template: Story<FooterProps> = (args) => (
-  <LocaleSelectContext.Provider
+  <ActiveLocaleSelectContext.Provider
     value={{
-      selectCurrentLocale: () => "en",
       selectPendingLocale: () => undefined,
+      selectDeviceLocale: () => "en",
+      selectSelectedLocale: () => "en",
     }}
   >
     <Flex direction="column" height="100vh">
       <Flex flex={1} />
       <Footer {...args} />
     </Flex>
-  </LocaleSelectContext.Provider>
+  </ActiveLocaleSelectContext.Provider>
 );
 
 export const Default = Template.bind({});

@@ -107,6 +107,6 @@ To add a new locale:
 1. Create a copy `packages/client-web/translations/en.json` named using the new locale (i.e. `fr.json`, `pt-BR.json`, `zh-Hans-HK.json`, etc.)
 2. In the new file, update the messages to use the desired translations.
 3. Run `yarn run i18n:compile` from the `client-web` directory (or `yarn workspace client-web run i18n:compile` from the project root)
-4. Update `packages/client-web/src/features/i18n/locales.ts` to include the new locale:
-   1. Add the locale code to the `SUPPORTED_LOCALES` array.
-   2. Update all `webpackInclude` magic comments in the `loadLocale` function to include the new locale code.
+4. Add the locale code to the `SUPPORTED_LOCALES` array in `packages/client-web/src/features/i18n/constants.ts`.
+5. Update all `webpackInclude` magic comments in `packages/client-web/src/features/i18n/polyfills/loadLocalePolyfills.ts` function to include the new locale code.
+6. Update all `webpackInclude` magic comments in `packages/client-web/src/features/i18n/messages/index.ts` function to include the new locale code.

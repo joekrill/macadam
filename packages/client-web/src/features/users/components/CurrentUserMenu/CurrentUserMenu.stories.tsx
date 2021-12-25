@@ -11,29 +11,19 @@ export default {
       control: { type: "text" },
       defaultValue: "jdoe@example.com",
     },
-    firstName: {
+    name: {
       control: { type: "text" },
       defaultValue: "John",
-    },
-    lastName: {
-      control: { type: "text" },
-      defaultValue: "Doe",
     },
   },
 } as Meta;
 
 interface StoryProps extends CurrentUserMenuProps {
-  firstName?: string;
-  lastName?: string;
+  name?: string;
   email?: string;
 }
 
-const Template: Story<StoryProps> = ({
-  firstName,
-  lastName,
-  email = "",
-  ...props
-}) => (
+const Template: Story<StoryProps> = ({ name, email = "", ...props }) => (
   <UseSessionContext.Provider
     value={{
       selectIdentity: () => ({
@@ -43,10 +33,7 @@ const Template: Story<StoryProps> = ({
         state: null,
         traits: {
           email,
-          name: {
-            first: firstName,
-            last: lastName,
-          },
+          name,
         },
       }),
       selectIsVerified: () => true,

@@ -25,28 +25,64 @@ selfservice:
       enabled: true
       config:
         providers:
+          - id: twitch
+            provider: generic
+            client_id: REPLACE_ME
+            client_secret: REPLACE_ME
+            issuer_url: https://id.twitch.tv/oauth2
+            mapper_url: file:///etc/config/kratos/oidc.twitch.jsonnet
+            scope:
+              - openid
+              - user:read:email # required for email and email_verified claims in the near future
+            requested_claims: # explicitly request email and email_verified claims because twitch doesn't add them by default
+              id_token:
+                email:
+                  essential: true
+                email_verified:
+                  essential: true
+                picture: null
+                preferred_username: null
+          - id: discord 
+            provider: discord
+            client_id: "REPLACE_ME"
+            client_secret: REPLACE_ME
+            mapper_url: file:///etc/config/kratos/oidc.discord.jsonnet
+            scope:
+              - identify
+              - email
+          - id: microsoft
+
+            provider: microsoft
+            provider: microsoft
+            client_id: "REPLACE_ME"
+            client_secret: "REPLACE_ME"
+            tenant: consumers
+            mapper_url: file:///etc/config/kratos/oidc.microsoft.jsonnet
+            scope:
+              - profile
+              - email
+          - id: facebook
+            provider: facebook
+            client_id: "REPLACE_ME"
+            client_secret: REPLACE_ME
+            mapper_url: file:///etc/config/kratos/oidc.facebook.jsonnet
+            scope:
+              - email
           - id: github
             provider: github
-            client_id: TODO
-            client_secret: TODO
+            client_id: REPLACE_ME
+            client_secret: REPLACE_ME
             mapper_url: file:///etc/config/kratos/oidc.github.jsonnet
             scope:
               - user:email
           - id: google
             provider: google
-            client_id: TODO
-            client_secret: TODO
+            client_id: REPLACE_ME
+            client_secret: REPLACE_ME
             scope:
-              - offline
+              - email
+              - profile
             mapper_url: file:///etc/config/kratos/oidc.google.jsonnet
-          - id: slack
-            provider: slack
-            client_id: TODO
-            client_secret: TODO
-            mapper_url: file:///etc/config/kratos/oidc.slack.jsonnet
-            scope:
-              - identity.basic
-              - identity.email
     lookup_secret:
       enabled: true
     totp:
@@ -132,7 +168,7 @@ hashers:
 identity:
   # Be sure to update the `traitsSchema` on the client to reflect any changes to
   # the identity schema(s): `packages/client-web/src/features/identity/schemas/identity.ts`
-  default_schema_url: file:///etc/config/kratos/email-password.schema.json
+  default_schema_url: file:///etc/config/kratos/identity.schema.json
 
 session:
   cookie:

@@ -26,31 +26,22 @@
             }
           }
         },
-        "username": {
-          "type": "string",
-          "ory.sh/kratos": {
-            "credentials": {
-              "password": {
-                "identifier": true
-              }
-            }
-          }
-        },
         "name": {
-          "type": "object",
-          "properties": {
-            "first": {
-              "type": "string",
-              "title": "First Name"
-            },
-            "last": {
-              "type": "string",
-              "title": "Last Name"
-            }
-          }
+          "title": "Name",
+          "type": "string"
+        },
+        "locale": {
+          "title": "Preferred Language",
+          "type": "string"
+        },
+        "picture": {
+          "title": "Picture",
+          "type": "string"
         }
       },
-      "required": ["email"],
+      "required": [
+        "email"
+      ],
       "additionalProperties": false
     }
   }

@@ -1,26 +1,28 @@
 import {
   Button,
   ButtonProps,
-  FormControl,
-  FormErrorMessage,
-  FormHelperText,
-  FormLabel,
+  Checkbox,
   Input,
+  InputProps,
 } from "@chakra-ui/react";
+import { ChangeEventHandler } from "react";
 import {
+  FaDiscord,
   FaFacebook,
   FaGithub,
   FaGoogle,
-  FaLinkedin,
   FaMicrosoft,
-  FaSlack,
-  FaTwitter,
+  FaTwitch,
 } from "react-icons/fa";
+import { LocaleSelect } from "../../../i18n/components/LocaleSelect/LocaleSelect";
 import { UiNodeInput } from "../../schemas/flows/ui";
 import { PasswordInput } from "../PasswordInput/PasswordInput";
-import { RecoveryLink } from "../recovery/RecoveryLink";
-
+import { SelfServiceUiNodeInputWrapper } from "./SelfServiceUiNodeInputWrapper";
 const OIDC_ATTRIBUTES: Record<string, ButtonProps> = {
+  discord: {
+    leftIcon: <FaDiscord />,
+    colorScheme: "purple",
+  },
   facebook: {
     leftIcon: <FaFacebook />,
     colorScheme: "facebook",
@@ -37,16 +39,8 @@ const OIDC_ATTRIBUTES: Record<string, ButtonProps> = {
     leftIcon: <FaMicrosoft />,
     colorScheme: "blue",
   },
-  linkedin: {
-    leftIcon: <FaLinkedin />,
-    colorScheme: "linkedin",
-  },
-  slack: {
-    leftIcon: <FaSlack />,
-    colorScheme: "purple",
-  },
-  twitter: {
-    leftIcon: <FaTwitter />,
+  twitch: {
+    leftIcon: <FaTwitch />,
     colorScheme: "twitter",
   },
 };
@@ -59,26 +53,6 @@ export interface SelfServiceUiNodeInputProps {
   flowType?: string;
 }
 
-/**
- * A mapping of a field's `name` attribute to the desired label.
- * Kratos sents inconsistent labels (if any) for various forms. Until that's
- * fixed or improved, this give us more consistency.
- *
- * TODO: Localize these labels.
- */
-const LABELS: Record<string, string> = {
-  password: "Password",
-
-  /**
-   * Kratos uses "ID" here (because it's possible to have multiple, so I guess
-   * it doesn't distinguish). But we know we always want an email address.
-   */
-  password_identifier: "E-Mail",
-
-  // The "recovery" flow doesn't provide a label, for some reason.
-  email: "E-Mail",
-};
-
 export const SelfServiceUiNodeInput = ({
   flowType,
   isSubmitting,
@@ -86,29 +60,29 @@ export const SelfServiceUiNodeInput = ({
   onChange,
   value,
 }: SelfServiceUiNodeInputProps) => {
-  const { meta, messages } = node;
   const { label, node_type: _, onclick, ...attributes } = node.attributes;
-  const errors = messages?.filter((message) => message.type === "error") || [];
 
   switch (attributes.type) {
     case "hidden": {
       return <input {...attributes} value={attributes.value || true} />;
     }
-    case "checkbox":
-      return null;
-    // TODO: How to handle checkbox
-    // case "checkbox": {
-    //   return (
-    //     <>
-    //       <input type="hidden" value="false" name="traits.path.to.my.boolean" />
-    //       <input
-    //         type="checkbox"
-    //         value="true"
-    //         name="traits.path.to.my.boolean"
-    //       />
-    //     </>
-    //   );
-    // }
+    case "checkbox": {
+      return (
+        <SelfServiceUiNodeInputWrapper
+          flowType={flowType}
+          isSubmitting={isSubmitting}
+          node={node}
+        >
+          <Checkbox
+            {...attributes}
+            borderColor="gray.300"
+            isChecked={typeof value === "boolean" ? value : false}
+            onChange={(e) => onChange(e.target.checked)}
+            isDisabled={attributes.disabled || isSubmitting}
+          />
+        </SelfServiceUiNodeInputWrapper>
+      );
+    }
     case "button": {
       return (
         <Button
@@ -128,14 +102,14 @@ export const SelfServiceUiNodeInput = ({
             onChange(attributes.value);
           }}
         >
-          {meta?.label?.text || "Submit"}
+          {node.meta?.label?.text || "Submit"}
         </Button>
       );
     }
     case "submit": {
       const provider =
         node.group === "oidc"
-          ? ((meta.label?.context as any)?.provider as string)
+          ? ((node.meta.label?.context as any)?.provider as string)
           : undefined;
       const oidcAttributes = (provider && OIDC_ATTRIBUTES[provider]) || {};
 
@@ -154,7 +128,7 @@ export const SelfServiceUiNodeInput = ({
             onChange(attributes.value);
           }}
         >
-          {meta?.label?.text || "Submit"}
+          {node.meta?.label?.text || "Submit"}
         </Button>
       );
     }
@@ -162,41 +136,33 @@ export const SelfServiceUiNodeInput = ({
     case "email":
     case "text":
     default: {
-      const InputComponent =
-        attributes.type === "password" ? PasswordInput : Input;
+      const commonProps = {
+        borderColor: "gray.400",
+        onChange: (e) => onChange(e.target.value),
+        isDisabled: attributes.disabled || isSubmitting,
+        value: value || "",
+      } as Pick<InputProps, "borderColor" | "isDisabled" | "value"> & {
+        onChange: ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
+      };
+
+      let children: React.ReactChild;
+
+      if (attributes.type === "password") {
+        children = <PasswordInput {...commonProps} />;
+      } else if (attributes.name === "traits.locale") {
+        children = <LocaleSelect {...commonProps} includeDefaultOption />;
+      } else {
+        children = <Input {...commonProps} />;
+      }
+
       return (
-        <FormControl
-          isInvalid={errors.length > 0}
-          isRequired={attributes.required}
-          isDisabled={attributes.disabled || isSubmitting}
+        <SelfServiceUiNodeInputWrapper
+          flowType={flowType}
+          isSubmitting={isSubmitting}
+          node={node}
         >
-          <FormLabel>
-            {LABELS[attributes.name] ||
-              meta?.label?.text ||
-              label?.text ||
-              attributes.name}
-          </FormLabel>
-          <InputComponent
-            {...attributes}
-            borderColor="gray.300"
-            value={value || ""}
-            onChange={(e) => onChange(e.target.value)}
-            disabled={attributes.disabled || isSubmitting}
-          />
-          {messages
-            ?.filter((message) => message.type === "info")
-            .map((message) => (
-              <FormHelperText key={message.id}>{message.text}</FormHelperText>
-            ))}
-          {errors.map((message) => (
-            <FormErrorMessage key={message.id}>{message.text}</FormErrorMessage>
-          ))}
-          {flowType === "login" && attributes.type === "password" && (
-            <FormHelperText key="forgot-password">
-              <RecoveryLink />
-            </FormHelperText>
-          )}
-        </FormControl>
+          {children}
+        </SelfServiceUiNodeInputWrapper>
       );
     }
   }

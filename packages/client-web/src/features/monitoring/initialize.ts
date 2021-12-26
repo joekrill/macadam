@@ -13,7 +13,7 @@ const IS_DEVELOPMENT_ENV = process.env.NODE_ENV === "development";
 const { origin, hostname } = window.location;
 
 init({
-  debug: process.env.NODE_ENV === "development",
+  debug: false,
 
   dsn: process.env.REACT_APP_SENTRY_DSN,
 

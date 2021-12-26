@@ -165,9 +165,15 @@
   "forms.saveButton.label": {
     "defaultMessage": "Save"
   },
+  "i18n.activeLocaleSelect.deviceLocaleOption": {
+    "defaultMessage": "Auto ({locale})"
+  },
   "i18n.localErrorToast.title": {
     "defaultMessage": "Unable to load locale {locale}",
     "description": "The toast message shown when a locale fails to load"
+  },
+  "i18n.localeSelect.defaultValue": {
+    "defaultMessage": "Default ({locale})"
   },
   "pages.contactUs.heading": {
     "defaultMessage": "Contact Us"
@@ -262,6 +268,12 @@
   },
   "thingForm.name.label": {
     "defaultMessage": "Name"
+  },
+  "things.deleteThingLink.ariaLabel": {
+    "defaultMessage": "Delete Thing"
+  },
+  "things.editThingLink.ariaLabel": {
+    "defaultMessage": "Edit Thing"
   },
   "thingsList.addButton.ariaLabel": {
     "defaultMessage": "Add new Thing"

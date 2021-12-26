@@ -10,6 +10,7 @@ import {
 } from "../../common/components/DataTable/DataTable";
 import { RouterLink } from "../../routing/components/RouterLink";
 import { Thing } from "../thingsSchemas";
+import { ThingActions } from "./ThingActions";
 
 export interface ThingsTableProps extends Partial<DataTableProps<Thing>> {}
 
@@ -54,14 +55,20 @@ export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
           defaultMessage: "Private",
         }),
         accessor: "isPrivate",
-        textAlign: "right",
+        textAlign: "center",
         Cell: ({ value }) => (
           <Icon
-            h="1rem"
-            w="1rem"
+            boxSize="1em"
             as={value ? FaLock : FaUnlock}
             color={value ? "red.600" : "green.300"}
           />
+        ),
+      },
+      {
+        accessor: "id",
+        disableSortBy: true,
+        Cell: ({ row }) => (
+          <ThingActions size="sm" colorScheme="blue" thing={row.original} />
         ),
       },
     ],

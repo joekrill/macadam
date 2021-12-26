@@ -480,6 +480,20 @@
       "value": "SaveSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "i18n.activeLocaleSelect.deviceLocaleOption": [
+    {
+      "type": 0,
+      "value": "Auto ("
+    },
+    {
+      "type": 1,
+      "value": "locale"
+    },
+    {
+      "type": 0,
+      "value": ")SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "i18n.localErrorToast.title": [
     {
       "type": 0,
@@ -488,6 +502,20 @@
     {
       "type": 0,
       "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "i18n.localeSelect.defaultValue": [
+    {
+      "type": 0,
+      "value": "Default ("
+    },
+    {
+      "type": 1,
+      "value": "locale"
+    },
+    {
+      "type": 0,
+      "value": ")SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "pages.contactUs.heading": [
@@ -718,6 +746,18 @@
     {
       "type": 0,
       "value": "NameSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.deleteThingLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Delete ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.editThingLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Edit ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "thingsList.addButton.ariaLabel": [

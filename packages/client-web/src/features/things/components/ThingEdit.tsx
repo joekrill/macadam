@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { FormattedMessage } from "react-intl";
 import { useNavigate, useParams } from "react-router-dom";
 import { LoadingSpinner } from "../../common/components/LoadingSpinner/LoadingSpinner";
+import { useReturnToConsumer } from "../../routing/hooks/useReturnToConsumer";
 import { thingsApi } from "../thingsApi";
 import { ThingForm } from "./ThingForm";
 import { ThingLoadError } from "./ThingLoadError";
@@ -13,13 +14,15 @@ export const ThingEdit = () => {
   const getResult = thingsApi.useGetThingQuery(id || skipToken);
 
   const navigate = useNavigate();
-  const [submit, updateResult] = thingsApi.useUpdateThingMutation();
+  const [submit, { data, error, isLoading, isSuccess }] =
+    thingsApi.useUpdateThingMutation();
+  const returnTo = useReturnToConsumer() || `/things/${data?.data.id || ""}`;
 
   useEffect(() => {
-    if (updateResult.isSuccess) {
-      navigate(`/things/${updateResult.data.data.id}`);
+    if (isSuccess) {
+      navigate(returnTo);
     }
-  }, [updateResult, navigate]);
+  }, [data, isSuccess, navigate, returnTo]);
 
   return (
     <Box>
@@ -31,10 +34,10 @@ export const ThingEdit = () => {
       {!id && <ThingLoadError error={404} />}
       {getResult.data && (
         <ThingForm
-          isLoading={updateResult.isLoading}
+          isLoading={isLoading}
           defaultValues={getResult.data.data}
           onSubmit={(thing) => submit({ id: id!, ...thing })}
-          error={updateResult.error}
+          error={error}
         />
       )}
     </Box>

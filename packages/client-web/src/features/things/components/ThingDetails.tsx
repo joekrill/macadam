@@ -5,6 +5,7 @@ import { FaLock, FaUnlock } from "react-icons/fa";
 import { FormattedDate, FormattedMessage } from "react-intl";
 import { useParams } from "react-router-dom";
 import { thingsApi } from "../thingsApi";
+import { ThingActions } from "./ThingActions";
 import { ThingLoadError } from "./ThingLoadError";
 
 export const ThingDetails = () => {
@@ -19,13 +20,14 @@ export const ThingDetails = () => {
       {data && (
         <Box>
           <Heading>
-            {data.data.name}{" "}
+            <chakra.span>{data.data.name} </chakra.span>
             <Icon
               h="1rem"
               w="1rem"
-              as={data?.data.isPrivate ? FaLock : FaUnlock}
-              color={data?.data.isPrivate ? "red.600" : "green.300"}
+              as={data.data.isPrivate ? FaLock : FaUnlock}
+              color={data.data.isPrivate ? "red.600" : "green.300"}
             />
+            <ThingActions ml="3" size="xs" thing={data.data} />
           </Heading>
           <Text>{data.data?.description}</Text>
           <Text>

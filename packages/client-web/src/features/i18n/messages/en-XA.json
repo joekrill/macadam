@@ -512,6 +512,20 @@
       "value": "Ṡâṿè"
     }
   ],
+  "i18n.activeLocaleSelect.deviceLocaleOption": [
+    {
+      "type": 0,
+      "value": "Ḁůṭŏ ("
+    },
+    {
+      "type": 1,
+      "value": "locale"
+    },
+    {
+      "type": 0,
+      "value": ")"
+    }
+  ],
   "i18n.localErrorToast.title": [
     {
       "type": 0,
@@ -520,6 +534,20 @@
     {
       "type": 1,
       "value": "locale"
+    }
+  ],
+  "i18n.localeSelect.defaultValue": [
+    {
+      "type": 0,
+      "value": "Ḋèḟâůĺṭ ("
+    },
+    {
+      "type": 1,
+      "value": "locale"
+    },
+    {
+      "type": 0,
+      "value": ")"
     }
   ],
   "pages.contactUs.heading": [
@@ -750,6 +778,18 @@
     {
       "type": 0,
       "value": "Ŋâṁè"
+    }
+  ],
+  "things.deleteThingLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Ḋèĺèṭè Ṯḫíńĝ"
+    }
+  ],
+  "things.editThingLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Ḕḋíṭ Ṯḫíńĝ"
     }
   ],
   "thingsList.addButton.ariaLabel": [

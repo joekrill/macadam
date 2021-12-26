@@ -438,6 +438,20 @@
       "value": "[javascript]Save"
     }
   ],
+  "i18n.activeLocaleSelect.deviceLocaleOption": [
+    {
+      "type": 0,
+      "value": "[javascript]Auto ("
+    },
+    {
+      "type": 1,
+      "value": "locale"
+    },
+    {
+      "type": 0,
+      "value": ")"
+    }
+  ],
   "i18n.localErrorToast.title": [
     {
       "type": 0,
@@ -446,6 +460,20 @@
     {
       "type": 1,
       "value": "locale"
+    }
+  ],
+  "i18n.localeSelect.defaultValue": [
+    {
+      "type": 0,
+      "value": "[javascript]Default ("
+    },
+    {
+      "type": 1,
+      "value": "locale"
+    },
+    {
+      "type": 0,
+      "value": ")"
     }
   ],
   "pages.contactUs.heading": [
@@ -676,6 +704,18 @@
     {
       "type": 0,
       "value": "[javascript]Name"
+    }
+  ],
+  "things.deleteThingLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[javascript]Delete Thing"
+    }
+  ],
+  "things.editThingLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[javascript]Edit Thing"
     }
   ],
   "thingsList.addButton.ariaLabel": [

@@ -30,6 +30,7 @@
   - https://www.ory.sh/kratos/docs/concepts/identity-schema/#json-schema-vocabulary-extensions
 - Some way to upload/change avatar (currently it is just a URL string)
 - Agree to ToS on signup?
+- Redirect back to original page after sign up/login using OIDC not working (always redirects to home)
 
 # "v1"+
 

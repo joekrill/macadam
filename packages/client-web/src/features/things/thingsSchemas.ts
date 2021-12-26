@@ -11,6 +11,9 @@ export const thingSchema = z.object({
   createdBy: z.string(),
   updatedBy: z.string(),
   isPrivate: z.boolean(),
+
+  // This allows us to use Casl checks on the parsed result.
+  __caslSubjectType__: z.literal("Thing").default("Thing"),
 });
 
 export type Thing = z.infer<typeof thingSchema>;

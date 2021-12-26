@@ -31,7 +31,7 @@ export type LocaleCode = typeof LOCALES[number];
 /**
  * Used to indicate the device-preferred locale.
  */
-export const deviceLocaleToken = Symbol.for("deviceLocaleToken");
+export const deviceLocaleToken = "";
 
 export type DeviceLocaleToken = typeof deviceLocaleToken;
 

@@ -5,12 +5,6 @@ import { returnToStateSchema } from "./useReturnToProvider";
 
 export interface UseReturnToConsumerOptions {
   /**
-   * An optional fallback value to use when an appropriate location is not
-   * found based on the preferred location or the location stored in state.
-   */
-  fallback?: To;
-
-  /**
    * A list of path's that should never be used as the return to value.
    * (For example, if redirecting from the login page, we would forbid
    * returning to the login page itself)
@@ -33,19 +27,15 @@ export interface UseReturnToConsumerOptions {
  * after logging them in.
  */
 export const useReturnToConsumer = ({
-  fallback = "/",
   forbid = [],
   preferred,
-}: UseReturnToConsumerOptions) => {
+}: UseReturnToConsumerOptions = {}) => {
   const { state } = useLocation();
 
   const parsed = returnToStateSchema.safeParse(state);
 
   return filterLocations(
     [preferred, parsed.success ? parsed.data.returnTo : undefined],
-    {
-      forbid,
-      fallback,
-    }
+    forbid
   );
 };

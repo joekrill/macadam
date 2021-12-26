@@ -3,7 +3,14 @@ import { z } from "zod";
 import { filterLocations } from "../filterLocations";
 
 export const returnToStateSchema = z.object({
-  returnTo: z.string(),
+  returnTo: z.union([
+    z.string(),
+    z.object({
+      pathname: z.string(),
+      hash: z.string().optional(),
+      search: z.string().optional(),
+    }),
+  ]),
 });
 
 export interface UseReturnToProviderOptions {
@@ -31,15 +38,14 @@ export interface UseReturnToProviderOptions {
 export const useReturnToProvider = ({
   fallback,
   forbid = [],
-}: UseReturnToProviderOptions) => {
+}: UseReturnToProviderOptions = {}) => {
   const { pathname, state } = useLocation();
   const parsed = returnToStateSchema.safeParse(state);
 
-  return filterLocations(
-    [parsed.success ? parsed.data.returnTo : undefined, pathname],
-    {
-      forbid,
-      fallback,
-    }
+  return (
+    filterLocations(
+      [parsed.success ? parsed.data.returnTo : undefined, pathname],
+      forbid
+    ) || fallback
   );
 };

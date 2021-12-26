@@ -22,10 +22,11 @@ export const Registration = ({
   flowId,
   returnTo: returnToProp,
 }: RegistrationProps) => {
-  const returnTo = useReturnToConsumer({
-    preferred: returnToProp,
-    forbid: [`${LOGIN_PATH}/*`, `${REGISTRATION_PATH}/*`],
-  });
+  const returnTo =
+    useReturnToConsumer({
+      preferred: returnToProp,
+      forbid: [`${LOGIN_PATH}/*`, `${REGISTRATION_PATH}/*`],
+    }) || "/";
 
   const {
     error,

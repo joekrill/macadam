@@ -22,10 +22,11 @@ export const Login = ({
   refresh,
   returnTo: returnToProp,
 }: LoginProps) => {
-  const returnTo = useReturnToConsumer({
-    preferred: returnToProp,
-    forbid: [`${LOGIN_PATH}/*`, `${REGISTRATION_PATH}/*`],
-  });
+  const returnTo =
+    useReturnToConsumer({
+      preferred: returnToProp,
+      forbid: [`${LOGIN_PATH}/*`, `${REGISTRATION_PATH}/*`],
+    }) || "/";
 
   const {
     error,

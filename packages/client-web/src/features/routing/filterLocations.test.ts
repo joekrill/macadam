@@ -7,19 +7,8 @@ describe("when `forbid` is empty", () => {
   describe("and `candidates` is empty", () => {
     const candidates: To[] = [];
 
-    describe("and `fallback` is provided", () => {
-      const fallback: To = "/blah";
-      test("returns the `fallback` value", () => {
-        expect(filterLocations(candidates, { forbid, fallback })).toBe(
-          fallback
-        );
-      });
-    });
-
-    describe("and `fallback` is not provided", () => {
-      test("returns undefined", () => {
-        expect(filterLocations(candidates, { forbid })).toBeUndefined();
-      });
+    test("returns undefined", () => {
+      expect(filterLocations(candidates, forbid)).toBeUndefined();
     });
   });
 
@@ -27,7 +16,15 @@ describe("when `forbid` is empty", () => {
     const candidates: To[] = ["foo", "bar"];
 
     test("returns the first candidate", () => {
-      expect(filterLocations(candidates, { forbid })).toBe(candidates[0]);
+      expect(filterLocations(candidates, forbid)).toBe(candidates[0]);
+    });
+  });
+
+  describe("and `candidates` contains undefined values", () => {
+    const candidates: (To | undefined)[] = [undefined, "foo", "bar"];
+
+    test("returns the first defined candidate", () => {
+      expect(filterLocations(candidates, forbid)).toBe(candidates[1]);
     });
   });
 });
@@ -35,77 +32,62 @@ describe("when `forbid` is empty", () => {
 describe("when `candidates` is empty", () => {
   const candidates: To[] = [];
 
-  describe("and `fallback` is provided", () => {
-    const fallback = "/fallback";
-
-    test("returns undefined", () => {
-      expect(filterLocations(candidates, { forbid: [], fallback })).toBe(
-        fallback
-      );
-    });
-  });
-
-  describe("and `fallback` is not provided", () => {
-    test("returns undefined", () => {
-      expect(filterLocations(candidates, { forbid: [] })).toBeUndefined();
-    });
+  test("returns undefined", () => {
+    expect(filterLocations(candidates, [])).toBeUndefined();
   });
 });
 
 describe.each([
-  [
-    "string candidates, forbid empty",
-    [["/foo", "/bar", "/baz"], { forbid: [] }],
-    "/foo",
-  ],
+  ["string candidates, forbid empty", [["/foo", "/bar", "/baz"], []], "/foo"],
   [
     "string and Location candidates, forbid empty",
-    [[{ pathname: "/foo" }, "/bar", "/baz"], { forbid: [] }],
+    [[{ pathname: "/foo" }, "/bar", "/baz"], []],
     { pathname: "/foo" },
   ],
   [
     "Location candidates, forbid empty",
-    [[{ pathname: "/foo" }, { pathname: "/bar" }], { forbid: [] }],
+    [[{ pathname: "/foo" }, { pathname: "/bar" }], []],
     { pathname: "/foo" },
   ],
   [
     "string candidates, forbid first",
-    [["/foo", "/bar", "/baz"], { forbid: ["/foo/*"] }],
+    [["/foo", "/bar", "/baz"], ["/foo/*"]],
     "/bar",
   ],
   [
     "string candidates, forbid first and second",
-    [["/foo", "/bar", "/baz"], { forbid: ["/bar/*", "/foo/*"] }],
+    [
+      ["/foo", "/bar", "/baz"],
+      ["/bar/*", "/foo/*"],
+    ],
     "/baz",
   ],
   [
     "string candidates, forbid all exact",
-    [["/foo", "/bar", "/baz"], { forbid: ["/bar/*", "/baz/*", "/foo/*"] }],
+    [
+      ["/foo", "/bar", "/baz"],
+      ["/bar/*", "/baz/*", "/foo/*"],
+    ],
     undefined,
   ],
   [
     "string candidates, forbid all wildcards",
-    [["/foo", "/bar", "/baz"], { forbid: ["/bar", "/baz", "/foo"] }],
+    [
+      ["/foo", "/bar", "/baz"],
+      ["/bar", "/baz", "/foo"],
+    ],
     undefined,
   ],
   [
-    "string candidates, forbid all with fallback",
-    [
-      ["/foo", "/bar", "/baz"],
-      { forbid: ["/bar", "/baz", "/foo"], fallback: "/hello" },
-    ],
-    "/hello",
-  ],
-  [
     "non-exact string candidates",
-    [["/foo/123", "/foo", "/foo/x/123"], { forbid: ["/foo/*"] }],
+    [["/foo/123", "/foo", "/foo/x/123"], ["/foo/*"]],
     undefined,
   ],
   [
     "non-exact Location candidates",
     [
       [{ pathname: "/foo/123" }, "/foo", { pathname: "/foo/x/123" }],
-      { forbid: ["/foo/*"] },
+      ["/foo/*"],
     ],
     undefined,
   ],

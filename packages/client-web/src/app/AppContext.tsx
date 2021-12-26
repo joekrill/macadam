@@ -14,10 +14,10 @@ export interface AppContextProps {
 export const AppContext = ({ children }: AppContextProps) => (
   <>
     <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-    <ReduxProvider store={store}>
-      <AuthProvider>
-        <I18nProvider>
-          <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme}>
+      <ReduxProvider store={store}>
+        <AuthProvider>
+          <I18nProvider>
             <HelmetProvider>
               <Helmet
                 titleTemplate={`%s - ${process.env.REACT_APP_DISPLAY_NAME}`}
@@ -25,9 +25,9 @@ export const AppContext = ({ children }: AppContextProps) => (
               />
               {children}
             </HelmetProvider>
-          </ChakraProvider>
-        </I18nProvider>
-      </AuthProvider>
-    </ReduxProvider>
+          </I18nProvider>
+        </AuthProvider>
+      </ReduxProvider>
+    </ChakraProvider>
   </>
 );

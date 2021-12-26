@@ -36,7 +36,7 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
               defaultMessage="Your Profile"
             />
           </MenuItem>
-          <MenuItem as={RouterLink} to="/things?filter=mine">
+          <MenuItem as={RouterLink} to="/things?mine=1">
             <FormattedMessage
               id="user.userMenu.thingsLink"
               defaultMessage="Your Things"

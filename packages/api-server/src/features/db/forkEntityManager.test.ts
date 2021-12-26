@@ -28,7 +28,7 @@ describe("forkEntityManager", () => {
 
   beforeEach(() => {
     contextMock = createMockContext<DbContext>({
-      customProperties: { orm: ormMock },
+      customProperties: { db: { orm: ormMock } },
     });
     nextMock.mockReset();
     instance = forkEntityManager();

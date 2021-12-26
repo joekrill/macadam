@@ -2,7 +2,6 @@
 
 - SELFSERVICE_FLOWS_ERROR_UI_URL?
   - https://www.ory.sh/kratos/docs/self-service/flows/user-facing-errors
-- (api-server) consider namespacing all contexts?
 - (client-web) User sessions
 - (client-web) profile locale vs app locale selection
 - (client-web) How to deal with unverified email address

@@ -4,7 +4,9 @@ import Koa from "koa";
 import { ormConfig, OrmConfigOptions } from "./ormConfig";
 
 export interface DbContext {
-  orm: MikroORM<PostgreSqlDriver>;
+  db: {
+    orm: MikroORM<PostgreSqlDriver>;
+  };
 }
 
 export interface InitializeDbOptions
@@ -16,19 +18,20 @@ export interface InitializeDbOptions
  */
 export const initializeDb = async (app: Koa, options: InitializeDbOptions) => {
   app.context.logger.debug("Database connecting");
-  app.context.orm = await MikroORM.init<PostgreSqlDriver>(
+  const orm = await MikroORM.init<PostgreSqlDriver>(
     ormConfig({
       environment: app.env,
       logger: app.context.logger,
       ...options,
     })
   );
-
   app.context.logger.debug("Database connected");
+
+  app.context.db = { orm };
 
   app.context.addShutdownListener(async () => {
     app.context.logger.debug("Database connection closing");
-    await app.context.orm.close();
+    await orm.close();
     app.context.logger.debug("Database connection closed");
   });
 };

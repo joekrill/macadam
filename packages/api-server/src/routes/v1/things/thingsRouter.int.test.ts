@@ -36,10 +36,10 @@ const initApp = async ({ identityId }: { identityId?: string } = {}) => {
     kratosPublicUrl: "",
     kratosDbUrl: "sqlite::memory:",
   });
-  await app.context.orm.getMigrator().up();
+  await app.context.db.orm.getMigrator().up();
 
   // Remove any test data
-  await app.context.orm.em.nativeDelete("Thing", {});
+  await app.context.db.orm.em.nativeDelete("Thing", {});
 };
 
 describe("authenticated", () => {
@@ -48,7 +48,7 @@ describe("authenticated", () => {
   });
 
   afterEach(async () => {
-    app.context.orm.em.flush();
+    app.context.db.orm.em.flush();
     await app.context.shutdown();
   });
 
@@ -67,7 +67,7 @@ describe("authenticated", () => {
 
     describe("when there are things", () => {
       beforeEach(async () => {
-        app.context.orm.em
+        app.context.db.orm.em
           .persist([
             new Thing("123", "Item 1"),
             new Thing("123", "Item 2"),
@@ -95,7 +95,7 @@ describe("authenticated", () => {
 
     describe("paging", () => {
       beforeEach(async () => {
-        app.context.orm.em
+        app.context.db.orm.em
           .persist(
             Array.from({ length: 35 }, (_, i) => new Thing("123", `Item ${i}`))
           )
@@ -222,7 +222,7 @@ describe("authenticated", () => {
       ownedThing.isPrivate = false;
       unownedThing = new Thing("567", "Item 2");
       unownedThing.isPrivate = false;
-      app.context.orm.em.persist([ownedThing, unownedThing]).flush();
+      app.context.db.orm.em.persist([ownedThing, unownedThing]).flush();
     });
 
     describe("when it doesn't exist", () => {
@@ -249,7 +249,7 @@ describe("authenticated", () => {
 
       it("deletes the Thing", async () => {
         expect.assertions(1);
-        const count = await app.context.orm.em.count("Thing", {
+        const count = await app.context.db.orm.em.count("Thing", {
           id: ownedThing.id,
         });
         expect(count).toBe(0);
@@ -280,7 +280,7 @@ describe("authenticated", () => {
       ownedThing.isPrivate = false;
       unownedThing = new Thing("567", "Item 2");
       unownedThing.isPrivate = false;
-      app.context.orm.em.persist([ownedThing, unownedThing]).flush();
+      app.context.db.orm.em.persist([ownedThing, unownedThing]).flush();
     });
 
     describe("when it doesn't exist", () => {
@@ -317,8 +317,8 @@ describe("authenticated", () => {
 
       it("updates the chagned fields", async () => {
         expect.assertions(1);
-        await app.context.orm.em.clear();
-        const thing = await app.context.orm.em.findOne(Thing, {
+        await app.context.db.orm.em.clear();
+        const thing = await app.context.db.orm.em.findOne(Thing, {
           id: ownedThing.id,
         });
         expect(thing?.description).toBe("a description!");
@@ -326,7 +326,7 @@ describe("authenticated", () => {
 
       it("does not change other fields", async () => {
         expect.assertions(1);
-        const thing = await app.context.orm.em.findOne(Thing, {
+        const thing = await app.context.db.orm.em.findOne(Thing, {
           id: ownedThing.id,
         });
         expect(thing?.name).toBe("Item 1");
@@ -353,7 +353,7 @@ describe("authenticated", () => {
 
     beforeEach(async () => {
       thing = new Thing("123", "Item 2", "A description");
-      app.context.orm.em.persist([thing]).flush();
+      app.context.db.orm.em.persist([thing]).flush();
     });
 
     describe("when it doesn't exist", () => {
@@ -389,8 +389,8 @@ describe("authenticated", () => {
 
       it("Replaces all fields", async () => {
         expect.assertions(2);
-        await app.context.orm.em.clear();
-        const updated = await app.context.orm.em.findOne(Thing, {
+        await app.context.db.orm.em.clear();
+        const updated = await app.context.db.orm.em.findOne(Thing, {
           id: thing.id,
         });
         expect(updated?.description).toBeNull();

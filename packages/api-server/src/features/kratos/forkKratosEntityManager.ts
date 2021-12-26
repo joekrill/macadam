@@ -8,7 +8,7 @@ export interface ForkKratosEntityManagerState {
 export const forkKratosEntityManager =
   (): Middleware =>
   async (ctx, next): Promise<void> => {
-    const kratosEntityManager = ctx.kratosOrm.em.fork(true);
+    const kratosEntityManager = ctx.kratos.orm.em.fork(true);
     ctx.state.kratosEntityManager = kratosEntityManager;
     await next();
     await kratosEntityManager.flush();

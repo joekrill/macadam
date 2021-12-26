@@ -1,4 +1,5 @@
 import { MikroORM } from "@mikro-orm/core";
+import { V0alpha2Api } from "@ory/kratos-client";
 import { createMockContext } from "@shopify/jest-koa-mocks";
 import { Middleware, ParameterizedContext } from "koa";
 import { forkKratosEntityManager } from "./forkKratosEntityManager";
@@ -27,7 +28,10 @@ describe("forkKratosEntityManager", () => {
   beforeEach(() => {
     contextMock = createMockContext<Partial<KratosContext>>({
       customProperties: {
-        kratosOrm: ormMock,
+        kratos: {
+          orm: ormMock,
+          publicApi: new V0alpha2Api(),
+        },
       },
     });
     nextMock.mockReset();

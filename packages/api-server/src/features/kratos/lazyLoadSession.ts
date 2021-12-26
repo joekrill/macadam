@@ -31,7 +31,7 @@ export const lazyLoadSession =
           if (!loaded) {
             try {
               ctx.state.logger.debug("Fetching Kratos session");
-              const response = await ctx.kratosPublicApi.toSession(
+              const response = await ctx.kratos.publicApi.toSession(
                 undefined,
                 ctx.request.headers["cookie"]
               );

@@ -20,7 +20,9 @@ describe("lazyLoadSession()", () => {
     instance = lazyLoadSession();
     contextMock = createMockContext({
       customProperties: {
-        kratosPublicApi: mockV0alpha1ApiInstance,
+        kratos: {
+          publicApi: mockV0alpha1ApiInstance,
+        },
       },
     });
     contextMock.state.logger = {

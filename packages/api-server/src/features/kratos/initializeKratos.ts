@@ -6,8 +6,10 @@ import { kratosOrmConfig } from "./kratosOrmConfig";
 import { lazyLoadSession } from "./lazyLoadSession";
 
 export interface KratosContext {
-  kratosPublicApi: V0alpha2Api;
-  kratosOrm: MikroORM;
+  kratos: {
+    publicApi: V0alpha2Api;
+    orm: MikroORM;
+  };
 }
 
 export interface KratosState {
@@ -28,11 +30,11 @@ export const initializeKratos = async (
   { publicUrl, ...ormOptions }: InitializeKratosOptions
 ) => {
   const config = new Configuration({ basePath: publicUrl });
-  app.context.kratosPublicApi = new V0alpha2Api(config);
+  const publicApi = new V0alpha2Api(config);
   app.use(lazyLoadSession());
 
   app.context.logger.debug("Kratos Database connecting");
-  app.context.kratosOrm = await MikroORM.init(
+  const orm = await MikroORM.init(
     kratosOrmConfig({
       environment: app.env,
       logger: app.context.logger,
@@ -41,9 +43,14 @@ export const initializeKratos = async (
   );
   app.context.logger.debug("Kratos Database connected");
 
+  app.context.kratos = {
+    publicApi,
+    orm,
+  };
+
   app.context.addShutdownListener(async () => {
     app.context.logger.debug("Kratos Database connection closing");
-    await app.context.kratosOrm.close();
+    await orm.close();
     app.context.logger.debug("Kratos Database connection closed");
   });
 };

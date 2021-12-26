@@ -48,6 +48,12 @@ export const PasswordInput = React.forwardRef<
 
   return (
     <InputGroup>
+      <Input
+        ref={mergeRef}
+        autoComplete="current-password"
+        {...props}
+        type={isOpen ? "text" : "password"}
+      />
       <InputRightElement>
         <IconButton
           bg="transparent !important"
@@ -58,12 +64,6 @@ export const PasswordInput = React.forwardRef<
           onClick={onClickReveal}
         />
       </InputRightElement>
-      <Input
-        ref={mergeRef}
-        autoComplete="current-password"
-        {...props}
-        type={isOpen ? "text" : "password"}
-      />
     </InputGroup>
   );
 });

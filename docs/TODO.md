@@ -3,7 +3,6 @@
 - SELFSERVICE_FLOWS_ERROR_UI_URL?
   - https://www.ory.sh/kratos/docs/self-service/flows/user-facing-errors
 - (api-server) consider namespacing all contexts?
-- (kratos) Flatten traits?
 - (client-web) User sessions
 - (client-web) profile locale vs app locale selection
 - (client-web) How to deal with unverified email address
@@ -38,8 +37,6 @@
 - (client-web) upgrade create-react-app
 - Use svgo for SVG optimization
 - Figure out how to share logic between front-end/back-end while still having hot-reloading work and without ejecting
-- setup lint-staged
-  - apply this to other things as well? i18n updates?
 - (api-server) Uploads
   - https://github.com/node-formidable/formidable
   - https://hub.docker.com/r/minio/minio/

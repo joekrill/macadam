@@ -1,9 +1,8 @@
 import pino from "pino";
 import request from "supertest";
-import { UnwrapPromise } from "../../../@types/UnwrapPromise";
 import { createApp } from "../../../app";
 
-let app: UnwrapPromise<ReturnType<typeof createApp>>;
+let app: Awaited<ReturnType<typeof createApp>>;
 
 beforeEach(async () => {
   app = await createApp({

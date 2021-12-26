@@ -1,11 +1,10 @@
 import { V0alpha2Api } from "@ory/kratos-client";
 import pino from "pino";
 import request from "supertest";
-import { UnwrapPromise } from "../../../@types/UnwrapPromise";
 import { createApp } from "../../../app";
 import { Thing } from "../../../features/db/entities/Thing";
 
-let app: UnwrapPromise<ReturnType<typeof createApp>>;
+let app: Awaited<ReturnType<typeof createApp>>;
 
 jest.mock("@ory/kratos-client");
 jest.unmock("@mikro-orm/migrations");

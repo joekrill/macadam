@@ -42,7 +42,7 @@ selfservice:
                   essential: true
                 picture: null
                 preferred_username: null
-          - id: discord 
+          - id: discord
             provider: discord
             client_id: "REPLACE_ME"
             client_secret: REPLACE_ME
@@ -51,8 +51,6 @@ selfservice:
               - identify
               - email
           - id: microsoft
-
-            provider: microsoft
             provider: microsoft
             client_id: "REPLACE_ME"
             client_secret: "REPLACE_ME"

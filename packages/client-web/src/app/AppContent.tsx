@@ -17,24 +17,17 @@ import { UserSettingsPage } from "../features/users/pages/UserSettingsPage";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 
+/**
+ * Renders the main content of the app (excluding main app context providers)
+ *
+ * Sticky footer technique taken from: {@url https://css-tricks.com/a-clever-sticky-footer-technique/}
+ */
 export const AppContent = () => {
   const { colorMode } = useColorMode();
 
   return (
     <>
-      <Global
-        // Taken from the solution used here: https://github.com/postcss/postcss-100vh-fix
-        styles={`
-          body, #root {
-            min-height: 100vh;
-          }
-          @supports (-webkit-touch-callout: none) {
-            body, #root {
-              min-height: -webkit-fill-available;
-            }  
-          }
-        `}
-      />
+      <Global styles={`html, body { height: 100%;}`} />
       <Flex
         direction="column"
         sx={{
@@ -68,7 +61,7 @@ export const AppContent = () => {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Box>
-        <Footer />
+        <Footer position="sticky" top="100vh" />
       </Flex>
     </>
   );

@@ -64,7 +64,6 @@ docker cp $(docker-compose ps -q caddy):/data/caddy/pki/authorities/local/root.c
 
 # Firefox on MacOS - `security.enterprise_roots.enabled` must be `true` in `about:config` (see https://support.mozilla.org/en-US/kb/setting-certificate-authorities-firefox for other OSes)
 docker cp $(docker compose ps -q caddy):/data/caddy/pki/authorities/local/root.crt ~/Library/Application\ Support/Mozilla/Certificates/macadam_caddy.crt
-
 ```
 
 ### Running additional services

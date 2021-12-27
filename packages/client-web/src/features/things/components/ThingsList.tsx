@@ -83,13 +83,16 @@ export const ThingsList = () => {
   return (
     <Box>
       <Heading mb="2">
-        <FormattedMessage id="thingsList.title" defaultMessage="Things" />
+        <FormattedMessage
+          id="things.thingsList.title"
+          defaultMessage="Things"
+        />
         <IconButton
           ml="3"
           isRound
           size="sm"
           aria-label={formatMessage({
-            id: "thingsList.refreshButton.ariaLabel",
+            id: "things.thingsList.refreshButton.ariaLabel",
             defaultMessage: "Refresh",
           })}
           variant="outline"
@@ -122,7 +125,7 @@ export const ThingsList = () => {
                 value={searchInput || ""}
                 onChange={(e) => setSearchInput(e.currentTarget.value)}
                 placeholder={formatMessage({
-                  id: "thingsList.search.placeholder",
+                  id: "things.thingsList.search.placeholder",
                   defaultMessage: "Filter by name or description...",
                 })}
               />
@@ -143,13 +146,13 @@ export const ThingsList = () => {
             >
               <option value="">
                 {formatMessage({
-                  id: "thingsList.ownFilter.all",
+                  id: "things.thingsList.ownFilter.all",
                   defaultMessage: "All Things",
                 })}
               </option>
               <option value="mine">
                 {formatMessage({
-                  id: "thingsList.ownFilter.mine",
+                  id: "things.thingsList.ownFilter.mine",
                   defaultMessage: "My Things",
                 })}
               </option>
@@ -160,7 +163,7 @@ export const ThingsList = () => {
           <ButtonGroup size="sm" variant="outline">
             <Button
               aria-label={formatMessage({
-                id: "thingsList.addButton.ariaLabel",
+                id: "things.thingsList.addButton.ariaLabel",
                 defaultMessage: "Add new Thing",
               })}
               leftIcon={<HiPlusSm />}
@@ -168,7 +171,7 @@ export const ThingsList = () => {
               as={ReactRouterLink}
             >
               <FormattedMessage
-                id="thingsList.addButton.label"
+                id="things.thingsList.addButton.label"
                 defaultMessage="New thing"
               />
             </Button>

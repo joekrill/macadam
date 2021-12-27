@@ -20,7 +20,7 @@ export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
     () => [
       {
         Header: formatMessage({
-          id: "thingsTable.nameHeader.label",
+          id: "things.thingsTable.nameHeader.label",
           defaultMessage: "Name",
         }),
         accessor: "name",
@@ -30,14 +30,14 @@ export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
       },
       {
         Header: formatMessage({
-          id: "thingsTable.descriptionHeader.label",
+          id: "things.thingsTable.descriptionHeader.label",
           defaultMessage: "Description",
         }),
         accessor: "description",
       },
       {
         Header: formatMessage({
-          id: "thingsTable.createdHeader.label",
+          id: "things.thingsTable.createdHeader.label",
           defaultMessage: "Created",
         }),
         accessor: "createdAt",
@@ -51,7 +51,7 @@ export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
       },
       {
         Header: formatMessage({
-          id: "thingsTable.privateHeader.label",
+          id: "things.thingsTable.privateHeader.label",
           defaultMessage: "Private",
         }),
         accessor: "isPrivate",

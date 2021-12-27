@@ -27,7 +27,10 @@ export const ThingEdit = () => {
   return (
     <Box>
       <Heading mb="2">
-        <FormattedMessage id="thingEdit.title" defaultMessage="Edit Thing" />
+        <FormattedMessage
+          id="things.thingEdit.title"
+          defaultMessage="Edit Thing"
+        />
       </Heading>
       {getResult.isFetching && <LoadingSpinner />}
       {getResult.error && <ThingLoadError error={getResult.error} />}

@@ -15,6 +15,7 @@ export class Migration00000000000000 extends Migration {
           table.uuid("updated_by").notNullable();
           table.timestamp("created_at").notNullable();
           table.timestamp("updated_at").notNullable();
+          table.timestamp("deleted_at");
         })
         .toQuery()
     );

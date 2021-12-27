@@ -1,7 +1,8 @@
-import { Entity, Property } from "@mikro-orm/core";
+import { Entity, Filter, Property } from "@mikro-orm/core";
 import { UuidEntity } from "./UuidEntity";
 
 @Entity()
+@Filter({ name: "notDeleted", cond: { deletedAt: null }, default: true })
 export class Thing extends UuidEntity {
   static readonly modelName = "Thing";
 
@@ -19,6 +20,9 @@ export class Thing extends UuidEntity {
 
   @Property()
   public isPrivate = true;
+
+  @Property()
+  public deletedAt?: Date;
 
   constructor(createdBy: string, name: string, description?: string) {
     super();

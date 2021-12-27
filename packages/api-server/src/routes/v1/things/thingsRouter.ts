@@ -153,9 +153,14 @@ thingsRouter
     "/:thingId",
     authenticationRequired(),
     async (ctx) => {
-      const { ability, thing, thingRepository } = ctx.state;
+      const { ability, identityId, thing, thingRepository } = ctx.state;
       ability!.ensureCan("delete", thing!);
-      await thingRepository!.removeAndFlush(thing!);
+      wrap(thing!).assign({
+        updatedBy: identityId,
+        deletedAt: new Date(),
+      });
+      await thingRepository!.flush();
+      // await thingRepository!.removeAndFlush(thing!);
       ctx.status = 204;
     }
   );

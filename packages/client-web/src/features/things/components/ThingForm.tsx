@@ -65,7 +65,10 @@ export const ThingForm = ({
           isRequired
         >
           <FormLabel>
-            <FormattedMessage id="thingForm.name.label" defaultMessage="Name" />
+            <FormattedMessage
+              id="things.thingForm.name.label"
+              defaultMessage="Name"
+            />
           </FormLabel>
           <Input placeholder="Name" {...register("name")} />
           <FormErrorMessage>{errors.name?.message}</FormErrorMessage>
@@ -73,7 +76,7 @@ export const ThingForm = ({
         <FormControl isInvalid={!!errors.description} isDisabled={isLoading}>
           <FormLabel>
             <FormattedMessage
-              id="thingForm.description.label"
+              id="things.thingForm.description.label"
               defaultMessage="Description"
             />
           </FormLabel>
@@ -87,7 +90,7 @@ export const ThingForm = ({
         >
           <Checkbox {...register("isPrivate")}>
             <FormattedMessage
-              id="thingForm.isPrivate.label"
+              id="things.thingForm.isPrivate.label"
               defaultMessage="Private"
             />
           </Checkbox>

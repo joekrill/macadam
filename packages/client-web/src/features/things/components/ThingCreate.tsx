@@ -19,7 +19,10 @@ export const ThingCreate = () => {
   return (
     <Box>
       <Heading mb="2">
-        <FormattedMessage id="thingCreate.title" defaultMessage="New Thing" />
+        <FormattedMessage
+          id="things.thingCreate.title"
+          defaultMessage="New Thing"
+        />
       </Heading>
       <ThingForm isLoading={isLoading} onSubmit={submit} error={error} />
     </Box>

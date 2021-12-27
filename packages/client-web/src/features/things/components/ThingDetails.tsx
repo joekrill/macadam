@@ -3,13 +3,14 @@ import { skipToken } from "@reduxjs/toolkit/query";
 import { parseISO } from "date-fns";
 import { FaLock, FaUnlock } from "react-icons/fa";
 import { FormattedDate, FormattedMessage } from "react-intl";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { thingsApi } from "../thingsApi";
 import { ThingActions } from "./ThingActions";
 import { ThingLoadError } from "./ThingLoadError";
 
 export const ThingDetails = () => {
   const { id } = useParams<"id">();
+  const navigate = useNavigate();
   const { data, error, isFetching, refetch } = thingsApi.useGetThingQuery(
     id || skipToken
   );
@@ -27,13 +28,20 @@ export const ThingDetails = () => {
               as={data.data.isPrivate ? FaLock : FaUnlock}
               color={data.data.isPrivate ? "red.600" : "green.300"}
             />
-            <ThingActions ml="3" size="xs" thing={data.data} />
+            <ThingActions
+              ml="3"
+              size="xs"
+              thing={data.data}
+              onDelete={() => {
+                navigate("/things");
+              }}
+            />
           </Heading>
           <Text>{data.data?.description}</Text>
           <Text>
             <chakra.span color="gray.500">
               <FormattedMessage
-                id="thingDetails.createdField.label"
+                id="things.thingDetails.createdField.label"
                 defaultMessage="Created:"
               />
             </chakra.span>
@@ -45,7 +53,7 @@ export const ThingDetails = () => {
           <Text>
             <chakra.span color="gray.500">
               <FormattedMessage
-                id="thingDetails.updatedField.label"
+                id="things.thingDetails.updatedField.label"
                 defaultMessage="Updated:"
               />
             </chakra.span>{" "}

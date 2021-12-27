@@ -42,6 +42,7 @@
   - https://hub.docker.com/r/minio/minio/
 - commitlint
 - "Down for Maintenance" state
+- Delete - remove confirmation and provide "undo" toast instead.
 
 ## Low priority
 

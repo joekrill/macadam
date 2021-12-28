@@ -6,7 +6,6 @@ import pino from "pino";
 import { forkEntityManager } from "./features/db/forkEntityManager";
 import { initializeDb } from "./features/db/initializeDb";
 import { errorHandler } from "./features/errors/errorHandler";
-import { notFound } from "./features/errors/notFound";
 import { healthRoutes } from "./features/health/healthRoutes";
 import { forkKratosEntityManager } from "./features/kratos/forkKratosEntityManager";
 import { initializeKratos } from "./features/kratos/initializeKratos";
@@ -21,13 +20,12 @@ import { requestId } from "./features/requestId/requestId";
 import { responseTime } from "./features/responseTime/responseTime";
 import { initializeSentry } from "./features/sentry/initializeSentry";
 import { initializeGracefulShutdown } from "./features/shutdown/initializeGracefulShutdown";
-import { apiRoutes } from "./routes";
 
 export interface AppOptions {
   /**
-   * The base path to use for API endpoints. (i.e. "/api")
+   * The name used to identify the application (for logging, etc)
    */
-  apiPath?: string;
+  appName: string;
 
   /**
    * The database connection URL.
@@ -89,7 +87,7 @@ export interface AppOptions {
 }
 
 export const createApp = async ({
-  apiPath = "/api",
+  appName,
   dbUrl,
   defaultShutdownWaitMs = 15000,
   environment = "development",
@@ -103,6 +101,12 @@ export const createApp = async ({
   sentryTunnelableDsns,
 }: AppOptions) => {
   const app = new Koa({ env: environment });
+
+  Object.defineProperty(app.context, "appName", {
+    get: function () {
+      return appName;
+    },
+  });
 
   initializeLogger(app, { logger });
   initializeGracefulShutdown(app, { defaultShutdownWaitMs });
@@ -171,10 +175,6 @@ export const createApp = async ({
   // Create a scoped entity manager for each request.
   app.use(forkEntityManager());
   app.use(forkKratosEntityManager());
-
-  // Lastly, register API routes
-  app.use(apiRoutes({ prefix: apiPath }));
-  app.use(notFound());
 
   return app;
 };

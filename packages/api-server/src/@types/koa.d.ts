@@ -30,7 +30,9 @@ declare module "koa" {
       LoggerContext,
       RedisContext,
       SentryContext,
-      ShutdownContext {}
+      ShutdownContext {
+    appName: string;
+  }
 
   // I'm not totally sure this is the best way to handle these typings.
   interface DefaultState

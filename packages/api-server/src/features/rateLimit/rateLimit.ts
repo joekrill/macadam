@@ -22,16 +22,16 @@ export const rateLimit = ({
   redis,
   ...options
 }: RateLimitOptions = {}): Middleware => {
-  const mergedOptions = {
-    keyPrefix: "api-server",
-    points: 10, // requests per ctx.ip
-    duration: 1, // per 1 second
-    ...options,
-  };
-
   let rateLimiter: RateLimiterMemory | RateLimiterRedis | undefined = undefined;
 
   return async (ctx, next: () => Promise<void>): Promise<void> => {
+    const mergedOptions = {
+      keyPrefix: ctx.appName,
+      points: 10, // requests per ctx.ip
+      duration: 1, // per 1 second
+      ...options,
+    };
+
     if (!rateLimiter) {
       rateLimiter = ctx.redis
         ? new RateLimiterRedis({ storeClient: ctx.redis, ...mergedOptions })

@@ -22,6 +22,11 @@
     redir https://localtest.me{uri}
   } 
 
+  @admin host admin.localtest.me 
+	handle @admin {
+		reverse_proxy admin-server:4000
+	}
+
   @mail host mail.localtest.me
 	handle @mail {
 		reverse_proxy mail:1080

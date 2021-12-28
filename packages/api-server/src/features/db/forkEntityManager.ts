@@ -13,7 +13,7 @@ export const forkEntityManager =
     // This will get added to any audit_log entries
     // generated using this forked entity manager.
     entityManager.setFilterParams("auditContext", {
-      app: "api-server",
+      app: ctx.appName,
       ip: ctx.ip,
       requestId: ctx.state.requestId,
       hostname,

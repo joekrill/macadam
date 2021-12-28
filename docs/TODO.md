@@ -5,19 +5,12 @@
 - (client-web) User sessions
 - (client-web) profile locale vs app locale selection
 - (client-web) Detect session expiration and handle it somehow (modal login form? a la Gmail?)
-- Integration tests (i.e. using cypress)
-- CI script
-  - eslint+prettier?
 - CI/CD pipeline
+  - eslint+prettier?
 - (client-web) contact form
-- Background tasks
-  - https://github.com/OptimalBits/bull
-  - https://github.com/Automattic/kue
-  - https://devcenter.heroku.com/articles/node-redis-workers
 - Docs/standards
   - https://docs.devland.is
 - (client-web) review icons (for consistency)
-- (client-web) better table styling (+responsive)
 - production/staging kubernetes deployments
 - OpenTelemety
   - Versioning issues (https://github.com/open-telemetry/opentelemetry-js-contrib/issues/749)
@@ -31,6 +24,7 @@
 
 # "v1"+
 
+- Integration tests (i.e. using cypress)
 - (client-web) upgrade create-react-app
 - Use svgo for SVG optimization
 - Figure out how to share logic between front-end/back-end while still having hot-reloading work and without ejecting
@@ -41,6 +35,11 @@
 - "Down for Maintenance" state
 - Delete - remove confirmation and provide "undo" toast instead.
 - Confirm email form - use dropdown with unverified email addresses when the user is logged in.
+- Background tasks
+  - https://github.com/OptimalBits/bull
+  - https://github.com/Automattic/kue
+  - https://devcenter.heroku.com/articles/node-redis-workers
+- (client-web) better table styling (+responsive)
 
 ## Low priority
 

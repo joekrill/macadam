@@ -1,6 +1,7 @@
 import { ensure as ensureError } from "errorish";
+import Koa from "koa";
 import pino from "pino";
-import { createApp } from "./app";
+import { z } from "zod";
 
 export const logger = pino(
   { serializers: pino.stdSerializers },
@@ -17,71 +18,70 @@ process.on("unhandledRejection", (reason, promise) => {
   process.exit(1);
 });
 
-const {
-  DB_URL,
-  HEALTH_PATH,
-  KRATOS_DB_URL,
-  KRATOS_PUBLIC_URL,
-  LISTEN_ADDRESS,
-  LOG_LEVEL,
-  METRICS_PATH,
-  NODE_ENV,
-  PORT,
-  SENTRY_DSN,
-  SENTRY_TUNNELABLE_DSNS,
-} = process.env;
+export const configSchema = z
+  .object({
+    DB_URL: z.string(),
+    HEALTH_PATH: z.string().default("/health"),
+    KRATOS_DB_URL: z.string(),
+    KRATOS_PUBLIC_URL: z.string(),
+    LISTEN_ADDRESS: z.string().default("0.0.0.0"),
+    LOG_LEVEL: z
+      .string()
+      .refine((level) => !!logger.levels.values[level], {
+        message: `LOG_LEVEL must be one of: ${Object.keys(
+          logger.levels.values
+        )}`,
+      })
+      .optional(),
+    METRICS_PATH: z.string().default("/metrics"),
+    NODE_ENV: z.string().default("development"),
+    PORT: z
+      .string()
+      .default("4000")
+      .transform((value) => parseInt(value, 10)),
+    SENTRY_DSN: z.string().optional(),
+    SENTRY_TUNNELABLE_DSNS: z.string().optional(),
+  })
+  .transform((result) => ({
+    ...result,
+    LOG_LEVEL:
+      result.LOG_LEVEL ||
+      (result.NODE_ENV === "development" ? "debug" : "info"),
+  }));
 
-const environment = NODE_ENV || "development";
-const port = parseInt(PORT || "", 10) || 4000;
-const host = LISTEN_ADDRESS || "0.0.0.0";
+const parsedConfig = configSchema.safeParse(process.env);
 
-if (typeof DB_URL !== "string") {
-  logger.error("DB_URL environment variable not supplied");
+if (!parsedConfig.success) {
+  logger.error(parsedConfig.error);
   process.exit(2);
 }
 
-if (typeof KRATOS_DB_URL !== "string") {
-  logger.error("KRATOS_DB_URL environment variable not supplied");
-  process.exit(2);
-}
+const { data: config } = parsedConfig;
 
-if (typeof KRATOS_PUBLIC_URL !== "string") {
-  logger.error("KRATOS_PUBLIC_URL environment variable not supplied");
-  process.exit(2);
-}
-
-if (environment === "development") {
-  logger.level = "debug";
-}
-
-if (LOG_LEVEL && logger.levels.values[LOG_LEVEL]) {
-  logger.level = LOG_LEVEL;
-}
-
-(async () => {
+export const start = (app: Koa, port: number, hostname: string) => {
   try {
-    const app = await createApp({
-      dbUrl: DB_URL,
-      environment,
-      healthPath: HEALTH_PATH,
-      kratosDbUrl: KRATOS_DB_URL,
-      kratosPublicUrl: KRATOS_PUBLIC_URL,
-      logger,
-      metricsPath: METRICS_PATH,
-      sentryDsn: SENTRY_DSN,
-      sentryTunnelableDsns: SENTRY_TUNNELABLE_DSNS?.split(","),
-    });
+    // const app = await createApiApp({
+    //   dbUrl: config.DB_URL,
+    //   environment: config.NODE_ENV,
+    //   healthPath: config.HEALTH_PATH,
+    //   kratosDbUrl: config.KRATOS_DB_URL,
+    //   kratosPublicUrl: config.KRATOS_PUBLIC_URL,
+    //   logger,
+    //   metricsPath: config.METRICS_PATH,
+    //   sentryDsn: config.SENTRY_DSN,
+    //   sentryTunnelableDsns: config.SENTRY_TUNNELABLE_DSNS?.split(","),
+    // });
 
-    const apiServer = app.listen(port, host, () => {
+    const apiServer = app.listen(port, hostname, () => {
       const address = apiServer.address() || {};
       const addressInfo = typeof address === "string" ? { address } : address;
       logger.info(
         {
           ...addressInfo,
-          environment,
+          environment: app.env,
           logLevel: logger.level,
         },
-        "🛣️  Macadam API server listening"
+        `🛣️ ${app.context.appName} server listening`
       );
 
       app.on("shutdown", () => {
@@ -92,4 +92,6 @@ if (LOG_LEVEL && logger.levels.values[LOG_LEVEL]) {
     logger.error(ensureError(error), "Error running server");
     process.exit(1);
   }
-})();
+};
+
+// start();

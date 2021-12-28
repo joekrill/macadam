@@ -154,6 +154,12 @@ services:
     # ports:
     #   - 4000:4000
 
+  admin-server:
+    <<: *api-server-defaults
+    command: ["yarn", "workspace", "api-server", "run", "start:admin:dev"]
+    depends_on:
+      - api-server-migrate
+
   client-web:
     <<: *service-defaults
     # Uncomment to expose client-web directly

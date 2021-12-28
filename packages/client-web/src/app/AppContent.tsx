@@ -1,10 +1,14 @@
 import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
+import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
+import { VerifyEmailNotificationBanner } from "../features/auth/components/VerifyEmailNotificationBanner/VerifyEmailNotificationBanner";
+import { useSession } from "../features/auth/hooks/useSession";
 import { LoginPage } from "../features/auth/pages/LoginPage";
 import { RecoveryPage } from "../features/auth/pages/RecoveryPage";
 import { RegistrationPage } from "../features/auth/pages/RegistrationPage";
 import { VerificationPage } from "../features/auth/pages/VerificationPage";
+import { selectPendingVerifiableAddresses } from "../features/auth/selectors/selectPendingVerifiableAddresses";
 import { CrashInitiator } from "../features/errors/components/CrashInitiator/CrashInitiator";
 import { NotFoundPage } from "../features/errors/components/NotFoundPage/NotFoundPage";
 import { ContactUs } from "../features/pages/ContactUs/ContactUs";
@@ -24,6 +28,10 @@ import { Header } from "./components/Header/Header";
  */
 export const AppContent = () => {
   const { colorMode } = useColorMode();
+  useSession();
+  const pendingVerifiableAddresses = useSelector((s) =>
+    selectPendingVerifiableAddresses(s)
+  );
 
   return (
     <>
@@ -37,6 +45,11 @@ export const AppContent = () => {
           },
         }}
       >
+        {pendingVerifiableAddresses.length > 0 && (
+          <VerifyEmailNotificationBanner
+            emailAddress={pendingVerifiableAddresses[0]!.value}
+          />
+        )}
         <Header position="sticky" top="0px" zIndex="sticky" />
         <Box
           bg={colorMode === "dark" ? "gray.900" : "gray.50"}

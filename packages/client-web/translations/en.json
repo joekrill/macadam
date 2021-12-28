@@ -38,6 +38,13 @@
   "app.footer.links.termsAndConditions.label": {
     "defaultMessage": "Terms"
   },
+  "auth.VerifyEmailNotificationBanner.emailSentMessage": {
+    "defaultMessage": "Please confirm your email. We've send a message to <e>{emailAddress}</e>.",
+    "description": "The message asking the user to confirm their email address when an email has been sent"
+  },
+  "auth.VerifyEmailNotificationBanner.resendButton.label": {
+    "defaultMessage": "Resend email"
+  },
   "auth.flowError.redirecting": {
     "defaultMessage": "{reason, select, session_refresh_required {Reauthentication required. } browser_location_change_required {} session_aal2_required {2FA required. } other {}}Redirecting..."
   },
@@ -245,29 +252,18 @@
   "theme.colorModeSwitcher.switchColorModeLabel": {
     "defaultMessage": "Switch to {mode, select, dark {dark} light {light} other {}} mode"
   },
-  "thingCreate.title": {
-    "defaultMessage": "New Thing"
+  "things.deleteConfirmation.cancelButton.label": {
+    "defaultMessage": "Cancel"
   },
-  "thingDefailts.error.notFound": {
-    "defaultMessage": "The Thing you are looking for couldn't be found."
+  "things.deleteConfirmation.confirmButton.label": {
+    "defaultMessage": "Yes, delete it"
   },
-  "thingDetails.createdField.label": {
-    "defaultMessage": "Created:"
+  "things.deleteConfirmation.header": {
+    "defaultMessage": "Delete Thing?"
   },
-  "thingDetails.updatedField.label": {
-    "defaultMessage": "Updated:"
-  },
-  "thingEdit.title": {
-    "defaultMessage": "Edit Thing"
-  },
-  "thingForm.description.label": {
-    "defaultMessage": "Description"
-  },
-  "thingForm.isPrivate.label": {
-    "defaultMessage": "Private"
-  },
-  "thingForm.name.label": {
-    "defaultMessage": "Name"
+  "things.deleteConfirmation.message": {
+    "defaultMessage": "Are you sure you want to delete the Thing '<e>{name}</e>'?",
+    "description": "The message asking the user to confirm that they want to delete a Thing"
   },
   "things.deleteThingLink.ariaLabel": {
     "defaultMessage": "Delete Thing"
@@ -275,37 +271,61 @@
   "things.editThingLink.ariaLabel": {
     "defaultMessage": "Edit Thing"
   },
-  "thingsList.addButton.ariaLabel": {
-    "defaultMessage": "Add new Thing"
+  "things.thingCreate.title": {
+    "defaultMessage": "New Thing"
   },
-  "thingsList.addButton.label": {
-    "defaultMessage": "New thing"
+  "things.thingDetails.createdField.label": {
+    "defaultMessage": "Created:"
   },
-  "thingsList.ownFilter.all": {
-    "defaultMessage": "All Things"
+  "things.thingDetails.updatedField.label": {
+    "defaultMessage": "Updated:"
   },
-  "thingsList.ownFilter.mine": {
-    "defaultMessage": "My Things"
+  "things.thingEdit.title": {
+    "defaultMessage": "Edit Thing"
   },
-  "thingsList.refreshButton.ariaLabel": {
-    "defaultMessage": "Refresh"
-  },
-  "thingsList.search.placeholder": {
-    "defaultMessage": "Filter by name or description..."
-  },
-  "thingsList.title": {
-    "defaultMessage": "Things"
-  },
-  "thingsTable.createdHeader.label": {
-    "defaultMessage": "Created"
-  },
-  "thingsTable.descriptionHeader.label": {
+  "things.thingForm.description.label": {
     "defaultMessage": "Description"
   },
-  "thingsTable.nameHeader.label": {
+  "things.thingForm.isPrivate.label": {
+    "defaultMessage": "Private"
+  },
+  "things.thingForm.name.label": {
     "defaultMessage": "Name"
   },
-  "thingsTable.privateHeader.label": {
+  "things.thingLoadError.notFound": {
+    "defaultMessage": "The Thing you are looking for couldn't be found."
+  },
+  "things.thingsList.addButton.ariaLabel": {
+    "defaultMessage": "Add new Thing"
+  },
+  "things.thingsList.addButton.label": {
+    "defaultMessage": "New thing"
+  },
+  "things.thingsList.ownFilter.all": {
+    "defaultMessage": "All Things"
+  },
+  "things.thingsList.ownFilter.mine": {
+    "defaultMessage": "My Things"
+  },
+  "things.thingsList.refreshButton.ariaLabel": {
+    "defaultMessage": "Refresh"
+  },
+  "things.thingsList.search.placeholder": {
+    "defaultMessage": "Filter by name or description..."
+  },
+  "things.thingsList.title": {
+    "defaultMessage": "Things"
+  },
+  "things.thingsTable.createdHeader.label": {
+    "defaultMessage": "Created"
+  },
+  "things.thingsTable.descriptionHeader.label": {
+    "defaultMessage": "Description"
+  },
+  "things.thingsTable.nameHeader.label": {
+    "defaultMessage": "Name"
+  },
+  "things.thingsTable.privateHeader.label": {
     "defaultMessage": "Private"
   },
   "user.userMenu.profileLink": {

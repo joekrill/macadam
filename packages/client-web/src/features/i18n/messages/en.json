@@ -148,6 +148,32 @@
       "value": "Terms"
     }
   ],
+  "auth.VerifyEmailNotificationBanner.emailSentMessage": [
+    {
+      "type": 0,
+      "value": "Please confirm your email. We've send a message to "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "emailAddress"
+        }
+      ],
+      "type": 8,
+      "value": "e"
+    },
+    {
+      "type": 0,
+      "value": "."
+    }
+  ],
+  "auth.VerifyEmailNotificationBanner.resendButton.label": [
+    {
+      "type": 0,
+      "value": "Resend email"
+    }
+  ],
   "auth.flowError.redirecting": [
     {
       "options": {
@@ -732,52 +758,28 @@
       "value": " mode"
     }
   ],
-  "thingCreate.title": [
+  "things.deleteConfirmation.cancelButton.label": [
     {
       "type": 0,
-      "value": "New Thing"
+      "value": "Cancel"
     }
   ],
-  "thingDefailts.error.notFound": [
+  "things.deleteConfirmation.confirmButton.label": [
     {
       "type": 0,
-      "value": "The Thing you are looking for couldn't be found."
+      "value": "Yes, delete it"
     }
   ],
-  "thingDetails.createdField.label": [
+  "things.deleteConfirmation.header": [
     {
       "type": 0,
-      "value": "Created:"
+      "value": "Delete Thing?"
     }
   ],
-  "thingDetails.updatedField.label": [
+  "things.deleteConfirmation.message": [
     {
       "type": 0,
-      "value": "Updated:"
-    }
-  ],
-  "thingEdit.title": [
-    {
-      "type": 0,
-      "value": "Edit Thing"
-    }
-  ],
-  "thingForm.description.label": [
-    {
-      "type": 0,
-      "value": "Description"
-    }
-  ],
-  "thingForm.isPrivate.label": [
-    {
-      "type": 0,
-      "value": "Private"
-    }
-  ],
-  "thingForm.name.label": [
-    {
-      "type": 0,
-      "value": "Name"
+      "value": "Are you sure you want to delete the Thing <e>{name}</e>?"
     }
   ],
   "things.deleteThingLink.ariaLabel": [
@@ -792,67 +794,115 @@
       "value": "Edit Thing"
     }
   ],
-  "thingsList.addButton.ariaLabel": [
+  "things.thingCreate.title": [
     {
       "type": 0,
-      "value": "Add new Thing"
+      "value": "New Thing"
     }
   ],
-  "thingsList.addButton.label": [
+  "things.thingDetails.createdField.label": [
     {
       "type": 0,
-      "value": "New thing"
+      "value": "Created:"
     }
   ],
-  "thingsList.ownFilter.all": [
+  "things.thingDetails.updatedField.label": [
     {
       "type": 0,
-      "value": "All Things"
+      "value": "Updated:"
     }
   ],
-  "thingsList.ownFilter.mine": [
+  "things.thingEdit.title": [
     {
       "type": 0,
-      "value": "My Things"
+      "value": "Edit Thing"
     }
   ],
-  "thingsList.refreshButton.ariaLabel": [
-    {
-      "type": 0,
-      "value": "Refresh"
-    }
-  ],
-  "thingsList.search.placeholder": [
-    {
-      "type": 0,
-      "value": "Filter by name or description..."
-    }
-  ],
-  "thingsList.title": [
-    {
-      "type": 0,
-      "value": "Things"
-    }
-  ],
-  "thingsTable.createdHeader.label": [
-    {
-      "type": 0,
-      "value": "Created"
-    }
-  ],
-  "thingsTable.descriptionHeader.label": [
+  "things.thingForm.description.label": [
     {
       "type": 0,
       "value": "Description"
     }
   ],
-  "thingsTable.nameHeader.label": [
+  "things.thingForm.isPrivate.label": [
+    {
+      "type": 0,
+      "value": "Private"
+    }
+  ],
+  "things.thingForm.name.label": [
     {
       "type": 0,
       "value": "Name"
     }
   ],
-  "thingsTable.privateHeader.label": [
+  "things.thingLoadError.notFound": [
+    {
+      "type": 0,
+      "value": "The Thing you are looking for couldn't be found."
+    }
+  ],
+  "things.thingsList.addButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Add new Thing"
+    }
+  ],
+  "things.thingsList.addButton.label": [
+    {
+      "type": 0,
+      "value": "New thing"
+    }
+  ],
+  "things.thingsList.ownFilter.all": [
+    {
+      "type": 0,
+      "value": "All Things"
+    }
+  ],
+  "things.thingsList.ownFilter.mine": [
+    {
+      "type": 0,
+      "value": "My Things"
+    }
+  ],
+  "things.thingsList.refreshButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Refresh"
+    }
+  ],
+  "things.thingsList.search.placeholder": [
+    {
+      "type": 0,
+      "value": "Filter by name or description..."
+    }
+  ],
+  "things.thingsList.title": [
+    {
+      "type": 0,
+      "value": "Things"
+    }
+  ],
+  "things.thingsTable.createdHeader.label": [
+    {
+      "type": 0,
+      "value": "Created"
+    }
+  ],
+  "things.thingsTable.descriptionHeader.label": [
+    {
+      "type": 0,
+      "value": "Description"
+    }
+  ],
+  "things.thingsTable.nameHeader.label": [
+    {
+      "type": 0,
+      "value": "Name"
+    }
+  ],
+  "things.thingsTable.privateHeader.label": [
     {
       "type": 0,
       "value": "Private"

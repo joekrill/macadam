@@ -148,6 +148,32 @@
       "value": "[!! Ṯèŕŕŕṁś !!]"
     }
   ],
+  "auth.VerifyEmailNotificationBanner.emailSentMessage": [
+    {
+      "type": 0,
+      "value": "[!! Ṕĺèèèâśèèè ćŏŏŏńḟíííŕṁ ẏŏůůůŕ èèèṁâíííĺ. Ẅè'ṿè śèńńńḋ âââ ṁèèèśśâââĝè ṭŏ  !!]"
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "emailAddress"
+        }
+      ],
+      "type": 8,
+      "value": "e"
+    },
+    {
+      "type": 0,
+      "value": "[!! . !!]"
+    }
+  ],
+  "auth.VerifyEmailNotificationBanner.resendButton.label": [
+    {
+      "type": 0,
+      "value": "[!! Ŕèśśśèńḋḋḋ èṁṁṁâíĺĺĺ !!]"
+    }
+  ],
   "auth.flowError.redirecting": [
     {
       "options": {
@@ -732,52 +758,28 @@
       "value": "[!!  ṁŏŏŏḋè !!]"
     }
   ],
-  "thingCreate.title": [
+  "things.deleteConfirmation.cancelButton.label": [
     {
       "type": 0,
-      "value": "[!! Ŋèẘẘẘ Ṯḫḫḫíńĝĝĝ !!]"
+      "value": "[!! Ḉâńńńćèĺĺĺ !!]"
     }
   ],
-  "thingDefailts.error.notFound": [
+  "things.deleteConfirmation.confirmButton.label": [
     {
       "type": 0,
-      "value": "[!! Ṯḫèèè Ṯḫḫḫíńĝĝĝ ẏŏŏŏů âââŕè ĺŏŏŏŏǩíńńńĝ ḟḟḟŏŕ ćŏůůůĺḋńńń'ṭ ḃè ḟŏůůůńḋ. !!]"
+      "value": "[!! Ÿèśśś, ḋḋḋèĺèèèṭè íṭ !!]"
     }
   ],
-  "thingDetails.createdField.label": [
+  "things.deleteConfirmation.header": [
     {
       "type": 0,
-      "value": "[!! Ḉŕèèèâṭèèèḋ: !!]"
+      "value": "[!! Ḋèĺĺĺèṭèèè Ṯḫḫḫíńĝĝĝ? !!]"
     }
   ],
-  "thingDetails.updatedField.label": [
+  "things.deleteConfirmation.message": [
     {
       "type": 0,
-      "value": "[!! Ũṗḋḋḋâṭèèèḋ: !!]"
-    }
-  ],
-  "thingEdit.title": [
-    {
-      "type": 0,
-      "value": "[!! Ḕḋíííṭ ṮṮṮḫíńńńĝ !!]"
-    }
-  ],
-  "thingForm.description.label": [
-    {
-      "type": 0,
-      "value": "[!! Ḋèśśśćŕíííṗṭíííŏń !!]"
-    }
-  ],
-  "thingForm.isPrivate.label": [
-    {
-      "type": 0,
-      "value": "[!! Ṕŕíííṿâṭṭṭè !!]"
-    }
-  ],
-  "thingForm.name.label": [
-    {
-      "type": 0,
-      "value": "[!! Ŋâṁṁṁè !!]"
+      "value": "[!! Ḁŕèèè ẏŏŏŏů śśśůŕèèè ẏŏŏŏů ẘẘẘâńṭṭṭ ṭŏŏŏ ḋèèèĺèṭṭṭè ṭṭṭḫè Ṯḫíííńĝ <è>{ńâââṁè}</èèè>? !!]"
     }
   ],
   "things.deleteThingLink.ariaLabel": [
@@ -792,67 +794,115 @@
       "value": "[!! Ḕḋíííṭ ṮṮṮḫíńńńĝ !!]"
     }
   ],
-  "thingsList.addButton.ariaLabel": [
+  "things.thingCreate.title": [
     {
       "type": 0,
-      "value": "[!! Ḁḋḋḋḋ ńèèèẘ ṮṮṮḫíńńńĝ !!]"
+      "value": "[!! Ŋèẘẘẘ Ṯḫḫḫíńĝĝĝ !!]"
     }
   ],
-  "thingsList.addButton.label": [
+  "things.thingDetails.createdField.label": [
     {
       "type": 0,
-      "value": "[!! Ŋèẘẘẘ ṭḫḫḫíńĝĝĝ !!]"
+      "value": "[!! Ḉŕèèèâṭèèèḋ: !!]"
     }
   ],
-  "thingsList.ownFilter.all": [
+  "things.thingDetails.updatedField.label": [
     {
       "type": 0,
-      "value": "[!! Ḁĺĺĺĺ Ṯḫḫḫíńĝĝĝś !!]"
+      "value": "[!! Ũṗḋḋḋâṭèèèḋ: !!]"
     }
   ],
-  "thingsList.ownFilter.mine": [
+  "things.thingEdit.title": [
     {
       "type": 0,
-      "value": "[!! Ḿẏ Ṯḫíííńĝśśś !!]"
+      "value": "[!! Ḕḋíííṭ ṮṮṮḫíńńńĝ !!]"
     }
   ],
-  "thingsList.refreshButton.ariaLabel": [
-    {
-      "type": 0,
-      "value": "[!! Ŕèḟḟḟŕèśśśḫ !!]"
-    }
-  ],
-  "thingsList.search.placeholder": [
-    {
-      "type": 0,
-      "value": "[!! Ḟíĺĺĺṭèŕŕŕ ḃẏẏẏ ńâââṁè ŏŕ ḋèśśśćŕíííṗṭíííŏń... !!]"
-    }
-  ],
-  "thingsList.title": [
-    {
-      "type": 0,
-      "value": "[!! Ṯḫíííńĝśśś !!]"
-    }
-  ],
-  "thingsTable.createdHeader.label": [
-    {
-      "type": 0,
-      "value": "[!! Ḉŕèèèâṭèèèḋ !!]"
-    }
-  ],
-  "thingsTable.descriptionHeader.label": [
+  "things.thingForm.description.label": [
     {
       "type": 0,
       "value": "[!! Ḋèśśśćŕíííṗṭíííŏń !!]"
     }
   ],
-  "thingsTable.nameHeader.label": [
+  "things.thingForm.isPrivate.label": [
+    {
+      "type": 0,
+      "value": "[!! Ṕŕíííṿâṭṭṭè !!]"
+    }
+  ],
+  "things.thingForm.name.label": [
     {
       "type": 0,
       "value": "[!! Ŋâṁṁṁè !!]"
     }
   ],
-  "thingsTable.privateHeader.label": [
+  "things.thingLoadError.notFound": [
+    {
+      "type": 0,
+      "value": "[!! Ṯḫèèè Ṯḫḫḫíńĝĝĝ ẏŏŏŏů âââŕè ĺŏŏŏŏǩíńńńĝ ḟḟḟŏŕ ćŏůůůĺḋńńń'ṭ ḃè ḟŏůůůńḋ. !!]"
+    }
+  ],
+  "things.thingsList.addButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[!! Ḁḋḋḋḋ ńèèèẘ ṮṮṮḫíńńńĝ !!]"
+    }
+  ],
+  "things.thingsList.addButton.label": [
+    {
+      "type": 0,
+      "value": "[!! Ŋèẘẘẘ ṭḫḫḫíńĝĝĝ !!]"
+    }
+  ],
+  "things.thingsList.ownFilter.all": [
+    {
+      "type": 0,
+      "value": "[!! Ḁĺĺĺĺ Ṯḫḫḫíńĝĝĝś !!]"
+    }
+  ],
+  "things.thingsList.ownFilter.mine": [
+    {
+      "type": 0,
+      "value": "[!! Ḿẏ Ṯḫíííńĝśśś !!]"
+    }
+  ],
+  "things.thingsList.refreshButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[!! Ŕèḟḟḟŕèśśśḫ !!]"
+    }
+  ],
+  "things.thingsList.search.placeholder": [
+    {
+      "type": 0,
+      "value": "[!! Ḟíĺĺĺṭèŕŕŕ ḃẏẏẏ ńâââṁè ŏŕ ḋèśśśćŕíííṗṭíííŏń... !!]"
+    }
+  ],
+  "things.thingsList.title": [
+    {
+      "type": 0,
+      "value": "[!! Ṯḫíííńĝśśś !!]"
+    }
+  ],
+  "things.thingsTable.createdHeader.label": [
+    {
+      "type": 0,
+      "value": "[!! Ḉŕèèèâṭèèèḋ !!]"
+    }
+  ],
+  "things.thingsTable.descriptionHeader.label": [
+    {
+      "type": 0,
+      "value": "[!! Ḋèśśśćŕíííṗṭíííŏń !!]"
+    }
+  ],
+  "things.thingsTable.nameHeader.label": [
+    {
+      "type": 0,
+      "value": "[!! Ŋâṁṁṁè !!]"
+    }
+  ],
+  "things.thingsTable.privateHeader.label": [
     {
       "type": 0,
       "value": "[!! Ṕŕíííṿâṭṭṭè !!]"

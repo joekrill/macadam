@@ -148,6 +148,32 @@
       "value": "[javascript]Terms"
     }
   ],
+  "auth.VerifyEmailNotificationBanner.emailSentMessage": [
+    {
+      "type": 0,
+      "value": "[javascript]Please confirm your email. We've send a message to "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "emailAddress"
+        }
+      ],
+      "type": 8,
+      "value": "e"
+    },
+    {
+      "type": 0,
+      "value": "."
+    }
+  ],
+  "auth.VerifyEmailNotificationBanner.resendButton.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Resend email"
+    }
+  ],
   "auth.flowError.redirecting": [
     {
       "type": 0,
@@ -658,52 +684,28 @@
       "value": " mode"
     }
   ],
-  "thingCreate.title": [
+  "things.deleteConfirmation.cancelButton.label": [
     {
       "type": 0,
-      "value": "[javascript]New Thing"
+      "value": "[javascript]Cancel"
     }
   ],
-  "thingDefailts.error.notFound": [
+  "things.deleteConfirmation.confirmButton.label": [
     {
       "type": 0,
-      "value": "[javascript]The Thing you are looking for couldn't be found."
+      "value": "[javascript]Yes, delete it"
     }
   ],
-  "thingDetails.createdField.label": [
+  "things.deleteConfirmation.header": [
     {
       "type": 0,
-      "value": "[javascript]Created:"
+      "value": "[javascript]Delete Thing?"
     }
   ],
-  "thingDetails.updatedField.label": [
+  "things.deleteConfirmation.message": [
     {
       "type": 0,
-      "value": "[javascript]Updated:"
-    }
-  ],
-  "thingEdit.title": [
-    {
-      "type": 0,
-      "value": "[javascript]Edit Thing"
-    }
-  ],
-  "thingForm.description.label": [
-    {
-      "type": 0,
-      "value": "[javascript]Description"
-    }
-  ],
-  "thingForm.isPrivate.label": [
-    {
-      "type": 0,
-      "value": "[javascript]Private"
-    }
-  ],
-  "thingForm.name.label": [
-    {
-      "type": 0,
-      "value": "[javascript]Name"
+      "value": "[javascript]Are you sure you want to delete the Thing <e>{name}</e>?"
     }
   ],
   "things.deleteThingLink.ariaLabel": [
@@ -718,67 +720,115 @@
       "value": "[javascript]Edit Thing"
     }
   ],
-  "thingsList.addButton.ariaLabel": [
+  "things.thingCreate.title": [
     {
       "type": 0,
-      "value": "[javascript]Add new Thing"
+      "value": "[javascript]New Thing"
     }
   ],
-  "thingsList.addButton.label": [
+  "things.thingDetails.createdField.label": [
     {
       "type": 0,
-      "value": "[javascript]New thing"
+      "value": "[javascript]Created:"
     }
   ],
-  "thingsList.ownFilter.all": [
+  "things.thingDetails.updatedField.label": [
     {
       "type": 0,
-      "value": "[javascript]All Things"
+      "value": "[javascript]Updated:"
     }
   ],
-  "thingsList.ownFilter.mine": [
+  "things.thingEdit.title": [
     {
       "type": 0,
-      "value": "[javascript]My Things"
+      "value": "[javascript]Edit Thing"
     }
   ],
-  "thingsList.refreshButton.ariaLabel": [
-    {
-      "type": 0,
-      "value": "[javascript]Refresh"
-    }
-  ],
-  "thingsList.search.placeholder": [
-    {
-      "type": 0,
-      "value": "[javascript]Filter by name or description..."
-    }
-  ],
-  "thingsList.title": [
-    {
-      "type": 0,
-      "value": "[javascript]Things"
-    }
-  ],
-  "thingsTable.createdHeader.label": [
-    {
-      "type": 0,
-      "value": "[javascript]Created"
-    }
-  ],
-  "thingsTable.descriptionHeader.label": [
+  "things.thingForm.description.label": [
     {
       "type": 0,
       "value": "[javascript]Description"
     }
   ],
-  "thingsTable.nameHeader.label": [
+  "things.thingForm.isPrivate.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Private"
+    }
+  ],
+  "things.thingForm.name.label": [
     {
       "type": 0,
       "value": "[javascript]Name"
     }
   ],
-  "thingsTable.privateHeader.label": [
+  "things.thingLoadError.notFound": [
+    {
+      "type": 0,
+      "value": "[javascript]The Thing you are looking for couldn't be found."
+    }
+  ],
+  "things.thingsList.addButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[javascript]Add new Thing"
+    }
+  ],
+  "things.thingsList.addButton.label": [
+    {
+      "type": 0,
+      "value": "[javascript]New thing"
+    }
+  ],
+  "things.thingsList.ownFilter.all": [
+    {
+      "type": 0,
+      "value": "[javascript]All Things"
+    }
+  ],
+  "things.thingsList.ownFilter.mine": [
+    {
+      "type": 0,
+      "value": "[javascript]My Things"
+    }
+  ],
+  "things.thingsList.refreshButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[javascript]Refresh"
+    }
+  ],
+  "things.thingsList.search.placeholder": [
+    {
+      "type": 0,
+      "value": "[javascript]Filter by name or description..."
+    }
+  ],
+  "things.thingsList.title": [
+    {
+      "type": 0,
+      "value": "[javascript]Things"
+    }
+  ],
+  "things.thingsTable.createdHeader.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Created"
+    }
+  ],
+  "things.thingsTable.descriptionHeader.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Description"
+    }
+  ],
+  "things.thingsTable.nameHeader.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Name"
+    }
+  ],
+  "things.thingsTable.privateHeader.label": [
     {
       "type": 0,
       "value": "[javascript]Private"

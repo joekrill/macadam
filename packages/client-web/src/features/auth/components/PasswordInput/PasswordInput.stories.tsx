@@ -5,13 +5,6 @@ import { PasswordInput, PasswordInputProps } from "./PasswordInput";
 export default {
   title: "auth/PasswordInput",
   component: PasswordInput,
-  // parameters: {
-  //   layout: "centered",
-  // },
-  // argTypes: {
-  //   children: { control: { type: "text" }, defaultValue: "Some text" },
-  //   width: { control: { type: "text" } },
-  // },
 } as Meta;
 
 const Template: Story<PasswordInputProps> = (args) => (

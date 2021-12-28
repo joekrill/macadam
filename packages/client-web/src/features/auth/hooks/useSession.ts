@@ -31,6 +31,8 @@ export const useSession = () => {
   );
 
   return {
+    identity,
+
     /**
      * True if logged in, false if logged out, undefined if unknown.
      */

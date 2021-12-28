@@ -40,6 +40,10 @@ export const verifiableIdentityAddressSchema = z.object({
   via: z.string(),
 });
 
+export type VerifiableIdentityAddress = z.infer<
+  typeof verifiableIdentityAddressSchema
+>;
+
 export const recoveryAddressSchema = z.object({
   created_at: z.string().nullish(),
 

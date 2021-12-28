@@ -4,9 +4,6 @@
   - https://www.ory.sh/kratos/docs/self-service/flows/user-facing-errors
 - (client-web) User sessions
 - (client-web) profile locale vs app locale selection
-- (client-web) How to deal with unverified email address
-  - (client-web) Show notification component whne email address is not verififed
-  - https://github.com/ory/kratos/issues/1328
 - (client-web) Detect session expiration and handle it somehow (modal login form? a la Gmail?)
 - Integration tests (i.e. using cypress)
 - CI script
@@ -43,6 +40,7 @@
 - commitlint
 - "Down for Maintenance" state
 - Delete - remove confirmation and provide "undo" toast instead.
+- Confirm email form - use dropdown with unverified email addresses when the user is logged in.
 
 ## Low priority
 
@@ -72,8 +70,7 @@
   - https://github.com/ory/x/pull/420
 - (api-server) switch to esmodules
   - https://github.com/node-fetch/node-fetch/issues/1279#issuecomment-915062146
-
-## Major Features
+- Allow only logging in with verified email? https://github.com/ory/kratos/issues/1328
 
 - Admin panel (AdminJS? https://github.com/SoftwareBrothers/adminjs)
 - (client-web) Offline support

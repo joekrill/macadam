@@ -148,6 +148,32 @@
       "value": "TermsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "auth.VerifyEmailNotificationBanner.emailSentMessage": [
+    {
+      "type": 0,
+      "value": "Please confirm your email. We've send a message to "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "emailAddress"
+        }
+      ],
+      "type": 8,
+      "value": "e"
+    },
+    {
+      "type": 0,
+      "value": ".SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.VerifyEmailNotificationBanner.resendButton.label": [
+    {
+      "type": 0,
+      "value": "Resend emailSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "auth.flowError.redirecting": [
     {
       "options": {
@@ -700,52 +726,28 @@
       "value": " modeSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "thingCreate.title": [
+  "things.deleteConfirmation.cancelButton.label": [
     {
       "type": 0,
-      "value": "New ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "CancelSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "thingDefailts.error.notFound": [
+  "things.deleteConfirmation.confirmButton.label": [
     {
       "type": 0,
-      "value": "The Thing you are looking for couldn't be found.SSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Yes, delete itSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "thingDetails.createdField.label": [
+  "things.deleteConfirmation.header": [
     {
       "type": 0,
-      "value": "Created:SSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Delete Thing?SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "thingDetails.updatedField.label": [
+  "things.deleteConfirmation.message": [
     {
       "type": 0,
-      "value": "Updated:SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "thingEdit.title": [
-    {
-      "type": 0,
-      "value": "Edit ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "thingForm.description.label": [
-    {
-      "type": 0,
-      "value": "DescriptionSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "thingForm.isPrivate.label": [
-    {
-      "type": 0,
-      "value": "PrivateSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "thingForm.name.label": [
-    {
-      "type": 0,
-      "value": "NameSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Are you sure you want to delete the Thing <e>{name}</e>?SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "things.deleteThingLink.ariaLabel": [
@@ -760,67 +762,115 @@
       "value": "Edit ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "thingsList.addButton.ariaLabel": [
+  "things.thingCreate.title": [
     {
       "type": 0,
-      "value": "Add new ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "New ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "thingsList.addButton.label": [
+  "things.thingDetails.createdField.label": [
     {
       "type": 0,
-      "value": "New thingSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Created:SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "thingsList.ownFilter.all": [
+  "things.thingDetails.updatedField.label": [
     {
       "type": 0,
-      "value": "All ThingsSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Updated:SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "thingsList.ownFilter.mine": [
+  "things.thingEdit.title": [
     {
       "type": 0,
-      "value": "My ThingsSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Edit ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "thingsList.refreshButton.ariaLabel": [
-    {
-      "type": 0,
-      "value": "RefreshSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "thingsList.search.placeholder": [
-    {
-      "type": 0,
-      "value": "Filter by name or description...SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "thingsList.title": [
-    {
-      "type": 0,
-      "value": "ThingsSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "thingsTable.createdHeader.label": [
-    {
-      "type": 0,
-      "value": "CreatedSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "thingsTable.descriptionHeader.label": [
+  "things.thingForm.description.label": [
     {
       "type": 0,
       "value": "DescriptionSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "thingsTable.nameHeader.label": [
+  "things.thingForm.isPrivate.label": [
+    {
+      "type": 0,
+      "value": "PrivateSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.thingForm.name.label": [
     {
       "type": 0,
       "value": "NameSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "thingsTable.privateHeader.label": [
+  "things.thingLoadError.notFound": [
+    {
+      "type": 0,
+      "value": "The Thing you are looking for couldn't be found.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.thingsList.addButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Add new ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.thingsList.addButton.label": [
+    {
+      "type": 0,
+      "value": "New thingSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.thingsList.ownFilter.all": [
+    {
+      "type": 0,
+      "value": "All ThingsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.thingsList.ownFilter.mine": [
+    {
+      "type": 0,
+      "value": "My ThingsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.thingsList.refreshButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "RefreshSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.thingsList.search.placeholder": [
+    {
+      "type": 0,
+      "value": "Filter by name or description...SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.thingsList.title": [
+    {
+      "type": 0,
+      "value": "ThingsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.thingsTable.createdHeader.label": [
+    {
+      "type": 0,
+      "value": "CreatedSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.thingsTable.descriptionHeader.label": [
+    {
+      "type": 0,
+      "value": "DescriptionSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.thingsTable.nameHeader.label": [
+    {
+      "type": 0,
+      "value": "NameSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.thingsTable.privateHeader.label": [
     {
       "type": 0,
       "value": "PrivateSSSSSSSSSSSSSSSSSSSSSSSSS"

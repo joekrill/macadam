@@ -7392,6 +7392,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/nodemailer@npm:^6.4.4":
+  version: 6.4.4
+  resolution: "@types/nodemailer@npm:6.4.4"
+  dependencies:
+    "@types/node": "*"
+  checksum: 16ed1bad2cd8471fd3b026471e234da33ba3b65935dc44b31be3145eff7bdb067eb4d08ec4b41d23339b988075299abc1a0c0fe77b99f04ca235827bca95af81
+  languageName: node
+  linkType: hard
+
 "@types/normalize-package-data@npm:^2.4.0":
   version: 2.4.0
   resolution: "@types/normalize-package-data@npm:2.4.0"
@@ -8900,6 +8909,7 @@ __metadata:
     "@types/koa__cors": ^3.1.1
     "@types/koa__router": ^8.0.11
     "@types/node": ^16.11.17
+    "@types/nodemailer": ^6.4.4
     "@types/pino": ^7.0.5
     "@types/supertest": ^2.0.11
     "@types/uuid": ^8.3.3
@@ -8915,6 +8925,7 @@ __metadata:
     koa-body: ^4.2.0
     koa-compose: ^4.1.0
     koa-helmet: ^6.1.0
+    nodemailer: ^6.7.2
     nodemon: ^2.0.15
     pino: ^7.6.2
     pino-pretty: ^7.3.0
@@ -20385,6 +20396,13 @@ fsevents@^1.2.7:
     has: ^1.0.3
     is: ^3.2.1
   checksum: 1fe3a1ca7fc35392f169c8a46d889d07deb201bba3a20d17df23efab509698c9639737b0c235c9be772a34035e749bae5d477f74c9e26a1b67c78bd7d6dce8e4
+  languageName: node
+  linkType: hard
+
+"nodemailer@npm:^6.7.2":
+  version: 6.7.2
+  resolution: "nodemailer@npm:6.7.2"
+  checksum: 3c37a40928448e2f5118a9f2f016c7a4f32228d0e6b7cc7d1834b8001374cc77280dc077a83239420f6daea4c898d9a1f336dfc2273bb7eddaf51a36bd126f72
   languageName: node
   linkType: hard
 

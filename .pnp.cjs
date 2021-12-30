@@ -13781,6 +13781,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/nodemailer", [
+        ["npm:6.4.4", {
+          "packageLocation": "./.yarn/cache/@types-nodemailer-npm-6.4.4-c5c500abe2-16ed1bad2c.zip/node_modules/@types/nodemailer/",
+          "packageDependencies": [
+            ["@types/nodemailer", "npm:6.4.4"],
+            ["@types/node", "npm:16.4.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/normalize-package-data", [
         ["npm:2.4.0", {
           "packageLocation": "./.yarn/cache/@types-normalize-package-data-npm-2.4.0-ed928aaaa8-fd22ba86a1.zip/node_modules/@types/normalize-package-data/",
@@ -15547,6 +15557,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/koa__cors", "npm:3.1.1"],
             ["@types/koa__router", "npm:8.0.11"],
             ["@types/node", "npm:16.11.17"],
+            ["@types/nodemailer", "npm:6.4.4"],
             ["@types/pino", "npm:7.0.5"],
             ["@types/supertest", "npm:2.0.11"],
             ["@types/uuid", "npm:8.3.3"],
@@ -15562,6 +15573,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["koa-body", "npm:4.2.0"],
             ["koa-compose", "npm:4.1.0"],
             ["koa-helmet", "npm:6.1.0"],
+            ["nodemailer", "npm:6.7.2"],
             ["nodemon", "npm:2.0.15"],
             ["pino", "npm:7.6.2"],
             ["pino-pretty", "npm:7.3.0"],
@@ -29025,6 +29037,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["node.extend", "npm:2.0.2"],
             ["has", "npm:1.0.3"],
             ["is", "npm:3.3.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["nodemailer", [
+        ["npm:6.7.2", {
+          "packageLocation": "./.yarn/cache/nodemailer-npm-6.7.2-ba5500b754-3c37a40928.zip/node_modules/nodemailer/",
+          "packageDependencies": [
+            ["nodemailer", "npm:6.7.2"]
           ],
           "linkType": "HARD",
         }]

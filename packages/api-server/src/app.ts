@@ -12,6 +12,7 @@ import { forkKratosEntityManager } from "./features/kratos/forkKratosEntityManag
 import { initializeKratos } from "./features/kratos/initializeKratos";
 import { initializeLogger } from "./features/logging/initializeLogger";
 import { logRequests } from "./features/logging/logRequests";
+import { initializeMailer } from "./features/mailer/initializeMailer";
 import { metricsCollector } from "./features/metrics/metricsCollector";
 import { metricsRoutes } from "./features/metrics/metricsRoutes";
 import { urlSearchParams } from "./features/querystring/urlSearchParams";
@@ -86,6 +87,16 @@ export interface AppOptions {
    * @see {@link https://docs.sentry.io/platforms/javascript/troubleshooting/#dealing-with-ad-blockers}
    */
   sentryTunnelableDsns?: string[];
+
+  /**
+   * Where to forward support, contact, etc. emails to.
+   */
+  smtpMailTo?: string;
+
+  /**
+   * The connection URL to the SMTP server to use for sending emails.
+   */
+  smtpUri?: string;
 }
 
 export const createApp = async ({
@@ -101,6 +112,8 @@ export const createApp = async ({
   redisUrl,
   sentryDsn,
   sentryTunnelableDsns,
+  smtpMailTo,
+  smtpUri,
 }: AppOptions) => {
   const app = new Koa({ env: environment });
 
@@ -113,6 +126,10 @@ export const createApp = async ({
       release: process.env.npm_package_version,
       tunnelableDsns: sentryTunnelableDsns,
     });
+  }
+
+  if (smtpUri && smtpMailTo) {
+    initializeMailer(app, { smtpUri, smtpMailTo });
   }
 
   await initializeDb(app, { clientUrl: dbUrl });

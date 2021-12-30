@@ -8,6 +8,7 @@ import { AppAbility } from "./AppAbility";
 export const abilityFor = (session?: Session) => {
   const builder = new AbilityBuilder(AppAbility);
 
+  builder.can("create", "ContactUsMessage");
   builder.can("read", "Thing", { isPrivate: false });
 
   // NOTE: All conditions must either:

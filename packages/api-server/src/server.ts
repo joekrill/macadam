@@ -29,6 +29,8 @@ const {
   PORT,
   SENTRY_DSN,
   SENTRY_TUNNELABLE_DSNS,
+  SMTP_MAIL_TO,
+  SMTP_URI,
 } = process.env;
 
 const environment = NODE_ENV || "development";
@@ -70,6 +72,8 @@ if (LOG_LEVEL && logger.levels.values[LOG_LEVEL]) {
       metricsPath: METRICS_PATH,
       sentryDsn: SENTRY_DSN,
       sentryTunnelableDsns: SENTRY_TUNNELABLE_DSNS?.split(","),
+      smtpMailTo: SMTP_MAIL_TO,
+      smtpUri: SMTP_URI,
     });
 
     const apiServer = app.listen(port, host, () => {

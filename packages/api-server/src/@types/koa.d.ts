@@ -11,6 +11,7 @@ import {
   LoggerContext,
   LoggerState,
 } from "../features/logging/initializeLogger";
+import { MailerContext } from "../features/mailer/initializeMailer";
 import { MetricsCollectorState } from "../features/metrics/metricsCollector";
 import { URLSearchParamsState } from "../features/querystring/urlSearchParams";
 import { RedisContext } from "../features/redis/initializeRedis";
@@ -28,6 +29,7 @@ declare module "koa" {
     extends DbContext,
       KratosContext,
       LoggerContext,
+      MailerContext,
       RedisContext,
       SentryContext,
       ShutdownContext {}

@@ -7,7 +7,6 @@
 - (client-web) Detect session expiration and handle it somehow (modal login form? a la Gmail?)
 - CI/CD pipeline
   - eslint+prettier?
-- (client-web) contact form
 - production/staging kubernetes deployments
 - OpenTelemety
   - Versioning issues (https://github.com/open-telemetry/opentelemetry-js-contrib/issues/749)
@@ -38,6 +37,7 @@
   - https://devcenter.heroku.com/articles/node-redis-workers
 - Docs/standards
   - https://docs.devland.is
+- Move email/nodemailer functionality to a separate service/package
 
 ## Low priority
 

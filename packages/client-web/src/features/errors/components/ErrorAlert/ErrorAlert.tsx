@@ -6,9 +6,13 @@ import {
   AlertTitle,
   Button,
   ButtonProps,
-  Flex,
+  HStack,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
-import { MouseEventHandler, useEffect } from "react";
+import { ensure as ensureError } from "errorish";
+import { MouseEventHandler, useEffect, useMemo } from "react";
+import { HiRefresh } from "react-icons/hi";
 import { FormattedMessage } from "react-intl";
 import { captureException } from "../../../monitoring/capture";
 
@@ -43,6 +47,8 @@ export const ErrorAlert = ({
     }
   }, [disableCapture, error]);
 
+  const coercedError = useMemo(() => ensureError(error), [error]);
+
   return (
     <Alert
       status={status}
@@ -50,31 +56,38 @@ export const ErrorAlert = ({
       justifyContent="space-between"
       {...alertProps}
     >
-      <AlertIcon boxSize="2.5em" alignSelf="flex-start" mr="3" />
-      <Flex flex="1" flexDirection="column">
-        {title && <AlertTitle mb="2">{title}</AlertTitle>}
+      <VStack alignItems="flex-start" spacing="4">
+        <HStack alignItems="center" spacing="1">
+          <AlertIcon boxSize="2em" />
+          <AlertTitle fontSize="xl">
+            {title || (
+              <FormattedMessage
+                id="errors.errorAlert.message"
+                defaultMessage="Something went wrong :("
+              />
+            )}
+          </AlertTitle>
+        </HStack>
         <AlertDescription>
           {children || (
-            <FormattedMessage
-              id="errors.errorAlert.message"
-              defaultMessage="Something went wrong :("
-            />
+            <Text wordBreak="break-all">{coercedError.message}</Text>
           )}
         </AlertDescription>
-      </Flex>
-      {onRetryClick && (
-        <Button
-          alignSelf="flex-start"
-          ml="3"
-          colorScheme={BUTTON_SCHEME[status]}
-          onClick={onRetryClick}
-        >
-          <FormattedMessage
-            id="errors.errorAlert.retryButton.label"
-            defaultMessage="Try Again"
-          />
-        </Button>
-      )}
+        {onRetryClick && (
+          <Button
+            colorScheme={BUTTON_SCHEME[status]}
+            onClick={onRetryClick}
+            variant="outline"
+            size="sm"
+            leftIcon={<HiRefresh />}
+          >
+            <FormattedMessage
+              id="errors.errorAlert.retryButton.label"
+              defaultMessage="Try Again"
+            />
+          </Button>
+        )}
+      </VStack>
     </Alert>
   );
 };

@@ -1,7 +1,5 @@
 ## "v1" Milestone
 
-- SELFSERVICE_FLOWS_ERROR_UI_URL?
-  - https://www.ory.sh/kratos/docs/self-service/flows/user-facing-errors
 - (client-web) User sessions
 - (client-web) profile locale vs app locale selection
 - (client-web) Detect session expiration and handle it somehow (modal login form? a la Gmail?)
@@ -38,6 +36,7 @@
 - Docs/standards
   - https://docs.devland.is
 - Move email/nodemailer functionality to a separate service/package
+  - Use https://documentation.mjml.io/ ?
 
 ## Low priority
 

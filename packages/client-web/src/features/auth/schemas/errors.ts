@@ -129,3 +129,5 @@ export const sessionAlreadyEstablishedErrorSchema = z.object({
     id: z.literal(ERROR_SESSION_ALREADY_AVAILABLE),
   }),
 });
+
+export type FlowError = z.infer<typeof flowErrorSchema>;

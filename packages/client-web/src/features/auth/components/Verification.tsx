@@ -7,7 +7,7 @@ import {
   useVerificationFlow,
   UseVerificationFlowOptions,
 } from "../hooks/useVerificationFlow";
-import { FlowError } from "./FlowError";
+import { FlowErrorAlert } from "./FlowErrorAlert";
 import { FlowHeading } from "./FlowHeading";
 import { FlowRestartedAlert } from "./FlowRestartedAlert";
 import { SelfServiceUiForm } from "./SelfServiceUi/SelfServiceUiForm";
@@ -41,7 +41,7 @@ export const Verification = ({ flowId, returnTo }: VerificationProps) => {
       />
       {restartReason && <FlowRestartedAlert reason={restartReason} />}
       {error && (
-        <FlowError
+        <FlowErrorAlert
           error={error}
           onRestartFlow={restart}
           flowType="verification"

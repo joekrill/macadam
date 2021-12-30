@@ -30,7 +30,7 @@ x-kratos-defaults: &kratos-defaults
     SERVE_PUBLIC_BASE_URL: https://localtest.me/kratos/public
     SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://localtest.me
     SELFSERVICE_WHITELISTED_RETURN_URLS: https://localtest.me,http://localtest.me
-    SELFSERVICE_FLOWS_ERROR_UI_URL: https://localtest.me/auth/error
+    SELFSERVICE_FLOWS_ERROR_UI_URL: https://localtest.me/auth-error
     SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localtest.me/account/settings
     SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://localtest.me/account/recover
     SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://localtest.me/account/verify

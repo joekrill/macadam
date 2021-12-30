@@ -17,11 +17,11 @@ import { LoggedInAlreadyNotice } from "./login/LoggedInAlreadyNotice";
 export interface FlowErrorProps
   extends Omit<ErrorAlertProps, "children" | "status" | "onRetryClick"> {
   error?: FetchBaseQueryError | SerializedError;
-  onRestartFlow: (reason?: FlowRestartReason) => void;
-  flowType: SelfServiceFlowName;
+  onRestartFlow?: (reason?: FlowRestartReason) => void;
+  flowType?: SelfServiceFlowName;
 }
 
-export const FlowError = ({
+export const FlowErrorAlert = ({
   error,
   flowType,
   onRestartFlow,
@@ -37,7 +37,7 @@ export const FlowError = ({
   }, [redirectTo]);
 
   useEffect(() => {
-    if (isRestartError) {
+    if (isRestartError && onRestartFlow) {
       onRestartFlow(id as FlowRestartReason);
     }
   }, [id, onRestartFlow, isRestartError]);
@@ -47,7 +47,11 @@ export const FlowError = ({
     (flowType === "recovery" && statusCode === 400)
   ) {
     // session_already_available
-    return <LoggedInAlreadyNotice onLogout={() => onRestartFlow()} />;
+    return (
+      <LoggedInAlreadyNotice
+        onLogout={onRestartFlow ? () => onRestartFlow() : undefined}
+      />
+    );
   }
 
   if (isRedirectToError) {
@@ -58,12 +62,15 @@ export const FlowError = ({
 
     return (
       <ErrorAlert
+        disableCapture={hasRedirect}
         error={error}
         {...errorAlertProps}
         status={hasRedirect ? "info" : "error"}
         // We _should_ have been given a redirect, but we weren't, so show the
         // generic error message and allow the user to restart the flow.
-        onRetryClick={hasRedirect ? undefined : () => onRestartFlow()}
+        onRetryClick={
+          hasRedirect || !onRestartFlow ? undefined : () => onRestartFlow()
+        }
       >
         {hasRedirect && (
           <FormattedMessage
@@ -113,12 +120,10 @@ export const FlowError = ({
 
   return (
     // Anything else.
-    // TODO: log this with sentry?
     <ErrorAlert
       error={error}
       status="error"
-      {...errorAlertProps}
-      onRetryClick={() => onRestartFlow()}
+      onRetryClick={onRestartFlow ? () => onRestartFlow() : undefined}
       {...errorAlertProps}
     />
   );

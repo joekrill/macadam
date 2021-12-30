@@ -9,7 +9,7 @@ import {
   UseRegistrationFlowOptions,
 } from "../../hooks/useRegistrationFlow";
 import { REGISTRATION_PATH } from "../../hooks/useRegistrationLocation";
-import { FlowError } from "../FlowError";
+import { FlowErrorAlert } from "../FlowErrorAlert";
 import { FlowHeading } from "../FlowHeading";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
 import { LoginLink } from "../login/LoginLink";
@@ -62,7 +62,7 @@ export const Registration = ({
       />
       {restartReason && <FlowRestartedAlert reason={restartReason} />}
       {error && (
-        <FlowError
+        <FlowErrorAlert
           error={error}
           onRestartFlow={restart}
           flowType="registration"

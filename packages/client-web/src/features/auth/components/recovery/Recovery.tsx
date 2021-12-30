@@ -7,7 +7,7 @@ import {
   useRecoveryFlow,
   UseRecoveryFlowOptions,
 } from "../../hooks/useRecoveryFlow";
-import { FlowError } from "../FlowError";
+import { FlowErrorAlert } from "../FlowErrorAlert";
 import { FlowHeading } from "../FlowHeading";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
 import { SelfServiceUiForm } from "../SelfServiceUi/SelfServiceUiForm";
@@ -41,7 +41,11 @@ export const Recovery = ({ flowId, returnTo }: RecoveryProps) => {
       />
       {restartReason && <FlowRestartedAlert reason={restartReason} />}
       {error && (
-        <FlowError error={error} onRestartFlow={restart} flowType="recovery" />
+        <FlowErrorAlert
+          error={error}
+          onRestartFlow={restart}
+          flowType="recovery"
+        />
       )}
       <SelfServiceUiMessageList mt={3} messages={flow?.ui?.messages} />
       {flow?.state === "choose_method" && (

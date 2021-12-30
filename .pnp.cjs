@@ -18029,6 +18029,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["date-fns", "npm:2.28.0"],
             ["dotenv", "npm:10.0.0"],
             ["dotenv-expand", "npm:5.1.0"],
+            ["errorish", "npm:1.0.0"],
             ["eslint-config-react-app", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:6.0.0"],
             ["favicons", "npm:6.2.2"],
             ["framer-motion", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:4.1.17"],

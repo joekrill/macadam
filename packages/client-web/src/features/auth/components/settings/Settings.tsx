@@ -5,7 +5,7 @@ import {
   useSettingsFlow,
   UseSettingsFlowOptions,
 } from "../../hooks/useSettingsFlow";
-import { FlowError } from "../FlowError";
+import { FlowErrorAlert } from "../FlowErrorAlert";
 import { FlowHeading } from "../FlowHeading";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
 import { SelfServiceUiMessageList } from "../SelfServiceUi/SelfServiceUiMessageList";
@@ -44,7 +44,11 @@ export const Settings = ({
       />
       {restartReason && <FlowRestartedAlert reason={restartReason} />}
       {error && (
-        <FlowError error={error} onRestartFlow={restart} flowType="login" />
+        <FlowErrorAlert
+          error={error}
+          onRestartFlow={restart}
+          flowType="login"
+        />
       )}
       <SelfServiceUiMessageList mt={3} messages={flow?.ui?.messages} />
       {flow && (

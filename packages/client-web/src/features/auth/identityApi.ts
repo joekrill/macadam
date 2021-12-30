@@ -2,6 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import snakecaseKeys from "snakecase-keys";
 import { appApi } from "../api/appApi";
 import { invalidateSession } from "./authApi";
+import { FlowError, flowErrorSchema } from "./schemas/errors";
 import { InitializeFlowParams } from "./schemas/flows/common";
 import {
   InitializeLoginFlowParams,
@@ -47,6 +48,16 @@ export const identityApi = createApi({
     },
   }),
   endpoints: (build) => ({
+    /************************************************************
+     * User-facing flow errors
+     * https://www.ory.sh/kratos/docs/self-service/flows/user-facing-errors/
+     ************************************************************/
+
+    getFlowError: build.query<FlowError, string>({
+      query: (id) => `/self-service/errors?id=${encodeURIComponent(id)}`,
+      transformResponse: (response) => flowErrorSchema.parse(response),
+    }),
+
     /************************************************************
      * login
      ************************************************************/

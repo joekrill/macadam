@@ -7,7 +7,7 @@ import { useReturnToConsumer } from "../../../routing/hooks/useReturnToConsumer"
 import { useLoginFlow, UseLoginFlowOptions } from "../../hooks/useLoginFlow";
 import { LOGIN_PATH } from "../../hooks/useLoginLocation";
 import { REGISTRATION_PATH } from "../../hooks/useRegistrationLocation";
-import { FlowError } from "../FlowError";
+import { FlowErrorAlert } from "../FlowErrorAlert";
 import { FlowHeading } from "../FlowHeading";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
 import { SelfServiceUiMessageList } from "../SelfServiceUi/SelfServiceUiMessageList";
@@ -66,7 +66,11 @@ export const Login = ({
       />
       {restartReason && <FlowRestartedAlert reason={restartReason} />}
       {error && (
-        <FlowError error={error} onRestartFlow={restart} flowType="login" />
+        <FlowErrorAlert
+          error={error}
+          onRestartFlow={restart}
+          flowType="login"
+        />
       )}
       <SelfServiceUiMessageList mt={3} messages={flow?.ui?.messages} />
       {flow && (

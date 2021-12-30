@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { VerifyEmailNotificationBanner } from "../features/auth/components/VerifyEmailNotificationBanner/VerifyEmailNotificationBanner";
 import { useSession } from "../features/auth/hooks/useSession";
+import { FlowErrorPage } from "../features/auth/pages/FlowErrorPage";
 import { LoginPage } from "../features/auth/pages/LoginPage";
 import { RecoveryPage } from "../features/auth/pages/RecoveryPage";
 import { RegistrationPage } from "../features/auth/pages/RegistrationPage";
@@ -62,6 +63,7 @@ export const AppContent = () => {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<RegistrationPage />} />
+            <Route path="/auth/error" element={<FlowErrorPage />} />
             <Route path="/account/verify" element={<VerificationPage />} />
             <Route path="/account/recover" element={<RecoveryPage />} />
             <Route path="/settings/*" element={<UserSettingsPage />} />

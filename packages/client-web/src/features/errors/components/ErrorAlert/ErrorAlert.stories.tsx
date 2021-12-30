@@ -7,6 +7,7 @@ export default {
   component: ErrorAlert,
   argTypes: {
     title: { control: { type: "text" } },
+    children: { label: "message", control: { type: "text" } },
     onRetryClick: { action: "onRetryClick", table: { disable: true } },
     status: {
       control: { type: "inline-radio" },

@@ -9,7 +9,7 @@ export const Sidebar = ({
 }: BoxProps) => {
   const borderWidth = "0";
   const borderHighlightWidth = "2px";
-  const bg = useColorModeValue("gray.50", "gray.700");
+  const bg = useColorModeValue("gray.100", "gray.700");
   const borderColor = useColorModeValue("gray.100", "gray.400");
   const borderHighlightColor = useColorModeValue("gray.200", "gray.400");
 
@@ -17,7 +17,8 @@ export const Sidebar = ({
     <Box
       h={{ base: undefined, md: "full" }}
       w={{ base: "full", md: 60 }}
-      p="2"
+      py="5"
+      px="5"
       minWidth={60}
       overflowX="hidden"
       overflowY="auto"

@@ -21,7 +21,7 @@ export const UserSettingsPage = () => {
       minH="100vh"
       maxW="container.lg"
     >
-      <Sidebar>
+      <Sidebar mb="5" mr="3">
         <SidebarNavItem isActive={!match} as={ReactRouterLink} to="">
           Profile &amp; Login
         </SidebarNavItem>
@@ -35,7 +35,7 @@ export const UserSettingsPage = () => {
       </Sidebar>
       <Box as="main" px="4" width="full">
         <Routes>
-          <Route index element={<SettingsPage headingTextAlign="left" />} />
+          <Route index element={<SettingsPage />} />
           <Route path="preferences" element={<Box>Preferences</Box>} />
           <Route path="sessions" element={<UserSessions />} />
         </Routes>

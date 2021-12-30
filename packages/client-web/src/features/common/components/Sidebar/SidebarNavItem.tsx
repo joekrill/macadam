@@ -1,4 +1,9 @@
-import { Button, ButtonProps, forwardRef } from "@chakra-ui/react";
+import {
+  Button,
+  ButtonProps,
+  forwardRef,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
 export interface SidebarNavItemProps extends ButtonProps {}
 
@@ -7,7 +12,8 @@ export const SidebarNavItem = forwardRef<ButtonProps, "button">(
     <Button
       ref={ref}
       isFullWidth
-      variant="ghost"
+      variant={useColorModeValue("solid", "ghost")}
+      colorScheme="gray"
       textAlign="left"
       justifyContent="start"
       {...props}

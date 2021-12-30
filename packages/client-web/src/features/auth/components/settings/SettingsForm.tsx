@@ -1,5 +1,13 @@
-import { Heading, VStack } from "@chakra-ui/react";
-import { FormattedMessage } from "react-intl";
+import {
+  Collapse,
+  Heading,
+  IconButton,
+  useDisclosure,
+  VStack,
+} from "@chakra-ui/react";
+import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
+import { FormattedMessage, useIntl } from "react-intl";
+import { Card } from "../../../common/components/Card/Card";
 import { useNodeGroupNames } from "../../hooks/useNodeGroupNames";
 import { SettingsFlow } from "../../schemas/flows/settings";
 import {
@@ -18,21 +26,34 @@ export const SettingsForm = ({
   isSubmitting,
   onSubmit,
 }: SettingsFormProps) => {
+  const { formatMessage } = useIntl();
   const groupNames = useNodeGroupNames(flow.ui.nodes);
+  const { isOpen: isTotpOpen, onToggle: onTotpToggle } = useDisclosure();
+  const { isOpen: isWebauthnOpen, onToggle: onWebauthnToggle } =
+    useDisclosure();
 
   return (
     <VStack align="stretch" spacing={5}>
       {groupNames.includes("profile") && (
-        <SelfServiceUiForm
-          key="profile"
-          ui={flow.ui}
-          group="profile"
-          isSubmitting={isSubmitting}
-          onSubmit={onSubmit}
-        />
+        <Card>
+          <Heading as="h3" size="md">
+            <FormattedMessage
+              id="auth.settingsForm.profileSection.title"
+              description="The heading displayed at the top of the profile section of the settings form"
+              defaultMessage="Profile"
+            />
+          </Heading>
+          <SelfServiceUiForm
+            key="profile"
+            ui={flow.ui}
+            group="profile"
+            isSubmitting={isSubmitting}
+            onSubmit={onSubmit}
+          />
+        </Card>
       )}
       {groupNames.includes("password") && (
-        <>
+        <Card>
           <Heading as="h3" size="md">
             <FormattedMessage
               id="auth.settingsForm.changePasswordSection.title"
@@ -47,10 +68,10 @@ export const SettingsForm = ({
             isSubmitting={isSubmitting}
             onSubmit={onSubmit}
           />
-        </>
+        </Card>
       )}
       {groupNames.includes("oidc") && (
-        <>
+        <Card>
           <Heading as="h3" size="md">
             <FormattedMessage
               id="auth.settings.oidcSection.title"
@@ -65,44 +86,71 @@ export const SettingsForm = ({
             isSubmitting={isSubmitting}
             onSubmit={onSubmit}
           />
-        </>
+        </Card>
       )}
       {groupNames.includes("totp") && (
-        <>
+        <Card>
           <Heading as="h3" size="md">
             <FormattedMessage
               id="auth.settings.totpSection.title"
               description="The heading displayed at the top of the change password section of the settings form"
-              defaultMessage="Two-factor authentication"
+              defaultMessage="Two-factor Authentication"
+            />
+            <IconButton
+              aria-label={formatMessage({
+                id: "auth.settings.totpSection.toggleButton.ariaLabel",
+                description: "Toggle Two-factor authentication settings",
+              })}
+              ml="3"
+              variant="outline"
+              size="sm"
+              icon={isTotpOpen ? <FaMinusCircle /> : <FaPlusCircle />}
+              onClick={onTotpToggle}
             />
           </Heading>
-          <SelfServiceUiForm
-            key="totp"
-            ui={flow.ui}
-            group="totp"
-            isSubmitting={isSubmitting}
-            onSubmit={onSubmit}
-          />
-        </>
+
+          <Collapse in={isTotpOpen} animateOpacity>
+            <SelfServiceUiForm
+              key="totp"
+              ui={flow.ui}
+              group="totp"
+              isSubmitting={isSubmitting}
+              onSubmit={onSubmit}
+            />
+          </Collapse>
+        </Card>
       )}
 
       {groupNames.includes("webauthn") && (
-        <>
+        <Card>
           <Heading as="h3" size="md">
             <FormattedMessage
               id="auth.settings.webauthnSection.title"
               description="The heading displayed at the top of the change password section of the settings form"
               defaultMessage="Hardware Tokens and Biometrics"
             />
+            <IconButton
+              aria-label={formatMessage({
+                id: "auth.settings.webauthnSection.toggleButton.ariaLabel",
+                description: "Toggle Hardware Tokens and Biometrics settings",
+              })}
+              ml="3"
+              variant="outline"
+              size="sm"
+              icon={isTotpOpen ? <FaMinusCircle /> : <FaPlusCircle />}
+              onClick={onWebauthnToggle}
+            />
           </Heading>
-          <SelfServiceUiForm
-            key="webauthn"
-            ui={flow.ui}
-            group="webauthn"
-            isSubmitting={isSubmitting}
-            onSubmit={onSubmit}
-          />
-        </>
+          <Collapse in={isWebauthnOpen} animateOpacity>
+            <SelfServiceUiForm
+              key="webauthn"
+              ui={flow.ui}
+              group="webauthn"
+              isSubmitting={isSubmitting}
+              onSubmit={onSubmit}
+            />
+          </Collapse>
+        </Card>
       )}
     </VStack>
   );

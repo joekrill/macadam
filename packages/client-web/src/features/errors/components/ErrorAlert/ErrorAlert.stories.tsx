@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { ErrorAlert, ErrorAlertProps } from "./ErrorAlert";
 
 export default {
-  title: "errors/ErrorAlert",
+  title: "Errors/ErrorAlert",
   component: ErrorAlert,
   argTypes: {
     title: { control: { type: "text" } },

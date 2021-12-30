@@ -83,6 +83,60 @@
       "value": "[!! ). Ṕĺèèèâśèèè ṭŕŕŕẏ âââĝâíííń. !!]"
     }
   ],
+  "app.contactUsForm.emailField.label": [
+    {
+      "type": 0,
+      "value": "[!! Ḕṁâââíĺ !!]"
+    }
+  ],
+  "app.contactUsForm.emailField.placeholder": [
+    {
+      "type": 0,
+      "value": "[!! Ÿŏůůůŕ ḔḔḔṁâíííĺ !!]"
+    }
+  ],
+  "app.contactUsForm.messageField.label": [
+    {
+      "type": 0,
+      "value": "[!! Ḿèśśśśâĝĝĝè !!]"
+    }
+  ],
+  "app.contactUsForm.messageField.placeholder": [
+    {
+      "type": 0,
+      "value": "[!! Ÿŏůůůŕ ḾḾḾèśśśśâĝèèè !!]"
+    }
+  ],
+  "app.contactUsForm.nameField.label": [
+    {
+      "type": 0,
+      "value": "[!! Ŋâṁṁṁè !!]"
+    }
+  ],
+  "app.contactUsForm.nameField.placeholder": [
+    {
+      "type": 0,
+      "value": "[!! Ÿŏůůůŕ ŊŊŊâṁèèè !!]"
+    }
+  ],
+  "app.contactUsForm.sendButton.label": [
+    {
+      "type": 0,
+      "value": "[!! Ṡèńńńḋ ḾḾḾèśśśśâĝèèè !!]"
+    }
+  ],
+  "app.contactUsSuccess.message": [
+    {
+      "type": 0,
+      "value": "[!! Ṯḫâââńǩśśś ḟŏŏŏŕ ẏẏẏŏůŕŕŕ ṁèèèśśâââĝè. Ẅèèè'ĺĺĺĺ ĝèèèṭ ḃḃḃâćǩǩǩ ṭŏŏŏ ẏŏŏŏů śśśŏŏńńń. !!]"
+    }
+  ],
+  "app.contactUsSuccess.title": [
+    {
+      "type": 0,
+      "value": "[!! Ḿèśśśśâĝĝĝè śśśèńṭṭṭ! !!]"
+    }
+  ],
   "app.footer.copyrightNotice": [
     {
       "type": 0,
@@ -595,11 +649,11 @@
         }
       ],
       "type": 8,
-      "value": "emailLink"
+      "value": "mailto"
     },
     {
       "type": 0,
-      "value": "[!!  ẘíííṭḫ âńẏẏẏ ḟèèèèḋḃḃḃâćǩǩǩ, ɋɋɋůèśśśṭíŏŏŏńś, ṗŕŕŕŏḃĺĺĺèṁśśś, ŏŏŏŕ ḟḟḟèâṭṭṭůŕèèè ŕèèèɋůèèèśṭśśś. !!]"
+      "value": "[!!  ŏŕŕŕ ḟíííĺĺ ŏůṭṭṭ ṭḫḫḫè ḟḟḟŏŕṁṁṁ ḃèèèĺŏẘẘẘ ḟŏŏŏŕ âââńẏ ḟèèèèḋḃâââćǩ, ɋůůůèśṭṭṭíŏńńńś, ṗŕŏŏŏḃĺèèèṁś, ŏŕŕŕ ḟèèèâṭůůůŕè ŕèɋɋɋůèśśśṭś. !!]"
     }
   ],
   "pages.contactUs.title": [

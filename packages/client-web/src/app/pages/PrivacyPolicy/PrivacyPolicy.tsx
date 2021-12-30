@@ -2,8 +2,8 @@ import { ContainerProps, Link } from "@chakra-ui/react";
 import { Helmet } from "react-helmet-async";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
-import { PolicyContainer } from "../../common/components/PolicyContainer/PolicyContainer";
-import { ScrollToTop } from "../../routing/components/ScrollToTop";
+import { PolicyContainer } from "../../../features/common/components/PolicyContainer/PolicyContainer";
+import { ScrollToTop } from "../../../features/routing/components/ScrollToTop";
 
 export interface PrivacyPolicyProps extends ContainerProps {}
 

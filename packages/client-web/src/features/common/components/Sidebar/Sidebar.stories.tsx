@@ -4,7 +4,7 @@ import { Sidebar, SidebarProps } from "./Sidebar";
 import { SidebarNavItem } from "./SidebarNavItem";
 
 export default {
-  title: "common/Sidebar",
+  title: "Common/Sidebar",
   component: Sidebar,
   argTypes: {
     activeItem: {

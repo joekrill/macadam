@@ -5,7 +5,7 @@ import { theme } from "../../../theme/default";
 import { CurrentUserAvatar, CurrentUserAvatarProps } from "./CurrentUserAvatar";
 
 export default {
-  title: "users/CurrentUserAvatar",
+  title: "Users/CurrentUserAvatar",
   component: CurrentUserAvatar,
   argTypes: {
     email: {

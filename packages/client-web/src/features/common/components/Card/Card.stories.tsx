@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { Card } from "./Card";
 
 export default {
-  title: "common/Card",
+  title: "Common/Card",
   component: Card,
   argTypes: {
     height: { control: { type: "text" } },

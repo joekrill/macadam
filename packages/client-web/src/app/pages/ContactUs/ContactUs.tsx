@@ -7,14 +7,16 @@ import {
 } from "@chakra-ui/react";
 import { Helmet } from "react-helmet-async";
 import { FormattedMessage, useIntl } from "react-intl";
-import { ScrollToTop } from "../../routing/components/ScrollToTop";
+import { Card } from "../../../features/common/components/Card/Card";
+import { ContactUsCreate } from "../../../features/contactUs/components/ContactUsCreate/ContactUsCreate";
+import { ScrollToTop } from "../../../features/routing/components/ScrollToTop";
 
 export interface ContactUsProps extends ContainerProps {}
 
 export const ContactUs = (props: ContactUsProps) => {
   const { formatMessage } = useIntl();
   return (
-    <Container maxW="container.lg" {...props}>
+    <Container maxW="container.md" {...props}>
       <Helmet>
         <title>
           {formatMessage({
@@ -30,18 +32,21 @@ export const ContactUs = (props: ContactUsProps) => {
           defaultMessage="Contact Us"
         />
       </Heading>
-      <Text>
+      <Text py="5">
         <FormattedMessage
           id="pages.contactUs.instructions"
-          defaultMessage="Email us at <emailLink>{emailAddress}</emailLink> with any feedback, questions, problems, or feature requests."
+          defaultMessage="Email us at <mailto>{emailAddress}</mailto> or fill out the form below for any feedback, questions, problems, or feature requests."
           values={{
             emailAddress: process.env.REACT_APP_EMAIL_CONTACT,
-            emailLink: (emailAddress: string) => (
+            mailto: (emailAddress: string) => (
               <Link href={`mailto:${emailAddress}`}>{emailAddress}</Link>
             ),
           }}
         />
       </Text>
+      <Card>
+        <ContactUsCreate />
+      </Card>
     </Container>
   );
 };

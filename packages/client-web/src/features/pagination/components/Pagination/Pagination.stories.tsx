@@ -4,7 +4,7 @@ import { theme } from "../../../theme/default";
 import { Pagination, PaginationProps } from "./Pagination";
 
 export default {
-  title: "pagination/Pagination",
+  title: "Pagination/Pagination",
   component: Pagination,
   argTypes: {
     totalPages: {

@@ -83,6 +83,60 @@
       "value": "). Please try again."
     }
   ],
+  "app.contactUsForm.emailField.label": [
+    {
+      "type": 0,
+      "value": "Email"
+    }
+  ],
+  "app.contactUsForm.emailField.placeholder": [
+    {
+      "type": 0,
+      "value": "Your Email"
+    }
+  ],
+  "app.contactUsForm.messageField.label": [
+    {
+      "type": 0,
+      "value": "Message"
+    }
+  ],
+  "app.contactUsForm.messageField.placeholder": [
+    {
+      "type": 0,
+      "value": "Your Message"
+    }
+  ],
+  "app.contactUsForm.nameField.label": [
+    {
+      "type": 0,
+      "value": "Name"
+    }
+  ],
+  "app.contactUsForm.nameField.placeholder": [
+    {
+      "type": 0,
+      "value": "Your Name"
+    }
+  ],
+  "app.contactUsForm.sendButton.label": [
+    {
+      "type": 0,
+      "value": "Send Message"
+    }
+  ],
+  "app.contactUsSuccess.message": [
+    {
+      "type": 0,
+      "value": "Thanks for your message. We'll get back to you soon."
+    }
+  ],
+  "app.contactUsSuccess.title": [
+    {
+      "type": 0,
+      "value": "Message sent!"
+    }
+  ],
   "app.footer.copyrightNotice": [
     {
       "type": 0,
@@ -595,11 +649,11 @@
         }
       ],
       "type": 8,
-      "value": "emailLink"
+      "value": "mailto"
     },
     {
       "type": 0,
-      "value": " with any feedback, questions, problems, or feature requests."
+      "value": " or fill out the form below for any feedback, questions, problems, or feature requests."
     }
   ],
   "pages.contactUs.title": [

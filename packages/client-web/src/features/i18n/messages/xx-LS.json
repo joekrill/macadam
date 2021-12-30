@@ -83,6 +83,60 @@
       "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "app.contactUsForm.emailField.label": [
+    {
+      "type": 0,
+      "value": "EmailSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "app.contactUsForm.emailField.placeholder": [
+    {
+      "type": 0,
+      "value": "Your EmailSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "app.contactUsForm.messageField.label": [
+    {
+      "type": 0,
+      "value": "MessageSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "app.contactUsForm.messageField.placeholder": [
+    {
+      "type": 0,
+      "value": "Your MessageSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "app.contactUsForm.nameField.label": [
+    {
+      "type": 0,
+      "value": "NameSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "app.contactUsForm.nameField.placeholder": [
+    {
+      "type": 0,
+      "value": "Your NameSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "app.contactUsForm.sendButton.label": [
+    {
+      "type": 0,
+      "value": "Send MessageSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "app.contactUsSuccess.message": [
+    {
+      "type": 0,
+      "value": "Thanks for your message. We'll get back to you soon.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "app.contactUsSuccess.title": [
+    {
+      "type": 0,
+      "value": "Message sent!SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "app.footer.copyrightNotice": [
     {
       "type": 0,
@@ -563,11 +617,11 @@
         }
       ],
       "type": 8,
-      "value": "emailLink"
+      "value": "mailto"
     },
     {
       "type": 0,
-      "value": " with any feedback, questions, problems, or feature requests.SSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": " or fill out the form below for any feedback, questions, problems, or feature requests.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "pages.contactUs.title": [

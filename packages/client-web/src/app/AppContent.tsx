@@ -11,15 +11,15 @@ import { VerificationPage } from "../features/auth/pages/VerificationPage";
 import { selectPendingVerifiableAddresses } from "../features/auth/selectors/selectPendingVerifiableAddresses";
 import { CrashInitiator } from "../features/errors/components/CrashInitiator/CrashInitiator";
 import { NotFoundPage } from "../features/errors/components/NotFoundPage/NotFoundPage";
-import { ContactUs } from "../features/pages/ContactUs/ContactUs";
-import { Faq } from "../features/pages/Faq/Faq";
-import { Home } from "../features/pages/Home/Home";
-import { PrivacyPolicy } from "../features/pages/PrivacyPolicy/PrivacyPolicy";
-import { TermsAndConditions } from "../features/pages/TermsAndConditions/TermsAndConditions";
 import { ThingsPage } from "../features/things/components/ThingsPage";
 import { UserSettingsPage } from "../features/users/pages/UserSettingsPage";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
+import { ContactUs } from "./pages/ContactUs/ContactUs";
+import { Faq } from "./pages/Faq/Faq";
+import { Home } from "./pages/Home/Home";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy/PrivacyPolicy";
+import { TermsAndConditions } from "./pages/TermsAndConditions/TermsAndConditions";
 
 /**
  * Renders the main content of the app (excluding main app context providers)

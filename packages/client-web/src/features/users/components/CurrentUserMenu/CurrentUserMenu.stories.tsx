@@ -4,7 +4,7 @@ import { UseSessionContext } from "../../../auth/hooks/useSession";
 import { CurrentUserMenu, CurrentUserMenuProps } from "./CurrentUserMenu";
 
 export default {
-  title: "users/CurrentUserMenu",
+  title: "Users/CurrentUserMenu",
   component: CurrentUserMenu,
   argTypes: {
     email: {

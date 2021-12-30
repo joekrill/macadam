@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { theme } from "../../theme/default";
 
 export default {
-  title: "common/Button",
+  title: "Common/Button",
   component: Button,
   argTypes: {
     colorScheme: {

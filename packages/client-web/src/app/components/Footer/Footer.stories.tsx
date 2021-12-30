@@ -4,7 +4,7 @@ import { ActiveLocaleSelectContext } from "../../../features/i18n/components/Act
 import { Footer, FooterProps } from "./Footer";
 
 export default {
-  title: "app/Footer",
+  title: "App/Footer",
   component: Footer,
   parameters: {
     layout: "fullscreen",

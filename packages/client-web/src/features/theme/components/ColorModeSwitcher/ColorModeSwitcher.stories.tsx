@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { ColorModeSwitcher, ColorModeSwitcherProps } from "./ColorModeSwitcher";
 
 export default {
-  title: "theme/ColorModeSwitcher",
+  title: "Theme/ColorModeSwitcher",
   component: ColorModeSwitcher,
   argTypes: {
     colorMode: {

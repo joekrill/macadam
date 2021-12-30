@@ -17,6 +17,33 @@
   "api.errors.parsingErrorMessage": {
     "defaultMessage": "Error parsing server response ({error}). Please try again."
   },
+  "app.contactUsForm.emailField.label": {
+    "defaultMessage": "Email"
+  },
+  "app.contactUsForm.emailField.placeholder": {
+    "defaultMessage": "Your Email"
+  },
+  "app.contactUsForm.messageField.label": {
+    "defaultMessage": "Message"
+  },
+  "app.contactUsForm.messageField.placeholder": {
+    "defaultMessage": "Your Message"
+  },
+  "app.contactUsForm.nameField.label": {
+    "defaultMessage": "Name"
+  },
+  "app.contactUsForm.nameField.placeholder": {
+    "defaultMessage": "Your Name"
+  },
+  "app.contactUsForm.sendButton.label": {
+    "defaultMessage": "Send Message"
+  },
+  "app.contactUsSuccess.message": {
+    "defaultMessage": "Thanks for your message. We'll get back to you soon."
+  },
+  "app.contactUsSuccess.title": {
+    "defaultMessage": "Message sent!"
+  },
   "app.footer.copyrightNotice": {
     "defaultMessage": "© {now, date, ::yyyy} {appName}. All rights reserved."
   },
@@ -186,7 +213,7 @@
     "defaultMessage": "Contact Us"
   },
   "pages.contactUs.instructions": {
-    "defaultMessage": "Email us at <emailLink>{emailAddress}</emailLink> with any feedback, questions, problems, or feature requests."
+    "defaultMessage": "Email us at <mailto>{emailAddress}</mailto> or fill out the form below for any feedback, questions, problems, or feature requests."
   },
   "pages.contactUs.title": {
     "defaultMessage": "Contact Us"

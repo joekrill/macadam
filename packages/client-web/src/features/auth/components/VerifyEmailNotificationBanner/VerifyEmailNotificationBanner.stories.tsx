@@ -5,7 +5,7 @@ import {
 } from "./VerifyEmailNotificationBanner";
 
 export default {
-  title: "auth/VerifyEmailNotificationBanner",
+  title: "Auth/VerifyEmailNotificationBanner",
   component: VerifyEmailNotificationBanner,
   parameters: {
     layout: "fullscreen",

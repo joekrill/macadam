@@ -4,7 +4,7 @@ import { UseSessionContext } from "../../../features/auth/hooks/useSession";
 import { Header, HeaderProps } from "./Header";
 
 export default {
-  title: "app/Header",
+  title: "App/Header",
   component: Header,
   parameters: {
     layout: "fullscreen",

@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import { DividerWithText } from "./DividerWithText";
 
 export default {
-  title: "common/DividerWithText",
+  title: "Common/DividerWithText",
   component: DividerWithText,
   argTypes: {
     children: { control: { type: "text" }, defaultValue: "Some text" },

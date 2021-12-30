@@ -1,4 +1,6 @@
 import { z } from "zod";
+import { offsetPaginationResponseSchema } from "../../api/schemas/pagination";
+import { successResponseSchema } from "../../api/schemas/response";
 import { identitySchema } from "./identity";
 
 export const sessionAuthenticationMethodMethodSchema = z.union([
@@ -68,3 +70,34 @@ export const sessionSchema = z.object({
 });
 
 export type Session = z.infer<typeof sessionSchema>;
+
+/** List */
+
+// TODO: find a better name for this?
+
+export const sessionWithoutIdentitySchema = sessionSchema
+  .omit({ identity: true })
+  .extend({
+    identity_id: z.string(),
+    __caslSubjectType__: z
+      .literal("KratosSession")
+      .optional()
+      .default("KratosSession"),
+  });
+
+export type SessionWithoutIdentity = z.infer<
+  typeof sessionWithoutIdentitySchema
+>;
+
+export const listSessionsResponseSchema = successResponseSchema
+  .merge(offsetPaginationResponseSchema)
+  .extend({
+    data: z.array(sessionWithoutIdentitySchema),
+  });
+
+export type ListSessionsResponse = z.infer<typeof listSessionsResponseSchema>;
+
+export interface ListSessionsParams {
+  page?: number;
+  sort?: string;
+}

@@ -26,7 +26,7 @@ export class KratosIdentityVerifiableAddress extends KratosBaseEntity {
   public value!: string;
 
   @Property({ type: "timestamp", fieldName: "verified_at", nullable: true })
-  public verifiedAt?: Date;
+  public verified_at?: Date;
 
   @ManyToOne({
     entity: "KratosIdentity",
@@ -37,7 +37,7 @@ export class KratosIdentityVerifiableAddress extends KratosBaseEntity {
 
   @OneToMany(
     () => KratosIdentityVerificationToken,
-    (a) => a.identityVerifiableAddress
+    (a) => a.identity_verifiable_address
   )
-  verificationTokens = new Collection<KratosIdentityVerificationToken>(this);
+  verification_tokens = new Collection<KratosIdentityVerificationToken>(this);
 }

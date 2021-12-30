@@ -5,10 +5,10 @@ import {
   Routes,
   useMatch,
 } from "react-router-dom";
+import { SessionsList } from "../../auth/components/SessionsList";
 import { SettingsPage } from "../../auth/pages/SettingsPage";
 import { Sidebar } from "../../common/components/Sidebar/Sidebar";
 import { SidebarNavItem } from "../../common/components/Sidebar/SidebarNavItem";
-import { UserSessions } from "../components/UserSettings/UserSessions";
 
 export const UserSettingsPage = () => {
   const match = useMatch("/settings/:page");
@@ -36,8 +36,7 @@ export const UserSettingsPage = () => {
       <Box as="main" px="4" width="full">
         <Routes>
           <Route index element={<SettingsPage />} />
-          <Route path="preferences" element={<Box>Preferences</Box>} />
-          <Route path="sessions" element={<UserSessions />} />
+          <Route path="sessions" element={<SessionsList />} />
         </Routes>
       </Box>
     </Container>

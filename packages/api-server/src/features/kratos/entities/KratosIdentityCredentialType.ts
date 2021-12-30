@@ -18,14 +18,17 @@ export class KratosIdentityCredentialType {
   @Property({ nullable: false })
   public name!: string;
 
-  @OneToMany(() => KratosIdentityCredential, (ic) => ic.identityCredentialType)
-  identityCredentials = new Collection<KratosIdentityCredential>(this);
+  @OneToMany(
+    () => KratosIdentityCredential,
+    (ic) => ic.identity_credential_type
+  )
+  identity_credentials = new Collection<KratosIdentityCredential>(this);
 
   @OneToMany(
     () => KratosIdentityCredentialIdentifier,
-    (ici) => ici.identityCredentialType
+    (ici) => ici.identity_credential_type
   )
-  identityCredentialIdentifiers = new Collection<KratosIdentityCredentialIdentifier>(
+  identity_credential_identifiers = new Collection<KratosIdentityCredentialIdentifier>(
     this
   );
 }

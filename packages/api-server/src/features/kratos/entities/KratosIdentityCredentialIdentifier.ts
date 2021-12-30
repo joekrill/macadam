@@ -15,12 +15,12 @@ export class KratosIdentityCredentialIdentifier extends KratosBaseEntity {
     fieldName: "identity_credential_id",
     nullable: false,
   })
-  identityCredential!: KratosIdentityCredential;
+  identity_credential!: KratosIdentityCredential;
 
   @ManyToOne({
     entity: "KratosIdentityCredentialType",
     fieldName: "identity_credential_type_id",
     nullable: false,
   })
-  identityCredentialType!: KratosIdentityCredentialType;
+  identity_credential_type!: KratosIdentityCredentialType;
 }

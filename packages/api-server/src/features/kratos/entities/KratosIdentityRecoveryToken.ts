@@ -13,21 +13,21 @@ export class KratosIdentityRecoveryToken extends KratosBaseEntity {
   public used!: boolean;
 
   @Property({ type: "timestamp", fieldName: "used_at", nullable: true })
-  public usedAt?: Date;
+  public used_at?: Date;
 
   @ManyToOne({
     entity: "KratosIdentityRecoveryAddress",
     fieldName: "identity_recovery_address_id",
     nullable: false,
   })
-  identityRecoveryAddress!: KratosIdentityRecoveryAddress;
+  identity_recovery_address!: KratosIdentityRecoveryAddress;
 
   @Property({ fieldName: "selfservice_recovery_flow_id", nullable: true })
-  public selfserviceRecoveryFlowId?: string;
+  public selfservice_recovery_flow_id?: string;
 
   @Property({ type: "timestamp", fieldName: "expires_at", nullable: false })
-  public expiresAt!: Date;
+  public expires_at!: Date;
 
   @Property({ type: "timestamp", fieldName: "issued_at", nullable: false })
-  public issuedAt!: Date;
+  public issued_at!: Date;
 }

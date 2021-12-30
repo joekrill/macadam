@@ -25,12 +25,12 @@ export class KratosCourierMessages extends KratosBaseEntity {
   public recipient!: string;
 
   @Property({ fieldName: "template_type", nullable: false })
-  public templateType!: String;
+  public template_type!: String;
 
   @Property({
     type: BlobType,
     fieldName: "template_data",
     nullable: true,
   })
-  public templateData?: Buffer;
+  public template_data?: Buffer;
 }

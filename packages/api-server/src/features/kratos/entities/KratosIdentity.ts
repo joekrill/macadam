@@ -10,7 +10,7 @@ export class KratosIdentity extends KratosBaseEntity {
   static readonly modelName = "KratosIdentity";
 
   @Property({ fieldName: "schema_id", nullable: false })
-  public schemaId!: string;
+  public schema_id!: string;
 
   @Property({ type: "json", nullable: false })
   public traits!: unknown;
@@ -23,17 +23,17 @@ export class KratosIdentity extends KratosBaseEntity {
     fieldName: "state_changed_at",
     nullable: true,
   })
-  public stateChangedAt?: Date;
+  public state_changed_at?: Date;
 
   @OneToMany(() => KratosSession, (session) => session.identity)
   sessions = new Collection<KratosSession>(this);
 
   @OneToMany(() => KratosIdentityCredential, (ic) => ic.identity)
-  identityCredentials = new Collection<KratosIdentityCredential>(this);
+  identity_credentials = new Collection<KratosIdentityCredential>(this);
 
   @OneToMany(() => KratosIdentityRecoveryAddress, (a) => a.identity)
-  recoveryAddresses = new Collection<KratosIdentityRecoveryAddress>(this);
+  recovery_addresses = new Collection<KratosIdentityRecoveryAddress>(this);
 
   @OneToMany(() => KratosIdentityVerifiableAddress, (a) => a.identity)
-  verifiableAddresses = new Collection<KratosIdentityVerifiableAddress>(this);
+  verifiable_addresses = new Collection<KratosIdentityVerifiableAddress>(this);
 }

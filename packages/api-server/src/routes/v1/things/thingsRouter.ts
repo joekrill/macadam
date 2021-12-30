@@ -85,7 +85,7 @@ thingsRouter
     authenticationRequired(),
     async (ctx) => {
       const { ability, identityId, thingRepository } = ctx.state;
-      ability!.ensureCan("create", "Thing");
+      ability!.ensureCan("create", Thing.modelName);
 
       const data = thingCreateSchema.parse(ctx.request.body);
       const thing = new Thing(identityId, data.name);
@@ -101,7 +101,7 @@ thingsRouter
     async (thingId, ctx: Router.RouterContext<ThingsRouterState>, next) => {
       const { ability, thingRepository } = ctx.state;
 
-      const query = ability?.query("read", "Thing");
+      const query = ability?.query("read", Thing.modelName);
 
       try {
         ctx.state.thing = await thingRepository!.findOneOrFail({

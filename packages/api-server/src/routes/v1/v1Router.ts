@@ -2,6 +2,7 @@ import Router from "@koa/router";
 import { contactUsRouter } from "./contact-us/contactUsRouter";
 import { devRouter } from "./dev/devRouter";
 import { monitorRouter } from "./monitor/monitorRouter";
+import { sessionsRouter } from "./sessions/sessionsRouter";
 import { thingsRouter } from "./things/thingsRouter";
 import { usersRouter } from "./users/usersRouter";
 
@@ -15,5 +16,6 @@ v1Router
   )
   .use("/dev", devRouter.routes(), devRouter.allowedMethods())
   .use("/monitor", monitorRouter.routes(), monitorRouter.allowedMethods())
+  .use("/sessions", sessionsRouter.routes(), sessionsRouter.allowedMethods())
   .use("/things", thingsRouter.routes(), thingsRouter.allowedMethods())
   .use("/users", usersRouter.routes(), usersRouter.allowedMethods());

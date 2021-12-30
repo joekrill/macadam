@@ -29,13 +29,13 @@ export class KratosIdentityCredential extends KratosBaseEntity {
     fieldName: "identity_credential_type_id",
     nullable: false,
   })
-  identityCredentialType!: KratosIdentityCredentialType;
+  identity_credential_type!: KratosIdentityCredentialType;
 
   @OneToMany(
     () => KratosIdentityCredentialIdentifier,
-    (ici) => ici.identityCredential
+    (ici) => ici.identity_credential
   )
-  identityCredentialIdentifiers = new Collection<KratosIdentityCredentialIdentifier>(
+  identity_credential_identifiers = new Collection<KratosIdentityCredentialIdentifier>(
     this
   );
 }

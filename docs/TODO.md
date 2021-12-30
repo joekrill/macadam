@@ -1,6 +1,5 @@
 ## "v1" Milestone
 
-- (client-web) User sessions
 - (client-web) profile locale vs app locale selection
 - (client-web) Detect session expiration and handle it somehow (modal login form? a la Gmail?)
 - CI/CD pipeline

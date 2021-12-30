@@ -5,10 +5,10 @@ export abstract class KratosBaseEntity {
   public id!: string;
 
   @Property({ type: "timestamp", fieldName: "created_at", nullable: false })
-  public createdAt!: Date;
+  public created_at!: Date;
 
   @Property({ type: "timestamp", fieldName: "updated_at", nullable: false })
-  public updatedAt!: Date;
+  public updated_at!: Date;
 
   @Property({ type: "uuid", nullable: true })
   public nid?: string;

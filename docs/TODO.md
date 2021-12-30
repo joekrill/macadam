@@ -9,8 +9,6 @@
   - Versioning issues (https://github.com/open-telemetry/opentelemetry-js-contrib/issues/749)
 - Review Kratos configuration
   - https://www.ory.sh/kratos/docs/reference/configuration
-- Service accounts
-  - https://www.ory.sh/kratos/docs/concepts/identity-schema/#json-schema-vocabulary-extensions
 - Some way to upload/change avatar (currently it is just a URL string)
 - Agree to ToS on signup?
 - Redirect back to original page after sign up/login using OIDC not working (always redirects to home)
@@ -36,6 +34,8 @@
   - https://docs.devland.is
 - Move email/nodemailer functionality to a separate service/package
   - Use https://documentation.mjml.io/ ?
+- Service accounts
+  - https://www.ory.sh/kratos/docs/concepts/identity-schema/#json-schema-vocabulary-extensions
 
 ## Low priority
 

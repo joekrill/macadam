@@ -9,5 +9,5 @@ RUN \
   yarn workspaces focus --production client-web && \
   yarn workspace client-web run build
 
-FROM nginx:1.21.5
+FROM nginx:1.21.5-alpine
 COPY --from=builder /var/macadam/packages/client-web/build /usr/share/nginx/html

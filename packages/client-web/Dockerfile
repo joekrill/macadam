@@ -1,7 +1,13 @@
-# This is expected to be used in the context of the repo root directory
+## This is expected to be built in the context of the repo root directory!
 
 FROM node:16.10 AS builder
 
-WORKDIR /opt/macadam
+WORKDIR /var/macadam
+ENV NODE_ENV production
 COPY . .
-RUN yarn && yarn workspace client-web run build
+RUN \
+  yarn workspaces focus --production client-web && \
+  yarn workspace client-web run build
+
+FROM nginx:1.21.5
+COPY --from=builder /var/macadam/packages/client-web/build /usr/share/nginx/html

@@ -13349,16 +13349,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["@types/favicons", [
-        ["npm:6.2.2", {
-          "packageLocation": "./.yarn/cache/@types-favicons-npm-6.2.2-baf7383103-0bf89d061b.zip/node_modules/@types/favicons/",
-          "packageDependencies": [
-            ["@types/favicons", "npm:6.2.2"],
-            ["@types/node", "npm:16.4.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["@types/formidable", [
         ["npm:1.2.5", {
           "packageLocation": "./.yarn/cache/@types-formidable-npm-1.2.5-34e2090efa-2e4eea700f.zip/node_modules/@types/formidable/",
@@ -18016,7 +18006,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.1"],
             ["@testing-library/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:12.1.2"],
             ["@testing-library/user-event", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:13.5.0"],
-            ["@types/favicons", "npm:6.2.2"],
             ["@types/jest", "npm:27.0.3"],
             ["@types/node", "npm:16.11.17"],
             ["@types/prettier", "npm:2.4.2"],
@@ -18269,7 +18258,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["color", "npm:3.2.1"],
             ["color-convert", "npm:1.9.3"],
-            ["color-string", "npm:1.7.4"]
+            ["color-string", "npm:1.9.0"]
           ],
           "linkType": "HARD",
         }]
@@ -18318,10 +18307,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:1.7.4", {
-          "packageLocation": "./.yarn/cache/color-string-npm-1.7.4-77b95b38c5-7fd872f010.zip/node_modules/color-string/",
+        ["npm:1.9.0", {
+          "packageLocation": "./.yarn/cache/color-string-npm-1.9.0-75382c0441-93c6678b84.zip/node_modules/color-string/",
           "packageDependencies": [
-            ["color-string", "npm:1.7.4"],
+            ["color-string", "npm:1.9.0"],
             ["color-name", "npm:1.1.4"],
             ["simple-swizzle", "npm:0.2.2"]
           ],

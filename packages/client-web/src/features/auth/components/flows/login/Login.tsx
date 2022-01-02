@@ -4,7 +4,6 @@ import { FormattedMessage } from "react-intl";
 import { Link as RouterLink, Navigate } from "react-router-dom";
 import { LoadingSpinner } from "../../../../common/components/LoadingSpinner/LoadingSpinner";
 import { useReturnToConsumer } from "../../../../routing/hooks/useReturnToConsumer";
-import { useLoginFlow, UseLoginFlowOptions } from "../../../hooks/useLoginFlow";
 import { LOGIN_PATH } from "../../../hooks/useLoginLocation";
 import { REGISTRATION_PATH } from "../../../hooks/useRegistrationLocation";
 import { SelfServiceUiMessageList } from "../../SelfServiceUi/SelfServiceUiMessageList";
@@ -13,6 +12,7 @@ import { FlowHeading } from "../FlowHeading";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
 import { LoginForm } from "./LoginForm";
 import { LoginFormTitle } from "./LoginFormTitle";
+import { useLoginFlow, UseLoginFlowOptions } from "./useLoginFlow";
 
 export interface LoginProps extends UseLoginFlowOptions {}
 

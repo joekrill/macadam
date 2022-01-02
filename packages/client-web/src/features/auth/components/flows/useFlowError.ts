@@ -5,7 +5,7 @@ import {
   flowErrorSchema,
   isFlowRedirectError,
   isFlowRestartError,
-} from "../schemas/errors";
+} from "../../schemas/errors";
 
 export const useFlowError = (error?: FetchBaseQueryError | SerializedError) => {
   const flowError = useMemo(() => {

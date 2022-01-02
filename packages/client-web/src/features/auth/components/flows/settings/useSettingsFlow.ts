@@ -1,9 +1,9 @@
 import { skipToken } from "@reduxjs/toolkit/query";
 import { useCallback, useEffect, useState } from "react";
-import { identityApi, SubmitFlowPayload } from "../identityApi";
-import { FlowRestartReason } from "../schemas/errors";
-import { InitializeFlowParams } from "../schemas/flows/common";
-import { useFlowError } from "./useFlowError";
+import { identityApi, SubmitFlowPayload } from "../../../identityApi";
+import { FlowRestartReason } from "../../../schemas/errors";
+import { InitializeFlowParams } from "../../../schemas/flows/common";
+import { useFlowError } from "../useFlowError";
 
 const {
   useSubmitSettingsFlowMutation,

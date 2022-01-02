@@ -1,38 +1,40 @@
 import { skipToken } from "@reduxjs/toolkit/query";
 import { useCallback, useEffect, useState } from "react";
-import { identityApi, SubmitFlowPayload } from "../identityApi";
-import { FlowRestartReason } from "../schemas/errors";
-import { InitializeFlowParams } from "../schemas/flows/common";
-import { useFlowError } from "./useFlowError";
+import { identityApi, SubmitFlowPayload } from "../../../identityApi";
+import { FlowRestartReason } from "../../../schemas/errors";
+import { InitializeFlowParams } from "../../../schemas/flows/common";
+import { isRegistrationFlowSuccess } from "../../../schemas/flows/registration";
+import { useFlowError } from "../useFlowError";
 
 const {
-  useSubmitVerificationFlowMutation,
-  useInitializeVerificationFlowMutation,
-  useGetVerificationFlowQuery,
+  useSubmitRegistrationFlowMutation,
+  useInitializeRegistrationFlowMutation,
+  useGetRegistrationFlowQuery,
 } = identityApi;
 
-export interface UseVerificationFlowOptions extends InitializeFlowParams {
+export interface UseRegistrationFlowOptions extends InitializeFlowParams {
   flowId?: string;
 }
 
-export const useVerificationFlow = ({
+export const useRegistrationFlow = ({
   flowId: flowIdProp,
   returnTo,
-}: UseVerificationFlowOptions = {}) => {
+}: UseRegistrationFlowOptions = {}) => {
   const [restartReason, setRestartReason] = useState<
     FlowRestartReason | undefined
   >();
   const [initializeFlow, initializeResult] =
-    useInitializeVerificationFlowMutation();
+    useInitializeRegistrationFlowMutation();
   const flowId = initializeResult.data?.id || flowIdProp;
-  const [submitFlow, submitResult] = useSubmitVerificationFlowMutation();
-  const getFlow = useGetVerificationFlowQuery(flowId ?? skipToken);
+  const [submitFlow, submitResult] = useSubmitRegistrationFlowMutation();
+  const getFlow = useGetRegistrationFlowQuery(flowId ?? skipToken);
   const flow = getFlow.data || initializeResult.data;
   const error = initializeResult.error || getFlow.error || submitResult.error;
   const parsedError = useFlowError(error);
 
   const restart = useCallback(
     (reason?: FlowRestartReason) => {
+      // TODO: abort() any in-flight request?
       submitResult.reset();
       initializeFlow({ returnTo });
       setRestartReason(reason);
@@ -61,7 +63,7 @@ export const useVerificationFlow = ({
     submit,
     restart,
     restartReason,
-    isSuccessful: submitResult.data?.state === "passed_challenge",
+    isSuccessful: isRegistrationFlowSuccess(submitResult.data),
     isInitializing: initializeResult.isLoading,
     isSubmitting: submitResult.isLoading,
   };

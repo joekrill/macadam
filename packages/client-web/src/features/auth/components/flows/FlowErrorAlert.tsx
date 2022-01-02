@@ -6,13 +6,13 @@ import {
   ErrorAlert,
   ErrorAlertProps,
 } from "../../../errors/components/ErrorAlert/ErrorAlert";
-import { useFlowError } from "../../hooks/useFlowError";
 import {
   ERROR_SESSION_ALREADY_AVAILABLE,
   FlowRestartReason,
 } from "../../schemas/errors";
 import { SelfServiceFlowName } from "../../schemas/flows";
 import { LoggedInAlreadyNotice } from "../LoggedInAlreadyNotice/LoggedInAlreadyNotice";
+import { useFlowError } from "./useFlowError";
 
 export interface FlowErrorProps
   extends Omit<ErrorAlertProps, "children" | "status" | "onRetryClick"> {

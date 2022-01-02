@@ -3,15 +3,15 @@ import { FormattedMessage } from "react-intl";
 import { Navigate } from "react-router-dom";
 import { HomepageButton } from "../../../../common/components/HomepageButton";
 import { LoadingSpinner } from "../../../../common/components/LoadingSpinner/LoadingSpinner";
-import {
-  useVerificationFlow,
-  UseVerificationFlowOptions,
-} from "../../../hooks/useVerificationFlow";
 import { SelfServiceUiForm } from "../../SelfServiceUi/SelfServiceUiForm";
 import { SelfServiceUiMessageList } from "../../SelfServiceUi/SelfServiceUiMessageList";
 import { FlowErrorAlert } from "../FlowErrorAlert";
 import { FlowHeading } from "../FlowHeading";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
+import {
+  useVerificationFlow,
+  UseVerificationFlowOptions,
+} from "./useVerificationFlow";
 
 export interface VerificationProps extends UseVerificationFlowOptions {}
 

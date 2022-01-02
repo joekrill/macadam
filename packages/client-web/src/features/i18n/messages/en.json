@@ -478,6 +478,20 @@
       "value": "E-Mail"
     }
   ],
+  "auth.selfServiceUi.localeSelectNode.defaultValue": [
+    {
+      "type": 0,
+      "value": "Default ("
+    },
+    {
+      "type": 1,
+      "value": "locale"
+    },
+    {
+      "type": 0,
+      "value": ")"
+    }
+  ],
   "auth.selfServiceUi.passwordNode.label": [
     {
       "type": 0,
@@ -679,15 +693,7 @@
   "i18n.localeSelect.defaultValue": [
     {
       "type": 0,
-      "value": "Default ("
-    },
-    {
-      "type": 1,
-      "value": "locale"
-    },
-    {
-      "type": 0,
-      "value": ")"
+      "value": "This will be used for external communications or when we can't automatically detect your locale based on your device settings."
     }
   ],
   "pages.contactUs.heading": [

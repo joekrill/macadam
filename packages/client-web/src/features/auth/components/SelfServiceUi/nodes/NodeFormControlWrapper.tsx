@@ -4,24 +4,24 @@ import {
   FormHelperText,
   FormLabel,
 } from "@chakra-ui/react";
-import { UiNodeInput } from "../../schemas/flows/ui";
-import { RecoveryLink } from "../RecoveryLink/RecoveryLink";
+import { UiNodeInput } from "../../../schemas/flows/ui";
 import { useNodeLabel } from "./useNodeLabel";
 
-export interface SelfServiceUiNodeInputWrapperProps {
+export interface NodeFormControlWrapperProps {
   node: UiNodeInput;
   isSubmitting: boolean;
   flowType?: string;
-
-  children: React.ReactChild;
+  children: React.ReactNode;
+  helperText?: React.ReactNode;
 }
 
-export const SelfServiceUiNodeInputWrapper = ({
+export const NodeFormControlWrapper = ({
   children,
   flowType,
+  helperText,
   isSubmitting,
   node,
-}: SelfServiceUiNodeInputWrapperProps) => {
+}: NodeFormControlWrapperProps) => {
   const { messages } = node;
   const { node_type: _, onclick, ...attributes } = node.attributes;
   const errors = messages?.filter((message) => message.type === "error") || [];
@@ -43,10 +43,8 @@ export const SelfServiceUiNodeInputWrapper = ({
       {errors.map((message) => (
         <FormErrorMessage key={message.id}>{message.text}</FormErrorMessage>
       ))}
-      {flowType === "login" && attributes.type === "password" && (
-        <FormHelperText key="forgot-password">
-          <RecoveryLink />
-        </FormHelperText>
+      {helperText && (
+        <FormHelperText key="helperText-prop">{helperText}</FormHelperText>
       )}
     </FormControl>
   );

@@ -1,49 +1,10 @@
-import {
-  Button,
-  ButtonProps,
-  Checkbox,
-  Input,
-  InputProps,
-} from "@chakra-ui/react";
-import { ChangeEventHandler } from "react";
-import {
-  FaDiscord,
-  FaFacebook,
-  FaGithub,
-  FaGoogle,
-  FaMicrosoft,
-  FaTwitch,
-} from "react-icons/fa";
-import { LocaleSelect } from "../../../i18n/components/LocaleSelect/LocaleSelect";
-import { UiNodeInput } from "../../schemas/flows/ui";
-import { PasswordInput } from "../PasswordInput/PasswordInput";
-import { SelfServiceUiNodeInputWrapper } from "./SelfServiceUiNodeInputWrapper";
-const OIDC_ATTRIBUTES: Record<string, ButtonProps> = {
-  discord: {
-    leftIcon: <FaDiscord />,
-    colorScheme: "purple",
-  },
-  facebook: {
-    leftIcon: <FaFacebook />,
-    colorScheme: "facebook",
-  },
-  github: {
-    leftIcon: <FaGithub />,
-    colorScheme: "gray",
-  },
-  google: {
-    leftIcon: <FaGoogle />,
-    colorScheme: "red",
-  },
-  microsoft: {
-    leftIcon: <FaMicrosoft />,
-    colorScheme: "blue",
-  },
-  twitch: {
-    leftIcon: <FaTwitch />,
-    colorScheme: "twitter",
-  },
-};
+import { UiNodeButtonInput, UiNodeInput } from "../../schemas/flows/ui";
+import { ButtonNode } from "./nodes/ButtonNode";
+import { CheckboxNode } from "./nodes/CheckboxNode";
+import { LocaleSelectNode } from "./nodes/LocaleSelectNode";
+import { OidcButtonNode } from "./nodes/OidcButtonNode";
+import { PasswordNode } from "./nodes/PasswordNode";
+import { TextInputNode } from "./nodes/TextInputNode";
 
 export interface SelfServiceUiNodeInputProps {
   node: UiNodeInput;
@@ -68,101 +29,63 @@ export const SelfServiceUiNodeInput = ({
     }
     case "checkbox": {
       return (
-        <SelfServiceUiNodeInputWrapper
+        <CheckboxNode
           flowType={flowType}
           isSubmitting={isSubmitting}
           node={node}
-        >
-          <Checkbox
-            {...attributes}
-            borderColor="gray.300"
-            isChecked={typeof value === "boolean" ? value : false}
-            onChange={(e) => onChange(e.target.checked)}
-            isDisabled={attributes.disabled || isSubmitting}
-          />
-        </SelfServiceUiNodeInputWrapper>
+          onChange={onChange}
+          value={value}
+        />
       );
     }
+    case "submit":
     case "button": {
-      return (
-        <Button
-          {...attributes}
-          colorScheme="blue"
-          type="button"
-          isDisabled={attributes.disabled}
-          isLoading={isSubmitting}
-          value={value || ""}
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            if (onclick) {
-              const run = new Function(onclick); // eslint-disable-line no-new-func
-              run();
-            }
-            onChange(attributes.value);
-          }}
-        >
-          {node.meta?.label?.text || "Submit"}
-        </Button>
-      );
-    }
-    case "submit": {
-      const provider =
-        node.group === "oidc"
-          ? ((node.meta.label?.context as any)?.provider as string)
-          : undefined;
-      const oidcAttributes = (provider && OIDC_ATTRIBUTES[provider]) || {};
+      const ButtonComponent =
+        node.group === "oidc" ? OidcButtonNode : ButtonNode;
 
       return (
-        <Button
-          {...attributes}
-          colorScheme="blue"
-          {...oidcAttributes}
-          type="submit"
-          isDisabled={attributes.disabled}
-          isLoading={isSubmitting}
-          value={value || ""}
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            onChange(attributes.value);
-          }}
-        >
-          {node.meta?.label?.text || "Submit"}
-        </Button>
+        <ButtonComponent
+          flowType={flowType}
+          isSubmitting={isSubmitting}
+          node={node as UiNodeButtonInput}
+          onChange={onChange}
+          value={value}
+        />
       );
     }
     case "password":
+      return (
+        <PasswordNode
+          flowType={flowType}
+          isSubmitting={isSubmitting}
+          node={node as UiNodeButtonInput}
+          onChange={onChange}
+          value={value}
+        />
+      );
     case "email":
     case "text":
     default: {
-      const commonProps = {
-        borderColor: "gray.400",
-        onChange: (e) => onChange(e.target.value),
-        isDisabled: attributes.disabled || isSubmitting,
-        value: value || "",
-      } as Pick<InputProps, "borderColor" | "isDisabled" | "value"> & {
-        onChange: ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
-      };
-
-      let children: React.ReactChild;
-
-      if (attributes.type === "password") {
-        children = <PasswordInput {...commonProps} />;
-      } else if (attributes.name === "traits.locale") {
-        children = <LocaleSelect {...commonProps} includeDefaultOption />;
-      } else {
-        children = <Input {...commonProps} />;
+      if (attributes.name === "traits.locale") {
+        return (
+          <LocaleSelectNode
+            flowType={flowType}
+            isSubmitting={isSubmitting}
+            node={node as UiNodeButtonInput}
+            onChange={onChange}
+            value={value}
+          />
+        );
       }
 
       return (
-        <SelfServiceUiNodeInputWrapper
+        <TextInputNode
           flowType={flowType}
           isSubmitting={isSubmitting}
-          node={node}
-        >
-          {children}
-        </SelfServiceUiNodeInputWrapper>
+          node={node as UiNodeButtonInput}
+          onChange={onChange}
+          value={value}
+        />
       );
     }
   }

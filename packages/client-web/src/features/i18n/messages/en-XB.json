@@ -478,6 +478,20 @@
       "value": "[!! Ḕ-ḾḾḾâíĺĺĺ !!]"
     }
   ],
+  "auth.selfServiceUi.localeSelectNode.defaultValue": [
+    {
+      "type": 0,
+      "value": "[!! Ḋèḟḟḟâůĺĺĺṭ ( !!]"
+    },
+    {
+      "type": 1,
+      "value": "locale"
+    },
+    {
+      "type": 0,
+      "value": "[!! ) !!]"
+    }
+  ],
   "auth.selfServiceUi.passwordNode.label": [
     {
       "type": 0,
@@ -679,15 +693,7 @@
   "i18n.localeSelect.defaultValue": [
     {
       "type": 0,
-      "value": "[!! Ḋèḟḟḟâůĺĺĺṭ ( !!]"
-    },
-    {
-      "type": 1,
-      "value": "locale"
-    },
-    {
-      "type": 0,
-      "value": "[!! ) !!]"
+      "value": "[!! Ṯḫíííś ẘẘẘíĺĺĺĺ ḃèèè ůśśśèḋ ḟŏŕŕŕ èẋẋẋṭèŕŕŕńâĺĺĺ ćŏŏŏṁṁůůůńíćććâṭíííŏńśśś ŏŕŕŕ ẘḫḫḫèń ẘè ćâńńń'ṭ âůṭṭṭŏṁâââṭíćććâĺĺĺĺẏ ḋḋḋèṭèèèćṭ ẏŏůůůŕ ĺĺĺŏćâââĺè ḃâśśśèḋ ŏń ẏŏůůůŕ ḋḋḋèṿíííćè śèṭṭṭṭíńńńĝś. !!]"
     }
   ],
   "pages.contactUs.heading": [

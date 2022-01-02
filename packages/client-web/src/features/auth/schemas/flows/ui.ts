@@ -201,6 +201,15 @@ export const uiNodeInputSchema = uiNodeCommonSchema.extend({
 
 export type UiNodeInput = z.infer<typeof uiNodeInputSchema>;
 
+export const uiNodeButtonInputSchema = uiNodeCommonSchema.extend({
+  type: z.literal("input"),
+  attributes: uiNodeInputAttributesSchema.extend({
+    type: z.union([z.literal("button"), z.literal("submit")]),
+  }),
+});
+
+export type UiNodeButtonInput = z.infer<typeof uiNodeButtonInputSchema>;
+
 export const uiNodeScriptSchema = uiNodeCommonSchema.extend({
   type: z.literal("script"),
   attributes: uiNodeScriptAttributesSchema,

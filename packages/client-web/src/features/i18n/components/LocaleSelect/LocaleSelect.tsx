@@ -1,6 +1,6 @@
 import { Select, SelectProps } from "@chakra-ui/react";
 import { useIntl } from "react-intl";
-import { DEFAULT_LOCALE, LOCALES } from "../../constants";
+import { LOCALES } from "../../constants";
 import { getLocaleDisplayName } from "../../getLocaleDisplayName";
 
 export interface LocaleSelectProps extends Omit<SelectProps, "children"> {
@@ -14,21 +14,10 @@ export const LocaleSelect = ({
   includeDefaultOption,
   ...props
 }: LocaleSelectProps) => {
-  const { formatDisplayName, formatMessage } = useIntl();
-  const placeholder = includeDefaultOption
-    ? formatMessage(
-        {
-          id: "i18n.localeSelect.defaultValue",
-          defaultMessage: "Default ({locale})",
-        },
-        {
-          locale: getLocaleDisplayName(DEFAULT_LOCALE),
-        }
-      )
-    : undefined;
+  const { formatDisplayName } = useIntl();
 
   return (
-    <Select {...props} placeholder={props.placeholder || placeholder}>
+    <Select {...props}>
       {LOCALES.map((locale) => (
         <option key={locale} value={locale}>
           {getLocaleDisplayName(locale) ||

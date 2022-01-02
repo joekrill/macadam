@@ -1,7 +1,8 @@
 import {
+  Button,
   Collapse,
   Heading,
-  IconButton,
+  Icon,
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
@@ -90,24 +91,23 @@ export const SettingsForm = ({
       )}
       {groupNames.includes("totp") && (
         <Card>
-          <Heading as="h3" size="md">
-            <FormattedMessage
-              id="auth.settings.totpSection.title"
-              description="The heading displayed at the top of the change password section of the settings form"
-              defaultMessage="Two-factor Authentication"
-            />
-            <IconButton
-              aria-label={formatMessage({
-                id: "auth.settings.totpSection.toggleButton.ariaLabel",
-                defaultMessage: "Toggle Two-factor authentication settings",
-              })}
-              ml="3"
-              variant="outline"
-              size="sm"
-              icon={isTotpOpen ? <FaMinusCircle /> : <FaPlusCircle />}
-              onClick={onTotpToggle}
-            />
-          </Heading>
+          <Button
+            aria-label={formatMessage({
+              id: "auth.settings.totpSection.toggleButton.ariaLabel",
+              defaultMessage: "Toggle Two-factor authentication settings",
+            })}
+            onClick={onTotpToggle}
+            variant="unstyled"
+          >
+            <Heading as="h3" size="md" display="flex" alignItems="center">
+              <Icon mr="3" as={isTotpOpen ? FaMinusCircle : FaPlusCircle} />
+              <FormattedMessage
+                id="auth.settings.totpSection.title"
+                description="The heading displayed at the top of the change password section of the settings form"
+                defaultMessage="Two-factor Authentication"
+              />
+            </Heading>
+          </Button>
 
           <Collapse in={isTotpOpen} animateOpacity>
             <SelfServiceUiForm
@@ -123,25 +123,23 @@ export const SettingsForm = ({
 
       {groupNames.includes("webauthn") && (
         <Card>
-          <Heading as="h3" size="md">
-            <FormattedMessage
-              id="auth.settings.webauthnSection.title"
-              description="The heading displayed at the top of the change password section of the settings form"
-              defaultMessage="Hardware Tokens and Biometrics"
-            />
-            <IconButton
-              aria-label={formatMessage({
-                id: "auth.settings.webauthnSection.toggleButton.ariaLabel",
-                defaultMessage:
-                  "Toggle Hardware Tokens and Biometrics settings",
-              })}
-              ml="3"
-              variant="outline"
-              size="sm"
-              icon={isTotpOpen ? <FaMinusCircle /> : <FaPlusCircle />}
-              onClick={onWebauthnToggle}
-            />
-          </Heading>
+          <Button
+            aria-label={formatMessage({
+              id: "auth.settings.webauthnSection.toggleButton.ariaLabel",
+              defaultMessage: "Toggle Hardware Tokens and Biometrics settings",
+            })}
+            onClick={onWebauthnToggle}
+            variant="unstyled"
+          >
+            <Heading as="h3" size="md" display="flex" alignItems="center">
+              <Icon mr="3" as={isTotpOpen ? FaMinusCircle : FaPlusCircle} />
+              <FormattedMessage
+                id="auth.settings.webauthnSection.title"
+                description="The heading displayed at the top of the change password section of the settings form"
+                defaultMessage="Hardware Tokens and Biometrics"
+              />
+            </Heading>
+          </Button>
           <Collapse in={isWebauthnOpen} animateOpacity>
             <SelfServiceUiForm
               key="webauthn"

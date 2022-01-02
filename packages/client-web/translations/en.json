@@ -145,6 +145,9 @@
   "auth.selfServiceUi.emailNode.label": {
     "defaultMessage": "E-Mail"
   },
+  "auth.selfServiceUi.localeSelectNode.defaultValue": {
+    "defaultMessage": "Default ({locale})"
+  },
   "auth.selfServiceUi.passwordNode.label": {
     "defaultMessage": "Password"
   },
@@ -237,7 +240,7 @@
     "description": "The toast message shown when a locale fails to load"
   },
   "i18n.localeSelect.defaultValue": {
-    "defaultMessage": "Default ({locale})"
+    "defaultMessage": "This will be used for external communications or when we can't automatically detect your locale based on your device settings."
   },
   "pages.contactUs.heading": {
     "defaultMessage": "Contact Us"

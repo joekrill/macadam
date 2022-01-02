@@ -1,17 +1,14 @@
 import { Container } from "@chakra-ui/react";
 import { Card } from "../../common/components/Card/Card";
-import { useUrlSearchParams } from "../../routing/hooks/useUrlSearchParams";
-import { Verification } from "../components/Verification";
+import { Verification } from "../components/flows/verification/Verification";
+import { useAuthPageParams } from "./useAuthPageParams";
 
 export const VerificationPage = () => {
-  const params = useUrlSearchParams();
+  const { aal: _aal, refresh: _referesh, ...params } = useAuthPageParams();
 
   return (
     <Card as={Container} maxW="md">
-      <Verification
-        flowId={params.get("flow") || undefined}
-        returnTo={params.get("return_to") || undefined}
-      />
+      <Verification {...params} />
     </Card>
   );
 };

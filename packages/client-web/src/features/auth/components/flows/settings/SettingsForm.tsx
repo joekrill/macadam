@@ -7,13 +7,13 @@ import {
 } from "@chakra-ui/react";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 import { FormattedMessage, useIntl } from "react-intl";
-import { Card } from "../../../common/components/Card/Card";
-import { useNodeGroupNames } from "../../hooks/useNodeGroupNames";
-import { SettingsFlow } from "../../schemas/flows/settings";
+import { Card } from "../../../../common/components/Card/Card";
+import { useNodeGroupNames } from "../../../hooks/useNodeGroupNames";
+import { SettingsFlow } from "../../../schemas/flows/settings";
 import {
   SelfServiceUiForm,
   SelfServiceUiFormProps,
-} from "../SelfServiceUi/SelfServiceUiForm";
+} from "../../SelfServiceUi/SelfServiceUiForm";
 
 export interface SettingsFormProps {
   flow: SettingsFlow;

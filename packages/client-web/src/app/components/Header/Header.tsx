@@ -8,8 +8,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { LoginButton } from "../../../features/auth/components/login/LoginButton";
-import { RegistrationButton } from "../../../features/auth/components/registration/RegistrationButton";
+import { LoginButton } from "../../../features/auth/components/LoginLink/LoginLinkButton";
+import { RegistrationLinkButton } from "../../../features/auth/components/RegistrationLink/RegistrationLinkButton";
 import { useSession } from "../../../features/auth/hooks/useSession";
 import { ColorModeSwitcher } from "../../../features/theme/components/ColorModeSwitcher/ColorModeSwitcher";
 import { CurrentUserMenu } from "../../../features/users/components/CurrentUserMenu/CurrentUserMenu";
@@ -46,7 +46,7 @@ export const Header = (props: HeaderProps) => {
         <HStack spacing={3} alignItems="center">
           {!isLoggedIn && (
             <>
-              <RegistrationButton
+              <RegistrationLinkButton
                 px="5"
                 size="sm"
                 colorScheme="yellow"

@@ -1,19 +1,19 @@
 import { VStack } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
 import { Navigate } from "react-router-dom";
-import { LoadingSpinner } from "../../../common/components/LoadingSpinner/LoadingSpinner";
-import { useReturnToConsumer } from "../../../routing/hooks/useReturnToConsumer";
-import { LOGIN_PATH } from "../../hooks/useLoginLocation";
+import { LoadingSpinner } from "../../../../common/components/LoadingSpinner/LoadingSpinner";
+import { useReturnToConsumer } from "../../../../routing/hooks/useReturnToConsumer";
+import { LOGIN_PATH } from "../../../hooks/useLoginLocation";
 import {
   useRegistrationFlow,
   UseRegistrationFlowOptions,
-} from "../../hooks/useRegistrationFlow";
-import { REGISTRATION_PATH } from "../../hooks/useRegistrationLocation";
+} from "../../../hooks/useRegistrationFlow";
+import { REGISTRATION_PATH } from "../../../hooks/useRegistrationLocation";
+import { LoginLink } from "../../LoginLink/LoginLink";
+import { SelfServiceUiMessageList } from "../../SelfServiceUi/SelfServiceUiMessageList";
 import { FlowErrorAlert } from "../FlowErrorAlert";
 import { FlowHeading } from "../FlowHeading";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
-import { LoginLink } from "../login/LoginLink";
-import { SelfServiceUiMessageList } from "../SelfServiceUi/SelfServiceUiMessageList";
 import { RegistrationForm } from "./RegistrationForm";
 
 export interface RegistrationProps extends UseRegistrationFlowOptions {}

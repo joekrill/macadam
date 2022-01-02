@@ -1,12 +1,12 @@
 import { VStack } from "@chakra-ui/react";
-import { LoadingSpinner } from "../../../common/components/LoadingSpinner/LoadingSpinner";
+import { LoadingSpinner } from "../../../../common/components/LoadingSpinner/LoadingSpinner";
 import {
   useSettingsFlow,
   UseSettingsFlowOptions,
-} from "../../hooks/useSettingsFlow";
+} from "../../../hooks/useSettingsFlow";
+import { SelfServiceUiMessageList } from "../../SelfServiceUi/SelfServiceUiMessageList";
 import { FlowErrorAlert } from "../FlowErrorAlert";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
-import { SelfServiceUiMessageList } from "../SelfServiceUi/SelfServiceUiMessageList";
 import { SettingsForm } from "./SettingsForm";
 
 export interface SettingsProps extends UseSettingsFlowOptions {}

@@ -1,5 +1,5 @@
 import { FormattedMessage } from "react-intl";
-import { LoginFlow } from "../../schemas/flows/login";
+import { LoginFlow } from "../../../schemas/flows/login";
 
 export interface LoginFormTitleProps {
   flow?: LoginFlow;

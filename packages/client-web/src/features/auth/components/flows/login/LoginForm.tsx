@@ -1,12 +1,12 @@
 import { Flex, VStack } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
-import { DividerWithText } from "../../../common/components/DividerWithText/DividerWithText";
-import { useNodeGroupNames } from "../../hooks/useNodeGroupNames";
-import { LoginFlow } from "../../schemas/flows/login";
+import { DividerWithText } from "../../../../common/components/DividerWithText/DividerWithText";
+import { useNodeGroupNames } from "../../../hooks/useNodeGroupNames";
+import { LoginFlow } from "../../../schemas/flows/login";
 import {
   SelfServiceUiForm,
   SelfServiceUiFormProps,
-} from "../SelfServiceUi/SelfServiceUiForm";
+} from "../../SelfServiceUi/SelfServiceUiForm";
 
 export interface LoginFormProps {
   flow: LoginFlow;

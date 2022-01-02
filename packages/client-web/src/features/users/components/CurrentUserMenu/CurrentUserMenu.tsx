@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
-import { LogoutButtonLabel } from "../../../auth/components/LogoutButton";
+import { LogoutButtonLabel } from "../../../auth/components/LogoutButton/LogoutButton";
 import { useLogout } from "../../../auth/hooks/useLogout";
 import { CurrentUserAvatar } from "../CurrentUserAvatar/CurrentUserAvatar";
 import { CurrentUserMenuHeader } from "./CurrentUserMenuHeader";

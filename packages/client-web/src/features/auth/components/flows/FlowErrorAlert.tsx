@@ -5,14 +5,14 @@ import { FormattedMessage } from "react-intl";
 import {
   ErrorAlert,
   ErrorAlertProps,
-} from "../../errors/components/ErrorAlert/ErrorAlert";
-import { useFlowError } from "../hooks/useFlowError";
+} from "../../../errors/components/ErrorAlert/ErrorAlert";
+import { useFlowError } from "../../hooks/useFlowError";
 import {
   ERROR_SESSION_ALREADY_AVAILABLE,
   FlowRestartReason,
-} from "../schemas/errors";
-import { SelfServiceFlowName } from "../schemas/flows";
-import { LoggedInAlreadyNotice } from "./login/LoggedInAlreadyNotice";
+} from "../../schemas/errors";
+import { SelfServiceFlowName } from "../../schemas/flows";
+import { LoggedInAlreadyNotice } from "../LoggedInAlreadyNotice/LoggedInAlreadyNotice";
 
 export interface FlowErrorProps
   extends Omit<ErrorAlertProps, "children" | "status" | "onRetryClick"> {

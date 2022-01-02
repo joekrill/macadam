@@ -4,17 +4,17 @@ import { useRegistrationLocation } from "../../hooks/useRegistrationLocation";
 import { useSession } from "../../hooks/useSession";
 import { RegistrationLinkLabel } from "./RegistrationLink";
 
-export interface RegistrationButtonProps extends ButtonProps {
+export interface RegistrationLinkButtonProps extends ButtonProps {
   onLogoutComplete?: () => void;
 }
 
-export const RegistrationButton = ({
+export const RegistrationLinkButton = ({
   children,
   onClick,
   onLogoutComplete,
   isDisabled,
   ...props
-}: RegistrationButtonProps) => {
+}: RegistrationLinkButtonProps) => {
   const { to, state } = useRegistrationLocation();
   const { isUnknown } = useSession();
 

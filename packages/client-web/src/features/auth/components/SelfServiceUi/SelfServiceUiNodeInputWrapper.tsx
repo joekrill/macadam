@@ -5,7 +5,7 @@ import {
   FormLabel,
 } from "@chakra-ui/react";
 import { UiNodeInput } from "../../schemas/flows/ui";
-import { RecoveryLink } from "../recovery/RecoveryLink";
+import { RecoveryLink } from "../RecoveryLink/RecoveryLink";
 import { LABEL_MAPPINGS } from "./labelMappings";
 
 export interface SelfServiceUiNodeInputWrapperProps {

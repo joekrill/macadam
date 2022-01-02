@@ -1,18 +1,15 @@
-import { useUrlSearchParams } from "../../routing/hooks/useUrlSearchParams";
+import { Settings } from "../components/flows/settings/Settings";
 import { RequireAuthenticated } from "../components/RequireAuthenticated";
-import { Settings } from "../components/settings/Settings";
+import { useAuthPageParams } from "./useAuthPageParams";
 
 export interface SettingsPageProps {}
 
 export const SettingsPage = () => {
-  const params = useUrlSearchParams();
+  const { aal: _aal, refresh: _referesh, ...params } = useAuthPageParams();
 
   return (
     <RequireAuthenticated>
-      <Settings
-        flowId={params.get("flow") || undefined}
-        returnTo={params.get("return_to") || undefined}
-      />
+      <Settings {...params} />
     </RequireAuthenticated>
   );
 };

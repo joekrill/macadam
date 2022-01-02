@@ -1,28 +1,14 @@
 import { Container } from "@chakra-ui/react";
-import { useMemo } from "react";
 import { Card } from "../../common/components/Card/Card";
-import { useUrlSearchParams } from "../../routing/hooks/useUrlSearchParams";
-import { Login } from "../components/login/Login";
-import { authenticatorAssuranceLevelSchema } from "../schemas/session";
+import { Login } from "../components/flows/login/Login";
+import { useAuthPageParams } from "./useAuthPageParams";
 
 export const LoginPage = () => {
-  const params = useUrlSearchParams();
-  const aal = useMemo(() => {
-    try {
-      return authenticatorAssuranceLevelSchema.parse(params.get("aal"));
-    } catch (_) {
-      return undefined;
-    }
-  }, [params]);
+  const params = useAuthPageParams();
 
   return (
     <Card as={Container} maxW="md">
-      <Login
-        aal={aal}
-        flowId={params.get("flow") || undefined}
-        refresh={params.has("refresh")}
-        returnTo={params.get("return_to") || undefined}
-      />
+      <Login {...params} />
     </Card>
   );
 };

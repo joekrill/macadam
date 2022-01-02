@@ -4,7 +4,7 @@ import { skipToken } from "@reduxjs/toolkit/dist/query";
 import { useMemo } from "react";
 import { LoadingSpinner } from "../../common/components/LoadingSpinner/LoadingSpinner";
 import { useUrlSearchParams } from "../../routing/hooks/useUrlSearchParams";
-import { FlowErrorAlert } from "../components/FlowErrorAlert";
+import { FlowErrorAlert } from "../components/flows/FlowErrorAlert";
 import { identityApi } from "../identityApi";
 
 export const FlowErrorPage = () => {

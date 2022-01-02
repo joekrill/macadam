@@ -12,7 +12,7 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { FormattedMessage } from "react-intl";
 import { HomepageButton } from "../../../common/components/HomepageButton";
 import { useSession } from "../../hooks/useSession";
-import { LogoutButton } from "../LogoutButton";
+import { LogoutButton } from "../LogoutButton/LogoutButton";
 
 export interface LoggedInAlreadyNoticeProps {
   onLogout?: () => void;

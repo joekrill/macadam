@@ -1,17 +1,17 @@
 import { VStack } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
 import { Navigate } from "react-router-dom";
-import { HomepageButton } from "../../../common/components/HomepageButton";
-import { LoadingSpinner } from "../../../common/components/LoadingSpinner/LoadingSpinner";
+import { HomepageButton } from "../../../../common/components/HomepageButton";
+import { LoadingSpinner } from "../../../../common/components/LoadingSpinner/LoadingSpinner";
 import {
   useRecoveryFlow,
   UseRecoveryFlowOptions,
-} from "../../hooks/useRecoveryFlow";
+} from "../../../hooks/useRecoveryFlow";
+import { SelfServiceUiForm } from "../../SelfServiceUi/SelfServiceUiForm";
+import { SelfServiceUiMessageList } from "../../SelfServiceUi/SelfServiceUiMessageList";
 import { FlowErrorAlert } from "../FlowErrorAlert";
 import { FlowHeading } from "../FlowHeading";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
-import { SelfServiceUiForm } from "../SelfServiceUi/SelfServiceUiForm";
-import { SelfServiceUiMessageList } from "../SelfServiceUi/SelfServiceUiMessageList";
 
 export interface RecoveryProps extends UseRecoveryFlowOptions {}
 

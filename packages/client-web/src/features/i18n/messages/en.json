@@ -472,6 +472,18 @@
       "value": "Sign Up"
     }
   ],
+  "auth.selfServiceUi.emailNode.label": [
+    {
+      "type": 0,
+      "value": "E-Mail"
+    }
+  ],
+  "auth.selfServiceUi.passwordNode.label": [
+    {
+      "type": 0,
+      "value": "Password"
+    }
+  ],
   "auth.sessionsList.title": [
     {
       "type": 0,

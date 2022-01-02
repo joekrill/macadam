@@ -142,6 +142,12 @@
   "auth.registrationLink.label": {
     "defaultMessage": "Sign Up"
   },
+  "auth.selfServiceUi.emailNode.label": {
+    "defaultMessage": "E-Mail"
+  },
+  "auth.selfServiceUi.passwordNode.label": {
+    "defaultMessage": "Password"
+  },
   "auth.sessionsList.title": {
     "defaultMessage": "Active Sessions"
   },

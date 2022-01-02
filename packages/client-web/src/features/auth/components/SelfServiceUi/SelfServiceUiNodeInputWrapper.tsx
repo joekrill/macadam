@@ -6,7 +6,7 @@ import {
 } from "@chakra-ui/react";
 import { UiNodeInput } from "../../schemas/flows/ui";
 import { RecoveryLink } from "../RecoveryLink/RecoveryLink";
-import { LABEL_MAPPINGS } from "./labelMappings";
+import { useNodeLabel } from "./useNodeLabel";
 
 export interface SelfServiceUiNodeInputWrapperProps {
   node: UiNodeInput;
@@ -22,9 +22,10 @@ export const SelfServiceUiNodeInputWrapper = ({
   isSubmitting,
   node,
 }: SelfServiceUiNodeInputWrapperProps) => {
-  const { meta, messages } = node;
-  const { label, node_type: _, onclick, ...attributes } = node.attributes;
+  const { messages } = node;
+  const { node_type: _, onclick, ...attributes } = node.attributes;
   const errors = messages?.filter((message) => message.type === "error") || [];
+  const label = useNodeLabel(node);
 
   return (
     <FormControl
@@ -32,12 +33,7 @@ export const SelfServiceUiNodeInputWrapper = ({
       isRequired={attributes.required}
       isDisabled={attributes.disabled || isSubmitting}
     >
-      <FormLabel>
-        {LABEL_MAPPINGS[attributes.name] ||
-          meta?.label?.text ||
-          label?.text ||
-          attributes.name}
-      </FormLabel>
+      <FormLabel>{label}</FormLabel>
       {children}
       {messages
         ?.filter((message) => message.type === "info")

@@ -424,6 +424,18 @@
       "value": "[javascript]Sign Up"
     }
   ],
+  "auth.selfServiceUi.emailNode.label": [
+    {
+      "type": 0,
+      "value": "[javascript]E-Mail"
+    }
+  ],
+  "auth.selfServiceUi.passwordNode.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Password"
+    }
+  ],
   "auth.sessionsList.title": [
     {
       "type": 0,

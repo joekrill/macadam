@@ -472,6 +472,18 @@
       "value": "Ṡíĝń Ũṗ"
     }
   ],
+  "auth.selfServiceUi.emailNode.label": [
+    {
+      "type": 0,
+      "value": "Ḕ-Ḿâíĺ"
+    }
+  ],
+  "auth.selfServiceUi.passwordNode.label": [
+    {
+      "type": 0,
+      "value": "Ṕâśśẘŏŕḋ"
+    }
+  ],
   "auth.sessionsList.title": [
     {
       "type": 0,

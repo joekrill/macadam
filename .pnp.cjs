@@ -20651,6 +20651,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["favicons", "npm:6.2.2"],
             ["framer-motion", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:4.1.17"],
             ["history", "npm:5.2.0"],
+            ["jest", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:27.4.5"],
             ["plausible-tracker", "npm:0.3.4"],
             ["prettier", "npm:2.5.1"],
             ["react", "npm:17.0.2"],
@@ -24031,7 +24032,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:5.8.1"],
             ["@typescript-eslint/experimental-utils", "virtual:6d9d1498fb234638028e0e6e460faaf431bf9bac4cdaf332dcc34970725db3baae3f5033cca47a83227465d81b041b89138091ab8a4e10ca839a2288e5255a26#npm:5.8.1"],
             ["eslint", null],
-            ["jest", null]
+            ["jest", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:27.4.5"]
           ],
           "packagePeers": [
             "@types/eslint",

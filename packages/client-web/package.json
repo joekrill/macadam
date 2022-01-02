@@ -45,11 +45,19 @@
     "@types/react-redux": "^7.1.21",
     "@types/react-table": "^7.7.9",
     "@types/testing-library__jest-dom": "^5.14.2",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
     "date-fns": "^2.28.0",
     "dotenv": "^10.0.0",
     "dotenv-expand": "^5.1.0",
     "errorish": "^1.0.0",
     "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-testing-library": "^5.0.1",
     "framer-motion": "^4.1.17",
     "history": "^5.2.0",
     "plausible-tracker": "^0.3.4",
@@ -99,6 +107,7 @@
   "eslintConfig": {
     "extends": [
       "react-app",
+      "plugin:jest/recommended",
       "react-app/jest"
     ],
     "overrides": [

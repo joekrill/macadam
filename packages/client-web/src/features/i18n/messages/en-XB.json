@@ -228,6 +228,12 @@
       "value": "[!! Ŕèśśśèńḋḋḋ èṁṁṁâíĺĺĺ !!]"
     }
   ],
+  "auth.deleteSessionLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[!! Ḋèĺĺĺèṭèèè Ṡèèèśśíííŏń !!]"
+    }
+  ],
   "auth.flowError.redirecting": [
     {
       "options": {
@@ -466,22 +472,52 @@
       "value": "[!! Ṡíĝĝĝń ŨŨŨṗ !!]"
     }
   ],
+  "auth.sessionsList.title": [
+    {
+      "type": 0,
+      "value": "[!! Ḁćṭṭṭíṿèèè Ṡèèèśśíííŏńśśś !!]"
+    }
+  ],
+  "auth.sessionsTable.authenticatedAtHeader.label": [
+    {
+      "type": 0,
+      "value": "[!! Ļâśśśṭ ŨŨŨśèḋḋḋ !!]"
+    }
+  ],
+  "auth.sessionsTable.currentSessionIndicator.title": [
+    {
+      "type": 0,
+      "value": "[!! Ṯḫíííś íííś ẏẏẏŏůŕŕŕ ćůůůŕŕèèèńṭ śèśśśśíŏŏŏń !!]"
+    }
+  ],
+  "auth.sessionsTable.expiresAtHeader.label": [
+    {
+      "type": 0,
+      "value": "[!! Ḕẋṗṗṗíŕèèèś !!]"
+    }
+  ],
+  "auth.sessionsTable.methodHeader.label": [
+    {
+      "type": 0,
+      "value": "[!! Ḿèṭṭṭḫŏḋḋḋ !!]"
+    }
+  ],
   "auth.settings.oidcSection.title": [
     {
       "type": 0,
       "value": "[!! 3ŕḋḋḋ Ṕâââŕṭẏẏẏ Ļŏŏŏĝ-íííń !!]"
     }
   ],
-  "auth.settings.title": [
-    {
-      "type": 0,
-      "value": "[!! Ṕŕŏŏŏḟíĺĺĺè ṠṠṠèṭṭṭṭíńĝĝĝś !!]"
-    }
-  ],
   "auth.settings.totpSection.title": [
     {
       "type": 0,
-      "value": "[!! Ṯẘŏŏŏ-ḟâââćṭŏŏŏŕ âââůṭḫḫḫèńṭṭṭíćâââṭíŏŏŏń !!]"
+      "value": "[!! Ṯẘŏŏŏ-ḟâââćṭŏŏŏŕ ḀḀḀůṭḫḫḫèńṭṭṭíćâââṭíŏŏŏń !!]"
+    }
+  ],
+  "auth.settings.totpSection.toggleButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[!! Ṯŏĝĝĝĝĺèèè Ṯẘẘẘŏ-ḟḟḟâćṭṭṭŏŕ âůṭṭṭḫèńńńṭíćććâṭíííŏń śèṭṭṭṭíńńńĝś !!]"
     }
   ],
   "auth.settings.webauthnSection.title": [
@@ -490,10 +526,22 @@
       "value": "[!! Ḣâŕŕŕḋẘâââŕè Ṯŏǩǩǩèńśśś âńńńḋ ḂḂḂíŏṁṁṁèṭŕŕŕíćśśś !!]"
     }
   ],
+  "auth.settings.webauthnSection.toggleButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[!! Ṯŏĝĝĝĝĺèèè Ḣâââŕḋẘẘẘâŕèèè Ṯŏŏŏǩèńńńś âââńḋ Ḃíŏŏŏṁèṭṭṭŕíćććś śśśèṭṭṭṭíńĝĝĝś !!]"
+    }
+  ],
   "auth.settingsForm.changePasswordSection.title": [
     {
       "type": 0,
       "value": "[!! Ḉḫâââńĝèèè Ṕâââśśẘẘẘŏŕḋḋḋ !!]"
+    }
+  ],
+  "auth.settingsForm.profileSection.title": [
+    {
+      "type": 0,
+      "value": "[!! Ṕŕŏŏŏḟíĺĺĺè !!]"
     }
   ],
   "auth.verification.title": [
@@ -774,6 +822,12 @@
     {
       "type": 0,
       "value": "[!! Ṕŕèèèṿíŏŏŏůś Ṕâĝĝĝè !!]"
+    }
+  ],
+  "sessions.sessionsList.refreshButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[!! Ŕèḟḟḟŕèśśśḫ !!]"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [

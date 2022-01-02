@@ -228,6 +228,12 @@
       "value": "Resend email"
     }
   ],
+  "auth.deleteSessionLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Delete Session"
+    }
+  ],
   "auth.flowError.redirecting": [
     {
       "options": {
@@ -466,22 +472,52 @@
       "value": "Sign Up"
     }
   ],
+  "auth.sessionsList.title": [
+    {
+      "type": 0,
+      "value": "Active Sessions"
+    }
+  ],
+  "auth.sessionsTable.authenticatedAtHeader.label": [
+    {
+      "type": 0,
+      "value": "Last Used"
+    }
+  ],
+  "auth.sessionsTable.currentSessionIndicator.title": [
+    {
+      "type": 0,
+      "value": "This is your current session"
+    }
+  ],
+  "auth.sessionsTable.expiresAtHeader.label": [
+    {
+      "type": 0,
+      "value": "Expires"
+    }
+  ],
+  "auth.sessionsTable.methodHeader.label": [
+    {
+      "type": 0,
+      "value": "Method"
+    }
+  ],
   "auth.settings.oidcSection.title": [
     {
       "type": 0,
       "value": "3rd Party Log-in"
     }
   ],
-  "auth.settings.title": [
-    {
-      "type": 0,
-      "value": "Profile Settings"
-    }
-  ],
   "auth.settings.totpSection.title": [
     {
       "type": 0,
-      "value": "Two-factor authentication"
+      "value": "Two-factor Authentication"
+    }
+  ],
+  "auth.settings.totpSection.toggleButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Toggle Two-factor authentication settings"
     }
   ],
   "auth.settings.webauthnSection.title": [
@@ -490,10 +526,22 @@
       "value": "Hardware Tokens and Biometrics"
     }
   ],
+  "auth.settings.webauthnSection.toggleButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Toggle Hardware Tokens and Biometrics settings"
+    }
+  ],
   "auth.settingsForm.changePasswordSection.title": [
     {
       "type": 0,
       "value": "Change Password"
+    }
+  ],
+  "auth.settingsForm.profileSection.title": [
+    {
+      "type": 0,
+      "value": "Profile"
     }
   ],
   "auth.verification.title": [
@@ -774,6 +822,12 @@
     {
       "type": 0,
       "value": "Previous Page"
+    }
+  ],
+  "sessions.sessionsList.refreshButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Refresh"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [

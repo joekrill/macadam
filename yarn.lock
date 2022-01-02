@@ -12397,11 +12397,19 @@ __metadata:
     "@types/react-table": ^7.7.9
     "@types/svgo": ^2.6.0
     "@types/testing-library__jest-dom": ^5.14.2
+    "@typescript-eslint/eslint-plugin": ^5.8.1
     date-fns: ^2.28.0
     dotenv: ^10.0.0
     dotenv-expand: ^5.1.0
     errorish: ^1.0.0
     eslint-config-react-app: ^6.0.0
+    eslint-plugin-flowtype: ^8.0.3
+    eslint-plugin-import: ^2.25.3
+    eslint-plugin-jest: ^25.3.4
+    eslint-plugin-jsx-a11y: ^6.5.1
+    eslint-plugin-react: ^7.28.0
+    eslint-plugin-react-hooks: ^4.3.0
+    eslint-plugin-testing-library: ^5.0.1
     favicons: ^6.2.2
     framer-motion: ^4.1.17
     history: ^5.2.0
@@ -15051,7 +15059,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jest@npm:^25.3.0":
+"eslint-plugin-jest@npm:^25.3.0, eslint-plugin-jest@npm:^25.3.4":
   version: 25.3.4
   resolution: "eslint-plugin-jest@npm:25.3.4"
   dependencies:
@@ -15151,7 +15159,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:^7.27.1":
+"eslint-plugin-react@npm:^7.27.1, eslint-plugin-react@npm:^7.28.0":
   version: 7.28.0
   resolution: "eslint-plugin-react@npm:7.28.0"
   dependencies:

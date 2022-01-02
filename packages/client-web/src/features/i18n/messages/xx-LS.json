@@ -228,6 +228,12 @@
       "value": "Resend emailSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "auth.deleteSessionLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Delete SessionSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "auth.flowError.redirecting": [
     {
       "options": {
@@ -460,22 +466,52 @@
       "value": "Sign UpSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "auth.sessionsList.title": [
+    {
+      "type": 0,
+      "value": "Active SessionsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.sessionsTable.authenticatedAtHeader.label": [
+    {
+      "type": 0,
+      "value": "Last UsedSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.sessionsTable.currentSessionIndicator.title": [
+    {
+      "type": 0,
+      "value": "This is your current sessionSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.sessionsTable.expiresAtHeader.label": [
+    {
+      "type": 0,
+      "value": "ExpiresSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.sessionsTable.methodHeader.label": [
+    {
+      "type": 0,
+      "value": "MethodSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "auth.settings.oidcSection.title": [
     {
       "type": 0,
       "value": "3rd Party Log-inSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.settings.title": [
-    {
-      "type": 0,
-      "value": "Profile SettingsSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
   "auth.settings.totpSection.title": [
     {
       "type": 0,
-      "value": "Two-factor authenticationSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Two-factor AuthenticationSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.settings.totpSection.toggleButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Toggle Two-factor authentication settingsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "auth.settings.webauthnSection.title": [
@@ -484,10 +520,22 @@
       "value": "Hardware Tokens and BiometricsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "auth.settings.webauthnSection.toggleButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Toggle Hardware Tokens and Biometrics settingsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "auth.settingsForm.changePasswordSection.title": [
     {
       "type": 0,
       "value": "Change PasswordSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.settingsForm.profileSection.title": [
+    {
+      "type": 0,
+      "value": "ProfileSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "auth.verification.title": [
@@ -742,6 +790,12 @@
     {
       "type": 0,
       "value": "Previous PageSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "sessions.sessionsList.refreshButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "RefreshSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [

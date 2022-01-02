@@ -72,6 +72,9 @@
   "auth.VerifyEmailNotificationBanner.resendButton.label": {
     "defaultMessage": "Resend email"
   },
+  "auth.deleteSessionLink.ariaLabel": {
+    "defaultMessage": "Delete Session"
+  },
   "auth.flowError.redirecting": {
     "defaultMessage": "{reason, select, session_refresh_required {Reauthentication required. } browser_location_change_required {} session_aal2_required {2FA required. } other {}}Redirecting..."
   },
@@ -139,25 +142,46 @@
   "auth.registrationLink.label": {
     "defaultMessage": "Sign Up"
   },
+  "auth.sessionsList.title": {
+    "defaultMessage": "Active Sessions"
+  },
+  "auth.sessionsTable.authenticatedAtHeader.label": {
+    "defaultMessage": "Last Used"
+  },
+  "auth.sessionsTable.currentSessionIndicator.title": {
+    "defaultMessage": "This is your current session"
+  },
+  "auth.sessionsTable.expiresAtHeader.label": {
+    "defaultMessage": "Expires"
+  },
+  "auth.sessionsTable.methodHeader.label": {
+    "defaultMessage": "Method"
+  },
   "auth.settings.oidcSection.title": {
     "defaultMessage": "3rd Party Log-in",
     "description": "The heading displayed at the top of the change password section of the settings form"
   },
-  "auth.settings.title": {
-    "defaultMessage": "Profile Settings",
-    "description": "The title displayed at the top of the settings form"
-  },
   "auth.settings.totpSection.title": {
-    "defaultMessage": "Two-factor authentication",
+    "defaultMessage": "Two-factor Authentication",
     "description": "The heading displayed at the top of the change password section of the settings form"
+  },
+  "auth.settings.totpSection.toggleButton.ariaLabel": {
+    "defaultMessage": "Toggle Two-factor authentication settings"
   },
   "auth.settings.webauthnSection.title": {
     "defaultMessage": "Hardware Tokens and Biometrics",
     "description": "The heading displayed at the top of the change password section of the settings form"
   },
+  "auth.settings.webauthnSection.toggleButton.ariaLabel": {
+    "defaultMessage": "Toggle Hardware Tokens and Biometrics settings"
+  },
   "auth.settingsForm.changePasswordSection.title": {
     "defaultMessage": "Change Password",
     "description": "The heading displayed at the top of the change password section of the settings form"
+  },
+  "auth.settingsForm.profileSection.title": {
+    "defaultMessage": "Profile",
+    "description": "The heading displayed at the top of the profile section of the settings form"
   },
   "auth.verification.title": {
     "defaultMessage": "Verify your account",
@@ -275,6 +299,9 @@
   },
   "pagination.previousPage.label": {
     "defaultMessage": "Previous Page"
+  },
+  "sessions.sessionsList.refreshButton.ariaLabel": {
+    "defaultMessage": "Refresh"
   },
   "theme.colorModeSwitcher.switchColorModeLabel": {
     "defaultMessage": "Switch to {mode, select, dark {dark} light {light} other {}} mode"

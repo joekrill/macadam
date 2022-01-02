@@ -228,6 +228,12 @@
       "value": "Ŕèśèńḋ èṁâíĺ"
     }
   ],
+  "auth.deleteSessionLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Ḋèĺèṭè Ṡèśśíŏń"
+    }
+  ],
   "auth.flowError.redirecting": [
     {
       "options": {
@@ -466,22 +472,52 @@
       "value": "Ṡíĝń Ũṗ"
     }
   ],
+  "auth.sessionsList.title": [
+    {
+      "type": 0,
+      "value": "Ḁćṭíṿè Ṡèśśíŏńś"
+    }
+  ],
+  "auth.sessionsTable.authenticatedAtHeader.label": [
+    {
+      "type": 0,
+      "value": "Ļâśṭ Ũśèḋ"
+    }
+  ],
+  "auth.sessionsTable.currentSessionIndicator.title": [
+    {
+      "type": 0,
+      "value": "Ṯḫíś íś ẏŏůŕ ćůŕŕèńṭ śèśśíŏń"
+    }
+  ],
+  "auth.sessionsTable.expiresAtHeader.label": [
+    {
+      "type": 0,
+      "value": "Ḕẋṗíŕèś"
+    }
+  ],
+  "auth.sessionsTable.methodHeader.label": [
+    {
+      "type": 0,
+      "value": "Ḿèṭḫŏḋ"
+    }
+  ],
   "auth.settings.oidcSection.title": [
     {
       "type": 0,
       "value": "3ŕḋ Ṕâŕṭẏ Ļŏĝ-íń"
     }
   ],
-  "auth.settings.title": [
-    {
-      "type": 0,
-      "value": "Ṕŕŏḟíĺè Ṡèṭṭíńĝś"
-    }
-  ],
   "auth.settings.totpSection.title": [
     {
       "type": 0,
-      "value": "Ṯẘŏ-ḟâćṭŏŕ âůṭḫèńṭíćâṭíŏń"
+      "value": "Ṯẘŏ-ḟâćṭŏŕ Ḁůṭḫèńṭíćâṭíŏń"
+    }
+  ],
+  "auth.settings.totpSection.toggleButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Ṯŏĝĝĺè Ṯẘŏ-ḟâćṭŏŕ âůṭḫèńṭíćâṭíŏń śèṭṭíńĝś"
     }
   ],
   "auth.settings.webauthnSection.title": [
@@ -490,10 +526,22 @@
       "value": "Ḣâŕḋẘâŕè Ṯŏǩèńś âńḋ Ḃíŏṁèṭŕíćś"
     }
   ],
+  "auth.settings.webauthnSection.toggleButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Ṯŏĝĝĺè Ḣâŕḋẘâŕè Ṯŏǩèńś âńḋ Ḃíŏṁèṭŕíćś śèṭṭíńĝś"
+    }
+  ],
   "auth.settingsForm.changePasswordSection.title": [
     {
       "type": 0,
       "value": "Ḉḫâńĝè Ṕâśśẘŏŕḋ"
+    }
+  ],
+  "auth.settingsForm.profileSection.title": [
+    {
+      "type": 0,
+      "value": "Ṕŕŏḟíĺè"
     }
   ],
   "auth.verification.title": [
@@ -774,6 +822,12 @@
     {
       "type": 0,
       "value": "Ṕŕèṿíŏůś Ṕâĝè"
+    }
+  ],
+  "sessions.sessionsList.refreshButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Ŕèḟŕèśḫ"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [

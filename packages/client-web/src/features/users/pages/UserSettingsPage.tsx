@@ -5,10 +5,10 @@ import {
   Routes,
   useMatch,
 } from "react-router-dom";
-import { SessionsList } from "../../auth/components/SessionsList";
 import { SettingsPage } from "../../auth/pages/SettingsPage";
 import { Sidebar } from "../../common/components/Sidebar/Sidebar";
 import { SidebarNavItem } from "../../common/components/Sidebar/SidebarNavItem";
+import { SessionsList } from "../../sessions/components/SessionsList";
 
 export const UserSettingsPage = () => {
   const match = useMatch("/settings/:page");

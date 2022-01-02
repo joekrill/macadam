@@ -3,7 +3,6 @@
 - (client-web) profile locale vs app locale selection
 - (client-web) Detect session expiration and handle it somehow (modal login form? a la Gmail?)
 - CI/CD pipeline
-  - eslint+prettier?
 - production/staging kubernetes deployments
 - OpenTelemety
   - Versioning issues (https://github.com/open-telemetry/opentelemetry-js-contrib/issues/749)
@@ -12,12 +11,15 @@
 - Some way to upload/change avatar (currently it is just a URL string)
 - Agree to ToS on signup?
 - Redirect back to original page after sign up/login using OIDC not working (always redirects to home)
+- figure out versioning/bumping versions (automatically?)
+  - https://semantic-release.gitbook.io/semantic-release/
+  - https://dev.to/antongolub/the-chronicles-of-semantic-release-and-monorepos-5cfc
+  - https://www.npmjs.com/package/auto
 
 # "v1"+
 
 - Integration tests (i.e. using cypress)
 - (client-web) upgrade create-react-app
-- Use svgo for SVG optimization
 - Figure out how to share logic between front-end/back-end while still having hot-reloading work and without ejecting
 - (api-server) Uploads
   - https://github.com/node-formidable/formidable

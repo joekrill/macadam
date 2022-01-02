@@ -228,6 +228,12 @@
       "value": "RESEND EMAIL"
     }
   ],
+  "auth.deleteSessionLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "DELETE SESSION"
+    }
+  ],
   "auth.flowError.redirecting": [
     {
       "options": {
@@ -466,16 +472,40 @@
       "value": "SIGN UP"
     }
   ],
+  "auth.sessionsList.title": [
+    {
+      "type": 0,
+      "value": "ACTIVE SESSIONS"
+    }
+  ],
+  "auth.sessionsTable.authenticatedAtHeader.label": [
+    {
+      "type": 0,
+      "value": "LAST USED"
+    }
+  ],
+  "auth.sessionsTable.currentSessionIndicator.title": [
+    {
+      "type": 0,
+      "value": "THIS IS YOUR CURRENT SESSION"
+    }
+  ],
+  "auth.sessionsTable.expiresAtHeader.label": [
+    {
+      "type": 0,
+      "value": "EXPIRES"
+    }
+  ],
+  "auth.sessionsTable.methodHeader.label": [
+    {
+      "type": 0,
+      "value": "METHOD"
+    }
+  ],
   "auth.settings.oidcSection.title": [
     {
       "type": 0,
       "value": "3RD PARTY LOG-IN"
-    }
-  ],
-  "auth.settings.title": [
-    {
-      "type": 0,
-      "value": "PROFILE SETTINGS"
     }
   ],
   "auth.settings.totpSection.title": [
@@ -484,16 +514,34 @@
       "value": "TWO-FACTOR AUTHENTICATION"
     }
   ],
+  "auth.settings.totpSection.toggleButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "TOGGLE TWO-FACTOR AUTHENTICATION SETTINGS"
+    }
+  ],
   "auth.settings.webauthnSection.title": [
     {
       "type": 0,
       "value": "HARDWARE TOKENS AND BIOMETRICS"
     }
   ],
+  "auth.settings.webauthnSection.toggleButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "TOGGLE HARDWARE TOKENS AND BIOMETRICS SETTINGS"
+    }
+  ],
   "auth.settingsForm.changePasswordSection.title": [
     {
       "type": 0,
       "value": "CHANGE PASSWORD"
+    }
+  ],
+  "auth.settingsForm.profileSection.title": [
+    {
+      "type": 0,
+      "value": "PROFILE"
     }
   ],
   "auth.verification.title": [
@@ -774,6 +822,12 @@
     {
       "type": 0,
       "value": "PREVIOUS PAGE"
+    }
+  ],
+  "sessions.sessionsList.refreshButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "REFRESH"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [

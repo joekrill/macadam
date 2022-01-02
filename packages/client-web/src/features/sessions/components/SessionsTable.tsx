@@ -4,23 +4,23 @@ import { useMemo } from "react";
 import { FaAsterisk } from "react-icons/fa";
 import { FormattedDate, useIntl } from "react-intl";
 import { Column } from "react-table";
+import { useSession } from "../../auth/hooks/useSession";
 import {
   DataTable,
   DataTableProps,
 } from "../../common/components/DataTable/DataTable";
-import { useSession } from "../hooks/useSession";
-import { SessionWithoutIdentity } from "../schemas/session";
+import { ApiSession } from "../sessionsSchemas";
 import { SessionActions } from "./SessionActions";
 
 export interface SessionsTableProps
-  extends Partial<DataTableProps<SessionWithoutIdentity>> {}
+  extends Partial<DataTableProps<ApiSession>> {}
 
 export const SessionsTable = ({ data = [], ...props }: SessionsTableProps) => {
   const { formatMessage } = useIntl();
   const { session } = useSession();
   const currentSessionId = session?.id;
 
-  const columns = useMemo<Column<SessionWithoutIdentity>[]>(
+  const columns = useMemo<Column<ApiSession>[]>(
     () => [
       {
         Header: formatMessage({

@@ -99,7 +99,7 @@ export const SettingsForm = ({
             <IconButton
               aria-label={formatMessage({
                 id: "auth.settings.totpSection.toggleButton.ariaLabel",
-                description: "Toggle Two-factor authentication settings",
+                defaultMessage: "Toggle Two-factor authentication settings",
               })}
               ml="3"
               variant="outline"
@@ -132,7 +132,8 @@ export const SettingsForm = ({
             <IconButton
               aria-label={formatMessage({
                 id: "auth.settings.webauthnSection.toggleButton.ariaLabel",
-                description: "Toggle Hardware Tokens and Biometrics settings",
+                defaultMessage:
+                  "Toggle Hardware Tokens and Biometrics settings",
               })}
               ml="3"
               variant="outline"

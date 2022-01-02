@@ -6,13 +6,13 @@ import {
 } from "@chakra-ui/react";
 import { FaTrash } from "react-icons/fa";
 import { useIntl } from "react-intl";
-import { authApi } from "../authApi";
-import { SessionWithoutIdentity } from "../schemas/session";
-import { IfAuthorized } from "./IfAuthorized";
+import { IfAuthorized } from "../../auth/components/IfAuthorized";
+import { sessionsApi } from "../sessionsApi";
+import { ApiSession } from "../sessionsSchemas";
 
 export interface SessionActionsProps extends ButtonGroupProps {
   onDelete?: () => void;
-  session: SessionWithoutIdentity;
+  session: ApiSession;
 }
 
 export const SessionActions = ({
@@ -21,7 +21,7 @@ export const SessionActions = ({
   ...props
 }: SessionActionsProps) => {
   const { formatMessage } = useIntl();
-  const [deleteSession, deleteResult] = authApi.useDeleteSessionMutation();
+  const [deleteSession, deleteResult] = sessionsApi.useDeleteSessionMutation();
 
   return (
     <>

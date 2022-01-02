@@ -228,6 +228,12 @@
       "value": "[javascript]Resend email"
     }
   ],
+  "auth.deleteSessionLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[javascript]Delete Session"
+    }
+  ],
   "auth.flowError.redirecting": [
     {
       "type": 0,
@@ -418,22 +424,52 @@
       "value": "[javascript]Sign Up"
     }
   ],
+  "auth.sessionsList.title": [
+    {
+      "type": 0,
+      "value": "[javascript]Active Sessions"
+    }
+  ],
+  "auth.sessionsTable.authenticatedAtHeader.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Last Used"
+    }
+  ],
+  "auth.sessionsTable.currentSessionIndicator.title": [
+    {
+      "type": 0,
+      "value": "[javascript]This is your current session"
+    }
+  ],
+  "auth.sessionsTable.expiresAtHeader.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Expires"
+    }
+  ],
+  "auth.sessionsTable.methodHeader.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Method"
+    }
+  ],
   "auth.settings.oidcSection.title": [
     {
       "type": 0,
       "value": "[javascript]3rd Party Log-in"
     }
   ],
-  "auth.settings.title": [
-    {
-      "type": 0,
-      "value": "[javascript]Profile Settings"
-    }
-  ],
   "auth.settings.totpSection.title": [
     {
       "type": 0,
-      "value": "[javascript]Two-factor authentication"
+      "value": "[javascript]Two-factor Authentication"
+    }
+  ],
+  "auth.settings.totpSection.toggleButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[javascript]Toggle Two-factor authentication settings"
     }
   ],
   "auth.settings.webauthnSection.title": [
@@ -442,10 +478,22 @@
       "value": "[javascript]Hardware Tokens and Biometrics"
     }
   ],
+  "auth.settings.webauthnSection.toggleButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[javascript]Toggle Hardware Tokens and Biometrics settings"
+    }
+  ],
   "auth.settingsForm.changePasswordSection.title": [
     {
       "type": 0,
       "value": "[javascript]Change Password"
+    }
+  ],
+  "auth.settingsForm.profileSection.title": [
+    {
+      "type": 0,
+      "value": "[javascript]Profile"
     }
   ],
   "auth.verification.title": [
@@ -700,6 +748,12 @@
     {
       "type": 0,
       "value": "[javascript]Previous Page"
+    }
+  ],
+  "sessions.sessionsList.refreshButton.ariaLabel": [
+    {
+      "type": 0,
+      "value": "[javascript]Refresh"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [

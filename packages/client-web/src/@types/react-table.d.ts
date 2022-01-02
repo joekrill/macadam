@@ -37,12 +37,12 @@ declare module "react-table" {
     D extends Record<string, unknown> = Record<string, unknown>
   > extends UseSortByColumnProps<D> {}
 
-  export interface Cell<
-    D extends Record<string, unknown> = Record<string, unknown>,
-    V = any
-  > {}
+  // export interface Cell<
+  //   D extends Record<string, unknown> = Record<string, unknown>,
+  //   V = any
+  // > {}
 
-  export interface Row<
-    D extends Record<string, unknown> = Record<string, unknown>
-  > {}
+  // export interface Row<
+  //   D extends Record<string, unknown> = Record<string, unknown>
+  // > {}
 }

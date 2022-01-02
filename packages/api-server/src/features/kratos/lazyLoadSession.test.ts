@@ -40,7 +40,8 @@ describe("lazyLoadSession()", () => {
   describe("`context.state.session()`", () => {
     test("is a Promise", async () => {
       instance(contextMock, nextMock);
-      expect(contextMock.state.session()).resolves.toBeUndefined();
+      const session = await contextMock.state.session();
+      expect(session).toBeUndefined();
     });
 
     test("is lazy-loaded", async () => {

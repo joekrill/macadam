@@ -3,10 +3,6 @@ import { KratosBaseEntity } from "./KratosBaseEntity";
 
 @Entity({ tableName: "courier_messages", abstract: false })
 export class KratosCourierMessages extends KratosBaseEntity {
-  constructor() {
-    super();
-  }
-
   static readonly modelName = "KratosCourierMessages";
 
   @Property({ type: "integer", nullable: false })

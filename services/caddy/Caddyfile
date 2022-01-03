@@ -2,7 +2,7 @@
   encode zstd gzip
   tls internal
 
-  @root host localtest.me 
+  @root host localtest.me
   handle @root {
     handle_path /kratos/public/* {
       reverse_proxy http://kratos:4433

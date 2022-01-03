@@ -6,7 +6,6 @@
   - Versioning issues (https://github.com/open-telemetry/opentelemetry-js-contrib/issues/749)
 - Review Kratos configuration
   - https://www.ory.sh/kratos/docs/reference/configuration
-- Agree to ToS on signup?
 - Redirect back to original page after sign up/login using OIDC not working (always redirects to home)
 - figure out versioning/bumping versions (automatically?)
   - https://semantic-release.gitbook.io/semantic-release/
@@ -35,6 +34,7 @@
   - Use https://documentation.mjml.io/ ?
 - Service accounts
   - https://www.ory.sh/kratos/docs/concepts/identity-schema/#json-schema-vocabulary-extensions
+- Agree to ToS on signup?
 
 ## Low priority
 

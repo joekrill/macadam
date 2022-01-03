@@ -7679,7 +7679,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/@formatjs-intl-getcanonicallocales-virtual-23bd2d2043/0/cache/@formatjs-intl-getcanonicallocales-npm-1.8.0-68460ea28e-7a14001445.zip/node_modules/@formatjs/intl-getcanonicallocales/",
           "packageDependencies": [
             ["@formatjs/intl-getcanonicallocales", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.8.0"],
-            ["@types/node", "npm:16.11.18"],
+            ["@types/node", "npm:17.0.7"],
             ["tslib", "npm:2.1.0"]
           ],
           "packagePeers": [
@@ -14665,17 +14665,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "linkType": "HARD",
         }],
-        ["npm:16.11.18", {
-          "packageLocation": "./.yarn/cache/@types-node-npm-16.11.18-d50939a1f4-f2e615c5f1.zip/node_modules/@types/node/",
-          "packageDependencies": [
-            ["@types/node", "npm:16.11.18"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:16.4.0", {
           "packageLocation": "./.yarn/cache/@types-node-npm-16.4.0-179e15102b-9107dbdd9b.zip/node_modules/@types/node/",
           "packageDependencies": [
             ["@types/node", "npm:16.4.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:17.0.7", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-17.0.7-59790fd3a7-3cb3024f8c.zip/node_modules/@types/node/",
+          "packageDependencies": [
+            ["@types/node", "npm:17.0.7"]
           ],
           "linkType": "HARD",
         }]
@@ -16988,7 +16988,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/koa-compose", "npm:3.2.5"],
             ["@types/koa__cors", "npm:3.1.1"],
             ["@types/koa__router", "npm:8.0.11"],
-            ["@types/node", "npm:16.11.18"],
+            ["@types/node", "npm:17.0.7"],
             ["@types/nodemailer", "npm:6.4.4"],
             ["@types/pino", "npm:7.0.5"],
             ["@types/supertest", "npm:2.0.11"],
@@ -19495,7 +19495,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:12.1.2"],
             ["@testing-library/user-event", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:13.5.0"],
             ["@types/jest", "npm:27.4.0"],
-            ["@types/node", "npm:16.11.18"],
+            ["@types/node", "npm:17.0.7"],
             ["@types/prettier", "npm:2.4.2"],
             ["@types/react", "npm:17.0.38"],
             ["@types/react-dom", "npm:17.0.11"],
@@ -39040,7 +39040,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node12", "npm:1.0.8"],
             ["@tsconfig/node14", "npm:1.0.1"],
             ["@tsconfig/node16", "npm:1.0.2"],
-            ["@types/node", "npm:16.11.18"],
+            ["@types/node", "npm:17.0.7"],
             ["@types/swc__core", null],
             ["@types/swc__wasm", null],
             ["@types/typescript", null],

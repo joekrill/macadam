@@ -1,6 +1,6 @@
 # This is expected to be used in the context of the repo root directory
 
-FROM node:16.10
+FROM node:17.3
 
 WORKDIR /var/macadam
 RUN yarn

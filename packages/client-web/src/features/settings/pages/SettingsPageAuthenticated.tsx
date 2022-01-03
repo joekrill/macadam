@@ -7,6 +7,7 @@ import {
   useMatch,
 } from "react-router-dom";
 import { SettingsPage as ProfileSettingsPage } from "../../auth/pages/SettingsPage";
+import { Card } from "../../common/components/Card/Card";
 import { Sidebar } from "../../common/components/Sidebar/Sidebar";
 import { SidebarNavItem } from "../../common/components/Sidebar/SidebarNavItem";
 import { SessionsList } from "../../sessions/components/SessionsList";
@@ -53,7 +54,7 @@ export const SettingsPageAuthenticated = () => {
       </Sidebar>
       <Box as="main" px="4" width="full">
         <Routes>
-          <Route index element={<AppPreferences />} />
+          <Route index element={<AppPreferences as={Card} />} />
           <Route path="profile" element={<ProfileSettingsPage />} />
           <Route path="sessions" element={<SessionsList />} />
         </Routes>

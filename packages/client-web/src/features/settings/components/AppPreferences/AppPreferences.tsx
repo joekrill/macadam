@@ -1,10 +1,19 @@
-import { Box, FormControl, FormLabel, Heading, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  BoxProps,
+  FormControl,
+  FormLabel,
+  Heading,
+  VStack,
+} from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
 import { ActiveLocaleSelect } from "../../../i18n/components/ActiveLocaleSelect/ActiveLocaleSelect";
 import { ColorModeSelect } from "../../../theme/components/ColorModeSelect/ColorModeSelect";
 
-export const AppPreferences = () => (
-  <Box>
+export interface AppPreferencesProps extends BoxProps {}
+
+export const AppPreferences = (props: AppPreferencesProps) => (
+  <Box {...props}>
     <Heading mb="4" size="md">
       <FormattedMessage
         id="settings.appPreferences.title"

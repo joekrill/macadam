@@ -148,8 +148,17 @@
   "auth.selfServiceUi.localeSelectNode.defaultValue": {
     "defaultMessage": "Default ({locale})"
   },
+  "auth.selfServiceUi.localeSelectNode.usageInfo": {
+    "defaultMessage": "This will be used for external communications or when we can't automatically detect your locale based on your device settings. To change the current application language visit the <preferencesLink>preferences page</preferencesLink>."
+  },
   "auth.selfServiceUi.passwordNode.label": {
     "defaultMessage": "Password"
+  },
+  "auth.selfServiceUi.profilePictureNode.deleteButton.label": {
+    "defaultMessage": "Delete"
+  },
+  "auth.selfServiceUi.profilePictureNode.uploadButton.label": {
+    "defaultMessage": "Change photo"
   },
   "auth.sessionsList.title": {
     "defaultMessage": "Active Sessions"
@@ -239,9 +248,6 @@
     "defaultMessage": "Unable to load locale {locale}",
     "description": "The toast message shown when a locale fails to load"
   },
-  "i18n.localeSelect.defaultValue": {
-    "defaultMessage": "This will be used for external communications or when we can't automatically detect your locale based on your device settings. To change the current application language visit the <preferencesLink>preferences page</preferencesLink>."
-  },
   "pages.contactUs.heading": {
     "defaultMessage": "Contact Us"
   },
@@ -328,7 +334,7 @@
     "defaultMessage": "Preferences"
   },
   "settings.settingsPage.profileLink.label": {
-    "defaultMessage": "Profile &amp; Login"
+    "defaultMessage": "Profile & Login"
   },
   "settings.settingsPage.sessionsLink.label": {
     "defaultMessage": "Sessions"

@@ -492,10 +492,42 @@
       "value": ")"
     }
   ],
+  "auth.selfServiceUi.localeSelectNode.usageInfo": [
+    {
+      "type": 0,
+      "value": "Ṯḫíś ẘíĺĺ ḃè ůśèḋ ḟŏŕ èẋṭèŕńâĺ ćŏṁṁůńíćâṭíŏńś ŏŕ ẘḫèń ẘè ćâń'ṭ âůṭŏṁâṭíćâĺĺẏ ḋèṭèćṭ ẏŏůŕ ĺŏćâĺè ḃâśèḋ ŏń ẏŏůŕ ḋèṿíćè śèṭṭíńĝś. Ṯŏ ćḫâńĝè ṭḫè ćůŕŕèńṭ âṗṗĺíćâṭíŏń ĺâńĝůâĝè ṿíśíṭ ṭḫè "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "ṗŕèḟèŕèńćèś ṗâĝè"
+        }
+      ],
+      "type": 8,
+      "value": "preferencesLink"
+    },
+    {
+      "type": 0,
+      "value": "."
+    }
+  ],
   "auth.selfServiceUi.passwordNode.label": [
     {
       "type": 0,
       "value": "Ṕâśśẘŏŕḋ"
+    }
+  ],
+  "auth.selfServiceUi.profilePictureNode.deleteButton.label": [
+    {
+      "type": 0,
+      "value": "Ḋèĺèṭè"
+    }
+  ],
+  "auth.selfServiceUi.profilePictureNode.uploadButton.label": [
+    {
+      "type": 0,
+      "value": "Ḉḫâńĝè ṗḫŏṭŏ"
     }
   ],
   "auth.sessionsList.title": [
@@ -690,26 +722,6 @@
       "value": "locale"
     }
   ],
-  "i18n.localeSelect.defaultValue": [
-    {
-      "type": 0,
-      "value": "Ṯḫíś ẘíĺĺ ḃè ůśèḋ ḟŏŕ èẋṭèŕńâĺ ćŏṁṁůńíćâṭíŏńś ŏŕ ẘḫèń ẘè ćâń'ṭ âůṭŏṁâṭíćâĺĺẏ ḋèṭèćṭ ẏŏůŕ ĺŏćâĺè ḃâśèḋ ŏń ẏŏůŕ ḋèṿíćè śèṭṭíńĝś. Ṯŏ ćḫâńĝè ṭḫè ćůŕŕèńṭ âṗṗĺíćâṭíŏń ĺâńĝůâĝè ṿíśíṭ ṭḫè "
-    },
-    {
-      "children": [
-        {
-          "type": 0,
-          "value": "ṗŕèḟèŕèńćèś ṗâĝè"
-        }
-      ],
-      "type": 8,
-      "value": "preferencesLink"
-    },
-    {
-      "type": 0,
-      "value": "."
-    }
-  ],
   "pages.contactUs.heading": [
     {
       "type": 0,
@@ -895,7 +907,7 @@
   "settings.settingsPage.profileLink.label": [
     {
       "type": 0,
-      "value": "Ṕŕŏḟíĺè &âṁṗ; Ļŏĝíń"
+      "value": "Ṕŕŏḟíĺè & Ļŏĝíń"
     }
   ],
   "settings.settingsPage.sessionsLink.label": [

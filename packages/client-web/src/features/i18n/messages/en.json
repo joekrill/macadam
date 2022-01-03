@@ -492,10 +492,42 @@
       "value": ")"
     }
   ],
+  "auth.selfServiceUi.localeSelectNode.usageInfo": [
+    {
+      "type": 0,
+      "value": "This will be used for external communications or when we can't automatically detect your locale based on your device settings. To change the current application language visit the "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "preferences page"
+        }
+      ],
+      "type": 8,
+      "value": "preferencesLink"
+    },
+    {
+      "type": 0,
+      "value": "."
+    }
+  ],
   "auth.selfServiceUi.passwordNode.label": [
     {
       "type": 0,
       "value": "Password"
+    }
+  ],
+  "auth.selfServiceUi.profilePictureNode.deleteButton.label": [
+    {
+      "type": 0,
+      "value": "Delete"
+    }
+  ],
+  "auth.selfServiceUi.profilePictureNode.uploadButton.label": [
+    {
+      "type": 0,
+      "value": "Change photo"
     }
   ],
   "auth.sessionsList.title": [
@@ -690,26 +722,6 @@
       "value": "locale"
     }
   ],
-  "i18n.localeSelect.defaultValue": [
-    {
-      "type": 0,
-      "value": "This will be used for external communications or when we can't automatically detect your locale based on your device settings. To change the current application language visit the "
-    },
-    {
-      "children": [
-        {
-          "type": 0,
-          "value": "preferences page"
-        }
-      ],
-      "type": 8,
-      "value": "preferencesLink"
-    },
-    {
-      "type": 0,
-      "value": "."
-    }
-  ],
   "pages.contactUs.heading": [
     {
       "type": 0,
@@ -895,7 +907,7 @@
   "settings.settingsPage.profileLink.label": [
     {
       "type": 0,
-      "value": "Profile &amp; Login"
+      "value": "Profile & Login"
     }
   ],
   "settings.settingsPage.sessionsLink.label": [

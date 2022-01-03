@@ -4,6 +4,7 @@ import { CheckboxNode } from "./nodes/CheckboxNode";
 import { LocaleSelectNode } from "./nodes/LocaleSelectNode";
 import { OidcButtonNode } from "./nodes/OidcButtonNode";
 import { PasswordNode } from "./nodes/PasswordNode";
+import { ProfilePictureNode } from "./nodes/ProfilePictureNode";
 import { TextInputNode } from "./nodes/TextInputNode";
 
 export interface SelfServiceUiNodeInputProps {
@@ -69,6 +70,18 @@ export const SelfServiceUiNodeInput = ({
       if (attributes.name === "traits.locale") {
         return (
           <LocaleSelectNode
+            flowType={flowType}
+            isSubmitting={isSubmitting}
+            node={node as UiNodeButtonInput}
+            onChange={onChange}
+            value={value}
+          />
+        );
+      }
+
+      if (attributes.name === "traits.picture") {
+        return (
+          <ProfilePictureNode
             flowType={flowType}
             isSubmitting={isSubmitting}
             node={node as UiNodeButtonInput}

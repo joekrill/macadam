@@ -37,7 +37,7 @@ export const SettingsPageAuthenticated = () => {
         >
           <FormattedMessage
             id="settings.settingsPage.profileLink.label"
-            defaultMessage="Profile &amp; Login"
+            defaultMessage="Profile & Login"
           />
         </SidebarNavItem>
         <SidebarNavItem

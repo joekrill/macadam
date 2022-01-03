@@ -492,10 +492,42 @@
       "value": ")"
     }
   ],
+  "auth.selfServiceUi.localeSelectNode.usageInfo": [
+    {
+      "type": 0,
+      "value": "THIS WILL BE USED FOR EXTERNAL COMMUNICATIONS OR WHEN WE CAN'T AUTOMATICALLY DETECT YOUR LOCALE BASED ON YOUR DEVICE SETTINGS. TO CHANGE THE CURRENT APPLICATION LANGUAGE VISIT THE "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "PREFERENCES PAGE"
+        }
+      ],
+      "type": 8,
+      "value": "preferencesLink"
+    },
+    {
+      "type": 0,
+      "value": "."
+    }
+  ],
   "auth.selfServiceUi.passwordNode.label": [
     {
       "type": 0,
       "value": "PASSWORD"
+    }
+  ],
+  "auth.selfServiceUi.profilePictureNode.deleteButton.label": [
+    {
+      "type": 0,
+      "value": "DELETE"
+    }
+  ],
+  "auth.selfServiceUi.profilePictureNode.uploadButton.label": [
+    {
+      "type": 0,
+      "value": "CHANGE PHOTO"
     }
   ],
   "auth.sessionsList.title": [
@@ -690,26 +722,6 @@
       "value": "locale"
     }
   ],
-  "i18n.localeSelect.defaultValue": [
-    {
-      "type": 0,
-      "value": "THIS WILL BE USED FOR EXTERNAL COMMUNICATIONS OR WHEN WE CAN'T AUTOMATICALLY DETECT YOUR LOCALE BASED ON YOUR DEVICE SETTINGS. TO CHANGE THE CURRENT APPLICATION LANGUAGE VISIT THE "
-    },
-    {
-      "children": [
-        {
-          "type": 0,
-          "value": "PREFERENCES PAGE"
-        }
-      ],
-      "type": 8,
-      "value": "preferencesLink"
-    },
-    {
-      "type": 0,
-      "value": "."
-    }
-  ],
   "pages.contactUs.heading": [
     {
       "type": 0,
@@ -895,7 +907,7 @@
   "settings.settingsPage.profileLink.label": [
     {
       "type": 0,
-      "value": "PROFILE &AMP; LOGIN"
+      "value": "PROFILE & LOGIN"
     }
   ],
   "settings.settingsPage.sessionsLink.label": [

@@ -30,7 +30,7 @@ export const LocaleSelectNode = ({
         flowType === "settings" &&
         formatMessage(
           {
-            id: "i18n.localeSelect.defaultValue",
+            id: "auth.selfServiceUi.localeSelectNode.usageInfo",
             defaultMessage:
               "This will be used for external communications or when we can't automatically detect your locale based on your device settings. To change the current application language visit the <preferencesLink>preferences page</preferencesLink>.",
           },

@@ -492,10 +492,42 @@
       "value": "[!! ) !!]"
     }
   ],
+  "auth.selfServiceUi.localeSelectNode.usageInfo": [
+    {
+      "type": 0,
+      "value": "[!! Ṯḫíííś ẘẘẘíĺĺĺĺ ḃèèè ůśśśèḋ ḟŏŕŕŕ èẋẋẋṭèŕŕŕńâĺĺĺ ćŏŏŏṁṁůůůńíćććâṭíííŏńśśś ŏŕŕŕ ẘḫḫḫèń ẘè ćâńńń'ṭ âůṭṭṭŏṁâââṭíćććâĺĺĺĺẏ ḋḋḋèṭèèèćṭ ẏŏůůůŕ ĺĺĺŏćâââĺè ḃâśśśèḋ ŏń ẏŏůůůŕ ḋḋḋèṿíííćè śèṭṭṭṭíńńńĝś. Ṯŏŏŏ ćḫḫḫâńĝĝĝè ṭṭṭḫè ćůŕŕŕŕèńńńṭ âââṗṗĺĺĺíćâââṭíŏŏŏń ĺĺĺâńĝĝĝůâĝĝĝè ṿṿṿíśíííṭ ṭṭṭḫè  !!]"
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "[!! ṗŕèèèḟèŕŕŕèńćććèś ṗâĝĝĝè !!]"
+        }
+      ],
+      "type": 8,
+      "value": "preferencesLink"
+    },
+    {
+      "type": 0,
+      "value": "[!! . !!]"
+    }
+  ],
   "auth.selfServiceUi.passwordNode.label": [
     {
       "type": 0,
       "value": "[!! Ṕâśśśśẘŏŏŏŕḋ !!]"
+    }
+  ],
+  "auth.selfServiceUi.profilePictureNode.deleteButton.label": [
+    {
+      "type": 0,
+      "value": "[!! Ḋèĺĺĺèṭèèè !!]"
+    }
+  ],
+  "auth.selfServiceUi.profilePictureNode.uploadButton.label": [
+    {
+      "type": 0,
+      "value": "[!! Ḉḫâââńĝèèè ṗḫḫḫŏṭŏŏŏ !!]"
     }
   ],
   "auth.sessionsList.title": [
@@ -690,26 +722,6 @@
       "value": "locale"
     }
   ],
-  "i18n.localeSelect.defaultValue": [
-    {
-      "type": 0,
-      "value": "[!! Ṯḫíííś ẘẘẘíĺĺĺĺ ḃèèè ůśśśèḋ ḟŏŕŕŕ èẋẋẋṭèŕŕŕńâĺĺĺ ćŏŏŏṁṁůůůńíćććâṭíííŏńśśś ŏŕŕŕ ẘḫḫḫèń ẘè ćâńńń'ṭ âůṭṭṭŏṁâââṭíćććâĺĺĺĺẏ ḋḋḋèṭèèèćṭ ẏŏůůůŕ ĺĺĺŏćâââĺè ḃâśśśèḋ ŏń ẏŏůůůŕ ḋḋḋèṿíííćè śèṭṭṭṭíńńńĝś. Ṯŏŏŏ ćḫḫḫâńĝĝĝè ṭṭṭḫè ćůŕŕŕŕèńńńṭ âââṗṗĺĺĺíćâââṭíŏŏŏń ĺĺĺâńĝĝĝůâĝĝĝè ṿṿṿíśíííṭ ṭṭṭḫè  !!]"
-    },
-    {
-      "children": [
-        {
-          "type": 0,
-          "value": "[!! ṗŕèèèḟèŕŕŕèńćććèś ṗâĝĝĝè !!]"
-        }
-      ],
-      "type": 8,
-      "value": "preferencesLink"
-    },
-    {
-      "type": 0,
-      "value": "[!! . !!]"
-    }
-  ],
   "pages.contactUs.heading": [
     {
       "type": 0,
@@ -895,7 +907,7 @@
   "settings.settingsPage.profileLink.label": [
     {
       "type": 0,
-      "value": "[!! Ṕŕŏŏŏḟíĺĺĺè &âṁṗṗṗ; ĻĻĻŏĝíííń !!]"
+      "value": "[!! Ṕŕŏŏŏḟíĺĺĺè & Ļŏŏŏĝíńńń !!]"
     }
   ],
   "settings.settingsPage.sessionsLink.label": [

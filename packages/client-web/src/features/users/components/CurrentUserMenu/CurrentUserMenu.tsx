@@ -36,7 +36,6 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
   const registrationLink = useRegistrationLink();
   const loginLink = useLoginLink();
   const logoutColor = useColorModeValue("red.500", "red.300");
-  const registerColor = useColorModeValue("yellow.200", "yellow.200");
   const { onClick, isLoading } = useLogout();
 
   return (
@@ -86,7 +85,6 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
           <MenuDivider hidden={isLoggedIn} />
           <MenuItem
             as={RouterLink}
-            color={registerColor}
             fontWeight="semibold"
             hidden={isLoggedIn}
             icon={<FaPencilAlt />}

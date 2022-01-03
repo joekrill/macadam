@@ -486,10 +486,42 @@
       "value": ")SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "auth.selfServiceUi.localeSelectNode.usageInfo": [
+    {
+      "type": 0,
+      "value": "This will be used for external communications or when we can't automatically detect your locale based on your device settings. To change the current application language visit the "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "preferences page"
+        }
+      ],
+      "type": 8,
+      "value": "preferencesLink"
+    },
+    {
+      "type": 0,
+      "value": ".SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "auth.selfServiceUi.passwordNode.label": [
     {
       "type": 0,
       "value": "PasswordSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.selfServiceUi.profilePictureNode.deleteButton.label": [
+    {
+      "type": 0,
+      "value": "DeleteSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.selfServiceUi.profilePictureNode.uploadButton.label": [
+    {
+      "type": 0,
+      "value": "Change photoSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "auth.sessionsList.title": [
@@ -656,26 +688,6 @@
     {
       "type": 0,
       "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "i18n.localeSelect.defaultValue": [
-    {
-      "type": 0,
-      "value": "This will be used for external communications or when we can't automatically detect your locale based on your device settings. To change the current application language visit the "
-    },
-    {
-      "children": [
-        {
-          "type": 0,
-          "value": "preferences page"
-        }
-      ],
-      "type": 8,
-      "value": "preferencesLink"
-    },
-    {
-      "type": 0,
-      "value": ".SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "pages.contactUs.heading": [
@@ -863,7 +875,7 @@
   "settings.settingsPage.profileLink.label": [
     {
       "type": 0,
-      "value": "Profile &amp; LoginSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Profile & LoginSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "settings.settingsPage.sessionsLink.label": [

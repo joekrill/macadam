@@ -1,12 +1,20 @@
-import { Box, HStack, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  StackProps,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { useSession } from "../../../auth/hooks/useSession";
 import { CurrentUserAvatar } from "../CurrentUserAvatar/CurrentUserAvatar";
 
-export const CurrentUserMenuHeader = () => {
+export interface CurrentUserMenuHeaderProps extends StackProps {}
+
+export const CurrentUserMenuHeader = (props: CurrentUserMenuHeaderProps) => {
   const { traits } = useSession();
 
   return (
-    <HStack px="3" py="4" alignItems="center">
+    <HStack px="3" py="4" alignItems="center" {...props}>
       <CurrentUserAvatar size="sm" />
       <Box lineHeight="1">
         <Text fontWeight="semibold">{traits.name}</Text>

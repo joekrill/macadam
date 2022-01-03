@@ -693,7 +693,21 @@
   "i18n.localeSelect.defaultValue": [
     {
       "type": 0,
-      "value": "[!! Ṯḫíííś ẘẘẘíĺĺĺĺ ḃèèè ůśśśèḋ ḟŏŕŕŕ èẋẋẋṭèŕŕŕńâĺĺĺ ćŏŏŏṁṁůůůńíćććâṭíííŏńśśś ŏŕŕŕ ẘḫḫḫèń ẘè ćâńńń'ṭ âůṭṭṭŏṁâââṭíćććâĺĺĺĺẏ ḋḋḋèṭèèèćṭ ẏŏůůůŕ ĺĺĺŏćâââĺè ḃâśśśèḋ ŏń ẏŏůůůŕ ḋḋḋèṿíííćè śèṭṭṭṭíńńńĝś. !!]"
+      "value": "[!! Ṯḫíííś ẘẘẘíĺĺĺĺ ḃèèè ůśśśèḋ ḟŏŕŕŕ èẋẋẋṭèŕŕŕńâĺĺĺ ćŏŏŏṁṁůůůńíćććâṭíííŏńśśś ŏŕŕŕ ẘḫḫḫèń ẘè ćâńńń'ṭ âůṭṭṭŏṁâââṭíćććâĺĺĺĺẏ ḋḋḋèṭèèèćṭ ẏŏůůůŕ ĺĺĺŏćâââĺè ḃâśśśèḋ ŏń ẏŏůůůŕ ḋḋḋèṿíííćè śèṭṭṭṭíńńńĝś. Ṯŏŏŏ ćḫḫḫâńĝĝĝè ṭṭṭḫè ćůŕŕŕŕèńńńṭ âââṗṗĺĺĺíćâââṭíŏŏŏń ĺĺĺâńĝĝĝůâĝĝĝè ṿṿṿíśíííṭ ṭṭṭḫè  !!]"
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "[!! ṗŕèèèḟèŕŕŕèńćććèś ṗâĝĝĝè !!]"
+        }
+      ],
+      "type": 8,
+      "value": "preferencesLink"
+    },
+    {
+      "type": 0,
+      "value": "[!! . !!]"
     }
   ],
   "pages.contactUs.heading": [
@@ -846,6 +860,60 @@
     {
       "type": 0,
       "value": "[!! Ŕèḟḟḟŕèśśśḫ !!]"
+    }
+  ],
+  "settings.appPreferences.activeLocale.label": [
+    {
+      "type": 0,
+      "value": "[!! Ļâńńńĝůâââĝè !!]"
+    }
+  ],
+  "settings.appPreferences.colorMode.label": [
+    {
+      "type": 0,
+      "value": "[!! Ḉŏĺĺĺŏŕ Ḿŏḋḋḋè !!]"
+    }
+  ],
+  "settings.appPreferences.title": [
+    {
+      "type": 0,
+      "value": "[!! Ṕŕèèèḟèŕŕŕèńćććèś !!]"
+    }
+  ],
+  "settings.appPreferencesLink.label": [
+    {
+      "type": 0,
+      "value": "[!! Ṡèṭṭṭṭíńńńĝś !!]"
+    }
+  ],
+  "settings.settingsPage.preferencesLink.label": [
+    {
+      "type": 0,
+      "value": "[!! Ṕŕèèèḟèŕŕŕèńćććèś !!]"
+    }
+  ],
+  "settings.settingsPage.profileLink.label": [
+    {
+      "type": 0,
+      "value": "[!! Ṕŕŏŏŏḟíĺĺĺè &âṁṗṗṗ; ĻĻĻŏĝíííń !!]"
+    }
+  ],
+  "settings.settingsPage.sessionsLink.label": [
+    {
+      "type": 0,
+      "value": "[!! Ṡèśśśśíŏŏŏńś !!]"
+    }
+  ],
+  "theme.colorModeSelect.darkMode.label": [
+    {
+      "type": 0,
+      "value": "[!! Ḋâŕŕŕǩ !!]"
+    }
+  ],
+  "theme.colorModeSelect.lightMode.label": [
+    {
+      "type": 0,
+      "value": "[!! Ļíĝĝĝḫṭ !!]"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [

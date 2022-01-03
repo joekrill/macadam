@@ -1,8 +1,7 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { useLoginLocation } from "../../hooks/useLoginLocation";
 import { useSession } from "../../hooks/useSession";
-import { LoginLinkLabel } from "./LoginLink";
+import { useLoginLink } from "./useLoginLink";
 
 export interface LoginButtonProps extends ButtonProps {}
 
@@ -12,17 +11,18 @@ export const LoginButton = ({
   isDisabled,
   ...props
 }: LoginButtonProps) => {
-  const loginLocation = useLoginLocation();
+  const { label, ...location } = useLoginLink();
   const { isUnknown } = useSession();
 
   return (
     <Button
       {...props}
-      {...loginLocation}
+      {...location}
+      aria-label={label}
       as={RouterLink}
       isDisabled={isDisabled || isUnknown}
     >
-      {children || <LoginLinkLabel />}
+      {children || label}
     </Button>
   );
 };

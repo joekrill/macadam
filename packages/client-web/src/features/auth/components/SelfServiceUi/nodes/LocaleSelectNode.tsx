@@ -1,7 +1,9 @@
+import { ReactElement } from "react";
 import { useIntl } from "react-intl";
 import { LocaleSelect } from "../../../../i18n/components/LocaleSelect/LocaleSelect";
 import { DEFAULT_LOCALE } from "../../../../i18n/constants";
 import { getLocaleDisplayName } from "../../../../i18n/getLocaleDisplayName";
+import { AppPreferencesLink } from "../../../../settings/components/AppPreferencesLink/AppPreferencesLink";
 import { SelfServiceUiNodeInputProps } from "../SelfServiceUiNodeInput";
 import { NodeFormControlWrapper } from "./NodeFormControlWrapper";
 
@@ -22,11 +24,23 @@ export const LocaleSelectNode = ({
       flowType={flowType}
       isSubmitting={isSubmitting}
       node={node}
-      helperText={formatMessage({
-        id: "i18n.localeSelect.defaultValue",
-        defaultMessage:
-          "This will be used for external communications or when we can't automatically detect your locale based on your device settings.",
-      })}
+      helperText={
+        // We only want to show this helper text in the settings form and
+        // not during registration.
+        flowType === "settings" &&
+        formatMessage(
+          {
+            id: "i18n.localeSelect.defaultValue",
+            defaultMessage:
+              "This will be used for external communications or when we can't automatically detect your locale based on your device settings. To change the current application language visit the <preferencesLink>preferences page</preferencesLink>.",
+          },
+          {
+            preferencesLink: (chunks: ReactElement) => (
+              <AppPreferencesLink>{chunks}</AppPreferencesLink>
+            ),
+          }
+        )
+      }
     >
       <LocaleSelect
         {...attributes}

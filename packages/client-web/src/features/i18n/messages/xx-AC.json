@@ -693,7 +693,21 @@
   "i18n.localeSelect.defaultValue": [
     {
       "type": 0,
-      "value": "THIS WILL BE USED FOR EXTERNAL COMMUNICATIONS OR WHEN WE CAN'T AUTOMATICALLY DETECT YOUR LOCALE BASED ON YOUR DEVICE SETTINGS."
+      "value": "THIS WILL BE USED FOR EXTERNAL COMMUNICATIONS OR WHEN WE CAN'T AUTOMATICALLY DETECT YOUR LOCALE BASED ON YOUR DEVICE SETTINGS. TO CHANGE THE CURRENT APPLICATION LANGUAGE VISIT THE "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "PREFERENCES PAGE"
+        }
+      ],
+      "type": 8,
+      "value": "preferencesLink"
+    },
+    {
+      "type": 0,
+      "value": "."
     }
   ],
   "pages.contactUs.heading": [
@@ -846,6 +860,60 @@
     {
       "type": 0,
       "value": "REFRESH"
+    }
+  ],
+  "settings.appPreferences.activeLocale.label": [
+    {
+      "type": 0,
+      "value": "LANGUAGE"
+    }
+  ],
+  "settings.appPreferences.colorMode.label": [
+    {
+      "type": 0,
+      "value": "COLOR MODE"
+    }
+  ],
+  "settings.appPreferences.title": [
+    {
+      "type": 0,
+      "value": "PREFERENCES"
+    }
+  ],
+  "settings.appPreferencesLink.label": [
+    {
+      "type": 0,
+      "value": "SETTINGS"
+    }
+  ],
+  "settings.settingsPage.preferencesLink.label": [
+    {
+      "type": 0,
+      "value": "PREFERENCES"
+    }
+  ],
+  "settings.settingsPage.profileLink.label": [
+    {
+      "type": 0,
+      "value": "PROFILE &AMP; LOGIN"
+    }
+  ],
+  "settings.settingsPage.sessionsLink.label": [
+    {
+      "type": 0,
+      "value": "SESSIONS"
+    }
+  ],
+  "theme.colorModeSelect.darkMode.label": [
+    {
+      "type": 0,
+      "value": "DARK"
+    }
+  ],
+  "theme.colorModeSelect.lightMode.label": [
+    {
+      "type": 0,
+      "value": "LIGHT"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [

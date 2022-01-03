@@ -1,6 +1,6 @@
 import { Navigate, useLocation } from "react-router-dom";
-import { useLoginLocation } from "../hooks/useLoginLocation";
 import { useSession } from "../hooks/useSession";
+import { useLoginLink } from "./LoginLink/useLoginLink";
 
 // TODO: `children` and `whileLoading` should be typed as `ReactNode` types,
 // but this causes a conflict with incorrect `element` typings in React Router.
@@ -18,7 +18,7 @@ export const RequireAuthenticated = ({
   whileLoading,
 }: RequireAuthenticatedProps) => {
   const { isLoggedIn, isUnknown, isVerified } = useSession();
-  const { to } = useLoginLocation();
+  const { to } = useLoginLink();
   const location = useLocation();
 
   if (isUnknown) {

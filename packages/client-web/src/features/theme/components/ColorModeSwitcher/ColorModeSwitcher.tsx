@@ -28,8 +28,6 @@ export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = ({
 
   return (
     <IconButton
-      variant="ghost"
-      color="current"
       onClick={(e) => {
         if (onClick) {
           onClick(e);

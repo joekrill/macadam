@@ -693,7 +693,21 @@
   "i18n.localeSelect.defaultValue": [
     {
       "type": 0,
-      "value": "Ṯḫíś ẘíĺĺ ḃè ůśèḋ ḟŏŕ èẋṭèŕńâĺ ćŏṁṁůńíćâṭíŏńś ŏŕ ẘḫèń ẘè ćâń'ṭ âůṭŏṁâṭíćâĺĺẏ ḋèṭèćṭ ẏŏůŕ ĺŏćâĺè ḃâśèḋ ŏń ẏŏůŕ ḋèṿíćè śèṭṭíńĝś."
+      "value": "Ṯḫíś ẘíĺĺ ḃè ůśèḋ ḟŏŕ èẋṭèŕńâĺ ćŏṁṁůńíćâṭíŏńś ŏŕ ẘḫèń ẘè ćâń'ṭ âůṭŏṁâṭíćâĺĺẏ ḋèṭèćṭ ẏŏůŕ ĺŏćâĺè ḃâśèḋ ŏń ẏŏůŕ ḋèṿíćè śèṭṭíńĝś. Ṯŏ ćḫâńĝè ṭḫè ćůŕŕèńṭ âṗṗĺíćâṭíŏń ĺâńĝůâĝè ṿíśíṭ ṭḫè "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "ṗŕèḟèŕèńćèś ṗâĝè"
+        }
+      ],
+      "type": 8,
+      "value": "preferencesLink"
+    },
+    {
+      "type": 0,
+      "value": "."
     }
   ],
   "pages.contactUs.heading": [
@@ -846,6 +860,60 @@
     {
       "type": 0,
       "value": "Ŕèḟŕèśḫ"
+    }
+  ],
+  "settings.appPreferences.activeLocale.label": [
+    {
+      "type": 0,
+      "value": "Ļâńĝůâĝè"
+    }
+  ],
+  "settings.appPreferences.colorMode.label": [
+    {
+      "type": 0,
+      "value": "Ḉŏĺŏŕ Ḿŏḋè"
+    }
+  ],
+  "settings.appPreferences.title": [
+    {
+      "type": 0,
+      "value": "Ṕŕèḟèŕèńćèś"
+    }
+  ],
+  "settings.appPreferencesLink.label": [
+    {
+      "type": 0,
+      "value": "Ṡèṭṭíńĝś"
+    }
+  ],
+  "settings.settingsPage.preferencesLink.label": [
+    {
+      "type": 0,
+      "value": "Ṕŕèḟèŕèńćèś"
+    }
+  ],
+  "settings.settingsPage.profileLink.label": [
+    {
+      "type": 0,
+      "value": "Ṕŕŏḟíĺè &âṁṗ; Ļŏĝíń"
+    }
+  ],
+  "settings.settingsPage.sessionsLink.label": [
+    {
+      "type": 0,
+      "value": "Ṡèśśíŏńś"
+    }
+  ],
+  "theme.colorModeSelect.darkMode.label": [
+    {
+      "type": 0,
+      "value": "Ḋâŕǩ"
+    }
+  ],
+  "theme.colorModeSelect.lightMode.label": [
+    {
+      "type": 0,
+      "value": "Ļíĝḫṭ"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [

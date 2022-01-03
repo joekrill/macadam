@@ -27,7 +27,7 @@ export const SessionsList = () => {
 
   return (
     <Box>
-      <Heading mb="2">
+      <Heading mb="4" size="md">
         <FormattedMessage
           id="auth.sessionsList.title"
           defaultMessage="Active Sessions"

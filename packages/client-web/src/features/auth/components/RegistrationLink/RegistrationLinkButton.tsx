@@ -1,8 +1,7 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { useRegistrationLocation } from "../../hooks/useRegistrationLocation";
 import { useSession } from "../../hooks/useSession";
-import { RegistrationLinkLabel } from "./RegistrationLink";
+import { useRegistrationLink } from "./useRegistrationLink";
 
 export interface RegistrationLinkButtonProps extends ButtonProps {
   onLogoutComplete?: () => void;
@@ -15,18 +14,19 @@ export const RegistrationLinkButton = ({
   isDisabled,
   ...props
 }: RegistrationLinkButtonProps) => {
-  const { to, state } = useRegistrationLocation();
+  const { to, state, label } = useRegistrationLink();
   const { isUnknown } = useSession();
 
   return (
     <Button
       {...props}
+      aria-label={label}
       as={RouterLink}
       to={to}
       state={state}
       isDisabled={isDisabled || isUnknown}
     >
-      {children || <RegistrationLinkLabel />}
+      {children || label}
     </Button>
   );
 };

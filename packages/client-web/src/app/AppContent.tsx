@@ -12,8 +12,8 @@ import { VerificationPage } from "../features/auth/pages/VerificationPage";
 import { selectPendingVerifiableAddresses } from "../features/auth/selectors/selectPendingVerifiableAddresses";
 import { CrashInitiator } from "../features/errors/components/CrashInitiator/CrashInitiator";
 import { NotFoundPage } from "../features/errors/components/NotFoundPage/NotFoundPage";
+import { SettingsPage } from "../features/settings/pages/SettingsPage";
 import { ThingsPage } from "../features/things/components/ThingsPage";
-import { UserSettingsPage } from "../features/users/pages/UserSettingsPage";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { ContactUs } from "./pages/ContactUs/ContactUs";
@@ -66,7 +66,7 @@ export const AppContent = () => {
             <Route path="/auth/error" element={<FlowErrorPage />} />
             <Route path="/account/verify" element={<VerificationPage />} />
             <Route path="/account/recover" element={<RecoveryPage />} />
-            <Route path="/settings/*" element={<UserSettingsPage />} />
+            <Route path="/settings/*" element={<SettingsPage />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />

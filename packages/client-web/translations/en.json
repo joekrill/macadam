@@ -240,7 +240,7 @@
     "description": "The toast message shown when a locale fails to load"
   },
   "i18n.localeSelect.defaultValue": {
-    "defaultMessage": "This will be used for external communications or when we can't automatically detect your locale based on your device settings."
+    "defaultMessage": "This will be used for external communications or when we can't automatically detect your locale based on your device settings. To change the current application language visit the <preferencesLink>preferences page</preferencesLink>."
   },
   "pages.contactUs.heading": {
     "defaultMessage": "Contact Us"
@@ -311,6 +311,33 @@
   },
   "sessions.sessionsList.refreshButton.ariaLabel": {
     "defaultMessage": "Refresh"
+  },
+  "settings.appPreferences.activeLocale.label": {
+    "defaultMessage": "Language"
+  },
+  "settings.appPreferences.colorMode.label": {
+    "defaultMessage": "Color Mode"
+  },
+  "settings.appPreferences.title": {
+    "defaultMessage": "Preferences"
+  },
+  "settings.appPreferencesLink.label": {
+    "defaultMessage": "Settings"
+  },
+  "settings.settingsPage.preferencesLink.label": {
+    "defaultMessage": "Preferences"
+  },
+  "settings.settingsPage.profileLink.label": {
+    "defaultMessage": "Profile &amp; Login"
+  },
+  "settings.settingsPage.sessionsLink.label": {
+    "defaultMessage": "Sessions"
+  },
+  "theme.colorModeSelect.darkMode.label": {
+    "defaultMessage": "Dark"
+  },
+  "theme.colorModeSelect.lightMode.label": {
+    "defaultMessage": "Light"
   },
   "theme.colorModeSwitcher.switchColorModeLabel": {
     "defaultMessage": "Switch to {mode, select, dark {dark} light {light} other {}} mode"

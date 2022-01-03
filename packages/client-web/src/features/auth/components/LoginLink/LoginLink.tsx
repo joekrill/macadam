@@ -1,20 +1,15 @@
 import { Link, LinkProps } from "@chakra-ui/react";
-import { FormattedMessage } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
-import { useLoginLocation } from "../../hooks/useLoginLocation";
-
-export const LoginLinkLabel = () => (
-  <FormattedMessage id="auth.loginLink.label" defaultMessage="Log In" />
-);
+import { useLoginLink } from "./useLoginLink";
 
 export interface LoginLinkProps extends LinkProps {}
 
 export const LoginLink = ({ children, onClick, ...props }: LoginLinkProps) => {
-  const location = useLoginLocation();
+  const { label, ...location } = useLoginLink();
 
   return (
-    <Link {...props} {...location} as={RouterLink}>
-      {children || <LoginLinkLabel />}
+    <Link {...props} {...location} as={RouterLink} aria-label={label}>
+      {children || label}
     </Link>
   );
 };

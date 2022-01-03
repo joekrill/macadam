@@ -55,8 +55,8 @@ export const Header = (props: HeaderProps) => {
               <LoginButton px="5" size="sm" colorScheme={buttonSchema} />
             </>
           )}
-          <ColorModeSwitcher justifySelf="flex-end" />
-          {isLoggedIn && <CurrentUserMenu />}
+          <ColorModeSwitcher variant="ghost" color="current" />
+          <CurrentUserMenu />
         </HStack>
       </Flex>
     </chakra.header>

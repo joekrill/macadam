@@ -1,11 +1,12 @@
-import { Link, VStack } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
 import { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
-import { Link as RouterLink, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { LoadingSpinner } from "../../../../common/components/LoadingSpinner/LoadingSpinner";
 import { useReturnToConsumer } from "../../../../routing/hooks/useReturnToConsumer";
-import { LOGIN_PATH } from "../../../hooks/useLoginLocation";
-import { REGISTRATION_PATH } from "../../../hooks/useRegistrationLocation";
+import { LOGIN_PATH } from "../../LoginLink/useLoginLink";
+import { RegistrationLink } from "../../RegistrationLink/RegistrationLink";
+import { REGISTRATION_PATH } from "../../RegistrationLink/useRegistrationLink";
 import { SelfServiceUiMessageList } from "../../SelfServiceUi/SelfServiceUiMessageList";
 import { FlowErrorAlert } from "../FlowErrorAlert";
 import { FlowHeading } from "../FlowHeading";
@@ -55,9 +56,7 @@ export const Login = ({
               defaultMessage="Don't have an account yet? <link>Sign up!</link>"
               values={{
                 link: (chunks: ReactElement) => (
-                  <Link as={RouterLink} to={REGISTRATION_PATH}>
-                    {chunks}
-                  </Link>
+                  <RegistrationLink>{chunks}</RegistrationLink>
                 ),
               }}
             />

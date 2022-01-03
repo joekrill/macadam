@@ -1,25 +1,20 @@
-import { FormattedMessage } from "react-intl";
 import {
   RouterLink,
   RouterLinkProps,
 } from "../../../routing/components/RouterLink";
-import { useRegistrationLocation } from "../../hooks/useRegistrationLocation";
+import { useRegistrationLink } from "./useRegistrationLink";
 
-export const RegistrationLinkLabel = () => (
-  <FormattedMessage id="auth.registrationLink.label" defaultMessage="Sign Up" />
-);
-
-export interface RegistrationLinkProps extends RouterLinkProps {}
+export interface RegistrationLinkProps extends Omit<RouterLinkProps, "to"> {}
 
 export const RegistrationLink = ({
   children,
   ...props
 }: RegistrationLinkProps) => {
-  const { to, state } = useRegistrationLocation();
+  const { to, state, label } = useRegistrationLink();
 
   return (
-    <RouterLink {...props} to={to} state={state}>
-      {children || <RegistrationLinkLabel />}
+    <RouterLink to={to} state={state} aria-label={label} {...props}>
+      {children || label}
     </RouterLink>
   );
 };

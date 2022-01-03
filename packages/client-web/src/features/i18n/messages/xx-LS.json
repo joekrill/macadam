@@ -661,7 +661,21 @@
   "i18n.localeSelect.defaultValue": [
     {
       "type": 0,
-      "value": "This will be used for external communications or when we can't automatically detect your locale based on your device settings.SSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "This will be used for external communications or when we can't automatically detect your locale based on your device settings. To change the current application language visit the "
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "preferences page"
+        }
+      ],
+      "type": 8,
+      "value": "preferencesLink"
+    },
+    {
+      "type": 0,
+      "value": ".SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "pages.contactUs.heading": [
@@ -814,6 +828,60 @@
     {
       "type": 0,
       "value": "RefreshSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "settings.appPreferences.activeLocale.label": [
+    {
+      "type": 0,
+      "value": "LanguageSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "settings.appPreferences.colorMode.label": [
+    {
+      "type": 0,
+      "value": "Color ModeSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "settings.appPreferences.title": [
+    {
+      "type": 0,
+      "value": "PreferencesSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "settings.appPreferencesLink.label": [
+    {
+      "type": 0,
+      "value": "SettingsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "settings.settingsPage.preferencesLink.label": [
+    {
+      "type": 0,
+      "value": "PreferencesSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "settings.settingsPage.profileLink.label": [
+    {
+      "type": 0,
+      "value": "Profile &amp; LoginSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "settings.settingsPage.sessionsLink.label": [
+    {
+      "type": 0,
+      "value": "SessionsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "theme.colorModeSelect.darkMode.label": [
+    {
+      "type": 0,
+      "value": "DarkSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "theme.colorModeSelect.lightMode.label": [
+    {
+      "type": 0,
+      "value": "LightSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [

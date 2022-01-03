@@ -17,7 +17,6 @@
 
 - (client-web) Detect session expiration and handle it somehow (modal login form? a la Gmail?)
 - Integration tests (i.e. using cypress)
-- (client-web) upgrade create-react-app
 - Figure out how to share logic between front-end/back-end while still having hot-reloading work and without ejecting
 - (api-server) Uploads
   - https://github.com/node-formidable/formidable

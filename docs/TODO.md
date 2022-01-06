@@ -36,13 +36,13 @@
 - Service accounts
   - https://www.ory.sh/kratos/docs/concepts/identity-schema/#json-schema-vocabulary-extensions
 - Agree to ToS on signup?
+- Data deletion (user account deletion)
 
 ## Low priority
 
 - github templates: https://github.com/cezaraugusto/github-template-guidelines
 - Vulnerability Disclosure Policy (https://github.com/disclose/dioterms/blob/master/core-terms-vdp.md)
 - Anonymizing data
-- Data deletion (user account deletion)
 - Data download (whole account)
 - (client-web) Add OpenGraph attributes (http://ogp.me/)
 - (client-web) Handle logins across tabs (use localStorage to signal session changes? BroadcastChannel?)

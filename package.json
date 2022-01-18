@@ -1,6 +1,6 @@
 {
   "name": "@macadam/root",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "repository": "https://github.com/joekrill/macadam.git",
   "author": "Joe Krill <joe@joekrill.com>",
   "license": "UNLICENSED",
@@ -27,7 +27,9 @@
     "ci": "yarn run format:check && yarn run typecheck && yarn run test",
     "typecheck": "yarn workspaces foreach run typecheck",
     "test": "yarn workspaces foreach run test",
-    "yarn:upgrade": "yarn set version latest && yarn dlx @yarnpkg/sdks && yarn plugin import @yarnpkg/plugin-interactive-tools && yarn plugin import @yarnpkg/plugin-typescript && yarn plugin import @yarnpkg/plugin-workspace-tools"
+    "yarn:upgrade": "yarn set version latest && yarn dlx @yarnpkg/sdks && yarn plugin import @yarnpkg/plugin-interactive-tools && yarn plugin import @yarnpkg/plugin-typescript && yarn plugin import @yarnpkg/plugin-workspace-tools",
+    "build-image:client-web": "docker build -f ./packages/client-web/Dockerfile .",
+    "build-image:api-server": "docker build -f ./packages/api-server/Dockerfile ."
   },
   "eslintConfig": {
     "extends": [

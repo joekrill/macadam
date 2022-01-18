@@ -1,7 +1,6 @@
 ## "v1" Milestone
 
 - CI/CD pipeline
-- production/staging kubernetes deployments
 - OpenTelemety
   - Versioning issues (https://github.com/open-telemetry/opentelemetry-js-contrib/issues/749)
 - Review Kratos configuration

@@ -1108,10 +1108,10 @@
       "value": "NAME"
     }
   ],
-  "things.thingsTable.privateHeader.label": [
+  "things.thingsTable.publicHeader.label": [
     {
       "type": 0,
-      "value": "PRIVATE"
+      "value": "PUBLIC"
     }
   ],
   "user.userMenu.profileLink": [

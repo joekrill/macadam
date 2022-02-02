@@ -51,8 +51,8 @@ export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
       },
       {
         Header: formatMessage({
-          id: "things.thingsTable.privateHeader.label",
-          defaultMessage: "Private",
+          id: "things.thingsTable.publicHeader.label",
+          defaultMessage: "Public",
         }),
         accessor: "isPublic",
         textAlign: "center",

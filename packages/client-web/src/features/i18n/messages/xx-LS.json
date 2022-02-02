@@ -1076,10 +1076,10 @@
       "value": "NameSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "things.thingsTable.privateHeader.label": [
+  "things.thingsTable.publicHeader.label": [
     {
       "type": 0,
-      "value": "PrivateSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "PublicSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "user.userMenu.profileLink": [

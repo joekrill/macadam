@@ -421,8 +421,8 @@
   "things.thingsTable.nameHeader.label": {
     "defaultMessage": "Name"
   },
-  "things.thingsTable.privateHeader.label": {
-    "defaultMessage": "Private"
+  "things.thingsTable.publicHeader.label": {
+    "defaultMessage": "Public"
   },
   "user.userMenu.profileLink": {
     "defaultMessage": "Your Profile"

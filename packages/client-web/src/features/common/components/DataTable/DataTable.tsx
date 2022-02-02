@@ -76,9 +76,11 @@ export const DataTable = <D extends object>({
       useSortBy
     );
 
+  const bgEvenColor = useColorModeValue("gray.100", "gray.800");
+
   return (
     <Table borderWidth="1px" {...getTableProps()}>
-      <Thead bg={useColorModeValue("gray.100", "gray.700")}>
+      <Thead bg={useColorModeValue("gray.200", "gray.600")}>
         {headerGroups.map((headerGroup) => (
           <Tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
@@ -122,7 +124,7 @@ export const DataTable = <D extends object>({
         {rows.map((row) => {
           prepareRow(row);
           return (
-            <Tr {...row.getRowProps()}>
+            <Tr {...row.getRowProps()} _even={{ bg: bgEvenColor }}>
               {row.cells.map((cell) => (
                 <Td
                   {...cell.getCellProps()}

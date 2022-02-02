@@ -89,14 +89,12 @@ export const ProfilePictureNode = ({
     >
       <Stack direction={{ base: "column", sm: "row" }} alignItems="center">
         <Avatar src={value} size="xl" mr="5" />
-        <Stack
-          spacing="5"
-          direction={{ base: "column", sm: "row", md: "column", lg: "row" }}
-        >
+        <Stack spacing="5" direction="column">
           <Button
+            leftIcon={<FaUpload />}
             as="label"
             type="button"
-            leftIcon={<FaUpload />}
+            size="sm"
             {...attributes}
           >
             <FormattedMessage
@@ -115,6 +113,7 @@ export const ProfilePictureNode = ({
             leftIcon={<FaTrash />}
             colorScheme="red"
             variant="outline"
+            size="sm"
             type="button"
             onClick={() => onChange("")}
           >

@@ -130,6 +130,7 @@ export const DataTable = <D extends object>({
                   {...cell.getCellProps()}
                   textAlign={cell.column.textAlign}
                   isNumeric={cell.column.isNumeric}
+                  isTruncated={cell.column.isTruncated}
                 >
                   {cell.render("Cell")}
                 </Td>

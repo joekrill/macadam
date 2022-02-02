@@ -1,4 +1,6 @@
 import {
+  Button,
+  Icon,
   Menu,
   MenuButton,
   MenuDivider,
@@ -9,6 +11,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import {
+  FaCaretDown,
   FaCog,
   FaFileAlt,
   FaPencilAlt,
@@ -31,7 +34,7 @@ export interface CurrentUserMenuProps
   extends Omit<MenuProps, "isLazy" | "children"> {}
 
 export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
-  const { isLoggedIn } = useSession();
+  const { isLoggedIn, isUnknown } = useSession();
   const preferencesLink = useAppPreferencesLink();
   const registrationLink = useRegistrationLink();
   const loginLink = useLoginLink();
@@ -40,7 +43,15 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
 
   return (
     <Menu autoSelect={false} isLazy {...props}>
-      <MenuButton rounded="full" variant="link" cursor="pointer">
+      <MenuButton
+        isLoading={isUnknown}
+        as={Button}
+        rounded="full"
+        variant="link"
+        cursor="pointer"
+        rightIcon={<Icon as={FaCaretDown} boxSize="0.75em" />}
+        iconSpacing="0.1em"
+      >
         <CurrentUserAvatar size="sm" />
       </MenuButton>
       <Portal>

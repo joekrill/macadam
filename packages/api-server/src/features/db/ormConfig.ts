@@ -2,8 +2,8 @@ import { Options } from "@mikro-orm/core";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
 import pino from "pino";
 import { URL } from "url";
-import { AuditLogSubscriber } from "./AuditLogSubscriber";
 import { entities } from "./entities";
+import { AuditLogSubscriber } from "./subscribers/AuditLogSubscriber";
 
 export interface OrmConfigOptions {
   environment: string;

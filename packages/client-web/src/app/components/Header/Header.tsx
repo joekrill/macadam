@@ -12,7 +12,7 @@ import { LoginButton } from "../../../features/auth/components/LoginLink/LoginLi
 import { RegistrationLinkButton } from "../../../features/auth/components/RegistrationLink/RegistrationLinkButton";
 import { useSession } from "../../../features/auth/hooks/useSession";
 import { ColorModeSwitcher } from "../../../features/theme/components/ColorModeSwitcher/ColorModeSwitcher";
-import { CurrentUserMenu } from "../../../features/users/components/CurrentUserMenu/CurrentUserMenu";
+import { CurrentUserMenu } from "../../../features/user/components/CurrentUserMenu/CurrentUserMenu";
 import { ReactComponent as Logo } from "../../Logo.svg";
 
 export interface HeaderProps extends FlexProps {}

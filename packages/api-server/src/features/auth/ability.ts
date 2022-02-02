@@ -1,6 +1,12 @@
-import { Context, Middleware } from "koa";
+import { CanParameters } from "@casl/ability";
+import {
+  DefaultContext,
+  DefaultState,
+  Middleware,
+  ParameterizedContext,
+} from "koa";
 import { abilityFor } from "./abilityFor";
-import { AppAbility } from "./AppAbility";
+import { AppAbility, AppAbilityTuple } from "./AppAbility";
 
 export interface AbilityState {
   ability?: AppAbility;
@@ -10,11 +16,20 @@ export interface AbilityState {
  * Returns Middleware which attaches the ability of the current user to state.
  */
 export const ability =
-  (): Middleware =>
-  async (ctx: Context, next: () => Promise<void>): Promise<void> => {
+  (
+    ...args: CanParameters<AppAbilityTuple> | []
+  ): Middleware<DefaultState & AbilityState> =>
+  async (
+    ctx: ParameterizedContext<DefaultState & AbilityState, DefaultContext>,
+    next: () => Promise<void>
+  ): Promise<void> => {
     if (!ctx.state.ability) {
       const session = await ctx.state.session();
       ctx.state.ability = abilityFor(session);
+    }
+
+    if (args.length === 2 || args.length === 3) {
+      ctx.state.ability.ensureCan(...args);
     }
 
     await next();

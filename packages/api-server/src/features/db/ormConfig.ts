@@ -1,5 +1,6 @@
 import { Options } from "@mikro-orm/core";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
+import { TsMorphMetadataProvider } from "@mikro-orm/reflection";
 import pino from "pino";
 import { URL } from "url";
 import { entities } from "./entities";
@@ -23,6 +24,7 @@ export const ormConfig = ({
     entities: [...entities],
     subscribers,
     debug: environment === "development",
+    metadataProvider: TsMorphMetadataProvider,
     ...(ormLogger ? { logger: (message) => ormLogger.debug(message) } : {}),
     migrations: {
       path: "./src/features/db/migrations",

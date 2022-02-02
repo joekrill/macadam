@@ -1,0 +1,33 @@
+{
+  "data": {
+    "propertyOrder": {},
+    "properties": {
+      "id": {
+        "name": "id",
+        "reference": "scalar",
+        "primary": true,
+        "type": "uuid"
+      }
+    },
+    "props": [
+      { "name": "id", "reference": "scalar", "primary": true, "type": "uuid" }
+    ],
+    "primaryKeys": ["id"],
+    "filters": {},
+    "hooks": {},
+    "indexes": [],
+    "uniques": [],
+    "className": "UuidEntity",
+    "path": "./src/features/db/entities/UuidEntity.ts",
+    "abstract": true,
+    "constructorParams": [],
+    "toJsonParams": [],
+    "extends": "TimestampedEntity",
+    "useCache": true,
+    "compositePK": false,
+    "relations": []
+  },
+  "origin": "./src/features/db/entities/UuidEntity.ts",
+  "hash": "c5d325a7c279993ceb0be92ef29b920d",
+  "version": "4.5.10"
+}

@@ -5710,6 +5710,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mikro-orm/reflection@npm:^4.5.10":
+  version: 4.5.10
+  resolution: "@mikro-orm/reflection@npm:4.5.10"
+  dependencies:
+    globby: 11.0.3
+    ts-morph: 10.0.2
+  peerDependencies:
+    "@mikro-orm/core": ^4.0.0
+  checksum: 19bd1237ff095a47c9683a64e6ed9b3badb6bc34c0f09cd1ea427c58a4a4f9921c043de4b79969fc4959972a2c5ff2998b554b3ab8d95d1bef3eb77d36a2ea1c
+  languageName: node
+  linkType: hard
+
 "@mikro-orm/sqlite@npm:^4.5.10":
   version: 4.5.10
   resolution: "@mikro-orm/sqlite@npm:4.5.10"
@@ -7989,6 +8001,18 @@ __metadata:
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
   checksum: 11226c39b52b391719a2a92e10183e4260d9651f86edced166da1d95f39a0a1eaa470e44d14ac685ccd6d3df7e2002433782872c0feeb260d61e80f21250e65c
+  languageName: node
+  linkType: hard
+
+"@ts-morph/common@npm:~0.9.0":
+  version: 0.9.2
+  resolution: "@ts-morph/common@npm:0.9.2"
+  dependencies:
+    fast-glob: ^3.2.5
+    minimatch: ^3.0.4
+    mkdirp: ^1.0.4
+    path-browserify: ^1.0.1
+  checksum: 67fde05c89a85a4d1aff64ded0838346535f28060ec507ef852d8b1a7dd442799c4c41bf63e092196b16b3fa8cce6639c04f30731fa05e6f321d9dcf556c7935
   languageName: node
   linkType: hard
 
@@ -10378,6 +10402,7 @@ __metadata:
     "@mikro-orm/core": ^4.5.10
     "@mikro-orm/migrations": ^4.5.10
     "@mikro-orm/postgresql": ^4.5.10
+    "@mikro-orm/reflection": ^4.5.10
     "@mikro-orm/sqlite": ^4.5.10
     "@opentelemetry/api": ^1.0.4
     "@opentelemetry/auto-instrumentations-node": ^0.27.1
@@ -12723,6 +12748,13 @@ __metadata:
     chalk: ^2.4.1
     q: ^1.1.2
   checksum: 44736914aac2160d3d840ed64432a90a3bb72285a0cd6a688eb5cabdf15d15a85eee0915b3f6f2a4659d5075817b1cb577340d3c9cbb47d636d59ab69f819552
+  languageName: node
+  linkType: hard
+
+"code-block-writer@npm:^10.1.1":
+  version: 10.1.1
+  resolution: "code-block-writer@npm:10.1.1"
+  checksum: e048037acbcbda19fca62a3a63e4a64226ea6b5dc0fad7632d34a88c1165b29a357e5e19f0497811e9911472e824ab85f68176f40e439da87e051908956eb47c
   languageName: node
   linkType: hard
 
@@ -16056,6 +16088,19 @@ __metadata:
     merge2: ^1.3.0
     micromatch: ^4.0.4
   checksum: 2f4708ff112d2b451888129fdd9a0938db88b105b0ddfd043c064e3c4d3e20eed8d7c7615f7565fee660db34ddcf08a2db1bf0ab3c00b87608e4719694642d78
+  languageName: node
+  linkType: hard
+
+"fast-glob@npm:^3.2.5":
+  version: 3.2.11
+  resolution: "fast-glob@npm:3.2.11"
+  dependencies:
+    "@nodelib/fs.stat": ^2.0.2
+    "@nodelib/fs.walk": ^1.2.3
+    glob-parent: ^5.1.2
+    merge2: ^1.3.0
+    micromatch: ^4.0.4
+  checksum: f473105324a7780a20c06de842e15ddbb41d3cb7e71d1e4fe6e8373204f22245d54f5ab9e2061e6a1c613047345954d29b022e0e76f5c28b1df9858179a0e6d7
   languageName: node
   linkType: hard
 
@@ -23444,6 +23489,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"path-browserify@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "path-browserify@npm:1.0.1"
+  checksum: c6d7fa376423fe35b95b2d67990060c3ee304fc815ff0a2dc1c6c3cfaff2bd0d572ee67e18f19d0ea3bbe32e8add2a05021132ac40509416459fffee35200699
+  languageName: node
+  linkType: hard
+
 "path-dirname@npm:^1.0.0":
   version: 1.0.2
   resolution: "path-dirname@npm:1.0.2"
@@ -29214,6 +29266,16 @@ resolve@^2.0.0-next.3:
   bin:
     ts-jest: cli.js
   checksum: eb54e5b8fc5f06e4cc20ecec7891201ddc78a3537d5eb3775e29ffbc7e83fd2a68f91db801b6a8c820c872060b24dc41fb6decac800b76256d3cdda6520b5c4f
+  languageName: node
+  linkType: hard
+
+"ts-morph@npm:10.0.2":
+  version: 10.0.2
+  resolution: "ts-morph@npm:10.0.2"
+  dependencies:
+    "@ts-morph/common": ~0.9.0
+    code-block-writer: ^10.1.1
+  checksum: 9d2c5ca822ff638baeb11c5129efc3914e24307efe90e553ac7387bde503780d3fedaa2f4c0136da454a788350a9d37275795e21a1728ee042445c96ad2ec748
   languageName: node
   linkType: hard
 

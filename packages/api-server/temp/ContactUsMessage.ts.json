@@ -1,0 +1,170 @@
+{
+  "data": {
+    "propertyOrder": {},
+    "properties": {
+      "sentBy": {
+        "name": "sentBy",
+        "reference": "scalar",
+        "type": "uuid",
+        "getter": false,
+        "setter": false,
+        "nullable": true
+      },
+      "ipAddress": {
+        "name": "ipAddress",
+        "reference": "scalar",
+        "getter": false,
+        "setter": false,
+        "type": "string"
+      },
+      "userAgent": {
+        "name": "userAgent",
+        "reference": "scalar",
+        "getter": false,
+        "setter": false,
+        "type": "string"
+      },
+      "name": {
+        "name": "name",
+        "reference": "scalar",
+        "getter": false,
+        "setter": false,
+        "type": "string"
+      },
+      "from": {
+        "name": "from",
+        "reference": "scalar",
+        "getter": false,
+        "setter": false,
+        "type": "string"
+      },
+      "message": {
+        "name": "message",
+        "reference": "scalar",
+        "nullable": true,
+        "getter": false,
+        "setter": false,
+        "type": "string"
+      },
+      "lastStatusAt": {
+        "name": "lastStatusAt",
+        "reference": "scalar",
+        "getter": false,
+        "setter": false,
+        "type": "Date",
+        "nullable": true
+      },
+      "status": {
+        "name": "status",
+        "reference": "scalar",
+        "getter": false,
+        "setter": false,
+        "type": "string",
+        "nullable": true
+      },
+      "error": {
+        "name": "error",
+        "reference": "scalar",
+        "getter": false,
+        "setter": false,
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "props": [
+      {
+        "name": "sentBy",
+        "reference": "scalar",
+        "type": "uuid",
+        "getter": false,
+        "setter": false,
+        "nullable": true
+      },
+      {
+        "name": "ipAddress",
+        "reference": "scalar",
+        "getter": false,
+        "setter": false,
+        "type": "string"
+      },
+      {
+        "name": "userAgent",
+        "reference": "scalar",
+        "getter": false,
+        "setter": false,
+        "type": "string"
+      },
+      {
+        "name": "name",
+        "reference": "scalar",
+        "getter": false,
+        "setter": false,
+        "type": "string"
+      },
+      {
+        "name": "from",
+        "reference": "scalar",
+        "getter": false,
+        "setter": false,
+        "type": "string"
+      },
+      {
+        "name": "message",
+        "reference": "scalar",
+        "nullable": true,
+        "getter": false,
+        "setter": false,
+        "type": "string"
+      },
+      {
+        "name": "lastStatusAt",
+        "reference": "scalar",
+        "getter": false,
+        "setter": false,
+        "type": "Date",
+        "nullable": true
+      },
+      {
+        "name": "status",
+        "reference": "scalar",
+        "getter": false,
+        "setter": false,
+        "type": "string",
+        "nullable": true
+      },
+      {
+        "name": "error",
+        "reference": "scalar",
+        "getter": false,
+        "setter": false,
+        "type": "string",
+        "nullable": true
+      }
+    ],
+    "primaryKeys": [],
+    "filters": {},
+    "hooks": {},
+    "indexes": [],
+    "uniques": [],
+    "className": "ContactUsMessage",
+    "path": "./src/features/db/entities/ContactUsMessage.ts",
+    "name": "ContactUsMessage",
+    "abstract": false,
+    "constructorParams": [
+      "name",
+      "from",
+      "message",
+      "ipAddress",
+      "userAgent",
+      "sentBy"
+    ],
+    "toJsonParams": [],
+    "extends": "UuidEntity",
+    "useCache": true,
+    "relations": [],
+    "collection": "contact_us_message"
+  },
+  "origin": "./src/features/db/entities/ContactUsMessage.ts",
+  "hash": "9e6c8d5d7ea71dbf98b5d3f13190e5b2",
+  "version": "4.5.10"
+}

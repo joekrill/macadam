@@ -6,10 +6,12 @@ import { ormConfig } from "./ormConfig";
  */
 
 if (!process.env.DB_URL) {
-  throw new Error("DB_URL environment variable not supplied");
+  console.warn(
+    "DB_URL environment variable not supplied! Using in-memory sqlite."
+  );
 }
 
 export default ormConfig({
-  clientUrl: process.env.DB_URL,
+  clientUrl: process.env.DB_URL || "sqlite::memory",
   environment: process.env.NODE_ENV || "development",
 });

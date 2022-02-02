@@ -4,8 +4,10 @@ import {
   CanParameters,
   ExtractSubjectType,
   InferSubjects,
+  subject as identifySubject,
 } from "@casl/ability";
 import { rulesToQuery } from "@casl/ability/extra";
+import { Utils } from "@mikro-orm/core";
 import { Forbidden } from "http-errors";
 import { entities as dbEntities } from "../db/entities";
 import { entities as kratosEntities } from "../kratos/entities";
@@ -40,6 +42,37 @@ export class AppAbility extends Ability<AppAbilityTuple> {
     }
 
     return result;
+  }
+
+  relevantRuleFor(...args: CanParameters<AppAbilityTuple>) {
+    const [action, subject, ...rest] = args;
+
+    // If `subject` is a MikroORM model instance, we want to call toJSON on it
+    // otherwise certain conditions will not work correctly (in particular,
+    // those that check values of underlying collection -- those need to
+    // return true when Array.isArray is called on them, which will not happen
+    // when they are Collection<> instances).
+
+    if (Utils.isEntity(subject)) {
+      return super.relevantRuleFor(
+        action,
+        identifySubject(subject.constructor.name, subject.toJSON()),
+        ...rest
+      );
+    }
+
+    return super.relevantRuleFor(action, subject, ...rest);
+  }
+
+  detectSubjectType(subject?: AppSubject) {
+    if (Utils.isEntity(subject)) {
+      return (
+        (subject.constructor.name as ExtractSubjectType<AppSubject>) ||
+        super.detectSubjectType(subject)
+      );
+    }
+
+    return super.detectSubjectType(subject);
   }
 
   /**

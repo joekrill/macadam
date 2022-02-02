@@ -14,7 +14,7 @@ import {
   thingCreateSchema,
   thingUpdatePartialSchema,
   thingUpdateSchema,
-} from "./thingSchemas";
+} from "./thingsSchemas";
 
 export interface ThingsRouterState extends DefaultState, AbilityState {
   thing?: Thing;

@@ -54,13 +54,13 @@ export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
           id: "things.thingsTable.privateHeader.label",
           defaultMessage: "Private",
         }),
-        accessor: "isPrivate",
+        accessor: "isPublic",
         textAlign: "center",
         Cell: ({ value }) => (
           <Icon
             boxSize="1em"
-            as={value ? FaLock : FaUnlock}
-            color={value ? "red.600" : "green.300"}
+            as={value ? FaUnlock : FaLock}
+            color={value ? "green.300" : "red.600"}
           />
         ),
       },

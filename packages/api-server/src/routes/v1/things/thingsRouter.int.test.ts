@@ -21,6 +21,16 @@ const initApp = async ({ identityId }: { identityId?: string } = {}) => {
               data: {
                 identity: {
                   id: "123",
+                  verifiable_addresses: [
+                    {
+                      id: "1",
+                      status: "completed",
+                      value: "someone@example.com",
+                      verified: true,
+                      verified_at: "2013-10-07T08:23:19Z",
+                      via: "email",
+                    },
+                  ],
                 },
               },
             })
@@ -218,9 +228,9 @@ describe("authenticated", () => {
 
     beforeEach(async () => {
       ownedThing = new Thing("123", "Item 1");
-      ownedThing.isPrivate = false;
+      ownedThing.isPublic = true;
       unownedThing = new Thing("567", "Item 2");
-      unownedThing.isPrivate = false;
+      unownedThing.isPublic = true;
       app.context.db.orm.em.persist([ownedThing, unownedThing]).flush();
     });
 
@@ -276,9 +286,9 @@ describe("authenticated", () => {
 
     beforeEach(async () => {
       ownedThing = new Thing("123", "Item 1");
-      ownedThing.isPrivate = false;
+      ownedThing.isPublic = true;
       unownedThing = new Thing("567", "Item 2");
-      unownedThing.isPrivate = false;
+      unownedThing.isPublic = true;
       app.context.db.orm.em.persist([ownedThing, unownedThing]).flush();
     });
 

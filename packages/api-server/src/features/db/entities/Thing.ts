@@ -18,8 +18,8 @@ export class Thing extends UuidEntity {
   @Property({ nullable: true })
   public description!: string | null;
 
-  @Property()
-  public isPrivate = true;
+  @Property({ default: true })
+  public isPublic: boolean = false;
 
   @Property()
   public deletedAt?: Date;

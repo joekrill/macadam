@@ -10,7 +10,7 @@ export const thingSchema = z.object({
   updatedAt: z.string(),
   createdBy: z.string(),
   updatedBy: z.string(),
-  isPrivate: z.boolean(),
+  isPublic: z.boolean(),
 
   // This allows us to use Casl checks on the parsed result.
   __caslSubjectType__: z.literal("Thing").default("Thing"),

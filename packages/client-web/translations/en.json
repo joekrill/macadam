@@ -382,8 +382,8 @@
   "things.thingForm.description.label": {
     "defaultMessage": "Description"
   },
-  "things.thingForm.isPrivate.label": {
-    "defaultMessage": "Private"
+  "things.thingForm.isPublic.label": {
+    "defaultMessage": "Public"
   },
   "things.thingForm.name.label": {
     "defaultMessage": "Name"

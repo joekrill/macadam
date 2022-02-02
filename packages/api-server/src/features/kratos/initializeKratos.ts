@@ -13,7 +13,7 @@ export interface KratosContext {
 }
 
 export interface KratosState {
-  session: () => Promise<Session>;
+  session: () => Promise<Session | undefined>;
   _session?: Session;
 }
 

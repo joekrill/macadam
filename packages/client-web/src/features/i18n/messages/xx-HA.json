@@ -956,10 +956,10 @@
       "value": "[javascript]Description"
     }
   ],
-  "things.thingForm.isPrivate.label": [
+  "things.thingForm.isPublic.label": [
     {
       "type": 0,
-      "value": "[javascript]Private"
+      "value": "[javascript]Public"
     }
   ],
   "things.thingForm.name.label": [

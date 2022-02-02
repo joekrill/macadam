@@ -3,7 +3,7 @@ import { z } from "zod";
 export const thingCreateSchema = z.object({
   name: z.string().min(3),
   description: z.string().optional(),
-  isPrivate: z.boolean().default(true),
+  isPublic: z.boolean().default(false), // TODO: any way to extract this from the entity definition?
 });
 
 export const thingUpdateSchema = thingCreateSchema.extend({
@@ -12,5 +12,5 @@ export const thingUpdateSchema = thingCreateSchema.extend({
 
 export const thingUpdatePartialSchema = thingCreateSchema.extend({
   name: z.string().optional(),
-  isPrivate: z.boolean().optional(),
+  isPublic: z.boolean().optional(),
 });

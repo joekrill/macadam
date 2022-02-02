@@ -33,6 +33,7 @@ export const ormConfig = ({
       safe: true,
       emit: "ts",
       allOrNothing: true,
+      dropTables: false,
       // snapshot: true,
     },
 

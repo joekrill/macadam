@@ -39,7 +39,7 @@ export const ThingForm = ({
     useForm<CreateThingParams>({
       resolver: zodResolver(createThingParamsSchema),
       defaultValues: {
-        isPrivate: false,
+        isPublic: true,
         ...defaultValues,
       },
     });
@@ -84,17 +84,17 @@ export const ThingForm = ({
           <FormErrorMessage>{errors.description?.message}</FormErrorMessage>
         </FormControl>
         <FormControl
-          isInvalid={!!errors.isPrivate}
+          isInvalid={!!errors.isPublic}
           isDisabled={isLoading}
           py="3"
         >
-          <Checkbox {...register("isPrivate")}>
+          <Checkbox {...register("isPublic")}>
             <FormattedMessage
-              id="things.thingForm.isPrivate.label"
-              defaultMessage="Private"
+              id="things.thingForm.isPublic.label"
+              defaultMessage="Public"
             />
           </Checkbox>
-          <FormErrorMessage>{errors.isPrivate?.message}</FormErrorMessage>
+          <FormErrorMessage>{errors.isPublic?.message}</FormErrorMessage>
         </FormControl>
         <SaveButton isLoading={isLoading} isDisabled={!isValid} />
         {error && !validationError && <ApiErrorAlert error={error} mt="2" />}

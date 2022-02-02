@@ -23,13 +23,14 @@ sessionsRouter
   .use((ctx, next) => {
     ctx.state.sessionRepository =
       ctx.state.kratosEntityManager!.getRepository(KratosSession);
+
     return next();
   })
   .get("/", async (ctx) => {
     const { ability, kratosEntityManager, sessionRepository, urlSearchParams } =
       ctx.state;
 
-    const filter = ability!.query("read", KratosSession.modelName);
+    const filter = ability!.query("read", "KratosSession");
     const pagination = new OffsetPagination(urlSearchParams, {
       defaultLimit: 25,
     });

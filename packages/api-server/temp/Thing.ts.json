@@ -31,9 +31,10 @@
         "setter": false,
         "type": "string"
       },
-      "isPrivate": {
-        "name": "isPrivate",
+      "isPublic": {
+        "name": "isPublic",
         "reference": "scalar",
+        "default": true,
         "getter": false,
         "setter": false,
         "type": "boolean"
@@ -78,8 +79,9 @@
         "type": "string"
       },
       {
-        "name": "isPrivate",
+        "name": "isPublic",
         "reference": "scalar",
+        "default": true,
         "getter": false,
         "setter": false,
         "type": "boolean"
@@ -116,6 +118,6 @@
     "collection": "thing"
   },
   "origin": "./src/features/db/entities/Thing.ts",
-  "hash": "c3779def6f72b9995d21be1ae574d676",
+  "hash": "318c7f4fba2eb59265c70115aa9674a1",
   "version": "4.5.10"
 }

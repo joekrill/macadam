@@ -998,10 +998,10 @@
       "value": "DescriptionSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "things.thingForm.isPrivate.label": [
+  "things.thingForm.isPublic.label": [
     {
       "type": 0,
-      "value": "PrivateSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "PublicSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "things.thingForm.name.label": [

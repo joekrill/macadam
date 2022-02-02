@@ -25,8 +25,8 @@ export const ThingDetails = () => {
             <Icon
               h="1rem"
               w="1rem"
-              as={data.data.isPrivate ? FaLock : FaUnlock}
-              color={data.data.isPrivate ? "red.600" : "green.300"}
+              as={data.data.isPublic ? FaUnlock : FaLock}
+              color={data.data.isPublic ? "green.300" : "red.600"}
             />
             <ThingActions
               ml="3"

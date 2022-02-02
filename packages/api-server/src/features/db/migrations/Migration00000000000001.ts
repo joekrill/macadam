@@ -10,7 +10,7 @@ export class Migration00000000000000 extends Migration {
           table.uuid("id").primary();
           table.string("name").notNullable();
           table.string("description");
-          table.boolean("is_private").notNullable().defaultTo(true);
+          table.boolean("is_public").notNullable().defaultTo(false);
           table.uuid("created_by").notNullable();
           table.uuid("updated_by").notNullable();
           table.timestamp("created_at").notNullable();
@@ -20,23 +20,25 @@ export class Migration00000000000000 extends Migration {
         .toQuery()
     );
 
-    const uuid = "00000000-0000-0000-0000-000000000000";
-    this.addSql(
-      this.getKnex()
-        .table("thing")
-        .insert(
-          Array.from({ length: 35 }).map((_, i) => ({
-            id: v4(),
-            created_by: uuid,
-            updated_by: uuid,
-            created_at: date.past(),
-            updated_at: date.recent(),
-            name: commerce.productName(),
-            description: commerce.productDescription(),
-            is_private: datatype.boolean(),
-          }))
-        )
-        .toQuery()
-    );
+    if (process.env.NODE_ENV !== "production") {
+      const uuid = "00000000-0000-0000-0000-000000000000";
+      this.addSql(
+        this.getKnex()
+          .table("thing")
+          .insert(
+            Array.from({ length: 35 }).map((_, i) => ({
+              id: v4(),
+              created_by: uuid,
+              updated_by: uuid,
+              created_at: date.past(),
+              updated_at: date.recent(),
+              name: commerce.productName(),
+              description: commerce.productDescription(),
+              is_public: datatype.boolean(),
+            }))
+          )
+          .toQuery()
+      );
+    }
   }
 }

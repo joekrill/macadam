@@ -1,7 +1,9 @@
 import { Entity, Filter, Property } from "@mikro-orm/core";
+import { AbilityFilter } from "../decorators/AbilityFilter";
 import { UuidEntity } from "./UuidEntity";
 
 @Entity()
+@AbilityFilter()
 @Filter({ name: "notDeleted", cond: { deletedAt: null }, default: true })
 export class Thing extends UuidEntity {
   static readonly modelName = "Thing";

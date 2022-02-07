@@ -1,5 +1,6 @@
 import Router from "@koa/router";
 import { EntityRepository, wrap } from "@mikro-orm/core";
+import { OperatorMap } from "@mikro-orm/core/typings";
 import { DefaultState } from "koa";
 import { ability, AbilityState } from "../../../features/auth/ability";
 import {
@@ -34,10 +35,8 @@ thingsRouter
     return next();
   })
   .get("/", async (ctx) => {
-    const { ability, entityManager, thingRepository, urlSearchParams } =
-      ctx.state;
+    const { entityManager, thingRepository, urlSearchParams } = ctx.state;
 
-    const filter = ability!.query("read", Thing.modelName);
     const pagination = new OffsetPagination(urlSearchParams);
     const orderBy = sortStringToOrderBy(
       urlSearchParams.get("sort"),
@@ -49,17 +48,17 @@ thingsRouter
       )
     );
 
+    const filter = { $and: [] } as OperatorMap<Thing>;
+
     if (urlSearchParams.has("filter[owned]")) {
       const session = await ctx.state.session();
-      filter.$and = filter.$and || [];
-      filter.$and.push({
+      filter.$and!.push({
         createdBy: session?.identity.id,
       });
     }
 
     const searchTerm = urlSearchParams.get("filter[text]")?.trim();
     if (searchTerm) {
-      filter.$and = filter.$and || [];
       filter.$and!.push(
         textSearch(
           ctx.state.entityManager!,

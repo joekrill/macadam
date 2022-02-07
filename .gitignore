@@ -26,3 +26,4 @@ yarn-error.log*
 
 # Miscellaneous temporary files
 tmp/
+temp/

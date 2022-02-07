@@ -27,10 +27,9 @@ sessionsRouter
     return next();
   })
   .get("/", async (ctx) => {
-    const { ability, kratosEntityManager, sessionRepository, urlSearchParams } =
+    const { kratosEntityManager, sessionRepository, urlSearchParams } =
       ctx.state;
 
-    const filter = ability!.query("read", "KratosSession");
     const pagination = new OffsetPagination(urlSearchParams, {
       defaultLimit: 25,
     });
@@ -44,10 +43,13 @@ sessionsRouter
       )
     ) || { authenticated_at: QueryOrder.DESC };
 
-    const [data, total] = await sessionRepository!.findAndCount(filter, {
-      ...pagination.findOptions(),
-      orderBy,
-    });
+    const [data, total] = await sessionRepository!.findAndCount(
+      {},
+      {
+        ...pagination.findOptions(),
+        orderBy,
+      }
+    );
 
     ctx.body = {
       data,

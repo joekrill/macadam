@@ -26,6 +26,12 @@ export const ability =
     if (!ctx.state.ability) {
       const session = await ctx.state.session();
       ctx.state.ability = abilityFor(session);
+      ctx.state.entityManager?.setFilterParams("ability", {
+        ability: ctx.state.ability,
+      });
+      ctx.state.kratosEntityManager?.setFilterParams("ability", {
+        ability: ctx.state.ability,
+      });
     }
 
     if (args.length === 2 || args.length === 3) {

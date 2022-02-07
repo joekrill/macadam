@@ -48,7 +48,7 @@ const initApp = async ({ identityId }: { identityId?: string } = {}) => {
   await app.context.db.orm.getMigrator().up();
 
   // Remove any test data
-  await app.context.db.orm.em.nativeDelete("Thing", {});
+  await app.context.db.orm.em.nativeDelete("Thing", {}, { filters: false });
 };
 
 describe("authenticated", () => {
@@ -258,9 +258,13 @@ describe("authenticated", () => {
 
       it("deletes the Thing", async () => {
         expect.assertions(1);
-        const count = await app.context.db.orm.em.count("Thing", {
-          id: ownedThing.id,
-        });
+        const count = await app.context.db.orm.em.count(
+          "Thing",
+          {
+            id: ownedThing.id,
+          },
+          { filters: { ability: false } }
+        );
         expect(count).toBe(0);
       });
     });
@@ -327,17 +331,25 @@ describe("authenticated", () => {
       it("updates the chagned fields", async () => {
         expect.assertions(1);
         await app.context.db.orm.em.clear();
-        const thing = await app.context.db.orm.em.findOne(Thing, {
-          id: ownedThing.id,
-        });
+        const thing = await app.context.db.orm.em.findOne(
+          Thing,
+          {
+            id: ownedThing.id,
+          },
+          { filters: false }
+        );
         expect(thing?.description).toBe("a description!");
       });
 
       it("does not change other fields", async () => {
         expect.assertions(1);
-        const thing = await app.context.db.orm.em.findOne(Thing, {
-          id: ownedThing.id,
-        });
+        const thing = await app.context.db.orm.em.findOne(
+          Thing,
+          {
+            id: ownedThing.id,
+          },
+          { filters: false }
+        );
         expect(thing?.name).toBe("Item 1");
       });
     });
@@ -399,9 +411,13 @@ describe("authenticated", () => {
       it("Replaces all fields", async () => {
         expect.assertions(2);
         await app.context.db.orm.em.clear();
-        const updated = await app.context.db.orm.em.findOne(Thing, {
-          id: thing.id,
-        });
+        const updated = await app.context.db.orm.em.findOne(
+          Thing,
+          {
+            id: thing.id,
+          },
+          { filters: false }
+        );
         expect(updated?.description).toBeNull();
         expect(updated?.name).toBe("A new name!");
       });

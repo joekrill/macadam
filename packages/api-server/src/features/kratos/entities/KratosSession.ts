@@ -1,8 +1,10 @@
 import { Entity, Filter, ManyToOne, Property } from "@mikro-orm/core";
+import { AbilityFilter } from "../../db/decorators/AbilityFilter";
 import { KratosBaseEntity } from "./KratosBaseEntity";
 import { KratosIdentity } from "./KratosIdentity";
 
 @Entity({ tableName: "sessions" })
+@AbilityFilter()
 @Filter({ name: "active", cond: { active: true }, default: true })
 export class KratosSession extends KratosBaseEntity {
   static readonly modelName = "KratosSession";

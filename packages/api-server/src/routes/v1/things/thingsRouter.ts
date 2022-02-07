@@ -57,7 +57,7 @@ thingsRouter
       });
     }
 
-    const searchTerm = urlSearchParams.get("filter[text]")?.trim();
+    const searchTerm = urlSearchParams.get("filter[search]")?.trim();
     if (searchTerm) {
       filter.$and!.push(
         textSearch(

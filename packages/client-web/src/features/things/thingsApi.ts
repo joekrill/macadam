@@ -26,7 +26,7 @@ export const thingsApi = appApi
             "page[number]": page || 1,
             sort,
             ...(owned ? { "filter[owned]": 1 } : {}),
-            ...(search ? { "filter[text]": search } : {}),
+            ...(search ? { "filter[search]": search } : {}),
           },
         }),
         transformResponse: (result) => listThingsResponseSchema.parse(result),

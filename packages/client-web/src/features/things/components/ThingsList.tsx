@@ -44,7 +44,7 @@ export const ThingsList = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const urlParams = useUrlSearchParams();
-  const { page, getPageTo } = usePageUrlParam();
+  const page = usePageUrlParam();
   const owned = !!useUrlSearchParam("mine") && isLoggedIn;
   const { setRules, rules, paramValue: sort } = useSortByUrlParam<Thing>();
   const [searchInput, setSearchInput] = useState(

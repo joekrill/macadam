@@ -13,7 +13,7 @@ import { SessionsTable } from "./SessionsTable";
 export const SessionsList = () => {
   const { formatMessage } = useIntl();
   const { isLoggedIn } = useSession();
-  const { page, getPageTo } = usePageUrlParam();
+  const page = usePageUrlParam();
   const { setRules, rules, paramValue: sort } = useSortByUrlParam<ApiSession>();
 
   const { data, isFetching, error, refetch } = sessionsApi.useListSessionsQuery(

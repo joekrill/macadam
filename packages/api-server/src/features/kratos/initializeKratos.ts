@@ -1,5 +1,6 @@
 import { MikroORM } from "@mikro-orm/core";
 import { Configuration, Session, V0alpha2Api } from "@ory/kratos-client";
+import createHttpError from "http-errors";
 import Koa from "koa";
 import { OrmConfigOptions } from "../db/ormConfig";
 import { kratosOrmConfig } from "./kratosOrmConfig";
@@ -38,6 +39,8 @@ export const initializeKratos = async (
     kratosOrmConfig({
       environment: app.env,
       logger: app.context.logger,
+      findOneOrFailHandler: (entityName: string) =>
+        createHttpError(404, `${entityName} not found`),
       ...ormOptions,
     })
   );

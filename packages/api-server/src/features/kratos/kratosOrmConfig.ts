@@ -7,6 +7,7 @@ export const kratosOrmConfig = ({
   clientUrl,
   environment,
   logger,
+  ...options
 }: OrmConfigOptions): Options => {
   const url = new URL(clientUrl);
   const ormLogger = logger?.child({});
@@ -39,5 +40,7 @@ export const kratosOrmConfig = ({
           clientUrl,
         }
       : {}),
+
+    ...options,
   };
 };

@@ -6,7 +6,8 @@ import { URL } from "url";
 import { entities } from "./entities";
 import { subscribers } from "./subscribers";
 
-export interface OrmConfigOptions {
+export interface OrmConfigOptions
+  extends Omit<Partial<Options<PostgreSqlDriver>>, "logger"> {
   environment: string;
   clientUrl: string;
   logger?: pino.Logger;
@@ -16,6 +17,7 @@ export const ormConfig = ({
   clientUrl,
   environment,
   logger,
+  ...options
 }: OrmConfigOptions): Options<PostgreSqlDriver> => {
   const url = new URL(clientUrl);
   const ormLogger = logger?.child({});
@@ -56,5 +58,7 @@ export const ormConfig = ({
           clientUrl,
         }
       : {}),
+
+    ...options,
   };
 };

@@ -22,7 +22,6 @@ export const abilityFor = (session?: Session) => {
       session.identity.verifiable_addresses?.some(({ verified }) => verified) ||
       false;
 
-    // Users can read and delete ("") their own sessions.
     builder.can(["read", "delete"], "KratosSession", { identity_id: userId });
     builder.can(["read", "update", "delete"], "Thing", { createdBy: userId });
 

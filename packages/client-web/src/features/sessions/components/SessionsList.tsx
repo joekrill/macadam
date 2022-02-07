@@ -1,7 +1,6 @@
 import { Box, Heading, IconButton } from "@chakra-ui/react";
 import { HiRefresh } from "react-icons/hi";
 import { FormattedMessage, useIntl } from "react-intl";
-import { Link as ReactRouterLink } from "react-router-dom";
 import { useSession } from "../../auth/hooks/useSession";
 import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
 import { Pagination } from "../../pagination/components/Pagination/Pagination";
@@ -57,10 +56,7 @@ export const SessionsList = () => {
       {data && (
         <Pagination
           p="3"
-          buttonProps={(page) => ({
-            as: ReactRouterLink,
-            to: getPageTo(page),
-          })}
+          useQueryStringPagination
           currentPage={page}
           totalPages={data?.pagination.totalPages}
         />

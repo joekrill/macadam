@@ -1,6 +1,5 @@
 import {
-  As,
-  Button,
+  ButtonGroup,
   ButtonProps,
   Flex,
   FlexProps,
@@ -10,62 +9,71 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from "@chakra-ui/react";
-import { ComponentProps } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { FormattedMessage, FormattedNumber } from "react-intl";
+import { PaginationButton, PaginationButtonProps } from "./PaginationButton";
+import { QueryStringPaginationButton } from "./QueryStringPaginationButton";
 import { usePaginationPages } from "./usePaginationPages";
 
-export interface PaginationProps extends FlexProps {
+export interface PaginationProps<ButtonComponentProps extends object = any>
+  extends FlexProps {
+  ButtonComponent?: React.ElementType<
+    PaginationButtonProps & ButtonComponentProps
+  >;
+  useQueryStringPagination?: boolean;
   currentPage: number;
   totalPages?: number;
   maxSiblings?: number;
-  isDisabled?: boolean;
   size?: ButtonProps["size"];
   colorScheme?: ButtonProps["colorScheme"];
-  buttonProps?: (page: number) => ComponentProps<typeof Button>;
+  buttonProps?: ButtonComponentProps;
 }
 
 export const Pagination = ({
+  useQueryStringPagination,
+  ButtonComponent = useQueryStringPagination
+    ? QueryStringPaginationButton
+    : PaginationButton,
   buttonProps,
   currentPage,
   maxSiblings,
   totalPages,
   colorScheme = "blue",
-  isDisabled: isDisabledProp,
   size,
   ...props
 }: PaginationProps) => {
-  const isDisabled = totalPages === 0 || isDisabledProp;
-  const sharedProps = {
-    colorScheme,
-    isDisabled,
-    size,
-    as: undefined as As<any> | undefined,
-  };
-
   const defaultMaxSiblings =
     useBreakpointValue({ base: 0, sm: 1, md: 2, lg: 4 }) || 0;
+
   const pages = usePaginationPages({
     currentPage,
     totalPages,
     maxSiblings:
       typeof maxSiblings === "number" ? maxSiblings : defaultMaxSiblings,
   });
+
   const spacerColor = useColorModeValue(
     `${colorScheme}.600`,
     `${colorScheme}.100`
   );
 
+  const isDisabled = !Number.isFinite(totalPages) || totalPages === 0;
+
   return (
     <Flex w="full" alignItems="center" justifyContent="center" {...props}>
-      <HStack>
-        <Button
+      <ButtonGroup
+        as={HStack}
+        colorScheme={colorScheme}
+        isDisabled={isDisabled}
+        size={size}
+      >
+        <ButtonComponent
           key="prev"
+          isDisabled={isDisabled || currentPage === 1}
+          pageNumber={currentPage - 1}
           variant="ghost"
-          {...sharedProps}
-          {...(buttonProps ? buttonProps(currentPage - 1) : {})}
-          isDisabled={currentPage === 1 || isDisabled}
+          {...buttonProps}
         >
           <Icon as={FaChevronLeft} boxSize={4} />
           <VisuallyHidden>
@@ -74,34 +82,34 @@ export const Pagination = ({
               defaultMessage="Previous Page"
             />
           </VisuallyHidden>
-        </Button>
+        </ButtonComponent>
         {pages.map((page, i) =>
           page < 0 ? (
             <Icon
               key={`${i}-${page}`}
               as={HiOutlineDotsHorizontal}
               color={spacerColor}
-              opacity={isDisabled ? 0.4 : 1}
+              opacity={0.4}
             />
           ) : (
-            <Button
-              variant={currentPage === page ? "solid" : "ghost"}
-              rounded="md"
+            <ButtonComponent
               key={page}
-              {...sharedProps}
-              {...(buttonProps ? buttonProps(page) : {})}
+              isDisabled={isDisabled}
+              pageNumber={page}
+              variant={currentPage === page ? "solid" : "ghost"}
+              {...buttonProps}
             >
               <FormattedNumber value={page} />
-            </Button>
+            </ButtonComponent>
           )
         )}
 
-        <Button
+        <ButtonComponent
           key="next"
+          isDisabled={isDisabled || currentPage === totalPages}
+          pageNumber={currentPage + 1}
           variant="ghost"
-          {...sharedProps}
-          {...(buttonProps ? buttonProps(currentPage + 1) : {})}
-          isDisabled={currentPage === totalPages || isDisabled}
+          {...buttonProps}
         >
           <Icon as={FaChevronRight} boxSize={4} />
           <VisuallyHidden>
@@ -110,8 +118,8 @@ export const Pagination = ({
               defaultMessage="Next Page"
             />
           </VisuallyHidden>
-        </Button>
-      </HStack>
+        </ButtonComponent>
+      </ButtonGroup>
     </Flex>
   );
 };

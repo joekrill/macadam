@@ -189,10 +189,7 @@ export const ThingsList = () => {
       {data && (
         <Pagination
           p="3"
-          buttonProps={(page) => ({
-            as: ReactRouterLink,
-            to: getPageTo(page),
-          })}
+          useQueryStringPagination
           currentPage={page}
           totalPages={data?.pagination.totalPages}
         />

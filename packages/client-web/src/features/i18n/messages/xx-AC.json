@@ -916,6 +916,30 @@
       "value": "SESSIONS"
     }
   ],
+  "sorting.sortMenu.sortByGroupTitle": [
+    {
+      "type": 0,
+      "value": "SORT BY"
+    }
+  ],
+  "sorting.sortMenu.sortOrderAscending": [
+    {
+      "type": 0,
+      "value": "ASCENDING"
+    }
+  ],
+  "sorting.sortMenu.sortOrderDescending": [
+    {
+      "type": 0,
+      "value": "DESCENDING"
+    }
+  ],
+  "sorting.sortMenu.sortOrderGroupTitle": [
+    {
+      "type": 0,
+      "value": "SORT ORDER"
+    }
+  ],
   "theme.colorModeSelect.darkMode.label": [
     {
       "type": 0,

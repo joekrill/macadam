@@ -884,6 +884,30 @@
       "value": "SessionsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "sorting.sortMenu.sortByGroupTitle": [
+    {
+      "type": 0,
+      "value": "Sort bySSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "sorting.sortMenu.sortOrderAscending": [
+    {
+      "type": 0,
+      "value": "AscendingSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "sorting.sortMenu.sortOrderDescending": [
+    {
+      "type": 0,
+      "value": "DescendingSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "sorting.sortMenu.sortOrderGroupTitle": [
+    {
+      "type": 0,
+      "value": "Sort orderSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "theme.colorModeSelect.darkMode.label": [
     {
       "type": 0,

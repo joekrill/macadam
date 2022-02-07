@@ -916,6 +916,30 @@
       "value": "Ṡèśśíŏńś"
     }
   ],
+  "sorting.sortMenu.sortByGroupTitle": [
+    {
+      "type": 0,
+      "value": "Ṡŏŕṭ ḃẏ"
+    }
+  ],
+  "sorting.sortMenu.sortOrderAscending": [
+    {
+      "type": 0,
+      "value": "Ḁśćèńḋíńĝ"
+    }
+  ],
+  "sorting.sortMenu.sortOrderDescending": [
+    {
+      "type": 0,
+      "value": "Ḋèśćèńḋíńĝ"
+    }
+  ],
+  "sorting.sortMenu.sortOrderGroupTitle": [
+    {
+      "type": 0,
+      "value": "Ṡŏŕṭ ŏŕḋèŕ"
+    }
+  ],
   "theme.colorModeSelect.darkMode.label": [
     {
       "type": 0,

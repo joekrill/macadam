@@ -916,6 +916,30 @@
       "value": "[!! Ṡèśśśśíŏŏŏńś !!]"
     }
   ],
+  "sorting.sortMenu.sortByGroupTitle": [
+    {
+      "type": 0,
+      "value": "[!! Ṡŏŕŕŕṭ ḃḃḃẏ !!]"
+    }
+  ],
+  "sorting.sortMenu.sortOrderAscending": [
+    {
+      "type": 0,
+      "value": "[!! Ḁśćććèńḋḋḋíńĝĝĝ !!]"
+    }
+  ],
+  "sorting.sortMenu.sortOrderDescending": [
+    {
+      "type": 0,
+      "value": "[!! Ḋèśśśćèńńńḋíńńńĝ !!]"
+    }
+  ],
+  "sorting.sortMenu.sortOrderGroupTitle": [
+    {
+      "type": 0,
+      "value": "[!! Ṡŏŕŕŕṭ ŏŏŏŕḋèèèŕ !!]"
+    }
+  ],
   "theme.colorModeSelect.darkMode.label": [
     {
       "type": 0,

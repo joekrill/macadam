@@ -842,6 +842,30 @@
       "value": "[javascript]Sessions"
     }
   ],
+  "sorting.sortMenu.sortByGroupTitle": [
+    {
+      "type": 0,
+      "value": "[javascript]Sort by"
+    }
+  ],
+  "sorting.sortMenu.sortOrderAscending": [
+    {
+      "type": 0,
+      "value": "[javascript]Ascending"
+    }
+  ],
+  "sorting.sortMenu.sortOrderDescending": [
+    {
+      "type": 0,
+      "value": "[javascript]Descending"
+    }
+  ],
+  "sorting.sortMenu.sortOrderGroupTitle": [
+    {
+      "type": 0,
+      "value": "[javascript]Sort order"
+    }
+  ],
   "theme.colorModeSelect.darkMode.label": [
     {
       "type": 0,

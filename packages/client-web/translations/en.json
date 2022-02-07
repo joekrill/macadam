@@ -339,6 +339,18 @@
   "settings.settingsPage.sessionsLink.label": {
     "defaultMessage": "Sessions"
   },
+  "sorting.sortMenu.sortByGroupTitle": {
+    "defaultMessage": "Sort by"
+  },
+  "sorting.sortMenu.sortOrderAscending": {
+    "defaultMessage": "Ascending"
+  },
+  "sorting.sortMenu.sortOrderDescending": {
+    "defaultMessage": "Descending"
+  },
+  "sorting.sortMenu.sortOrderGroupTitle": {
+    "defaultMessage": "Sort order"
+  },
   "theme.colorModeSelect.darkMode.label": {
     "defaultMessage": "Dark"
   },

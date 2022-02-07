@@ -37,7 +37,7 @@ export const useSortByUrlParam = <D>({
 
   const setRules = useCallback(
     (newRules: SortingRule<D>[]) => {
-      const newValue = serializeSortingRules(newRules);
+      const newValue = serializeSortingRules(...newRules);
       if (newValue === paramValue) {
         return;
       }

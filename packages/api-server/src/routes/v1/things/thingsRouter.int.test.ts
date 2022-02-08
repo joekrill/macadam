@@ -57,7 +57,6 @@ describe("authenticated", () => {
   });
 
   afterEach(async () => {
-    app.context.db.orm.em.flush();
     await app.context.shutdown();
   });
 

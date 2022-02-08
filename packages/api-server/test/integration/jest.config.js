@@ -2,6 +2,7 @@ module.exports = {
   // -- Files--
   rootDir: "../../src",
   testMatch: ["**/*.int.test.{js,mjs,ts}"],
+  setupFilesAfterEnv: ["../test/integration/jest.setup.js"],
 
   // -- Behavior --
   automock: false,

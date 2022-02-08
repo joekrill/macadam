@@ -1,4 +1,4 @@
-import { QueryOrder, QueryOrderMap } from "@mikro-orm/core";
+import { FlatQueryOrderMap, QueryOrder } from "@mikro-orm/core";
 import { parseSortString } from "./parseSortString";
 import { validateFields } from "./validateFields";
 
@@ -20,5 +20,5 @@ export const sortStringToOrderBy = (
   return validatedFields.reduce((map, { field, prefix }) => {
     map[field] = prefix === "-" ? QueryOrder.DESC : QueryOrder.ASC;
     return map;
-  }, {} as QueryOrderMap);
+  }, {} as FlatQueryOrderMap);
 };

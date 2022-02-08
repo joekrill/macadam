@@ -17,6 +17,8 @@
     "hooks": {},
     "indexes": [],
     "uniques": [],
+    "checks": [],
+    "concurrencyCheckKeys": {},
     "className": "UuidEntity",
     "path": "./src/features/db/entities/UuidEntity.ts",
     "abstract": true,
@@ -28,6 +30,6 @@
     "relations": []
   },
   "origin": "./src/features/db/entities/UuidEntity.ts",
-  "hash": "c5d325a7c279993ceb0be92ef29b920d",
-  "version": "4.5.10"
+  "hash": "3c3b0659b1ad8cf5f01d3520d382bcfb",
+  "version": {}
 }

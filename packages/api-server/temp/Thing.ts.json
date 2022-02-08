@@ -107,6 +107,8 @@
     "hooks": {},
     "indexes": [],
     "uniques": [],
+    "checks": [],
+    "concurrencyCheckKeys": {},
     "className": "Thing",
     "path": "./src/features/db/entities/Thing.ts",
     "name": "Thing",
@@ -119,6 +121,6 @@
     "collection": "thing"
   },
   "origin": "./src/features/db/entities/Thing.ts",
-  "hash": "143579a2f94ed5b4805e26d7b13d16de",
-  "version": "4.5.10"
+  "hash": "3e067626ac9c8ec548e7f850638f6bc1",
+  "version": {}
 }

@@ -2,16 +2,16 @@ import { Dictionary, FilterQuery, MetadataStorage } from "@mikro-orm/core";
 import { FilterDef } from "@mikro-orm/core/typings";
 import { AppAbility, AppSubject } from "../../auth/AppAbility";
 
-export interface AbilityFilterOptions<T>
-  extends Omit<FilterDef<T>, "cond" | "name" | "args"> {
+export interface AbilityFilterOptions
+  extends Omit<FilterDef, "cond" | "name" | "args"> {
   name?: string;
 }
 
-export function AbilityFilter<T>({
+export function AbilityFilter({
   name = "ability",
   default: isDefault = true,
   ...options
-}: AbilityFilterOptions<T> = {}) {
+}: AbilityFilterOptions = {}) {
   return function <U>(target: U & Dictionary) {
     const meta = MetadataStorage.getMetadataFromDecorator(target);
     meta.filters[name] = {

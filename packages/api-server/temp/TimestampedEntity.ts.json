@@ -38,6 +38,8 @@
     "hooks": {},
     "indexes": [],
     "uniques": [],
+    "checks": [],
+    "concurrencyCheckKeys": {},
     "className": "TimestampedEntity",
     "path": "./src/features/db/entities/TimestampedEntity.ts",
     "abstract": true,
@@ -47,6 +49,6 @@
     "relations": []
   },
   "origin": "./src/features/db/entities/TimestampedEntity.ts",
-  "hash": "5a6fb40c39ec9c5f49d62b39768a0a75",
-  "version": "4.5.10"
+  "hash": "8569940a3c0f7d6c0aacbe979eb58eef",
+  "version": {}
 }

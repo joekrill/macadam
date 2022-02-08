@@ -146,6 +146,8 @@
     "hooks": {},
     "indexes": [],
     "uniques": [],
+    "checks": [],
+    "concurrencyCheckKeys": {},
     "className": "ContactUsMessage",
     "path": "./src/features/db/entities/ContactUsMessage.ts",
     "name": "ContactUsMessage",
@@ -165,6 +167,6 @@
     "collection": "contact_us_message"
   },
   "origin": "./src/features/db/entities/ContactUsMessage.ts",
-  "hash": "9e6c8d5d7ea71dbf98b5d3f13190e5b2",
-  "version": "4.5.10"
+  "hash": "eb00ccb3e056933f2f569325431b9261",
+  "version": {}
 }

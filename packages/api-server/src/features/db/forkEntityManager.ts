@@ -8,7 +8,7 @@ export interface ForkEntityManagerState {
 export const forkEntityManager =
   (): Middleware =>
   async (ctx, next): Promise<void> => {
-    const entityManager = ctx.db.orm.em.fork(true);
+    const entityManager = ctx.db.orm.em.fork();
 
     // This will get added to any audit_log entries
     // generated using this forked entity manager.

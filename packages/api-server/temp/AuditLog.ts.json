@@ -153,6 +153,8 @@
     "hooks": {},
     "indexes": [],
     "uniques": [],
+    "checks": [],
+    "concurrencyCheckKeys": {},
     "className": "AuditLog",
     "path": "./src/features/db/entities/AuditLog.ts",
     "name": "AuditLog",
@@ -165,6 +167,6 @@
     "collection": "audit_log"
   },
   "origin": "./src/features/db/entities/AuditLog.ts",
-  "hash": "2f09b97e3ec648b30575f58b29d7ec8a",
-  "version": "4.5.10"
+  "hash": "87ab1393d186a98f14a887409f0c6eaa",
+  "version": {}
 }

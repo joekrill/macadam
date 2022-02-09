@@ -5517,7 +5517,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mikro-orm/cli@npm:^5.0.0":
+"@mikro-orm/cli@npm:*, @mikro-orm/cli@npm:^5.0.0":
   version: 5.0.0
   resolution: "@mikro-orm/cli@npm:5.0.0"
   dependencies:
@@ -5721,7 +5721,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mikro-orm/reflection@npm:^5.0.0":
+"@mikro-orm/reflection@npm:*, @mikro-orm/reflection@npm:^5.0.0":
   version: 5.0.0
   resolution: "@mikro-orm/reflection@npm:5.0.0"
   dependencies:

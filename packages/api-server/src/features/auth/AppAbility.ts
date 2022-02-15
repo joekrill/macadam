@@ -65,11 +65,17 @@ export class AppAbility extends Ability<AppAbilityTuple> {
   }
 
   detectSubjectType(subject?: AppSubject) {
+    if (!subject) {
+      return super.detectSubjectType(subject);
+    }
+
     if (Utils.isEntity(subject)) {
-      return (
-        (subject.constructor.name as ExtractSubjectType<AppSubject>) ||
-        super.detectSubjectType(subject)
-      );
+      return subject.constructor.name as ExtractSubjectType<AppSubject>;
+    }
+
+    if (typeof subject === "function") {
+      // A class definition.
+      return subject.name as ExtractSubjectType<AppSubject>;
     }
 
     return super.detectSubjectType(subject);

@@ -1,12 +1,16 @@
-import { Entity, Filter, Property } from "@mikro-orm/core";
+import { Entity, Filter, OptionalProps, Property } from "@mikro-orm/core";
 import { AbilityFilter } from "../decorators/AbilityFilter";
+import { TextSearchFilter } from "../decorators/TextSearchFilter";
 import { UuidEntity } from "./UuidEntity";
 
 @Entity()
 @AbilityFilter()
+@TextSearchFilter({ name: "search", columns: ["name", "description"] })
 @Filter({ name: "notDeleted", cond: { deletedAt: null }, default: true })
 export class Thing extends UuidEntity {
   static readonly modelName = "Thing";
+
+  [OptionalProps]?: "createdAt" | "updatedAt" | "createdBy" | "updatedBy";
 
   @Property({ type: "uuid" })
   public createdBy: string;
@@ -18,7 +22,7 @@ export class Thing extends UuidEntity {
   public name!: string;
 
   @Property({ nullable: true })
-  public description!: string | null;
+  public description?: string;
 
   @Property({ default: true })
   public isPublic: boolean = false;
@@ -32,6 +36,6 @@ export class Thing extends UuidEntity {
     this.createdBy = createdBy;
     this.updatedBy = createdBy;
     this.name = name;
-    this.description = description || null;
+    this.description = description;
   }
 }

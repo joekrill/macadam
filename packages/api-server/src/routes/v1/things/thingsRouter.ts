@@ -1,5 +1,5 @@
 import Router from "@koa/router";
-import { EntityRepository, wrap } from "@mikro-orm/core";
+import { EntityRepository, Utils, wrap } from "@mikro-orm/core";
 import { OperatorMap } from "@mikro-orm/core/typings";
 import { DefaultState } from "koa";
 import { ability, AbilityState } from "../../../features/auth/ability";
@@ -8,7 +8,6 @@ import {
   AuthenticationRequiredState,
 } from "../../../features/auth/authenticationRequired";
 import { Thing } from "../../../features/db/entities/Thing";
-import { textSearch } from "../../../features/db/filters/textSearch";
 import { OffsetPagination } from "../../../features/pagination/OffsetPagination";
 import { sortStringToOrderBy } from "../../../features/sorting/sortStringToOrderBy";
 import {
@@ -58,20 +57,17 @@ thingsRouter
     }
 
     const searchTerm = urlSearchParams.get("filter[search]")?.trim();
-    if (searchTerm) {
-      filter.$and!.push(
-        textSearch(
-          ctx.state.entityManager!,
-          ["name", "description"],
-          searchTerm
-        )
-      );
-    }
 
-    const [data, total] = await thingRepository!.findAndCount(filter, {
-      ...pagination.findOptions(),
-      orderBy,
-    });
+    const [data, total] = await thingRepository!.findAndCount(
+      filter,
+      Utils.merge(
+        {
+          orderBy,
+          filters: searchTerm ? { search: { query: searchTerm } } : {},
+        },
+        pagination.findOptions()
+      )
+    );
 
     ctx.body = {
       data,

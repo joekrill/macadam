@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const thingCreateSchema = z.object({
   name: z.string().min(3),
-  description: z.string().optional(),
+  description: z.string().nullable().optional(),
   isPublic: z.boolean().default(false), // TODO: any way to extract this from the entity definition?
 });
 

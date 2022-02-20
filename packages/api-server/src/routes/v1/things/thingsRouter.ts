@@ -1,130 +1,57 @@
 import Router from "@koa/router";
-import { EntityRepository, Utils, wrap } from "@mikro-orm/core";
-import { OperatorMap } from "@mikro-orm/core/typings";
-import { DefaultState } from "koa";
-import { ability, AbilityState } from "../../../features/auth/ability";
+import { FilterQuery } from "@mikro-orm/core";
+import { ability } from "../../../features/auth/ability";
 import {
   authenticationRequired,
   AuthenticationRequiredState,
 } from "../../../features/auth/authenticationRequired";
 import { Thing } from "../../../features/db/entities/Thing";
-import { OffsetPagination } from "../../../features/pagination/OffsetPagination";
-import { sortStringToOrderBy } from "../../../features/sorting/sortStringToOrderBy";
-import {
-  thingCreateSchema,
-  thingUpdatePartialSchema,
-  thingUpdateSchema,
-} from "./thingsSchemas";
+import { ThingModel } from "../../../models/ThingModel";
 
-export interface ThingsRouterState extends DefaultState, AbilityState {
-  thing?: Thing;
-  thingRepository?: EntityRepository<Thing>;
-}
-
-export const thingsRouter = new Router<ThingsRouterState>();
+export const thingsRouter = new Router();
 
 thingsRouter
   .use(ability())
-  .use((ctx, next) => {
-    if (!ctx.state.entityManager) {
-      return ctx.throw(500, "entityManager is not undefined!");
-    }
-
-    ctx.state.thingRepository = ctx.state.entityManager!.getRepository(Thing);
-    return next();
-  })
   .get("/", async (ctx) => {
-    const { entityManager, thingRepository, urlSearchParams } = ctx.state;
+    const thingModel = new ThingModel(ctx);
 
-    const pagination = new OffsetPagination(urlSearchParams);
-    const orderBy = sortStringToOrderBy(
-      urlSearchParams.get("sort"),
+    const where: FilterQuery<Thing> = {};
 
-      // This seems to be the simplest way to get the list of property keys
-      // from the entity metadata.
-      Array.from(
-        entityManager!.getMetadata().get(Thing.name).propertyOrder.keys()
-      )
-    );
-
-    const filter = { $and: [] } as OperatorMap<Thing>;
-
-    if (urlSearchParams.has("filter[owned]")) {
+    if (ctx.state.urlSearchParams.has("filter[owned]")) {
       const session = await ctx.state.session();
-      filter.$and!.push({
-        createdBy: session?.identity.id,
-      });
+      where.createdBy = session?.identity.id;
     }
 
-    const searchTerm = urlSearchParams.get("filter[search]")?.trim();
+    const { entities, pagination } = await thingModel.list({ where });
 
-    const [data, total] = await thingRepository!.findAndCount(
-      filter,
-      Utils.merge(
-        {
-          orderBy,
-          filters: searchTerm ? { search: { query: searchTerm } } : {},
-        },
-        pagination.findOptions()
-      )
-    );
-
-    ctx.body = {
-      data,
-      ...pagination.meta(data.length, total),
-    };
+    ctx.body = { data: entities, pagination };
     ctx.status = 200;
   })
   .post<AuthenticationRequiredState>(
     "/",
     authenticationRequired(),
     async (ctx) => {
-      const { ability, identityId, thingRepository } = ctx.state;
-      ability!.ensureCan("create", Thing.modelName);
-
-      const data = thingCreateSchema.parse(ctx.request.body);
-      const thing = new Thing(identityId, data.name);
-      wrap(thing!).assign(data);
-
-      await thingRepository!.persist(thing).flush();
+      const thingModel = new ThingModel(ctx);
+      const thing = await thingModel.create(ctx.request.body);
       ctx.body = { data: thing };
       ctx.status = 201;
     }
   )
-  .param(
-    "thingId",
-    async (thingId, ctx: Router.RouterContext<ThingsRouterState>, next) => {
-      const { ability, thingRepository } = ctx.state;
-
-      const query = ability?.query("read", Thing.modelName);
-
-      try {
-        ctx.state.thing = await thingRepository!.findOneOrFail({
-          ...query,
-          id: thingId,
-        });
-      } catch (err) {
-        return ctx.throw(404);
-      }
-
-      return next();
-    }
-  )
   .get("/:thingId", async (ctx) => {
-    ctx.body = { data: ctx.state.thing };
+    const id = ctx.params.thingId as string;
+    const thingModel = new ThingModel(ctx);
+    const thing = await thingModel.get(id);
+    ctx.body = { data: thing };
     ctx.status = 200;
   })
   .put<AuthenticationRequiredState>(
     "/:thingId",
     authenticationRequired(),
     async (ctx) => {
-      const { ability, identityId, thing, thingRepository } = ctx.state;
-      ability!.ensureCan("update", thing!);
-      wrap(thing!).assign({
-        updatedBy: identityId,
-        ...thingUpdateSchema.parse(ctx.request.body),
-      });
-      await thingRepository!.flush();
+      const id = ctx.params.thingId as string;
+      const thingModel = new ThingModel(ctx);
+      const thing = await thingModel.update(id, ctx.request.body);
+      await thingModel.flush();
       ctx.body = { data: thing };
       ctx.status = 200;
     }
@@ -133,13 +60,10 @@ thingsRouter
     "/:thingId",
     authenticationRequired(),
     async (ctx) => {
-      const { ability, identityId, thing, thingRepository } = ctx.state;
-      ability!.ensureCan("update", thing!);
-      wrap(thing!).assign({
-        updatedBy: identityId,
-        ...thingUpdatePartialSchema.parse(ctx.request.body),
-      });
-      await thingRepository!.flush();
+      const id = ctx.params.thingId as string;
+      const thingModel = new ThingModel(ctx);
+      const thing = await thingModel.patch(id, ctx.request.body);
+      await thingModel.flush();
       ctx.body = { data: thing };
       ctx.status = 200;
     }
@@ -148,14 +72,10 @@ thingsRouter
     "/:thingId",
     authenticationRequired(),
     async (ctx) => {
-      const { ability, identityId, thing, thingRepository } = ctx.state;
-      ability!.ensureCan("delete", thing!);
-      wrap(thing!).assign({
-        updatedBy: identityId,
-        deletedAt: new Date(),
-      });
-      await thingRepository!.flush();
-      // await thingRepository!.removeAndFlush(thing!);
+      const id = ctx.params.thingId as string;
+      const thingModel = new ThingModel(ctx);
+      await thingModel.delete(id);
+      await thingModel.flush();
       ctx.status = 204;
     }
   );

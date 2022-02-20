@@ -7,17 +7,17 @@ export interface OffsetPaginationOptions {
   pageSizeKey: string;
 }
 
-const OFFSET_PAGINATION_DEFAULTS: OffsetPaginationOptions = {
-  maxLimit: 30,
-  defaultLimit: 10,
-  pageNumberKey: "page[number]",
-  pageSizeKey: "page[limit]",
-};
-
 /**
  * Manages pagination using an page number (offset) and page size (limit).
  */
 export class OffsetPagination {
+  static readonly DefaultOptions: OffsetPaginationOptions = {
+    maxLimit: 30,
+    defaultLimit: 10,
+    pageNumberKey: "page[number]",
+    pageSizeKey: "page[limit]",
+  };
+
   readonly limit: number;
   readonly page: number;
   readonly offset: number;
@@ -27,7 +27,7 @@ export class OffsetPagination {
     options?: Partial<OffsetPaginationOptions>
   ) {
     const { defaultLimit, maxLimit, pageNumberKey, pageSizeKey } = {
-      ...OFFSET_PAGINATION_DEFAULTS,
+      ...OffsetPagination.DefaultOptions,
       ...options,
     };
 

@@ -19,7 +19,7 @@
     "@formatjs/intl-localematcher": "^0.2.24",
     "@formatjs/intl-numberformat": "^7.4.2",
     "@formatjs/intl-pluralrules": "^4.3.2",
-    "@formatjs/intl-relativetimeformat": "^9.5.2",
+    "@formatjs/intl-relativetimeformat": "^10.0.0",
     "@hookform/resolvers": "^2.8.8",
     "@mdx-js/react": "^1.6.22",
     "@reduxjs/toolkit": "^1.8.0",

@@ -5746,10 +5746,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@formatjs/intl-relativetimeformat", [
-        ["npm:9.5.2", {
-          "packageLocation": "./.yarn/cache/@formatjs-intl-relativetimeformat-npm-9.5.2-84776cfc63-04bf81a572.zip/node_modules/@formatjs/intl-relativetimeformat/",
+        ["npm:10.0.0", {
+          "packageLocation": "./.yarn/cache/@formatjs-intl-relativetimeformat-npm-10.0.0-32108aa7a3-3541745de9.zip/node_modules/@formatjs/intl-relativetimeformat/",
           "packageDependencies": [
-            ["@formatjs/intl-relativetimeformat", "npm:9.5.2"],
+            ["@formatjs/intl-relativetimeformat", "npm:10.0.0"],
             ["@formatjs/ecma402-abstract", "npm:1.11.3"],
             ["@formatjs/intl-localematcher", "npm:0.2.24"],
             ["tslib", "npm:2.3.1"]
@@ -17802,7 +17802,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@formatjs/intl-localematcher", "npm:0.2.24"],
             ["@formatjs/intl-numberformat", "npm:7.4.2"],
             ["@formatjs/intl-pluralrules", "npm:4.3.2"],
-            ["@formatjs/intl-relativetimeformat", "npm:9.5.2"],
+            ["@formatjs/intl-relativetimeformat", "npm:10.0.0"],
             ["@hookform/resolvers", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:2.8.8"],
             ["@mdx-js/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.6.22"],
             ["@reduxjs/toolkit", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.8.0"],

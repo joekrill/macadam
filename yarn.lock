@@ -3086,14 +3086,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/intl-relativetimeformat@npm:^9.5.2":
-  version: 9.5.2
-  resolution: "@formatjs/intl-relativetimeformat@npm:9.5.2"
+"@formatjs/intl-relativetimeformat@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "@formatjs/intl-relativetimeformat@npm:10.0.0"
   dependencies:
     "@formatjs/ecma402-abstract": 1.11.3
     "@formatjs/intl-localematcher": 0.2.24
     tslib: ^2.1.0
-  checksum: 04bf81a572ad628b5cc9855ecd48d6444118f19d7254ae3076dfe9ce23078e979ccfaf3221706abe8a4c27a3a51cd9163a514497db5ed3b190be23a2c06be0f3
+  checksum: 3541745de9326273c46de890a9683a5a59fe22d10b012212adace5eec180888ef90b3dcf4f3e2e58dcfcf51b1caea16fc297dcf30430f07d3e131e29ae65a02d
   languageName: node
   linkType: hard
 
@@ -11512,7 +11512,7 @@ __metadata:
     "@formatjs/intl-localematcher": ^0.2.24
     "@formatjs/intl-numberformat": ^7.4.2
     "@formatjs/intl-pluralrules": ^4.3.2
-    "@formatjs/intl-relativetimeformat": ^9.5.2
+    "@formatjs/intl-relativetimeformat": ^10.0.0
     "@hookform/resolvers": ^2.8.8
     "@mdx-js/react": ^1.6.22
     "@reduxjs/toolkit": ^1.8.0

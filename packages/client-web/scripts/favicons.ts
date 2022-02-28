@@ -1,12 +1,11 @@
 import dotenv from "dotenv";
-import dotenvExpand from "dotenv-expand";
+import { expand } from "dotenv-expand";
 import favicons from "favicons";
 import { promises } from "fs";
 import { join, resolve } from "path";
-// @ts-ignore
 import { format } from "prettier";
 
-dotenvExpand(dotenv.config());
+expand(dotenv.config());
 
 const destinationPath = "public";
 const htmlStart = "<!-- favicons:start -->";
@@ -40,9 +39,13 @@ favicons(
       ...response.images.map(({ contents, name }) =>
         promises.writeFile(join(destinationPath, name), contents)
       ),
-      ...response.files.map(({ contents, name }) =>
-        promises.writeFile(join(destinationPath, name), contents)
-      ),
+      ...response.files.map(({ contents, name }) => {
+        const parser = name.endsWith("xml") ? "html" : "json";
+        return promises.writeFile(
+          join(destinationPath, name),
+          format(contents, { parser })
+        );
+      }),
       promises.readFile(indexHtml).then((buffer) => {
         // Reads the index.html file and replaces the content
         // between the htmlStart and htmlEnd placeholders with the

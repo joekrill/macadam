@@ -12651,6 +12651,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/favicons", [
+        ["npm:6.2.2", {
+          "packageLocation": "./.yarn/cache/@types-favicons-npm-6.2.2-baf7383103-0bf89d061b.zip/node_modules/@types/favicons/",
+          "packageDependencies": [
+            ["@types/favicons", "npm:6.2.2"],
+            ["@types/node", "npm:17.0.9"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/formidable", [
         ["npm:1.2.5", {
           "packageLocation": "./.yarn/cache/@types-formidable-npm-1.2.5-34e2090efa-2e4eea700f.zip/node_modules/@types/formidable/",
@@ -17821,6 +17831,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/jest-dom", "npm:5.16.2"],
             ["@testing-library/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:12.1.3"],
             ["@testing-library/user-event", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:13.5.0"],
+            ["@types/favicons", "npm:6.2.2"],
             ["@types/jest", "npm:27.4.1"],
             ["@types/node", "npm:16.11.26"],
             ["@types/prettier", "npm:2.4.4"],

@@ -935,7 +935,21 @@
   "things.deleteConfirmation.message": [
     {
       "type": 0,
-      "value": "[javascript]Are you sure you want to delete the Thing <e>{name}</e>?"
+      "value": "[javascript]Are you sure you want to delete the Thing '"
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "name"
+        }
+      ],
+      "type": 8,
+      "value": "e"
+    },
+    {
+      "type": 0,
+      "value": "'?"
     }
   ],
   "things.deleteThingLink.ariaLabel": [

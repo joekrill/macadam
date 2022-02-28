@@ -370,7 +370,7 @@
     "defaultMessage": "Delete Thing?"
   },
   "things.deleteConfirmation.message": {
-    "defaultMessage": "Are you sure you want to delete the Thing '<e>{name}</e>'?",
+    "defaultMessage": "Are you sure you want to delete the Thing ''<e>{name}</e>''?",
     "description": "The message asking the user to confirm that they want to delete a Thing"
   },
   "things.deleteThingLink.ariaLabel": {

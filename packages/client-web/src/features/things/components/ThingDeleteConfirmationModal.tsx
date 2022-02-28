@@ -39,7 +39,7 @@ export const ThingDeleteConfirmationModal = ({
         <FormattedMessage
           id="things.deleteConfirmation.message"
           description="The message asking the user to confirm that they want to delete a Thing"
-          defaultMessage="Are you sure you want to delete the Thing '<e>{name}</e>'?"
+          defaultMessage="Are you sure you want to delete the Thing ''<e>{name}</e>''?"
           values={{
             name: thing.name,
             e: (chunks: ReactElement) => (

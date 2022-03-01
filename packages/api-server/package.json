@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@casl/ability": "^5.4.3",
+    "@faker-js/faker": "^6.0.0-alpha.7",
     "@koa/cors": "^3.1.0",
     "@koa/router": "^10.1.1",
     "@mikro-orm/core": "^5.0.5",
@@ -37,7 +38,6 @@
     "cross-fetch": "^3.1.5",
     "deep-map-keys": "^2.0.1",
     "errorish": "^1.0.0",
-    "faker": "^5.5.3",
     "http-errors": "^2.0.0",
     "ioredis": "^4.28.5",
     "koa": "^2.13.4",
@@ -56,7 +56,6 @@
     "@mikro-orm/cli": "^5.0.5",
     "@mikro-orm/sqlite": "^5.0.5",
     "@shopify/jest-koa-mocks": "^3.1.4",
-    "@types/faker": "^5.5.9",
     "@types/http-errors": "^1.8.2",
     "@types/ioredis": "^4.28.8",
     "@types/jest": "^27.4.1",

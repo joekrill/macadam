@@ -1,5 +1,5 @@
+import { faker } from "@faker-js/faker";
 import { Migration } from "@mikro-orm/migrations";
-import { commerce, datatype, date } from "faker";
 import { v4 } from "uuid";
 
 export class Migration00000000000000 extends Migration {
@@ -30,11 +30,11 @@ export class Migration00000000000000 extends Migration {
               id: v4(),
               created_by: uuid,
               updated_by: uuid,
-              created_at: date.past(),
-              updated_at: date.recent(),
-              name: commerce.productName(),
-              description: commerce.productDescription(),
-              is_public: datatype.boolean(),
+              created_at: faker.date.past(),
+              updated_at: faker.date.recent(),
+              name: faker.commerce.productName(),
+              description: faker.commerce.productDescription(),
+              is_public: faker.datatype.boolean(),
             }))
           )
           .toQuery()

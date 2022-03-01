@@ -2925,6 +2925,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@faker-js/faker@npm:^6.0.0-alpha.7":
+  version: 6.0.0-alpha.7
+  resolution: "@faker-js/faker@npm:6.0.0-alpha.7"
+  checksum: 1322aa3b8c5975fdd7cf826caecde71708bb73d21b3cbcf8dca8ba451398857f3d8c0946b65d5b0927bfddc9b9d71353ce3531264ad9a570948452053ee57f0c
+  languageName: node
+  linkType: hard
+
 "@fastify/ajv-compiler@npm:^1.0.0":
   version: 1.1.0
   resolution: "@fastify/ajv-compiler@npm:1.1.0"
@@ -7392,13 +7399,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/faker@npm:^5.5.9":
-  version: 5.5.9
-  resolution: "@types/faker@npm:5.5.9"
-  checksum: c2cbd082abe29047c89cf29b86257e582d2a177a9d1ed3abf99aa1cc025d5e8a3d201dfaddf8441bfcc57ed43e4da80e666951e1c23a5b759ac441a5855b5c36
-  languageName: node
-  linkType: hard
-
 "@types/favicons@npm:^6.2.2":
   version: 6.2.2
   resolution: "@types/favicons@npm:6.2.2"
@@ -9541,6 +9541,7 @@ __metadata:
   resolution: "api-server@workspace:packages/api-server"
   dependencies:
     "@casl/ability": ^5.4.3
+    "@faker-js/faker": ^6.0.0-alpha.7
     "@koa/cors": ^3.1.0
     "@koa/router": ^10.1.1
     "@mikro-orm/cli": ^5.0.5
@@ -9557,7 +9558,6 @@ __metadata:
     "@ory/kratos-client": 0.8.2-alpha.1
     "@sentry/node": ^6.18.1
     "@shopify/jest-koa-mocks": ^3.1.4
-    "@types/faker": ^5.5.9
     "@types/http-errors": ^1.8.2
     "@types/ioredis": ^4.28.8
     "@types/jest": ^27.4.1
@@ -9573,7 +9573,6 @@ __metadata:
     cross-fetch: ^3.1.5
     deep-map-keys: ^2.0.1
     errorish: ^1.0.0
-    faker: ^5.5.3
     http-errors: ^2.0.0
     ioredis: ^4.28.5
     jest: ^27.5.1
@@ -14634,13 +14633,6 @@ __metadata:
   version: 1.4.0
   resolution: "extsprintf@npm:1.4.0"
   checksum: 184dc8a413eb4b1ff16bdce797340e7ded4d28511d56a1c9afa5a95bcff6ace154063823eaf0206dbbb0d14059d74f382a15c34b7c0636fa74a7e681295eb67e
-  languageName: node
-  linkType: hard
-
-"faker@npm:^5.5.3":
-  version: 5.5.3
-  resolution: "faker@npm:5.5.3"
-  checksum: 684fd64c8d3897e54248f95b4f6319f75d97691b8500cd13adf4af2c28f9204f766c1d1aaa6b41338f0beaaa87256c3132f8708a1a8f189d122b92f6b98081c3
   languageName: node
   linkType: hard
 

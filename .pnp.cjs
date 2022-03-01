@@ -5522,6 +5522,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@faker-js/faker", [
+        ["npm:6.0.0-alpha.7", {
+          "packageLocation": "./.yarn/cache/@faker-js-faker-npm-6.0.0-alpha.7-f615b6dd2f-1322aa3b8c.zip/node_modules/@faker-js/faker/",
+          "packageDependencies": [
+            ["@faker-js/faker", "npm:6.0.0-alpha.7"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@fastify/ajv-compiler", [
         ["npm:1.1.0", {
           "packageLocation": "./.yarn/cache/@fastify-ajv-compiler-npm-1.1.0-8f156239a8-b8a2522ead.zip/node_modules/@fastify/ajv-compiler/",
@@ -12642,15 +12651,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["@types/faker", [
-        ["npm:5.5.9", {
-          "packageLocation": "./.yarn/cache/@types-faker-npm-5.5.9-2ce4f59dc2-c2cbd082ab.zip/node_modules/@types/faker/",
-          "packageDependencies": [
-            ["@types/faker", "npm:5.5.9"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["@types/favicons", [
         ["npm:6.2.2", {
           "packageLocation": "./.yarn/cache/@types-favicons-npm-6.2.2-baf7383103-0bf89d061b.zip/node_modules/@types/favicons/",
@@ -15353,6 +15353,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["api-server", "workspace:packages/api-server"],
             ["@casl/ability", "npm:5.4.3"],
+            ["@faker-js/faker", "npm:6.0.0-alpha.7"],
             ["@koa/cors", "npm:3.1.0"],
             ["@koa/router", "npm:10.1.1"],
             ["@mikro-orm/cli", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:5.0.5"],
@@ -15369,7 +15370,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@ory/kratos-client", "npm:0.8.2-alpha.1"],
             ["@sentry/node", "npm:6.18.1"],
             ["@shopify/jest-koa-mocks", "npm:3.1.4"],
-            ["@types/faker", "npm:5.5.9"],
             ["@types/http-errors", "npm:1.8.2"],
             ["@types/ioredis", "npm:4.28.8"],
             ["@types/jest", "npm:27.4.1"],
@@ -15385,7 +15385,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cross-fetch", "npm:3.1.5"],
             ["deep-map-keys", "npm:2.0.1"],
             ["errorish", "npm:1.0.0"],
-            ["faker", "npm:5.5.3"],
             ["http-errors", "npm:2.0.0"],
             ["ioredis", "npm:4.28.5"],
             ["jest", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:27.5.1"],
@@ -21732,15 +21731,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/extsprintf-npm-1.4.0-2b015bcaab-184dc8a413.zip/node_modules/extsprintf/",
           "packageDependencies": [
             ["extsprintf", "npm:1.4.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["faker", [
-        ["npm:5.5.3", {
-          "packageLocation": "./.yarn/cache/faker-npm-5.5.3-541ce97798-684fd64c8d.zip/node_modules/faker/",
-          "packageDependencies": [
-            ["faker", "npm:5.5.3"]
           ],
           "linkType": "HARD",
         }]

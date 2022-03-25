@@ -20,7 +20,9 @@ export const useNodeLabel = (node: UiNodeInput) => {
     // For "password_identifier" kratos uses  a generic "ID" label. We have
     // kratos configured to always use an email address as an ID so it's
     // better to show that label here instead.
-    case "password_identifier": {
+    case "password_identifier":
+    // `password_identifier` was renamed to `identifier` in v0.9
+    case "identifier": {
       return formatMessage({
         id: "auth.selfServiceUi.emailNode.label",
         defaultMessage: "E-Mail",

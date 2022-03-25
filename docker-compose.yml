@@ -14,7 +14,7 @@ x-service-defaults: &service-defaults
 
 x-kratos-defaults: &kratos-defaults
   <<: *service-defaults
-  image: oryd/kratos:v0.8.2-alpha.1
+  image: oryd/kratos:v0.9
   depends_on:
     - postgres
   environment:
@@ -28,7 +28,7 @@ x-kratos-defaults: &kratos-defaults
     SECRETS_COOKIE: PLEASE-CHANGE-ME-I-AM-VERY-INSECURE
     SERVE_PUBLIC_BASE_URL: https://localtest.me/kratos/public
     SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://localtest.me
-    SELFSERVICE_WHITELISTED_RETURN_URLS: https://localtest.me,http://localtest.me
+    SELFSERVICE_ALLOWED_RETURN_URLS: https://localtest.me,http://localtest.me
     SELFSERVICE_FLOWS_ERROR_UI_URL: https://localtest.me/auth-error
     SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://localtest.me/settings
     SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://localtest.me/account/recover

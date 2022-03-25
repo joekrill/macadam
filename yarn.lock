@@ -5292,12 +5292,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ory/kratos-client@npm:0.8.2-alpha.1":
-  version: 0.8.2-alpha.1
-  resolution: "@ory/kratos-client@npm:0.8.2-alpha.1"
+"@ory/kratos-client@npm:0.9.0-alpha.3":
+  version: 0.9.0-alpha.3
+  resolution: "@ory/kratos-client@npm:0.9.0-alpha.3"
   dependencies:
-    axios: ^0.21.1
-  checksum: d103ffdf08f76e565622abda8e748b5d17f9829c727e37a74e50b87b6d86431499b2e2f191ad2b6571202c1dea0455840585734c09b8ed923843aa7ca84f107a
+    axios: ^0.21.4
+  checksum: fe3bb372ae82667c9c50a05816abfb976eb8aeadf2adbbfd7b938562c635592d9f2aa9ee3bdac5e3adad30bb52545742b196a8366f74e046b5f73ba9bf5568fc
   languageName: node
   linkType: hard
 
@@ -9634,7 +9634,7 @@ __metadata:
     "@opentelemetry/instrumentation-koa": ^0.28.1
     "@opentelemetry/metrics": ^0.24.0
     "@opentelemetry/sdk-node": ^0.27.0
-    "@ory/kratos-client": 0.8.2-alpha.1
+    "@ory/kratos-client": 0.9.0-alpha.3
     "@sentry/node": ^6.19.2
     "@shopify/jest-koa-mocks": ^3.1.5
     "@types/http-errors": ^1.8.2
@@ -10103,12 +10103,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.21.1":
-  version: 0.21.1
-  resolution: "axios@npm:0.21.1"
+"axios@npm:^0.21.4":
+  version: 0.21.4
+  resolution: "axios@npm:0.21.4"
   dependencies:
-    follow-redirects: ^1.10.0
-  checksum: c87915fa0b18c15c63350112b6b3563a3e2ae524d7707de0a73d2e065e0d30c5d3da8563037bc29d4cc1b7424b5a350cb7274fa52525c6c04a615fe561c6ab11
+    follow-redirects: ^1.14.0
+  checksum: 44245f24ac971e7458f3120c92f9d66d1fc695e8b97019139de5b0cc65d9b8104647db01e5f46917728edfc0cfd88eb30fc4c55e6053eef4ace76768ce95ff3c
   languageName: node
   linkType: hard
 
@@ -15199,13 +15199,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.10.0":
+"follow-redirects@npm:^1.0.0":
   version: 1.14.2
   resolution: "follow-redirects@npm:1.14.2"
   peerDependenciesMeta:
     debug:
       optional: true
   checksum: 53195df4a2f36202177f40a2d59d497d630f3b20e2e51e2b697ee5f9c0a5261985f164b23d3744a574e117618af668d07c0d000c2c5cb0c1546851671585ac4e
+  languageName: node
+  linkType: hard
+
+"follow-redirects@npm:^1.14.0":
+  version: 1.14.9
+  resolution: "follow-redirects@npm:1.14.9"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: f5982e0eb481818642492d3ca35a86989c98af1128b8e1a62911a3410621bc15d2b079e8170b35b19d3bdee770b73ed431a257ed86195af773771145baa57845
   languageName: node
   linkType: hard
 

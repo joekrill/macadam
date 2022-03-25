@@ -14,7 +14,7 @@ serve:
 
 selfservice:
   default_browser_return_url: http://localhost:4455/
-  whitelisted_return_urls:
+  allowed_return_urls:
     - https://localhost/
     - https://localtest.me
 
@@ -54,7 +54,7 @@ selfservice:
             provider: microsoft
             client_id: "REPLACE_ME"
             client_secret: "REPLACE_ME"
-            tenant: consumers
+            microsoft_tenant: consumers
             mapper_url: file:///etc/config/kratos/oidc.microsoft.jsonnet
             scope:
               - profile
@@ -164,9 +164,12 @@ hashers:
     key_length: 16
 
 identity:
-  # Be sure to update the `traitsSchema` on the client to reflect any changes to
-  # the identity schema(s): `packages/client-web/src/features/identity/schemas/identity.ts`
-  default_schema_url: file:///etc/config/kratos/identity.schema.json
+  default_schema_id: user_v1
+  schemas:
+    - id: user_v1
+      # Be sure to update the `traitsSchema` on the client to reflect any changes to
+      # the identity schema(s): `packages/client-web/src/features/identity/schemas/identity.ts`
+      url: file:///etc/config/kratos/user_v1.schema.json
 
 session:
   cookie:

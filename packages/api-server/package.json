@@ -21,8 +21,8 @@
   },
   "dependencies": {
     "@casl/ability": "^5.4.3",
-    "@faker-js/faker": "^6.0.0",
-    "@koa/cors": "^3.2.0",
+    "@faker-js/faker": "^6.1.1",
+    "@koa/cors": "^3.3.0",
     "@koa/router": "^10.1.1",
     "@mikro-orm/core": "^5.1.1",
     "@mikro-orm/migrations": "^5.1.1",
@@ -34,7 +34,7 @@
     "@opentelemetry/metrics": "^0.24.0",
     "@opentelemetry/sdk-node": "^0.27.0",
     "@ory/kratos-client": "0.9.0-alpha.3",
-    "@sentry/node": "^6.19.2",
+    "@sentry/node": "^6.19.3",
     "cross-fetch": "^3.1.5",
     "deep-map-keys": "^2.0.1",
     "errorish": "^1.0.0",
@@ -50,7 +50,7 @@
     "prom-client": "^14.0.1",
     "rate-limiter-flexible": "^2.3.6",
     "uuid": "^8.3.2",
-    "zod": "^3.14.2"
+    "zod": "^3.14.3"
   },
   "devDependencies": {
     "@mikro-orm/cli": "^5.1.1",

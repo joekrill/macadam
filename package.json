@@ -9,7 +9,7 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@yarnpkg/pnpify": "^3.1.1",
     "eslint": "^7.32.0",
     "eslint-config-react-app": "^7.0.0",

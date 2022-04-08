@@ -16,7 +16,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "prettier": "2.6.2",
-    "typescript": "^4.5.5"
+    "typescript": "^4.6.3"
   },
   "scripts": {
     "postinstall": "husky install",
@@ -47,5 +47,5 @@
       "unplugged": true
     }
   },
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.2.0"
 }

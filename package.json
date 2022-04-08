@@ -6,7 +6,8 @@
   "license": "UNLICENSED",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/api-server",
+    "packages/client-web"
   ],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.18.0",

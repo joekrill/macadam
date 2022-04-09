@@ -10,5 +10,8 @@ tmp
 # Static storybook builds
 storybook-static/
 
-#
+# Auto-generated i18n packages
 packages/client-web/src/features/i18n/messages/
+
+# Expo cache 
+packages/client-mobile/.expo

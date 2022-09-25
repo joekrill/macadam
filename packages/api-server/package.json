@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@mikro-orm/cli": "^5.1.1",
-    "@mikro-orm/sqlite": "^5.1.1",
+    "@mikro-orm/sqlite": "^5.4.2",
     "@shopify/jest-koa-mocks": "^3.1.5",
     "@types/http-errors": "^1.8.2",
     "@types/ioredis": "^4.28.10",
@@ -71,6 +71,7 @@
     "jest": "^27.5.1",
     "jest-mock-axios": "^4.5.0",
     "nodemon": "^2.0.15",
+    "sqlite3": "5.1.1",
     "supertest": "^6.2.2",
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",

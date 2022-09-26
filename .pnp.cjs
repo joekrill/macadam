@@ -13423,10 +13423,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:16.11.61", {\
-          "packageLocation": "./.yarn/cache/@types-node-npm-16.11.61-5ff930623b-fc5187de72.zip/node_modules/@types/node/",\
+        ["npm:16.11.62", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-16.11.62-64c7645514-7086105ded.zip/node_modules/@types/node/",\
           "packageDependencies": [\
-            ["@types/node", "npm:16.11.61"]\
+            ["@types/node", "npm:16.11.62"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -15761,7 +15761,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/koa-compose", "npm:3.2.5"],\
             ["@types/koa__cors", "npm:3.3.0"],\
             ["@types/koa__router", "npm:12.0.0"],\
-            ["@types/node", "npm:16.11.61"],\
+            ["@types/node", "npm:16.11.62"],\
             ["@types/nodemailer", "npm:6.4.6"],\
             ["@types/pino", "npm:7.0.5"],\
             ["@types/supertest", "npm:2.0.12"],\
@@ -18266,7 +18266,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/user-event", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:13.5.0"],\
             ["@types/favicons", "npm:7.0.0"],\
             ["@types/jest", "npm:29.0.3"],\
-            ["@types/node", "npm:16.11.61"],\
+            ["@types/node", "npm:16.11.62"],\
             ["@types/prettier", "npm:2.7.1"],\
             ["@types/react", "npm:17.0.50"],\
             ["@types/react-dom", "npm:17.0.17"],\
@@ -37892,7 +37892,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node12", "npm:1.0.8"],\
             ["@tsconfig/node14", "npm:1.0.1"],\
             ["@tsconfig/node16", "npm:1.0.2"],\
-            ["@types/node", "npm:16.11.61"],\
+            ["@types/node", "npm:16.11.62"],\
             ["@types/swc__core", null],\
             ["@types/swc__wasm", null],\
             ["@types/typescript", null],\

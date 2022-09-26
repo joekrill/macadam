@@ -22,7 +22,7 @@ export class Thing extends UuidEntity {
   public name!: string;
 
   @Property({ nullable: true })
-  public description?: string;
+  public description?: string | null;
 
   @Property({ default: true })
   public isPublic: boolean = false;

@@ -1,14 +1,15 @@
+import { AbstractSqlDriver, SqlEntityManager } from "@mikro-orm/postgresql";
 import { V0alpha2Api } from "@ory/kratos-client";
 import pino from "pino";
 import request from "supertest";
 import { createApp } from "../../../app";
 import { Thing } from "../../../features/db/entities/Thing";
 
-let app: Awaited<ReturnType<typeof createApp>>;
-
 jest.mock("@ory/kratos-client");
 jest.unmock("@mikro-orm/migrations");
 
+let app: Awaited<ReturnType<typeof createApp>>;
+let em: SqlEntityManager<AbstractSqlDriver>;
 const V0alpha2ApiMock = V0alpha2Api as jest.Mock<V0alpha2Api>;
 
 const initApp = async ({ identityId }: { identityId?: string } = {}) => {
@@ -47,8 +48,10 @@ const initApp = async ({ identityId }: { identityId?: string } = {}) => {
   });
   await app.context.db.orm.getMigrator().up();
 
+  em = app.context.db.orm.em.fork();
+
   // Remove any test data
-  await app.context.db.orm.em.nativeDelete("Thing", {}, { filters: false });
+  await em.nativeDelete("Thing", {}, { filters: false });
 };
 
 describe("authenticated", () => {
@@ -75,14 +78,12 @@ describe("authenticated", () => {
 
     describe("when there are things", () => {
       beforeEach(async () => {
-        app.context.db.orm.em
-          .persist([
-            new Thing("123", "Item 1"),
-            new Thing("123", "Item 2"),
-            new Thing("123", "Item 3"),
-            new Thing("123", "Item 4"),
-          ])
-          .flush();
+        em.persist([
+          new Thing("123", "Item 1"),
+          new Thing("123", "Item 2"),
+          new Thing("123", "Item 3"),
+          new Thing("123", "Item 4"),
+        ]).flush();
       });
 
       it("returns all things", async () => {
@@ -103,11 +104,9 @@ describe("authenticated", () => {
 
     describe("paging", () => {
       beforeEach(async () => {
-        app.context.db.orm.em
-          .persist(
-            Array.from({ length: 35 }, (_, i) => new Thing("123", `Item ${i}`))
-          )
-          .flush();
+        em.persist(
+          Array.from({ length: 35 }, (_, i) => new Thing("123", `Item ${i}`))
+        ).flush();
       });
 
       describe.each([
@@ -230,7 +229,7 @@ describe("authenticated", () => {
       ownedThing.isPublic = true;
       unownedThing = new Thing("567", "Item 2");
       unownedThing.isPublic = true;
-      app.context.db.orm.em.persist([ownedThing, unownedThing]).flush();
+      em.persist([ownedThing, unownedThing]).flush();
     });
 
     describe("when it doesn't exist", () => {
@@ -257,7 +256,7 @@ describe("authenticated", () => {
 
       it("deletes the Thing", async () => {
         expect.assertions(1);
-        const count = await app.context.db.orm.em.count(
+        const count = await em.count(
           "Thing",
           {
             id: ownedThing.id,
@@ -292,7 +291,7 @@ describe("authenticated", () => {
       ownedThing.isPublic = true;
       unownedThing = new Thing("567", "Item 2");
       unownedThing.isPublic = true;
-      app.context.db.orm.em.persist([ownedThing, unownedThing]).flush();
+      em.persist([ownedThing, unownedThing]).flush();
     });
 
     describe("when it doesn't exist", () => {
@@ -329,8 +328,8 @@ describe("authenticated", () => {
 
       it("updates the chagned fields", async () => {
         expect.assertions(1);
-        await app.context.db.orm.em.clear();
-        const thing = await app.context.db.orm.em.findOne(
+        await em.clear();
+        const thing = await em.findOne(
           Thing,
           {
             id: ownedThing.id,
@@ -342,7 +341,7 @@ describe("authenticated", () => {
 
       it("does not change other fields", async () => {
         expect.assertions(1);
-        const thing = await app.context.db.orm.em.findOne(
+        const thing = await em.findOne(
           Thing,
           {
             id: ownedThing.id,
@@ -373,7 +372,7 @@ describe("authenticated", () => {
 
     beforeEach(async () => {
       thing = new Thing("123", "Item 2", "A description");
-      app.context.db.orm.em.persist([thing]).flush();
+      em.persist([thing]).flush();
     });
 
     describe("when it doesn't exist", () => {
@@ -409,8 +408,8 @@ describe("authenticated", () => {
 
       it("Replaces all fields", async () => {
         expect.assertions(2);
-        await app.context.db.orm.em.clear();
-        const updated = await app.context.db.orm.em.findOne(
+        await em.clear();
+        const updated = await em.findOne(
           Thing,
           {
             id: thing.id,

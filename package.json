@@ -10,13 +10,13 @@
     "packages/client-web"
   ],
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.18.0",
-    "@yarnpkg/pnpify": "^3.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@yarnpkg/pnpify": "^3.1.5",
     "eslint": "^7.32.0",
-    "eslint-config-react-app": "^7.0.0",
+    "eslint-config-react-app": "^7.0.1",
     "husky": "^7.0.4",
-    "lint-staged": "^12.3.7",
-    "prettier": "2.6.2",
+    "lint-staged": "^12.5.0",
+    "prettier": "2.7.1",
     "typescript": "^4.6.3"
   },
   "scripts": {
@@ -48,5 +48,5 @@
       "unplugged": true
     }
   },
-  "packageManager": "yarn@3.2.0"
+  "packageManager": "yarn@3.2.3"
 }

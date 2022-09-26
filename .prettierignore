@@ -15,3 +15,6 @@ packages/client-web/src/features/i18n/messages/
 
 # Expo cache 
 packages/client-mobile/.expo
+
+# Entity cache
+packages/api-server/temp/

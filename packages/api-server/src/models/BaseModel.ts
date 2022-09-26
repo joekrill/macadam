@@ -1,9 +1,9 @@
 import {
   AssignOptions,
   CreateOptions,
+  EntityClass,
   EntityData,
   EntityDTO,
-  EntityName,
   FilterQuery,
   FindOptions,
   Loaded,
@@ -26,10 +26,10 @@ export interface ModelListOptions<T> {
   findOptions?: FindOptions<T>;
 }
 
-export abstract class BaseModel<T> {
+export abstract class BaseModel<T extends object> {
   constructor(
     readonly ctx: ParameterizedContext,
-    readonly entityName: EntityName<T>
+    readonly entityName: EntityClass<T>
   ) {}
 
   get textSearchFilter(): string | undefined {

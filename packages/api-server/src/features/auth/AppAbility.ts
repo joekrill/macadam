@@ -15,7 +15,9 @@ import { ruleToDbQuery } from "./ruleToDbQuery";
 
 const entities = [...dbEntities, ...kratosEntities] as const;
 
-export type AppSubject = InferSubjects<typeof entities[number], true>;
+export type AppEntity = typeof entities[number];
+
+export type AppSubject = InferSubjects<AppEntity, true>;
 
 export type AppAction = "create" | "read" | "update" | "delete" | "manage";
 
@@ -53,9 +55,10 @@ export class AppAbility extends Ability<AppAbilityTuple> {
     // return true when Array.isArray is called on them, which will not happen
     // when they are Collection<> instances).
 
-    if (Utils.isEntity(subject)) {
+    if (Utils.isEntity<AppEntity>(subject)) {
       return super.relevantRuleFor(
         action,
+        // @ts-ignore TODO: verify this is OK? https://mikro-orm.io/docs/5.0/serializing
         identifySubject(subject.constructor.name, subject.toJSON()),
         ...rest
       );
@@ -69,13 +72,13 @@ export class AppAbility extends Ability<AppAbilityTuple> {
       return super.detectSubjectType(subject);
     }
 
-    if (Utils.isEntity(subject)) {
+    if (Utils.isEntity<AppEntity>(subject)) {
       return subject.constructor.name as ExtractSubjectType<AppSubject>;
     }
 
     if (typeof subject === "function") {
       // A class definition.
-      return subject.name as ExtractSubjectType<AppSubject>;
+      return (subject as Function).name as ExtractSubjectType<AppSubject>;
     }
 
     return super.detectSubjectType(subject);

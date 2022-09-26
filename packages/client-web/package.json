@@ -158,10 +158,10 @@
     ]
   },
   "devDependencies": {
-    "@types/favicons": "^6.2.2",
+    "@types/favicons": "^7.0.0",
     "@types/prettier": "^2.7.1",
     "@types/svgo": "^2.6.4",
-    "favicons": "^6.2.2",
+    "favicons": "^7.0.0",
     "svgo": "^2.8.0"
   },
   "jest": {

@@ -13062,10 +13062,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/formidable", [\
-        ["npm:1.2.5", {\
-          "packageLocation": "./.yarn/cache/@types-formidable-npm-1.2.5-34e2090efa-2e4eea700f.zip/node_modules/@types/formidable/",\
+        ["npm:2.0.5", {\
+          "packageLocation": "./.yarn/cache/@types-formidable-npm-2.0.5-2c70f897be-2de9a08a53.zip/node_modules/@types/formidable/",\
           "packageDependencies": [\
-            ["@types/formidable", "npm:1.2.5"],\
+            ["@types/formidable", "npm:2.0.5"],\
             ["@types/node", "npm:17.0.9"]\
           ],\
           "linkType": "HARD"\
@@ -15777,7 +15777,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:29.0.3"],\
             ["jest-mock-axios", "npm:4.7.0-beta"],\
             ["koa", "npm:2.13.4"],\
-            ["koa-body", "npm:4.2.0"],\
+            ["koa-body", "npm:5.0.0"],\
             ["koa-compose", "npm:4.1.0"],\
             ["koa-helmet", "npm:6.1.0"],\
             ["nodemailer", "npm:6.7.8"],\
@@ -23371,13 +23371,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["formidable", [\
-        ["npm:1.2.6", {\
-          "packageLocation": "./.yarn/cache/formidable-npm-1.2.6-68be5e1519-2b68ed07ba.zip/node_modules/formidable/",\
-          "packageDependencies": [\
-            ["formidable", "npm:1.2.6"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:2.0.1", {\
           "packageLocation": "./.yarn/cache/formidable-npm-2.0.1-b18227215c-b35445444e.zip/node_modules/formidable/",\
           "packageDependencies": [\
@@ -28547,13 +28540,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["koa-body", [\
-        ["npm:4.2.0", {\
-          "packageLocation": "./.yarn/cache/koa-body-npm-4.2.0-0de9888369-8da5eb00eb.zip/node_modules/koa-body/",\
+        ["npm:5.0.0", {\
+          "packageLocation": "./.yarn/cache/koa-body-npm-5.0.0-aab947da66-2fed59a8b9.zip/node_modules/koa-body/",\
           "packageDependencies": [\
-            ["koa-body", "npm:4.2.0"],\
-            ["@types/formidable", "npm:1.2.5"],\
+            ["koa-body", "npm:5.0.0"],\
+            ["@types/formidable", "npm:2.0.5"],\
             ["co-body", "npm:5.2.0"],\
-            ["formidable", "npm:1.2.6"]\
+            ["formidable", "npm:2.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\

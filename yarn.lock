@@ -3016,10 +3016,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@faker-js/faker@npm:^6.3.1":
-  version: 6.3.1
-  resolution: "@faker-js/faker@npm:6.3.1"
-  checksum: 05071e952248f4565218a95b089ef8f616130c6ff914bb416ba7c891f81d123b637c2abe8aa2eb7b207b5d4b8bd9c75c8c2133019d2d11db4176948737a95813
+"@faker-js/faker@npm:^7.5.0":
+  version: 7.5.0
+  resolution: "@faker-js/faker@npm:7.5.0"
+  checksum: 6f2c48a8017d486eddfe2c3e0b743b810bcc948e5dbd1395c44a38471294584636f565cb081517ce90b634f50d8678d1d38d0f7b6b48b7d402e0a2602cf4f2d9
   languageName: node
   linkType: hard
 
@@ -9903,7 +9903,7 @@ __metadata:
   resolution: "api-server@workspace:packages/api-server"
   dependencies:
     "@casl/ability": ^6.3.0
-    "@faker-js/faker": ^6.3.1
+    "@faker-js/faker": ^7.5.0
     "@koa/cors": ^3.4.1
     "@koa/router": ^10.1.1
     "@mikro-orm/cli": ^5.4.2

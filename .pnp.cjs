@@ -5630,10 +5630,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@faker-js/faker", [\
-        ["npm:6.3.1", {\
-          "packageLocation": "./.yarn/cache/@faker-js-faker-npm-6.3.1-445bd52dc0-05071e9522.zip/node_modules/@faker-js/faker/",\
+        ["npm:7.5.0", {\
+          "packageLocation": "./.yarn/cache/@faker-js-faker-npm-7.5.0-1dcb36d85a-6f2c48a801.zip/node_modules/@faker-js/faker/",\
           "packageDependencies": [\
-            ["@faker-js/faker", "npm:6.3.1"]\
+            ["@faker-js/faker", "npm:7.5.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -15704,7 +15704,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["api-server", "workspace:packages/api-server"],\
             ["@casl/ability", "npm:6.3.0"],\
-            ["@faker-js/faker", "npm:6.3.1"],\
+            ["@faker-js/faker", "npm:7.5.0"],\
             ["@koa/cors", "npm:3.4.1"],\
             ["@koa/router", "npm:10.1.1"],\
             ["@mikro-orm/cli", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:5.4.2"],\

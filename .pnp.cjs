@@ -17358,7 +17358,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:5.38.0"],\
             ["date-fns", "npm:2.29.3"],\
             ["dotenv", "npm:16.0.2"],\
-            ["dotenv-expand", "npm:8.0.3"],\
+            ["dotenv-expand", "npm:9.0.0"],\
             ["errorish", "npm:1.0.0"],\
             ["eslint-config-react-app", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:6.0.0"],\
             ["eslint-plugin-flowtype", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:8.0.3"],\
@@ -19507,10 +19507,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:8.0.3", {\
-          "packageLocation": "./.yarn/cache/dotenv-expand-npm-8.0.3-3f30d1947a-128ce90ac8.zip/node_modules/dotenv-expand/",\
+        ["npm:9.0.0", {\
+          "packageLocation": "./.yarn/cache/dotenv-expand-npm-9.0.0-e2238adf15-76f669b87d.zip/node_modules/dotenv-expand/",\
           "packageDependencies": [\
-            ["dotenv-expand", "npm:8.0.3"]\
+            ["dotenv-expand", "npm:9.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\

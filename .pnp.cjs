@@ -7530,10 +7530,31 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.6.22", {\
-          "packageLocation": "./.yarn/__virtual__/@mdx-js-react-virtual-3658cca82c/0/cache/@mdx-js-react-npm-1.6.22-57e4c05c2b-bc84bd514b.zip/node_modules/@mdx-js/react/",\
+        ["npm:2.1.3", {\
+          "packageLocation": "./.yarn/cache/@mdx-js-react-npm-2.1.3-d21fab32c1-206124b74b.zip/node_modules/@mdx-js/react/",\
           "packageDependencies": [\
-            ["@mdx-js/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.6.22"],\
+            ["@mdx-js/react", "npm:2.1.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:979b05e38609d6ff9b53dbaeb244ecf18ccf2f5bb06ce77de76356411a8ddaefeb29bb7e755a7c1e3d193520f0647433b714e0dac036105c35154efa2a686072#npm:1.6.22", {\
+          "packageLocation": "./.yarn/__virtual__/@mdx-js-react-virtual-0fd9e6de84/0/cache/@mdx-js-react-npm-1.6.22-57e4c05c2b-bc84bd514b.zip/node_modules/@mdx-js/react/",\
+          "packageDependencies": [\
+            ["@mdx-js/react", "virtual:979b05e38609d6ff9b53dbaeb244ecf18ccf2f5bb06ce77de76356411a8ddaefeb29bb7e755a7c1e3d193520f0647433b714e0dac036105c35154efa2a686072#npm:1.6.22"],\
+            ["@types/react", "npm:17.0.50"],\
+            ["react", "npm:17.0.2"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:2.1.3", {\
+          "packageLocation": "./.yarn/__virtual__/@mdx-js-react-virtual-40662a2f45/0/cache/@mdx-js-react-npm-2.1.3-d21fab32c1-206124b74b.zip/node_modules/@mdx-js/react/",\
+          "packageDependencies": [\
+            ["@mdx-js/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:2.1.3"],\
+            ["@types/mdx", "npm:2.0.2"],\
             ["@types/react", "npm:17.0.50"],\
             ["react", "npm:17.0.2"]\
           ],\
@@ -10356,7 +10377,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@jest/transform", "npm:26.6.2"],\
             ["@mdx-js/loader", "npm:1.6.22"],\
             ["@mdx-js/mdx", "npm:1.6.22"],\
-            ["@mdx-js/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.6.22"],\
+            ["@mdx-js/react", "virtual:979b05e38609d6ff9b53dbaeb244ecf18ccf2f5bb06ce77de76356411a8ddaefeb29bb7e755a7c1e3d193520f0647433b714e0dac036105c35154efa2a686072#npm:1.6.22"],\
             ["@storybook/addons", "virtual:0340dd3b7be8b5f51f6faa51bda0343b0c4c4d764d9823cde80afe3243278aa2a9483454a4aa8aa050eaf58b02fc0df565d0d80020b8e8f16689d003371a0cda#npm:6.4.20"],\
             ["@storybook/angular", null],\
             ["@storybook/api", "virtual:0340dd3b7be8b5f51f6faa51bda0343b0c4c4d764d9823cde80afe3243278aa2a9483454a4aa8aa050eaf58b02fc0df565d0d80020b8e8f16689d003371a0cda#npm:6.4.20"],\
@@ -10467,7 +10488,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@jest/transform", "npm:26.6.2"],\
             ["@mdx-js/loader", "npm:1.6.22"],\
             ["@mdx-js/mdx", "npm:1.6.22"],\
-            ["@mdx-js/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.6.22"],\
+            ["@mdx-js/react", "virtual:979b05e38609d6ff9b53dbaeb244ecf18ccf2f5bb06ce77de76356411a8ddaefeb29bb7e755a7c1e3d193520f0647433b714e0dac036105c35154efa2a686072#npm:1.6.22"],\
             ["@storybook/addons", "virtual:0340dd3b7be8b5f51f6faa51bda0343b0c4c4d764d9823cde80afe3243278aa2a9483454a4aa8aa050eaf58b02fc0df565d0d80020b8e8f16689d003371a0cda#npm:6.4.20"],\
             ["@storybook/angular", null],\
             ["@storybook/api", "virtual:0340dd3b7be8b5f51f6faa51bda0343b0c4c4d764d9823cde80afe3243278aa2a9483454a4aa8aa050eaf58b02fc0df565d0d80020b8e8f16689d003371a0cda#npm:6.4.20"],\
@@ -13334,6 +13355,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@types/mdast", "npm:3.0.3"],\
             ["@types/unist", "npm:2.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/mdx", [\
+        ["npm:2.0.2", {\
+          "packageLocation": "./.yarn/cache/@types-mdx-npm-2.0.2-ea48d093ad-a10b789460.zip/node_modules/@types/mdx/",\
+          "packageDependencies": [\
+            ["@types/mdx", "npm:2.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -18217,7 +18247,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@formatjs/intl-pluralrules", "npm:5.1.3"],\
             ["@formatjs/intl-relativetimeformat", "npm:11.1.3"],\
             ["@hookform/resolvers", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:2.9.8"],\
-            ["@mdx-js/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.6.22"],\
+            ["@mdx-js/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:2.1.3"],\
             ["@reduxjs/toolkit", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.8.5"],\
             ["@sentry/integrations", "npm:7.13.0"],\
             ["@sentry/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:7.13.0"],\

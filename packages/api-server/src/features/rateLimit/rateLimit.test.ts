@@ -27,7 +27,7 @@ describe("rateLimit", () => {
   describe("initialization", () => {
     describe("when a redis instance is available", () => {
       beforeEach(async () => {
-        const redisMock = jest.fn<IORedis.Redis, any>(() => new IORedis());
+        const redisMock = jest.fn<IORedis, any>(() => new IORedis());
         contextMock = createMockContext({
           customProperties: { redis: redisMock },
         });

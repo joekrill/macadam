@@ -2,7 +2,7 @@ import IORedis from "ioredis";
 import Koa from "koa";
 
 export interface RedisContext {
-  redis?: IORedis.Redis;
+  redis?: IORedis;
 }
 
 export interface InitializeRedisOptions {
@@ -17,7 +17,7 @@ export const initializeRedis = async (
   app: Koa,
   { url }: InitializeRedisOptions
 ) => {
-  const redis = IORedis(url);
+  const redis = new IORedis(url);
   app.context.logger.debug("Redis connecting");
   await redis.connect();
   app.context.logger.debug("Redis connected");

@@ -9,7 +9,7 @@ import {
 } from "rate-limiter-flexible";
 
 export interface RateLimitOptions extends IRateLimiterOptions {
-  redis?: IORedis.Redis;
+  redis?: IORedis;
 }
 
 /**

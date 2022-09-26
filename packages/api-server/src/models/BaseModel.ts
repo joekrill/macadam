@@ -5,6 +5,7 @@ import {
   EntityData,
   EntityDTO,
   FilterQuery,
+  FindOneOrFailOptions,
   FindOptions,
   Loaded,
   RequiredEntityData,
@@ -102,7 +103,7 @@ export abstract class BaseModel<T extends object> {
     };
   }
 
-  async get(where: FilterQuery<T>, options?: FindOptions<T>) {
+  async get(where: FilterQuery<T>, options?: FindOneOrFailOptions<T>) {
     return this.ctx.state.entityManager!.findOneOrFail(
       this.entityName,
       where,

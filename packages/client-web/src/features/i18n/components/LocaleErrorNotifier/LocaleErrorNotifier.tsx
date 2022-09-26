@@ -1,7 +1,7 @@
 import { useToast } from "@chakra-ui/react";
 import { createContext, ReactNode, useContext, useEffect } from "react";
 import { useIntl } from "react-intl";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../../../app/hooks";
 import { selectLastError } from "../../selectors/selectLastError";
 
 export const LocaleErrorNotifierContext = createContext({
@@ -19,7 +19,7 @@ export const LocaleErrorNotifier = ({ children }: LocaleErrorNotifierProps) => {
   const context = useContext(LocaleErrorNotifierContext);
   const { formatMessage } = useIntl();
   const toast = useToast();
-  const lastError = useSelector((state) => context.selectLastError(state));
+  const lastError = useAppSelector((state) => context.selectLastError(state));
 
   useEffect(() => {
     if (lastError) {

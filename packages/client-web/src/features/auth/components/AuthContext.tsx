@@ -1,6 +1,6 @@
 import { Ability } from "@casl/ability";
 import { createContext, PropsWithChildren, useContext, useMemo } from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../../app/hooks";
 import { captureException } from "../../monitoring/capture";
 import { selectRules } from "../selectors/selectRules";
 
@@ -9,7 +9,7 @@ export const AuthContext = createContext<Ability>(new Ability());
 export type AuthProviderProps = PropsWithChildren<{}>;
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const rules = useSelector((state) => selectRules(state));
+  const rules = useAppSelector((state) => selectRules(state));
   const ability = useMemo(() => {
     const ability = new Ability();
     try {

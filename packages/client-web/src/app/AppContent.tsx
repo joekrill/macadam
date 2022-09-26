@@ -1,6 +1,5 @@
 import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
-import { useSelector } from "react-redux";
 import { Route } from "react-router-dom";
 import { VerifyEmailNotificationBanner } from "../features/auth/components/VerifyEmailNotificationBanner/VerifyEmailNotificationBanner";
 import { useSession } from "../features/auth/hooks/useSession";
@@ -17,6 +16,7 @@ import { SettingsPage } from "../features/settings/pages/SettingsPage";
 import { ThingsPage } from "../features/things/components/ThingsPage";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
+import { useAppSelector } from "./hooks";
 import { ContactUs } from "./pages/ContactUs/ContactUs";
 import { Faq } from "./pages/Faq/Faq";
 import { Home } from "./pages/Home/Home";
@@ -31,7 +31,7 @@ import { TermsAndConditions } from "./pages/TermsAndConditions/TermsAndCondition
 export const AppContent = () => {
   const { colorMode } = useColorMode();
   useSession();
-  const pendingVerifiableAddresses = useSelector((s) =>
+  const pendingVerifiableAddresses = useAppSelector((s) =>
     selectPendingVerifiableAddresses(s)
   );
 

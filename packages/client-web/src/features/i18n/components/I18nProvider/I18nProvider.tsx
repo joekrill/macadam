@@ -1,7 +1,6 @@
 import { ReactNode, useEffect } from "react";
 import { IntlProvider } from "react-intl";
-import { useSelector } from "react-redux";
-import { useAppDispatch } from "../../../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import { initializeLocalization } from "../../actions/initializeLocalization";
 import { DEFAULT_LOCALE } from "../../constants";
 import { getMessages } from "../../messages";
@@ -13,7 +12,7 @@ export interface I18nProviderProps {
 }
 
 export const I18nProvider = ({ children }: I18nProviderProps) => {
-  const activeLocale = useSelector((state) => selectActiveLocale(state));
+  const activeLocale = useAppSelector((state) => selectActiveLocale(state));
   const dispatch = useAppDispatch();
 
   useEffect(() => {

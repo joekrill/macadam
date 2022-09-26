@@ -1,8 +1,7 @@
 import { Spinner } from "@chakra-ui/react";
 import { createContext, useContext } from "react";
 import { useIntl } from "react-intl";
-import { useSelector } from "react-redux";
-import { useAppDispatch } from "../../../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import { selectLocale } from "../../actions/selectLocale";
 import { deviceLocaleToken, LocaleCode } from "../../constants";
 import { getLocaleDisplayName } from "../../getLocaleDisplayName";
@@ -26,9 +25,9 @@ export const ActiveLocaleSelect = (props: ActiveLocaleSelectProps) => {
   const { formatMessage } = useIntl();
   const dispatch = useAppDispatch();
   const ctx = useContext(ActiveLocaleSelectContext);
-  const pendingLocale = useSelector((s) => ctx.selectPendingLocale(s));
-  const deviceLocale = useSelector((s) => ctx.selectDeviceLocale(s));
-  const selectedLocale = useSelector((s) => ctx.selectSelectedLocale(s));
+  const pendingLocale = useAppSelector((s) => ctx.selectPendingLocale(s));
+  const deviceLocale = useAppSelector((s) => ctx.selectDeviceLocale(s));
+  const selectedLocale = useAppSelector((s) => ctx.selectSelectedLocale(s));
   const value = pendingLocale || selectedLocale;
 
   return (

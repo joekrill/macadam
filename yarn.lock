@@ -8016,12 +8016,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/koa__cors@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "@types/koa__cors@npm:3.1.1"
+"@types/koa__cors@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "@types/koa__cors@npm:3.3.0"
   dependencies:
     "@types/koa": "*"
-  checksum: 7ef2c09a453383f7813c25657633a3fe1c3321fe5cdd30a5806aa8be61d02f475deeb44a472bae046c48849d4a60165410b3ea0a7b931ed720da02e3f26515f7
+  checksum: c1aeb10b070e72b6c01a2f6abb4b0a936017794ef4eab3469697a4e24ef2054bc371519afa90c8e6c5ea9dbeda58395a64400bd499c3fda207cb593b751b44ca
   languageName: node
   linkType: hard
 
@@ -8034,12 +8034,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/koa__router@npm:^8.0.11":
-  version: 8.0.11
-  resolution: "@types/koa__router@npm:8.0.11"
+"@types/koa__router@npm:^12.0.0":
+  version: 12.0.0
+  resolution: "@types/koa__router@npm:12.0.0"
   dependencies:
     "@types/koa": "*"
-  checksum: 81f55ed77273871728c81a20fa546ee906bebfe72fd72e3723d983a19504eb7d9578908a0fb8ef230764c5495031412df4245eee93479161bd7bd5135ca1ea04
+  checksum: ebfee772f7a9c5ff5e296a24443eb2c288fa2e5b8c60afbb460b41f0bd0d68c8a722fff5984eef7b7d90d057fe6f556171695ea83e2cdbeef3e2462f73c362b7
   languageName: node
   linkType: hard
 
@@ -9945,8 +9945,8 @@ __metadata:
     "@types/jest": ^29.0.3
     "@types/koa": ^2.13.4
     "@types/koa-compose": ^3.2.5
-    "@types/koa__cors": ^3.1.1
-    "@types/koa__router": ^8.0.11
+    "@types/koa__cors": ^3.3.0
+    "@types/koa__router": ^12.0.0
     "@types/node": ^16.11.61
     "@types/nodemailer": ^6.4.6
     "@types/pino": ^7.0.5

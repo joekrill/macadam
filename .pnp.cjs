@@ -7490,15 +7490,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@koa/router", [\
-        ["npm:10.1.1", {\
-          "packageLocation": "./.yarn/cache/@koa-router-npm-10.1.1-a2816a45c1-3475f42355.zip/node_modules/@koa/router/",\
+        ["npm:12.0.0", {\
+          "packageLocation": "./.yarn/cache/@koa-router-npm-12.0.0-005bd8a616-5529629f75.zip/node_modules/@koa/router/",\
           "packageDependencies": [\
-            ["@koa/router", "npm:10.1.1"],\
-            ["debug", "virtual:fd8de37609258cc0a542fd94a84d3a92a7a50fe97add0d0ad2eb2de7df7a01a41d03004536a361279c31772f9825e9f1c1db0cf143d0ea8269bb824c9db84c63#npm:4.3.3"],\
-            ["http-errors", "npm:1.8.1"],\
+            ["@koa/router", "npm:12.0.0"],\
+            ["http-errors", "npm:2.0.0"],\
             ["koa-compose", "npm:4.1.0"],\
             ["methods", "npm:1.1.2"],\
-            ["path-to-regexp", "npm:6.2.0"]\
+            ["path-to-regexp", "npm:6.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -15821,7 +15820,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@casl/ability", "npm:6.3.0"],\
             ["@faker-js/faker", "npm:7.5.0"],\
             ["@koa/cors", "npm:3.4.1"],\
-            ["@koa/router", "npm:10.1.1"],\
+            ["@koa/router", "npm:12.0.0"],\
             ["@mikro-orm/cli", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:5.4.2"],\
             ["@mikro-orm/core", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:5.4.2"],\
             ["@mikro-orm/migrations", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:5.4.2"],\
@@ -31288,10 +31287,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:6.2.0", {\
-          "packageLocation": "./.yarn/cache/path-to-regexp-npm-6.2.0-efbac3c1ff-a6aca74d2d.zip/node_modules/path-to-regexp/",\
+        ["npm:6.2.1", {\
+          "packageLocation": "./.yarn/cache/path-to-regexp-npm-6.2.1-8ebfe03654-f0227af828.zip/node_modules/path-to-regexp/",\
           "packageDependencies": [\
-            ["path-to-regexp", "npm:6.2.0"]\
+            ["path-to-regexp", "npm:6.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\

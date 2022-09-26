@@ -20,7 +20,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@casl/ability": "^5.4.4",
+    "@casl/ability": "^6.3.0",
     "@faker-js/faker": "^6.3.1",
     "@koa/cors": "^3.4.1",
     "@koa/router": "^10.1.1",

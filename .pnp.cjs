@@ -3389,10 +3389,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@casl/ability", [\
-        ["npm:5.4.4", {\
-          "packageLocation": "./.yarn/cache/@casl-ability-npm-5.4.4-ac467f82c2-d7afcf09fd.zip/node_modules/@casl/ability/",\
+        ["npm:6.3.0", {\
+          "packageLocation": "./.yarn/cache/@casl-ability-npm-6.3.0-896993ecf8-8c7e850c7e.zip/node_modules/@casl/ability/",\
           "packageDependencies": [\
-            ["@casl/ability", "npm:5.4.4"],\
+            ["@casl/ability", "npm:6.3.0"],\
             ["@ucast/mongo2js", "npm:1.3.3"]\
           ],\
           "linkType": "HARD"\
@@ -15703,7 +15703,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/api-server/",\
           "packageDependencies": [\
             ["api-server", "workspace:packages/api-server"],\
-            ["@casl/ability", "npm:5.4.4"],\
+            ["@casl/ability", "npm:6.3.0"],\
             ["@faker-js/faker", "npm:6.3.1"],\
             ["@koa/cors", "npm:3.4.1"],\
             ["@koa/router", "npm:10.1.1"],\
@@ -18205,7 +18205,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/client-web/",\
           "packageDependencies": [\
             ["client-web", "workspace:packages/client-web"],\
-            ["@casl/ability", "npm:5.4.4"],\
+            ["@casl/ability", "npm:6.3.0"],\
             ["@chakra-ui/react", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.8.9"],\
             ["@chakra-ui/react-utils", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.2.3"],\
             ["@chakra-ui/system", "virtual:cc5a045dac088faa07e84a6256a135f19d7c11b02cabf90313dc07fcc695e912e891a6492d981a4e021d61d33a6fe8f407e9bd3050670672818866b26b19e11b#npm:1.12.1"],\

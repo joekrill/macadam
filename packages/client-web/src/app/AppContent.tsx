@@ -1,7 +1,7 @@
 import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import { useSelector } from "react-redux";
-import { Route, Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { VerifyEmailNotificationBanner } from "../features/auth/components/VerifyEmailNotificationBanner/VerifyEmailNotificationBanner";
 import { useSession } from "../features/auth/hooks/useSession";
 import { FlowErrorPage } from "../features/auth/pages/FlowErrorPage";
@@ -12,6 +12,7 @@ import { VerificationPage } from "../features/auth/pages/VerificationPage";
 import { selectPendingVerifiableAddresses } from "../features/auth/selectors/selectPendingVerifiableAddresses";
 import { CrashInitiator } from "../features/errors/components/CrashInitiator/CrashInitiator";
 import { NotFoundPage } from "../features/errors/components/NotFoundPage/NotFoundPage";
+import { Routes } from "../features/routing/components/Routes";
 import { SettingsPage } from "../features/settings/pages/SettingsPage";
 import { ThingsPage } from "../features/things/components/ThingsPage";
 import { Footer } from "./components/Footer/Footer";

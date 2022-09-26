@@ -1,6 +1,7 @@
 import { Container } from "@chakra-ui/react";
-import { Route, Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { RequireAuthenticated } from "../../auth/components/RequireAuthenticated";
+import { Routes } from "../../routing/components/Routes";
 import { ThingCreate } from "./ThingCreate";
 import { ThingDetails } from "./ThingDetails";
 import { ThingEdit } from "./ThingEdit";

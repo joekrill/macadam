@@ -3,10 +3,16 @@ import {
   Offline,
   ReportingObserver,
 } from "@sentry/integrations";
+import * as Sentry from "@sentry/react";
 import { defaultIntegrations, init } from "@sentry/react";
 import { Integrations as TracingIntegrations } from "@sentry/tracing";
-import { history } from "../routing/history";
-import { historyRoutingInstrumentation } from "./historyRoutingInstrumentation";
+import { useEffect } from "react";
+import {
+  createRoutesFromChildren,
+  matchRoutes,
+  useLocation,
+  useNavigationType,
+} from "react-router-dom";
 
 const IS_DEVELOPMENT_ENV = process.env.NODE_ENV === "development";
 
@@ -29,7 +35,13 @@ init({
     ...defaultIntegrations,
 
     new TracingIntegrations.BrowserTracing({
-      routingInstrumentation: historyRoutingInstrumentation(history),
+      routingInstrumentation: Sentry.reactRouterV6Instrumentation(
+        useEffect,
+        useLocation,
+        useNavigationType,
+        createRoutesFromChildren,
+        matchRoutes
+      ),
       tracingOrigins: [`${origin || hostname}/api/`],
     }),
 

@@ -49,13 +49,16 @@ export const initializeSentry = (
     (err, ctx: ParameterizedContext<DefaultState, DefaultContext>) => {
       Sentry.withScope((scope) => {
         scope.addEventProcessor((event) => {
-          // For the *most* part `parseRequest` can add many event details,
+          // For the *most* part `addRequestDataToEvent` can add many event details,
           // but it's actually built with `express` in mind, not Koa, so
           // we can use it, but we need to augment it with some addtional data
           // that it can't extract (ip address, user)
-          Sentry.Handlers.parseRequest(event, ctx.request, {
-            user: false,
-            ip: false,
+          const request = ctx.request as Sentry.CrossPlatformRequest;
+          Sentry.addRequestDataToEvent(event, request, {
+            include: {
+              user: false,
+              ip: false,
+            },
           });
 
           if (ctx.ip) {

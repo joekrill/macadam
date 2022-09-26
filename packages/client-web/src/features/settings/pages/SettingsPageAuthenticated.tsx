@@ -1,15 +1,11 @@
 import { Box, Container } from "@chakra-ui/react";
 import { FormattedMessage } from "react-intl";
-import {
-  Link as ReactRouterLink,
-  Route,
-  Routes,
-  useMatch,
-} from "react-router-dom";
+import { Link as ReactRouterLink, Route, useMatch } from "react-router-dom";
 import { SettingsPage as ProfileSettingsPage } from "../../auth/pages/SettingsPage";
 import { Card } from "../../common/components/Card/Card";
 import { Sidebar } from "../../common/components/Sidebar/Sidebar";
 import { SidebarNavItem } from "../../common/components/Sidebar/SidebarNavItem";
+import { Routes } from "../../routing/components/Routes";
 import { SessionsList } from "../../sessions/components/SessionsList";
 import { AppPreferences } from "../components/AppPreferences/AppPreferences";
 

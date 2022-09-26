@@ -17391,7 +17391,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["svgo", "npm:2.8.0"],\
             ["ts-node", "virtual:7bcc6b1230a343dc18339ffd5a4631c208b3afc3a703ea7702b7d517c258b65faf0e046f48b9a221c1acaed2cd24595ab25a0bccda44dbb3b9f5e63052a5ec85#npm:10.9.1"],\
             ["typescript", "patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=a1c5e5"],\
-            ["web-vitals", "npm:2.1.4"],\
+            ["web-vitals", "npm:3.0.2"],\
             ["zod", "npm:3.19.1"]\
           ],\
           "linkType": "SOFT"\
@@ -37589,10 +37589,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["web-vitals", [\
-        ["npm:2.1.4", {\
-          "packageLocation": "./.yarn/cache/web-vitals-npm-2.1.4-68bdd9ecb2-03d3f47dbf.zip/node_modules/web-vitals/",\
+        ["npm:3.0.2", {\
+          "packageLocation": "./.yarn/cache/web-vitals-npm-3.0.2-5fa1262f5f-012256fde3.zip/node_modules/web-vitals/",\
           "packageDependencies": [\
-            ["web-vitals", "npm:2.1.4"]\
+            ["web-vitals", "npm:3.0.2"]\
           ],\
           "linkType": "HARD"\
         }]\

@@ -7490,7 +7490,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:*, @types/eslint@npm:^7.29.0 || ^8.4.1, @types/eslint@npm:^8":
+"@types/eslint@npm:*, @types/eslint@npm:^7.29.0 || ^8.4.1, @types/eslint@npm:^8.4.6":
   version: 8.4.6
   resolution: "@types/eslint@npm:8.4.6"
   dependencies:
@@ -11337,7 +11337,7 @@ __metadata:
     "@testing-library/react": ^13.4.0
     "@testing-library/user-event": ^14.4.3
     "@tsconfig/node18-strictest": ^1.0.0
-    "@types/eslint": ^8
+    "@types/eslint": ^8.4.6
     "@types/favicons": ^7.0.0
     "@types/jest": ^29.0.3
     "@types/node": ^18.7.23

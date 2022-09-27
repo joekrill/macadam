@@ -169,7 +169,7 @@
     "@storybook/manager-webpack5": "^6.5.12",
     "@storybook/mdx2-csf": "^0.0.3",
     "@tsconfig/node18-strictest": "^1.0.0",
-    "@types/eslint": "^8",
+    "@types/eslint": "^8.4.6",
     "@types/favicons": "^7.0.0",
     "@types/prettier": "^2.7.1",
     "@types/svgo": "^2.6.4",

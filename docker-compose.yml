@@ -6,6 +6,10 @@ networks:
 volumes:
   postgres_data:
   mail_data:
+  prometheus_data:
+  grafana_data:
+  clickhouse_data:
+  geoip_data:
 
 x-service-defaults: &service-defaults
   restart: unless-stopped
@@ -61,7 +65,7 @@ x-api-server-defaults: &api-server-defaults
     # Key should match API_PROJECT_KEY in `seed_macadam.py` with dashes stripped
     SENTRY_DSN: https://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip.localtest.me/2
     # If we tunnel glitchtip requests, make sure they are mapped to the correct internal URL
-    SENTRY_TUNNELABLE_DSNS: "https://239d589a58d24675be8159b19718b22e@glitchtip.localtest.me/1::http://glitchtip-web:8000/1"
+    SENTRY_TUNNELABLE_DSNS: "https://239d589a58d24675be8159b19718b22e@glitchtip.localtest.me/1::http://glitchtip.localtest.me/1"
     SMTP_MAIL_TO: contact@macadam.com
     SMTP_URI: smtp://mail:1025/?disable_starttls=true
   volumes:
@@ -162,11 +166,14 @@ services:
     # Uncomment to expose client-web directly
     # ports:
     #   - 3000:3000
+    command: ["yarn", "workspace", "client-web", "run", "start:legacy"]
     environment:
-      # Key should WEB_PROJECT_KEY in `seed_macadam.py` with dashes stripped
+      # Key should match WEB_PROJECT_KEY in `seed_macadam.py` with dashes stripped
       REACT_APP_SENTRY_DSN: "https://239d589a58d24675be8159b19718b22e@glitchtip.localtest.me/1"
       REACT_APP_SENTRY_TUNNEL: "/api/v1/monitor"
+      REACT_APP_PLAUSIBLE_HOST: https://plausible.localtest.me
       DISABLE_ESLINT_PLUGIN: "true"
+      WDS_SOCKET_PORT: 443
     build:
       context: .
       dockerfile: ./packages/client-web/dev.Dockerfile
@@ -175,10 +182,208 @@ services:
         source: .
         target: /var/macadam
 
-  # When we don't have an actual glitchtip instance running, we just "swallow"
-  # the requests using this echo server.
-  glitchtip-web:
+  client-web-storybook:
+    <<: *service-defaults
+    profiles: ["storybook"]
+    ports:
+      - 6006:6006
+    build:
+      context: .
+      dockerfile: ./packages/client-web/dev.Dockerfile
+    command: ["yarn", "workspace", "client-web", "run", "storybook"]
+    volumes:
+      - type: bind
+        source: .
+        target: /var/macadam
+
+  # Used as a general purpose endpoint to "swallow" requests, for example we
+  # point our glitchtip URL to this when we don't have an actual glitchtip
+  # service running.
+  echo:
     <<: *service-defaults
     image: jmalloc/echo-server
     environment:
+      PORT: 80
+
+  prometheus:
+    <<: *service-defaults
+    profiles: ["metrics"]
+    image: prom/prometheus:v2.28.0
+    volumes:
+      - ./services/prometheus:/etc/prometheus/
+      - prometheus_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/etc/prometheus/console_libraries"
+      - "--web.console.templates=/etc/prometheus/consoles"
+      - "--storage.tsdb.retention.time=200h"
+      - "--web.enable-lifecycle"
+    labels:
+      org.label-schema.group: "monitoring"
+
+  grafana:
+    <<: *service-defaults
+    profiles: ["metrics"]
+    image: grafana/grafana:8.2.0
+    depends_on:
+      - prometheus
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./services/grafana/provisioning:/etc/grafana/provisioning
+    environment:
+      - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin!}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    labels:
+      org.label-schema.group: "monitoring"
+
+  # alertmanager:
+  #   profiles: ["metrics"]
+  #   image: prom/alertmanager:v0.21.0
+  #   volumes:
+  #     - ./services/alertmanager:/etc/alertmanager
+  #   command:
+  #     - "--config.file=/etc/alertmanager/config.yml"
+  #     - "--storage.path=/alertmanager"
+  #   restart: unless-stopped
+  #   # expose:
+  #   #   - 9093
+  #   labels:
+  #     org.label-schema.group: "monitoring"
+
+  # nodeexporter:
+  #   profiles: ["metrics"]
+  #   image: prom/node-exporter:v1.0.1
+  #   volumes:
+  #     - /proc:/host/proc:ro
+  #     - /sys:/host/sys:ro
+  #     - /:/rootfs:ro
+  #   command:
+  #     - "--path.procfs=/host/proc"
+  #     - "--path.rootfs=/rootfs"
+  #     - "--path.sysfs=/host/sys"
+  #     - "--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)"
+  #   restart: unless-stopped
+  #   labels:
+  #     org.label-schema.group: "monitoring"
+
+  postgres-exporter:
+    <<: *service-defaults
+    profiles: ["metrics"]
+    image: wrouesnel/postgres_exporter:v0.8.0
+    environment:
+      DATA_SOURCE_NAME: postgres://macadam:macadam!@postgres:5432/macadam?sslmode=disable
+    labels:
+      org.label-schema.group: "monitoring"
+
+  clickhouse:
+    <<: *service-defaults
+    profiles: ["analytics"]
+    # image: yandex/clickhouse-server:21.3
+    # Use this image if running on ARM64 (i.e. Mac M1) until a multi-arch image
+    # is available from yandex: https://github.com/ClickHouse/ClickHouse/issues/22222
+    image: altinity/clickhouse-server:21.6.1.6734-testing-arm
+    environment:
+      CLICKHOUSE_DB: plausible
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - ./services/clickhouse/clickhouse-config.xml:/etc/clickhouse-server/config.d/logging.xml:ro
+      - ./services/clickhouse/clickhouse-user-config.xml:/etc/clickhouse-server/users.d/logging.xml:ro
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+
+  geoip:
+    <<: *service-defaults
+    profiles: ["analytics"]
+    image: maxmindinc/geoipupdate
+    environment:
+      GEOIPUPDATE_EDITION_IDS: GeoLite2-Country
+      GEOIPUPDATE_FREQUENCY: 168 # update every 7 days
+      GEOIPUPDATE_ACCOUNT_ID:
+      GEOIPUPDATE_LICENSE_KEY:
+    volumes:
+      - geoip_data:/usr/share/GeoIP
+
+  plausible:
+    <<: *service-defaults
+    profiles: ["analytics"]
+    image: plausible/analytics:v1.3
+    command: sh -c "sleep 10 && /entrypoint.sh db migrate && /entrypoint.sh db init-admin && /entrypoint.sh run"
+    depends_on:
+      - postgres
+      - clickhouse
+      - mail
+      - geoip
+    environment:
+      ADMIN_USER_EMAIL: macadam@example.com
+      ADMIN_USER_NAME: macadam
+      ADMIN_USER_PWD: macadam!
+      DISABLE_AUTH: "true"
+      BASE_URL: https://plausible.localtest.me
+      SECRET_KEY_BASE: USbJSimhObRflMa+UC8iku9Iqhpr1RtPeLaEl8uuJpI44X+zoha1L9Jeo/7dgKUMZtMTGnDTsgYfYxcQ40ZSAA==
+      DATABASE_URL: postgresql://plausible:plausible!@postgres:5432/plausible
+      CLICKHOUSE_DATABASE_URL: http://clickhouse:8123/plausible
+      SMTP_HOST_ADDR: mail
+      SMTP_HOST_PORT: 1025
+      GEOLITE2_COUNTRY_DB: /geoip/GeoLite2-Country.mmdb
+    volumes:
+      - geoip_data:/geoip:ro
+
+  glitchtip-migrate:
+    <<: *service-defaults
+    profiles: ["error-tracking"]
+    image: glitchtip/glitchtip
+    depends_on:
+      - postgres
+      - redis
+    command: bash -c "./manage.py migrate && ./manage.py seed_macadam"
+    restart: on-failure
+    volumes:
+      - ./services/glitchtip/commands/seed_macadam.py:/code/glitchtip/management/commands/seed_macadam.py
+    environment:
+      DATABASE_URL: postgresql://glitchtip:glitchtip!@postgres:5432/glitchtip
+      SECRET_KEY: change_me
+
+  glitchtip-web:
+    <<: *service-defaults
+    profiles: ["error-tracking"]
+    # NOTE: On AMD64 you will be spamemd with messages like:
+    # "*** uWSGI listen queue of socket ":8000" (fd: 3) full !!! (26472960/64) ***"
+    # I can't figure out how to fix this. Rebuilding the docker image fails on
+    # AMD64 when installing symbolic (see: https://github.com/getsentry/symbolic/issues/76).
+    # There seems to be no other adverse effects, though, so I've given up on this for now.
+    image: glitchtip/glitchtip
+    depends_on:
+      - glitchtip-migrate
+    deploy:
+      resources:
+        limits:
+          cpus: "0.001"
+          memory: 512M
+        reservations:
+          cpus: "0.0001"
+          memory: 256M
+    environment:
+      DATABASE_URL: postgresql://glitchtip:glitchtip!@postgres:5432/glitchtip
+      SECRET_KEY: change_me
+      EMAIL_URL: smtp://mail:1025/?skip_ssl_verify=true
+      DEFAULT_FROM_EMAIL: glitchtip@example.com
+      GLITCHTIP_DOMAIN: https://glitchtip.localtest.me
       PORT: 8000
+      ENABLE_OPEN_USER_REGISTRATION: "true"
+
+  glitchtip-worker:
+    <<: *service-defaults
+    profiles: ["error-tracking"]
+    image: glitchtip/glitchtip
+    command: celery -A glitchtip worker -B -l INFO
+    depends_on:
+      - glitchtip-migrate
+    environment:
+      DATABASE_URL: postgresql://glitchtip:glitchtip!@postgres:5432/glitchtip
+      SECRET_KEY: change_me
+      EMAIL_URL: smtp://mail:1025/?skip_ssl_verify=true
+      GLITCHTIP_DOMAIN: https://glitchtip.localtest.me

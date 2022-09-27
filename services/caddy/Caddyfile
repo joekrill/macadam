@@ -12,11 +12,18 @@
   }
 
   # direct access to the underlying api-server
+  @echo host echo.localtest.me 
+	handle @echo {
+		reverse_proxy echo:80
+	}
+
+  # direct access to the underlying api-server
   @api host api.localtest.me 
 	handle @api {
 		reverse_proxy api-server:4000
 	}
 
+  # redirect reuests that use the "www" subdomains
   @www host www.localtest.me 
   handle @www {
     redir https://localtest.me{uri}
@@ -39,7 +46,14 @@
 
   @glitchtip host glitchtip.localtest.me 
   handle @glitchtip {
-    reverse_proxy glitchtip-web:8000
+    reverse_proxy glitchtip-web:8000 echo:80 {
+      lb_policy first
+      lb_try_duration 5s
+      fail_duration 10s
+      transport http {
+    		dial_timeout 600ms
+	    }
+    }
   }
 
   @kratos host kratos.localtest.me 
@@ -59,7 +73,14 @@
 
   @plausible host plausible.localtest.me 
   handle @plausible {
-    reverse_proxy plausible:8000
+    reverse_proxy plausible:8000 echo:80 {
+      lb_policy first
+      lb_try_duration 5s
+      fail_duration 10s
+      transport http {
+    		dial_timeout 600ms
+	    }
+    }
   }
 
   @prometheus host prometheus.localtest.me 

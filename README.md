@@ -68,18 +68,24 @@ docker cp $(docker compose ps -q caddy):/data/caddy/pki/authorities/local/root.c
 
 ### Running additional services
 
-Some services are not run by default in the development environment. These can be include by using the appropriate compose configurations alongside the default `docker-compose.yml`. For example, to run a Storybook instance:
+Some services are not run by default in the development environment. These can be include by passing the appropriate profile to docker-compose. For example, to run a Storybook instance:
 
 ```sh
-docker compose -f docker-compose.yml docker-compose.storybook.yml up
+docker compose --profile storybook up
 ```
 
-Available additional services:
+Multiple profiles can be passed:
 
-- `docker-compose.analytics.yml` runs a Plausible Analytics instance and it's depdenencies.
-- `docker-compose.error-tracking.yml` runs a GlitchTip instance for collecting crash and error reports.
-- `docker-compose.metrics.yml` runs Prometheus and Grafana instances.
-- `docker-compose.storybook.yml` runs a Storybook instance for explorting the web application UI components.
+```sh
+docker compose --profile storybook --profile metrics up
+```
+
+Available profiles:
+
+- `analytics` runs a Plausible Analytics instance and it's depdenencies.
+- `error-tracking` runs a GlitchTip instance for collecting crash and error reports.
+- `metrics` runs Prometheus and Grafana instances.
+- `storybook` runs a Storybook instance for explorting the web application UI components.
 
 ## Project Structure
 

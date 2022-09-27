@@ -30,6 +30,7 @@ const BUTTON_SCHEME: Record<
   info: "blue",
   warning: "yellow",
   success: "green",
+  loading: "gray",
 };
 
 export const ErrorAlert = ({

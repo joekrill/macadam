@@ -29,13 +29,13 @@ export const SessionsTable = ({ data = [], ...props }: SessionsTableProps) => {
         }),
         accessor: "authenticated_at",
         Cell: ({ value }) =>
-          value && (
+          value ? (
             <FormattedDate
               dateStyle="full"
               timeStyle="medium"
               value={parseISO(value)}
             />
-          ),
+          ) : null,
       },
       {
         Header: formatMessage({
@@ -44,13 +44,13 @@ export const SessionsTable = ({ data = [], ...props }: SessionsTableProps) => {
         }),
         accessor: "expires_at",
         Cell: ({ value }) =>
-          value && (
+          value ? (
             <FormattedDate
               dateStyle="full"
               timeStyle="medium"
               value={parseISO(value)}
             />
-          ),
+          ) : null,
       },
       {
         Header: formatMessage({
@@ -58,7 +58,9 @@ export const SessionsTable = ({ data = [], ...props }: SessionsTableProps) => {
           defaultMessage: "Method",
         }),
         accessor: "authentication_methods",
-        Cell: ({ value }) => value?.map(({ method }) => method).join(", "),
+        Cell: ({ value }) => (
+          <>{value?.map(({ method }) => method).join(", ")}</>
+        ),
       },
       {
         accessor: "active",
@@ -71,7 +73,7 @@ export const SessionsTable = ({ data = [], ...props }: SessionsTableProps) => {
         accessor: "id",
         disableSortBy: true,
         Cell: ({ value }) =>
-          value === currentSessionId && (
+          value === currentSessionId ? (
             <Icon
               color="green.500"
               boxSize="0.75em"
@@ -81,7 +83,7 @@ export const SessionsTable = ({ data = [], ...props }: SessionsTableProps) => {
                 defaultMessage: "This is your current session",
               })}
             />
-          ),
+          ) : null,
       },
     ],
     [formatMessage, currentSessionId]

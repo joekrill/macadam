@@ -52,7 +52,7 @@ export const SelfServiceUiForm = ({
   }, [nodes, setValues]);
 
   const submitForm = useCallback(
-    (additionalValues = {}) => {
+    (additionalValues: Record<string, string> = {}) => {
       const data = new FormData();
 
       Object.keys(values).forEach((key) => {

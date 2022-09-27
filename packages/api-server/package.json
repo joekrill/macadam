@@ -33,7 +33,7 @@
     "@opentelemetry/instrumentation-koa": "^0.32.0",
     "@opentelemetry/metrics": "^0.24.0",
     "@opentelemetry/sdk-node": "^0.33.0",
-    "@ory/kratos-client": "0.9.0-alpha.3",
+    "@ory/kratos-client": "0.0.0-next.a36dda23f209",
     "@sentry/node": "^7.13.0",
     "cross-fetch": "^3.1.5",
     "deep-map-keys": "^2.0.1",

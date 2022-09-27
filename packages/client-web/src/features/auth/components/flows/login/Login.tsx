@@ -1,5 +1,4 @@
 import { VStack } from "@chakra-ui/react";
-import { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { Navigate } from "react-router-dom";
 import { LoadingSpinner } from "../../../../common/components/LoadingSpinner/LoadingSpinner";
@@ -55,9 +54,7 @@ export const Login = ({
               description="The message shown on the login page that directs the user to create an account instead of logging in."
               defaultMessage="Don't have an account yet? <link>Sign up!</link>"
               values={{
-                link: (chunks: ReactElement) => (
-                  <RegistrationLink>{chunks}</RegistrationLink>
-                ),
+                link: (chunks) => <RegistrationLink>{chunks}</RegistrationLink>,
               }}
             />
           ) : undefined

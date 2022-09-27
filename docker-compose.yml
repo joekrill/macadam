@@ -166,6 +166,7 @@ services:
       # Key should WEB_PROJECT_KEY in `seed_macadam.py` with dashes stripped
       REACT_APP_SENTRY_DSN: "https://239d589a58d24675be8159b19718b22e@glitchtip.localtest.me/1"
       REACT_APP_SENTRY_TUNNEL: "/api/v1/monitor"
+      DISABLE_ESLINT_PLUGIN: "true"
     build:
       context: .
       dockerfile: ./packages/client-web/dev.Dockerfile

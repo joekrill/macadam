@@ -14,7 +14,7 @@ export const HomepageButton = (props: HomepageButtonLinkProps) => (
     variant="solid"
     colorScheme="blue"
     leftIcon={<Icon as={FaHome} />}
-    isTruncated
+    noOfLines={1}
     {...props}
     to="/"
   >

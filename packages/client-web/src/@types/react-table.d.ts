@@ -31,7 +31,7 @@ declare module "react-table" {
   > extends UseSortByColumnOptions<D> {
     isNumeric?: boolean; // matches Chakra's isNumeric prop for Th elements
     textAlign?: CSS.Property.TextAlign;
-    isTruncated?: boolean;
+    noOfLines?: number;
   }
 
   export interface ColumnInstance<

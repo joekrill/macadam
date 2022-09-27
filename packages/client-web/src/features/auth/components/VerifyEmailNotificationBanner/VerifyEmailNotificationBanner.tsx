@@ -1,5 +1,4 @@
 import { chakra } from "@chakra-ui/react";
-import { ReactElement } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import {
   NotificationBanner,
@@ -31,7 +30,7 @@ export const VerifyEmailNotificationBanner = ({
         defaultMessage="Please confirm your email. We've send a message to <e>{emailAddress}</e>."
         values={{
           emailAddress,
-          e: (chunks: ReactElement) => <chakra.strong>{chunks}</chakra.strong>,
+          e: (chunks) => <chakra.strong>{chunks}</chakra.strong>,
         }}
       />
     </NotificationBanner>

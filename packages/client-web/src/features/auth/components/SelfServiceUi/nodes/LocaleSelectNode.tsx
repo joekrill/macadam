@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import { useIntl } from "react-intl";
 import { LocaleSelect } from "../../../../i18n/components/LocaleSelect/LocaleSelect";
 import { DEFAULT_LOCALE } from "../../../../i18n/constants";
@@ -35,8 +35,8 @@ export const LocaleSelectNode = ({
               "This will be used for external communications or when we can't automatically detect your locale based on your device settings. To change the current application language visit the <preferencesLink>preferences page</preferencesLink>.",
           },
           {
-            preferencesLink: (chunks: ReactElement) => (
-              <AppPreferencesLink>{chunks}</AppPreferencesLink>
+            preferencesLink: (parts: ReactNode) => (
+              <AppPreferencesLink>{parts}</AppPreferencesLink>
             ),
           }
         )

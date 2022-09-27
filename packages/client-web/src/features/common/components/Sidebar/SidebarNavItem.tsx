@@ -11,7 +11,7 @@ export const SidebarNavItem = forwardRef<ButtonProps, "button">(
   (props: SidebarNavItemProps, ref) => (
     <Button
       ref={ref}
-      isFullWidth
+      width="full"
       variant={useColorModeValue("solid", "ghost")}
       colorScheme="gray"
       textAlign="left"

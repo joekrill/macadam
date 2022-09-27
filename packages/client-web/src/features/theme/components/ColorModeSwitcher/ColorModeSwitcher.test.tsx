@@ -36,21 +36,21 @@ afterEach(() => {
 
 test("renders the expected aria label when in dark mode", () => {
   useColorModeValueSpy.mockImplementation((_light, dark) => dark);
-  const { getByRole } = render(<ColorModeSwitcher />);
-  const button = getByRole("button");
+  render(<ColorModeSwitcher />);
+  const button = screen.getByRole("button");
   expect(button.getAttribute("aria-label")).toContain("light");
 });
 
 test("renders the expected aria label when in light mode", () => {
   useColorModeValueSpy.mockImplementation((light, _dark) => light);
-  const { getByRole } = render(<ColorModeSwitcher />);
-  const button = getByRole("button");
+  render(<ColorModeSwitcher />);
+  const button = screen.getByRole("button");
   expect(button.getAttribute("aria-label")).toContain("dark");
 });
 
-test("toggles color mode when clicked", () => {
+test("toggles color mode when clicked", async () => {
   render(<ColorModeSwitcher />);
   const button = screen.getByRole("button");
-  userEvent.click(button);
+  await userEvent.click(button);
   expect(mockToggleColorMode).toHaveBeenCalledTimes(1);
 });

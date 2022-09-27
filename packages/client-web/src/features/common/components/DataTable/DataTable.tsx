@@ -9,7 +9,7 @@ import {
   Tr,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { useCallback } from "react";
+import { ReactNode, useCallback } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { useIntl } from "react-intl";
 import {
@@ -88,33 +88,34 @@ export const DataTable = <D extends object>({
                 {...column.getHeaderProps(column.getSortByToggleProps())}
                 isNumeric={column.isNumeric}
                 textAlign={column.textAlign}
-                isTruncated
               >
-                {column.render("Header")}
-                {column.canSort && (
-                  <chakra.span pl="4">
-                    <Icon
-                      visibility={column.isSorted ? "visible" : "hidden"}
-                      as={column.isSortedDesc ? FaChevronDown : FaChevronUp}
-                      aria-label={formatMessage(
-                        {
-                          id: "common.dataTable.sortHeader.ariaLabel",
-                          defaultMessage:
-                            "{sort, select, asc {Sorted ascending} desc {Sorted descending} other {Not sorted}}",
-                          description:
-                            "The screen reader hint to show for the sort indicator in the table header",
-                        },
-                        {
-                          sort: column.isSorted
-                            ? column.isSortedDesc
-                              ? "desc"
-                              : "asc"
-                            : "",
-                        }
-                      )}
-                    />
-                  </chakra.span>
-                )}
+                <chakra.div noOfLines={1}>
+                  {column.render("Header")}
+                  {column.canSort && (
+                    <chakra.span pl="4">
+                      <Icon
+                        visibility={column.isSorted ? "visible" : "hidden"}
+                        as={column.isSortedDesc ? FaChevronDown : FaChevronUp}
+                        aria-label={formatMessage(
+                          {
+                            id: "common.dataTable.sortHeader.ariaLabel",
+                            defaultMessage:
+                              "{sort, select, asc {Sorted ascending} desc {Sorted descending} other {Not sorted}}",
+                            description:
+                              "The screen reader hint to show for the sort indicator in the table header",
+                          },
+                          {
+                            sort: column.isSorted
+                              ? column.isSortedDesc
+                                ? "desc"
+                                : "asc"
+                              : "",
+                          }
+                        )}
+                      />
+                    </chakra.span>
+                  )}
+                </chakra.div>
               </Th>
             ))}
           </Tr>
@@ -130,9 +131,9 @@ export const DataTable = <D extends object>({
                   {...cell.getCellProps()}
                   textAlign={cell.column.textAlign}
                   isNumeric={cell.column.isNumeric}
-                  isTruncated={cell.column.isTruncated}
+                  noOfLines={cell.column.noOfLines}
                 >
-                  {cell.render("Cell")}
+                  {cell.render("Cell") as ReactNode}
                 </Td>
               ))}
             </Tr>

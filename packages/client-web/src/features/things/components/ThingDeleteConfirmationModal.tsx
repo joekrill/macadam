@@ -10,7 +10,6 @@ import {
   ModalOverlay,
   ModalProps,
 } from "@chakra-ui/react";
-import { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { Thing } from "../thingsSchemas";
 
@@ -42,9 +41,7 @@ export const ThingDeleteConfirmationModal = ({
           defaultMessage="Are you sure you want to delete the Thing ''<e>{name}</e>''?"
           values={{
             name: thing.name,
-            e: (chunks: ReactElement) => (
-              <chakra.strong>{chunks}</chakra.strong>
-            ),
+            e: (chunks) => <chakra.strong>{chunks}</chakra.strong>,
           }}
         />
       </ModalBody>

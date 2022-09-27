@@ -7,8 +7,7 @@ import { colors } from "./foundations/colors";
 
 export const theme = extendTheme({
   config: {
-    initialColorMode: "light",
-    // useSystemColorMode: true,
+    initialColorMode: "system",
   },
   colors,
   components: {

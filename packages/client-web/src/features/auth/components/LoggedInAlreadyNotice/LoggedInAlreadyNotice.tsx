@@ -7,7 +7,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { ReactElement } from "react";
 import { FaSignOutAlt } from "react-icons/fa";
 import { FormattedMessage } from "react-intl";
 import { HomepageButton } from "../../../common/components/HomepageButton";
@@ -43,9 +42,7 @@ export const LoggedInAlreadyNotice = ({
               defaultMessage="You're already logged in as <e>{username}</e>."
               values={{
                 username,
-                e: (chunks: ReactElement) => (
-                  <chakra.strong>{chunks}</chakra.strong>
-                ),
+                e: (chunks) => <chakra.strong>{chunks}</chakra.strong>,
               }}
             />
           ) : (
@@ -64,7 +61,7 @@ export const LoggedInAlreadyNotice = ({
           colorScheme="blue"
           variant="outline"
           onLogoutComplete={onLogout}
-          isTruncated
+          noOfLines={1}
         />
       </Flex>
     </VStack>

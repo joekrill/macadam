@@ -7,9 +7,10 @@ module.exports = {
     "@storybook/preset-create-react-app",
   ],
   refs: {
-    "@chakra-ui/react": { disable: true },
+    "@chakra-ui/react": {
+      disable: true,
+    },
   },
-
   features: {
     // Storybook uses emotion 10, but Chakra uses emotion 11. This causes a
     // conflict and prevents Chakra themes from loading correctly inside
@@ -18,5 +19,9 @@ module.exports = {
     // See https://github.com/storybookjs/storybook/blob/3e5d6601ba3de7e1d6bd64bca97917dc9d40244b/MIGRATION.md#emotion11-quasi-compatibility
     // and https://github.com/chakra-ui/chakra-ui/issues/2527
     emotionAlias: false,
+    previewMdx2: true,
+  },
+  core: {
+    builder: "webpack5",
   },
 };

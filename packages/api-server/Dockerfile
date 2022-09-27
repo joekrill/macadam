@@ -1,6 +1,6 @@
 ## This is expected to be built in the context of the repo root directory!
 
-FROM node:16.10-alpine
+FROM node:18.9-alpine
 
 WORKDIR /var/macadam
 

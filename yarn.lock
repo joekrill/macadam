@@ -7937,10 +7937,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
-  version: 17.0.9
-  resolution: "@types/node@npm:17.0.9"
-  checksum: 64a1fa91979e3c37c5f42c6e7836b02aad333f2ed41114b8d975b4754e4f4a7fe3343e77ee4daceed6b5706c6662ade13ec1e955326cd1b1e8bf35800de5faf8
+"@types/node@npm:*, @types/node@npm:^18.7.23":
+  version: 18.7.23
+  resolution: "@types/node@npm:18.7.23"
+  checksum: 2c8df0830d8345e5cd1ca17feb9cf43fa667aae749888e0a068c5c1b35eaedd2f9b24ed987a0758078395edf7a03681e5e0b7790a518ff7afe1ff6d8459f7b4a
   languageName: node
   linkType: hard
 
@@ -7948,13 +7948,6 @@ __metadata:
   version: 14.17.25
   resolution: "@types/node@npm:14.17.25"
   checksum: 2fdf3f782546e500fd92d129a19a2e194fee811af0dad17e396a53a6355477c201ecdf3185af8a79dbcf1db2244a92feb0d5a0ab529f7050fa8e520613ad13d3
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^16.11.62":
-  version: 16.11.62
-  resolution: "@types/node@npm:16.11.62"
-  checksum: 7086105ded0005a9dc80688250c3d6a8aa01a2bcee3e3934fd3f731786b0e9e47a47fb72be7bfa96f3266bdb14aa9713931ea108d3445a99e35ea127b2d2346e
   languageName: node
   linkType: hard
 
@@ -9464,7 +9457,7 @@ __metadata:
     "@types/koa-compose": ^3.2.5
     "@types/koa__cors": ^3.3.0
     "@types/koa__router": ^12.0.0
-    "@types/node": ^16.11.62
+    "@types/node": ^18.7.23
     "@types/nodemailer": ^6.4.6
     "@types/pino": ^7.0.5
     "@types/supertest": ^2.0.12
@@ -11291,7 +11284,7 @@ __metadata:
     "@types/eslint": ^8
     "@types/favicons": ^7.0.0
     "@types/jest": ^29.0.3
-    "@types/node": ^16.11.62
+    "@types/node": ^18.7.23
     "@types/prettier": ^2.7.1
     "@types/react": ^18.0.21
     "@types/react-dom": ^18.0.6

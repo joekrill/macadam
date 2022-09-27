@@ -44,7 +44,7 @@ x-kratos-defaults: &kratos-defaults
 
 x-api-server-defaults: &api-server-defaults
   <<: *service-defaults
-  image: node:16.10
+  image: node:18.9
   command: ["yarn", "workspace", "api-server", "run", "migrate:up"]
   working_dir: /var/macadam
   depends_on:

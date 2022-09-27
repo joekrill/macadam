@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { NativeBaseProvider, Box, Text } from "native-base";
+import { Box, NativeBaseProvider, Text } from "native-base";
 import { theme } from "../features/theme/default";
 
 export const App = () => (

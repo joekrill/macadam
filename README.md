@@ -87,6 +87,22 @@ Available profiles:
 - `metrics` runs Prometheus and Grafana instances.
 - `storybook` runs a Storybook instance for explorting the web application UI components.
 
+### Development URLs
+
+- https://localtest.me - Main site
+- https://mail.localtest.me - Mail trap UI for viewing any emails sent during development
+- https://pgweb.localtest.me - UI for interacting with PostgreSQL
+- https://api.localtest.me - Direct access to api-server (normally proxied via https://localtest.me/api)
+- https://kratos.localtest.me - Direct access to kratos API (normally proxied via https://localtest.me/kratos/public)
+- https://kratos-admin.localtest.me - Direct access to kratos admin endpoints
+- https://kratos-courier.localtest.me - Direct access to kratos-courier instance
+- https://echo.localtest.me -A generic echo server
+- https://storybook.localtest.me - Storybook instance (requires compose profile `storybook`)
+- https://plausible.localtest.me - (requires compose profile `analytics`)
+- https://prometheus.localtest.me - Prometheus (requires compose profile `metrics`)
+- https://grafana.localtest.me - Grafana, login: "admin"/"admin" (requires compose profile `metrics`)
+- https://glitchtip.localtest.me - Glitchtip, login: "macadam@example.com"/"macadam!" (requires compose profile `error-tracking`)
+
 ## Project Structure
 
 Macadam is a monorepo that uses [Yarn Package Manager](https://yarnpkg.com/) and [it's workspaces feature](https://yarnpkg.com/features/workspaces) to organize code and provide tooling and scripts.

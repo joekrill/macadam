@@ -27,3 +27,6 @@ yarn-error.log*
 # Miscellaneous temporary files
 tmp/
 temp/
+
+# Local environment variables
+.env

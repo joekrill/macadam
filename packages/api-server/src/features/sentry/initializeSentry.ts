@@ -1,11 +1,10 @@
 import * as Sentry from "@sentry/node";
 import Koa, { DefaultContext, DefaultState, ParameterizedContext } from "koa";
 
-const TUNNEL_MAP_DELIMITER = "::";
-
 export interface SentryContext {
   sentry?: {
-    tunnelableDsns: Record<string, string>;
+    tunnelableDsns: string[];
+    instance: typeof Sentry;
   };
 }
 
@@ -37,10 +36,8 @@ export const initializeSentry = (
   Object.defineProperty(app.context, "sentry", {
     value: {
       dsn: options.dsn,
-      tunnelableDsns: options.tunnelableDsns?.reduce((map, dsn) => {
-        const [source, dest] = dsn.split(TUNNEL_MAP_DELIMITER);
-        return { ...map, [source || dsn]: dest || source || dsn };
-      }, {}),
+      tunnelableDsns: options.tunnelableDsns || [],
+      instance: Sentry,
     },
   });
 

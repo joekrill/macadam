@@ -50,7 +50,7 @@ export const initializeSentry = (
           // but it's actually built with `express` in mind, not Koa, so
           // we can use it, but we need to augment it with some addtional data
           // that it can't extract (ip address, user)
-          const request = ctx.request as Sentry.CrossPlatformRequest;
+          const request = ctx.request as Sentry.PolymorphicRequest;
           Sentry.addRequestDataToEvent(event, request, {
             include: {
               user: false,

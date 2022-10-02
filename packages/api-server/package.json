@@ -20,7 +20,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@casl/ability": "^6.3.0",
+    "@casl/ability": "^6.3.1",
     "@faker-js/faker": "^7.5.0",
     "@koa/cors": "^3.4.1",
     "@koa/router": "^12.0.0",
@@ -34,7 +34,7 @@
     "@opentelemetry/metrics": "^0.24.0",
     "@opentelemetry/sdk-node": "^0.33.0",
     "@ory/kratos-client": "0.0.0-next.a36dda23f209",
-    "@sentry/node": "^7.13.0",
+    "@sentry/node": "^7.14.0",
     "cross-fetch": "^3.1.5",
     "deep-map-keys": "^2.0.1",
     "errorish": "^1.0.0",

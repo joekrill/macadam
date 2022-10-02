@@ -1,13 +1,15 @@
-- [Mailcatcher](https://github.com/sj26/mailcatcher) | ⭐ 5.3k
+- [Mailcatcher](https://github.com/sj26/mailcatcher) | ⭐ 5.7k
   - No official docker image.
-- [MailDev](https://github.com/djfarrelly/MailDev) | ⭐ 2.9k
+- [MailDev](https://github.com/djfarrelly/MailDev) | ⭐ 3.5k
   - Appears to be semi-abandoned?
   - Docker image not updated
   - (Some) environment variables don't seem to work?
-- [Mailslurper](https://github.com/mailslurper/mailslurper) | ⭐ 963
-- [MailHog](https://github.com/mailhog/MailHog) | ⭐ 8.6k
-  - Abandoned? Hasn't been updated in over a year.
+- [Mailslurper](https://github.com/mailslurper/mailslurper) | ⭐ 1.1k
+  - Last updated 2020
+- [MailHog](https://github.com/mailhog/MailHog) | ⭐ 10.7k
+  - Includes a "chaos monkey" feature
 - [Mail Lurker](https://github.com/tomvlk/maillurker/) | ⭐ 10
   - Relatively new
   - No official docker image
 - [HoldMail](https://github.com/SpartaSystems/holdmail) | ⭐ 30
+  - Last updated 2018

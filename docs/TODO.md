@@ -91,6 +91,7 @@
   - https://github.com/mirego/accent
   - https://github.com/ever-co/ever-traduora
   - https://docs.weblate.org/en/latest/
+  - https://github.com/tolgee/tolgee-platform
 - Notifications
   - https://notifire.co
 - Log aggregation

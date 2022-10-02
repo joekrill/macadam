@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "../../../app/store";
+import { trackEvent } from "../../analytics";
 import { deviceLocaleToken, DeviceLocaleToken, LocaleCode } from "../constants";
 import { loadLocale } from "../loadLocale";
 import { storeSelectedLocale } from "../localeStorage";
@@ -19,5 +20,11 @@ export const selectLocale = createAsyncThunk<
     locale === deviceLocaleToken ? selectDeviceLocale(getState()) : locale;
   await loadLocale(localeCode);
   storeSelectedLocale(locale);
+  trackEvent("Locale Changed", {
+    props: {
+      locale: localeCode,
+      isDeviceDefault: locale === deviceLocaleToken,
+    },
+  });
   return localeCode;
 });

@@ -10,7 +10,7 @@ if (process.env.REACT_APP_PLAUSIBLE_HOST) {
   });
 
   plausible.enableAutoPageviews();
-  plausible.enableAutoOutboundTracking()();
+  plausible.enableAutoOutboundTracking();
 }
 
 export const trackEvent = (

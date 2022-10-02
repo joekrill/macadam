@@ -1,5 +1,6 @@
 import { skipToken } from "@reduxjs/toolkit/query";
 import { useCallback, useEffect, useState } from "react";
+import { trackEvent } from "../../../../analytics";
 import { identityApi, SubmitFlowPayload } from "../../../identityApi";
 import { FlowRestartReason } from "../../../schemas/errors";
 import { InitializeFlowParams } from "../../../schemas/flows/common";
@@ -31,6 +32,7 @@ export const useRegistrationFlow = ({
   const flow = getFlow.data || initializeResult.data;
   const error = initializeResult.error || getFlow.error || submitResult.error;
   const parsedError = useFlowError(error);
+  const isSuccessful = isRegistrationFlowSuccess(submitResult.data);
 
   const restart = useCallback(
     (reason?: FlowRestartReason) => {
@@ -56,6 +58,12 @@ export const useRegistrationFlow = ({
     }
   }, [initializeFlow, flowId, returnTo]);
 
+  useEffect(() => {
+    if (isSuccessful) {
+      trackEvent("Signup");
+    }
+  }, [isSuccessful]);
+
   return {
     error,
     errorId: parsedError.id,
@@ -63,7 +71,7 @@ export const useRegistrationFlow = ({
     submit,
     restart,
     restartReason,
-    isSuccessful: isRegistrationFlowSuccess(submitResult.data),
+    isSuccessful,
     isInitializing: initializeResult.isLoading,
     isSubmitting: submitResult.isLoading,
   };

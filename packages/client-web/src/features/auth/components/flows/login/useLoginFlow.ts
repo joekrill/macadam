@@ -1,5 +1,6 @@
 import { skipToken } from "@reduxjs/toolkit/query";
 import { useCallback, useEffect, useState } from "react";
+import { trackEvent } from "../../../../analytics";
 import { identityApi, SubmitFlowPayload } from "../../../identityApi";
 import { FlowRestartReason } from "../../../schemas/errors";
 import {
@@ -34,6 +35,7 @@ export const useLoginFlow = ({
   const flow = getFlow.data || initializeResult.data;
   const error = initializeResult.error || getFlow.error || submitResult.error;
   const parsedError = useFlowError(error);
+  const isSuccessful = isLoginFlowSuccess(submitResult.data);
 
   const restart = useCallback(
     (reason?: FlowRestartReason) => {
@@ -57,6 +59,12 @@ export const useLoginFlow = ({
       initializeFlow({ aal, refresh, returnTo });
     }
   }, [initializeFlow, flowId, aal, refresh, returnTo]);
+
+  useEffect(() => {
+    if (isSuccessful) {
+      trackEvent("Login");
+    }
+  }, [isSuccessful]);
 
   return {
     error,

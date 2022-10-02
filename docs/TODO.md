@@ -10,6 +10,7 @@
   - https://semantic-release.gitbook.io/semantic-release/
   - https://dev.to/antongolub/the-chronicles-of-semantic-release-and-monorepos-5cfc
   - https://www.npmjs.com/package/auto
+- Proxy Plausible events - https://plausible.io/docs/proxy/introduction
 
 # "v1"+
 

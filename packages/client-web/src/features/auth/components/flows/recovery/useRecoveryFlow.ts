@@ -1,5 +1,6 @@
 import { skipToken } from "@reduxjs/toolkit/query";
 import { useCallback, useEffect, useState } from "react";
+import { trackEvent } from "../../../../analytics";
 import { identityApi, SubmitFlowPayload } from "../../../identityApi";
 import { FlowRestartReason } from "../../../schemas/errors";
 import { InitializeFlowParams } from "../../../schemas/flows/common";
@@ -30,6 +31,7 @@ export const useRecoveryFlow = ({
   const flow = getFlow.data || initializeResult.data;
   const error = initializeResult.error || getFlow.error || submitResult.error;
   const parsedError = useFlowError(error);
+  const isSuccessful = submitResult.data?.state === "passed_challenge";
 
   const restart = useCallback(
     (reason?: FlowRestartReason) => {
@@ -54,6 +56,18 @@ export const useRecoveryFlow = ({
     }
   }, [initializeFlow, flowId, returnTo]);
 
+  useEffect(() => {
+    if (isSuccessful) {
+      trackEvent("Recovery: Success");
+    }
+  }, [isSuccessful]);
+
+  useEffect(() => {
+    if (error) {
+      trackEvent("Recovery: Failure");
+    }
+  }, [error]);
+
   return {
     error,
     errorId: parsedError.id,
@@ -61,7 +75,7 @@ export const useRecoveryFlow = ({
     submit,
     restart,
     restartReason,
-    isSuccessful: submitResult.data?.state === "passed_challenge",
+    isSuccessful,
     isInitializing: initializeResult.isLoading,
     isSubmitting: submitResult.isLoading,
   };

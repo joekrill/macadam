@@ -7,6 +7,8 @@
   - [Starting a development environment](#prerequisites)
   - [TLS](#tls)
   - [Running additional services](#running-additional-services)
+  - [Development URLs](#development-urls)
+  - [Useful commands](#useful-commands)
 - [Project Structure](#project-structure)
 - [Core Services](#core-services)
   - [Web Client](#web-client)
@@ -101,7 +103,23 @@ Available profiles:
 - https://plausible.localtest.me - (requires compose profile `analytics`)
 - https://prometheus.localtest.me - Prometheus (requires compose profile `metrics`)
 - https://grafana.localtest.me - Grafana, login: "admin"/"admin" (requires compose profile `metrics`)
-- https://glitchtip.localtest.me - Glitchtip, login: "macadam@example.com"/"macadam!" (requires compose profile `error-tracking`)
+- https://glitchtip.localtest.me - Glitchtip, login: "macadam@localtest.me"/"macadam!" (requires compose profile `error-tracking`)
+
+### Useful commands
+
+Commands using `exec` assume that the accompanying service/container is up and running. In most cases `exec` can be replaced with `run` to start the command in a new container.
+
+- Connect to Redis via `redis-cli`:
+
+  ```sh
+  docker compose exec redis redis-cli
+  ```
+
+- Create/update the `plausible` database seed file:
+
+  ```sh
+  docker-compose exec postgres pg_dump -U plausible plausible > services/postgres/docker-entrypoint-initdb.d/01-plausible-seed.sql
+  ```
 
 ## Project Structure
 

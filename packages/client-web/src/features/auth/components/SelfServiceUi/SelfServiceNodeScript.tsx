@@ -1,5 +1,5 @@
+import { UiNodeScript } from "@macadam/api-client";
 import { useEffect } from "react";
-import { UiNodeScript } from "../../schemas/flows/ui";
 
 export interface SelfServiceUiNodeScriptProps {
   node: UiNodeScript;

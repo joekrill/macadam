@@ -1,0 +1,6 @@
+tsconfig.tsbuildinfo
+build/
+
+# testing
+coverage/
+

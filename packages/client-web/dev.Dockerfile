@@ -4,4 +4,4 @@ FROM node:18.9
 
 WORKDIR /var/macadam
 RUN yarn
-CMD ["yarn", "workspace", "client-web", "run", "start"]
+CMD ["yarn", "workspace", "@macadam/client-web", "run", "start"]

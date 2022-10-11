@@ -7,10 +7,10 @@ import {
   Icon,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { useSession } from "@macadam/api-client";
 import { Link as RouterLink } from "react-router-dom";
 import { LoginButton } from "../../../features/auth/components/LoginLink/LoginLinkButton";
 import { RegistrationLinkButton } from "../../../features/auth/components/RegistrationLink/RegistrationLinkButton";
-import { useSession } from "../../../features/auth/hooks/useSession";
 import { ColorModeSwitcher } from "../../../features/theme/components/ColorModeSwitcher/ColorModeSwitcher";
 import { CurrentUserMenu } from "../../../features/user/components/CurrentUserMenu/CurrentUserMenu";
 import { ReactComponent as Logo } from "../../Logo.svg";

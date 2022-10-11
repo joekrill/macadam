@@ -10,8 +10,8 @@ import {
   ModalOverlay,
   ModalProps,
 } from "@chakra-ui/react";
+import { Thing } from "@macadam/api-client";
 import { FormattedMessage } from "react-intl";
-import { Thing } from "../thingsSchemas";
 
 export interface ThingDeleteConfirmationModalProps
   extends Omit<ModalProps, "children"> {

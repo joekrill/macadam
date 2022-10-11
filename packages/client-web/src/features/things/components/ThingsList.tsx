@@ -13,6 +13,7 @@ import {
   Select,
   Stack,
 } from "@chakra-ui/react";
+import { Thing, thingsApi, useSession } from "@macadam/api-client";
 import { useCallback, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { HiPlusSm, HiRefresh } from "react-icons/hi";
@@ -24,7 +25,6 @@ import {
 } from "react-router-dom";
 import { IfAuthenticated } from "../../auth/components/IfAuthenticated";
 import { IfAuthorized } from "../../auth/components/IfAuthorized";
-import { useSession } from "../../auth/hooks/useSession";
 import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
 import { Pagination } from "../../pagination/components/Pagination/Pagination";
 import {
@@ -34,8 +34,6 @@ import {
 import { useUrlSearchParam } from "../../routing/hooks/useUrlSearchParam";
 import { useUrlSearchParams } from "../../routing/hooks/useUrlSearchParams";
 import { useSortByUrlParam } from "../../sorting/hooks/useSortByUrlParam";
-import { thingsApi } from "../thingsApi";
-import { Thing } from "../thingsSchemas";
 import { ThingsTable } from "./ThingsTable";
 
 export const ThingsList = () => {

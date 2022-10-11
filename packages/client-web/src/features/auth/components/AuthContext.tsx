@@ -1,8 +1,8 @@
 import { Ability } from "@casl/ability";
+import { selectRules } from "@macadam/api-client";
 import { createContext, PropsWithChildren, useContext, useMemo } from "react";
 import { useAppSelector } from "../../../app/hooks";
 import { captureException } from "../../monitoring/capture";
-import { selectRules } from "../selectors/selectRules";
 
 export const AuthContext = createContext<Ability>(new Ability());
 

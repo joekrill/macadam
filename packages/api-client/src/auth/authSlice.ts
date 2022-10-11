@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { TypedUseSelectorHook, useSelector } from "react-redux";
 import { authApi } from "./authApi";
 import { identityApi } from "./identityApi";
 import { isLoginFlowSuccess } from "./schemas/flows/login";
@@ -74,5 +75,12 @@ export const authSlice = createSlice({
     );
   },
 });
+
+export interface AuthSliceState {
+  [authSlice.name]: ReturnType<typeof authSlice.getInitialState>;
+}
+
+export const useAuthSelector: TypedUseSelectorHook<AuthSliceState> =
+  useSelector;
 
 export const { name, reducer } = authSlice;

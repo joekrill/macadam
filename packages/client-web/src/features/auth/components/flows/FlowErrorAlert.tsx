@@ -1,3 +1,8 @@
+import {
+  ERROR_SESSION_ALREADY_AVAILABLE,
+  FlowRestartReason,
+  SelfServiceFlowName,
+} from "@macadam/api-client";
 import { SerializedError } from "@reduxjs/toolkit";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { useEffect } from "react";
@@ -6,11 +11,6 @@ import {
   ErrorAlert,
   ErrorAlertProps,
 } from "../../../errors/components/ErrorAlert/ErrorAlert";
-import {
-  ERROR_SESSION_ALREADY_AVAILABLE,
-  FlowRestartReason,
-} from "../../schemas/errors";
-import { SelfServiceFlowName } from "../../schemas/flows";
 import { LoggedInAlreadyNotice } from "../LoggedInAlreadyNotice/LoggedInAlreadyNotice";
 import { useFlowError } from "./useFlowError";
 

@@ -1,6 +1,6 @@
 import { unpackRules } from "@casl/ability/extra";
-import { RootState } from "../../../app/store";
+import { AuthSliceState } from "../authSlice";
 
-export const selectRules = (state: RootState) =>
+export const selectRules = (state: AuthSliceState) =>
   // @ts-ignore
   unpackRules(state.auth.rules || []);

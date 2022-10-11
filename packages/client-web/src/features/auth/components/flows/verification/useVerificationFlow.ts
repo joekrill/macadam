@@ -1,9 +1,12 @@
+import {
+  FlowRestartReason,
+  identityApi,
+  InitializeFlowParams,
+  SubmitFlowPayload,
+} from "@macadam/api-client";
 import { skipToken } from "@reduxjs/toolkit/query";
 import { useCallback, useEffect, useState } from "react";
 import { trackEvent } from "../../../../analytics";
-import { identityApi, SubmitFlowPayload } from "../../../identityApi";
-import { FlowRestartReason } from "../../../schemas/errors";
-import { InitializeFlowParams } from "../../../schemas/flows/common";
 import { useFlowError } from "../useFlowError";
 
 const {

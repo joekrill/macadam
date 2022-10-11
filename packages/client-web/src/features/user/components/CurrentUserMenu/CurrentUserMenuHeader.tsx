@@ -5,7 +5,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { useSession } from "../../../auth/hooks/useSession";
+import { useSession } from "@macadam/api-client";
 import { CurrentUserAvatar } from "../CurrentUserAvatar/CurrentUserAvatar";
 
 export interface CurrentUserMenuHeaderProps extends StackProps {}

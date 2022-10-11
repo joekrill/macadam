@@ -1,4 +1,4 @@
-import { UiNodeButtonInput, UiNodeInput } from "../../schemas/flows/ui";
+import { UiNodeButtonInput, UiNodeInput } from "@macadam/api-client";
 import { ButtonNode } from "./nodes/ButtonNode";
 import { CheckboxNode } from "./nodes/CheckboxNode";
 import { LocaleSelectNode } from "./nodes/LocaleSelectNode";

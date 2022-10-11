@@ -1,4 +1,5 @@
 import { Icon } from "@chakra-ui/react";
+import { Thing } from "@macadam/api-client";
 import { parseISO } from "date-fns";
 import { useMemo } from "react";
 import { FaLock, FaUnlock } from "react-icons/fa";
@@ -9,7 +10,6 @@ import {
   DataTableProps,
 } from "../../common/components/DataTable/DataTable";
 import { RouterLink } from "../../routing/components/RouterLink";
-import { Thing } from "../thingsSchemas";
 import { ThingActions } from "./ThingActions";
 
 export interface ThingsTableProps extends Partial<DataTableProps<Thing>> {}

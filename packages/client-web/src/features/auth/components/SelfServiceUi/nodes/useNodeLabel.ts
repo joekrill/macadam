@@ -1,5 +1,5 @@
+import { UiNodeInput } from "@macadam/api-client";
 import { useIntl } from "react-intl";
-import { UiNodeInput } from "../../../schemas/flows/ui";
 
 /**
  * Determines the label to use for a given node.

@@ -1,14 +1,16 @@
 import { Box, Flex, useColorMode } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
+import {
+  selectPendingVerifiableAddresses,
+  useSession,
+} from "@macadam/api-client";
 import { Route } from "react-router-dom";
 import { VerifyEmailNotificationBanner } from "../features/auth/components/VerifyEmailNotificationBanner/VerifyEmailNotificationBanner";
-import { useSession } from "../features/auth/hooks/useSession";
 import { FlowErrorPage } from "../features/auth/pages/FlowErrorPage";
 import { LoginPage } from "../features/auth/pages/LoginPage";
 import { RecoveryPage } from "../features/auth/pages/RecoveryPage";
 import { RegistrationPage } from "../features/auth/pages/RegistrationPage";
 import { VerificationPage } from "../features/auth/pages/VerificationPage";
-import { selectPendingVerifiableAddresses } from "../features/auth/selectors/selectPendingVerifiableAddresses";
 import { CrashInitiator } from "../features/errors/components/CrashInitiator/CrashInitiator";
 import { NotFoundPage } from "../features/errors/components/NotFoundPage/NotFoundPage";
 import { Routes } from "../features/routing/components/Routes";

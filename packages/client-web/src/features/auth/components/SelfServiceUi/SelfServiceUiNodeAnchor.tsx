@@ -1,5 +1,5 @@
 import { Link } from "@chakra-ui/react";
-import { UiNodeAnchor } from "../../schemas/flows/ui";
+import { UiNodeAnchor } from "@macadam/api-client";
 
 export interface SelfServiceUiNodeAnchorProps {
   node: UiNodeAnchor;

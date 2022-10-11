@@ -1,5 +1,5 @@
+import { useSession } from "@macadam/api-client";
 import { Navigate, useLocation } from "react-router-dom";
-import { useSession } from "../hooks/useSession";
 import { useLoginLink } from "./LoginLink/useLoginLink";
 
 // TODO: `children` and `whileLoading` should be typed as `ReactNode` types,

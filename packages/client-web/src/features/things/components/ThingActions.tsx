@@ -5,14 +5,13 @@ import {
   IconButton,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Thing, thingsApi } from "@macadam/api-client";
 import { useCallback } from "react";
 import { FaPen, FaTrash } from "react-icons/fa";
 import { useIntl } from "react-intl";
 import { useLocation } from "react-router-dom";
 import { IfAuthorized } from "../../auth/components/IfAuthorized";
 import { RouterLink } from "../../routing/components/RouterLink";
-import { thingsApi } from "../thingsApi";
-import { Thing } from "../thingsSchemas";
 import { ThingDeleteConfirmationModal } from "./ThingDeleteConfirmationModal";
 
 export interface ThingActionsProps extends ButtonGroupProps {

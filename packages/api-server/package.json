@@ -1,5 +1,5 @@
 {
-  "name": "api-server",
+  "name": "@macadam/api-server",
   "version": "1.0.0",
   "main": "build/server.js",
   "files": [

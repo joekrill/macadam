@@ -7,10 +7,10 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { useSession } from "@macadam/api-client";
 import { FaSignOutAlt } from "react-icons/fa";
 import { FormattedMessage } from "react-intl";
 import { HomepageButton } from "../../../common/components/HomepageButton";
-import { useSession } from "../../hooks/useSession";
 import { LogoutButton } from "../LogoutButton/LogoutButton";
 
 export interface LoggedInAlreadyNoticeProps {

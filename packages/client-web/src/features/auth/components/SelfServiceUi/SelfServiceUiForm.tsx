@@ -1,8 +1,11 @@
 import { Stack, StackProps } from "@chakra-ui/react";
+import {
+  SubmitFlowPayload,
+  UiContainer,
+  UiNode,
+  useNodeGroup,
+} from "@macadam/api-client";
 import { useCallback, useEffect, useState } from "react";
-import { useNodeGroup } from "../../hooks/useNodeGroup";
-import { SubmitFlowPayload } from "../../identityApi";
-import { UiContainer, UiNode } from "../../schemas/flows/ui";
 import { SelfServiceUiNode } from "./SelfServiceUiNode";
 
 export interface SelfServiceUiFormProps extends Omit<StackProps, "onSubmit"> {

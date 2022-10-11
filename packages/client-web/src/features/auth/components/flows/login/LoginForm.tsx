@@ -1,8 +1,7 @@
 import { Flex, VStack } from "@chakra-ui/react";
+import { LoginFlow, useNodeGroupNames } from "@macadam/api-client";
 import { FormattedMessage } from "react-intl";
 import { DividerWithText } from "../../../../common/components/DividerWithText/DividerWithText";
-import { useNodeGroupNames } from "../../../hooks/useNodeGroupNames";
-import { LoginFlow } from "../../../schemas/flows/login";
 import {
   SelfServiceUiForm,
   SelfServiceUiFormProps,

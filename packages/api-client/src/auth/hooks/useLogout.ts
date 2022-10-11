@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { trackEvent } from "../../analytics";
+// import { trackEvent } from "../../analytics";
 import { identityApi } from "../identityApi";
 
 export interface UseLogoutOptions {
@@ -30,7 +30,7 @@ export const useLogout = ({
 
       if (!e.defaultPrevented) {
         trigger().then(() => {
-          trackEvent("Logout");
+          // trackEvent("Logout");
 
           if (onLogoutComplete) {
             onLogoutComplete();

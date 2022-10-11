@@ -1,6 +1,6 @@
 import { Button, ButtonProps, forwardRef } from "@chakra-ui/react";
+import { useLogout } from "@macadam/api-client";
 import { FormattedMessage } from "react-intl";
-import { useLogout } from "../../hooks/useLogout";
 
 export const LogoutButtonLabel = () => (
   <FormattedMessage id="auth.logoutButton.label" defaultMessage="Log Out" />

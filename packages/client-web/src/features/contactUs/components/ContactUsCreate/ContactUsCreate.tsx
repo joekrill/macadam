@@ -1,5 +1,4 @@
-import { useSession } from "../../../auth/hooks/useSession";
-import { contactUsApi } from "../../contactUsApi";
+import { contactUsApi, useSession } from "@macadam/api-client";
 import { ContactUsForm } from "../ContactUsForm/ContactUsForm";
 import { ContactUsSuccessAlert } from "../ContactUsSuccessAlert/ContactUsSuccessAlert";
 

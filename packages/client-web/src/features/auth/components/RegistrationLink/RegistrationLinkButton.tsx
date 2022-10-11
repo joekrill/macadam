@@ -1,6 +1,6 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
+import { useSession } from "@macadam/api-client";
 import { Link as RouterLink } from "react-router-dom";
-import { useSession } from "../../hooks/useSession";
 import { useRegistrationLink } from "./useRegistrationLink";
 
 export interface RegistrationLinkButtonProps extends ButtonProps {

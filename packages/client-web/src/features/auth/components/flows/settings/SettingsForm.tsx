@@ -6,11 +6,10 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
+import { SettingsFlow, useNodeGroupNames } from "@macadam/api-client";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Card } from "../../../../common/components/Card/Card";
-import { useNodeGroupNames } from "../../../hooks/useNodeGroupNames";
-import { SettingsFlow } from "../../../schemas/flows/settings";
 import {
   SelfServiceUiForm,
   SelfServiceUiFormProps,

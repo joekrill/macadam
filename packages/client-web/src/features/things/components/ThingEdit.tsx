@@ -1,11 +1,11 @@
 import { Box, Heading } from "@chakra-ui/react";
+import { thingsApi } from "@macadam/api-client";
 import { skipToken } from "@reduxjs/toolkit/query";
 import { useEffect } from "react";
 import { FormattedMessage } from "react-intl";
 import { useNavigate, useParams } from "react-router-dom";
 import { LoadingSpinner } from "../../common/components/LoadingSpinner/LoadingSpinner";
 import { useReturnToConsumer } from "../../routing/hooks/useReturnToConsumer";
-import { thingsApi } from "../thingsApi";
 import { ThingForm } from "./ThingForm";
 import { ThingLoadError } from "./ThingLoadError";
 

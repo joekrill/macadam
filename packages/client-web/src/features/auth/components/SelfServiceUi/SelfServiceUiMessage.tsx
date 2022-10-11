@@ -1,5 +1,5 @@
 import { Alert, AlertIcon, AlertProps } from "@chakra-ui/react";
-import { UiText } from "../../schemas/flows/ui";
+import { UiText } from "@macadam/api-client";
 
 export interface SelfServiceUiMessageProps {
   message: UiText;

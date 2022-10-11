@@ -34,19 +34,21 @@ export interface SubmitFlowPayload {
   body: any;
 }
 
+const baseQuery = fetchBaseQuery({
+  baseUrl: "/kratos/public",
+  prepareHeaders: (headers) => {
+    headers.set("Accept", "application/json");
+    return headers;
+  },
+});
+
 /**
  * The identity API is used to access Kratos API endpoints directly (as
  * opposed to going through the api-server).
  */
 export const identityApi = createApi({
   reducerPath: "identityApi",
-  baseQuery: fetchBaseQuery({
-    baseUrl: "/kratos/public",
-    prepareHeaders: (headers) => {
-      headers.set("Accept", "application/json");
-      return headers;
-    },
-  }),
+  baseQuery,
   endpoints: (build) => ({
     /************************************************************
      * User-facing flow errors
@@ -319,5 +321,3 @@ export const identityApi = createApi({
     }),
   }),
 });
-
-export const { useSubmitLoginFlowMutation } = identityApi;

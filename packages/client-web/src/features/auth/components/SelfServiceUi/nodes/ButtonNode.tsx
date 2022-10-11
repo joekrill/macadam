@@ -1,5 +1,5 @@
 import { Button, ButtonProps } from "@chakra-ui/react";
-import { UiNodeButtonInput } from "../../../schemas/flows/ui";
+import { UiNodeButtonInput } from "@macadam/api-client";
 import { SelfServiceUiNodeInputProps } from "../SelfServiceUiNodeInput";
 import { useNodeLabel } from "./useNodeLabel";
 

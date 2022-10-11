@@ -4,7 +4,7 @@ import {
   FormHelperText,
   FormLabel,
 } from "@chakra-ui/react";
-import { UiNodeInput } from "../../../schemas/flows/ui";
+import { UiNodeInput } from "@macadam/api-client";
 import { useNodeLabel } from "./useNodeLabel";
 
 export interface NodeFormControlWrapperProps {

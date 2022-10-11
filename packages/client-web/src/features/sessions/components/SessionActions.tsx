@@ -4,11 +4,10 @@ import {
   Icon,
   IconButton,
 } from "@chakra-ui/react";
+import { ApiSession, sessionsApi } from "@macadam/api-client";
 import { FaTrash } from "react-icons/fa";
 import { useIntl } from "react-intl";
 import { IfAuthorized } from "../../auth/components/IfAuthorized";
-import { sessionsApi } from "../sessionsApi";
-import { ApiSession } from "../sessionsSchemas";
 
 export interface SessionActionsProps extends ButtonGroupProps {
   onDelete?: () => void;

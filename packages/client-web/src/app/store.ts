@@ -1,8 +1,6 @@
+import { appApi, authSlice, identityApi } from "@macadam/api-client";
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import { appApi } from "../features/api/appApi";
-import { authSlice } from "../features/auth/authSlice";
-import { identityApi } from "../features/auth/identityApi";
 import { i18nSlice } from "../features/i18n/i18nSlice";
 import { monitoringReducEnhancer } from "../features/monitoring/monitoringReducEnhancer";
 

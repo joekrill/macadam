@@ -52,7 +52,7 @@ x-kratos-defaults: &kratos-defaults
 x-api-server-defaults: &api-server-defaults
   <<: *service-defaults
   image: node:18.9
-  command: ["yarn", "workspace", "api-server", "run", "migrate:up"]
+  command: ["yarn", "workspace", "@macadam/api-server", "run", "migrate:up"]
   working_dir: /var/macadam
   depends_on:
     postgres:
@@ -216,12 +216,12 @@ services:
 
   api-server-migrate:
     <<: *api-server-defaults
-    command: ["yarn", "workspace", "api-server", "run", "migrate:up"]
+    command: ["yarn", "workspace", "@macadam/api-server", "run", "migrate:up"]
     restart: on-failure
 
   api-server:
     <<: *api-server-defaults
-    command: ["yarn", "workspace", "api-server", "run", "start:dev"]
+    command: ["yarn", "workspace", "@macadam/api-server", "run", "start:dev"]
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://localhost:4000/api/health
       interval: 30s
@@ -239,18 +239,28 @@ services:
       redis:
         condition: service_healthy
 
+  api-client-builder:
+    <<: *service-defaults
+    build:
+      context: .
+      dockerfile: ./packages/api-client/dev.Dockerfile
+    volumes:
+      - .:/var/macadam
+
   client-web:
     <<: *service-defaults
     build:
       context: .
       dockerfile: ./packages/client-web/dev.Dockerfile
-    command: ["yarn", "workspace", "client-web", "run", "start:legacy"]
+    command: ["yarn", "workspace", "@macadam/client-web", "run", "start:legacy"]
+    # depends_on:
+    #   api-client-build:
+    #     condition: service_healthy
     # Uncomment to expose client-web directly
     # ports:
     #   - 3000:3000
     environment:
       # Key should match WEB_PROJECT_KEY in `seed_macadam.py` with dashes stripped
-      # REACT_APP_SENTRY_DSN: "https://239d589a58d24675be8159b19718b22e@glitchtip.${DOMAIN_NAME:-localtest.me}/1"
       REACT_APP_SENTRY_DSN: "http://239d589a58d24675be8159b19718b22e@glitchtip-web:8080/1"
       REACT_APP_SENTRY_TUNNEL: "/api/v1/monitor"
       REACT_APP_PLAUSIBLE_HOST: https://plausible.${DOMAIN_NAME:-localtest.me}
@@ -267,7 +277,8 @@ services:
     build:
       context: .
       dockerfile: ./packages/client-web/dev.Dockerfile
-    command: ["yarn", "workspace", "client-web", "run", "storybook:legacy"]
+    command:
+      ["yarn", "workspace", "@macadam/client-web", "run", "storybook:legacy"]
     volumes:
       - .:/var/macadam
 

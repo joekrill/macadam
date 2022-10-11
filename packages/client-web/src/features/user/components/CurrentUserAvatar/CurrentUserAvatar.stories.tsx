@@ -1,6 +1,6 @@
+import { UseSessionContext } from "@macadam/api-client";
 import { skipToken } from "@reduxjs/toolkit/query";
 import { Meta, Story } from "@storybook/react";
-import { UseSessionContext } from "../../../auth/hooks/useSession";
 import { theme } from "../../../theme/default";
 import { CurrentUserAvatar, CurrentUserAvatarProps } from "./CurrentUserAvatar";
 

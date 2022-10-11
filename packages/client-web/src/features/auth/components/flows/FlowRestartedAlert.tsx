@@ -1,6 +1,6 @@
 import { Alert, AlertIcon, Text } from "@chakra-ui/react";
+import { FlowRestartReason } from "@macadam/api-client";
 import { FormattedMessage } from "react-intl";
-import { FlowRestartReason } from "../../schemas/errors";
 
 export interface FlowRestartedAlertProps {
   reason: FlowRestartReason;

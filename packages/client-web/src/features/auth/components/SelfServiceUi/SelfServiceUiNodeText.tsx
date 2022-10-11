@@ -1,5 +1,5 @@
 import { Text } from "@chakra-ui/react";
-import { UiNodeText } from "../../schemas/flows/ui";
+import { UiNodeText } from "@macadam/api-client";
 
 export interface SelfServiceUiNodeTextProps {
   node: UiNodeText;

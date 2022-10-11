@@ -1,5 +1,5 @@
 import { Avatar, AvatarProps } from "@chakra-ui/react";
-import { useSession } from "../../../auth/hooks/useSession";
+import { useSession } from "@macadam/api-client";
 
 export interface CurrentUserAvatarProps extends Omit<AvatarProps, "src"> {}
 

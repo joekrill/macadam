@@ -8,19 +8,19 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  CreateThingParams,
+  createThingParamsSchema,
+  Thing,
+  useValidationError,
+} from "@macadam/api-client";
 import { SerializedError } from "@reduxjs/toolkit";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/dist/query";
 import { useMemo } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { FormattedMessage } from "react-intl";
 import { ApiErrorAlert } from "../../api/components/ApiErrorAlert";
-import { useValidationError } from "../../api/hooks/useValidationError";
 import { SaveButton } from "../../forms/components/SaveButton";
-import {
-  CreateThingParams,
-  createThingParamsSchema,
-  Thing,
-} from "../thingsSchemas";
 
 export interface ThingFormProps {
   error?: FetchBaseQueryError | SerializedError;

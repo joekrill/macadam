@@ -10,6 +10,7 @@ import {
   Portal,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { useLogout, useSession } from "@macadam/api-client";
 import {
   FaCaretDown,
   FaCog,
@@ -24,8 +25,6 @@ import { Link as RouterLink } from "react-router-dom";
 import { useLoginLink } from "../../../auth/components/LoginLink/useLoginLink";
 import { LogoutButtonLabel } from "../../../auth/components/LogoutButton/LogoutButton";
 import { useRegistrationLink } from "../../../auth/components/RegistrationLink/useRegistrationLink";
-import { useLogout } from "../../../auth/hooks/useLogout";
-import { useSession } from "../../../auth/hooks/useSession";
 import { useAppPreferencesLink } from "../../../settings/components/AppPreferencesLink/useAppPreferencesLink";
 import { CurrentUserAvatar } from "../CurrentUserAvatar/CurrentUserAvatar";
 import { CurrentUserMenuHeader } from "./CurrentUserMenuHeader";

@@ -1,6 +1,6 @@
+import { UseSessionContext } from "@macadam/api-client";
 import { skipToken } from "@reduxjs/toolkit/query";
 import { Meta, Story } from "@storybook/react";
-import { UseSessionContext } from "../../../auth/hooks/useSession";
 import { CurrentUserMenu, CurrentUserMenuProps } from "./CurrentUserMenu";
 
 export default {

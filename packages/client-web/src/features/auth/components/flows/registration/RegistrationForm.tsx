@@ -1,8 +1,7 @@
 import { VStack } from "@chakra-ui/react";
+import { RegistrationFlow, useNodeGroupNames } from "@macadam/api-client";
 import { FormattedMessage } from "react-intl";
 import { DividerWithText } from "../../../../common/components/DividerWithText/DividerWithText";
-import { useNodeGroupNames } from "../../../hooks/useNodeGroupNames";
-import { RegistrationFlow } from "../../../schemas/flows/registration";
 import {
   SelfServiceUiForm,
   SelfServiceUiFormProps,

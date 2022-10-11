@@ -1,5 +1,5 @@
 import { Skeleton } from "@chakra-ui/react";
-import { useSession } from "../../auth/hooks/useSession";
+import { useSession } from "@macadam/api-client";
 import { SettingsPageAuthenticated } from "./SettingsPageAuthenticated";
 import { SettingsPageUnauthenticated } from "./SettingsPageUnauthenticated";
 

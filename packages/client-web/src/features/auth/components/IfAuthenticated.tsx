@@ -1,5 +1,5 @@
+import { useSession } from "@macadam/api-client";
 import { PropsWithChildren, ReactNode } from "react";
-import { useSession } from "../hooks/useSession";
 
 // TODO: `children` and `whileLoading` should be typed as `ReactNode` types,
 // but this causes a conflict with incorrect `element` typings in React Router.

@@ -1,0 +1,42 @@
+{
+  // Ref: https://www.typescriptlang.org/tsconfig
+  "compilerOptions": {
+    // Type Checking
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+
+    // Modules
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "rootDir": "src",
+
+    // Emit
+    "declaration": true,
+    "outDir": "build",
+    "sourceMap": true,
+
+    // JavaScript Support
+    "allowJs": true,
+
+    // Interop Constraints
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+
+    // Language and Environment
+    "jsx": "react-jsx",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es2020",
+
+    // Projects
+    "composite": true,
+
+    // Completeness
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"]
+}

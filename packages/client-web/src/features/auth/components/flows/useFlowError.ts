@@ -1,11 +1,11 @@
-import { SerializedError } from "@reduxjs/toolkit";
-import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
-import { useMemo } from "react";
 import {
   flowErrorSchema,
   isFlowRedirectError,
   isFlowRestartError,
-} from "../../schemas/errors";
+} from "@macadam/api-client";
+import { SerializedError } from "@reduxjs/toolkit";
+import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
+import { useMemo } from "react";
 
 export const useFlowError = (error?: FetchBaseQueryError | SerializedError) => {
   const flowError = useMemo(() => {

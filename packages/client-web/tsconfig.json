@@ -1,21 +1,41 @@
 {
+  // Ref: https://www.typescriptlang.org/tsconfig
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    // Type Checking
     "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
     "noUncheckedIndexedAccess": true,
+    "strict": true,
+
+    // Modules
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+
+    // Emit
     "noEmit": true,
-    "jsx": "react-jsx"
+
+    // JavaScript Support
+    "allowJs": true,
+
+    // Interop Constraints
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+
+    // Language and Environment
+    "jsx": "react-jsx",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es5",
+
+    // Completeness
+    "skipLibCheck": true
   },
-  "include": ["src", "scripts"]
+  "include": ["src", "scripts"],
+  "references": [
+    {
+      "path": "../api-client"
+    }
+  ]
 }

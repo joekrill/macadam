@@ -1,10 +1,10 @@
 import { Box, chakra, Heading, Icon, Spinner, Text } from "@chakra-ui/react";
+import { thingsApi } from "@macadam/api-client";
 import { skipToken } from "@reduxjs/toolkit/query";
 import { parseISO } from "date-fns";
 import { FaLock, FaUnlock } from "react-icons/fa";
 import { FormattedDate, FormattedMessage } from "react-intl";
 import { useNavigate, useParams } from "react-router-dom";
-import { thingsApi } from "../thingsApi";
 import { ThingActions } from "./ThingActions";
 import { ThingLoadError } from "./ThingLoadError";
 

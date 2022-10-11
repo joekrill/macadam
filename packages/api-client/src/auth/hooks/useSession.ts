@@ -1,7 +1,7 @@
 import { skipToken } from "@reduxjs/toolkit/query";
 import { createContext, useContext } from "react";
-import { useAppSelector } from "../../../app/hooks";
 import { useWhoamiQuery } from "../authApi";
+import { useAuthSelector } from "../authSlice";
 import { selectIdentity } from "../selectors/selectIdentity";
 import { selectIsVerified } from "../selectors/selectIsVerified";
 import { selectSession } from "../selectors/selectSession";
@@ -23,10 +23,10 @@ export const useSession = () => {
 
   useWhoamiQuery(ctx.whoamiQueryArg);
 
-  const session = useAppSelector((state) => ctx.selectSession(state));
-  const identity = useAppSelector((state) => ctx.selectIdentity(state));
-  const isVerified = useAppSelector((state) => ctx.selectIsVerified(state));
-  const lastUpdated = useAppSelector((state) =>
+  const session = useAuthSelector((state) => ctx.selectSession(state));
+  const identity = useAuthSelector((state) => ctx.selectIdentity(state));
+  const isVerified = useAuthSelector((state) => ctx.selectIsVerified(state));
+  const lastUpdated = useAuthSelector((state) =>
     ctx.selectSessionLastUpdated(state)
   );
 

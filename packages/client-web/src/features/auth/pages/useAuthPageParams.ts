@@ -1,5 +1,5 @@
+import { authenticatorAssuranceLevelSchema } from "@macadam/api-client";
 import { useMemo } from "react";
-import { authenticatorAssuranceLevelSchema } from "../../../features/auth/schemas/session";
 import { useUrlSearchParams } from "../../../features/routing/hooks/useUrlSearchParams";
 
 export const useAuthPageParams = () => {

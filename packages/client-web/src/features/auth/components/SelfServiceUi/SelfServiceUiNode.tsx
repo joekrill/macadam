@@ -1,4 +1,4 @@
-import { UiNode } from "../../schemas/flows/ui";
+import { UiNode } from "@macadam/api-client";
 import { SelfServiceUiNodeScript } from "./SelfServiceNodeScript";
 import { SelfServiceUiNodeAnchor } from "./SelfServiceUiNodeAnchor";
 import { SelfServiceUiNodeImage } from "./SelfServiceUiNodeImage";

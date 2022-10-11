@@ -1,13 +1,11 @@
 import { Box, Heading, IconButton } from "@chakra-ui/react";
+import { ApiSession, sessionsApi, useSession } from "@macadam/api-client";
 import { HiRefresh } from "react-icons/hi";
 import { FormattedMessage, useIntl } from "react-intl";
-import { useSession } from "../../auth/hooks/useSession";
 import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
 import { Pagination } from "../../pagination/components/Pagination/Pagination";
 import { usePageUrlParam } from "../../pagination/hooks/usePageUrlParam";
 import { useSortByUrlParam } from "../../sorting/hooks/useSortByUrlParam";
-import { sessionsApi } from "../sessionsApi";
-import { ApiSession } from "../sessionsSchemas";
 import { SessionsTable } from "./SessionsTable";
 
 export const SessionsList = () => {

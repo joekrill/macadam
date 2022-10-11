@@ -13,7 +13,7 @@ COPY packages/api-server ./packages/api-server
 RUN \
   apk add --no-cache --virtual .gyp g++ make python3 && \
   ln -s /usr/bin/python3 /usr/bin/python && \
-  yarn workspaces focus api-server && \
-  yarn workspace api-server run build && \
+  yarn workspaces focus @macadam/api-server && \
+  yarn workspace @macadam/api-server run build && \
   apk del .gyp
 

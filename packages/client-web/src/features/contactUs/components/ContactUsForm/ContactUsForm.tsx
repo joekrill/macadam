@@ -9,6 +9,11 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  SubmitContactUsParams,
+  submitContactUsParamsSchema,
+  useValidationError,
+} from "@macadam/api-client";
 import { SerializedError } from "@reduxjs/toolkit";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/dist/query";
 import { useMemo } from "react";
@@ -17,12 +22,7 @@ import { AiOutlineSend } from "react-icons/ai";
 import { FaRegEnvelope, FaUser } from "react-icons/fa";
 import { FormattedMessage, useIntl } from "react-intl";
 import { ApiErrorAlert } from "../../../api/components/ApiErrorAlert";
-import { useValidationError } from "../../../api/hooks/useValidationError";
 import { SaveButton } from "../../../forms/components/SaveButton";
-import {
-  SubmitContactUsParams,
-  submitContactUsParamsSchema,
-} from "../../contactUsSchemas";
 
 export interface ContactUsFormProps {
   error?: FetchBaseQueryError | SerializedError;

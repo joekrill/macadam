@@ -6,6 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "workspaces": [
+    "packages/api-client",
     "packages/api-server",
     "packages/client-web"
   ],
@@ -48,5 +49,5 @@
       "unplugged": true
     }
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.2.4"
 }

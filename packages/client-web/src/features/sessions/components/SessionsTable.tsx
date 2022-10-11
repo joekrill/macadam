@@ -1,15 +1,14 @@
 import { Icon } from "@chakra-ui/react";
+import { ApiSession, useSession } from "@macadam/api-client";
 import { parseISO } from "date-fns";
 import { useMemo } from "react";
 import { FaAsterisk } from "react-icons/fa";
 import { FormattedDate, useIntl } from "react-intl";
 import { Column } from "react-table";
-import { useSession } from "../../auth/hooks/useSession";
 import {
   DataTable,
   DataTableProps,
 } from "../../common/components/DataTable/DataTable";
-import { ApiSession } from "../sessionsSchemas";
 import { SessionActions } from "./SessionActions";
 
 export interface SessionsTableProps

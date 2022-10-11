@@ -1,5 +1,5 @@
 import { Image } from "@chakra-ui/react";
-import { UiNodeImage } from "../../schemas/flows/ui";
+import { UiNodeImage } from "@macadam/api-client";
 
 export interface SelfServiceUiNodeImageProps {
   node: UiNodeImage;

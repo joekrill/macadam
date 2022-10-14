@@ -1,4 +1,3 @@
-import Constants from "expo-constants";
 import {
   appApi,
   authSlice,
@@ -13,6 +12,7 @@ import {
   ThunkAction,
 } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
+import Constants from "expo-constants";
 import {
   FLUSH,
   PAUSE,

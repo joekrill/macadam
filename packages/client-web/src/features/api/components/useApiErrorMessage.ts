@@ -1,8 +1,8 @@
+import { errorResponseSchema } from "@macadam/api-client";
 import { SerializedError } from "@reduxjs/toolkit";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import { useMemo } from "react";
 import { useIntl } from "react-intl";
-import { errorResponseSchema } from "../schemas/response";
 
 export const useApiErrorMessage = (
   error: FetchBaseQueryError | SerializedError

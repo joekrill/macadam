@@ -1,4 +1,3 @@
-import { useApiErrorMessage } from "@macadam/api-client";
 import { SerializedError } from "@reduxjs/toolkit";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/dist/query";
 import { useIntl } from "react-intl";
@@ -6,6 +5,7 @@ import {
   ErrorAlert,
   ErrorAlertProps,
 } from "../../errors/components/ErrorAlert/ErrorAlert";
+import { useApiErrorMessage } from "./useApiErrorMessage";
 
 export interface ApiErrorAlertProps extends ErrorAlertProps {
   error: FetchBaseQueryError | SerializedError;

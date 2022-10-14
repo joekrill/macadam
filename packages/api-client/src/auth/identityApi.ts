@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import snakecaseKeys from "snakecase-keys";
 import { appApi } from "../api/appApi";
+import { getApiHost } from "../config";
 import { invalidateSession } from "./authApi";
 import { FlowError, flowErrorSchema } from "./schemas/errors";
 import { InitializeFlowParams } from "./schemas/flows/common";
@@ -34,13 +35,14 @@ export interface SubmitFlowPayload {
   body: any;
 }
 
-const baseQuery = fetchBaseQuery({
-  baseUrl: "/kratos/public",
-  prepareHeaders: (headers) => {
-    headers.set("Accept", "application/json");
-    return headers;
-  },
-});
+const baseQuery: ReturnType<typeof fetchBaseQuery> = (...args) =>
+  fetchBaseQuery({
+    baseUrl: `${getApiHost()}/kratos/public`,
+    prepareHeaders: (headers) => {
+      headers.set("Accept", "application/json");
+      return headers;
+    },
+  })(...args);
 
 /**
  * The identity API is used to access Kratos API endpoints directly (as
@@ -49,6 +51,11 @@ const baseQuery = fetchBaseQuery({
 export const identityApi = createApi({
   reducerPath: "identityApi",
   baseQuery,
+  extractRehydrationInfo(action, { reducerPath }) {
+    if (action.type === "persist/REHYDRATE" && action.payload) {
+      return action.payload[reducerPath];
+    }
+  },
   endpoints: (build) => ({
     /************************************************************
      * User-facing flow errors

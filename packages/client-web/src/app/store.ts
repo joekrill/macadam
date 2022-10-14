@@ -2,7 +2,7 @@ import { appApi, authSlice, identityApi } from "@macadam/api-client";
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { i18nSlice } from "../features/i18n/i18nSlice";
-import { monitoringReducEnhancer } from "../features/monitoring/monitoringReducEnhancer";
+import { monitoringReduxEnhancer } from "../features/monitoring/monitoringReduxEnhancer";
 
 export const store = configureStore({
   devTools: process.env.NODE_ENV !== "production",
@@ -12,7 +12,7 @@ export const store = configureStore({
     [authSlice.name]: authSlice.reducer,
     [identityApi.reducerPath]: identityApi.reducer,
   },
-  enhancers: [monitoringReducEnhancer],
+  enhancers: [monitoringReduxEnhancer],
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(appApi.middleware, identityApi.middleware),
 });

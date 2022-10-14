@@ -1,4 +1,16 @@
-*.localtest.me, localtest.me {
+localhost, localtest.me {
+  encode zstd gzip
+  tls internal
+  handle {
+    handle_path /kratos/public/* {
+      reverse_proxy http://kratos:4433
+    }
+    reverse_proxy /api/* api-server:4000
+    reverse_proxy client-web:3000
+  }
+}
+
+*.localtest.me {
   encode zstd gzip
   tls internal
 
@@ -92,11 +104,6 @@
   handle @grafana {
     reverse_proxy grafana:3000
   }
-
-  # Fallback for otherwise unhandled domains
-  handle {
-		abort
-	}
 }
 
 # For healthcheck and fallback 

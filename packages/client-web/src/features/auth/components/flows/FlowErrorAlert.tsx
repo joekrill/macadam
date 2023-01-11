@@ -2,6 +2,7 @@ import {
   ERROR_SESSION_ALREADY_AVAILABLE,
   FlowRestartReason,
   SelfServiceFlowName,
+  useFlowError,
 } from "@macadam/api-client";
 import { SerializedError } from "@reduxjs/toolkit";
 import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
@@ -12,7 +13,6 @@ import {
   ErrorAlertProps,
 } from "../../../errors/components/ErrorAlert/ErrorAlert";
 import { LoggedInAlreadyNotice } from "../LoggedInAlreadyNotice/LoggedInAlreadyNotice";
-import { useFlowError } from "./useFlowError";
 
 export interface FlowErrorProps
   extends Omit<ErrorAlertProps, "children" | "status" | "onRetryClick"> {

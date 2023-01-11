@@ -5,6 +5,7 @@ import {
   useSession,
 } from "@macadam/api-client";
 import { Route } from "react-router-dom";
+import { LoginModal } from "../features/auth/components/flows/login/LoginModal";
 import { VerifyEmailNotificationBanner } from "../features/auth/components/VerifyEmailNotificationBanner/VerifyEmailNotificationBanner";
 import { FlowErrorPage } from "../features/auth/pages/FlowErrorPage";
 import { LoginPage } from "../features/auth/pages/LoginPage";
@@ -32,7 +33,7 @@ import { TermsAndConditions } from "./pages/TermsAndConditions/TermsAndCondition
  */
 export const AppContent = () => {
   const { colorMode } = useColorMode();
-  useSession();
+  const session = useSession();
   const pendingVerifiableAddresses = useAppSelector((s) =>
     selectPendingVerifiableAddresses(s)
   );
@@ -40,6 +41,12 @@ export const AppContent = () => {
   return (
     <>
       <Global styles={`html, body { height: 100%;}`} />
+      {session.authState === "session_aal2_required" && (
+        <LoginModal aal="aal2" isOpen onClose={() => {}} />
+      )}
+      {session.authState === "session_refresh_required" && (
+        <LoginModal refresh isOpen onClose={() => {}} />
+      )}
       <Flex
         direction="column"
         sx={{

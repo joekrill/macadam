@@ -1,4 +1,4 @@
-import { Button, ButtonProps, Icon } from "@chakra-ui/react";
+import { Button, ButtonProps, chakra, Icon } from "@chakra-ui/react";
 import { FaHome } from "react-icons/fa";
 import { FormattedMessage } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
@@ -14,13 +14,14 @@ export const HomepageButton = (props: HomepageButtonLinkProps) => (
     variant="solid"
     colorScheme="blue"
     leftIcon={<Icon as={FaHome} />}
-    noOfLines={1}
     {...props}
     to="/"
   >
-    <FormattedMessage
-      id="common.hompageButton.label"
-      defaultMessage="Go to the homepage"
-    />
+    <chakra.span noOfLines={1}>
+      <FormattedMessage
+        id="common.hompageButton.label"
+        defaultMessage="Go to the homepage"
+      />
+    </chakra.span>
   </Button>
 );

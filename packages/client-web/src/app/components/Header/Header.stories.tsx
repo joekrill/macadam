@@ -45,6 +45,7 @@ const Template: Story<HeaderProps & StoryProps> = ({
 }) => (
   <UseSessionContext.Provider
     value={{
+      selectAuthState: () => (isLoggedIn ? "authenticated" : "unauthenticated"),
       selectIdentity: () =>
         isLoggedIn
           ? {

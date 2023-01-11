@@ -16,13 +16,21 @@ selfservice:
   default_browser_return_url: http://localhost:4455/
   allowed_return_urls:
     - https://localhost/
-    - https://localtest.me
 
   methods:
     password:
       enabled: true
     oidc:
-      enabled: true
+      # Disabled until we can figure out how to get it to work in react native.
+      # See:
+      # - https://github.com/ory/kratos/discussions/2434
+      # - https://github.com/ory/kratos/pull/2346
+      # - https://github.com/ory/kratos/issues/707
+      # Possible using one/some of these?
+      # - https://dev.to/safaiyeh/react-native-authentication-with-webview-1nh
+      # - https://github.com/FormidableLabs/react-native-app-auth
+      # - https://github.com/react-native-webview/react-native-webview
+      enabled: false
       config:
         providers:
           - id: twitch

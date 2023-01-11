@@ -18,7 +18,7 @@ x-service-defaults: &service-defaults
 
 x-kratos-defaults: &kratos-defaults
   <<: *service-defaults
-  image: oryd/kratos:v0.10.1
+  image: oryd/kratos:v0.11
   depends_on:
     postgres:
       condition: service_healthy
@@ -107,6 +107,9 @@ services:
         aliases:
           - glitchtip.${DOMAIN_NAME:-localtest.me}
     # hostname: ${DOMAIN_NAME:-localtest.me}
+    environment:
+      # - DOMAIN_NAME=${DOMAIN_NAME:-localtest.me}
+      - DOMAIN_NAME=temp.joekrill.net
     ports:
       - "80:80"
       - "443:443"
@@ -126,10 +129,10 @@ services:
     # ports:
     #   - "5432:5432"
     healthcheck:
-      test: ["CMD", "pg_isready"]
-      timeout: 45s
-      interval: 10s
-      start_period: 5s
+      test: ["CMD-SHELL", "pg_isready -d macadam -U macadam || exit 1"]
+      timeout: 5s
+      interval: 5s
+      start_period: 30s
       retries: 10
     environment:
       POSTGRES_HOST_AUTH_METHOD: "trust"

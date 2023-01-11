@@ -36,6 +36,7 @@ export function isLoginFlow(result?: LoginFlow | unknown): result is LoginFlow {
 }
 
 const loginFlowSuccessSchema = z.object({
+  session_token: z.string().optional(),
   session: sessionSchema,
 });
 

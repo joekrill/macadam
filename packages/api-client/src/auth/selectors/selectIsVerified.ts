@@ -1,4 +1,6 @@
-import { AuthSliceState } from "../authSlice";
+import { IdentitySliceState } from "../identitySlice";
 
-export const selectIsVerified = (state: AuthSliceState) =>
-  !!state.auth.identity?.verifiable_addresses?.some(({ verified }) => verified);
+export const selectIsVerified = (state: IdentitySliceState) =>
+  !!state.identity.identity?.verifiable_addresses?.some(
+    ({ verified }) => verified
+  );

@@ -1,16 +1,18 @@
 import { skipToken } from "@reduxjs/toolkit/query";
 import { createContext, useContext } from "react";
-import { useWhoamiQuery } from "../authApi";
-import { useAuthSelector } from "../authSlice";
+import { identityApi } from "../identityApi";
+import { useIdentitySelector } from "../identitySlice";
+import { selectAuthState } from "../selectors/selectAuthState";
 import { selectIdentity } from "../selectors/selectIdentity";
 import { selectIsVerified } from "../selectors/selectIsVerified";
 import { selectSession } from "../selectors/selectSession";
 import { selectSessionLastUpdated } from "../selectors/selectSessionLastUpdated";
 
 export const UseSessionContext = createContext({
-  selectSession,
+  selectAuthState,
   selectIdentity,
   selectIsVerified,
+  selectSession,
   selectSessionLastUpdated,
   whoamiQueryArg: undefined as void | typeof skipToken,
 });
@@ -21,16 +23,21 @@ export const useSession = () => {
   // This allows us to mock out various scenarios for Stories and testing
   const ctx = useContext(UseSessionContext);
 
-  useWhoamiQuery(ctx.whoamiQueryArg);
+  identityApi.useWhoamiQuery(ctx.whoamiQueryArg);
 
-  const session = useAuthSelector((state) => ctx.selectSession(state));
-  const identity = useAuthSelector((state) => ctx.selectIdentity(state));
-  const isVerified = useAuthSelector((state) => ctx.selectIsVerified(state));
-  const lastUpdated = useAuthSelector((state) =>
+  const authState = useIdentitySelector((state) => ctx.selectAuthState(state));
+  const session = useIdentitySelector((state) => ctx.selectSession(state));
+  const identity = useIdentitySelector((state) => ctx.selectIdentity(state));
+  const isVerified = useIdentitySelector((state) =>
+    ctx.selectIsVerified(state)
+  );
+  const lastUpdated = useIdentitySelector((state) =>
     ctx.selectSessionLastUpdated(state)
   );
 
   return {
+    authState,
+
     identity,
 
     session,
@@ -38,12 +45,12 @@ export const useSession = () => {
     /**
      * True if logged in, false if logged out, undefined if unknown.
      */
-    isLoggedIn: lastUpdated === undefined ? undefined : !!session,
+    isLoggedIn: lastUpdated === undefined ? undefined : !!identity,
 
     /**
      * True if logged out, false if logged in, undefined if unknown.
      */
-    isLoggedOut: lastUpdated === undefined ? undefined : !session,
+    isLoggedOut: lastUpdated === undefined ? undefined : !identity,
 
     /**
      * True when we haven't yet determined if the user is logged in or not.
@@ -51,8 +58,6 @@ export const useSession = () => {
     isUnknown: !lastUpdated,
 
     isVerified,
-
-    traits: identity?.traits || {},
 
     username: identity?.traits?.email,
   };

@@ -26,6 +26,7 @@ interface StoryProps extends CurrentUserMenuProps {
 const Template: Story<StoryProps> = ({ name, email = "", ...props }) => (
   <UseSessionContext.Provider
     value={{
+      selectAuthState: () => "authenticated",
       selectIdentity: () => ({
         id: "",
         schema_id: "",

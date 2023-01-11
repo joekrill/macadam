@@ -1,4 +1,5 @@
 import { VStack } from "@chakra-ui/react";
+import { useLoginFlow, UseLoginFlowOptions } from "@macadam/api-client";
 import { FormattedMessage } from "react-intl";
 import { Navigate } from "react-router-dom";
 import { LoadingSpinner } from "../../../../common/components/LoadingSpinner/LoadingSpinner";
@@ -12,7 +13,6 @@ import { FlowHeading } from "../FlowHeading";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
 import { LoginForm } from "./LoginForm";
 import { LoginFormTitle } from "./LoginFormTitle";
-import { useLoginFlow, UseLoginFlowOptions } from "./useLoginFlow";
 
 export interface LoginProps extends UseLoginFlowOptions {}
 

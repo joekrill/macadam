@@ -1,4 +1,4 @@
-import { AuthSliceState } from "../authSlice";
+import { IdentitySliceState } from "../identitySlice";
 
-export const selectSessionLastUpdated = (state: AuthSliceState) =>
-  state.auth.lastUpdated;
+export const selectSessionLastUpdated = (state: IdentitySliceState) =>
+  state.identity.lastUpdated;

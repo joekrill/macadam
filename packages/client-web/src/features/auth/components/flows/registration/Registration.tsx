@@ -1,4 +1,8 @@
 import { VStack } from "@chakra-ui/react";
+import {
+  useRegistrationFlow,
+  UseRegistrationFlowOptions,
+} from "@macadam/api-client";
 import { FormattedMessage } from "react-intl";
 import { Navigate } from "react-router-dom";
 import { LoadingSpinner } from "../../../../common/components/LoadingSpinner/LoadingSpinner";
@@ -11,10 +15,6 @@ import { FlowErrorAlert } from "../FlowErrorAlert";
 import { FlowHeading } from "../FlowHeading";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
 import { RegistrationForm } from "./RegistrationForm";
-import {
-  useRegistrationFlow,
-  UseRegistrationFlowOptions,
-} from "./useRegistrationFlow";
 
 export interface RegistrationProps extends UseRegistrationFlowOptions {}
 

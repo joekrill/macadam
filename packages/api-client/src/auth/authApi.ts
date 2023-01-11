@@ -1,25 +1,27 @@
 import { appApi } from "../api/appApi";
-import { WhoamiResponse, whoamiResponseSchema } from "./schemas/whoami";
+import {
+  PermissionsResponse,
+  permissionsResponseSchema
+} from "./schemas/permissions";
 
 export const authApi = appApi
   .enhanceEndpoints({
-    addTagTypes: ["Session"],
+    addTagTypes: ["Permissions"],
   })
   .injectEndpoints({
     endpoints: (build) => ({
       /**
-       * The whoami andpoint uses the api-server, because we augment it with
-       * some additional data (rules)
+       * Returns the rules that define the permissions of the current user.
        */
-      whoami: build.query<WhoamiResponse, void>({
-        query: () => "users/whoami",
-        transformResponse: (result) => whoamiResponseSchema.parse(result),
-        providesTags: () => [{ type: "Session", id: "CURRENT" }],
+      permissions: build.query<PermissionsResponse, void>({
+        query: () => "user/permissions",
+        transformResponse: (result) => permissionsResponseSchema.parse(result),
+        providesTags: () => [{ type: "Permissions", id: "CURRENT" }],
       }),
     }),
   });
 
 export const invalidateSession = () =>
-  authApi.util.invalidateTags([{ type: "Session", id: "CURRENT" }]);
-
-export const { useWhoamiQuery } = authApi;
+  authApi.util.invalidateTags([
+    { type: "Permissions", id: "CURRENT" },
+  ]);

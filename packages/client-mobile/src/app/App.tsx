@@ -1,41 +1,26 @@
-import { authApi } from "@macadam/api-client";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Constants from "expo-constants";
-import { StatusBar } from "expo-status-bar";
-import { Box, NativeBaseProvider, Text } from "native-base";
+import { NativeBaseProvider } from "native-base";
+import { IntlProvider } from "react-intl";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Provider as ReduxProvider } from "react-redux";
 import { PersistGate } from "redux-persist/lib/integration/react";
 import { theme } from "../features/theme/default";
+import { AppNavigation } from "../navigation/AppNavigation";
 import { persistor, store } from "./store";
 
-const HomeScreen = () => {
-  const { data, isLoading, error } = authApi.useWhoamiQuery();
-
-  return (
-    <Box flex={1} bg="#fff" alignItems="center" justifyContent="center">
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <Text>API_HOST: {Constants.expoConfig?.extra?.apiHost}</Text>
-      <Text>Data: {JSON.stringify(data)}</Text>
-      <Text>isLoading: {JSON.stringify(isLoading)}</Text>
-      <Text>error: {JSON.stringify(error)}</Text>
-      <StatusBar />
-    </Box>
-  );
-};
-
-const Stack = createNativeStackNavigator();
+// TODO: Get active locale using expo-localization https://docs.expo.dev/guides/localization/
+// TODO: https://www.npmjs.com/package/@config-plugins/android-jsc-intl
+// TODO: https://formatjs.io/docs/react-intl/#react-native
 
 export const App = () => (
-  <ReduxProvider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <NativeBaseProvider theme={theme}>
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeScreen} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </NativeBaseProvider>
-    </PersistGate>
-  </ReduxProvider>
+  <IntlProvider locale="en" messages={{}} defaultLocale={"en"}>
+    <ReduxProvider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <NativeBaseProvider theme={theme}>
+          <SafeAreaProvider>
+            <AppNavigation />
+          </SafeAreaProvider>
+        </NativeBaseProvider>
+      </PersistGate>
+    </ReduxProvider>
+  </IntlProvider>
 );

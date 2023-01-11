@@ -1,6 +1,6 @@
-import { AuthSliceState } from "../authSlice";
+import { IdentitySliceState } from "../identitySlice";
 
-export const selectPendingVerifiableAddresses = (state: AuthSliceState) =>
-  state.auth.identity?.verifiable_addresses?.filter(
+export const selectPendingVerifiableAddresses = (state: IdentitySliceState) =>
+  state.identity.identity?.verifiable_addresses?.filter(
     (address) => !address.verified && address.status === "sent"
   ) || [];

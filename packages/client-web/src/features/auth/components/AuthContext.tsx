@@ -1,7 +1,6 @@
 import { Ability } from "@casl/ability";
-import { selectRules } from "@macadam/api-client";
+import { authApi } from "@macadam/api-client";
 import { createContext, PropsWithChildren, useContext, useMemo } from "react";
-import { useAppSelector } from "../../../app/hooks";
 import { captureException } from "../../monitoring/capture";
 
 export const AuthContext = createContext<Ability>(new Ability());
@@ -9,18 +8,20 @@ export const AuthContext = createContext<Ability>(new Ability());
 export type AuthProviderProps = PropsWithChildren<{}>;
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const rules = useAppSelector((state) => selectRules(state));
+  const permissions = authApi.usePermissionsQuery();
+
   const ability = useMemo(() => {
     const ability = new Ability();
+
     try {
       // @ts-ignore
-      ability.update(rules);
+      ability.update(permissions.data?.data.rules);
     } catch (error) {
       captureException(error);
     }
 
     return ability;
-  }, [rules]);
+  }, [permissions.data?.data.rules]);
 
   return (
     <AuthContext.Provider value={ability}>{children}</AuthContext.Provider>

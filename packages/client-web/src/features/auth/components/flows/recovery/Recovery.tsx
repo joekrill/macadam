@@ -1,4 +1,5 @@
 import { VStack } from "@chakra-ui/react";
+import { useRecoveryFlow, UseRecoveryFlowOptions } from "@macadam/api-client";
 import { FormattedMessage } from "react-intl";
 import { Navigate } from "react-router-dom";
 import { HomepageButton } from "../../../../common/components/HomepageButton";
@@ -8,7 +9,6 @@ import { SelfServiceUiMessageList } from "../../SelfServiceUi/SelfServiceUiMessa
 import { FlowErrorAlert } from "../FlowErrorAlert";
 import { FlowHeading } from "../FlowHeading";
 import { FlowRestartedAlert } from "../FlowRestartedAlert";
-import { useRecoveryFlow, UseRecoveryFlowOptions } from "./useRecoveryFlow";
 
 export interface RecoveryProps extends UseRecoveryFlowOptions {}
 

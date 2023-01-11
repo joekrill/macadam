@@ -1,3 +1,4 @@
-import { AuthSliceState } from "../authSlice";
+import { IdentitySliceState } from "../identitySlice";
 
-export const selectIdentity = (state: AuthSliceState) => state.auth.identity;
+export const selectIdentity = (state: IdentitySliceState) =>
+  state.identity.identity;

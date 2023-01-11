@@ -3,6 +3,7 @@ import { uiContainerSchema } from "./ui";
 
 export interface InitializeFlowParams {
   returnTo?: string;
+  clientType?: "browser" | "api";
 }
 
 export const flowTypeSchema = z.union([z.literal("api"), z.literal("browser")]);

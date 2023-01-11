@@ -59,7 +59,7 @@ export const sessionSchema = z.object({
 
   id: z.string(),
 
-  identity: identitySchema,
+  identity: identitySchema.nullable(),
 
   /**
    * The Session Issuance Timestamp  When this session was authenticated at.

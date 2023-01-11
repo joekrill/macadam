@@ -5,14 +5,24 @@ import { ability, AbilityState } from "../../../features/auth/ability";
 
 export const usersRouter = new Router<DefaultState & AbilityState>();
 
-usersRouter.use(ability()).get("/whoami", async (ctx) => {
-  const session = await ctx.state.session();
+usersRouter
+  .use(ability())
+  .get("/whoami", async (ctx) => {
+    const session = await ctx.state.session();
 
-  ctx.status = 200;
-  ctx.body = {
-    data: {
-      session,
-      rules: packRules(ctx.state.ability?.rules || []),
-    },
-  };
-});
+    ctx.status = 200;
+    ctx.body = {
+      data: {
+        session,
+        rules: packRules(ctx.state.ability?.rules || []),
+      },
+    };
+  })
+  .get("/permissions", async (ctx) => {
+    ctx.status = 200;
+    ctx.body = {
+      data: {
+        rules: packRules(ctx.state.ability?.rules || []),
+      },
+    };
+  });

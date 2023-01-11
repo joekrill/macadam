@@ -1,4 +1,4 @@
-import { appApi, authSlice, identityApi } from "@macadam/api-client";
+import { appApi, identityApi, identitySlice } from "@macadam/api-client";
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { i18nSlice } from "../features/i18n/i18nSlice";
@@ -9,8 +9,8 @@ export const store = configureStore({
   reducer: {
     [appApi.reducerPath]: appApi.reducer,
     [i18nSlice.name]: i18nSlice.reducer,
-    [authSlice.name]: authSlice.reducer,
     [identityApi.reducerPath]: identityApi.reducer,
+    [identitySlice.name]: identitySlice.reducer,
   },
   enhancers: [monitoringReduxEnhancer],
   middleware: (getDefaultMiddleware) =>

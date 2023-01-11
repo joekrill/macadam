@@ -10,6 +10,7 @@ export type RegistrationFlow = z.infer<typeof registrationFlowSchema>;
 export const registrationFlowSuccessSchema = z.object({
   identity: identitySchema,
   session: sessionSchema.optional(),
+  session_token: z.string().optional(),
 });
 
 export type RegistrationFlowSuccess = z.infer<

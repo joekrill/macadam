@@ -3,6 +3,7 @@ import snakecaseKeys from "snakecase-keys";
 import { appApi } from "../api/appApi";
 import { getApiHost } from "../config";
 import { invalidateSession } from "./authApi";
+import { IdentitySliceState } from "./identitySlice";
 import { FlowError, flowErrorSchema } from "./schemas/errors";
 import { InitializeFlowParams } from "./schemas/flows/common";
 import {
@@ -29,6 +30,7 @@ import {
   VerificationFlow,
   verificationFlowSchema,
 } from "./schemas/flows/verification";
+import { WhoamiResponse, whoamiResponseSchema } from "./schemas/whoami";
 export interface SubmitFlowPayload {
   action: string;
   method: string;
@@ -38,7 +40,13 @@ export interface SubmitFlowPayload {
 const baseQuery: ReturnType<typeof fetchBaseQuery> = (...args) =>
   fetchBaseQuery({
     baseUrl: `${getApiHost()}/kratos/public`,
-    prepareHeaders: (headers) => {
+    prepareHeaders: (headers, api) => {
+      headers.set("Accept", "application/json");
+      const state = api.getState() as IdentitySliceState;
+      const { sessionToken } = state.identity;
+      if (sessionToken) {
+        headers.set("Authorization", `Bearer ${sessionToken}`);
+      }
       headers.set("Accept", "application/json");
       return headers;
     },
@@ -57,6 +65,11 @@ export const identityApi = createApi({
     }
   },
   endpoints: (build) => ({
+    whoami: build.query<WhoamiResponse, void>({
+      query: () => "/sessions/whoami",
+      transformResponse: (response) => whoamiResponseSchema.parse(response),
+    }),
+
     /************************************************************
      * User-facing flow errors
      * https://www.ory.sh/kratos/docs/self-service/flows/user-facing-errors/
@@ -81,7 +94,7 @@ export const identityApi = createApi({
       InitializeLoginFlowParams | undefined
     >({
       query: (params = {}) => ({
-        url: "/self-service/login/browser",
+        url: `/self-service/login/${params.clientType || "browser"}`,
         params: snakecaseKeys(params),
       }),
       transformResponse: (response) => loginFlowSchema.parse(response),
@@ -130,7 +143,7 @@ export const identityApi = createApi({
       InitializeFlowParams | undefined
     >({
       query: (params = {}) => ({
-        url: "/self-service/registration/browser",
+        url: `/self-service/registration/${params.clientType || "browser"}`,
         params: snakecaseKeys(params),
       }),
       transformResponse: (response) => registrationFlowSchema.parse(response),
@@ -314,6 +327,25 @@ export const identityApi = createApi({
       }),
       transformResponse: (response) =>
         selfServiceLogoutUrlSchema.parse(response).logout_url,
+    }),
+
+    logoutNative: build.mutation<void, string>({
+      query: (sessionToken) => ({
+        url: "/self-service/logout/api",
+        method: "DELETE",
+        body: {
+          performNativeLogoutBody: {
+            session_token: sessionToken,
+          },
+        },
+      }),
+      async onQueryStarted(_params, { dispatch, queryFulfilled }) {
+        try {
+          await queryFulfilled;
+          dispatch(identityApi.util.resetApiState());
+          dispatch(appApi.util.resetApiState());
+        } catch {}
+      },
     }),
 
     logout: build.mutation<void, string>({

@@ -1,7 +1,7 @@
 import {
   appApi,
-  authSlice,
   identityApi,
+  identitySlice,
   setApiHost,
 } from "@macadam/api-client";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -34,7 +34,7 @@ const persistedReducer = persistReducer(
   },
   combineReducers({
     [appApi.reducerPath]: appApi.reducer,
-    [authSlice.name]: authSlice.reducer,
+    [identitySlice.name]: identitySlice.reducer,
     [identityApi.reducerPath]: identityApi.reducer,
   })
 );

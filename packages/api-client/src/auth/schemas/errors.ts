@@ -130,4 +130,16 @@ export const sessionAlreadyEstablishedErrorSchema = z.object({
   }),
 });
 
+export const sessionAal2RequiredErrorSchema = z.object({
+  error: genericErrorSchema.extend({
+    id: z.literal(ERROR_SESSION_AAL2_REQUIRED),
+  }),
+});
+
+export const sessionRefreshRequiredErrorSchema = z.object({
+  error: genericErrorSchema.extend({
+    id: z.literal(ERROR_SESSION_REFRESH_REQUIRED),
+  }),
+});
+
 export type FlowError = z.infer<typeof flowErrorSchema>;

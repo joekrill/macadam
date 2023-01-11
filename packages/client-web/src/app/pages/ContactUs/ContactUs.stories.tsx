@@ -14,6 +14,7 @@ export default {
 const Template: Story<ContactUsProps> = (args) => (
   <UseSessionContext.Provider
     value={{
+      selectAuthState: () => "authenticated",
       selectIdentity: () => ({
         id: "",
         schema_id: "",

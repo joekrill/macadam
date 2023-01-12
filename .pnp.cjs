@@ -8572,7 +8572,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@macadam/api-client", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#workspace:packages/api-client"],\
             ["@casl/ability", "npm:6.3.3"],\
             ["@reduxjs/toolkit", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:1.9.1"],\
-            ["@types/node", "npm:18.8.5"],\
+            ["@types/node", "npm:18.11.18"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-redux", "npm:7.1.25"],\
             ["@types/reduxjs__toolkit", null],\
@@ -8601,7 +8601,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@macadam/api-client", "workspace:packages/api-client"],\
             ["@casl/ability", "npm:6.3.3"],\
             ["@reduxjs/toolkit", "virtual:24290f3c87cf0c7611cd2cbef12c06f7dab7e2bd602f83250d11e6447ac1ce668c6ac4895d56d1801aec1c1584c887723e6e4b19dde1334903b6addb415a74b7#npm:1.9.1"],\
-            ["@types/node", "npm:18.8.5"],\
+            ["@types/node", "npm:18.11.18"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-redux", "npm:7.1.25"],\
             ["react", "npm:18.2.0"],\
@@ -8642,7 +8642,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/koa-compose", "npm:3.2.5"],\
             ["@types/koa__cors", "npm:3.3.0"],\
             ["@types/koa__router", "npm:12.0.0"],\
-            ["@types/node", "npm:18.8.5"],\
+            ["@types/node", "npm:18.11.18"],\
             ["@types/nodemailer", "npm:6.4.7"],\
             ["@types/pino", "npm:7.0.5"],\
             ["@types/supertest", "npm:2.0.12"],\
@@ -8723,7 +8723,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/eslint", "npm:8.4.10"],\
             ["@types/favicons", "npm:7.0.0"],\
             ["@types/jest", "npm:29.2.5"],\
-            ["@types/node", "npm:18.8.5"],\
+            ["@types/node", "npm:18.11.18"],\
             ["@types/prettier", "npm:2.7.2"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.10"],\
@@ -39766,7 +39766,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node12", "npm:1.0.8"],\
             ["@tsconfig/node14", "npm:1.0.1"],\
             ["@tsconfig/node16", "npm:1.0.2"],\
-            ["@types/node", "npm:18.8.5"],\
+            ["@types/node", "npm:18.11.18"],\
             ["@types/swc__core", null],\
             ["@types/swc__wasm", null],\
             ["@types/typescript", null],\

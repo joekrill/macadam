@@ -79,7 +79,7 @@
     "snakecase-keys": "^5.4.4",
     "source-map-explorer": "^2.5.3",
     "ts-node": "^10.9.1",
-    "typescript": "^4.8.4",
+    "typescript": "^4.9.4",
     "web-vitals": "^3.1.1",
     "zod": "^3.20.2"
   },
@@ -180,9 +180,9 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.31.0",
     "eslint-config-react-app": "^7.0.1",
-    "favicons": "^7.0.1",
+    "favicons": "^7.0.2",
     "svgo": "^3.0.2",
-    "webpack": "5.74.0"
+    "webpack": "5.75.0"
   },
   "jest": {
     "collectCoverageFrom": [

@@ -1,3 +1,4 @@
+/// <reference types="../src/react-app-env" />
 import dotenv from "dotenv";
 import { expand } from "dotenv-expand";
 import favicons, { FaviconResponse } from "favicons";

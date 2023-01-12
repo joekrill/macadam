@@ -217,10 +217,20 @@ services:
       # write permission to the directory.
       - mail_data:/home/node/test
 
+  yarn:
+    <<: *api-server-defaults
+    command: ["yarn"]
+    restart: on-failure
+
   api-server-migrate:
     <<: *api-server-defaults
     command: ["yarn", "workspace", "@macadam/api-server", "run", "migrate:up"]
     restart: on-failure
+    depends_on:
+      yarn:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
 
   api-server:
     <<: *api-server-defaults
@@ -256,12 +266,11 @@ services:
       context: .
       dockerfile: ./packages/client-web/dev.Dockerfile
     command: ["yarn", "workspace", "@macadam/client-web", "run", "start:legacy"]
-    # depends_on:
-    #   api-client-build:
+    depends_on:
+      yarn:
+        condition: service_completed_successfully
+    #   api-client-builder:
     #     condition: service_healthy
-    # Uncomment to expose client-web directly
-    # ports:
-    #   - 3000:3000
     environment:
       # Key should match WEB_PROJECT_KEY in `seed_macadam.py` with dashes stripped
       REACT_APP_SENTRY_DSN: "http://239d589a58d24675be8159b19718b22e@glitchtip-web:8080/1"
@@ -282,6 +291,9 @@ services:
       dockerfile: ./packages/client-web/dev.Dockerfile
     command:
       ["yarn", "workspace", "@macadam/client-web", "run", "storybook:legacy"]
+    depends_on:
+      yarn:
+        condition: service_completed_successfully
     volumes:
       - .:/var/macadam
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-  <circle fill="#FFF" r="48%" cx="50%" cy="50%"/>
-  <svg fill="#1A1A1A" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 110 110" transform="matrix(.69 0 0 .69 15.5 15.5)" style="fill:#1a1a1a">
-    <path d="M83.14 16H59.462l.504 15.978h-9.863L50.568 16H26.524c-1.924 0-3.744 1.133-4.05 2.543L7.142 89.233C6.46 92.368 8.31 95 11.272 95h37l.89-30.654H60.99L61.958 95H98.39c2.96 0 4.811-2.632 4.131-5.767l-15.334-70.69C86.883 17.133 85.062 16 83.139 16ZM60.82 59.022H49.317l.644-22.138h10.162l.698 22.138Z" fill="#1A1A1A" fill-rule="evenodd"/>
+  <circle cx="50%" cy="50%" r="48%" fill="#FFF"/>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#1A1A1A" style="fill:#1a1a1a" transform="matrix(.69 0 0 .69 15.5 15.5)" viewBox="0 0 110 110">
+    <path fill="#1A1A1A" fill-rule="evenodd" d="M83.14 16H59.462l.504 15.978h-9.863L50.568 16H26.524c-1.924 0-3.744 1.133-4.05 2.543L7.142 89.233C6.46 92.368 8.31 95 11.272 95h37l.89-30.654H60.99L61.958 95H98.39c2.96 0 4.811-2.632 4.131-5.767l-15.334-70.69C86.883 17.133 85.062 16 83.139 16ZM60.82 59.022H49.317l.644-22.138h10.162l.698 22.138Z"/>
   </svg>
 </svg>

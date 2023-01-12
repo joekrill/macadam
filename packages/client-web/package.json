@@ -177,12 +177,11 @@
     "@types/eslint": "^8.4.10",
     "@types/favicons": "^7.0.0",
     "@types/prettier": "^2.7.2",
-    "@types/svgo": "^2.6.4",
     "cross-env": "^7.0.3",
     "eslint": "^8.31.0",
     "eslint-config-react-app": "^7.0.1",
     "favicons": "^7.0.1",
-    "svgo": "^2.8.0",
+    "svgo": "^3.0.2",
     "webpack": "5.74.0"
   },
   "jest": {

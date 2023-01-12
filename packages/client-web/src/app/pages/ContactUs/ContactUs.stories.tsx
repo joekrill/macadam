@@ -1,5 +1,4 @@
 import { UseSessionContext } from "@macadam/api-client";
-import { skipToken } from "@reduxjs/toolkit/query";
 import { Meta, Story } from "@storybook/react";
 import { ContactUs, ContactUsProps } from "./ContactUs";
 
@@ -14,21 +13,12 @@ export default {
 const Template: Story<ContactUsProps> = (args) => (
   <UseSessionContext.Provider
     value={{
-      selectAuthState: () => "authenticated",
-      selectIdentity: () => ({
-        id: "",
-        schema_id: "",
-        schema_url: "",
-        state: null,
-        traits: {
-          // email,
-          // name,
-        },
-      }),
-      selectIsVerified: () => true,
-      selectSession: () => ({ id: "" }),
+      selectAuthState: () => "unauthenticated",
+      selectIdentity: () => undefined,
+      selectIsVerified: () => false,
+      selectSession: () => undefined,
       selectSessionLastUpdated: () => undefined,
-      whoamiQueryArg: skipToken,
+      whoamiQueryArg: undefined,
     }}
   >
     <ContactUs {...args} />

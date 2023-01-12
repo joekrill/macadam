@@ -7499,17 +7499,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@formatjs/cli", [\
-        ["npm:5.1.1", {\
-          "packageLocation": "./.yarn/cache/@formatjs-cli-npm-5.1.1-8862e2edc2-ea29b052a5.zip/node_modules/@formatjs/cli/",\
+        ["npm:5.1.12", {\
+          "packageLocation": "./.yarn/cache/@formatjs-cli-npm-5.1.12-f560a47a02-a76c599507.zip/node_modules/@formatjs/cli/",\
           "packageDependencies": [\
-            ["@formatjs/cli", "npm:5.1.1"]\
+            ["@formatjs/cli", "npm:5.1.12"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:5.1.1", {\
-          "packageLocation": "./.yarn/__virtual__/@formatjs-cli-virtual-476435a47a/0/cache/@formatjs-cli-npm-5.1.1-8862e2edc2-ea29b052a5.zip/node_modules/@formatjs/cli/",\
+        ["virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:5.1.12", {\
+          "packageLocation": "./.yarn/__virtual__/@formatjs-cli-virtual-f2b38e5bd3/0/cache/@formatjs-cli-npm-5.1.12-f560a47a02-a76c599507.zip/node_modules/@formatjs/cli/",\
           "packageDependencies": [\
-            ["@formatjs/cli", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:5.1.1"],\
+            ["@formatjs/cli", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:5.1.12"],\
             ["@types/vue__compiler-sfc", null],\
             ["@vue/compiler-sfc", null]\
           ],\
@@ -7521,68 +7521,68 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@formatjs/ecma402-abstract", [\
-        ["npm:1.12.0", {\
-          "packageLocation": "./.yarn/cache/@formatjs-ecma402-abstract-npm-1.12.0-1123b3bcda-29dc157d66.zip/node_modules/@formatjs/ecma402-abstract/",\
+        ["npm:1.14.3", {\
+          "packageLocation": "./.yarn/cache/@formatjs-ecma402-abstract-npm-1.14.3-0c3d1a26d2-504ae97750.zip/node_modules/@formatjs/ecma402-abstract/",\
           "packageDependencies": [\
-            ["@formatjs/ecma402-abstract", "npm:1.12.0"],\
-            ["@formatjs/intl-localematcher", "npm:0.2.31"],\
+            ["@formatjs/ecma402-abstract", "npm:1.14.3"],\
+            ["@formatjs/intl-localematcher", "npm:0.2.32"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@formatjs/fast-memoize", [\
-        ["npm:1.2.6", {\
-          "packageLocation": "./.yarn/cache/@formatjs-fast-memoize-npm-1.2.6-d6232d02cc-cdb944a920.zip/node_modules/@formatjs/fast-memoize/",\
+        ["npm:1.2.7", {\
+          "packageLocation": "./.yarn/cache/@formatjs-fast-memoize-npm-1.2.7-a6c0f2541c-ba372a3e93.zip/node_modules/@formatjs/fast-memoize/",\
           "packageDependencies": [\
-            ["@formatjs/fast-memoize", "npm:1.2.6"],\
+            ["@formatjs/fast-memoize", "npm:1.2.7"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@formatjs/icu-messageformat-parser", [\
-        ["npm:2.1.8", {\
-          "packageLocation": "./.yarn/cache/@formatjs-icu-messageformat-parser-npm-2.1.8-8d122e174d-2cb12a404d.zip/node_modules/@formatjs/icu-messageformat-parser/",\
+        ["npm:2.1.14", {\
+          "packageLocation": "./.yarn/cache/@formatjs-icu-messageformat-parser-npm-2.1.14-c0bb1bc4ac-4d13230af0.zip/node_modules/@formatjs/icu-messageformat-parser/",\
           "packageDependencies": [\
-            ["@formatjs/icu-messageformat-parser", "npm:2.1.8"],\
-            ["@formatjs/ecma402-abstract", "npm:1.12.0"],\
-            ["@formatjs/icu-skeleton-parser", "npm:1.3.13"],\
+            ["@formatjs/icu-messageformat-parser", "npm:2.1.14"],\
+            ["@formatjs/ecma402-abstract", "npm:1.14.3"],\
+            ["@formatjs/icu-skeleton-parser", "npm:1.3.18"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@formatjs/icu-skeleton-parser", [\
-        ["npm:1.3.13", {\
-          "packageLocation": "./.yarn/cache/@formatjs-icu-skeleton-parser-npm-1.3.13-29048a136f-8d52b4da2e.zip/node_modules/@formatjs/icu-skeleton-parser/",\
+        ["npm:1.3.18", {\
+          "packageLocation": "./.yarn/cache/@formatjs-icu-skeleton-parser-npm-1.3.18-3cbfc6044a-19655c452e.zip/node_modules/@formatjs/icu-skeleton-parser/",\
           "packageDependencies": [\
-            ["@formatjs/icu-skeleton-parser", "npm:1.3.13"],\
-            ["@formatjs/ecma402-abstract", "npm:1.12.0"],\
+            ["@formatjs/icu-skeleton-parser", "npm:1.3.18"],\
+            ["@formatjs/ecma402-abstract", "npm:1.14.3"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@formatjs/intl", [\
-        ["npm:2.4.2", {\
-          "packageLocation": "./.yarn/cache/@formatjs-intl-npm-2.4.2-5e802fecbe-93f7a80af9.zip/node_modules/@formatjs/intl/",\
+        ["npm:2.6.3", {\
+          "packageLocation": "./.yarn/cache/@formatjs-intl-npm-2.6.3-33e1dda302-1922ec1d63.zip/node_modules/@formatjs/intl/",\
           "packageDependencies": [\
-            ["@formatjs/intl", "npm:2.4.2"]\
+            ["@formatjs/intl", "npm:2.6.3"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:13621668b94af4270716ff9a088f74f9bd40db407c804e5df92bf2d2465b91ff048a53683b4976357e2b7490e427c6dcdd52184edd29aeca617bbdf3ec730fe9#npm:2.4.2", {\
-          "packageLocation": "./.yarn/__virtual__/@formatjs-intl-virtual-2aa57b4181/0/cache/@formatjs-intl-npm-2.4.2-5e802fecbe-93f7a80af9.zip/node_modules/@formatjs/intl/",\
+        ["virtual:03a7825c55bce163c23f9ab6cf52824401e401a0acad76de14694ede7c6736915fc84158a4fff7ebca383b3eeb3bcb02708923157acc72a1ef3bcefb6c715927#npm:2.6.3", {\
+          "packageLocation": "./.yarn/__virtual__/@formatjs-intl-virtual-ddd1acba44/0/cache/@formatjs-intl-npm-2.6.3-33e1dda302-1922ec1d63.zip/node_modules/@formatjs/intl/",\
           "packageDependencies": [\
-            ["@formatjs/intl", "virtual:13621668b94af4270716ff9a088f74f9bd40db407c804e5df92bf2d2465b91ff048a53683b4976357e2b7490e427c6dcdd52184edd29aeca617bbdf3ec730fe9#npm:2.4.2"],\
-            ["@formatjs/ecma402-abstract", "npm:1.12.0"],\
-            ["@formatjs/fast-memoize", "npm:1.2.6"],\
-            ["@formatjs/icu-messageformat-parser", "npm:2.1.8"],\
-            ["@formatjs/intl-displaynames", "npm:6.1.3"],\
-            ["@formatjs/intl-listformat", "npm:7.1.2"],\
+            ["@formatjs/intl", "virtual:03a7825c55bce163c23f9ab6cf52824401e401a0acad76de14694ede7c6736915fc84158a4fff7ebca383b3eeb3bcb02708923157acc72a1ef3bcefb6c715927#npm:2.6.3"],\
+            ["@formatjs/ecma402-abstract", "npm:1.14.3"],\
+            ["@formatjs/fast-memoize", "npm:1.2.7"],\
+            ["@formatjs/icu-messageformat-parser", "npm:2.1.14"],\
+            ["@formatjs/intl-displaynames", "npm:6.2.3"],\
+            ["@formatjs/intl-listformat", "npm:7.1.7"],\
             ["@types/typescript", null],\
-            ["intl-messageformat", "npm:10.1.5"],\
+            ["intl-messageformat", "npm:10.2.5"],\
             ["tslib", "npm:2.4.0"],\
             ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=0102e9"]\
           ],\
@@ -7594,104 +7594,104 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@formatjs/intl-datetimeformat", [\
-        ["npm:6.2.0", {\
-          "packageLocation": "./.yarn/cache/@formatjs-intl-datetimeformat-npm-6.2.0-ccbf1d6cde-5e13336e95.zip/node_modules/@formatjs/intl-datetimeformat/",\
+        ["npm:6.4.3", {\
+          "packageLocation": "./.yarn/cache/@formatjs-intl-datetimeformat-npm-6.4.3-b09d0d8f41-5c77fd9e82.zip/node_modules/@formatjs/intl-datetimeformat/",\
           "packageDependencies": [\
-            ["@formatjs/intl-datetimeformat", "npm:6.2.0"],\
-            ["@formatjs/ecma402-abstract", "npm:1.12.0"],\
-            ["@formatjs/intl-localematcher", "npm:0.2.31"],\
+            ["@formatjs/intl-datetimeformat", "npm:6.4.3"],\
+            ["@formatjs/ecma402-abstract", "npm:1.14.3"],\
+            ["@formatjs/intl-localematcher", "npm:0.2.32"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@formatjs/intl-displaynames", [\
-        ["npm:6.1.3", {\
-          "packageLocation": "./.yarn/cache/@formatjs-intl-displaynames-npm-6.1.3-da19083521-3d5ec69503.zip/node_modules/@formatjs/intl-displaynames/",\
+        ["npm:6.2.3", {\
+          "packageLocation": "./.yarn/cache/@formatjs-intl-displaynames-npm-6.2.3-62645576d1-2e5fe38231.zip/node_modules/@formatjs/intl-displaynames/",\
           "packageDependencies": [\
-            ["@formatjs/intl-displaynames", "npm:6.1.3"],\
-            ["@formatjs/ecma402-abstract", "npm:1.12.0"],\
-            ["@formatjs/intl-localematcher", "npm:0.2.31"],\
+            ["@formatjs/intl-displaynames", "npm:6.2.3"],\
+            ["@formatjs/ecma402-abstract", "npm:1.14.3"],\
+            ["@formatjs/intl-localematcher", "npm:0.2.32"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@formatjs/intl-getcanonicallocales", [\
-        ["npm:2.0.4", {\
-          "packageLocation": "./.yarn/cache/@formatjs-intl-getcanonicallocales-npm-2.0.4-47953be32d-222c98dfb3.zip/node_modules/@formatjs/intl-getcanonicallocales/",\
+        ["npm:2.0.5", {\
+          "packageLocation": "./.yarn/cache/@formatjs-intl-getcanonicallocales-npm-2.0.5-87fcadb117-8276c055fe.zip/node_modules/@formatjs/intl-getcanonicallocales/",\
           "packageDependencies": [\
-            ["@formatjs/intl-getcanonicallocales", "npm:2.0.4"],\
+            ["@formatjs/intl-getcanonicallocales", "npm:2.0.5"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@formatjs/intl-listformat", [\
-        ["npm:7.1.2", {\
-          "packageLocation": "./.yarn/cache/@formatjs-intl-listformat-npm-7.1.2-42edaa41c2-6c3ecab371.zip/node_modules/@formatjs/intl-listformat/",\
+        ["npm:7.1.7", {\
+          "packageLocation": "./.yarn/cache/@formatjs-intl-listformat-npm-7.1.7-ebce332137-96b45bcf0e.zip/node_modules/@formatjs/intl-listformat/",\
           "packageDependencies": [\
-            ["@formatjs/intl-listformat", "npm:7.1.2"],\
-            ["@formatjs/ecma402-abstract", "npm:1.12.0"],\
-            ["@formatjs/intl-localematcher", "npm:0.2.31"],\
+            ["@formatjs/intl-listformat", "npm:7.1.7"],\
+            ["@formatjs/ecma402-abstract", "npm:1.14.3"],\
+            ["@formatjs/intl-localematcher", "npm:0.2.32"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@formatjs/intl-locale", [\
-        ["npm:3.0.6", {\
-          "packageLocation": "./.yarn/cache/@formatjs-intl-locale-npm-3.0.6-47d89e43a8-fc77f69724.zip/node_modules/@formatjs/intl-locale/",\
+        ["npm:3.0.11", {\
+          "packageLocation": "./.yarn/cache/@formatjs-intl-locale-npm-3.0.11-d979450778-615a2293e5.zip/node_modules/@formatjs/intl-locale/",\
           "packageDependencies": [\
-            ["@formatjs/intl-locale", "npm:3.0.6"],\
-            ["@formatjs/ecma402-abstract", "npm:1.12.0"],\
-            ["@formatjs/intl-getcanonicallocales", "npm:2.0.4"],\
+            ["@formatjs/intl-locale", "npm:3.0.11"],\
+            ["@formatjs/ecma402-abstract", "npm:1.14.3"],\
+            ["@formatjs/intl-getcanonicallocales", "npm:2.0.5"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@formatjs/intl-localematcher", [\
-        ["npm:0.2.31", {\
-          "packageLocation": "./.yarn/cache/@formatjs-intl-localematcher-npm-0.2.31-c6d664a86c-c05bf5854f.zip/node_modules/@formatjs/intl-localematcher/",\
+        ["npm:0.2.32", {\
+          "packageLocation": "./.yarn/cache/@formatjs-intl-localematcher-npm-0.2.32-1117c79148-477e18aaba.zip/node_modules/@formatjs/intl-localematcher/",\
           "packageDependencies": [\
-            ["@formatjs/intl-localematcher", "npm:0.2.31"],\
+            ["@formatjs/intl-localematcher", "npm:0.2.32"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@formatjs/intl-numberformat", [\
-        ["npm:8.1.3", {\
-          "packageLocation": "./.yarn/cache/@formatjs-intl-numberformat-npm-8.1.3-1001e5467c-078cd3d670.zip/node_modules/@formatjs/intl-numberformat/",\
+        ["npm:8.3.3", {\
+          "packageLocation": "./.yarn/cache/@formatjs-intl-numberformat-npm-8.3.3-9bb36b443a-56fc8e25c4.zip/node_modules/@formatjs/intl-numberformat/",\
           "packageDependencies": [\
-            ["@formatjs/intl-numberformat", "npm:8.1.3"],\
-            ["@formatjs/ecma402-abstract", "npm:1.12.0"],\
-            ["@formatjs/intl-localematcher", "npm:0.2.31"],\
+            ["@formatjs/intl-numberformat", "npm:8.3.3"],\
+            ["@formatjs/ecma402-abstract", "npm:1.14.3"],\
+            ["@formatjs/intl-localematcher", "npm:0.2.32"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@formatjs/intl-pluralrules", [\
-        ["npm:5.1.3", {\
-          "packageLocation": "./.yarn/cache/@formatjs-intl-pluralrules-npm-5.1.3-05ba0e95e8-da83f58c50.zip/node_modules/@formatjs/intl-pluralrules/",\
+        ["npm:5.1.8", {\
+          "packageLocation": "./.yarn/cache/@formatjs-intl-pluralrules-npm-5.1.8-6719777ce3-89c2cb25ab.zip/node_modules/@formatjs/intl-pluralrules/",\
           "packageDependencies": [\
-            ["@formatjs/intl-pluralrules", "npm:5.1.3"],\
-            ["@formatjs/ecma402-abstract", "npm:1.12.0"],\
-            ["@formatjs/intl-localematcher", "npm:0.2.31"],\
+            ["@formatjs/intl-pluralrules", "npm:5.1.8"],\
+            ["@formatjs/ecma402-abstract", "npm:1.14.3"],\
+            ["@formatjs/intl-localematcher", "npm:0.2.32"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@formatjs/intl-relativetimeformat", [\
-        ["npm:11.1.3", {\
-          "packageLocation": "./.yarn/cache/@formatjs-intl-relativetimeformat-npm-11.1.3-2b2b3d2b3b-bc781cfb10.zip/node_modules/@formatjs/intl-relativetimeformat/",\
+        ["npm:11.1.8", {\
+          "packageLocation": "./.yarn/cache/@formatjs-intl-relativetimeformat-npm-11.1.8-5b779ff16b-2ca379c549.zip/node_modules/@formatjs/intl-relativetimeformat/",\
           "packageDependencies": [\
-            ["@formatjs/intl-relativetimeformat", "npm:11.1.3"],\
-            ["@formatjs/ecma402-abstract", "npm:1.12.0"],\
-            ["@formatjs/intl-localematcher", "npm:0.2.31"],\
+            ["@formatjs/intl-relativetimeformat", "npm:11.1.8"],\
+            ["@formatjs/ecma402-abstract", "npm:1.14.3"],\
+            ["@formatjs/intl-localematcher", "npm:0.2.32"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
@@ -8861,16 +8861,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@chakra-ui/theme-tools", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:2.0.16"],\
             ["@emotion/react", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:11.10.5"],\
             ["@emotion/styled", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:11.10.5"],\
-            ["@formatjs/cli", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:5.1.1"],\
-            ["@formatjs/intl-datetimeformat", "npm:6.2.0"],\
-            ["@formatjs/intl-displaynames", "npm:6.1.3"],\
-            ["@formatjs/intl-getcanonicallocales", "npm:2.0.4"],\
-            ["@formatjs/intl-listformat", "npm:7.1.2"],\
-            ["@formatjs/intl-locale", "npm:3.0.6"],\
-            ["@formatjs/intl-localematcher", "npm:0.2.31"],\
-            ["@formatjs/intl-numberformat", "npm:8.1.3"],\
-            ["@formatjs/intl-pluralrules", "npm:5.1.3"],\
-            ["@formatjs/intl-relativetimeformat", "npm:11.1.3"],\
+            ["@formatjs/cli", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:5.1.12"],\
+            ["@formatjs/intl-datetimeformat", "npm:6.4.3"],\
+            ["@formatjs/intl-displaynames", "npm:6.2.3"],\
+            ["@formatjs/intl-getcanonicallocales", "npm:2.0.5"],\
+            ["@formatjs/intl-listformat", "npm:7.1.7"],\
+            ["@formatjs/intl-locale", "npm:3.0.11"],\
+            ["@formatjs/intl-localematcher", "npm:0.2.32"],\
+            ["@formatjs/intl-numberformat", "npm:8.3.3"],\
+            ["@formatjs/intl-pluralrules", "npm:5.1.8"],\
+            ["@formatjs/intl-relativetimeformat", "npm:11.1.8"],\
             ["@hookform/resolvers", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:2.9.8"],\
             ["@macadam/api-client", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#workspace:packages/api-client"],\
             ["@mdx-js/react", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:2.1.5"],\
@@ -8932,7 +8932,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-helmet-async", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:1.3.0"],\
             ["react-hook-form", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:7.37.0"],\
             ["react-icons", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:4.4.0"],\
-            ["react-intl", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:6.1.2"],\
+            ["react-intl", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:6.2.5"],\
             ["react-redux", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:8.0.4"],\
             ["react-refresh", "npm:0.14.0"],\
             ["react-router-dom", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:6.4.1"],\
@@ -25368,13 +25368,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["intl-messageformat", [\
-        ["npm:10.1.5", {\
-          "packageLocation": "./.yarn/cache/intl-messageformat-npm-10.1.5-35035335cf-0e95843c74.zip/node_modules/intl-messageformat/",\
+        ["npm:10.2.5", {\
+          "packageLocation": "./.yarn/cache/intl-messageformat-npm-10.2.5-0d8dd1b0b8-048d6e3e74.zip/node_modules/intl-messageformat/",\
           "packageDependencies": [\
-            ["intl-messageformat", "npm:10.1.5"],\
-            ["@formatjs/ecma402-abstract", "npm:1.12.0"],\
-            ["@formatjs/fast-memoize", "npm:1.2.6"],\
-            ["@formatjs/icu-messageformat-parser", "npm:2.1.8"],\
+            ["intl-messageformat", "npm:10.2.5"],\
+            ["@formatjs/ecma402-abstract", "npm:1.14.3"],\
+            ["@formatjs/fast-memoize", "npm:1.2.7"],\
+            ["@formatjs/icu-messageformat-parser", "npm:2.1.14"],\
             ["tslib", "npm:2.4.0"]\
           ],\
           "linkType": "HARD"\
@@ -34594,27 +34594,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["react-intl", [\
-        ["npm:6.1.2", {\
-          "packageLocation": "./.yarn/cache/react-intl-npm-6.1.2-4de2af284b-ba4a0c6cdd.zip/node_modules/react-intl/",\
+        ["npm:6.2.5", {\
+          "packageLocation": "./.yarn/cache/react-intl-npm-6.2.5-5ae1877907-826b6ed593.zip/node_modules/react-intl/",\
           "packageDependencies": [\
-            ["react-intl", "npm:6.1.2"]\
+            ["react-intl", "npm:6.2.5"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:6.1.2", {\
-          "packageLocation": "./.yarn/__virtual__/react-intl-virtual-13621668b9/0/cache/react-intl-npm-6.1.2-4de2af284b-ba4a0c6cdd.zip/node_modules/react-intl/",\
+        ["virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:6.2.5", {\
+          "packageLocation": "./.yarn/__virtual__/react-intl-virtual-03a7825c55/0/cache/react-intl-npm-6.2.5-5ae1877907-826b6ed593.zip/node_modules/react-intl/",\
           "packageDependencies": [\
-            ["react-intl", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:6.1.2"],\
-            ["@formatjs/ecma402-abstract", "npm:1.12.0"],\
-            ["@formatjs/icu-messageformat-parser", "npm:2.1.8"],\
-            ["@formatjs/intl", "virtual:13621668b94af4270716ff9a088f74f9bd40db407c804e5df92bf2d2465b91ff048a53683b4976357e2b7490e427c6dcdd52184edd29aeca617bbdf3ec730fe9#npm:2.4.2"],\
-            ["@formatjs/intl-displaynames", "npm:6.1.3"],\
-            ["@formatjs/intl-listformat", "npm:7.1.2"],\
+            ["react-intl", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:6.2.5"],\
+            ["@formatjs/ecma402-abstract", "npm:1.14.3"],\
+            ["@formatjs/icu-messageformat-parser", "npm:2.1.14"],\
+            ["@formatjs/intl", "virtual:03a7825c55bce163c23f9ab6cf52824401e401a0acad76de14694ede7c6736915fc84158a4fff7ebca383b3eeb3bcb02708923157acc72a1ef3bcefb6c715927#npm:2.6.3"],\
+            ["@formatjs/intl-displaynames", "npm:6.2.3"],\
+            ["@formatjs/intl-listformat", "npm:7.1.7"],\
             ["@types/hoist-non-react-statics", "npm:3.3.1"],\
             ["@types/react", "npm:18.0.21"],\
             ["@types/typescript", null],\
             ["hoist-non-react-statics", "npm:3.3.2"],\
-            ["intl-messageformat", "npm:10.1.5"],\
+            ["intl-messageformat", "npm:10.2.5"],\
             ["react", "npm:18.2.0"],\
             ["tslib", "npm:2.4.0"],\
             ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=0102e9"]\

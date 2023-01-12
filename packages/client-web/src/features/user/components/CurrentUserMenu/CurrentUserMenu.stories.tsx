@@ -1,6 +1,7 @@
 import { UseSessionContext } from "@macadam/api-client";
 import { skipToken } from "@reduxjs/toolkit/query";
 import { Meta, Story } from "@storybook/react";
+import { useMemo } from "react";
 import { CurrentUserMenu, CurrentUserMenuProps } from "./CurrentUserMenu";
 
 export default {
@@ -23,29 +24,38 @@ interface StoryProps extends CurrentUserMenuProps {
   email?: string;
 }
 
-const Template: Story<StoryProps> = ({ name, email = "", ...props }) => (
-  <UseSessionContext.Provider
-    value={{
-      selectAuthState: () => "authenticated",
-      selectIdentity: () => ({
-        id: "",
-        schema_id: "",
-        schema_url: "",
-        state: null,
-        traits: {
-          email,
-          name,
-        },
-      }),
-      selectIsVerified: () => true,
-      selectSession: () => ({ id: "" }),
-      selectSessionLastUpdated: () => undefined,
-      whoamiQueryArg: skipToken,
-    }}
-  >
-    <CurrentUserMenu {...props} />
-  </UseSessionContext.Provider>
-);
+const Template: Story<StoryProps> = ({ name, email = "", ...props }) => {
+  const memoizedIdentity = useMemo(
+    () => ({
+      id: "",
+      schema_id: "",
+      schema_url: "",
+      state: null,
+      traits: {
+        email,
+        name,
+      },
+    }),
+    [email, name]
+  );
+  const memoizedSession = useMemo(() => ({ id: "" }), []);
+  const memoizedLastUpdated = useMemo(() => Date.now(), []);
+
+  return (
+    <UseSessionContext.Provider
+      value={{
+        selectAuthState: () => "authenticated",
+        selectIdentity: () => memoizedIdentity,
+        selectIsVerified: () => true,
+        selectSession: () => memoizedSession,
+        selectSessionLastUpdated: () => memoizedLastUpdated,
+        whoamiQueryArg: skipToken,
+      }}
+    >
+      <CurrentUserMenu {...props} />
+    </UseSessionContext.Provider>
+  );
+};
 
 export const Default = Template.bind({});
 

@@ -8655,7 +8655,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:4a34099110e8dc1c081c393c5898e4ae8c224cda8da12bfdb7798d4cf6eac80ff8156ee4779dd0ee2587068530f7a0dd951e665eea631e7aa70720d6b5abdf0e#npm:29.3.1"],\
             ["jest-mock-axios", "npm:4.7.0-beta3"],\
             ["koa", "npm:2.14.1"],\
-            ["koa-body", "npm:5.0.0"],\
+            ["koa-body", "npm:6.0.1"],\
             ["koa-compose", "npm:4.1.0"],\
             ["koa-helmet", "npm:6.1.0"],\
             ["nodemailer", "npm:6.9.0"],\
@@ -14720,6 +14720,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/co-body", [\
+        ["npm:6.1.0", {\
+          "packageLocation": "./.yarn/cache/@types-co-body-npm-6.1.0-9c84c63ec0-95de9fe423.zip/node_modules/@types/co-body/",\
+          "packageDependencies": [\
+            ["@types/co-body", "npm:6.1.0"],\
+            ["@types/node", "npm:18.8.5"],\
+            ["@types/qs", "npm:6.9.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/connect", [\
         ["npm:3.4.35", {\
           "packageLocation": "./.yarn/cache/@types-connect-npm-3.4.35-7337eee0a3-fe81351470.zip/node_modules/@types/connect/",\
@@ -15179,6 +15190,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-koa-npm-2.13.4-e10e6e7742-35a54e6894.zip/node_modules/@types/koa/",\
           "packageDependencies": [\
             ["@types/koa", "npm:2.13.4"],\
+            ["@types/accepts", "npm:1.3.5"],\
+            ["@types/content-disposition", "npm:0.5.3"],\
+            ["@types/cookies", "npm:0.7.6"],\
+            ["@types/http-assert", "npm:1.5.1"],\
+            ["@types/http-errors", "npm:1.8.2"],\
+            ["@types/keygrip", "npm:1.0.2"],\
+            ["@types/koa-compose", "npm:3.2.5"],\
+            ["@types/node", "npm:18.8.5"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:2.13.5", {\
+          "packageLocation": "./.yarn/cache/@types-koa-npm-2.13.5-ee6d93204c-e3b634d934.zip/node_modules/@types/koa/",\
+          "packageDependencies": [\
+            ["@types/koa", "npm:2.13.5"],\
             ["@types/accepts", "npm:1.3.5"],\
             ["@types/content-disposition", "npm:0.5.3"],\
             ["@types/cookies", "npm:0.7.6"],\
@@ -20033,10 +20059,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["co-body", [\
-        ["npm:5.2.0", {\
-          "packageLocation": "./.yarn/cache/co-body-npm-5.2.0-89daef6bfa-48e1ffe00b.zip/node_modules/co-body/",\
+        ["npm:6.1.0", {\
+          "packageLocation": "./.yarn/cache/co-body-npm-6.1.0-8102b96671-d0a78831a6.zip/node_modules/co-body/",\
           "packageDependencies": [\
-            ["co-body", "npm:5.2.0"],\
+            ["co-body", "npm:6.1.0"],\
             ["inflation", "npm:2.0.0"],\
             ["qs", "npm:6.11.0"],\
             ["raw-body", "npm:2.5.1"],\
@@ -29523,13 +29549,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["koa-body", [\
-        ["npm:5.0.0", {\
-          "packageLocation": "./.yarn/cache/koa-body-npm-5.0.0-aab947da66-2fed59a8b9.zip/node_modules/koa-body/",\
+        ["npm:6.0.1", {\
+          "packageLocation": "./.yarn/cache/koa-body-npm-6.0.1-e672d44ab2-515bcac297.zip/node_modules/koa-body/",\
           "packageDependencies": [\
-            ["koa-body", "npm:5.0.0"],\
+            ["koa-body", "npm:6.0.1"],\
+            ["@types/co-body", "npm:6.1.0"],\
             ["@types/formidable", "npm:2.0.5"],\
-            ["co-body", "npm:5.2.0"],\
-            ["formidable", "npm:2.0.1"]\
+            ["@types/koa", "npm:2.13.5"],\
+            ["co-body", "npm:6.1.0"],\
+            ["formidable", "npm:2.0.1"],\
+            ["zod", "npm:3.20.2"]\
           ],\
           "linkType": "HARD"\
         }]\

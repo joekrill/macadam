@@ -93,7 +93,7 @@ export const FLOW_RESTART_ERRORS = [
   ERROR_SELF_SERVICE_FLOW_EXPIRED,
 ] as const;
 
-export type FlowRestartReason = typeof FLOW_RESTART_ERRORS[number];
+export type FlowRestartReason = (typeof FLOW_RESTART_ERRORS)[number];
 
 export function isFlowRestartError(id?: string): id is FlowRestartReason {
   return (
@@ -108,7 +108,7 @@ export const FLOW_REDIRECT_ERRORS = [
   ERROR_SESSION_AAL2_REQUIRED,
 ] as const;
 
-export type FlowRedirectReason = typeof FLOW_REDIRECT_ERRORS[number];
+export type FlowRedirectReason = (typeof FLOW_REDIRECT_ERRORS)[number];
 
 export function isFlowRedirectError(id?: string): id is FlowRedirectReason {
   return (

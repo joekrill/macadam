@@ -28,7 +28,6 @@ export class KratosIdentityCredentialType {
     () => KratosIdentityCredentialIdentifier,
     (ici) => ici.identity_credential_type
   )
-  identity_credential_identifiers = new Collection<KratosIdentityCredentialIdentifier>(
-    this
-  );
+  identity_credential_identifiers =
+    new Collection<KratosIdentityCredentialIdentifier>(this);
 }

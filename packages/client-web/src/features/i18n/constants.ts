@@ -26,7 +26,7 @@ export const LOCALES =
     ? [...REAL_LOCALES, ...TEST_LOCALES]
     : [...REAL_LOCALES];
 
-export type LocaleCode = typeof LOCALES[number];
+export type LocaleCode = (typeof LOCALES)[number];
 
 /**
  * Used to indicate the device-preferred locale.

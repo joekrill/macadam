@@ -35,7 +35,6 @@ export class KratosIdentityCredential extends KratosBaseEntity {
     () => KratosIdentityCredentialIdentifier,
     (ici) => ici.identity_credential
   )
-  identity_credential_identifiers = new Collection<KratosIdentityCredentialIdentifier>(
-    this
-  );
+  identity_credential_identifiers =
+    new Collection<KratosIdentityCredentialIdentifier>(this);
 }

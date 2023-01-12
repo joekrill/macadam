@@ -15,7 +15,7 @@ import { ruleToDbQuery } from "./ruleToDbQuery";
 
 const entities = [...dbEntities, ...kratosEntities] as const;
 
-export type AppEntity = typeof entities[number];
+export type AppEntity = (typeof entities)[number];
 
 export type AppSubject = InferSubjects<AppEntity, true>;
 

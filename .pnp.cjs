@@ -8633,7 +8633,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@opentelemetry/instrumentation-koa", "virtual:bcd16a35578e611198ca5900a64801a5f9a3a73d25204ba234774779e626e3646024561528eba264e32fac5950c4604e04e9cb6c4220cf97d38b39a8a7917803#npm:0.34.0"],\
             ["@opentelemetry/metrics", "virtual:bcd16a35578e611198ca5900a64801a5f9a3a73d25204ba234774779e626e3646024561528eba264e32fac5950c4604e04e9cb6c4220cf97d38b39a8a7917803#npm:0.24.0"],\
             ["@opentelemetry/sdk-node", "virtual:bcd16a35578e611198ca5900a64801a5f9a3a73d25204ba234774779e626e3646024561528eba264e32fac5950c4604e04e9cb6c4220cf97d38b39a8a7917803#npm:0.35.0"],\
-            ["@ory/kratos-client", "npm:0.0.0-next.a36dda23f209"],\
+            ["@ory/kratos-client", "npm:0.11.0"],\
             ["@sentry/node", "npm:7.30.0"],\
             ["@shopify/jest-koa-mocks", "npm:5.0.1"],\
             ["@types/http-errors", "npm:2.0.1"],\
@@ -11378,10 +11378,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@ory/kratos-client", [\
-        ["npm:0.0.0-next.a36dda23f209", {\
-          "packageLocation": "./.yarn/cache/@ory-kratos-client-npm-0.0.0-next.a36dda23f209-e80335464e-6973972f75.zip/node_modules/@ory/kratos-client/",\
+        ["npm:0.11.0", {\
+          "packageLocation": "./.yarn/cache/@ory-kratos-client-npm-0.11.0-668dc45130-462b2a4ea1.zip/node_modules/@ory/kratos-client/",\
           "packageDependencies": [\
-            ["@ory/kratos-client", "npm:0.0.0-next.a36dda23f209"],\
+            ["@ory/kratos-client", "npm:0.11.0"],\
             ["axios", "npm:0.21.4"]\
           ],\
           "linkType": "HARD"\

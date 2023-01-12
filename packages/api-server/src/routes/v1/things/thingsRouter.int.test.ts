@@ -1,5 +1,5 @@
 import { AbstractSqlDriver, SqlEntityManager } from "@mikro-orm/postgresql";
-import { V0alpha2Api } from "@ory/kratos-client";
+import { FrontendApi } from "@ory/kratos-client";
 import pino from "pino";
 import request from "supertest";
 import { createApp } from "../../../app";
@@ -10,11 +10,11 @@ jest.unmock("@mikro-orm/migrations");
 
 let app: Awaited<ReturnType<typeof createApp>>;
 let em: SqlEntityManager<AbstractSqlDriver>;
-const V0alpha2ApiMock = V0alpha2Api as jest.Mock<V0alpha2Api>;
+const FrontendApiMock = FrontendApi as jest.Mock<FrontendApi>;
 
 const initApp = async ({ identityId }: { identityId?: string } = {}) => {
   // @ts-ignore
-  V0alpha2ApiMock.mockImplementation(() => {
+  FrontendApiMock.mockImplementation(() => {
     return {
       toSession: () =>
         identityId

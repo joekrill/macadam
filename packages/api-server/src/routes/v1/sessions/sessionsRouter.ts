@@ -85,8 +85,10 @@ sessionsRouter
       return ctx.throw(405);
     }
 
-    await ctx.kratos.publicApi.submitSelfServiceLogoutFlowWithoutBrowser({
-      session_token: ctx.state.kratosSession!.token,
+    await ctx.kratos.frontendApi.performNativeLogout({
+      performNativeLogoutBody: {
+        session_token: ctx.state.kratosSession!.token,
+      },
     });
     ctx.status = 204;
   });

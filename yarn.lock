@@ -4404,7 +4404,7 @@ __metadata:
     "@opentelemetry/instrumentation-koa": ^0.34.0
     "@opentelemetry/metrics": ^0.24.0
     "@opentelemetry/sdk-node": ^0.35.0
-    "@ory/kratos-client": 0.0.0-next.a36dda23f209
+    "@ory/kratos-client": 0.11.0
     "@sentry/node": ^7.30.0
     "@shopify/jest-koa-mocks": ^5.0.1
     "@types/http-errors": ^2.0.1
@@ -6068,12 +6068,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ory/kratos-client@npm:0.0.0-next.a36dda23f209":
-  version: 0.0.0-next.a36dda23f209
-  resolution: "@ory/kratos-client@npm:0.0.0-next.a36dda23f209"
+"@ory/kratos-client@npm:0.11.0":
+  version: 0.11.0
+  resolution: "@ory/kratos-client@npm:0.11.0"
   dependencies:
-    axios: ^0.21.1
-  checksum: 6973972f755aa3d3cf57d76ee9147e31924a556714fc0dfea1b3eb030ba7e4319f962474763ca5b4bac14f3d34f135a8fe9f3477a07b7396acb2d1f3f2eaa39f
+    axios: ^0.21.4
+  checksum: 462b2a4ea1d5b27a45c0111d07a0a355274bdd576b83effafb85f9a25c3e2617a5ccc5c02676a05475a864faa38ed0c20f7a3b7af6ddc62b658e5a199860fecd
   languageName: node
   linkType: hard
 
@@ -10961,7 +10961,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.21.1":
+"axios@npm:^0.21.4":
   version: 0.21.4
   resolution: "axios@npm:0.21.4"
   dependencies:

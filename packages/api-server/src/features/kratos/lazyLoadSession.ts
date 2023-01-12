@@ -37,15 +37,17 @@ export const lazyLoadSession =
                 authHeader.startsWith("bearer ") &&
                 authHeader.substring(7).trim();
 
-              const response = await ctx.kratos.publicApi.toSession(
-                sessionToken || undefined,
-                ctx.request.headers["cookie"]
-              );
+              const response = await ctx.kratos.frontendApi.toSession({
+                xSessionToken: sessionToken || undefined,
+                cookie: ctx.request.headers["cookie"],
+              });
               session = response.data;
-              ctx.state.entityManager?.setFilterParams(
-                "user",
-                session.identity
-              );
+              if (session?.identity) {
+                ctx.state.entityManager?.setFilterParams(
+                  "user",
+                  session.identity
+                );
+              }
               ctx.state.logger.debug({ session }, "Kratos session received");
             } catch (caughtError) {
               if (unauthorizedErrorSchema.safeParse(caughtError).success) {

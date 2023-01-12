@@ -1,5 +1,5 @@
 import { MikroORM } from "@mikro-orm/core";
-import { Configuration, Session, V0alpha2Api } from "@ory/kratos-client";
+import { Configuration, FrontendApi, Session } from "@ory/kratos-client";
 import createHttpError from "http-errors";
 import Koa from "koa";
 import { OrmConfigOptions } from "../db/ormConfig";
@@ -8,7 +8,7 @@ import { lazyLoadSession } from "./lazyLoadSession";
 
 export interface KratosContext {
   kratos: {
-    publicApi: V0alpha2Api;
+    frontendApi: FrontendApi;
     orm: MikroORM;
   };
 }
@@ -31,7 +31,7 @@ export const initializeKratos = async (
   { publicUrl, ...ormOptions }: InitializeKratosOptions
 ) => {
   const config = new Configuration({ basePath: publicUrl });
-  const publicApi = new V0alpha2Api(config);
+  const frontendApi = new FrontendApi(config);
   app.use(lazyLoadSession());
 
   app.context.logger.debug("Kratos Database connecting");
@@ -47,7 +47,7 @@ export const initializeKratos = async (
   app.context.logger.debug("Kratos Database connected");
 
   app.context.kratos = {
-    publicApi,
+    frontendApi,
     orm,
   };
 

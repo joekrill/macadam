@@ -12,7 +12,7 @@ describe("lazyLoadSession()", () => {
   const toSessionMock = jest.fn();
   let instance: Middleware;
   let contextMock: ParameterizedContext;
-  const mockV0alpha1ApiInstance = {
+  const mockFrontendApiInstance = {
     toSession: toSessionMock,
   };
 
@@ -21,7 +21,7 @@ describe("lazyLoadSession()", () => {
     contextMock = createMockContext({
       customProperties: {
         kratos: {
-          publicApi: mockV0alpha1ApiInstance,
+          frontendApi: mockFrontendApiInstance,
         },
       },
     });

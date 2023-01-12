@@ -8728,7 +8728,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.10"],\
             ["@types/react-redux", "npm:7.1.25"],\
-            ["@types/react-table", "npm:7.7.12"],\
+            ["@types/react-table", "npm:7.7.14"],\
             ["@types/testing-library__jest-dom", "npm:5.14.5"],\
             ["@typescript-eslint/eslint-plugin", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:5.48.1"],\
             ["cross-env", "npm:7.0.3"],\
@@ -15587,10 +15587,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/react-table", [\
-        ["npm:7.7.12", {\
-          "packageLocation": "./.yarn/cache/@types-react-table-npm-7.7.12-3528071866-287ea68e75.zip/node_modules/@types/react-table/",\
+        ["npm:7.7.14", {\
+          "packageLocation": "./.yarn/cache/@types-react-table-npm-7.7.14-cabc63bcb5-238047beca.zip/node_modules/@types/react-table/",\
           "packageDependencies": [\
-            ["@types/react-table", "npm:7.7.12"],\
+            ["@types/react-table", "npm:7.7.14"],\
             ["@types/react", "npm:18.0.21"]\
           ],\
           "linkType": "HARD"\

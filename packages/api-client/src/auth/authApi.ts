@@ -1,7 +1,7 @@
 import { appApi } from "../api/appApi";
 import {
   PermissionsResponse,
-  permissionsResponseSchema
+  permissionsResponseSchema,
 } from "./schemas/permissions";
 
 export const authApi = appApi
@@ -22,6 +22,4 @@ export const authApi = appApi
   });
 
 export const invalidateSession = () =>
-  authApi.util.invalidateTags([
-    { type: "Permissions", id: "CURRENT" },
-  ]);
+  authApi.util.invalidateTags([{ type: "Permissions", id: "CURRENT" }]);

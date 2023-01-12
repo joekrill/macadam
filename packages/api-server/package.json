@@ -20,7 +20,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@casl/ability": "^6.3.1",
+    "@casl/ability": "^6.3.3",
     "@faker-js/faker": "^7.5.0",
     "@koa/cors": "^4.0.0",
     "@koa/router": "^12.0.0",
@@ -70,7 +70,7 @@
     "jest": "^29.1.2",
     "jest-mock-axios": "^4.7.0-beta",
     "nodemon": "^2.0.20",
-    "sqlite3": "5.1.2",
+    "sqlite3": "5.1.4",
     "supertest": "^6.3.0",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",

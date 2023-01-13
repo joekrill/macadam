@@ -120,6 +120,19 @@ services:
       - ./tmp/caddy:/data/caddy
       - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
 
+  # Used as a general purpose endpoint to "swallow" requests, for example we
+  # point our glitchtip URL to this when we don't have an actual glitchtip
+  # service running.
+  echo:
+    <<: *service-defaults
+    image: jmalloc/echo-server
+    environment:
+      PORT: 80
+
+  ###################################################################
+  # Postgres
+  ###################################################################
+
   postgres:
     <<: *service-defaults
     image: postgres:14
@@ -153,12 +166,20 @@ services:
     environment:
       DATABASE_URL: postgres://macadam:macadam!@postgres:5432/macadam?sslmode=disable
 
+  ###################################################################
+  # Redis
+  ###################################################################
+
   redis:
     <<: *service-defaults
     image: redis
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       start_period: 10s
+
+  ###################################################################
+  # Kratos
+  ###################################################################
 
   kratos-migrate:
     <<: *kratos-defaults
@@ -217,6 +238,10 @@ services:
       # write permission to the directory.
       - mail_data:/home/node/test
 
+  ###################################################################
+  # Macadam
+  ###################################################################
+
   yarn:
     <<: *api-server-defaults
     command: ["yarn"]
@@ -241,9 +266,6 @@ services:
       retries: 10
       start_period: 20s
       timeout: 10s
-    # Uncomment to expose api-server directly
-    # ports:
-    #   - 4000:4000
     depends_on:
       api-server-migrate:
         condition: service_completed_successfully
@@ -297,14 +319,19 @@ services:
     volumes:
       - .:/var/macadam
 
-  # Used as a general purpose endpoint to "swallow" requests, for example we
-  # point our glitchtip URL to this when we don't have an actual glitchtip
-  # service running.
-  echo:
+  expo-cli:
     <<: *service-defaults
-    image: jmalloc/echo-server
-    environment:
-      PORT: 80
+    profiles: ["expo"]
+    build:
+      context: ./services/expo-cli
+    tty: true
+    working_dir: /var/macadam/packages/client-mobile
+    volumes:
+      - .:/var/macadam
+
+  ###################################################################
+  # Metrics
+  ###################################################################
 
   prometheus:
     <<: *service-defaults
@@ -377,6 +404,10 @@ services:
       DATA_SOURCE_NAME: postgres://macadam:macadam!@postgres:5432/macadam?sslmode=disable
     labels:
       org.label-schema.group: "monitoring"
+
+  ###################################################################
+  # Analytics
+  ###################################################################
 
   clickhouse:
     <<: *service-defaults
@@ -454,6 +485,10 @@ services:
     volumes:
       - geoip_data:/geoip:ro
       - ./services/plausible/seeds:/app/priv/repo/seeds
+
+  ###################################################################
+  # GlitchTip
+  ###################################################################
 
   glitchtip-migrate:
     <<: *glitchtip-defaults

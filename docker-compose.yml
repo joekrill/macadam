@@ -108,8 +108,7 @@ services:
           - glitchtip.${DOMAIN_NAME:-localtest.me}
     # hostname: ${DOMAIN_NAME:-localtest.me}
     environment:
-      # - DOMAIN_NAME=${DOMAIN_NAME:-localtest.me}
-      - DOMAIN_NAME=temp.joekrill.net
+      - DOMAIN_NAME=${DOMAIN_NAME:-localtest.me}
     ports:
       - "80:80"
       - "443:443"

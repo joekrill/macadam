@@ -14,7 +14,7 @@ localhost, {$DOMAIN_NAME}, joes-macbook {
   encode zstd gzip
   tls internal
 
-  @root host {$DOMAIN_NAME} 
+  @root host localhost, {$DOMAIN_NAME} 
   handle @root {
     handle_path /kratos/public/* {
       reverse_proxy http://kratos:4433
@@ -24,13 +24,13 @@ localhost, {$DOMAIN_NAME}, joes-macbook {
   }
 
   # direct access to the underlying api-server
-  @echo host echo.{$DOMAIN_NAME} 
+  @echo host echo.localhost, echo.{$DOMAIN_NAME} 
 	handle @echo {
 		reverse_proxy echo:80
 	}
 
   # direct access to the underlying api-server
-  @api host api.{$DOMAIN_NAME} 
+  @api host api.localhost, api.{$DOMAIN_NAME} 
 	handle @api {
 		reverse_proxy api-server:4000
 	}
@@ -41,7 +41,7 @@ localhost, {$DOMAIN_NAME}, joes-macbook {
     redir https://{$DOMAIN_NAME}{uri}
   } 
 
-  @mail host mail.{$DOMAIN_NAME}
+  @mail host mail.localhost, mail.{$DOMAIN_NAME}
 	handle @mail {
 		reverse_proxy mail:1080
 	}
@@ -83,9 +83,9 @@ localhost, {$DOMAIN_NAME}, joes-macbook {
     reverse_proxy kratos-courier:4434
   }
 
-  @plausible host plausible.{$DOMAIN_NAME} 
-  handle @plausible {
-    reverse_proxy plausible:8000 :8080 {
+  @umami host umami.{$DOMAIN_NAME} 
+  handle @umami {
+    reverse_proxy umami:3000 :3000 {
       lb_policy first
       lb_try_duration 5s
       fail_duration 10s

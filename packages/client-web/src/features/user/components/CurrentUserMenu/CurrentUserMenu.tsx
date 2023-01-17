@@ -29,8 +29,7 @@ import { useAppPreferencesLink } from "../../../settings/components/AppPreferenc
 import { CurrentUserAvatar } from "../CurrentUserAvatar/CurrentUserAvatar";
 import { CurrentUserMenuHeader } from "./CurrentUserMenuHeader";
 
-export interface CurrentUserMenuProps
-  extends Omit<MenuProps, "isLazy" | "children"> {}
+export type CurrentUserMenuProps = Omit<MenuProps, "isLazy" | "children">;
 
 export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
   const { isLoggedIn, isUnknown } = useSession();

@@ -12,7 +12,9 @@ export const useFlowError = (error?: FetchBaseQueryError | SerializedError) => {
     if (error && "data" in error) {
       try {
         return flowErrorSchema.parse(error.data);
-      } catch (_) {}
+      } catch (_) {
+        /* empty */
+      }
     }
 
     return undefined;

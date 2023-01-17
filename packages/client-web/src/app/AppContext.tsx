@@ -20,8 +20,8 @@ export const AppContext = ({ children }: AppContextProps) => (
           <I18nProvider>
             <HelmetProvider>
               <Helmet
-                titleTemplate={`%s - ${process.env.REACT_APP_DISPLAY_NAME}`}
-                defaultTitle={process.env.REACT_APP_DISPLAY_NAME}
+                titleTemplate={`%s - ${process.env.VITE_DISPLAY_NAME}`}
+                defaultTitle={process.env.VITE_DISPLAY_NAME}
               />
               {children}
             </HelmetProvider>

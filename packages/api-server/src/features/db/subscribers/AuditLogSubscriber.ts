@@ -8,7 +8,7 @@ export class AuditLogSubscriber implements EventSubscriber {
     const auditContext = args.em.getFilterParams("auditContext");
 
     changeSets.forEach((cs, i) => {
-      if ("disableAudit" in cs.entity?.constructor) {
+      if (cs.entity?.constructor && "disableAudit" in cs.entity.constructor) {
         return;
       }
 

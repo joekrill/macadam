@@ -12,7 +12,10 @@ export class TimestampSubscriber implements EventSubscriber {
     const now = new Date();
 
     changeSets.forEach((cs) => {
-      if ("disableTimestamping" in cs.entity?.constructor) {
+      if (
+        cs.entity?.constructor &&
+        "disableTimestamping" in cs.entity.constructor
+      ) {
         return;
       }
 

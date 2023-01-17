@@ -72,7 +72,9 @@ export const ContactUsForm = ({
           </FormLabel>
 
           <InputGroup>
-            <InputLeftElement children={<FaUser />} />
+            <InputLeftElement>
+              <FaUser />
+            </InputLeftElement>
             <Input
               type="text"
               placeholder={formatMessage({
@@ -98,7 +100,9 @@ export const ContactUsForm = ({
           </FormLabel>
 
           <InputGroup>
-            <InputLeftElement children={<FaRegEnvelope />} />
+            <InputLeftElement>
+              <FaRegEnvelope />
+            </InputLeftElement>
             <Input
               type="email"
               placeholder={formatMessage({

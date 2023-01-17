@@ -40,7 +40,7 @@ export const Header = (props: HeaderProps) => {
             to="/"
             leftIcon={<Icon as={Logo} boxSize={20} />}
           >
-            {process.env.REACT_APP_DISPLAY_NAME}
+            {process.env.VITE_DISPLAY_NAME}
           </Button>
         </HStack>
         <HStack spacing={3} alignItems="center">

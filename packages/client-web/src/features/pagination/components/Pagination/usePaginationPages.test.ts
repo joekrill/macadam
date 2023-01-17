@@ -1,10 +1,11 @@
 import { useMemo } from "react";
+import { Mock, vi } from "vitest";
 import { usePaginationPages } from "./usePaginationPages";
 
-jest.mock("react");
+vi.mock("react");
 
 beforeEach(() => {
-  (useMemo as jest.Mock).mockImplementation((cb) => cb());
+  (useMemo as Mock).mockImplementation((cb) => cb());
 });
 
 test.each([

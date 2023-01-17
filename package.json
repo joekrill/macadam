@@ -12,9 +12,13 @@
   ],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
     "@yarnpkg/pnpify": "^4.0.0-rc.35",
     "eslint": "^8.31.0",
-    "eslint-config-react-app": "^7.0.1",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-import": "^2.27.4",
+    "eslint-plugin-react": "^7.32.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "prettier": "2.8.2",
@@ -32,12 +36,6 @@
     "yarn:upgrade": "yarn set version latest && yarn dlx @yarnpkg/sdks && yarn plugin import @yarnpkg/plugin-interactive-tools && yarn plugin import @yarnpkg/plugin-typescript && yarn plugin import @yarnpkg/plugin-workspace-tools",
     "build-image:client-web": "docker build -f ./packages/client-web/Dockerfile .",
     "build-image:api-server": "docker build -f ./packages/api-server/Dockerfile ."
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",

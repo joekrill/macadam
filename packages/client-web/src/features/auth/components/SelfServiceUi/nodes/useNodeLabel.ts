@@ -1,3 +1,4 @@
+/* eslint-disable no-fallthrough */
 import { UiNodeInput } from "@macadam/api-client";
 import { useIntl } from "react-intl";
 

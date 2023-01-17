@@ -67,3 +67,5 @@ export const PasswordInput = React.forwardRef<
     </InputGroup>
   );
 });
+
+PasswordInput.displayName = "PasswordInput";

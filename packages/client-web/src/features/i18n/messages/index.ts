@@ -14,9 +14,6 @@ export const getMessages = (locale: LocaleCode) => MESSAGES[locale];
  * Attempts to asynchronously load messages and polyfills for a specific locale.
  */
 export const loadMessages = async (locale: LocaleCode) => {
-  const { default: messages } = await import(
-    /* webpackInclude: /(en|es|en-XA|en-XB|xx-AC|xx-HA|xx-LS).json/ */
-    `./${locale}.json`
-  );
+  const { default: messages } = await import(`./${locale}.json`);
   MESSAGES[locale] = messages;
 };

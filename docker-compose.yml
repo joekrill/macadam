@@ -71,7 +71,7 @@ x-api-server-defaults: &api-server-defaults
     # Key should match API_PROJECT_KEY in `seed_macadam.py` with dashes stripped
     SENTRY_DSN: http://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip-web:8080/2
     # If we tunnel glitchtip requests, make sure they are mapped to the correct internal URL
-    # This first value should match the `REACT_APP_SENTRY_DSN` value for client-web, while the second should be the actual sentry server.
+    # This first value should match the `VITE_SENTRY_DSN` value for client-web, while the second should be the actual sentry server.
     # as it is accessible from the api-server
     SENTRY_TUNNELABLE_DSNS: "http://239d589a58d24675be8159b19718b22e@glitchtip-web:8080/1"
     SMTP_MAIL_TO: contact@macadam.com
@@ -286,7 +286,16 @@ services:
     build:
       context: .
       dockerfile: ./packages/client-web/dev.Dockerfile
-    command: ["yarn", "workspace", "@macadam/client-web", "run", "start:legacy"]
+    command:
+      [
+        "yarn",
+        "workspace",
+        "@macadam/client-web",
+        "run",
+        "start",
+        "--host",
+        "0.0.0.0",
+      ]
     depends_on:
       yarn:
         condition: service_completed_successfully
@@ -294,11 +303,9 @@ services:
     #     condition: service_healthy
     environment:
       # Key should match WEB_PROJECT_KEY in `seed_macadam.py` with dashes stripped
-      REACT_APP_SENTRY_DSN: "http://239d589a58d24675be8159b19718b22e@glitchtip-web:8080/1"
-      REACT_APP_SENTRY_TUNNEL: "/api/v1/monitor"
-      REACT_APP_PLAUSIBLE_HOST: https://plausible.${DOMAIN_NAME:-localtest.me}
-      DISABLE_ESLINT_PLUGIN: "true"
-      WDS_SOCKET_PORT: 443
+      VITE_SENTRY_DSN: "http://239d589a58d24675be8159b19718b22e@glitchtip-web:8080/1"
+      VITE_SENTRY_TUNNEL: "/api/v1/monitor"
+      VITE_PLAUSIBLE_HOST: https://plausible.${DOMAIN_NAME:-localtest.me}
     volumes:
       - .:/var/macadam
 

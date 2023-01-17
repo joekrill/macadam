@@ -63,7 +63,9 @@ export const SortMenu = ({
           }
         >
           {Object.keys(fields).map((field) => (
-            <MenuItemOption value={field}>{fields[field]}</MenuItemOption>
+            <MenuItemOption key={field} value={field}>
+              {fields[field]}
+            </MenuItemOption>
           ))}
         </MenuOptionGroup>
         <MenuOptionGroup

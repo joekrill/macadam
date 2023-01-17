@@ -56,7 +56,7 @@ export const thingsApi = appApi
           body: thing,
         }),
         transformResponse: (result) => createThingResponseSchema.parse(result),
-        invalidatesTags: (result, _error, id) =>
+        invalidatesTags: (result) =>
           result ? [{ type: "Thing", id: "PARTIAL-LIST" }] : [],
       }),
       updateThing: build.mutation<UpdateThingResponse, UpdateThingParams>({

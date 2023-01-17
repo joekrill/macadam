@@ -13,6 +13,7 @@ import {
   wrap,
 } from "@mikro-orm/core";
 import { ParameterizedContext } from "koa";
+import { AppSubject } from "../features/auth/AppAbility";
 import {
   OffsetPagination,
   OffsetPaginationOptions,
@@ -127,14 +128,20 @@ export abstract class BaseModel<T extends object> {
     options?: AssignOptions | boolean
   ) {
     const entity = await this.get(where);
-    this.ctx.state.ability!.ensureCan("update", entity!);
+    this.ctx.state.ability!.ensureCan(
+      "update",
+      entity! as unknown as AppSubject
+    );
     wrap(entity!).assign(data, options);
     return entity;
   }
 
   async delete(where: FilterQuery<T>) {
     const entity = this.get(where);
-    this.ctx.state.ability!.ensureCan("delete", entity!);
+    this.ctx.state.ability!.ensureCan(
+      "delete",
+      entity! as unknown as AppSubject
+    );
     await this.ctx.state.entityManager?.remove(entity);
   }
 }

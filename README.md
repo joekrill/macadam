@@ -176,10 +176,9 @@ The frontend web application (found at `packages/client-web`) is a Typescript ap
 - Data fetching and caching with [RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
 - Crash reporting using [Sentry.io's React SDK](https://docs.sentry.io/platforms/javascript/guides/react/)
 - Document head management with [React Helmet Async](https://github.com/staylor/react-helmet-async)
-- Unit testing with [Testing Library](https://testing-library.com) and [Jest](https://jestjs.io)
 - Icons included using [react-icons](https://react-icons.github.io/react-icons/)
 - [Internationalization] with [Format.JS](https://formatjs.io/) (with [React-Intl](https://formatjs.io/docs/react-intl/))
-- Unit testing with [Jest](https://jestjs.io/) and [Testing Library](https://testing-library.com/)
+- Unit testing with [Vitest](https://vitest.dev) and [Testing Library](https://testing-library.com/)
 - Validation using [zod](https://github.com/colinhacks/zod)
 
 ### API Server

@@ -48,7 +48,7 @@ export const UnexpectedErrorPage = ({
     </h2>
 
     <p style={{ fontWeight: 400 }}>
-      We're investigating. In the meantime, refresh the page
+      We`&apos;re investigating. In the meantime, refresh the page
       {resetError ? ", " : " or "} <a href="/">go to the homepage</a>
       {resetError ? ", or " : "."}
     </p>

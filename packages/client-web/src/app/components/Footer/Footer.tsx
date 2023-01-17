@@ -37,7 +37,7 @@ export const Footer = (props: FooterProps) => (
         <Stack flex="1" direction="column">
           <Heading fontSize="xl" display="flex" mb={2} alignItems="center">
             <Icon as={FaRegGem} fontSize="2xl" mr={2} />{" "}
-            {process.env.REACT_APP_DISPLAY_NAME}
+            {process.env.VITE_DISPLAY_NAME}
           </Heading>
           <FooterSocialMediaLinks />
         </Stack>
@@ -64,7 +64,7 @@ export const Footer = (props: FooterProps) => (
             defaultMessage="© {now, date, ::yyyy} {appName}. All rights reserved."
             values={{
               now: new Date(),
-              appName: process.env.REACT_APP_DISPLAY_NAME,
+              appName: process.env.VITE_DISPLAY_NAME,
             }}
           />
         </Text>

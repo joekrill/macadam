@@ -10,8 +10,10 @@ export interface DbContext {
   };
 }
 
-export interface InitializeDbOptions
-  extends Omit<OrmConfigOptions, "environment" | "logger"> {}
+export type InitializeDbOptions = Omit<
+  OrmConfigOptions,
+  "environment" | "logger"
+>;
 
 /**
  * Initializes a database connection, adds it to the application context,

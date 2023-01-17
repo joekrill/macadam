@@ -8,7 +8,7 @@ import {
 import { useSession } from "@macadam/api-client";
 import { CurrentUserAvatar } from "../CurrentUserAvatar/CurrentUserAvatar";
 
-export interface CurrentUserMenuHeaderProps extends StackProps {}
+export type CurrentUserMenuHeaderProps = StackProps;
 
 export const CurrentUserMenuHeader = (props: CurrentUserMenuHeaderProps) => {
   const { identity } = useSession();

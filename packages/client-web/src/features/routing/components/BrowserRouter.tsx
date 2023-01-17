@@ -30,5 +30,7 @@ export const BrowserRouter = ({
   children,
   history,
 }: BrowserRouterProps) => (
-  <HistoryRouter basename={basename} children={children} history={history} />
+  <HistoryRouter basename={basename} history={history}>
+    {children}
+  </HistoryRouter>
 );

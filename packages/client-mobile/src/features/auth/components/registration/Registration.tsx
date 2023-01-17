@@ -35,7 +35,7 @@ export const Registration = ({
     flow,
     isInitializing,
     isSubmitting,
-    isSuccessful,
+    // isSuccessful,
     restart,
     restartReason,
     submit,

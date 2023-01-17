@@ -75,7 +75,7 @@ export const PrivacyPolicy = (props: PrivacyPolicyProps) => {
           <p>
             <strong>Company</strong> (referred to as either &quot;the
             Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in
-            this Agreement) refers to {process.env.REACT_APP_SHORT_NAME}.
+            this Agreement) refers to {process.env.VITE_SHORT_NAME}.
           </p>
         </li>
         <li>
@@ -127,8 +127,8 @@ export const PrivacyPolicy = (props: PrivacyPolicyProps) => {
         </li>
         <li>
           <p>
-            <strong>Website</strong> refers to{" "}
-            {process.env.REACT_APP_SHORT_NAME}, accessible from{" "}
+            <strong>Website</strong> refers to {process.env.VITE_SHORT_NAME},
+            accessible from{" "}
             <a href="http://www.example.com" rel="noreferrer" target="_blank">
               http://www.example.com
             </a>

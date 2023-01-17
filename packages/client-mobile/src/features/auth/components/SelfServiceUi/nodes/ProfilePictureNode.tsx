@@ -1,6 +1,6 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Avatar, Button, Icon, Stack, Text } from "native-base";
-import { ChangeEvent, useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 // import { FaTrash, FaUpload } from "react-icons/fa";
 // import { FormattedMessage } from "react-intl";
 import { SelfServiceUiNodeInputProps } from "../SelfServiceUiNodeInput";
@@ -22,21 +22,21 @@ export const ProfilePictureNode = ({
   onChange,
   value,
 }: ProfilePictureNodeProps) => {
-  const [objectUrl, setObjectUrl] = useState<string | undefined>();
+  const [objectUrl /*, setObjectUrl*/] = useState<string | undefined>();
   const { label, node_type, type, onclick, ...attributes } = node.attributes;
 
-  const handleImageChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    if (!e.target.files) {
-      return;
-    }
+  // const handleImageChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+  //   if (!e.target.files) {
+  //     return;
+  //   }
 
-    const newFile = Array.from(e.target.files)[0];
-    if (!newFile) {
-      return;
-    }
+  //   const newFile = Array.from(e.target.files)[0];
+  //   if (!newFile) {
+  //     return;
+  //   }
 
-    setObjectUrl(URL.createObjectURL(newFile));
-  }, []);
+  //   setObjectUrl(URL.createObjectURL(newFile));
+  // }, []);
 
   // Make sure to always clean up any object URLs created.
   useEffect(

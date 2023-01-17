@@ -58,8 +58,12 @@ export class AppAbility extends Ability<AppAbilityTuple> {
     if (Utils.isEntity<AppEntity>(subject)) {
       return super.relevantRuleFor(
         action,
-        // @ts-ignore TODO: verify this is OK? https://mikro-orm.io/docs/5.0/serializing
-        identifySubject(subject.constructor.name, subject.toJSON()),
+        identifySubject(
+          subject.constructor.name,
+          "toJSON" in subject && typeof subject.toJSON === "function"
+            ? subject.toJSON()
+            : subject
+        ),
         ...rest
       );
     }
@@ -78,6 +82,7 @@ export class AppAbility extends Ability<AppAbilityTuple> {
 
     if (typeof subject === "function") {
       // A class definition.
+      // eslint-disable-next-line @typescript-eslint/ban-types
       return (subject as Function).name as ExtractSubjectType<AppSubject>;
     }
 

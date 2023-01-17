@@ -6,10 +6,10 @@ export class KratosCourierMessages extends KratosBaseEntity {
   static readonly modelName = "KratosCourierMessages";
 
   @Property({ type: "integer", nullable: false })
-  public type!: Number;
+  public type!: number;
 
   @Property({ type: "integer", nullable: false })
-  public status!: Number;
+  public status!: number;
 
   @Property({ nullable: false })
   public body!: string;
@@ -21,7 +21,7 @@ export class KratosCourierMessages extends KratosBaseEntity {
   public recipient!: string;
 
   @Property({ fieldName: "template_type", nullable: false })
-  public template_type!: String;
+  public template_type!: string;
 
   @Property({
     type: BlobType,

@@ -1,11 +1,5 @@
 import "dotenv/config";
 
-declare namespace NodeJS {
-  interface ProcessEnv {
-    API_HOST: string | undefined;
-  }
-}
-
 const config = {
   expo: {
     name: "client-mobile",

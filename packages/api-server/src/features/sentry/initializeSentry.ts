@@ -1,4 +1,5 @@
 import * as Sentry from "@sentry/node";
+import { NodeOptions } from "@sentry/node";
 import Koa, { DefaultContext, DefaultState, ParameterizedContext } from "koa";
 
 export interface SentryContext {
@@ -8,7 +9,7 @@ export interface SentryContext {
   };
 }
 
-export interface InitializeSentryOptions extends Sentry.NodeOptions {
+export interface InitializeSentryOptions extends NodeOptions {
   dsn: string;
 
   /**

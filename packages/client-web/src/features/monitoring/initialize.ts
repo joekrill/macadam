@@ -21,13 +21,13 @@ const { origin, hostname } = window.location;
 init({
   debug: false,
 
-  dsn: process.env.REACT_APP_SENTRY_DSN,
+  dsn: process.env.VITE_SENTRY_DSN,
 
-  tunnel: process.env.REACT_APP_SENTRY_TUNNEL,
+  tunnel: process.env.VITE_SENTRY_TUNNEL,
 
   environment: process.env.NODE_ENV,
 
-  release: `${process.env.REACT_APP_NAME}@${process.env.REACT_APP_VERSION}${
+  release: `${process.env.VITE_NAME}@${process.env.VITE_VERSION}${
     IS_DEVELOPMENT_ENV ? ".dev" : ""
   }`,
 

@@ -37,7 +37,7 @@ export const ContactUs = (props: ContactUsProps) => {
           id="pages.contactUs.instructions"
           defaultMessage="Email us at <mailto>{emailAddress}</mailto> or fill out the form below for any feedback, questions, problems, or feature requests."
           values={{
-            emailAddress: process.env.REACT_APP_EMAIL_CONTACT,
+            emailAddress: process.env.VITE_EMAIL_CONTACT,
             mailto: (emailAddress) => (
               <Link href={`mailto:${emailAddress}`}>{emailAddress}</Link>
             ),

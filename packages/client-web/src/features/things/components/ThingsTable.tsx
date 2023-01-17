@@ -12,7 +12,7 @@ import {
 import { RouterLink } from "../../routing/components/RouterLink";
 import { ThingActions } from "./ThingActions";
 
-export interface ThingsTableProps extends Partial<DataTableProps<Thing>> {}
+export type ThingsTableProps = Partial<DataTableProps<Thing>>;
 
 export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
   const { formatMessage } = useIntl();

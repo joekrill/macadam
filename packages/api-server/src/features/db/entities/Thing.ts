@@ -25,7 +25,7 @@ export class Thing extends UuidEntity {
   public description?: string | null;
 
   @Property({ default: true })
-  public isPublic: boolean = false;
+  public isPublic = false;
 
   @Property()
   public deletedAt?: Date;

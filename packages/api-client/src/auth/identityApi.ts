@@ -34,7 +34,7 @@ import { WhoamiResponse, whoamiResponseSchema } from "./schemas/whoami";
 export interface SubmitFlowPayload {
   action: string;
   method: string;
-  body: any;
+  body: unknown;
 }
 
 const baseQuery: ReturnType<typeof fetchBaseQuery> = (...args) =>
@@ -110,21 +110,19 @@ export const identityApi = createApi({
       }),
       transformResponse: (response) => loginFlowResponseSchema.parse(response),
       async onQueryStarted(_params, { dispatch, queryFulfilled }) {
-        try {
-          const { data } = await queryFulfilled;
-          if (isLoginFlow(data)) {
-            dispatch(
-              identityApi.util.updateQueryData(
-                "getLoginFlow",
-                data.id,
-                () => data
-              )
-            );
-          } else if (isLoginFlowSuccess(data)) {
-            dispatch(identityApi.util.resetApiState());
-            dispatch(appApi.util.resetApiState());
-          }
-        } catch {}
+        const { data } = await queryFulfilled;
+        if (isLoginFlow(data)) {
+          dispatch(
+            identityApi.util.updateQueryData(
+              "getLoginFlow",
+              data.id,
+              () => data
+            )
+          );
+        } else if (isLoginFlowSuccess(data)) {
+          dispatch(identityApi.util.resetApiState());
+          dispatch(appApi.util.resetApiState());
+        }
       },
     }),
 
@@ -163,21 +161,19 @@ export const identityApi = createApi({
       transformResponse: (response) =>
         registrationFlowResponseSchema.parse(response),
       async onQueryStarted(_params, { dispatch, queryFulfilled }) {
-        try {
-          const { data } = await queryFulfilled;
-          if (isRegistrationFlow(data)) {
-            dispatch(
-              identityApi.util.updateQueryData(
-                "getRegistrationFlow",
-                data.id,
-                () => data
-              )
-            );
-          } else if (isRegistrationFlowSuccess(data)) {
-            dispatch(identityApi.util.resetApiState());
-            dispatch(appApi.util.resetApiState());
-          }
-        } catch {}
+        const { data } = await queryFulfilled;
+        if (isRegistrationFlow(data)) {
+          dispatch(
+            identityApi.util.updateQueryData(
+              "getRegistrationFlow",
+              data.id,
+              () => data
+            )
+          );
+        } else if (isRegistrationFlowSuccess(data)) {
+          dispatch(identityApi.util.resetApiState());
+          dispatch(appApi.util.resetApiState());
+        }
       },
     }),
 
@@ -213,16 +209,14 @@ export const identityApi = createApi({
         }),
         transformResponse: (response) => verificationFlowSchema.parse(response),
         async onQueryStarted(_params, { dispatch, queryFulfilled }) {
-          try {
-            const { data } = await queryFulfilled;
-            dispatch(
-              identityApi.util.updateQueryData(
-                "getVerificationFlow",
-                data.id,
-                () => data
-              )
-            );
-          } catch {}
+          const { data } = await queryFulfilled;
+          dispatch(
+            identityApi.util.updateQueryData(
+              "getVerificationFlow",
+              data.id,
+              () => data
+            )
+          );
         },
       }
     ),
@@ -258,16 +252,14 @@ export const identityApi = createApi({
       }),
       transformResponse: (response) => recoveryFlowSchema.parse(response),
       async onQueryStarted(_params, { dispatch, queryFulfilled }) {
-        try {
-          const { data } = await queryFulfilled;
-          dispatch(
-            identityApi.util.updateQueryData(
-              "getRecoveryFlow",
-              data.id,
-              () => data
-            )
-          );
-        } catch {}
+        const { data } = await queryFulfilled;
+        dispatch(
+          identityApi.util.updateQueryData(
+            "getRecoveryFlow",
+            data.id,
+            () => data
+          )
+        );
       },
     }),
 
@@ -302,17 +294,15 @@ export const identityApi = createApi({
       }),
       transformResponse: (response) => settingsFlowSchema.parse(response),
       async onQueryStarted(_params, { dispatch, queryFulfilled }) {
-        try {
-          const { data } = await queryFulfilled;
-          dispatch(
-            identityApi.util.updateQueryData(
-              "getSettingsFlow",
-              data.id,
-              () => data
-            )
-          );
-          dispatch(invalidateSession());
-        } catch {}
+        const { data } = await queryFulfilled;
+        dispatch(
+          identityApi.util.updateQueryData(
+            "getSettingsFlow",
+            data.id,
+            () => data
+          )
+        );
+        dispatch(invalidateSession());
       },
     }),
 
@@ -340,22 +330,18 @@ export const identityApi = createApi({
         },
       }),
       async onQueryStarted(_params, { dispatch, queryFulfilled }) {
-        try {
-          await queryFulfilled;
-          dispatch(identityApi.util.resetApiState());
-          dispatch(appApi.util.resetApiState());
-        } catch {}
+        await queryFulfilled;
+        dispatch(identityApi.util.resetApiState());
+        dispatch(appApi.util.resetApiState());
       },
     }),
 
     logout: build.mutation<void, string>({
       query: (url) => url,
       async onQueryStarted(_params, { dispatch, queryFulfilled }) {
-        try {
-          await queryFulfilled;
-          dispatch(identityApi.util.resetApiState());
-          dispatch(appApi.util.resetApiState());
-        } catch {}
+        await queryFulfilled;
+        dispatch(identityApi.util.resetApiState());
+        dispatch(appApi.util.resetApiState());
       },
     }),
   }),

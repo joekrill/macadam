@@ -1,5 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { render, RenderOptions } from "@testing-library/react";
+import * as TestingLibrary from "@testing-library/react";
 import * as React from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { IntlProvider } from "react-intl";
@@ -20,8 +20,10 @@ const AllProviders = ({ children }: { children?: React.ReactNode }) => (
   </ReduxProvider>
 );
 
-const customRender = (ui: React.ReactElement, options?: RenderOptions) =>
-  render(ui, { wrapper: AllProviders, ...options });
+const customRender = (
+  ui: React.ReactElement,
+  options?: TestingLibrary.RenderOptions
+) => TestingLibrary.render(ui, { wrapper: AllProviders, ...options });
 
 export * from "@testing-library/react";
 export { customRender as render };

@@ -82,8 +82,10 @@ export const DataTable = <D extends object>({
     <Table borderWidth="1px" {...getTableProps()}>
       <Thead bg={useColorModeValue("gray.200", "gray.600")}>
         {headerGroups.map((headerGroup) => (
+          // eslint-disable-next-line react/jsx-key
           <Tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
+              // eslint-disable-next-line react/jsx-key
               <Th
                 {...column.getHeaderProps(column.getSortByToggleProps())}
                 isNumeric={column.isNumeric}
@@ -125,8 +127,10 @@ export const DataTable = <D extends object>({
         {rows.map((row) => {
           prepareRow(row);
           return (
+            // eslint-disable-next-line react/jsx-key
             <Tr {...row.getRowProps()} _even={{ bg: bgEvenColor }}>
               {row.cells.map((cell) => (
+                // eslint-disable-next-line react/jsx-key
                 <Td
                   {...cell.getCellProps()}
                   textAlign={cell.column.textAlign}

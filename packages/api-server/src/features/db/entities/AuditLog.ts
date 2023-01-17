@@ -41,7 +41,7 @@ export class AuditLog {
   @Property({ type: "json", nullable: true })
   public after?: unknown;
 
-  constructor(changeSet: ChangeSet<AnyEntity<any>>) {
+  constructor(changeSet: ChangeSet<AnyEntity<unknown>>) {
     this.entityType = changeSet.name;
     this.entityId = String(changeSet.getPrimaryKey());
     this.action = changeSet.type;

@@ -1,1 +1,1 @@
-export const ensure = (input: any) => input;
+export const ensure = (input: unknown) => input;

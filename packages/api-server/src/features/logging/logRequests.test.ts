@@ -18,10 +18,10 @@ beforeEach(() => {
     info: jest.fn(),
     debug: jest.fn(),
     trace: jest.fn(),
-  } as any as jest.Mocked<pino.Logger>;
+  } as unknown as jest.Mocked<pino.Logger>;
   baseLoggerMock = {
     child: jest.fn(() => childLoggerMock),
-  } as any as jest.Mocked<pino.Logger>;
+  } as unknown as jest.Mocked<pino.Logger>;
   logRequestsMiddleware = logRequests(baseLoggerMock);
   contextMock = createMockContext();
   nextMock.mockReset();

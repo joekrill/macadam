@@ -1,7 +1,7 @@
 import { Avatar, AvatarProps } from "@chakra-ui/react";
 import { useSession } from "@macadam/api-client";
 
-export interface CurrentUserAvatarProps extends Omit<AvatarProps, "src"> {}
+export type CurrentUserAvatarProps = Omit<AvatarProps, "src">;
 
 // TODO: Add avatar to Kratos traits and consume here.
 export const CurrentUserAvatar = (props: CurrentUserAvatarProps) => {

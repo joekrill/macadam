@@ -4,30 +4,30 @@ import { FooterSocialMediaLinkButton } from "./FooterSocialMediaLinkButton";
 
 export const FooterSocialMediaLinks = (props: ButtonGroupProps) => (
   <ButtonGroup variant="outline" colorScheme="gray" {...props}>
-    {process.env.REACT_APP_URL_GITHUB && (
+    {process.env.VITE_URL_GITHUB && (
       <FooterSocialMediaLinkButton
-        href={process.env.REACT_APP_URL_GITHUB}
+        href={process.env.VITE_URL_GITHUB}
         label="Github"
         icon={FaGithub}
       />
     )}
-    {process.env.REACT_APP_URL_INSTAGRAM && (
+    {process.env.VITE_URL_INSTAGRAM && (
       <FooterSocialMediaLinkButton
-        href={process.env.REACT_APP_URL_INSTAGRAM}
+        href={process.env.VITE_URL_INSTAGRAM}
         label="Instagram"
         icon={FaInstagram}
       />
     )}
-    {process.env.REACT_APP_URL_LINKEDIN && (
+    {process.env.VITE_URL_LINKEDIN && (
       <FooterSocialMediaLinkButton
-        href={process.env.REACT_APP_URL_LINKEDIN}
+        href={process.env.VITE_URL_LINKEDIN}
         label="LinkedIn"
         icon={FaLinkedin}
       />
     )}
-    {process.env.REACT_APP_URL_TWITTER && (
+    {process.env.VITE_URL_TWITTER && (
       <FooterSocialMediaLinkButton
-        href={process.env.REACT_APP_URL_TWITTER}
+        href={process.env.VITE_URL_TWITTER}
         label="Twitter"
         icon={FaTwitter}
       />

@@ -50,7 +50,7 @@ export const parameters: Parameters = {
     storySort: {
       // Ensure that the main application story (packages/client-web/src/app/App.stories.mdx)
       // is displayed first.
-      order: [process.env.REACT_APP_DISPLAY_NAME],
+      order: [process.env.VITE_DISPLAY_NAME],
     },
   },
 };

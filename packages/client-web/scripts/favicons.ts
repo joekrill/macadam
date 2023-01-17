@@ -1,4 +1,4 @@
-/// <reference types="../src/react-app-env" />
+/// <reference types="../src/vite-env" />
 import dotenv from "dotenv";
 import { expand } from "dotenv-expand";
 import favicons, { FaviconResponse } from "favicons";
@@ -22,13 +22,12 @@ const run = async () => {
   try {
     response = await favicons(resolve(source), {
       // logging: true,
-      appDescription: process.env.REACT_APP_DESCRIPTION,
-      appName: process.env.REACT_APP_DISPLAY_NAME,
-      appShortName: process.env.REACT_APP_SHORT_NAME,
-      path: process.env.PUBLIC_URL || "",
+      appDescription: process.env.VITE_DESCRIPTION,
+      appName: process.env.VITE_DISPLAY_NAME,
+      appShortName: process.env.VITE_SHORT_NAME,
       start_url: "/",
-      theme_color: process.env.REACT_APP_THEME_COLOR,
-      version: process.env.REACT_APP_VERSION,
+      theme_color: process.env.VITE_THEME_COLOR,
+      version: process.env.VITE_VERSION,
     });
   } catch (error) {
     console.error("Failed to generate favicons");
@@ -38,7 +37,7 @@ const run = async () => {
 
   console.log("Writing files...");
 
-  const indexHtml = join(destinationPath, "index.html");
+  const indexHtml = "index.html";
   await Promise.all([
     ...response.images.map(({ contents, name }) =>
       promises.writeFile(join(destinationPath, name), contents)

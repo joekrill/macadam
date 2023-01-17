@@ -1,30 +1,32 @@
 import * as chakra from "@chakra-ui/react";
 import userEvent from "@testing-library/user-event";
+import { SpyInstance, vi } from "vitest";
 import { render, screen } from "../../../../test-utils";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 
-const mockToggleColorMode = jest.fn();
+const mockToggleColorMode = vi.fn();
 
-jest.mock("@chakra-ui/react", () => ({
-  ...jest.requireActual("@chakra-ui/react"),
-  useColorMode: jest.fn(),
-  useColorModeValue: jest.fn(),
-}));
+vi.mock("@chakra-ui/react", async () => {
+  const actual = await vi.importActual<typeof chakra>("@chakra-ui/react");
+  return {
+    ...actual,
+    useColorMode: vi.fn(),
+    useColorModeValue: vi.fn(),
+  };
+});
 
-let useColorModeSpy: jest.SpyInstance;
-let useColorModeValueSpy: jest.SpyInstance;
+let useColorModeSpy: SpyInstance;
+let useColorModeValueSpy: SpyInstance;
 
 beforeEach(() => {
   mockToggleColorMode.mockReset();
-  useColorModeSpy = jest
-    .spyOn(chakra, "useColorMode")
-    .mockImplementation(() => ({
-      toggleColorMode: mockToggleColorMode,
-      colorMode: "dark",
-      setColorMode: jest.fn(),
-    }));
+  useColorModeSpy = vi.spyOn(chakra, "useColorMode").mockImplementation(() => ({
+    toggleColorMode: mockToggleColorMode,
+    colorMode: "dark",
+    setColorMode: vi.fn(),
+  }));
 
-  useColorModeValueSpy = jest
+  useColorModeValueSpy = vi
     .spyOn(chakra, "useColorModeValue")
     .mockImplementation((_light, dark) => dark);
 });

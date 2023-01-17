@@ -12,7 +12,7 @@ const unauthorizedErrorSchema = z.object({
 export const lazyLoadSession =
   (): Middleware =>
   (ctx, next): Promise<void> => {
-    if (ctx.state.hasOwnProperty("session")) {
+    if (Object.getOwnPropertyDescriptor(ctx.state, "session")) {
       return next();
     }
 

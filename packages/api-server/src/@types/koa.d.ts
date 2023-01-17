@@ -1,5 +1,5 @@
 import "koa";
-import { SessionState } from "../features/auth/authentication";
+import { AbilityState } from "../features/auth/ability";
 import { ForkEntityManagerState } from "../features/db/forkEntityManager";
 import { DbContext } from "../features/db/initializeDb";
 import { ForkKratosEntityManagerState } from "../features/kratos/forkKratosEntityManager";
@@ -43,6 +43,6 @@ declare module "koa" {
       MetricsCollectorState,
       RequestIdState,
       ResponseTimeState,
-      SessionState,
+      AbilityState,
       URLSearchParamsState {}
 }

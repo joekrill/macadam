@@ -1,5 +1,5 @@
 import { useSession } from "@macadam/api-client";
-import { Navigate, useLocation } from "react-router-dom";
+import { Navigate, To, useLocation } from "react-router-dom";
 import { useLoginLink } from "./LoginLink/useLoginLink";
 
 // TODO: `children` and `whileLoading` should be typed as `ReactNode` types,
@@ -10,15 +10,17 @@ export interface RequireAuthenticatedProps {
   children: JSX.Element;
   whileLoading?: JSX.Element;
   allowUnverified?: boolean;
+  to?: To;
 }
 
 export const RequireAuthenticated = ({
   allowUnverified = false,
   children,
+  to,
   whileLoading,
 }: RequireAuthenticatedProps) => {
   const { isLoggedIn, isUnknown, isVerified } = useSession();
-  const { to } = useLoginLink();
+  const { to: toLogin } = useLoginLink();
   const location = useLocation();
 
   if (isUnknown) {
@@ -26,7 +28,13 @@ export const RequireAuthenticated = ({
   }
 
   if (!isLoggedIn) {
-    return <Navigate replace to={to} state={{ returnTo: location.pathname }} />;
+    return (
+      <Navigate
+        replace
+        to={to || toLogin}
+        state={{ returnTo: location.pathname }}
+      />
+    );
   }
 
   if (!allowUnverified && !isVerified) {

@@ -9,7 +9,6 @@ import { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { IntlProvider } from "react-intl";
 import { Provider as ReduxProvider } from "react-redux";
-import { MemoryRouter } from "react-router-dom";
 import { theme as appTheme } from "../src/features/theme/default";
 
 /**
@@ -142,12 +141,6 @@ const withHelmet = (StoryFn: Function) => (
   </HelmetProvider>
 );
 
-const withRouter = (StoryFn: Function) => (
-  <MemoryRouter initialEntries={["/"]}>
-    <StoryFn />
-  </MemoryRouter>
-);
-
 const withIntl = (StoryFn: Function) => (
   <IntlProvider locale="en-US" defaultLocale="en">
     <StoryFn />
@@ -178,7 +171,6 @@ export const decorators = [
   withTheme,
   withRtl,
   withHelmet,
-  withRouter,
   withIntl,
   withRedux,
 ];

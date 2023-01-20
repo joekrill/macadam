@@ -35,7 +35,7 @@ export const SelfServiceUiNode = ({
     case "img": {
       return <SelfServiceUiNodeImage node={node} />;
     }
-    case "anchor": {
+    case "a": {
       return <SelfServiceUiNodeAnchor node={node} />;
     }
     case "text": {

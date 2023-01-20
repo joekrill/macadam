@@ -1,5 +1,5 @@
 import { MikroORM } from "@mikro-orm/core";
-import { FrontendApi } from "@ory/kratos-client";
+import { FrontendApi, IdentityApi } from "@ory/kratos-client";
 import { createMockContext } from "@shopify/jest-koa-mocks";
 import { Middleware, ParameterizedContext } from "koa";
 import { forkKratosEntityManager } from "./forkKratosEntityManager";
@@ -31,6 +31,7 @@ describe("forkKratosEntityManager", () => {
         kratos: {
           orm: ormMock,
           frontendApi: new FrontendApi(),
+          identityApi: new IdentityApi(),
         },
       },
     });

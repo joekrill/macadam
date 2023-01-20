@@ -181,7 +181,7 @@ export const uiNodeCommonSchema = z.object({
 });
 
 export const uiNodeAnchorSchema = uiNodeCommonSchema.extend({
-  type: z.literal("anchor"),
+  type: z.literal("a"),
   attributes: uiNodeAnchorAttributesSchema,
 });
 

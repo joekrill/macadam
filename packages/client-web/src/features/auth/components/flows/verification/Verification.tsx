@@ -48,16 +48,14 @@ export const Verification = ({ flowId, returnTo }: VerificationProps) => {
         />
       )}
       <SelfServiceUiMessageList mt={3} messages={flow?.ui?.messages} />
-      {flow?.state === "choose_method" && (
+      {(flow?.state === "choose_method" || flow?.state === "sent_email") && (
         <SelfServiceUiForm
           ui={flow.ui}
           isSubmitting={isSubmitting}
           onSubmit={submit}
         />
       )}
-      {(flow?.state === "passed_challenge" || flow?.state === "sent_email") && (
-        <HomepageButton />
-      )}
+      {flow?.state === "passed_challenge" && <HomepageButton />}
       {(isInitializing || isSubmitting) && <LoadingSpinner />}
     </VStack>
   );

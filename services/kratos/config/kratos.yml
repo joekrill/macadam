@@ -110,6 +110,10 @@ selfservice:
       config:
         # Defines how long a recovery link is valid for (default 1h)
         lifespan: 3h # TODO: check OWASP guidance
+    code: # Enables "one-time code" method. Use 'link' to enable "magic link" method.
+      enabled: true
+      config:
+        lifespan: 15m # Defines how long the code or link are valid for. Default: 1h.
 
   flows:
     error:
@@ -122,6 +126,7 @@ selfservice:
     recovery:
       enabled: true
       lifespan: 30m
+      use: link
       ui_url: http://localhost:4455/recovery
 
     verification:

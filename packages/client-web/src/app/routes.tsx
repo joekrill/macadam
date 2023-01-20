@@ -40,7 +40,7 @@ export const routes = [
         element: <VerificationPage />,
       },
       {
-        path: "/account/recover",
+        path: "/account/recovery",
         element: <RecoveryPage />,
       },
       {

@@ -43,6 +43,16 @@ sessionsRouter
       )
     ) || { authenticated_at: QueryOrder.DESC };
 
+    // TODO: Currently `listMySessions` is very limited - not sorting; does not
+    // return the _current_ sessions. We can replace direct DB access when
+    // those things are addressed.
+    // const sessions = await ctx.kratos.frontendApi.listMySessions({
+    //   xSessionToken: ctx.state.xSessionToken,
+    //   cookie: ctx.request.headers["cookie"],
+    //   page: pagination.page,
+    //   perPage: pagination.limit,
+    // });
+
     const [data, total] = await sessionRepository!.findAndCount(
       {},
       {

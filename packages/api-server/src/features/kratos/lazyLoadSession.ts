@@ -31,14 +31,8 @@ export const lazyLoadSession =
           if (!loaded) {
             try {
               ctx.state.logger.debug("Fetching Kratos session");
-              const authHeader = ctx.headers["authorization"]?.toLowerCase();
-              const sessionToken =
-                typeof authHeader === "string" &&
-                authHeader.startsWith("bearer ") &&
-                authHeader.substring(7).trim();
-
               const response = await ctx.kratos.frontendApi.toSession({
-                xSessionToken: sessionToken || undefined,
+                xSessionToken: ctx.state.xSessionToken,
                 cookie: ctx.request.headers["cookie"],
               });
               session = response.data;

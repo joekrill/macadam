@@ -10,6 +10,7 @@ import Koa from "koa";
 import { OrmConfigOptions } from "../db/ormConfig";
 import { kratosOrmConfig } from "./kratosOrmConfig";
 import { lazyLoadSession } from "./lazyLoadSession";
+import { lazyLoadXSessionToken } from "./lazyLoadXSessionToken";
 
 export interface KratosContext {
   kratos: {
@@ -21,6 +22,7 @@ export interface KratosContext {
 
 export interface KratosState {
   session: () => Promise<Session | undefined>;
+  xSessionToken: string | undefined;
   _session?: Session;
 }
 
@@ -39,6 +41,8 @@ export const initializeKratos = async (
   const config = new Configuration({ basePath: publicUrl });
   const frontendApi = new FrontendApi(config);
   const identityApi = new IdentityApi(config);
+
+  app.use(lazyLoadXSessionToken());
   app.use(lazyLoadSession());
 
   app.context.logger.debug("Kratos Database connecting");

@@ -10,7 +10,7 @@
     "@chakra-ui/theme-tools": "^2.0.17",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@formatjs/cli": "^5.1.13",
+    "@formatjs/cli": "^6.0.4",
     "@formatjs/intl-datetimeformat": "^6.5.1",
     "@formatjs/intl-displaynames": "^6.2.6",
     "@formatjs/intl-getcanonicallocales": "^2.1.0",
@@ -34,8 +34,8 @@
     "@storybook/addon-links": "^6.5.16",
     "@storybook/node-logger": "^6.5.16",
     "@storybook/react": "^6.5.16",
-    "@testing-library/dom": "^8.20.0",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/dom": "^9.0.0",
+    "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/node": "^18.14.1",
     "@types/react": "^18.0.28",
@@ -125,7 +125,7 @@
     "@types/prettier": "^2.7.2",
     "@types/testing-library__jest-dom": "^5.14.5",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
-    "@vitest/coverage-c8": "^0.27.3",
+    "@vitest/coverage-c8": "^0.29.1",
     "c8": "^7.13.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.35.0",
@@ -136,7 +136,7 @@
     "favicons": "^7.1.0",
     "jsdom": "^21.1.0",
     "svgo": "^3.0.2",
-    "vitest": "^0.27.3",
+    "vitest": "^0.29.1",
     "webpack": "5.75.0"
   }
 }

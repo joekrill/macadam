@@ -22,10 +22,11 @@ describe("metricsCollector", () => {
 
   beforeEach(() => {
     httpRequestCountMock = {
+      get: jest.fn(),
       inc: jest.fn(),
       labels: jest.fn(),
-      reset: jest.fn(),
       remove: jest.fn(),
+      reset: jest.fn(),
     };
     const defaultCounterImplementation = CounterMock.getMockImplementation();
     CounterMock.mockImplementation(({ name }) => {
@@ -38,10 +39,11 @@ describe("metricsCollector", () => {
     });
 
     httpRequestDurationSecondsMock = {
+      get: jest.fn(),
       labels: jest.fn(),
-      reset: jest.fn(),
-      remove: jest.fn(),
       observe: jest.fn(),
+      remove: jest.fn(),
+      reset: jest.fn(),
       startTimer: jest.fn(),
       zero: jest.fn(),
     };

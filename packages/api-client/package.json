@@ -14,7 +14,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@casl/ability": "^6.3.3",
+    "@casl/ability": "^6.5.0",
     "snakecase-keys": "^5.4.5"
   },
   "peerDependencies": {

@@ -10,7 +10,7 @@ import {
 
 export interface RouterLinkProps
   extends ChakraLinkProps,
-    Pick<ReactRouterLinkProps, "to" | "replace"> {}
+    Pick<ReactRouterLinkProps, "to" | "replace" | "state"> {}
 
 export const RouterLink = forwardRef<RouterLinkProps, "a">((props, ref) => (
   <ChakraLink ref={ref} {...props} as={ReactRouterLink} />

@@ -47,7 +47,7 @@
       "unplugged": true
     }
   },
-  "packageManager": "yarn@3.4.1",
+  "packageManager": "yarn@3.6.3",
   "resolutions": {
     "sqlite3": "5.1.4"
   }

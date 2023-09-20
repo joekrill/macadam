@@ -3933,7 +3933,7 @@ __metadata:
     "@shopify/jest-koa-mocks": ^5.1.1
     "@types/http-errors": ^2.0.2
     "@types/jest": ^29.5.5
-    "@types/koa": ^2.13.5
+    "@types/koa": ^2.13.9
     "@types/koa-compose": ^3.2.6
     "@types/koa__cors": ^4.0.1
     "@types/koa__router": ^12.0.1
@@ -8217,7 +8217,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/koa@npm:*, @types/koa@npm:2.13.8, @types/koa@npm:^2.13.5":
+"@types/koa@npm:*, @types/koa@npm:^2.13.5, @types/koa@npm:^2.13.9":
+  version: 2.13.9
+  resolution: "@types/koa@npm:2.13.9"
+  dependencies:
+    "@types/accepts": "*"
+    "@types/content-disposition": "*"
+    "@types/cookies": "*"
+    "@types/http-assert": "*"
+    "@types/http-errors": "*"
+    "@types/keygrip": "*"
+    "@types/koa-compose": "*"
+    "@types/node": "*"
+  checksum: af9cd599c8e17e2ae0f4168a61d964e343f713d002b65fd995658d7addc6551ccadecfd32b3405cf44e4d360178ee4f972d6881533548261ae1f636a655d24b1
+  languageName: node
+  linkType: hard
+
+"@types/koa@npm:2.13.8":
   version: 2.13.8
   resolution: "@types/koa@npm:2.13.8"
   dependencies:

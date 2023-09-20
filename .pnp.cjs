@@ -6730,7 +6730,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@shopify/jest-koa-mocks", "npm:5.1.1"],\
             ["@types/http-errors", "npm:2.0.2"],\
             ["@types/jest", "npm:29.5.5"],\
-            ["@types/koa", "npm:2.13.8"],\
+            ["@types/koa", "npm:2.13.9"],\
             ["@types/koa-compose", "npm:3.2.6"],\
             ["@types/koa__cors", "npm:4.0.1"],\
             ["@types/koa__router", "npm:12.0.1"],\
@@ -13188,6 +13188,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:18.17.18"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:2.13.9", {\
+          "packageLocation": "./.yarn/cache/@types-koa-npm-2.13.9-5cc66b32d0-af9cd599c8.zip/node_modules/@types/koa/",\
+          "packageDependencies": [\
+            ["@types/koa", "npm:2.13.9"],\
+            ["@types/accepts", "npm:1.3.5"],\
+            ["@types/content-disposition", "npm:0.5.3"],\
+            ["@types/cookies", "npm:0.7.6"],\
+            ["@types/http-assert", "npm:1.5.1"],\
+            ["@types/http-errors", "npm:2.0.2"],\
+            ["@types/keygrip", "npm:1.0.2"],\
+            ["@types/koa-compose", "npm:3.2.6"],\
+            ["@types/node", "npm:18.17.18"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@types/koa-compose", [\
@@ -13195,7 +13210,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-koa-compose-npm-3.2.6-b35affe404-1204c5bfa4.zip/node_modules/@types/koa-compose/",\
           "packageDependencies": [\
             ["@types/koa-compose", "npm:3.2.6"],\
-            ["@types/koa", "npm:2.13.8"]\
+            ["@types/koa", "npm:2.13.9"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -13205,7 +13220,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-koa__cors-npm-4.0.1-2ed201ed87-ca1dcd6102.zip/node_modules/@types/koa__cors/",\
           "packageDependencies": [\
             ["@types/koa__cors", "npm:4.0.1"],\
-            ["@types/koa", "npm:2.13.8"]\
+            ["@types/koa", "npm:2.13.9"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -13215,7 +13230,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-koa__router-npm-12.0.1-617c093621-91da726e1f.zip/node_modules/@types/koa__router/",\
           "packageDependencies": [\
             ["@types/koa__router", "npm:12.0.1"],\
-            ["@types/koa", "npm:2.13.8"]\
+            ["@types/koa", "npm:2.13.9"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -13223,7 +13238,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-koa__router-npm-8.0.11-08ca25f7c2-81f55ed772.zip/node_modules/@types/koa__router/",\
           "packageDependencies": [\
             ["@types/koa__router", "npm:8.0.11"],\
-            ["@types/koa", "npm:2.13.8"]\
+            ["@types/koa", "npm:2.13.9"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -22288,7 +22303,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["koa-body", "npm:6.0.1"],\
             ["@types/co-body", "npm:6.1.0"],\
             ["@types/formidable", "npm:2.0.5"],\
-            ["@types/koa", "npm:2.13.8"],\
+            ["@types/koa", "npm:2.13.9"],\
             ["co-body", "npm:6.1.0"],\
             ["formidable", "npm:2.1.2"],\
             ["zod", "npm:3.22.2"]\

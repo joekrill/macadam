@@ -58,7 +58,7 @@
     "@shopify/jest-koa-mocks": "^5.1.1",
     "@types/http-errors": "^2.0.2",
     "@types/jest": "^29.5.5",
-    "@types/koa": "^2.13.5",
+    "@types/koa": "^2.13.9",
     "@types/koa-compose": "^3.2.6",
     "@types/koa__cors": "^4.0.1",
     "@types/koa__router": "^12.0.1",

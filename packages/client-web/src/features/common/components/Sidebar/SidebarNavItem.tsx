@@ -18,5 +18,5 @@ export const SidebarNavItem = forwardRef<ButtonProps, "button">(
       justifyContent="start"
       {...props}
     />
-  )
+  ),
 );

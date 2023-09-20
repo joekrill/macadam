@@ -13,7 +13,7 @@ export const logOnError =
           type: error.name,
           state: ctx.state,
         },
-        error.message
+        error.message,
       );
       return;
     }
@@ -23,6 +23,6 @@ export const logOnError =
         ...error,
         stack: error.stack,
       },
-      error.message
+      error.message,
     );
   };

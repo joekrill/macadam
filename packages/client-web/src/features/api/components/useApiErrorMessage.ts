@@ -5,7 +5,7 @@ import { useMemo } from "react";
 import { useIntl } from "react-intl";
 
 export const useApiErrorMessage = (
-  error: FetchBaseQueryError | SerializedError
+  error: FetchBaseQueryError | SerializedError,
 ) => {
   const { formatMessage } = useIntl();
 
@@ -22,7 +22,7 @@ export const useApiErrorMessage = (
             error: error.error,
             responseText: error.data,
             status: error.status,
-          }
+          },
         );
       }
 
@@ -35,7 +35,7 @@ export const useApiErrorMessage = (
           },
           {
             error: error.error,
-          }
+          },
         );
       }
     }
@@ -75,7 +75,7 @@ export const useApiErrorMessage = (
           code,
           message,
           name,
-        }
+        },
       );
     }
 
@@ -88,7 +88,7 @@ export const useApiErrorMessage = (
         },
         {
           code: code || name,
-        }
+        },
       );
     }
 

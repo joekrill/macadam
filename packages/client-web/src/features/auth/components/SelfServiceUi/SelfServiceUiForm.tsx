@@ -68,7 +68,7 @@ export const SelfServiceUiForm = ({
 
       onSubmit({ action, method, body: Object.fromEntries(data) });
     },
-    [action, method, values, onSubmit]
+    [action, method, values, onSubmit],
   );
 
   return (

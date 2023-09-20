@@ -19,7 +19,7 @@ export interface InitializeMailerOptions {
  */
 export const initializeMailer = (
   app: Koa,
-  { smtpUri, smtpMailTo: defaultMailTo }: InitializeMailerOptions
+  { smtpUri, smtpMailTo: defaultMailTo }: InitializeMailerOptions,
 ) => {
   const transporter = createTransport({
     url: smtpUri,

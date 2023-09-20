@@ -19,6 +19,6 @@ export const useAuthPageParams = () => {
       refresh: params.has("refresh"),
       returnTo: params.get("return_to") || undefined,
     }),
-    [params, aal]
+    [params, aal],
   );
 };

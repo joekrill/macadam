@@ -105,7 +105,7 @@ describe("authenticated", () => {
     describe("paging", () => {
       beforeEach(async () => {
         em.persist(
-          Array.from({ length: 35 }, (_, i) => new Thing("123", `Item ${i}`))
+          Array.from({ length: 35 }, (_, i) => new Thing("123", `Item ${i}`)),
         ).flush();
       });
 
@@ -261,7 +261,7 @@ describe("authenticated", () => {
           {
             id: ownedThing.id,
           },
-          { filters: { ability: false } }
+          { filters: { ability: false } },
         );
         expect(count).toBe(0);
       });
@@ -322,7 +322,7 @@ describe("authenticated", () => {
               name: "Item 1",
               description: "a description!",
             }),
-          })
+          }),
         );
       });
 
@@ -334,7 +334,7 @@ describe("authenticated", () => {
           {
             id: ownedThing.id,
           },
-          { filters: false }
+          { filters: false },
         );
         expect(thing?.description).toBe("a description!");
       });
@@ -346,7 +346,7 @@ describe("authenticated", () => {
           {
             id: ownedThing.id,
           },
-          { filters: false }
+          { filters: false },
         );
         expect(thing?.name).toBe("Item 1");
       });
@@ -402,7 +402,7 @@ describe("authenticated", () => {
             data: expect.objectContaining({
               name: "A new name!",
             }),
-          })
+          }),
         );
       });
 
@@ -414,7 +414,7 @@ describe("authenticated", () => {
           {
             id: thing.id,
           },
-          { filters: false }
+          { filters: false },
         );
         expect(updated?.description).toBeNull();
         expect(updated?.name).toBe("A new name!");

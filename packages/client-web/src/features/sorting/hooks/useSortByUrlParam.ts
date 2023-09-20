@@ -32,7 +32,7 @@ export const useSortByUrlParam = <D>({
   const paramValue = urlParams.get(paramName) || undefined;
   const rules = useMemo(
     () => (paramValue ? parseSortingRules<D>(paramValue) : []),
-    [paramValue]
+    [paramValue],
   );
 
   const setRules = useCallback(
@@ -57,7 +57,7 @@ export const useSortByUrlParam = <D>({
         search: urlParams.toString(),
       });
     },
-    [navigate, paramName, paramValue, pathname, removeParams, urlParams]
+    [navigate, paramName, paramValue, pathname, removeParams, urlParams],
   );
 
   return {

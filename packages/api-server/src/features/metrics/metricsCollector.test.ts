@@ -70,12 +70,12 @@ describe("metricsCollector", () => {
       expect(Counter).toHaveBeenCalledWith(
         expect.objectContaining({
           registers: expect.arrayContaining([RegistryMock.mock.instances[0]]),
-        })
+        }),
       );
       expect(Histogram).toHaveBeenCalledWith(
         expect.objectContaining({
           registers: expect.arrayContaining([RegistryMock.mock.instances[0]]),
-        })
+        }),
       );
     });
   });

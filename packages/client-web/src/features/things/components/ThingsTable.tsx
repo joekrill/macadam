@@ -72,7 +72,7 @@ export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
         ),
       },
     ],
-    [formatMessage]
+    [formatMessage],
   );
 
   return <DataTable {...props} data={data} columns={columns} />;

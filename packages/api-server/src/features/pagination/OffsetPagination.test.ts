@@ -12,7 +12,7 @@ describe.each<
       expectedFindOptions: FindOptions<any>;
       metaParams: [number, number | undefined];
       expectedMeta: any;
-    }
+    },
   ]
 >([
   [
@@ -64,11 +64,11 @@ describe.each<
   "%s",
   (
     _,
-    { searchParams, options, expectedFindOptions, metaParams, expectedMeta }
+    { searchParams, options, expectedFindOptions, metaParams, expectedMeta },
   ) => {
     const pagination = new OffsetPagination(
       new URLSearchParams(searchParams),
-      options
+      options,
     );
 
     it("has expected findOptions()", () => {
@@ -80,5 +80,5 @@ describe.each<
         pagination: expectedMeta,
       });
     });
-  }
+  },
 );

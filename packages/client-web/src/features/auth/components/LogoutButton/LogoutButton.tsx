@@ -27,5 +27,5 @@ export const LogoutButton = forwardRef<LogoutButtonProps, "button">(
         {children || <LogoutButtonLabel />}
       </Button>
     );
-  }
+  },
 );

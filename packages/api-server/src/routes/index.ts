@@ -15,7 +15,7 @@ export const apiRoutes = ({ prefix }: ApiRoutesOptions) => {
   apiRouter.use(
     "/health",
     healthRouter.routes(),
-    healthRouter.allowedMethods()
+    healthRouter.allowedMethods(),
   );
 
   apiRouter.use("/v1", v1Router.routes(), v1Router.allowedMethods());

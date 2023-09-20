@@ -35,7 +35,7 @@ thingsRouter
       const thing = await thingModel.create(ctx.request.body);
       ctx.body = { data: thing };
       ctx.status = 201;
-    }
+    },
   )
   .get("/:thingId", async (ctx) => {
     const id = ctx.params.thingId as string;
@@ -54,7 +54,7 @@ thingsRouter
       await thingModel.flush();
       ctx.body = { data: thing };
       ctx.status = 200;
-    }
+    },
   )
   .patch<AuthenticationRequiredState>(
     "/:thingId",
@@ -66,7 +66,7 @@ thingsRouter
       await thingModel.flush();
       ctx.body = { data: thing };
       ctx.status = 200;
-    }
+    },
   )
   .delete<AuthenticationRequiredState>(
     "/:thingId",
@@ -77,5 +77,5 @@ thingsRouter
       await thingModel.delete(id);
       await thingModel.flush();
       ctx.status = 204;
-    }
+    },
   );

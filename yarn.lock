@@ -4174,7 +4174,7 @@ __metadata:
     "@types/eslint": ^8.21.1
     "@types/favicons": ^7.0.0
     "@types/node": ^18.14.1
-    "@types/prettier": ^2.7.2
+    "@types/prettier": ^3.0.0
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
     "@types/react-redux": ^7.1.25
@@ -4203,7 +4203,7 @@ __metadata:
     history: ^5.3.0
     jsdom: ^22.1.0
     plausible-tracker: ^0.3.8
-    prettier: ^2.8.4
+    prettier: ^3.0.3
     react: ^18.2.0
     react-app-polyfill: ^3.0.0
     react-dom: ^18.2.0
@@ -4248,7 +4248,7 @@ __metadata:
     eslint-plugin-react: ^7.32.2
     husky: ^8.0.3
     lint-staged: ^14.0.1
-    prettier: 2.8.4
+    prettier: 3.0.3
     typescript: ^4.9.5
   dependenciesMeta:
     open@7.4.2:
@@ -8653,10 +8653,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prettier@npm:^2.7.2":
-  version: 2.7.2
-  resolution: "@types/prettier@npm:2.7.2"
-  checksum: b47d76a5252265f8d25dd2fe2a5a61dc43ba0e6a96ffdd00c594cb4fd74c1982c2e346497e3472805d97915407a09423804cc2110a0b8e1b22cffcab246479b7
+"@types/prettier@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@types/prettier@npm:3.0.0"
+  dependencies:
+    prettier: "*"
+  checksum: a2a512d304e5bcf78f38089dc88ad19215e6ab871d435a17aef3ce538a63b07c0e359c18db23989dc1ed9fff96d99eee1f680416080184df5c7e0e3bf767e165
   languageName: node
   linkType: hard
 
@@ -18419,16 +18421,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.8.4":
-  version: 2.8.4
-  resolution: "prettier@npm:2.8.4"
+"prettier@npm:*, prettier@npm:3.0.3, prettier@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "prettier@npm:3.0.3"
   bin:
-    prettier: bin-prettier.js
-  checksum: c173064bf3df57b6d93d19aa98753b9b9dd7657212e33b41ada8e2e9f9884066bb9ca0b4005b89b3ab137efffdf8fbe0b462785aba20364798ff4303aadda57e
+    prettier: bin/prettier.cjs
+  checksum: e10b9af02b281f6c617362ebd2571b1d7fc9fb8a3bd17e371754428cda992e5e8d8b7a046e8f7d3e2da1dcd21aa001e2e3c797402ebb6111b5cd19609dd228e0
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.8.0, prettier@npm:^2.8.4":
+"prettier@npm:^2.8.0":
   version: 2.8.8
   resolution: "prettier@npm:2.8.8"
   bin:

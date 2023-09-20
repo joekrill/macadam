@@ -36,7 +36,7 @@ describe("GET /status", () => {
           error: expect.objectContaining({
             message,
           }),
-        })
+        }),
       );
     });
   });
@@ -55,7 +55,7 @@ describe("GET /status", () => {
       expect(response.body).toEqual(
         expect.objectContaining({
           message,
-        })
+        }),
       );
     });
   });
@@ -85,7 +85,7 @@ describe("GET /status", () => {
           error: expect.objectContaining({
             message: "Not Found",
           }),
-        })
+        }),
       );
     });
   });

@@ -42,7 +42,7 @@ export const ProfilePictureNode = ({
         URL.revokeObjectURL(objectUrl);
       }
     },
-    [objectUrl]
+    [objectUrl],
   );
 
   useEffect(() => {

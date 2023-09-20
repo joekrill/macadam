@@ -20,7 +20,7 @@ export interface InitializeLoggerOptions {
  */
 export const initializeLogger = (
   app: Koa,
-  { logger }: InitializeLoggerOptions
+  { logger }: InitializeLoggerOptions,
 ) => {
   app.context.logger = logger;
   app.on("error", logOnError(logger));

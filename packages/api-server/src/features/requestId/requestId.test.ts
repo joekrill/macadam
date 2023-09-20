@@ -47,7 +47,7 @@ describe("requestId", () => {
       await instance(contextMock, nextMock);
       expect(contextMock.set).toHaveBeenCalledWith(
         "Request-ID",
-        mockRequestIdHeader
+        mockRequestIdHeader,
       );
     });
 
@@ -73,7 +73,7 @@ describe("requestId", () => {
       await instance(contextMock, nextMock);
       expect(contextMock.set).toHaveBeenCalledWith(
         "Request-ID",
-        mockXRequestIdHeader
+        mockXRequestIdHeader,
       );
     });
 

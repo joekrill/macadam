@@ -23,7 +23,7 @@ export const ColorModeSwitcher: React.FC<ColorModeSwitcherProps> = ({
       defaultMessage:
         "Switch to {mode, select, dark {dark} light {light} other {}} mode",
     },
-    { mode: nextMode }
+    { mode: nextMode },
   );
 
   return (

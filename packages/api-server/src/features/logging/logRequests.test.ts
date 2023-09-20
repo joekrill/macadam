@@ -34,6 +34,6 @@ test("logs the request using the `info` level", async () => {
       req: contextMock.req,
       res: contextMock.res,
     }),
-    "request"
+    "request",
   );
 });

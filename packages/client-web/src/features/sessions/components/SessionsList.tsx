@@ -19,7 +19,7 @@ export const SessionsList = () => {
       page,
       sort,
     },
-    { skip: !isLoggedIn }
+    { skip: !isLoggedIn },
   );
 
   return (

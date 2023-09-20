@@ -21,7 +21,7 @@ export const ability =
   ): Middleware<DefaultState & AbilityState> =>
   async (
     ctx: ParameterizedContext<DefaultState & AbilityState, DefaultContext>,
-    next: () => Promise<void>
+    next: () => Promise<void>,
   ): Promise<void> => {
     if (!ctx.state.ability) {
       const session = await ctx.state.session();

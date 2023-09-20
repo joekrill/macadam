@@ -29,10 +29,10 @@ export const useSession = () => {
   const session = useIdentitySelector((state) => ctx.selectSession(state));
   const identity = useIdentitySelector((state) => ctx.selectIdentity(state));
   const isVerified = useIdentitySelector((state) =>
-    ctx.selectIsVerified(state)
+    ctx.selectIsVerified(state),
   );
   const lastUpdated = useIdentitySelector((state) =>
-    ctx.selectSessionLastUpdated(state)
+    ctx.selectSessionLastUpdated(state),
   );
 
   return {

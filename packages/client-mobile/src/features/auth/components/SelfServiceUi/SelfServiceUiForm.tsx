@@ -70,7 +70,7 @@ export const SelfServiceUiForm = ({
       // @ts-ignore TODO: fix this
       onSubmit({ action, method, body: data });
     },
-    [action, method, values, onSubmit]
+    [action, method, values, onSubmit],
   );
 
   return (

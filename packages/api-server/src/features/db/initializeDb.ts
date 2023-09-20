@@ -28,7 +28,7 @@ export const initializeDb = async (app: Koa, options: InitializeDbOptions) => {
       findOneOrFailHandler: (entityName: string) =>
         createHttpError(404, `${entityName} not found`),
       ...options,
-    })
+    }),
   );
   app.context.logger.debug("Database connected");
 

@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import { validationErrorResponseSchema } from "../schemas/response";
 
 export const useValidationError = (
-  error?: FetchBaseQueryError | SerializedError
+  error?: FetchBaseQueryError | SerializedError,
 ) =>
   useMemo(() => {
     if (!error || !("data" in error)) {

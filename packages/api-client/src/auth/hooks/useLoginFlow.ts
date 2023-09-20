@@ -51,7 +51,7 @@ export const useLoginFlow = ({
       refresh,
       returnTo,
       clientType,
-    ]
+    ],
   );
 
   const submit = useCallback(
@@ -59,7 +59,7 @@ export const useLoginFlow = ({
       submitFlow(payload);
       setRestartReason(undefined);
     },
-    [submitFlow, setRestartReason]
+    [submitFlow, setRestartReason],
   );
 
   useEffect(() => {

@@ -91,11 +91,12 @@ describe.each([
     ],
     undefined,
   ],
-] as [string, Parameters<typeof filterLocations>, ReturnType<typeof filterLocations>][])(
-  "%s",
-  (_, params, expected) => {
-    test(`returns ${JSON.stringify(expected)}`, () => {
-      expect(filterLocations(...params)).toEqual(expected);
-    });
-  }
-);
+] as [
+  string,
+  Parameters<typeof filterLocations>,
+  ReturnType<typeof filterLocations>,
+][])("%s", (_, params, expected) => {
+  test(`returns ${JSON.stringify(expected)}`, () => {
+    expect(filterLocations(...params)).toEqual(expected);
+  });
+});

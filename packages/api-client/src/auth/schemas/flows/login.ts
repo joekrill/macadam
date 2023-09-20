@@ -43,7 +43,7 @@ const loginFlowSuccessSchema = z.object({
 export type LoginFlowSuccess = z.infer<typeof loginFlowSuccessSchema>;
 
 export function isLoginFlowSuccess(
-  result?: LoginFlowSuccess | unknown
+  result?: LoginFlowSuccess | unknown,
 ): result is LoginFlowSuccess {
   return loginFlowSuccessSchema.safeParse(result).success;
 }

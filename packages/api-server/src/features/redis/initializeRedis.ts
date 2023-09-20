@@ -15,7 +15,7 @@ export interface InitializeRedisOptions {
  */
 export const initializeRedis = async (
   app: Koa,
-  { url }: InitializeRedisOptions
+  { url }: InitializeRedisOptions,
 ) => {
   const redis = new IORedis(url);
   app.context.logger.debug("Redis connecting");

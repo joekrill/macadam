@@ -6,8 +6,8 @@ export const useNodeGroup = (nodes: Array<UiNode> = [], group?: string) =>
     () =>
       group
         ? nodes.filter(
-            (node) => node.group === group || node.group === "default"
+            (node) => node.group === group || node.group === "default",
           )
         : nodes,
-    [nodes, group]
+    [nodes, group],
   );

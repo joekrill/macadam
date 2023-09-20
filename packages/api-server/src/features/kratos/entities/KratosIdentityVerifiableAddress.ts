@@ -37,7 +37,7 @@ export class KratosIdentityVerifiableAddress extends KratosBaseEntity {
 
   @OneToMany(
     () => KratosIdentityVerificationToken,
-    (a) => a.identity_verifiable_address
+    (a) => a.identity_verifiable_address,
   )
   verification_tokens = new Collection<KratosIdentityVerificationToken>(this);
 }

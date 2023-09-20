@@ -54,7 +54,7 @@ export const metricsCollector = (): Middleware => {
           code: String(ctx.status),
           path: ctx.path,
         },
-        ctx.state.responseTime / 1000
+        ctx.state.responseTime / 1000,
       );
     }
   };

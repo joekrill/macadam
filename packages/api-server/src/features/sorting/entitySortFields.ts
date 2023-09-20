@@ -8,12 +8,12 @@ const SORTABLE_FIELDS_CACHE: Record<string, string[]> = {};
  */
 export const entitySortFields = <T>(
   entityName: EntityName<T>,
-  entityManager: NonNullable<ForkEntityManagerState["entityManager"]>
+  entityManager: NonNullable<ForkEntityManagerState["entityManager"]>,
 ) => {
   const className = Utils.className(entityName);
   if (!SORTABLE_FIELDS_CACHE[className]) {
     SORTABLE_FIELDS_CACHE[className] = Array.from(
-      entityManager.getMetadata().get(className).propertyOrder.keys()
+      entityManager.getMetadata().get(className).propertyOrder.keys(),
     );
   }
 

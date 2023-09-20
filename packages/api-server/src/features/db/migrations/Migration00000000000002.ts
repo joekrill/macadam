@@ -18,7 +18,7 @@ export class Migration00000000000002 extends Migration {
           table.string("status");
           table.string("error");
         })
-        .toQuery()
+        .toQuery(),
     );
   }
 }

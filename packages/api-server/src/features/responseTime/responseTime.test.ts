@@ -24,7 +24,7 @@ describe("responseTime", () => {
     await instance(contextMock, nextMock);
     expect(contextMock.set).toHaveBeenCalledWith(
       "Response-Time",
-      expect.stringMatching(/^\d+ms$/)
+      expect.stringMatching(/^\d+ms$/),
     );
   });
 });

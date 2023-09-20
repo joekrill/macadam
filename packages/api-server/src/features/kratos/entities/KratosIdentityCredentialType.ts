@@ -20,13 +20,13 @@ export class KratosIdentityCredentialType {
 
   @OneToMany(
     () => KratosIdentityCredential,
-    (ic) => ic.identity_credential_type
+    (ic) => ic.identity_credential_type,
   )
   identity_credentials = new Collection<KratosIdentityCredential>(this);
 
   @OneToMany(
     () => KratosIdentityCredentialIdentifier,
-    (ici) => ici.identity_credential_type
+    (ici) => ici.identity_credential_type,
   )
   identity_credential_identifiers =
     new Collection<KratosIdentityCredentialIdentifier>(this);

@@ -36,7 +36,7 @@ export interface InitializeKratosOptions
  */
 export const initializeKratos = async (
   app: Koa,
-  { publicUrl, ...ormOptions }: InitializeKratosOptions
+  { publicUrl, ...ormOptions }: InitializeKratosOptions,
 ) => {
   const config = new Configuration({ basePath: publicUrl });
   const frontendApi = new FrontendApi(config);
@@ -53,7 +53,7 @@ export const initializeKratos = async (
       findOneOrFailHandler: (entityName: string) =>
         createHttpError(404, `${entityName} not found`),
       ...ormOptions,
-    })
+    }),
   );
   app.context.logger.debug("Kratos Database connected");
 

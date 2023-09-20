@@ -11,7 +11,7 @@ import { matchPath } from "react-router-dom";
  */
 export const filterLocations = (
   candidates: (To | undefined)[],
-  forbid: string[]
+  forbid: string[],
 ) => {
   return candidates.find((candidate) => {
     if (!candidate) {

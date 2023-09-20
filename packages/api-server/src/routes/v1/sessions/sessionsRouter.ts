@@ -39,8 +39,8 @@ sessionsRouter
         kratosEntityManager!
           .getMetadata()
           .get(KratosSession.name)
-          .propertyOrder.keys()
-      )
+          .propertyOrder.keys(),
+      ),
     ) || { authenticated_at: QueryOrder.DESC };
 
     // TODO: Currently `listMySessions` is very limited - not sorting; does not
@@ -58,7 +58,7 @@ sessionsRouter
       {
         ...pagination.findOptions(),
         orderBy,
-      }
+      },
     );
 
     ctx.body = {
@@ -84,7 +84,7 @@ sessionsRouter
       }
 
       return next();
-    }
+    },
   )
   .get("/:sessionId", async (ctx) => {
     ctx.body = { data: ctx.state.kratosSession };

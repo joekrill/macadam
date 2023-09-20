@@ -51,7 +51,7 @@ export function TextSearchFilter({
 
         qb.select(idColumn).where(
           `to_tsvector(${columnsRaw}) @@ ${PARSER_FUNCTIONS[parser]}(?)`,
-          [query]
+          [query],
         );
 
         return {

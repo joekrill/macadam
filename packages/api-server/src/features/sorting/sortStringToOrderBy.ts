@@ -4,7 +4,7 @@ import { validateFields } from "./validateFields";
 
 export const sortStringToOrderBy = (
   param: string | null,
-  validFields: string[]
+  validFields: string[],
 ) => {
   if (!param) {
     return undefined;

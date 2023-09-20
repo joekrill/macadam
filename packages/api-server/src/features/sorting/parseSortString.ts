@@ -6,7 +6,7 @@ import { ParsedField, parseField } from "./parseField";
  * name in descending order, then id in asencding order).
  */
 export const parseSortString = (
-  value: string | null | undefined
+  value: string | null | undefined,
 ): ParsedField[] => {
   if (!value) {
     return [];

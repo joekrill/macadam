@@ -27,7 +27,7 @@ export interface InitializeSentryOptions extends NodeOptions {
  */
 export const initializeSentry = (
   app: Koa,
-  options: InitializeSentryOptions
+  options: InitializeSentryOptions,
 ) => {
   Sentry.init({
     environment: app.env,
@@ -80,7 +80,7 @@ export const initializeSentry = (
 
         Sentry.captureException(err);
       });
-    }
+    },
   );
 
   app.context.addShutdownListener(async () => {

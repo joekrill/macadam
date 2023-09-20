@@ -18,7 +18,7 @@ export type RegistrationFlowSuccess = z.infer<
 >;
 
 export function isRegistrationFlowSuccess(
-  result?: RegistrationFlowSuccess | unknown
+  result?: RegistrationFlowSuccess | unknown,
 ): result is RegistrationFlowSuccess {
   return (
     result !== undefined &&
@@ -36,7 +36,7 @@ export type RegistrationFlowResponse = z.infer<
 >;
 
 export function isRegistrationFlow(
-  result?: RegistrationFlow | unknown
+  result?: RegistrationFlow | unknown,
 ): result is RegistrationFlow {
   return result !== undefined && (result as RegistrationFlow).ui !== undefined;
 }

@@ -12,7 +12,7 @@ export const ThingDetails = () => {
   const { id } = useParams<"id">();
   const navigate = useNavigate();
   const { data, error, isFetching, refetch } = thingsApi.useGetThingQuery(
-    id || skipToken
+    id || skipToken,
   );
 
   return (

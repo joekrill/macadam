@@ -7,7 +7,7 @@ import { ormConfig } from "./ormConfig";
 
 if (!process.env.DB_URL) {
   console.warn(
-    "DB_URL environment variable not supplied! Using in-memory sqlite."
+    "DB_URL environment variable not supplied! Using in-memory sqlite.",
   );
 }
 

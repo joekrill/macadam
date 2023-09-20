@@ -151,7 +151,7 @@ export const createApp = async ({
         [metricsPath]: "trace",
         [healthPath]: "trace",
       },
-    })
+    }),
   );
   app.use(urlSearchParams());
   app.use(metricsCollector());
@@ -164,7 +164,7 @@ export const createApp = async ({
         "x-request-id",
         "request-id",
       ],
-    })
+    }),
   );
   app.use(rateLimit());
   app.use(helmet({ contentSecurityPolicy: false }));
@@ -182,7 +182,7 @@ export const createApp = async ({
   app.use(
     koaBody({
       jsonLimit: "5mb",
-    })
+    }),
   );
 
   // Create a scoped entity manager for each request.

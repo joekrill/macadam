@@ -43,7 +43,7 @@ export class ContactUsMessage extends UuidEntity {
     message: string,
     ipAddress: string,
     userAgent: string,
-    sentBy?: string
+    sentBy?: string,
   ) {
     super();
 

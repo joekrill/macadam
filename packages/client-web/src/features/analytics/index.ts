@@ -16,7 +16,7 @@ if (process.env.VITE_PLAUSIBLE_HOST) {
 export const trackEvent = (
   eventName: string,
   options?: EventOptions,
-  eventData?: PlausibleOptions
+  eventData?: PlausibleOptions,
 ) => {
   if (plausible) {
     plausible.trackEvent(eventName, options, eventData);
@@ -25,7 +25,7 @@ export const trackEvent = (
 
 export const trackPageview = (
   eventData?: PlausibleOptions,
-  options?: EventOptions
+  options?: EventOptions,
 ) => {
   if (plausible) {
     plausible.trackPageview(eventData, options);

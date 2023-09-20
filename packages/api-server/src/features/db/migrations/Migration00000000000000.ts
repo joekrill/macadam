@@ -16,7 +16,7 @@ export class Migration00000000000000 extends Migration {
           table.jsonb("before");
           table.jsonb("after");
         })
-        .toQuery()
+        .toQuery(),
     );
   }
 }

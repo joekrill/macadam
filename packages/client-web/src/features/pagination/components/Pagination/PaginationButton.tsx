@@ -7,5 +7,5 @@ export interface PaginationButtonProps extends ButtonProps {
 export const PaginationButton = forwardRef<PaginationButtonProps, "button">(
   ({ pageNumber: _pageNumber, ...props }, ref) => (
     <Button ref={ref} rounded="md" {...props} />
-  )
+  ),
 );

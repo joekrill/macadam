@@ -72,7 +72,7 @@ describe("rateLimit", () => {
           ({
             consume: consumeMock,
             points: rateLimiterPoints,
-          } as unknown as RateLimiterMemory)
+          }) as unknown as RateLimiterMemory,
       );
       instance = rateLimit();
     });
@@ -99,7 +99,7 @@ describe("rateLimit", () => {
             remainingPoints,
             msBeforeNext,
             consumedPoints,
-            isFirstInDuration
+            isFirstInDuration,
           );
           // @ts-ignore
           (res as RateLimiterRes).consumedPoints = 10000;
@@ -128,15 +128,15 @@ describe("rateLimit", () => {
       it("Sets RateLimit headers", () => {
         expect(contextSetMock).toHaveBeenCalledWith(
           "RateLimit-Limit",
-          String(rateLimiterPoints)
+          String(rateLimiterPoints),
         );
         expect(contextSetMock).toHaveBeenCalledWith(
           "RateLimit-Remaining",
-          String(remainingPoints)
+          String(remainingPoints),
         );
         expect(contextSetMock).toHaveBeenCalledWith(
           "RateLimit-Reset",
-          String(msBeforeNext / 1000)
+          String(msBeforeNext / 1000),
         );
       });
     });

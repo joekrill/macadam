@@ -45,7 +45,7 @@ export const useReturnToProvider = ({
   return (
     filterLocations(
       [parsed.success ? parsed.data.returnTo : undefined, pathname],
-      forbid
+      forbid,
     ) || fallback
   );
 };

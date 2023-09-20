@@ -39,14 +39,14 @@ export const lazyLoadSession =
               if (session?.identity) {
                 ctx.state.entityManager?.setFilterParams(
                   "user",
-                  session.identity
+                  session.identity,
                 );
               }
               ctx.state.logger.debug({ session }, "Kratos session received");
             } catch (caughtError) {
               if (unauthorizedErrorSchema.safeParse(caughtError).success) {
                 ctx.state.logger.debug(
-                  "Kratos session not found (Unauthorized)"
+                  "Kratos session not found (Unauthorized)",
                 );
               } else {
                 const error = ensureError(caughtError);
@@ -55,7 +55,7 @@ export const lazyLoadSession =
                     stack: error.stack,
                     type: error.name,
                   },
-                  `Error fetching kratos session: ${error.message}`
+                  `Error fetching kratos session: ${error.message}`,
                 );
               }
             } finally {

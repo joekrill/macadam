@@ -58,7 +58,7 @@ export const SortMenu = ({
               serializeSortingRules({
                 ...rule,
                 id: id as string,
-              })
+              }),
             )
           }
         >
@@ -80,7 +80,7 @@ export const SortMenu = ({
               serializeSortingRules({
                 ...rule,
                 desc: order === "desc",
-              })
+              }),
             )
           }
         >

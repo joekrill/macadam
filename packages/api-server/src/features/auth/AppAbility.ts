@@ -36,7 +36,7 @@ export class AppAbility extends Ability<AppAbilityTuple> {
       this,
       action,
       subject as ExtractSubjectType<Parameters<this["rulesFor"]>[1]>,
-      ruleToDbQuery
+      ruleToDbQuery,
     );
 
     if (result === null) {
@@ -62,9 +62,9 @@ export class AppAbility extends Ability<AppAbilityTuple> {
           subject.constructor.name,
           "toJSON" in subject && typeof subject.toJSON === "function"
             ? subject.toJSON()
-            : subject
+            : subject,
         ),
-        ...rest
+        ...rest,
       );
     }
 

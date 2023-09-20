@@ -116,8 +116,8 @@ export const identityApi = createApi({
             identityApi.util.updateQueryData(
               "getLoginFlow",
               data.id,
-              () => data
-            )
+              () => data,
+            ),
           );
         } else if (isLoginFlowSuccess(data)) {
           dispatch(identityApi.util.resetApiState());
@@ -167,8 +167,8 @@ export const identityApi = createApi({
             identityApi.util.updateQueryData(
               "getRegistrationFlow",
               data.id,
-              () => data
-            )
+              () => data,
+            ),
           );
         } else if (isRegistrationFlowSuccess(data)) {
           dispatch(identityApi.util.resetApiState());
@@ -214,11 +214,11 @@ export const identityApi = createApi({
             identityApi.util.updateQueryData(
               "getVerificationFlow",
               data.id,
-              () => data
-            )
+              () => data,
+            ),
           );
         },
-      }
+      },
     ),
 
     /************************************************************
@@ -257,8 +257,8 @@ export const identityApi = createApi({
           identityApi.util.updateQueryData(
             "getRecoveryFlow",
             data.id,
-            () => data
-          )
+            () => data,
+          ),
         );
       },
     }),
@@ -299,8 +299,8 @@ export const identityApi = createApi({
           identityApi.util.updateQueryData(
             "getSettingsFlow",
             data.id,
-            () => data
-          )
+            () => data,
+          ),
         );
         dispatch(invalidateSession());
       },

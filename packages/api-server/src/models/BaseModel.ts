@@ -31,7 +31,7 @@ export interface ModelListOptions<T> {
 export abstract class BaseModel<T extends object> {
   constructor(
     readonly ctx: ParameterizedContext,
-    readonly entityName: EntityClass<T>
+    readonly entityName: EntityClass<T>,
   ) {}
 
   get textSearchFilter(): string | undefined {
@@ -86,8 +86,8 @@ export abstract class BaseModel<T extends object> {
       Utils.merge(
         { filters, orderBy: this.orderBy },
         pagination?.findOptions(),
-        findOptions
-      )
+        findOptions,
+      ),
     );
 
     return {
@@ -108,7 +108,7 @@ export abstract class BaseModel<T extends object> {
     return this.ctx.state.entityManager!.findOneOrFail(
       this.entityName,
       where,
-      options
+      options,
     );
   }
 
@@ -116,7 +116,7 @@ export abstract class BaseModel<T extends object> {
     const entity = await this.ctx.state.entityManager!.create(
       this.entityName,
       data,
-      options
+      options,
     );
     this.ctx.state.entityManager!.persist(entity);
     return entity;
@@ -125,12 +125,12 @@ export abstract class BaseModel<T extends object> {
   async update(
     where: FilterQuery<T>,
     data: EntityData<Loaded<T>> | Partial<EntityDTO<Loaded<T>>>,
-    options?: AssignOptions | boolean
+    options?: AssignOptions | boolean,
   ) {
     const entity = await this.get(where);
     this.ctx.state.ability!.ensureCan(
       "update",
-      entity! as unknown as AppSubject
+      entity! as unknown as AppSubject,
     );
     wrap(entity!).assign(data, options);
     return entity;
@@ -140,7 +140,7 @@ export abstract class BaseModel<T extends object> {
     const entity = this.get(where);
     this.ctx.state.ability!.ensureCan(
       "delete",
-      entity! as unknown as AppSubject
+      entity! as unknown as AppSubject,
     );
     await this.ctx.state.entityManager?.remove(entity);
   }

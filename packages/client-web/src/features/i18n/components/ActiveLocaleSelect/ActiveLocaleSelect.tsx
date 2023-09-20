@@ -40,7 +40,7 @@ export const ActiveLocaleSelect = (props: ActiveLocaleSelectProps) => {
         },
         {
           locale: getLocaleDisplayName(deviceLocale),
-        }
+        },
       )}
       value={value === deviceLocaleToken ? "" : value}
       onChange={(event) => {
@@ -53,7 +53,7 @@ export const ActiveLocaleSelect = (props: ActiveLocaleSelectProps) => {
         }
 
         dispatch(
-          selectLocale((event.target.value as LocaleCode) || deviceLocaleToken)
+          selectLocale((event.target.value as LocaleCode) || deviceLocaleToken),
         );
       }}
       icon={pendingLocale ? <Spinner /> : undefined}

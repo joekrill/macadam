@@ -38,7 +38,7 @@ export const identitySlice = createSlice({
           state.sessionToken = payload.session_token;
           state.lastUpdated = Date.now();
         }
-      }
+      },
     );
     builder.addMatcher(
       identityApi.endpoints.submitRegistrationFlow.matchFulfilled,
@@ -52,21 +52,21 @@ export const identitySlice = createSlice({
           state.sessionToken = payload.session_token;
           state.lastUpdated = Date.now();
         }
-      }
+      },
     );
     builder.addMatcher(
       identityApi.endpoints.getSettingsFlow.matchFulfilled,
       (state, { payload }) => {
         state.identity = payload.identity;
         state.lastUpdated = Date.now();
-      }
+      },
     );
     builder.addMatcher(
       identityApi.endpoints.submitSettingsFlow.matchFulfilled,
       (state, { payload }) => {
         state.identity = payload.identity;
         state.lastUpdated = Date.now();
-      }
+      },
     );
     builder.addMatcher(identityApi.endpoints.logout.matchFulfilled, (state) => {
       state.authState = "unauthenticated";
@@ -82,7 +82,7 @@ export const identitySlice = createSlice({
         state.session = session;
         state.identity = identity;
         state.lastUpdated = Date.now();
-      }
+      },
     );
     builder.addMatcher(
       identityApi.endpoints.whoami.matchRejected,
@@ -110,7 +110,7 @@ export const identitySlice = createSlice({
         }
 
         // TODO - handle unexpected error response here?
-      }
+      },
     );
   },
 });

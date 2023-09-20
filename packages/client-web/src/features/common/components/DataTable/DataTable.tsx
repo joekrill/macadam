@@ -42,7 +42,7 @@ export const DataTable = <D extends object>({
       ...state,
       sortBy: sortBy || [],
     }),
-    [sortBy]
+    [sortBy],
   );
 
   const stateReducer = useCallback(
@@ -60,7 +60,7 @@ export const DataTable = <D extends object>({
 
       return newState;
     },
-    [onSortByChange]
+    [onSortByChange],
   );
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
@@ -73,7 +73,7 @@ export const DataTable = <D extends object>({
         stateReducer,
         ...props,
       },
-      useSortBy
+      useSortBy,
     );
 
   const bgEvenColor = useColorModeValue("gray.100", "gray.800");
@@ -112,7 +112,7 @@ export const DataTable = <D extends object>({
                                 ? "desc"
                                 : "asc"
                               : "",
-                          }
+                          },
                         )}
                       />
                     </chakra.span>

@@ -27,6 +27,7 @@ const run = async () => {
       appShortName: process.env.VITE_SHORT_NAME,
       start_url: "/",
       theme_color: process.env.VITE_THEME_COLOR,
+      background: process.env.VITE_THEME_COLOR,
       version: process.env.VITE_VERSION,
     });
   } catch (error) {
@@ -40,16 +41,14 @@ const run = async () => {
   const indexHtml = "index.html";
   await Promise.all([
     ...response.images.map(({ contents, name }) =>
-      promises.writeFile(join(destinationPath, name), contents)
+      promises.writeFile(join(destinationPath, name), contents),
     ),
-    ...response.files.map(({ contents, name }) => {
+    ...response.files.map(async ({ contents, name }) => {
       const parser = name.endsWith("xml") ? "html" : "json";
-      return promises.writeFile(
-        join(destinationPath, name),
-        format(contents, { parser })
-      );
+      const data = await format(contents, { parser });
+      return promises.writeFile(join(destinationPath, name), data);
     }),
-    promises.readFile(indexHtml).then((buffer) => {
+    promises.readFile(indexHtml).then(async (buffer) => {
       // Reads the index.html file and replaces the content
       // between the htmlStart and htmlEnd placeholders with the
       // updated favicon data.
@@ -63,7 +62,7 @@ const run = async () => {
 
       // Format the result using prettier.
       const output = format(result, { parser: "html" });
-      return promises.writeFile(indexHtml, output);
+      return promises.writeFile(indexHtml, await output);
     }),
   ]);
 

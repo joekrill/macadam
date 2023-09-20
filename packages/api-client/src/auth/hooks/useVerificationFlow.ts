@@ -39,7 +39,7 @@ export const useVerificationFlow = ({
       initializeFlow({ returnTo });
       setRestartReason(reason);
     },
-    [initializeFlow, setRestartReason, submitResult, returnTo]
+    [initializeFlow, setRestartReason, submitResult, returnTo],
   );
 
   const submit = useCallback(
@@ -47,7 +47,7 @@ export const useVerificationFlow = ({
       submitFlow(payload);
       setRestartReason(undefined);
     },
-    [submitFlow, setRestartReason]
+    [submitFlow, setRestartReason],
   );
 
   useEffect(() => {

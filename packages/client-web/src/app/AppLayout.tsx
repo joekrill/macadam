@@ -20,7 +20,7 @@ export const AppLayout = () => {
   const { colorMode } = useColorMode();
   const session = useSession();
   const pendingVerifiableAddresses = useAppSelector((s) =>
-    selectPendingVerifiableAddresses(s)
+    selectPendingVerifiableAddresses(s),
   );
 
   return (

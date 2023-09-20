@@ -29,7 +29,7 @@ export const PasswordInput = React.forwardRef<
       defaultMessage:
         "{action, select, hide {Mask} show {Reveal} other {}} password",
     },
-    { action: isOpen ? "hide" : "show" }
+    { action: isOpen ? "hide" : "show" },
   );
 
   const mergeRef = useMergeRefs(inputRef, ref);

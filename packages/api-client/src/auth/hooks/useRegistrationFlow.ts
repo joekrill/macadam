@@ -41,7 +41,7 @@ export const useRegistrationFlow = ({
       initializeFlow({ returnTo });
       setRestartReason(reason);
     },
-    [initializeFlow, setRestartReason, submitResult, returnTo]
+    [initializeFlow, setRestartReason, submitResult, returnTo],
   );
 
   const submit = useCallback(
@@ -49,7 +49,7 @@ export const useRegistrationFlow = ({
       submitFlow(payload);
       setRestartReason(undefined);
     },
-    [submitFlow, setRestartReason]
+    [submitFlow, setRestartReason],
   );
 
   useEffect(() => {

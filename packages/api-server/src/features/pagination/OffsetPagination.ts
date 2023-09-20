@@ -24,7 +24,7 @@ export class OffsetPagination {
 
   constructor(
     params: URLSearchParams,
-    options?: Partial<OffsetPaginationOptions>
+    options?: Partial<OffsetPaginationOptions>,
   ) {
     const { defaultLimit, maxLimit, pageNumberKey, pageSizeKey } = {
       ...OffsetPagination.DefaultOptions,

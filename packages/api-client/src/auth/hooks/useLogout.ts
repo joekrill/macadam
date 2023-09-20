@@ -38,7 +38,7 @@ export const useLogout = ({
         });
       }
     },
-    [onClick, onLogoutComplete, trigger]
+    [onClick, onLogoutComplete, trigger],
   );
 
   return {

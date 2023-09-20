@@ -40,7 +40,7 @@ if (process.env.NODE_ENV !== "test") {
           useLocation,
           useNavigationType,
           createRoutesFromChildren,
-          matchRoutes
+          matchRoutes,
         ),
         tracingOrigins: [`${origin || hostname}/api/`],
       }),

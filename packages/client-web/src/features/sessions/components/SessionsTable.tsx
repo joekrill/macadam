@@ -85,7 +85,7 @@ export const SessionsTable = ({ data = [], ...props }: SessionsTableProps) => {
           ) : null,
       },
     ],
-    [formatMessage, currentSessionId]
+    [formatMessage, currentSessionId],
   );
 
   return <DataTable {...props} data={data} columns={columns} />;

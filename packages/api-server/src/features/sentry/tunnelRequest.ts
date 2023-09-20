@@ -30,7 +30,7 @@ export const tunnelRequest: Middleware = async (ctx, next) => {
   if (typeof payload !== "string") {
     logger.debug(
       { payload, type: typeof payload },
-      "Sentry tunnel requested with unexpected payload (expecting a string)"
+      "Sentry tunnel requested with unexpected payload (expecting a string)",
     );
     return next();
   }
@@ -62,7 +62,7 @@ export const tunnelRequest: Middleware = async (ctx, next) => {
   if (!tunnelableDsns.includes(header.dsn)) {
     logger.debug(
       { dsn: header.dsn },
-      "Sentry tunnel requested with forbidden DSN"
+      "Sentry tunnel requested with forbidden DSN",
     );
     return ctx.throw(400, "DSN forbidden", { dsn: header.dsn, expose: true });
   }

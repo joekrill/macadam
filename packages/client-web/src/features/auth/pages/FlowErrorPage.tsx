@@ -11,10 +11,10 @@ export const FlowErrorPage = () => {
   const params = useUrlSearchParams();
   const errorId = params.get("id");
   const { isLoading, data } = identityApi.useGetFlowErrorQuery(
-    errorId || skipToken
+    errorId || skipToken,
   );
 
-  const flowError = useMemo(() => ({ data } as SerializedError), [data]);
+  const flowError = useMemo(() => ({ data }) as SerializedError, [data]);
 
   return (
     <Container maxW="container.md" overflow="auto">

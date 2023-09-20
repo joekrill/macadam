@@ -6,7 +6,7 @@ import { ParsedField } from "./parseField";
  */
 export const validateFields = (
   fields: ParsedField[],
-  validFields: string[]
+  validFields: string[],
 ) => {
   const lowerCasedFields = validFields.map((field) => field.toLowerCase());
 

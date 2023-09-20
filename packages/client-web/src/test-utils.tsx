@@ -22,7 +22,7 @@ const AllProviders = ({ children }: { children?: React.ReactNode }) => (
 
 const customRender = (
   ui: React.ReactElement,
-  options?: TestingLibrary.RenderOptions
+  options?: TestingLibrary.RenderOptions,
 ) => TestingLibrary.render(ui, { wrapper: AllProviders, ...options });
 
 export * from "@testing-library/react";

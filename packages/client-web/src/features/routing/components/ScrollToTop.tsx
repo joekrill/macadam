@@ -17,7 +17,7 @@ export const ScrollToTop = ({ navigate = false }: ScrollToTopProps) => {
       window.scrollTo(0, 0);
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    navigate ? [pathname] : []
+    navigate ? [pathname] : [],
   );
 
   return null;

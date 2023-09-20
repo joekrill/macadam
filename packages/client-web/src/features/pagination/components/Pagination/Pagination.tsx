@@ -55,7 +55,7 @@ export const Pagination = ({
 
   const spacerColor = useColorModeValue(
     `${colorScheme}.600`,
-    `${colorScheme}.100`
+    `${colorScheme}.100`,
   );
 
   const isDisabled = !Number.isFinite(totalPages) || totalPages === 0;
@@ -101,7 +101,7 @@ export const Pagination = ({
             >
               <FormattedNumber value={page} />
             </ButtonComponent>
-          )
+          ),
         )}
 
         <ButtonComponent

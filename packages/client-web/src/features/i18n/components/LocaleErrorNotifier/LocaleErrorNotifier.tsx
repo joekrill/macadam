@@ -30,7 +30,7 @@ export const LocaleErrorNotifier = ({ children }: LocaleErrorNotifierProps) => {
             defaultMessage: "Unable to load locale {locale}",
             description: "The toast message shown when a locale fails to load",
           },
-          { locale: lastError.locale }
+          { locale: lastError.locale },
         ),
         description: lastError.error.message,
         status: "error",

@@ -36,6 +36,6 @@ export const useReturnToConsumer = ({
 
   return filterLocations(
     [preferred, parsed.success ? parsed.data.returnTo : undefined],
-    forbid
+    forbid,
   );
 };

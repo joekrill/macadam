@@ -2,7 +2,7 @@ import Koa from "koa";
 
 export type ShutdownListener = (
   exitCode?: number,
-  waitMs?: number
+  waitMs?: number,
 ) => void | Promise<void>;
 
 export type AddShutdownListener = (listener: ShutdownListener) => void;
@@ -45,7 +45,7 @@ export interface InitializeGracefulShutdownOptions {
  */
 export const initializeGracefulShutdown = (
   app: Koa,
-  { defaultShutdownWaitMs = 15000 }: InitializeGracefulShutdownOptions
+  { defaultShutdownWaitMs = 15000 }: InitializeGracefulShutdownOptions,
 ) => {
   let isTerminating = false;
 
@@ -55,7 +55,7 @@ export const initializeGracefulShutdown = (
 
   const shutdown = async (
     exitCode?: number,
-    waitMs: number = defaultShutdownWaitMs
+    waitMs: number = defaultShutdownWaitMs,
   ) => {
     const { logger } = app.context;
     let shutdownTimeout: NodeJS.Timeout | number | undefined = undefined;
@@ -66,14 +66,14 @@ export const initializeGracefulShutdown = (
     try {
       logger.info(
         { exitCode, waitMs, listenerCount: listeners.length },
-        `Preparing shutdown, notifying ${listeners.length} listeners`
+        `Preparing shutdown, notifying ${listeners.length} listeners`,
       );
       await Promise.race([
         // Ideally let any processes cleanup and shutdown.
         Promise.all(
           listeners.map((listener: ShutdownListener) =>
-            listener(exitCode, waitMs)
-          )
+            listener(exitCode, waitMs),
+          ),
         ),
 
         // This provides a maximum wait time for the above -- after `maxWait`

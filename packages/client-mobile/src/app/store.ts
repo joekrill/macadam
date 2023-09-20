@@ -36,7 +36,7 @@ const persistedReducer = persistReducer(
     [appApi.reducerPath]: appApi.reducer,
     [identitySlice.name]: identitySlice.reducer,
     [identityApi.reducerPath]: identityApi.reducer,
-  })
+  }),
 );
 
 export const store = configureStore({

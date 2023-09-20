@@ -35,7 +35,7 @@ export const logRequests =
           ],
           remove: true,
         },
-      }
+      },
     );
 
     await next();
@@ -46,6 +46,6 @@ export const logRequests =
         res: ctx.res,
         responseTime: ctx.state.responseTime,
       },
-      "request"
+      "request",
     );
   };

@@ -4,7 +4,7 @@ import { createApp } from "./app";
 
 export const logger = pino(
   { serializers: pino.stdSerializers },
-  pino.destination({ sync: false })
+  pino.destination({ sync: false }),
 );
 
 process.on("uncaughtException", (error) => {
@@ -85,7 +85,7 @@ if (LOG_LEVEL && logger.levels.values[LOG_LEVEL]) {
           environment,
           logLevel: logger.level,
         },
-        "🛣️  Macadam API server listening"
+        "🛣️  Macadam API server listening",
       );
 
       app.on("shutdown", () => {

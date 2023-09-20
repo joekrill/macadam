@@ -13,7 +13,7 @@ v1Router
   .use(
     "/contact-us",
     contactUsRouter.routes(),
-    contactUsRouter.allowedMethods()
+    contactUsRouter.allowedMethods(),
   )
   .use("/dev", devRouter.routes(), devRouter.allowedMethods())
   .use("/monitor", monitorRouter.routes(), monitorRouter.allowedMethods())

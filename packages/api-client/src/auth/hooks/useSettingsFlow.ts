@@ -37,7 +37,7 @@ export const useSettingsFlow = ({
       initializeFlow({ returnTo });
       setRestartReason(reason);
     },
-    [initializeFlow, setRestartReason, submitResult, returnTo]
+    [initializeFlow, setRestartReason, submitResult, returnTo],
   );
 
   const submit = useCallback(
@@ -45,7 +45,7 @@ export const useSettingsFlow = ({
       submitFlow(payload);
       setRestartReason(undefined);
     },
-    [submitFlow, setRestartReason]
+    [submitFlow, setRestartReason],
   );
 
   useEffect(() => {

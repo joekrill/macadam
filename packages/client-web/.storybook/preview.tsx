@@ -101,7 +101,7 @@ const withColorMode = (StoryFn: Function, context: StoryContext) => {
     // bug. In the meantime, this fixes things.
     document.documentElement.style.setProperty(
       "--chakra-ui-color-mode",
-      desiredColorMode
+      desiredColorMode,
     );
   });
 

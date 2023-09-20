@@ -29,7 +29,7 @@ export function AbilityFilter({
 
         return (args.ability as AppAbility).query(
           action,
-          meta.className as AppSubject
+          meta.className as AppSubject,
         ) as FilterQuery<U>;
       },
     };

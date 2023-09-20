@@ -38,7 +38,7 @@ export const LocaleSelectNode = ({
             preferencesLink: (parts: ReactNode) => (
               <AppPreferencesLink>{parts}</AppPreferencesLink>
             ),
-          }
+          },
         )
       }
     >
@@ -55,7 +55,7 @@ export const LocaleSelectNode = ({
           },
           {
             locale: getLocaleDisplayName(DEFAULT_LOCALE),
-          }
+          },
         )}
       />
     </NodeFormControlWrapper>

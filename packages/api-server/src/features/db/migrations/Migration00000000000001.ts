@@ -17,7 +17,7 @@ export class Migration00000000000000 extends Migration {
           table.timestamp("updated_at").notNullable();
           table.timestamp("deleted_at");
         })
-        .toQuery()
+        .toQuery(),
     );
 
     if (process.env.NODE_ENV !== "production") {
@@ -35,9 +35,9 @@ export class Migration00000000000000 extends Migration {
               name: faker.commerce.productName(),
               description: faker.commerce.productDescription(),
               is_public: faker.datatype.boolean(),
-            }))
+            })),
           )
-          .toQuery()
+          .toQuery(),
       );
     }
   }

@@ -39,7 +39,7 @@ export const useRecoveryFlow = ({
       initializeFlow({ returnTo });
       setRestartReason(reason);
     },
-    [initializeFlow, setRestartReason, submitResult, returnTo]
+    [initializeFlow, setRestartReason, submitResult, returnTo],
   );
 
   const submit = useCallback(
@@ -47,7 +47,7 @@ export const useRecoveryFlow = ({
       submitFlow(payload);
       setRestartReason(undefined);
     },
-    [submitFlow, setRestartReason]
+    [submitFlow, setRestartReason],
   );
 
   useEffect(() => {

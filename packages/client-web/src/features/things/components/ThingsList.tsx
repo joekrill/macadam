@@ -46,7 +46,7 @@ export const ThingsList = () => {
   const owned = !!useUrlSearchParam("mine") && isLoggedIn;
   const { setRules, rules, paramValue: sort } = useSortByUrlParam<Thing>();
   const [searchInput, setSearchInput] = useState(
-    urlParams.get("search")?.trim()
+    urlParams.get("search")?.trim(),
   );
 
   const { data, isFetching, error, refetch } = thingsApi.useListThingsQuery(
@@ -56,7 +56,7 @@ export const ThingsList = () => {
       sort,
       search: urlParams.get("search")?.trim(),
     },
-    { skip: isUnknown }
+    { skip: isUnknown },
   );
 
   const updateUrlParam = useCallback(
@@ -75,7 +75,7 @@ export const ThingsList = () => {
         refetch();
       }
     },
-    [urlParams, navigate, location, refetch]
+    [urlParams, navigate, location, refetch],
   );
 
   return (
@@ -138,7 +138,7 @@ export const ThingsList = () => {
               onChange={(e) => {
                 updateUrlParam(
                   "mine",
-                  e.target.value === "mine" ? "1" : undefined
+                  e.target.value === "mine" ? "1" : undefined,
                 );
               }}
             >

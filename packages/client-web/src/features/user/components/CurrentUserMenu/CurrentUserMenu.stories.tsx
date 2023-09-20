@@ -36,7 +36,7 @@ const Template: Story<StoryProps> = ({ name, email = "", ...props }) => {
         name,
       },
     }),
-    [email, name]
+    [email, name],
   );
   const memoizedSession = useMemo(() => ({ id: "" }), []);
   const memoizedLastUpdated = useMemo(() => Date.now(), []);

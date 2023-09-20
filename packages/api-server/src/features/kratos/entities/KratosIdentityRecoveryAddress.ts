@@ -28,7 +28,7 @@ export class KratosIdentityRecoveryAddress extends KratosBaseEntity {
 
   @OneToMany(
     () => KratosIdentityRecoveryToken,
-    (a) => a.identity_recovery_address
+    (a) => a.identity_recovery_address,
   )
   recovery_tokens = new Collection<KratosIdentityRecoveryToken>(this);
 }

@@ -2,7 +2,7 @@ import { Center, Heading, Text, VStack } from "@chakra-ui/react";
 import { Helmet } from "react-helmet-async";
 import { FormattedMessage, useIntl } from "react-intl";
 import { HomepageButton } from "../../../common/components/HomepageButton";
-import { ReactComponent as Lost } from "./Lost.svg";
+import Lost from "./Lost.svg?react";
 
 export interface NotFoundPageProps {}
 

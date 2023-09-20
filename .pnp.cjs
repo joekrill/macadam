@@ -7162,7 +7162,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["vite", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:4.4.9"],\
             ["vite-plugin-checker", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:0.6.2"],\
             ["vite-plugin-eslint", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:1.8.1"],\
-            ["vite-plugin-svgr", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:3.2.0"],\
+            ["vite-plugin-svgr", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:4.0.0"],\
             ["vitest", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:0.34.4"],\
             ["web-vitals", "npm:3.4.0"],\
             ["webpack", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:5.88.2"],\
@@ -11022,10 +11022,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
+        ["npm:5.0.4", {\
+          "packageLocation": "./.yarn/cache/@rollup-pluginutils-npm-5.0.4-344c94a032-893d5805ac.zip/node_modules/@rollup/pluginutils/",\
+          "packageDependencies": [\
+            ["@rollup/pluginutils", "npm:5.0.4"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["virtual:5d3c6bbaab4f34ccdb4c67c6ae5794be0729293326891a893a6e46a887bb30829c86f85213e73bd7170213e12c2bd335871cee1befe79eac70a88e88431d4949#npm:5.0.2", {\
           "packageLocation": "./.yarn/__virtual__/@rollup-pluginutils-virtual-8547b9a065/0/cache/@rollup-pluginutils-npm-5.0.2-6aa9d0ddd4-edea15e543.zip/node_modules/@rollup/pluginutils/",\
           "packageDependencies": [\
             ["@rollup/pluginutils", "virtual:5d3c6bbaab4f34ccdb4c67c6ae5794be0729293326891a893a6e46a887bb30829c86f85213e73bd7170213e12c2bd335871cee1befe79eac70a88e88431d4949#npm:5.0.2"],\
+            ["@types/estree", "npm:1.0.0"],\
+            ["@types/rollup", null],\
+            ["estree-walker", "npm:2.0.2"],\
+            ["picomatch", "npm:2.3.1"],\
+            ["rollup", null]\
+          ],\
+          "packagePeers": [\
+            "@types/rollup",\
+            "rollup"\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["virtual:eab7f91ff5f3967671be892ed0f70cde8e2af73f3fa23be100d8d9ccf5b478b2493ed1abded89400378ada0cc4549b0304142515faf8f55d319e126abe9ab723#npm:5.0.4", {\
+          "packageLocation": "./.yarn/__virtual__/@rollup-pluginutils-virtual-8b85600671/0/cache/@rollup-pluginutils-npm-5.0.4-344c94a032-893d5805ac.zip/node_modules/@rollup/pluginutils/",\
+          "packageDependencies": [\
+            ["@rollup/pluginutils", "virtual:eab7f91ff5f3967671be892ed0f70cde8e2af73f3fa23be100d8d9ccf5b478b2493ed1abded89400378ada0cc4549b0304142515faf8f55d319e126abe9ab723#npm:5.0.4"],\
             ["@types/estree", "npm:1.0.0"],\
             ["@types/rollup", null],\
             ["estree-walker", "npm:2.0.2"],\
@@ -12514,17 +12537,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@svgr/babel-plugin-add-jsx-attribute", [\
-        ["npm:7.0.0", {\
-          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-add-jsx-attribute-npm-7.0.0-8de5ae8c89-ecdf432de3.zip/node_modules/@svgr/babel-plugin-add-jsx-attribute/",\
+        ["npm:8.0.0", {\
+          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-add-jsx-attribute-npm-8.0.0-026be9c2be-3fc8e35d16.zip/node_modules/@svgr/babel-plugin-add-jsx-attribute/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-add-jsx-attribute", "npm:7.0.0"]\
+            ["@svgr/babel-plugin-add-jsx-attribute", "npm:8.0.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0", {\
-          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-add-jsx-attribute-virtual-cb10705058/0/cache/@svgr-babel-plugin-add-jsx-attribute-npm-7.0.0-8de5ae8c89-ecdf432de3.zip/node_modules/@svgr/babel-plugin-add-jsx-attribute/",\
+        ["virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-add-jsx-attribute-virtual-ce5fab05b1/0/cache/@svgr-babel-plugin-add-jsx-attribute-npm-8.0.0-026be9c2be-3fc8e35d16.zip/node_modules/@svgr/babel-plugin-add-jsx-attribute/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-add-jsx-attribute", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
+            ["@svgr/babel-plugin-add-jsx-attribute", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0"],\
             ["@babel/core", "npm:7.22.20"],\
             ["@types/babel__core", null]\
           ],\
@@ -12536,17 +12559,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@svgr/babel-plugin-remove-jsx-attribute", [\
-        ["npm:7.0.0", {\
-          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-remove-jsx-attribute-npm-7.0.0-a0d8c327ec-808ba216ee.zip/node_modules/@svgr/babel-plugin-remove-jsx-attribute/",\
+        ["npm:8.0.0", {\
+          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-remove-jsx-attribute-npm-8.0.0-c98774fd19-ff992893c6.zip/node_modules/@svgr/babel-plugin-remove-jsx-attribute/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-remove-jsx-attribute", "npm:7.0.0"]\
+            ["@svgr/babel-plugin-remove-jsx-attribute", "npm:8.0.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0", {\
-          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-remove-jsx-attribute-virtual-2620029b0b/0/cache/@svgr-babel-plugin-remove-jsx-attribute-npm-7.0.0-a0d8c327ec-808ba216ee.zip/node_modules/@svgr/babel-plugin-remove-jsx-attribute/",\
+        ["virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-remove-jsx-attribute-virtual-8600816815/0/cache/@svgr-babel-plugin-remove-jsx-attribute-npm-8.0.0-c98774fd19-ff992893c6.zip/node_modules/@svgr/babel-plugin-remove-jsx-attribute/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-remove-jsx-attribute", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
+            ["@svgr/babel-plugin-remove-jsx-attribute", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0"],\
             ["@babel/core", "npm:7.22.20"],\
             ["@types/babel__core", null]\
           ],\
@@ -12558,17 +12581,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@svgr/babel-plugin-remove-jsx-empty-expression", [\
-        ["npm:7.0.0", {\
-          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-remove-jsx-empty-expression-npm-7.0.0-1809ec9d7b-da0cae989c.zip/node_modules/@svgr/babel-plugin-remove-jsx-empty-expression/",\
+        ["npm:8.0.0", {\
+          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-remove-jsx-empty-expression-npm-8.0.0-bee2c7d451-0fb691b63a.zip/node_modules/@svgr/babel-plugin-remove-jsx-empty-expression/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-remove-jsx-empty-expression", "npm:7.0.0"]\
+            ["@svgr/babel-plugin-remove-jsx-empty-expression", "npm:8.0.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0", {\
-          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-remove-jsx-empty-expression-virtual-bd04ab8466/0/cache/@svgr-babel-plugin-remove-jsx-empty-expression-npm-7.0.0-1809ec9d7b-da0cae989c.zip/node_modules/@svgr/babel-plugin-remove-jsx-empty-expression/",\
+        ["virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-remove-jsx-empty-expression-virtual-862d1cad70/0/cache/@svgr-babel-plugin-remove-jsx-empty-expression-npm-8.0.0-bee2c7d451-0fb691b63a.zip/node_modules/@svgr/babel-plugin-remove-jsx-empty-expression/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-remove-jsx-empty-expression", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
+            ["@svgr/babel-plugin-remove-jsx-empty-expression", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0"],\
             ["@babel/core", "npm:7.22.20"],\
             ["@types/babel__core", null]\
           ],\
@@ -12580,17 +12603,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@svgr/babel-plugin-replace-jsx-attribute-value", [\
-        ["npm:7.0.0", {\
-          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-replace-jsx-attribute-value-npm-7.0.0-17dcc8f130-e624918b54.zip/node_modules/@svgr/babel-plugin-replace-jsx-attribute-value/",\
+        ["npm:8.0.0", {\
+          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-replace-jsx-attribute-value-npm-8.0.0-bf8ed25593-1edda65ef4.zip/node_modules/@svgr/babel-plugin-replace-jsx-attribute-value/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-replace-jsx-attribute-value", "npm:7.0.0"]\
+            ["@svgr/babel-plugin-replace-jsx-attribute-value", "npm:8.0.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0", {\
-          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-replace-jsx-attribute-value-virtual-11bb507850/0/cache/@svgr-babel-plugin-replace-jsx-attribute-value-npm-7.0.0-17dcc8f130-e624918b54.zip/node_modules/@svgr/babel-plugin-replace-jsx-attribute-value/",\
+        ["virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-replace-jsx-attribute-value-virtual-6aae4123a1/0/cache/@svgr-babel-plugin-replace-jsx-attribute-value-npm-8.0.0-bf8ed25593-1edda65ef4.zip/node_modules/@svgr/babel-plugin-replace-jsx-attribute-value/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-replace-jsx-attribute-value", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
+            ["@svgr/babel-plugin-replace-jsx-attribute-value", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0"],\
             ["@babel/core", "npm:7.22.20"],\
             ["@types/babel__core", null]\
           ],\
@@ -12602,17 +12625,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@svgr/babel-plugin-svg-dynamic-title", [\
-        ["npm:7.0.0", {\
-          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-svg-dynamic-title-npm-7.0.0-d05ee970aa-3ffc97cc61.zip/node_modules/@svgr/babel-plugin-svg-dynamic-title/",\
+        ["npm:8.0.0", {\
+          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-svg-dynamic-title-npm-8.0.0-c534fda2ad-876cec8914.zip/node_modules/@svgr/babel-plugin-svg-dynamic-title/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-svg-dynamic-title", "npm:7.0.0"]\
+            ["@svgr/babel-plugin-svg-dynamic-title", "npm:8.0.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0", {\
-          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-svg-dynamic-title-virtual-f8681525c8/0/cache/@svgr-babel-plugin-svg-dynamic-title-npm-7.0.0-d05ee970aa-3ffc97cc61.zip/node_modules/@svgr/babel-plugin-svg-dynamic-title/",\
+        ["virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-svg-dynamic-title-virtual-ed55d26991/0/cache/@svgr-babel-plugin-svg-dynamic-title-npm-8.0.0-c534fda2ad-876cec8914.zip/node_modules/@svgr/babel-plugin-svg-dynamic-title/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-svg-dynamic-title", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
+            ["@svgr/babel-plugin-svg-dynamic-title", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0"],\
             ["@babel/core", "npm:7.22.20"],\
             ["@types/babel__core", null]\
           ],\
@@ -12624,17 +12647,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@svgr/babel-plugin-svg-em-dimensions", [\
-        ["npm:7.0.0", {\
-          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-svg-em-dimensions-npm-7.0.0-b0f780e432-0f98ee5269.zip/node_modules/@svgr/babel-plugin-svg-em-dimensions/",\
+        ["npm:8.0.0", {\
+          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-svg-em-dimensions-npm-8.0.0-de7e3b5c02-be0e2d3911.zip/node_modules/@svgr/babel-plugin-svg-em-dimensions/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-svg-em-dimensions", "npm:7.0.0"]\
+            ["@svgr/babel-plugin-svg-em-dimensions", "npm:8.0.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0", {\
-          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-svg-em-dimensions-virtual-d6b250498b/0/cache/@svgr-babel-plugin-svg-em-dimensions-npm-7.0.0-b0f780e432-0f98ee5269.zip/node_modules/@svgr/babel-plugin-svg-em-dimensions/",\
+        ["virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-svg-em-dimensions-virtual-e0c181b549/0/cache/@svgr-babel-plugin-svg-em-dimensions-npm-8.0.0-de7e3b5c02-be0e2d3911.zip/node_modules/@svgr/babel-plugin-svg-em-dimensions/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-svg-em-dimensions", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
+            ["@svgr/babel-plugin-svg-em-dimensions", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0"],\
             ["@babel/core", "npm:7.22.20"],\
             ["@types/babel__core", null]\
           ],\
@@ -12646,17 +12669,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@svgr/babel-plugin-transform-react-native-svg", [\
-        ["npm:7.0.0", {\
-          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-transform-react-native-svg-npm-7.0.0-affc1645bd-2006796534.zip/node_modules/@svgr/babel-plugin-transform-react-native-svg/",\
+        ["npm:8.1.0", {\
+          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-transform-react-native-svg-npm-8.1.0-9f7491cf96-85b434a575.zip/node_modules/@svgr/babel-plugin-transform-react-native-svg/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-transform-react-native-svg", "npm:7.0.0"]\
+            ["@svgr/babel-plugin-transform-react-native-svg", "npm:8.1.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0", {\
-          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-transform-react-native-svg-virtual-5853434fa1/0/cache/@svgr-babel-plugin-transform-react-native-svg-npm-7.0.0-affc1645bd-2006796534.zip/node_modules/@svgr/babel-plugin-transform-react-native-svg/",\
+        ["virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-transform-react-native-svg-virtual-a217f741dc/0/cache/@svgr-babel-plugin-transform-react-native-svg-npm-8.1.0-9f7491cf96-85b434a575.zip/node_modules/@svgr/babel-plugin-transform-react-native-svg/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-transform-react-native-svg", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
+            ["@svgr/babel-plugin-transform-react-native-svg", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.1.0"],\
             ["@babel/core", "npm:7.22.20"],\
             ["@types/babel__core", null]\
           ],\
@@ -12668,17 +12691,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@svgr/babel-plugin-transform-svg-component", [\
-        ["npm:7.0.0", {\
-          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-transform-svg-component-npm-7.0.0-20736a89d6-cf5be9c6b2.zip/node_modules/@svgr/babel-plugin-transform-svg-component/",\
+        ["npm:8.0.0", {\
+          "packageLocation": "./.yarn/cache/@svgr-babel-plugin-transform-svg-component-npm-8.0.0-2e9be9c6ad-04e2023d75.zip/node_modules/@svgr/babel-plugin-transform-svg-component/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-transform-svg-component", "npm:7.0.0"]\
+            ["@svgr/babel-plugin-transform-svg-component", "npm:8.0.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0", {\
-          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-transform-svg-component-virtual-64e4558ff4/0/cache/@svgr-babel-plugin-transform-svg-component-npm-7.0.0-20736a89d6-cf5be9c6b2.zip/node_modules/@svgr/babel-plugin-transform-svg-component/",\
+        ["virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/@svgr-babel-plugin-transform-svg-component-virtual-0a98827934/0/cache/@svgr-babel-plugin-transform-svg-component-npm-8.0.0-2e9be9c6ad-04e2023d75.zip/node_modules/@svgr/babel-plugin-transform-svg-component/",\
           "packageDependencies": [\
-            ["@svgr/babel-plugin-transform-svg-component", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
+            ["@svgr/babel-plugin-transform-svg-component", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0"],\
             ["@babel/core", "npm:7.22.20"],\
             ["@types/babel__core", null]\
           ],\
@@ -12690,26 +12713,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@svgr/babel-preset", [\
-        ["npm:7.0.0", {\
-          "packageLocation": "./.yarn/cache/@svgr-babel-preset-npm-7.0.0-51722dd642-8c3ff1df16.zip/node_modules/@svgr/babel-preset/",\
+        ["npm:8.1.0", {\
+          "packageLocation": "./.yarn/cache/@svgr-babel-preset-npm-8.1.0-0dca9b0e1b-3a67930f08.zip/node_modules/@svgr/babel-preset/",\
           "packageDependencies": [\
-            ["@svgr/babel-preset", "npm:7.0.0"]\
+            ["@svgr/babel-preset", "npm:8.1.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:a75a0f8c3347e7528543f662173f13c54f4c91f81f619517425058169bfe793f5ff1708f1c524a454518b0877ff83ca99bca1caf936d0104ca578b6e4128402e#npm:7.0.0", {\
-          "packageLocation": "./.yarn/__virtual__/@svgr-babel-preset-virtual-d387ce9f72/0/cache/@svgr-babel-preset-npm-7.0.0-51722dd642-8c3ff1df16.zip/node_modules/@svgr/babel-preset/",\
+        ["virtual:77cc138b8f03e76bc81b53d7c536b91810383e8b8e9f294aac9f969daaf6fd5a72e29c2099e3025b537aac701c45d44c7e6af1647a2799c9f61d4f4f9312b7a3#npm:8.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@svgr-babel-preset-virtual-787cd2a900/0/cache/@svgr-babel-preset-npm-8.1.0-0dca9b0e1b-3a67930f08.zip/node_modules/@svgr/babel-preset/",\
           "packageDependencies": [\
-            ["@svgr/babel-preset", "virtual:a75a0f8c3347e7528543f662173f13c54f4c91f81f619517425058169bfe793f5ff1708f1c524a454518b0877ff83ca99bca1caf936d0104ca578b6e4128402e#npm:7.0.0"],\
+            ["@svgr/babel-preset", "virtual:77cc138b8f03e76bc81b53d7c536b91810383e8b8e9f294aac9f969daaf6fd5a72e29c2099e3025b537aac701c45d44c7e6af1647a2799c9f61d4f4f9312b7a3#npm:8.1.0"],\
             ["@babel/core", "npm:7.22.20"],\
-            ["@svgr/babel-plugin-add-jsx-attribute", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
-            ["@svgr/babel-plugin-remove-jsx-attribute", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
-            ["@svgr/babel-plugin-remove-jsx-empty-expression", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
-            ["@svgr/babel-plugin-replace-jsx-attribute-value", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
-            ["@svgr/babel-plugin-svg-dynamic-title", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
-            ["@svgr/babel-plugin-svg-em-dimensions", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
-            ["@svgr/babel-plugin-transform-react-native-svg", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
-            ["@svgr/babel-plugin-transform-svg-component", "virtual:d387ce9f72841473a2ab65ef7dc7b33cef6670359451c92893497df0613f3f79a9cc6e62d642e8a365e817764c9bfa46787d1532faf1e3ae991a59f0e0d50f49#npm:7.0.0"],\
+            ["@svgr/babel-plugin-add-jsx-attribute", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0"],\
+            ["@svgr/babel-plugin-remove-jsx-attribute", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0"],\
+            ["@svgr/babel-plugin-remove-jsx-empty-expression", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0"],\
+            ["@svgr/babel-plugin-replace-jsx-attribute-value", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0"],\
+            ["@svgr/babel-plugin-svg-dynamic-title", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0"],\
+            ["@svgr/babel-plugin-svg-em-dimensions", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0"],\
+            ["@svgr/babel-plugin-transform-react-native-svg", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.1.0"],\
+            ["@svgr/babel-plugin-transform-svg-component", "virtual:787cd2a900f2b2d924f7d452399919c1af4f5649aa818911805226763b5e1524125869f29ff2317db51a4d4c91a383aa06e6b77fba937d1a8da46a2d8a0ed437#npm:8.0.0"],\
             ["@types/babel__core", null]\
           ],\
           "packagePeers": [\
@@ -12720,23 +12743,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@svgr/core", [\
-        ["npm:7.0.0", {\
-          "packageLocation": "./.yarn/cache/@svgr-core-npm-7.0.0-a75a0f8c33-34fa14557b.zip/node_modules/@svgr/core/",\
+        ["npm:8.1.0", {\
+          "packageLocation": "./.yarn/cache/@svgr-core-npm-8.1.0-77cc138b8f-da4a12865c.zip/node_modules/@svgr/core/",\
           "packageDependencies": [\
-            ["@svgr/core", "npm:7.0.0"],\
+            ["@svgr/core", "npm:8.1.0"],\
             ["@babel/core", "npm:7.22.20"],\
-            ["@svgr/babel-preset", "virtual:a75a0f8c3347e7528543f662173f13c54f4c91f81f619517425058169bfe793f5ff1708f1c524a454518b0877ff83ca99bca1caf936d0104ca578b6e4128402e#npm:7.0.0"],\
+            ["@svgr/babel-preset", "virtual:77cc138b8f03e76bc81b53d7c536b91810383e8b8e9f294aac9f969daaf6fd5a72e29c2099e3025b537aac701c45d44c7e6af1647a2799c9f61d4f4f9312b7a3#npm:8.1.0"],\
             ["camelcase", "npm:6.3.0"],\
-            ["cosmiconfig", "virtual:a75a0f8c3347e7528543f662173f13c54f4c91f81f619517425058169bfe793f5ff1708f1c524a454518b0877ff83ca99bca1caf936d0104ca578b6e4128402e#npm:8.3.6"]\
+            ["cosmiconfig", "virtual:77cc138b8f03e76bc81b53d7c536b91810383e8b8e9f294aac9f969daaf6fd5a72e29c2099e3025b537aac701c45d44c7e6af1647a2799c9f61d4f4f9312b7a3#npm:8.3.6"],\
+            ["snake-case", "npm:3.0.4"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@svgr/hast-util-to-babel-ast", [\
-        ["npm:7.0.0", {\
-          "packageLocation": "./.yarn/cache/@svgr-hast-util-to-babel-ast-npm-7.0.0-5fa3241b27-c2168c36c8.zip/node_modules/@svgr/hast-util-to-babel-ast/",\
+        ["npm:8.0.0", {\
+          "packageLocation": "./.yarn/cache/@svgr-hast-util-to-babel-ast-npm-8.0.0-5d74d59e64-88401281a3.zip/node_modules/@svgr/hast-util-to-babel-ast/",\
           "packageDependencies": [\
-            ["@svgr/hast-util-to-babel-ast", "npm:7.0.0"],\
+            ["@svgr/hast-util-to-babel-ast", "npm:8.0.0"],\
             ["@babel/types", "npm:7.22.19"],\
             ["entities", "npm:4.4.0"]\
           ],\
@@ -12744,14 +12768,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@svgr/plugin-jsx", [\
-        ["npm:7.0.0", {\
-          "packageLocation": "./.yarn/cache/@svgr-plugin-jsx-npm-7.0.0-934d998188-009421b8e3.zip/node_modules/@svgr/plugin-jsx/",\
+        ["npm:8.1.0", {\
+          "packageLocation": "./.yarn/cache/@svgr-plugin-jsx-npm-8.1.0-e2710753df-0418a97807.zip/node_modules/@svgr/plugin-jsx/",\
           "packageDependencies": [\
-            ["@svgr/plugin-jsx", "npm:7.0.0"],\
+            ["@svgr/plugin-jsx", "npm:8.1.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:eab7f91ff5f3967671be892ed0f70cde8e2af73f3fa23be100d8d9ccf5b478b2493ed1abded89400378ada0cc4549b0304142515faf8f55d319e126abe9ab723#npm:8.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/@svgr-plugin-jsx-virtual-b5b063552f/0/cache/@svgr-plugin-jsx-npm-8.1.0-e2710753df-0418a97807.zip/node_modules/@svgr/plugin-jsx/",\
+          "packageDependencies": [\
+            ["@svgr/plugin-jsx", "virtual:eab7f91ff5f3967671be892ed0f70cde8e2af73f3fa23be100d8d9ccf5b478b2493ed1abded89400378ada0cc4549b0304142515faf8f55d319e126abe9ab723#npm:8.1.0"],\
             ["@babel/core", "npm:7.22.20"],\
-            ["@svgr/babel-preset", "virtual:a75a0f8c3347e7528543f662173f13c54f4c91f81f619517425058169bfe793f5ff1708f1c524a454518b0877ff83ca99bca1caf936d0104ca578b6e4128402e#npm:7.0.0"],\
-            ["@svgr/hast-util-to-babel-ast", "npm:7.0.0"],\
+            ["@svgr/babel-preset", "virtual:77cc138b8f03e76bc81b53d7c536b91810383e8b8e9f294aac9f969daaf6fd5a72e29c2099e3025b537aac701c45d44c7e6af1647a2799c9f61d4f4f9312b7a3#npm:8.1.0"],\
+            ["@svgr/core", "npm:8.1.0"],\
+            ["@svgr/hast-util-to-babel-ast", "npm:8.0.0"],\
+            ["@types/svgr__core", null],\
             ["svg-parser", "npm:2.0.4"]\
+          ],\
+          "packagePeers": [\
+            "@svgr/core",\
+            "@types/svgr__core"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -17338,10 +17375,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:a75a0f8c3347e7528543f662173f13c54f4c91f81f619517425058169bfe793f5ff1708f1c524a454518b0877ff83ca99bca1caf936d0104ca578b6e4128402e#npm:8.3.6", {\
-          "packageLocation": "./.yarn/__virtual__/cosmiconfig-virtual-409a360777/0/cache/cosmiconfig-npm-8.3.6-a5566e2779-dc339ebea4.zip/node_modules/cosmiconfig/",\
+        ["virtual:77cc138b8f03e76bc81b53d7c536b91810383e8b8e9f294aac9f969daaf6fd5a72e29c2099e3025b537aac701c45d44c7e6af1647a2799c9f61d4f4f9312b7a3#npm:8.3.6", {\
+          "packageLocation": "./.yarn/__virtual__/cosmiconfig-virtual-0b1fbf1e24/0/cache/cosmiconfig-npm-8.3.6-a5566e2779-dc339ebea4.zip/node_modules/cosmiconfig/",\
           "packageDependencies": [\
-            ["cosmiconfig", "virtual:a75a0f8c3347e7528543f662173f13c54f4c91f81f619517425058169bfe793f5ff1708f1c524a454518b0877ff83ca99bca1caf936d0104ca578b6e4128402e#npm:8.3.6"],\
+            ["cosmiconfig", "virtual:77cc138b8f03e76bc81b53d7c536b91810383e8b8e9f294aac9f969daaf6fd5a72e29c2099e3025b537aac701c45d44c7e6af1647a2799c9f61d4f4f9312b7a3#npm:8.3.6"],\
             ["@types/typescript", null],\
             ["import-fresh", "npm:3.3.0"],\
             ["js-yaml", "npm:4.1.0"],\
@@ -30200,20 +30237,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["vite-plugin-svgr", [\
-        ["npm:3.2.0", {\
-          "packageLocation": "./.yarn/cache/vite-plugin-svgr-npm-3.2.0-b314906d2d-19887e1db9.zip/node_modules/vite-plugin-svgr/",\
+        ["npm:4.0.0", {\
+          "packageLocation": "./.yarn/cache/vite-plugin-svgr-npm-4.0.0-4a03f27c0a-d17e8f8c0e.zip/node_modules/vite-plugin-svgr/",\
           "packageDependencies": [\
-            ["vite-plugin-svgr", "npm:3.2.0"]\
+            ["vite-plugin-svgr", "npm:4.0.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:3.2.0", {\
-          "packageLocation": "./.yarn/__virtual__/vite-plugin-svgr-virtual-3afb0dcab1/0/cache/vite-plugin-svgr-npm-3.2.0-b314906d2d-19887e1db9.zip/node_modules/vite-plugin-svgr/",\
+        ["virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:4.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/vite-plugin-svgr-virtual-eab7f91ff5/0/cache/vite-plugin-svgr-npm-4.0.0-4a03f27c0a-d17e8f8c0e.zip/node_modules/vite-plugin-svgr/",\
           "packageDependencies": [\
-            ["vite-plugin-svgr", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:3.2.0"],\
-            ["@rollup/pluginutils", "virtual:5d3c6bbaab4f34ccdb4c67c6ae5794be0729293326891a893a6e46a887bb30829c86f85213e73bd7170213e12c2bd335871cee1befe79eac70a88e88431d4949#npm:5.0.2"],\
-            ["@svgr/core", "npm:7.0.0"],\
-            ["@svgr/plugin-jsx", "npm:7.0.0"],\
+            ["vite-plugin-svgr", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:4.0.0"],\
+            ["@rollup/pluginutils", "virtual:eab7f91ff5f3967671be892ed0f70cde8e2af73f3fa23be100d8d9ccf5b478b2493ed1abded89400378ada0cc4549b0304142515faf8f55d319e126abe9ab723#npm:5.0.4"],\
+            ["@svgr/core", "npm:8.1.0"],\
+            ["@svgr/plugin-jsx", "virtual:eab7f91ff5f3967671be892ed0f70cde8e2af73f3fa23be100d8d9ccf5b478b2493ed1abded89400378ada0cc4549b0304142515faf8f55d319e126abe9ab723#npm:8.1.0"],\
             ["@types/vite", null],\
             ["vite", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:4.4.9"]\
           ],\

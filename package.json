@@ -35,7 +35,8 @@
     "test": "yarn workspaces foreach run test",
     "yarn:upgrade": "yarn set version latest && yarn dlx @yarnpkg/sdks && yarn plugin import @yarnpkg/plugin-interactive-tools && yarn plugin import @yarnpkg/plugin-typescript && yarn plugin import @yarnpkg/plugin-workspace-tools",
     "build-image:client-web": "docker build -f ./packages/client-web/Dockerfile .",
-    "build-image:api-server": "docker build -f ./packages/api-server/Dockerfile ."
+    "build-image:api-server": "docker build -f ./packages/api-server/Dockerfile .",
+    "storybook": "yarn workspace @macadam/client-web run storybook"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown",

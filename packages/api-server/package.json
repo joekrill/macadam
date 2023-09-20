@@ -34,7 +34,7 @@
     "@opentelemetry/metrics": "^0.24.0",
     "@opentelemetry/sdk-node": "^0.43.0",
     "@ory/kratos-client": "1.0.0",
-    "@sentry/node": "^7.69.0",
+    "@sentry/node": "^7.70.0",
     "cross-fetch": "^4.0.0",
     "deep-map-keys": "^2.0.1",
     "errorish": "^1.0.0",

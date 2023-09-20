@@ -5,10 +5,12 @@ import {
 } from "@chakra-ui/react";
 import { action } from "@storybook/addon-actions";
 import { Parameters, StoryContext } from "@storybook/react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { IntlProvider } from "react-intl";
 import { Provider as ReduxProvider } from "react-redux";
+import { withRouter } from "storybook-addon-react-router-v6";
+import { AuthProvider } from "../src/features/auth/components/AuthContext";
 import { theme as appTheme } from "../src/features/theme/default";
 
 /**
@@ -21,11 +23,6 @@ import { theme as appTheme } from "../src/features/theme/default";
  */
 
 export const parameters: Parameters = {
-  actions: {
-    // Identify any prop that starts with `on` as an event handlers that
-    // will display in a story as an action.
-    argTypesRegex: "^on[A-Z].*",
-  },
   argTypes: {
     // By default hide the `as` prop that most Chakra components provide.
     // This can re-enabled on a per-component basis by using:
@@ -45,12 +42,8 @@ export const parameters: Parameters = {
       date: /Date$/,
     },
   },
-  options: {
-    storySort: {
-      // Ensure that the main application story (packages/client-web/src/app/App.stories.mdx)
-      // is displayed first.
-      order: [process.env.VITE_DISPLAY_NAME],
-    },
+  parameters: {
+    actions: { argTypesRegex: "^on[A-Z].*" },
   },
 };
 
@@ -143,7 +136,9 @@ const withHelmet = (StoryFn: Function) => (
 
 const withIntl = (StoryFn: Function) => (
   <IntlProvider locale="en-US" defaultLocale="en">
-    <StoryFn />
+    <AuthProvider>
+      <StoryFn />
+    </AuthProvider>
   </IntlProvider>
 );
 
@@ -167,6 +162,7 @@ const withRedux = (StoryFn: Function, context: StoryContext) => (
 );
 
 export const decorators = [
+  withRouter,
   withColorMode,
   withTheme,
   withRtl,

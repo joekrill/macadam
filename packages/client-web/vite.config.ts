@@ -2,7 +2,6 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig, loadEnv } from "vite";
 import { checker } from "vite-plugin-checker";
-import eslint from "vite-plugin-eslint";
 import svgr from "vite-plugin-svgr"; // allows you to import svgs as react components
 
 export default defineConfig(({ mode }) => {
@@ -26,7 +25,9 @@ export default defineConfig(({ mode }) => {
       checker({
         typescript: true,
       }),
-      eslint(),
+      // eslint({
+      //   exclude: ["/virtual:/", "/node_modules/"],
+      // }),
     ],
     define: envWithProcessPrefix,
     test: {

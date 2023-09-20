@@ -1,3 +1,4 @@
+import { RouteObject } from "react-router-dom";
 import { FlowErrorPage } from "../features/auth/pages/FlowErrorPage";
 import { LoginPage } from "../features/auth/pages/LoginPage";
 import { RecoveryPage } from "../features/auth/pages/RecoveryPage";
@@ -9,15 +10,17 @@ import { settingsRoutes } from "../features/settings/settingsRoutes";
 import { thingsRoutes } from "../features/things/thingsRoutes";
 import { AppLayout } from "./AppLayout";
 import { ContactUs } from "./pages/ContactUs/ContactUs";
+import { Error } from "./pages/Error/Error";
 import { Faq } from "./pages/Faq/Faq";
 import { Home } from "./pages/Home/Home";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy/PrivacyPolicy";
 import { TermsAndConditions } from "./pages/TermsAndConditions/TermsAndConditions";
 
-export const routes = [
+export const routes: RouteObject[] = [
   {
     path: "/",
     element: <AppLayout />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",

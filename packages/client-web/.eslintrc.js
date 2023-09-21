@@ -6,11 +6,7 @@ module.exports = {
     jest: true,
     node: true,
   },
-  extends: [
-    "react-app",
-    "plugin:react/recommended",
-    "plugin:storybook/recommended",
-  ],
+  extends: ["plugin:react/recommended", "plugin:storybook/recommended"],
   ignorePatterns: ["src/features/i18n/messages/**", "*.svg", "*.mdx"],
   settings: {
     react: {

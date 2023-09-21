@@ -1,26 +1,34 @@
-import { Ability } from "@casl/ability";
+import { MongoAbility, createMongoAbility } from "@casl/ability";
+import { unpackRules } from "@casl/ability/extra";
 import { authApi } from "@macadam/api-client";
-import { createContext, PropsWithChildren, useContext, useMemo } from "react";
+import {
+  PropsWithChildren,
+  createContext,
+  useContext,
+  useMemo,
+  useRef,
+} from "react";
 import { captureException } from "../../monitoring/capture";
 
-export const AuthContext = createContext<Ability>(new Ability());
+export const AuthContext = createContext<MongoAbility>(createMongoAbility());
 
-export type AuthProviderProps = PropsWithChildren<{}>;
+export type AuthProviderProps = PropsWithChildren<Record<string, never>>;
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const permissions = authApi.usePermissionsQuery();
+  const abilityRef = useRef(createMongoAbility());
 
   const ability = useMemo(() => {
-    const ability = new Ability();
-
     try {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      ability.update(permissions.data?.data.rules);
+      abilityRef.current.update(unpackRules(permissions.data?.data.rules));
     } catch (error) {
+      abilityRef.current.update([]);
       captureException(error);
     }
 
-    return ability;
+    return abilityRef.current;
   }, [permissions.data?.data.rules]);
 
   return (

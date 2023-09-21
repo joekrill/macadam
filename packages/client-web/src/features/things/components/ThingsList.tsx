@@ -180,8 +180,11 @@ export const ThingsList = () => {
       {data && (
         <ThingsTable
           data={data.data}
-          onSortByChange={setRules}
-          sortBy={rules}
+          onSortingChange={setRules}
+          sorting={rules?.map((rule) => ({
+            ...rule,
+            desc: rule.desc ?? false,
+          }))}
         />
       )}
       {data && (

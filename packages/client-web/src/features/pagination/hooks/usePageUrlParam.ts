@@ -28,7 +28,7 @@ export const usePageUrlParam = ({
 
   // By memoizing this value we can later use the same `urlParams` object
   // with `getPageTo` without worrying about mutating it.
-  return useMemo(() => {
+  return useMemo<number>(() => {
     const value = urlParams.get(paramName) || undefined;
     return (value && parseInt(value, 10)) || defaultPage;
   }, [defaultPage, paramName, urlParams]);

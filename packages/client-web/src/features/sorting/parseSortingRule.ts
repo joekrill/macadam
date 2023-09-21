@@ -1,9 +1,9 @@
-import { SortingRule } from "react-table";
+import { ColumnSort } from "@tanstack/react-table";
 
 /**
  * Parses a single sort rule.
  */
-export const parseSortingRule = <D>(ruleString: string): SortingRule<D> => {
+export const parseSortingRule = (ruleString: string): ColumnSort => {
   const firstChar = ruleString.charAt(0);
 
   if (firstChar === "-") {

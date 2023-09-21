@@ -47,8 +47,11 @@ export const SessionsList = () => {
       {data && (
         <SessionsTable
           data={data.data}
-          onSortByChange={setRules}
-          sortBy={rules}
+          onSortingChange={setRules}
+          sorting={rules?.map((rule) => ({
+            ...rule,
+            desc: rule.desc ?? false,
+          }))}
         />
       )}
       {data && (

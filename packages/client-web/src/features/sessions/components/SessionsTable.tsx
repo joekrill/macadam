@@ -1,10 +1,10 @@
 import { Icon } from "@chakra-ui/react";
 import { ApiSession, useSession } from "@macadam/api-client";
+import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import { parseISO } from "date-fns";
 import { useMemo } from "react";
 import { FaAsterisk } from "react-icons/fa";
 import { FormattedDate, useIntl } from "react-intl";
-import { Column } from "react-table";
 import {
   DataTable,
   DataTableProps,
@@ -14,65 +14,79 @@ import { SessionActions } from "./SessionActions";
 export interface SessionsTableProps
   extends Partial<DataTableProps<ApiSession>> {}
 
+const columnHelper = createColumnHelper<ApiSession>();
+
 export const SessionsTable = ({ data = [], ...props }: SessionsTableProps) => {
   const { formatMessage } = useIntl();
   const { session } = useSession();
   const currentSessionId = session?.id;
 
-  const columns = useMemo<Column<ApiSession>[]>(
+  const columns = useMemo(
     () => [
-      {
-        Header: formatMessage({
+      columnHelper.accessor("authenticated_at", {
+        header: formatMessage({
           id: "auth.sessionsTable.authenticatedAtHeader.label",
           defaultMessage: "Last Used",
         }),
-        accessor: "authenticated_at",
-        Cell: ({ value }) =>
-          value ? (
+        cell: (info) => {
+          const value = info.getValue();
+          return value ? (
             <FormattedDate
               dateStyle="full"
               timeStyle="medium"
               value={parseISO(value)}
             />
-          ) : null,
-      },
-      {
-        Header: formatMessage({
+          ) : null;
+        },
+        enableSorting: true,
+      }),
+      columnHelper.accessor("expires_at", {
+        header: formatMessage({
           id: "auth.sessionsTable.expiresAtHeader.label",
           defaultMessage: "Expires",
         }),
-        accessor: "expires_at",
-        Cell: ({ value }) =>
-          value ? (
+        cell: (info) => {
+          const value = info.getValue();
+          return value ? (
             <FormattedDate
               dateStyle="full"
               timeStyle="medium"
               value={parseISO(value)}
             />
-          ) : null,
-      },
-      {
-        Header: formatMessage({
+          ) : null;
+        },
+        enableSorting: true,
+      }),
+      columnHelper.accessor("authentication_methods", {
+        header: formatMessage({
           id: "auth.sessionsTable.methodHeader.label",
           defaultMessage: "Method",
         }),
-        accessor: "authentication_methods",
-        Cell: ({ value }) => (
-          <>{value?.map(({ method }) => method).join(", ")}</>
+        cell: (info) => (
+          <>
+            {info
+              .getValue()
+              ?.map(({ method }) => method)
+              .join(", ")}
+          </>
         ),
-      },
-      {
-        accessor: "active",
-        disableSortBy: true,
-        Cell: ({ row }) => (
-          <SessionActions size="sm" colorScheme="blue" session={row.original} />
+        enableSorting: true,
+      }),
+      columnHelper.accessor("active", {
+        header: "",
+        cell: (info) => (
+          <SessionActions
+            size="sm"
+            colorScheme="blue"
+            session={info.row.original}
+          />
         ),
-      },
-      {
-        accessor: "id",
-        disableSortBy: true,
-        Cell: ({ value }) =>
-          value === currentSessionId ? (
+        enableSorting: false,
+      }),
+      columnHelper.accessor("id", {
+        header: "",
+        cell: (info) =>
+          info.getValue() === currentSessionId ? (
             <Icon
               color="green.500"
               boxSize="0.75em"
@@ -83,10 +97,20 @@ export const SessionsTable = ({ data = [], ...props }: SessionsTableProps) => {
               })}
             />
           ) : null,
-      },
+        enableSorting: false,
+        meta: {
+          textAlign: "right",
+        },
+      }),
     ],
     [formatMessage, currentSessionId],
   );
 
-  return <DataTable {...props} data={data} columns={columns} />;
+  return (
+    <DataTable
+      {...props}
+      data={data}
+      columns={columns as ColumnDef<ApiSession, any>[]}
+    />
+  );
 };

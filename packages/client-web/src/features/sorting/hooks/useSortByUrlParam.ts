@@ -1,6 +1,6 @@
+import { SortingState } from "@tanstack/react-table";
 import { useCallback, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { SortingRule } from "react-table";
 import { DEFAULT_PAGE_PARAM_NAME } from "../../pagination/hooks/usePageUrlParam";
 import { useUrlSearchParams } from "../../routing/hooks/useUrlSearchParams";
 import { parseSortingRules } from "../parseSortingRules";
@@ -31,12 +31,12 @@ export const useSortByUrlParam = <D>({
   const { pathname } = useLocation();
   const paramValue = urlParams.get(paramName) || undefined;
   const rules = useMemo(
-    () => (paramValue ? parseSortingRules<D>(paramValue) : []),
+    () => (paramValue ? parseSortingRules(paramValue) : []),
     [paramValue],
   );
 
   const setRules = useCallback(
-    (newRules: SortingRule<D>[]) => {
+    (newRules: SortingState) => {
       const newValue = serializeSortingRules(...newRules);
       if (newValue === paramValue) {
         return;

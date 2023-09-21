@@ -6805,6 +6805,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/node-logger", "npm:7.4.3"],\
             ["@storybook/react", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:7.4.3"],\
             ["@storybook/react-vite", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:7.4.3"],\
+            ["@tanstack/react-table", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:8.10.1"],\
             ["@testing-library/dom", "npm:9.3.3"],\
             ["@testing-library/jest-dom", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:6.1.3"],\
             ["@testing-library/react", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:14.0.0"],\
@@ -6817,7 +6818,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.28"],\
             ["@types/react-dom", "npm:18.2.7"],\
             ["@types/react-redux", "npm:7.1.26"],\
-            ["@types/react-table", "npm:7.7.15"],\
             ["@types/testing-library__jest-dom", "npm:5.14.9"],\
             ["@typescript-eslint/eslint-plugin", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:6.7.2"],\
             ["@vitejs/plugin-react", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:4.0.4"],\
@@ -6852,7 +6852,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-redux", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:8.1.2"],\
             ["react-refresh", "npm:0.14.0"],\
             ["react-router-dom", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:6.16.0"],\
-            ["react-table", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:7.8.0"],\
             ["redux", "npm:4.2.1"],\
             ["snakecase-keys", "npm:5.4.6"],\
             ["source-map-explorer", "npm:2.5.3"],\
@@ -12448,6 +12447,42 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@tanstack/react-table", [\
+        ["npm:8.10.1", {\
+          "packageLocation": "./.yarn/cache/@tanstack-react-table-npm-8.10.1-fb0768f8d6-b0bc323053.zip/node_modules/@tanstack/react-table/",\
+          "packageDependencies": [\
+            ["@tanstack/react-table", "npm:8.10.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:8.10.1", {\
+          "packageLocation": "./.yarn/__virtual__/@tanstack-react-table-virtual-5d24821fbb/0/cache/@tanstack-react-table-npm-8.10.1-fb0768f8d6-b0bc323053.zip/node_modules/@tanstack/react-table/",\
+          "packageDependencies": [\
+            ["@tanstack/react-table", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:8.10.1"],\
+            ["@tanstack/table-core", "npm:8.10.1"],\
+            ["@types/react", "npm:18.0.28"],\
+            ["@types/react-dom", "npm:18.2.7"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@tanstack/table-core", [\
+        ["npm:8.10.1", {\
+          "packageLocation": "./.yarn/cache/@tanstack-table-core-npm-8.10.1-146713c1e6-0cb624da8d.zip/node_modules/@tanstack/table-core/",\
+          "packageDependencies": [\
+            ["@tanstack/table-core", "npm:8.10.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@testing-library/dom", [\
         ["npm:9.3.3", {\
           "packageLocation": "./.yarn/cache/@testing-library-dom-npm-9.3.3-c5d4692db9-34e0a564da.zip/node_modules/@testing-library/dom/",\
@@ -13536,16 +13571,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.28"],\
             ["hoist-non-react-statics", "npm:3.3.2"],\
             ["redux", "npm:4.2.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@types/react-table", [\
-        ["npm:7.7.15", {\
-          "packageLocation": "./.yarn/cache/@types-react-table-npm-7.7.15-876c535c65-aae54400b0.zip/node_modules/@types/react-table/",\
-          "packageDependencies": [\
-            ["@types/react-table", "npm:7.7.15"],\
-            ["@types/react", "npm:18.0.28"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -26101,28 +26126,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["invariant", "npm:2.2.4"],\
             ["react", "npm:18.2.0"],\
             ["tslib", "npm:2.6.2"]\
-          ],\
-          "packagePeers": [\
-            "@types/react",\
-            "react"\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["react-table", [\
-        ["npm:7.8.0", {\
-          "packageLocation": "./.yarn/cache/react-table-npm-7.8.0-61488af438-44ca0fb848.zip/node_modules/react-table/",\
-          "packageDependencies": [\
-            ["react-table", "npm:7.8.0"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:7.8.0", {\
-          "packageLocation": "./.yarn/__virtual__/react-table-virtual-11919a8610/0/cache/react-table-npm-7.8.0-61488af438-44ca0fb848.zip/node_modules/react-table/",\
-          "packageDependencies": [\
-            ["react-table", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:7.8.0"],\
-            ["@types/react", "npm:18.0.28"],\
-            ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
             "@types/react",\

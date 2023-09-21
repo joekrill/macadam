@@ -1,10 +1,10 @@
 import { Icon } from "@chakra-ui/react";
 import { Thing } from "@macadam/api-client";
+import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import { parseISO } from "date-fns";
 import { useMemo } from "react";
 import { FaLock, FaUnlock } from "react-icons/fa";
 import { FormattedDate, useIntl } from "react-intl";
-import { Column } from "react-table";
 import {
   DataTable,
   DataTableProps,
@@ -14,66 +14,83 @@ import { ThingActions } from "./ThingActions";
 
 export type ThingsTableProps = Partial<DataTableProps<Thing>>;
 
+const columnHelper = createColumnHelper<Thing>();
+
 export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
   const { formatMessage } = useIntl();
-  const columns = useMemo<Column<Thing>[]>(
+  const columns = useMemo(
     () => [
-      {
-        Header: formatMessage({
+      columnHelper.accessor("name", {
+        header: formatMessage({
           id: "things.thingsTable.nameHeader.label",
           defaultMessage: "Name",
         }),
-        accessor: "name",
-        Cell: ({ value, row }) => (
-          <RouterLink to={`/things/${row.original.id}`}>{value}</RouterLink>
+        cell: (info) => (
+          <RouterLink to={`/things/${info.row.original.id}`}>
+            {info.getValue()}
+          </RouterLink>
         ),
-      },
-      {
-        Header: formatMessage({
+        enableSorting: true,
+      }),
+      columnHelper.accessor("description", {
+        header: formatMessage({
           id: "things.thingsTable.descriptionHeader.label",
           defaultMessage: "Description",
         }),
-        accessor: "description",
-      },
-      {
-        Header: formatMessage({
+        // cell: (info) => <RouterLink to={`/things/${info.row.original.id}`}>{info.getValue()}</RouterLink>,
+        // enableSorting: true,
+      }),
+      columnHelper.accessor("createdAt", {
+        header: formatMessage({
           id: "things.thingsTable.createdHeader.label",
           defaultMessage: "Created",
         }),
-        accessor: "createdAt",
-        Cell: ({ value }) => (
+        cell: (info) => (
           <FormattedDate
             dateStyle="full"
             timeStyle="medium"
-            value={parseISO(value)}
+            value={parseISO(info.getValue())}
           />
         ),
-      },
-      {
-        Header: formatMessage({
+        enableSorting: true,
+      }),
+      columnHelper.accessor("isPublic", {
+        header: formatMessage({
           id: "things.thingsTable.publicHeader.label",
           defaultMessage: "Public",
         }),
-        accessor: "isPublic",
-        textAlign: "center",
-        Cell: ({ value }) => (
+        cell: (info) => (
           <Icon
             boxSize="1em"
-            as={value ? FaUnlock : FaLock}
-            color={value ? "green.300" : "red.600"}
+            as={info.getValue() ? FaUnlock : FaLock}
+            color={info.getValue() ? "green.300" : "red.600"}
           />
         ),
-      },
-      {
-        accessor: "id",
-        disableSortBy: true,
-        Cell: ({ row }) => (
-          <ThingActions size="sm" colorScheme="blue" thing={row.original} />
+        enableSorting: true,
+        meta: {
+          textAlign: "center",
+        },
+      }),
+      columnHelper.display({
+        id: "actions",
+        cell: (info) => (
+          <ThingActions
+            size="sm"
+            colorScheme="blue"
+            thing={info.row.original}
+          />
         ),
-      },
+        enableSorting: false,
+      }),
     ],
     [formatMessage],
   );
 
-  return <DataTable {...props} data={data} columns={columns} />;
+  return (
+    <DataTable
+      {...props}
+      data={data}
+      columns={columns as ColumnDef<Thing, any>[]}
+    />
+  );
 };

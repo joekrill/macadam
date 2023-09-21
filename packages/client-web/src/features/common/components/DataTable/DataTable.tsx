@@ -9,95 +9,97 @@ import {
   Tr,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { ReactNode, useCallback } from "react";
+import {
+  ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  getSortedRowModel,
+  OnChangeFn,
+  RowData,
+  SortingState,
+  TableOptions,
+  useReactTable,
+} from "@tanstack/react-table";
+import { useCallback } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { useIntl } from "react-intl";
-import {
-  ActionType,
-  Column,
-  SortingRule,
-  TableOptions,
-  TableState,
-  useSortBy,
-  useTable,
-} from "react-table";
 
-export interface DataTableProps<D extends object> extends TableOptions<D> {
-  columns: Column<D>[];
-  sortBy?: SortingRule<D>[];
-  onSortByChange?: (sortBy: SortingRule<D>[]) => void;
-}
+export type DataTableProps<TData extends RowData> = Pick<
+  TableOptions<TData>,
+  "columns" | "data"
+> & {
+  columns: ColumnDef<TData>[];
+  sorting?: SortingState;
+  onSortingChange?: (sorting: SortingState) => void;
+};
 
-export const DataTable = <D extends object>({
-  disableMultiSort = true,
-  disableSortRemove = true,
-  manualSortBy = true,
-  onSortByChange,
-  sortBy,
-  ...props
-}: DataTableProps<D>) => {
+export const DataTable = <TData extends object>({
+  columns,
+  data,
+  onSortingChange,
+  sorting,
+}: DataTableProps<TData>) => {
   const { formatMessage } = useIntl();
-  const controlledState = useCallback(
-    (state: TableState<D>) => ({
-      ...state,
-      sortBy: sortBy || [],
-    }),
-    [sortBy],
-  );
-
-  const stateReducer = useCallback(
-    (newState: TableState<D>, action: ActionType) => {
-      if (!onSortByChange) {
-        return newState;
-      }
-      if (action.type === "setSortBy") {
-        onSortByChange(newState.sortBy);
+  const handleSortingChange = useCallback<OnChangeFn<SortingState>>(
+    (newSorting) => {
+      if (!onSortingChange) {
+        return;
       }
 
-      if (action.type === "toggleSortBy") {
-        onSortByChange(newState.sortBy);
+      if (typeof newSorting === "function") {
+        onSortingChange(newSorting(sorting || []));
+      } else {
+        onSortingChange(newSorting);
       }
-
-      return newState;
     },
-    [onSortByChange],
+    [onSortingChange, sorting],
   );
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable<D>(
-      {
-        useControlledState: controlledState,
-        disableMultiSort,
-        disableSortRemove,
-        manualSortBy,
-        stateReducer,
-        ...props,
-      },
-      useSortBy,
-    );
+  const table = useReactTable<TData>({
+    columns,
+    data,
+    state: {
+      sorting,
+    },
+    enableSorting: onSortingChange !== undefined,
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    onSortingChange: handleSortingChange,
+    debugTable: true,
+  });
 
   const bgEvenColor = useColorModeValue("gray.100", "gray.800");
 
   return (
-    <Table borderWidth="1px" {...getTableProps()}>
+    <Table borderWidth="1px">
       <Thead bg={useColorModeValue("gray.200", "gray.600")}>
-        {headerGroups.map((headerGroup) => (
-          // eslint-disable-next-line react/jsx-key
-          <Tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              // eslint-disable-next-line react/jsx-key
+        {table.getHeaderGroups().map((headerGroup) => (
+          <Tr key={headerGroup.id}>
+            {headerGroup.headers.map((header) => (
               <Th
-                {...column.getHeaderProps(column.getSortByToggleProps())}
-                isNumeric={column.isNumeric}
-                textAlign={column.textAlign}
+                key={header.id}
+                onClick={header.column.getToggleSortingHandler()}
+                cursor={header.column.getCanSort() ? "pointer" : "auto"}
+                textAlign={header.column.columnDef.meta?.textAlign}
               >
                 <chakra.div noOfLines={1}>
-                  {column.render("Header")}
-                  {column.canSort && (
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext(),
+                      )}
+                  {header.column.getCanSort() && (
                     <chakra.span pl="4">
                       <Icon
-                        visibility={column.isSorted ? "visible" : "hidden"}
-                        as={column.isSortedDesc ? FaChevronDown : FaChevronUp}
+                        visibility={
+                          header.column.getIsSorted() ? "visible" : "hidden"
+                        }
+                        as={
+                          header.column.getIsSorted() === "desc"
+                            ? FaChevronDown
+                            : FaChevronUp
+                        }
                         aria-label={formatMessage(
                           {
                             id: "common.dataTable.sortHeader.ariaLabel",
@@ -107,11 +109,7 @@ export const DataTable = <D extends object>({
                               "The screen reader hint to show for the sort indicator in the table header",
                           },
                           {
-                            sort: column.isSorted
-                              ? column.isSortedDesc
-                                ? "desc"
-                                : "asc"
-                              : "",
+                            sort: header.column.getIsSorted() ?? "",
                           },
                         )}
                       />
@@ -123,26 +121,19 @@ export const DataTable = <D extends object>({
           </Tr>
         ))}
       </Thead>
-      <Tbody {...getTableBodyProps()}>
-        {rows.map((row) => {
-          prepareRow(row);
-          return (
-            // eslint-disable-next-line react/jsx-key
-            <Tr {...row.getRowProps()} _even={{ bg: bgEvenColor }}>
-              {row.cells.map((cell) => (
-                // eslint-disable-next-line react/jsx-key
-                <Td
-                  {...cell.getCellProps()}
-                  textAlign={cell.column.textAlign}
-                  isNumeric={cell.column.isNumeric}
-                  noOfLines={cell.column.noOfLines}
-                >
-                  {cell.render("Cell") as ReactNode}
-                </Td>
-              ))}
-            </Tr>
-          );
-        })}
+      <Tbody>
+        {table.getRowModel().rows.map((row) => (
+          <Tr key={row.id} _even={{ bg: bgEvenColor }}>
+            {row.getVisibleCells().map((cell) => (
+              <Td
+                key={cell.id}
+                textAlign={cell.column.columnDef.meta?.textAlign}
+              >
+                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+              </Td>
+            ))}
+          </Tr>
+        ))}
       </Tbody>
     </Table>
   );

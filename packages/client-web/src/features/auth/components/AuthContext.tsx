@@ -12,9 +12,9 @@ import { captureException } from "../../monitoring/capture";
 
 export const AuthContext = createContext<MongoAbility>(createMongoAbility());
 
-export type AuthProviderProps = PropsWithChildren<Record<string, never>>;
+export type AuthProviderProps = PropsWithChildren;
 
-export const AuthProvider = ({ children }: AuthProviderProps) => {
+export const AuthProvider = (props: AuthProviderProps) => {
   const permissions = authApi.usePermissionsQuery();
   const abilityRef = useRef(createMongoAbility());
 
@@ -31,9 +31,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     return abilityRef.current;
   }, [permissions.data?.data.rules]);
 
-  return (
-    <AuthContext.Provider value={ability}>{children}</AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={ability} {...props} />;
 };
 
 export const useAuth = () => useContext(AuthContext);

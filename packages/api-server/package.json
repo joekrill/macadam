@@ -62,7 +62,7 @@
     "@types/koa-compose": "^3.2.6",
     "@types/koa__cors": "^4.0.1",
     "@types/koa__router": "^12.0.1",
-    "@types/node": "^18.17.18",
+    "@types/node": "^18.17.19",
     "@types/nodemailer": "^6.4.11",
     "@types/pino": "^7.0.5",
     "@types/supertest": "^2.0.13",

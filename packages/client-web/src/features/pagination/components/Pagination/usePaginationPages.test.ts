@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Mock, vi } from "vitest";
+import { Mock, beforeEach, expect, test, vi } from "vitest";
 import { usePaginationPages } from "./usePaginationPages";
 
 vi.mock("react");

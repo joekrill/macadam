@@ -10,8 +10,8 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   CreateThingParams,
-  createThingParamsSchema,
   Thing,
+  createThingParamsSchema,
   useValidationError,
 } from "@macadam/api-client";
 import { SerializedError } from "@reduxjs/toolkit";
@@ -50,7 +50,7 @@ export const ThingForm = ({
     validationError?.issues.forEach((issue) => {
       const [path] = issue.path;
       if (path) {
-        // @ts-ignore
+        // @ts-ignore: TODO
         setError(path, { message: issue.message, type: "validate" });
       }
     });

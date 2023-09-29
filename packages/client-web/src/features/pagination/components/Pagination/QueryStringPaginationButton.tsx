@@ -9,7 +9,7 @@ export interface QueryStringPaginationButtonProps
 }
 
 /**
- * A pagination button implementation that uses query string parametesr
+ * A pagination button implementation that uses query string parametesr
  * to specify the desired page.
  */
 export const QueryStringPaginationButton = ({

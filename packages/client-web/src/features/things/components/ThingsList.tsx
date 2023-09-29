@@ -13,7 +13,7 @@ import {
   Select,
   Stack,
 } from "@chakra-ui/react";
-import { Thing, thingsApi, useSession } from "@macadam/api-client";
+import { thingsApi, useSession } from "@macadam/api-client";
 import { useCallback, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { HiPlusSm, HiRefresh } from "react-icons/hi";
@@ -44,7 +44,7 @@ export const ThingsList = () => {
   const urlParams = useUrlSearchParams();
   const page = usePageUrlParam();
   const owned = !!useUrlSearchParam("mine") && isLoggedIn;
-  const { setRules, rules, paramValue: sort } = useSortByUrlParam<Thing>();
+  const { setRules, rules, paramValue: sort } = useSortByUrlParam();
   const [searchInput, setSearchInput] = useState(
     urlParams.get("search")?.trim(),
   );

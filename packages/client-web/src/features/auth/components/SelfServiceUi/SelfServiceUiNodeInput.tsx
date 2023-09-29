@@ -7,11 +7,11 @@ import { PasswordNode } from "./nodes/PasswordNode";
 import { ProfilePictureNode } from "./nodes/ProfilePictureNode";
 import { TextInputNode } from "./nodes/TextInputNode";
 
-export interface SelfServiceUiNodeInputProps {
+export interface SelfServiceUiNodeInputProps<T = string> {
   node: UiNodeInput;
   isSubmitting: boolean;
-  value?: any;
-  onChange: (newValue: any) => void;
+  value?: T;
+  onChange: (newValue: T) => void;
   flowType?: string;
 }
 

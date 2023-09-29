@@ -6,7 +6,12 @@ module.exports = {
     jest: true,
     node: true,
   },
-  extends: ["plugin:react/recommended", "plugin:storybook/recommended"],
+  extends: [
+    "../../.eslintrc.js",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:storybook/recommended",
+  ],
   ignorePatterns: ["src/features/i18n/messages/**", "*.svg", "*.mdx"],
   settings: {
     react: {
@@ -18,6 +23,12 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "react/no-unescaped-entities": "off",
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      {
+        "ts-ignore": "allow-with-description",
+      },
+    ],
   },
   overrides: [
     {

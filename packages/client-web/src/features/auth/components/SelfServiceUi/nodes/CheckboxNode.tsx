@@ -23,6 +23,7 @@ export const CheckboxNode = ({
         {...attributes}
         borderColor="gray.300"
         isChecked={typeof value === "boolean" ? value : false}
+        // @ts-ignore: TODO
         onChange={(e) => onChange(e.target.checked)}
         isDisabled={attributes.disabled || isSubmitting}
       />

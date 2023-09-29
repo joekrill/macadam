@@ -49,7 +49,7 @@ export const ContactUsForm = ({
     validationError?.issues.forEach((issue) => {
       const [path] = issue.path;
       if (path) {
-        // @ts-ignore
+        // @ts-ignore: TODO fix this
         setError(path, { message: issue.message, type: "validate" });
       }
     });

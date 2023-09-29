@@ -1,5 +1,5 @@
 import { Box, Button, Icon } from "@chakra-ui/react";
-import { Meta, Story } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
 import {
   FaAward,
   FaCalendarAlt,
@@ -57,7 +57,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<Omit<EmptyStateProps, "children"> & {}> = (args) => (
+const Template: StoryFn<Omit<EmptyStateProps, "children">> = (args) => (
   <Box maxW="md">
     <EmptyState {...args}>
       <Button leftIcon={<Icon as={FaPlus} />}>Create a new thing</Button>

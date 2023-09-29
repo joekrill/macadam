@@ -110,7 +110,7 @@ export const SessionsTable = ({ data = [], ...props }: SessionsTableProps) => {
     <DataTable
       {...props}
       data={data}
-      columns={columns as ColumnDef<ApiSession, any>[]}
+      columns={columns as ColumnDef<ApiSession, unknown>[]}
     />
   );
 };

@@ -22,7 +22,7 @@ export interface UseSortByUrlParamOption {
  * Manages using a URL sort parameter, parsing it into it's rules, and
  * providing the ability to change it's value.
  */
-export const useSortByUrlParam = <D>({
+export const useSortByUrlParam = ({
   paramName = "sort",
   removeParams = [DEFAULT_PAGE_PARAM_NAME],
 }: UseSortByUrlParamOption = {}) => {

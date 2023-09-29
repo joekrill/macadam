@@ -12,7 +12,11 @@ export interface ThingLoadErrorProps {
 export const ThingLoadError = ({ error, refetch }: ThingLoadErrorProps) => {
   const isNotFound =
     error === 404 ||
-    (error && "originalStatus" in error && error.originalStatus === 404);
+    (typeof error === "object" &&
+      error != null &&
+      "originalStatus" in error &&
+      error.originalStatus === 404);
+
   return (
     <ErrorAlert
       my="5"

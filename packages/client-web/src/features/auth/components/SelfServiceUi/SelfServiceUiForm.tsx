@@ -16,7 +16,7 @@ export interface SelfServiceUiFormProps extends Omit<StackProps, "onSubmit"> {
   flowType?: string;
 }
 
-const valuesFromNodes = (nodes: UiNode[]): Record<string, any> =>
+const valuesFromNodes = (nodes: UiNode[]): Record<string, unknown> =>
   nodes.reduce((values, node) => {
     if (node.type !== "input") {
       return values;
@@ -59,6 +59,7 @@ export const SelfServiceUiForm = ({
       const data = new FormData();
 
       Object.keys(values).forEach((key) => {
+        // @ts-ignore: TODO
         data.set(key, values[key] || "");
       });
 
@@ -93,6 +94,7 @@ export const SelfServiceUiForm = ({
               }
 
               if (node.attributes.type === "submit") {
+                // @ts-ignore: TODO
                 submitForm({ [node.attributes.name]: newValue });
               } else {
                 setValues((currentValues) => ({

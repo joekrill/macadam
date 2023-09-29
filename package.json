@@ -30,7 +30,7 @@
     "format:check": "yarn prettier --check .",
     "lint": "yarn eslint . --fix",
     "lint:check": "yarn eslint .",
-    "ci": "yarn run format:check && yarn run typecheck && yarn run test",
+    "ci": "yarn run format:check && yarn run lint:check && yarn run typecheck && yarn run test",
     "typecheck": "yarn workspaces foreach run typecheck",
     "test": "yarn workspaces foreach run test",
     "yarn:upgrade": "yarn set version latest && yarn dlx @yarnpkg/sdks && yarn plugin import @yarnpkg/plugin-interactive-tools && yarn plugin import @yarnpkg/plugin-typescript && yarn plugin import @yarnpkg/plugin-workspace-tools",

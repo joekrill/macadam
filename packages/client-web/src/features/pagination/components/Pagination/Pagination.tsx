@@ -16,8 +16,9 @@ import { PaginationButton, PaginationButtonProps } from "./PaginationButton";
 import { QueryStringPaginationButton } from "./QueryStringPaginationButton";
 import { usePaginationPages } from "./usePaginationPages";
 
-export interface PaginationProps<ButtonComponentProps extends object = any>
-  extends FlexProps {
+export interface PaginationProps<
+  ButtonComponentProps extends object = ButtonProps,
+> extends FlexProps {
   ButtonComponent?: React.ElementType<
     PaginationButtonProps & ButtonComponentProps
   >;

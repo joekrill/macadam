@@ -4019,7 +4019,6 @@ __metadata:
     "@types/react": ^18.2.22
     "@types/react-dom": ^18.2.7
     "@types/react-redux": ^7.1.26
-    "@types/testing-library__jest-dom": ^5.14.9
     "@typescript-eslint/eslint-plugin": ^6.7.3
     "@vitejs/plugin-react": ^4.1.0
     "@vitest/coverage-c8": ^0.33.0
@@ -4040,6 +4039,7 @@ __metadata:
     favicons: ^7.1.4
     framer-motion: ^10.16.4
     history: ^5.3.0
+    jest-dom: ^4.0.0
     jsdom: ^22.1.0
     plausible-tracker: ^0.3.8
     prettier: ^3.0.3
@@ -8186,7 +8186,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:*, @types/jest@npm:^29.5.5":
+"@types/jest@npm:^29.5.5":
   version: 29.5.5
   resolution: "@types/jest@npm:29.5.5"
   dependencies:
@@ -8631,15 +8631,6 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 29d5416f5bd7aae23934a175b781f510cbfeced4c67fa7b3c795c8fef213e9f86d839b4a076220cbe2ce3850d0e894a56e89fe8407e87cf5a6309bcab89ff0f7
-  languageName: node
-  linkType: hard
-
-"@types/testing-library__jest-dom@npm:^5.14.9":
-  version: 5.14.9
-  resolution: "@types/testing-library__jest-dom@npm:5.14.9"
-  dependencies:
-    "@types/jest": "*"
-  checksum: d364494fc2545316292e88861146146af1e3818792ca63b62a63758b2f737669b687f4aaddfcfbcb7d0e1ed7890a9bd05de23ff97f277d5e68de574497a9ee72
   languageName: node
   linkType: hard
 
@@ -14923,6 +14914,13 @@ __metadata:
   dependencies:
     detect-newline: ^3.0.0
   checksum: 66390c3e9451f8d96c5da62f577a1dad701180cfa9b071c5025acab2f94d7a3efc2515cfa1654ebe707213241541ce9c5530232cdc8017c91ed64eea1bd3b192
+  languageName: node
+  linkType: hard
+
+"jest-dom@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "jest-dom@npm:4.0.0"
+  checksum: d65b87a1973c0cec83179d60b755784a5215ff221fdb508486545ed739ba26c1d5bf51f00d73ca4791482a30d96e962396b170f0a4fa7176074159ec2317c946
   languageName: node
   linkType: hard
 

@@ -2,7 +2,9 @@ import { Input } from "@chakra-ui/react";
 import { SelfServiceUiNodeInputProps } from "../SelfServiceUiNodeInput";
 import { NodeFormControlWrapper } from "./NodeFormControlWrapper";
 
-export interface TextInputNodeProps extends SelfServiceUiNodeInputProps {}
+export interface TextInputNodeProps extends SelfServiceUiNodeInputProps {
+  value?: string;
+}
 
 export const TextInputNode = ({
   flowType,

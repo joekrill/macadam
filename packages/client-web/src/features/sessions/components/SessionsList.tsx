@@ -1,5 +1,5 @@
 import { Box, Heading, IconButton } from "@chakra-ui/react";
-import { ApiSession, sessionsApi, useSession } from "@macadam/api-client";
+import { sessionsApi, useSession } from "@macadam/api-client";
 import { HiRefresh } from "react-icons/hi";
 import { FormattedMessage, useIntl } from "react-intl";
 import { ErrorAlert } from "../../errors/components/ErrorAlert/ErrorAlert";
@@ -12,7 +12,7 @@ export const SessionsList = () => {
   const { formatMessage } = useIntl();
   const { isLoggedIn } = useSession();
   const page = usePageUrlParam();
-  const { setRules, rules, paramValue: sort } = useSortByUrlParam<ApiSession>();
+  const { setRules, rules, paramValue: sort } = useSortByUrlParam();
 
   const { data, isFetching, error, refetch } = sessionsApi.useListSessionsQuery(
     {

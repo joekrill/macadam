@@ -48,10 +48,13 @@ const OIDC_CONFIGS: Record<string, OidcButtonConfig> = {
 
 export interface OidcButtonNodeProps extends ButtonNodeProps {}
 
+type ContextType = { provider: keyof typeof OIDC_CONFIGS } | undefined;
+
 export const OidcButtonNode = (props: OidcButtonNodeProps) => {
-  const provider = (props.node.meta.label?.context as any)?.provider;
+  const provider = (props.node.meta.label?.context as ContextType)?.provider;
   const { Icon, colorScheme } =
-    OIDC_CONFIGS[provider] || (OIDC_CONFIGS.default as OidcButtonConfig);
+    OIDC_CONFIGS[provider || "default"] ||
+    (OIDC_CONFIGS.default as OidcButtonConfig);
 
   return (
     <ButtonNode {...props} leftIcon={<Icon />} colorScheme={colorScheme} />

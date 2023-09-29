@@ -1,3 +1,4 @@
+import { expect, test } from "vitest";
 import { render, screen } from "../../../../test-utils";
 import { NotFoundPage } from "./NotFoundPage";
 

@@ -6846,7 +6846,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.2.22"],\
             ["@types/react-dom", "npm:18.2.7"],\
             ["@types/react-redux", "npm:7.1.26"],\
-            ["@types/testing-library__jest-dom", "npm:5.14.9"],\
             ["@typescript-eslint/eslint-plugin", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:6.7.3"],\
             ["@vitejs/plugin-react", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:4.1.0"],\
             ["@vitest/coverage-c8", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:0.33.0"],\
@@ -6867,6 +6866,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["favicons", "npm:7.1.4"],\
             ["framer-motion", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:10.16.4"],\
             ["history", "npm:5.3.0"],\
+            ["jest-dom", "npm:4.0.0"],\
             ["jsdom", "virtual:84bc168cf90ffbbc4ed12b6c102c3b08aac600ca59bfc9646e26704f2d3a9ac039e47b5084253afbf75a8a32cb747fa9d9b3d952cf3bd8a1ded241518d1ec4b5#npm:22.1.0"],\
             ["plausible-tracker", "npm:0.3.8"],\
             ["prettier", "npm:3.0.3"],\
@@ -13698,16 +13698,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@types/tedious", "npm:4.0.9"],\
             ["@types/node", "npm:18.17.19"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@types/testing-library__jest-dom", [\
-        ["npm:5.14.9", {\
-          "packageLocation": "./.yarn/cache/@types-testing-library__jest-dom-npm-5.14.9-319d22d764-d364494fc2.zip/node_modules/@types/testing-library__jest-dom/",\
-          "packageDependencies": [\
-            ["@types/testing-library__jest-dom", "npm:5.14.9"],\
-            ["@types/jest", "npm:29.5.5"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -21451,6 +21441,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["jest-docblock", "npm:29.7.0"],\
             ["detect-newline", "npm:3.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["jest-dom", [\
+        ["npm:4.0.0", {\
+          "packageLocation": "./.yarn/cache/jest-dom-npm-4.0.0-c05d9e2fdd-d65b87a197.zip/node_modules/jest-dom/",\
+          "packageDependencies": [\
+            ["jest-dom", "npm:4.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\

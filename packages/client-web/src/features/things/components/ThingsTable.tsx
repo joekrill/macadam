@@ -90,7 +90,7 @@ export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
     <DataTable
       {...props}
       data={data}
-      columns={columns as ColumnDef<Thing, any>[]}
+      columns={columns as ColumnDef<Thing, unknown>[]}
     />
   );
 };

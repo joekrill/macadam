@@ -19,7 +19,7 @@ import { captureException } from "../../../monitoring/capture";
 export interface ErrorAlertProps extends AlertProps {
   onRetryClick?: MouseEventHandler<HTMLButtonElement>;
   disableCapture?: boolean;
-  error?: any;
+  error?: unknown;
 }
 
 const BUTTON_SCHEME: Record<

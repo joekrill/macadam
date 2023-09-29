@@ -5,11 +5,11 @@ import { SelfServiceUiNodeImage } from "./SelfServiceUiNodeImage";
 import { SelfServiceUiNodeInput } from "./SelfServiceUiNodeInput";
 import { SelfServiceUiNodeText } from "./SelfServiceUiNodeText";
 
-export interface SelfServiceUiNodeProps {
+export interface SelfServiceUiNodeProps<T = unknown> {
   node: UiNode;
   isSubmitting: boolean;
-  value?: any;
-  onChange: (newValue: any) => void;
+  value?: T;
+  onChange: (newValue: T) => void;
   flowType?: string;
 }
 
@@ -27,6 +27,7 @@ export const SelfServiceUiNode = ({
           flowType={flowType}
           isSubmitting={isSubmitting}
           node={node}
+          // @ts-ignore: TODO
           value={value}
           onChange={onChange}
         />

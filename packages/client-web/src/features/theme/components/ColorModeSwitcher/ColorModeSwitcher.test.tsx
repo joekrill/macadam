@@ -1,6 +1,6 @@
 import * as chakra from "@chakra-ui/react";
-import userEvent from "@testing-library/user-event";
-import { SpyInstance, vi } from "vitest";
+import { userEvent } from "@testing-library/user-event";
+import { SpyInstance, afterEach, beforeEach, expect, test, vi } from "vitest";
 import { render, screen } from "../../../../test-utils";
 import { ColorModeSwitcher } from "./ColorModeSwitcher";
 

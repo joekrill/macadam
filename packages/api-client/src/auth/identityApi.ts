@@ -8,20 +8,20 @@ import { FlowError, flowErrorSchema } from "./schemas/errors";
 import { InitializeFlowParams } from "./schemas/flows/common";
 import {
   InitializeLoginFlowParams,
-  isLoginFlow,
-  isLoginFlowSuccess,
   LoginFlow,
   LoginFlowResponse,
+  isLoginFlow,
+  isLoginFlowSuccess,
   loginFlowResponseSchema,
   loginFlowSchema,
 } from "./schemas/flows/login";
 import { selfServiceLogoutUrlSchema } from "./schemas/flows/logout";
 import { RecoveryFlow, recoveryFlowSchema } from "./schemas/flows/recovery";
 import {
-  isRegistrationFlow,
-  isRegistrationFlowSuccess,
   RegistrationFlow,
   RegistrationFlowResponse,
+  isRegistrationFlow,
+  isRegistrationFlowSuccess,
   registrationFlowResponseSchema,
   registrationFlowSchema,
 } from "./schemas/flows/registration";

@@ -4,12 +4,12 @@ import {
   authenticatorAssuranceLevelSchema,
   sessionSchema,
 } from "../session";
-import { flowCommonSchema, InitializeFlowParams } from "./common";
+import { InitializeFlowParams, flowCommonSchema } from "./common";
 
-export interface InitializeLoginFlowParams extends InitializeFlowParams {
+export type InitializeLoginFlowParams = InitializeFlowParams & {
   aal?: AuthenticatorAssuranceLevel;
   refresh?: boolean;
-}
+};
 
 export const loginFlowSchema = flowCommonSchema.extend({
   created_at: z.string().optional(),

@@ -1,10 +1,10 @@
 import { z } from "zod";
 import { uiContainerSchema } from "./ui";
 
-export interface InitializeFlowParams {
+export type InitializeFlowParams = {
   returnTo?: string;
   clientType?: "browser" | "api";
-}
+};
 
 export const flowTypeSchema = z.union([z.literal("api"), z.literal("browser")]);
 

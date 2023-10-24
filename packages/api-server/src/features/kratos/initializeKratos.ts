@@ -5,7 +5,7 @@ import {
   IdentityApi,
   Session,
 } from "@ory/kratos-client";
-import createHttpError from "http-errors";
+import httpErrors from "http-errors";
 import Koa from "koa";
 import { OrmConfigOptions } from "../db/ormConfig.js";
 import { kratosOrmConfig } from "./kratosOrmConfig.js";
@@ -51,7 +51,7 @@ export const initializeKratos = async (
       environment: app.env,
       logger: app.context.logger,
       findOneOrFailHandler: (entityName: string) =>
-        createHttpError(404, `${entityName} not found`),
+        httpErrors(404, `${entityName} not found`),
       ...ormOptions,
     }),
   );

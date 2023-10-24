@@ -1,6 +1,6 @@
 import Router from "@koa/router";
 import { STATUS_CODES } from "http";
-import createHttpError from "http-errors";
+import httpErrors from "http-errors";
 import { DefaultContext, DefaultState } from "koa";
 
 /**
@@ -23,8 +23,8 @@ devRouter
 
     if (codeValue < 600 && codeValue >= 400) {
       const error = message
-        ? createHttpError(codeValue, message)
-        : createHttpError(codeValue);
+        ? httpErrors(codeValue, message)
+        : httpErrors(codeValue);
       throw error;
     }
 

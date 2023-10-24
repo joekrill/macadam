@@ -1,6 +1,6 @@
 import { MikroORM } from "@mikro-orm/core";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
-import createHttpError from "http-errors";
+import httpErrors from "http-errors";
 import Koa from "koa";
 import { ormConfig, OrmConfigOptions } from "./ormConfig.js";
 
@@ -26,7 +26,7 @@ export const initializeDb = async (app: Koa, options: InitializeDbOptions) => {
       environment: app.env,
       logger: app.context.logger,
       findOneOrFailHandler: (entityName: string) =>
-        createHttpError(404, `${entityName} not found`),
+        httpErrors(404, `${entityName} not found`),
       ...options,
     }),
   );

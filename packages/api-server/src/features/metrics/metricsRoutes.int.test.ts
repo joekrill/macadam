@@ -14,8 +14,10 @@ describe("metricsRoutes", () => {
         dbUrl: "sqlite::memory:",
         metricsPath: "/metrics",
         logger: pino({ enabled: false }),
-        kratosPublicUrl: "",
-        kratosDbUrl: "sqlite::memory:",
+        kratos: {
+          publicUrl: "",
+          clientUrl: "sqlite::memory:",
+        },
       });
     });
 

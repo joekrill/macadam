@@ -55,8 +55,10 @@ const initApp = async ({ identityId }: { identityId?: string } = {}) => {
     environment: "test",
     dbUrl: "sqlite::memory:",
     logger: pino({ enabled: false }),
-    kratosPublicUrl: "",
-    kratosDbUrl: "sqlite::memory:",
+    kratos: {
+      publicUrl: "",
+      clientUrl: "sqlite::memory:",
+    },
   });
   await app.context.db.orm.getMigrator().up();
   return app;

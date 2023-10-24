@@ -9,10 +9,16 @@ import { errorHandler } from "./features/errors/errorHandler.js";
 import { notFound } from "./features/errors/notFound.js";
 import { healthRoutes } from "./features/health/healthRoutes.js";
 import { forkKratosEntityManager } from "./features/kratos/forkKratosEntityManager.js";
-import { initializeKratos } from "./features/kratos/initializeKratos.js";
+import {
+  InitializeKratosOptions,
+  initializeKratos,
+} from "./features/kratos/initializeKratos.js";
 import { initializeLogger } from "./features/logging/initializeLogger.js";
 import { logRequests } from "./features/logging/logRequests.js";
-import { initializeMailer } from "./features/mailer/initializeMailer.js";
+import {
+  InitializeMailerOptions,
+  initializeMailer,
+} from "./features/mailer/initializeMailer.js";
 import { metricsCollector } from "./features/metrics/metricsCollector.js";
 import { metricsRoutes } from "./features/metrics/metricsRoutes.js";
 import { urlSearchParams } from "./features/querystring/urlSearchParams.js";
@@ -20,7 +26,10 @@ import { rateLimit } from "./features/rateLimit/rateLimit.js";
 import { initializeRedis } from "./features/redis/initializeRedis.js";
 import { requestId } from "./features/requestId/requestId.js";
 import { responseTime } from "./features/responseTime/responseTime.js";
-import { initializeSentry } from "./features/sentry/initializeSentry.js";
+import {
+  InitializeSentryOptions,
+  initializeSentry,
+} from "./features/sentry/initializeSentry.js";
 import { initializeGracefulShutdown } from "./features/shutdown/initializeGracefulShutdown.js";
 import { apiRoutes } from "./routes/index.js";
 
@@ -52,19 +61,19 @@ export interface AppOptions {
   healthPath?: string;
 
   /**
-   * The connection string URl for connecting directly to the Kratos database
+   * Kratos configuration settings
    */
-  kratosDbUrl: string;
-
-  /**
-   * The URL to the public API of the Kratos instance used for authentication.
-   */
-  kratosPublicUrl: string;
+  kratos: InitializeKratosOptions;
 
   /**
    * The logging instance to use for writing messages.
    */
   logger: pino.Logger;
+
+  /**
+   * Mailer configuration settings
+   */
+  mailer?: InitializeMailerOptions;
 
   /**
    * The path to serve Prometheus-style metrics from
@@ -78,25 +87,9 @@ export interface AppOptions {
   redisUrl?: string;
 
   /**
-   * The URL of the Sentry instance to send crash reports to.
+   * Sentry configuration settings.
    */
-  sentryDsn?: string;
-
-  /**
-   * The URLs of any sentry DSNs that may be tunneled through the API server
-   * @see {@link https://docs.sentry.io/platforms/javascript/troubleshooting/#dealing-with-ad-blockers}
-   */
-  sentryTunnelableDsns?: string[];
-
-  /**
-   * Where to forward support, contact, etc. emails to.
-   */
-  smtpMailTo?: string;
-
-  /**
-   * The connection URL to the SMTP server to use for sending emails.
-   */
-  smtpUri?: string;
+  sentry?: InitializeSentryOptions;
 }
 
 export const createApp = async ({
@@ -105,38 +98,31 @@ export const createApp = async ({
   defaultShutdownWaitMs = 15000,
   environment = "development",
   healthPath = "/health",
-  kratosDbUrl,
-  kratosPublicUrl,
+  kratos,
   logger,
+  mailer,
   metricsPath = "/metrics",
   redisUrl,
-  sentryDsn,
-  sentryTunnelableDsns,
-  smtpMailTo,
-  smtpUri,
+  sentry,
 }: AppOptions) => {
   const app = new Koa({ env: environment });
 
   initializeLogger(app, { logger });
   initializeGracefulShutdown(app, { defaultShutdownWaitMs });
 
-  if (sentryDsn) {
+  if (sentry?.dsn) {
     initializeSentry(app, {
-      dsn: sentryDsn,
       release: process.env.npm_package_version,
-      tunnelableDsns: sentryTunnelableDsns,
+      ...sentry,
     });
   }
 
-  if (smtpUri && smtpMailTo) {
-    initializeMailer(app, { smtpUri, smtpMailTo });
+  if (mailer) {
+    initializeMailer(app, mailer);
   }
 
   await initializeDb(app, { clientUrl: dbUrl });
-  await initializeKratos(app, {
-    publicUrl: kratosPublicUrl,
-    clientUrl: kratosDbUrl,
-  });
+  await initializeKratos(app, kratos);
 
   if (redisUrl) {
     await initializeRedis(app, { url: redisUrl });

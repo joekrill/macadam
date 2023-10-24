@@ -26,6 +26,7 @@ import { useLoginLink } from "../../../auth/components/LoginLink/useLoginLink";
 import { LogoutButtonLabel } from "../../../auth/components/LogoutButton/LogoutButton";
 import { useRegistrationLink } from "../../../auth/components/RegistrationLink/useRegistrationLink";
 import { useAppPreferencesLink } from "../../../settings/components/AppPreferencesLink/useAppPreferencesLink";
+import { useColorModeSwitch } from "../../../theme/components/ColorModeSwitcher/useColorModeSwitch";
 import { CurrentUserAvatar } from "../CurrentUserAvatar/CurrentUserAvatar";
 import { CurrentUserMenuHeader } from "./CurrentUserMenuHeader";
 
@@ -38,6 +39,11 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
   const loginLink = useLoginLink();
   const logoutColor = useColorModeValue("red.500", "red.300");
   const { onClick, isLoading } = useLogout();
+  const {
+    label: colorModeLabel,
+    toggleColorMode,
+    Icon: ColorModeIcon,
+  } = useColorModeSwitch();
 
   return (
     <Menu autoSelect={false} isLazy {...props}>
@@ -69,6 +75,9 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
               id="user.userMenu.profileLink"
               defaultMessage="Your Profile"
             />
+          </MenuItem>
+          <MenuItem icon={<ColorModeIcon />} onClick={toggleColorMode}>
+            {colorModeLabel}
           </MenuItem>
           <MenuItem
             as={RouterLink}

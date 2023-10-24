@@ -6779,7 +6779,6 @@ const RAW_RUNTIME_STATE =
           ["koa-compose", "npm:4.1.0"],\
           ["koa-helmet", "npm:7.0.2"],\
           ["nodemailer", "npm:6.9.7"],\
-          ["nodemon", "npm:3.0.1"],\
           ["pino", "npm:8.16.1"],\
           ["pino-pretty", "npm:10.2.3"],\
           ["prom-client", "npm:15.0.0"],\
@@ -16624,20 +16623,6 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:07d6d759b1359dbe6312f6d0dbe0e579a03f96a7488074a1978eb0a39cddda092115963230672b3a644e0eb5bf2e6bb872260fd7461deb0a18969606250d726f#npm:3.2.7", {\
-        "packageLocation": "./.yarn/__virtual__/debug-virtual-397285b962/0/cache/debug-npm-3.2.7-754e818c7a-d86fd7be2b.zip/node_modules/debug/",\
-        "packageDependencies": [\
-          ["debug", "virtual:07d6d759b1359dbe6312f6d0dbe0e579a03f96a7488074a1978eb0a39cddda092115963230672b3a644e0eb5bf2e6bb872260fd7461deb0a18969606250d726f#npm:3.2.7"],\
-          ["@types/supports-color", null],\
-          ["ms", "npm:2.1.3"],\
-          ["supports-color", "npm:5.5.0"]\
-        ],\
-        "packagePeers": [\
-          "@types/supports-color",\
-          "supports-color"\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["virtual:5784c5f3c6ddb41663648469bd88525c847a2f01c7b496863c5534d0cf0f4a99dfc91b32b27a47c2e8f2fab3006304ea4b85d21cc59f905ef7607841023bc7ce#npm:3.2.7", {\
         "packageLocation": "./.yarn/__virtual__/debug-virtual-bce5aba326/0/cache/debug-npm-3.2.7-754e818c7a-d86fd7be2b.zip/node_modules/debug/",\
         "packageDependencies": [\
@@ -19901,15 +19886,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/ignore-npm-5.2.4-fbe6e989e5-4f7caf5d20.zip/node_modules/ignore/",\
         "packageDependencies": [\
           ["ignore", "npm:5.2.4"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["ignore-by-default", [\
-      ["npm:1.0.1", {\
-        "packageLocation": "./.yarn/cache/ignore-by-default-npm-1.0.1-78ea10bc54-441509147b.zip/node_modules/ignore-by-default/",\
-        "packageDependencies": [\
-          ["ignore-by-default", "npm:1.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -23550,34 +23526,7 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["nodemon", [\
-      ["npm:3.0.1", {\
-        "packageLocation": "./.yarn/unplugged/nodemon-npm-3.0.1-07d6d759b1/node_modules/nodemon/",\
-        "packageDependencies": [\
-          ["nodemon", "npm:3.0.1"],\
-          ["chokidar", "npm:3.5.3"],\
-          ["debug", "virtual:07d6d759b1359dbe6312f6d0dbe0e579a03f96a7488074a1978eb0a39cddda092115963230672b3a644e0eb5bf2e6bb872260fd7461deb0a18969606250d726f#npm:3.2.7"],\
-          ["ignore-by-default", "npm:1.0.1"],\
-          ["minimatch", "npm:3.1.2"],\
-          ["pstree.remy", "npm:1.1.8"],\
-          ["semver", "npm:7.5.4"],\
-          ["simple-update-notifier", "npm:2.0.0"],\
-          ["supports-color", "npm:5.5.0"],\
-          ["touch", "npm:3.1.0"],\
-          ["undefsafe", "npm:2.0.5"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["nopt", [\
-      ["npm:1.0.10", {\
-        "packageLocation": "./.yarn/cache/nopt-npm-1.0.10-f3db192976-4f01ad1e14.zip/node_modules/nopt/",\
-        "packageDependencies": [\
-          ["nopt", "npm:1.0.10"],\
-          ["abbrev", "npm:1.1.1"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:5.0.0", {\
         "packageLocation": "./.yarn/cache/nopt-npm-5.0.0-304b40fbfe-00f9bb2d16.zip/node_modules/nopt/",\
         "packageDependencies": [\
@@ -24844,15 +24793,6 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/psl-npm-1.9.0-a546edad1a-d07879d4bf.zip/node_modules/psl/",\
         "packageDependencies": [\
           ["psl", "npm:1.9.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["pstree.remy", [\
-      ["npm:1.1.8", {\
-        "packageLocation": "./.yarn/cache/pstree.remy-npm-1.1.8-2dd5d55de2-ef13b1b589.zip/node_modules/pstree.remy/",\
-        "packageDependencies": [\
-          ["pstree.remy", "npm:1.1.8"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -27884,16 +27824,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["touch", [\
-      ["npm:3.1.0", {\
-        "packageLocation": "./.yarn/cache/touch-npm-3.1.0-e2eacebbda-ece1d9693f.zip/node_modules/touch/",\
-        "packageDependencies": [\
-          ["touch", "npm:3.1.0"],\
-          ["nopt", "npm:1.0.10"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["tough-cookie", [\
       ["npm:2.5.0", {\
         "packageLocation": "./.yarn/cache/tough-cookie-npm-2.5.0-79a2fe43fe-024cb13a4d.zip/node_modules/tough-cookie/",\
@@ -28465,15 +28395,6 @@ const RAW_RUNTIME_STATE =
           ["has-bigints", "npm:1.0.2"],\
           ["has-symbols", "npm:1.0.3"],\
           ["which-boxed-primitive", "npm:1.0.2"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["undefsafe", [\
-      ["npm:2.0.5", {\
-        "packageLocation": "./.yarn/cache/undefsafe-npm-2.0.5-8c3bbf9354-f42ab3b577.zip/node_modules/undefsafe/",\
-        "packageDependencies": [\
-          ["undefsafe", "npm:2.0.5"]\
         ],\
         "linkType": "HARD"\
       }]\

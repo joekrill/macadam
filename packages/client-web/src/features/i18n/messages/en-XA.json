@@ -2,7 +2,11 @@
   "api.errors.fetchErrorMessage": [
     {
       "type": 0,
-      "value": "Ũńèẋṗèćṭèḋ ćĺíèńṭ èŕŕŏŕ ("
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŭƞḗḗẋƥḗḗƈŧḗḗḓ ƈŀīḗḗƞŧ ḗḗřřǿǿř ("
     },
     {
       "type": 1,
@@ -10,19 +14,35 @@
     },
     {
       "type": 0,
-      "value": "). Ṕĺèâśè ṭŕẏ âĝâíń."
+      "value": "). Ƥŀḗḗȧȧşḗḗ ŧřẏ ȧȧɠȧȧīƞ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "api.errors.genericMessage": [
     {
       "type": 0,
-      "value": "Ḁń ůńǩńŏẘń èŕŕŏŕ ŏććůŕŕèḋ. Ṕĺèâśè ṭŕẏ âĝâíń."
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ȧƞ ŭŭƞķƞǿǿẇƞ ḗḗřřǿǿř ǿǿƈƈŭŭřřḗḗḓ. Ƥŀḗḗȧȧşḗḗ ŧřẏ ȧȧɠȧȧīƞ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "api.errors.genericMessageWithCode": [
     {
       "type": 0,
-      "value": "Ṯḫè śèŕṿèŕ ŕèṭůŕńèḋ âń ůńèẋṗèćṭèḋ ŕèśŏńśè ("
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧħḗḗ şḗḗřṽḗḗř řḗḗŧŭŭřƞḗḗḓ ȧȧƞ ŭŭƞḗḗẋƥḗḗƈŧḗḗḓ řḗḗşǿǿƞşḗḗ ("
     },
     {
       "type": 1,
@@ -30,13 +50,21 @@
     },
     {
       "type": 0,
-      "value": "). Ṕĺèâśè ṭŕẏ âĝâíń."
+      "value": "). Ƥŀḗḗȧȧşḗḗ ŧřẏ ȧȧɠȧȧīƞ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "api.errors.genericMessageWithMessage": [
     {
       "type": 0,
-      "value": "Ḕŕŕŏŕ: "
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḗřřǿǿř: "
     },
     {
       "type": 1,
@@ -60,19 +88,35 @@
     },
     {
       "type": 0,
-      "value": "). Ṕĺèâśè ṭŕẏ âĝâíń."
+      "value": "). Ƥŀḗḗȧȧşḗḗ ŧřẏ ȧȧɠȧȧīƞ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "api.errors.genericTitle": [
     {
       "type": 0,
-      "value": "Ṡŏṁèṭḫíńĝ ẘèńṭ ẘŕŏńĝ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Şǿǿḿḗḗŧħīƞɠ ẇḗḗƞŧ ẇřǿǿƞɠ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "api.errors.parsingErrorMessage": [
     {
       "type": 0,
-      "value": "Ḕŕŕŏŕ ṗâŕśíńĝ śèŕṿèŕ ŕèśṗŏńśè ("
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḗřřǿǿř ƥȧȧřşīƞɠ şḗḗřṽḗḗř řḗḗşƥǿǿƞşḗḗ ("
     },
     {
       "type": 1,
@@ -80,64 +124,144 @@
     },
     {
       "type": 0,
-      "value": "). Ṕĺèâśè ṭŕẏ âĝâíń."
+      "value": "). Ƥŀḗḗȧȧşḗḗ ŧřẏ ȧȧɠȧȧīƞ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.contactUsForm.emailField.label": [
     {
       "type": 0,
-      "value": "Ḕṁâíĺ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḗḿȧȧīŀ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.contactUsForm.emailField.placeholder": [
     {
       "type": 0,
-      "value": "Ÿŏůŕ Ḕṁâíĺ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ẏǿǿŭŭř Ḗḿȧȧīŀ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.contactUsForm.messageField.label": [
     {
       "type": 0,
-      "value": "Ḿèśśâĝè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḿḗḗşşȧȧɠḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.contactUsForm.messageField.placeholder": [
     {
       "type": 0,
-      "value": "Ÿŏůŕ Ḿèśśâĝè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ẏǿǿŭŭř Ḿḗḗşşȧȧɠḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.contactUsForm.nameField.label": [
     {
       "type": 0,
-      "value": "Ŋâṁè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƞȧȧḿḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.contactUsForm.nameField.placeholder": [
     {
       "type": 0,
-      "value": "Ÿŏůŕ Ŋâṁè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ẏǿǿŭŭř Ƞȧȧḿḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.contactUsForm.sendButton.label": [
     {
       "type": 0,
-      "value": "Ṡèńḋ Ḿèśśâĝè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Şḗḗƞḓ Ḿḗḗşşȧȧɠḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.contactUsSuccess.message": [
     {
       "type": 0,
-      "value": "Ṯḫâńǩś ḟŏŕ ẏŏůŕ ṁèśśâĝè. Ẅè'ĺĺ ĝèṭ ḃâćǩ ṭŏ ẏŏů śŏŏń."
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧħȧȧƞķş ƒǿǿř ẏǿǿŭŭř ḿḗḗşşȧȧɠḗḗ. Ẇḗḗ'ŀŀ ɠḗḗŧ ƀȧȧƈķ ŧǿǿ ẏǿǿŭŭ şǿǿǿǿƞ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.contactUsSuccess.title": [
     {
       "type": 0,
-      "value": "Ḿèśśâĝè śèńṭ!"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḿḗḗşşȧȧɠḗḗ şḗḗƞŧ!"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.footer.copyrightNotice": [
+    {
+      "type": 0,
+      "value": "["
+    },
     {
       "type": 0,
       "value": "© "
@@ -163,49 +287,105 @@
     },
     {
       "type": 0,
-      "value": ". Ḁĺĺ ŕíĝḫṭś ŕèśèŕṿèḋ."
+      "value": ". Ȧŀŀ řīɠħŧş řḗḗşḗḗřṽḗḗḓ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.footer.linkGroups.legal": [
     {
       "type": 0,
-      "value": "Ļèĝâĺ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŀḗḗɠȧȧŀ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.footer.linkGroups.resources": [
     {
       "type": 0,
-      "value": "Ŕèśŏůŕćèś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Řḗḗşǿǿŭŭřƈḗḗş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.footer.links.contact.label": [
     {
       "type": 0,
-      "value": "Ḉŏńṭâćṭ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƈǿǿƞŧȧȧƈŧ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.footer.links.faq.label": [
     {
       "type": 0,
-      "value": "ḞḀɊ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "ƑȦɊ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.footer.links.privacy.label": [
     {
       "type": 0,
-      "value": "Ṕŕíṿâćẏ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƥřīṽȧȧƈẏ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "app.footer.links.termsAndConditions.label": [
     {
       "type": 0,
-      "value": "Ṯèŕṁś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧḗḗřḿş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.VerifyEmailNotificationBanner.emailSentMessage": [
     {
       "type": 0,
-      "value": "Ṕĺèâśè ćŏńḟíŕṁ ẏŏůŕ èṁâíĺ. Ẅè'ṿè śèńḋ â ṁèśśâĝè ṭŏ "
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƥŀḗḗȧȧşḗḗ ƈǿǿƞƒīřḿ ẏǿǿŭŭř ḗḗḿȧȧīŀ. Ẇḗḗ'ṽḗḗ şḗḗƞḓ ȧȧ ḿḗḗşşȧȧɠḗḗ ŧǿǿ "
     },
     {
       "children": [
@@ -220,21 +400,45 @@
     {
       "type": 0,
       "value": "."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.VerifyEmailNotificationBanner.resendButton.label": [
     {
       "type": 0,
-      "value": "Ŕèśèńḋ èṁâíĺ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Řḗḗşḗḗƞḓ ḗḗḿȧȧīŀ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.deleteSessionLink.ariaLabel": [
     {
       "type": 0,
-      "value": "Ḋèĺèṭè Ṡèśśíŏń"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḓḗḗŀḗḗŧḗḗ Şḗḗşşīǿǿƞ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.flowError.redirecting": [
+    {
+      "type": 0,
+      "value": "["
+    },
     {
       "options": {
         "browser_location_change_required": {
@@ -249,7 +453,7 @@
           "value": [
             {
               "type": 0,
-              "value": "2ḞḀ ŕèɋůíŕèḋ. "
+              "value": "2ƑȦ řḗḗɋŭŭīřḗḗḓ. "
             }
           ]
         },
@@ -257,7 +461,7 @@
           "value": [
             {
               "type": 0,
-              "value": "Ŕèâůṭḫèńṭíćâṭíŏń ŕèɋůíŕèḋ. "
+              "value": "Řḗḗȧȧŭŭŧħḗḗƞŧīƈȧȧŧīǿǿƞ řḗḗɋŭŭīřḗḗḓ. "
             }
           ]
         }
@@ -267,13 +471,21 @@
     },
     {
       "type": 0,
-      "value": "Ŕèḋíŕèćṭíńĝ..."
+      "value": "Řḗḗḓīřḗḗƈŧīƞɠ..."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.flowRestarted.message": [
     {
       "type": 0,
-      "value": "Ṯḫè ḟŏŕṁ ḫâḋ ṭŏ ḃè ŕèĺŏâḋèḋ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧħḗḗ ƒǿǿřḿ ħȧȧḓ ŧǿǿ ƀḗḗ řḗḗŀǿǿȧȧḓḗḗḓ"
     },
     {
       "options": {
@@ -285,7 +497,7 @@
           "value": [
             {
               "type": 0,
-              "value": " ḃèćâůśè ṭḫè śèćůŕíṭẏ ṭŏǩèń èẋṗíŕèḋ."
+              "value": " ƀḗḗƈȧȧŭŭşḗḗ ŧħḗḗ şḗḗƈŭŭřīŧẏ ŧǿǿķḗḗƞ ḗḗẋƥīřḗḗḓ."
             }
           ]
         },
@@ -293,7 +505,7 @@
           "value": [
             {
               "type": 0,
-              "value": " ḃèćâůśè ẏŏůŕ śèśśíŏń ćḫâńĝèḋ"
+              "value": " ƀḗḗƈȧȧŭŭşḗḗ ẏǿǿŭŭř şḗḗşşīǿǿƞ ƈħȧȧƞɠḗḗḓ"
             }
           ]
         },
@@ -301,7 +513,7 @@
           "value": [
             {
               "type": 0,
-              "value": " ḃèćâůśè ṭḫè ḟŏŕṁ èẋṗíŕèḋ"
+              "value": " ƀḗḗƈȧȧŭŭşḗḗ ŧħḗḗ ƒǿǿřḿ ḗḗẋƥīřḗḗḓ"
             }
           ]
         },
@@ -309,7 +521,7 @@
           "value": [
             {
               "type": 0,
-              "value": " ḃèćâůśè ṭḫè ŕèṭůŕń ŨŔĻ íś íńṿâĺíḋ"
+              "value": " ƀḗḗƈȧȧŭŭşḗḗ ŧħḗḗ řḗḗŧŭŭřƞ ŬŘĿ īş īƞṽȧȧŀīḓ"
             }
           ]
         }
@@ -319,13 +531,21 @@
     },
     {
       "type": 0,
-      "value": ". Ṕĺèâśè ṭŕẏ âĝâíń."
+      "value": ". Ƥŀḗḗȧȧşḗḗ ŧřẏ ȧȧɠȧȧīƞ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.loggedInAlreadyNotice.messageWithUsername": [
     {
       "type": 0,
-      "value": "Ÿŏů'ŕè âĺŕèâḋẏ ĺŏĝĝèḋ íń âś "
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ẏǿǿŭŭ'řḗḗ ȧȧŀřḗḗȧȧḓẏ ŀǿǿɠɠḗḗḓ īƞ ȧȧş "
     },
     {
       "children": [
@@ -340,74 +560,132 @@
     {
       "type": 0,
       "value": "."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.loggedInAlreadyNotice.messageWithoutUsername": [
     {
       "type": 0,
-      "value": "Ÿŏů'ŕè âĺŕèâḋẏ ĺŏĝĝèḋ íń."
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ẏǿǿŭŭ'řḗḗ ȧȧŀřḗḗȧȧḓẏ ŀǿǿɠɠḗḗḓ īƞ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.login.signUpInsteadMessage": [
     {
       "type": 0,
-      "value": "Ḋŏń'ṭ ḫâṿè âń âććŏůńṭ ẏèṭ? "
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḓǿǿƞ'ŧ ħȧȧṽḗḗ ȧȧƞ ȧȧƈƈǿǿŭŭƞŧ ẏḗḗŧ? "
     },
     {
       "children": [
         {
           "type": 0,
-          "value": "Ṡíĝń ůṗ!"
+          "value": "Şīɠƞ ŭŭƥ!"
         }
       ],
       "type": 8,
       "value": "link"
-    }
-  ],
-  "auth.loginForm.oidcDividerText": [
+    },
     {
       "type": 0,
-      "value": "ŏŕ"
+      "value": "]"
     }
   ],
   "auth.loginFormTitle.2fa": [
     {
       "type": 0,
-      "value": "Ṯẘŏ-Ḟâćṭŏŕ Ḁůṭḫèńṭíćâṭíŏń"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧẇǿǿ-Ƒȧȧƈŧǿǿř Ȧŭŭŧħḗḗƞŧīƈȧȧŧīǿǿƞ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.loginFormTitle.confirmAccess": [
     {
       "type": 0,
-      "value": "Ḉŏńḟíŕṁ âććèśś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƈǿǿƞƒīřḿ ȧȧƈƈḗḗşş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.loginFormTitle.login": [
     {
       "type": 0,
-      "value": "Ļŏĝ íń ṭŏ ẏŏůŕ âććŏůńṭ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŀǿǿɠ īƞ ŧǿǿ ẏǿǿŭŭř ȧȧƈƈǿǿŭŭƞŧ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.loginLink.label": [
     {
       "type": 0,
-      "value": "Ļŏĝ Ḭń"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŀǿǿɠ Īƞ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.logoutButton.label": [
     {
       "type": 0,
-      "value": "Ļŏĝ Õůṭ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŀǿǿɠ Ǿŭŭŧ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.passwordInput.togglePasswordVisibility.label": [
+    {
+      "type": 0,
+      "value": "["
+    },
     {
       "options": {
         "hide": {
           "value": [
             {
               "type": 0,
-              "value": "Ḿâśǩ"
+              "value": "Ḿȧȧşķ"
             }
           ]
         },
@@ -419,7 +697,7 @@
           "value": [
             {
               "type": 0,
-              "value": "Ŕèṿèâĺ"
+              "value": "Řḗḗṽḗḗȧȧŀ"
             }
           ]
         }
@@ -429,59 +707,123 @@
     },
     {
       "type": 0,
-      "value": " ṗâśśẘŏŕḋ"
+      "value": " ƥȧȧşşẇǿǿřḓ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.recovery.title": [
     {
       "type": 0,
-      "value": "Ŕèćŏṿèŕ ẏŏůŕ âććŏůńṭ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Řḗḗƈǿǿṽḗḗř ẏǿǿŭŭř ȧȧƈƈǿǿŭŭƞŧ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.recoveryLink.label": [
     {
       "type": 0,
-      "value": "Ḟŏŕĝŏṭ ẏŏůŕ ṗâśśẘŏŕḋ?"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƒǿǿřɠǿǿŧ ẏǿǿŭŭř ƥȧȧşşẇǿǿřḓ?"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.registration.alreadyHaveAccountLink": [
     {
       "type": 0,
-      "value": "Ḁĺŕèâḋẏ ḫâṿè âń âććŏůńṭ? "
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ȧŀřḗḗȧȧḓẏ ħȧȧṽḗḗ ȧȧƞ ȧȧƈƈǿǿŭŭƞŧ? "
     },
     {
       "type": 1,
       "value": "loginLink"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.registration.title": [
     {
       "type": 0,
-      "value": "Ḉŕèâṭè ẏŏůŕ âććŏůńṭ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƈřḗḗȧȧŧḗḗ ẏǿǿŭŭř ȧȧƈƈǿǿŭŭƞŧ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.registrationForm.oidcDividerText": [
     {
       "type": 0,
-      "value": "ŏŕ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "ǿǿř"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.registrationLink.label": [
     {
       "type": 0,
-      "value": "Ṡíĝń Ũṗ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Şīɠƞ Ŭƥ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.selfServiceUi.emailNode.label": [
     {
       "type": 0,
-      "value": "Ḕ-Ḿâíĺ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḗ-Ḿȧȧīŀ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.selfServiceUi.localeSelectNode.defaultValue": [
     {
       "type": 0,
-      "value": "Ḋèḟâůĺṭ ("
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḓḗḗƒȧȧŭŭŀŧ ("
     },
     {
       "type": 1,
@@ -490,18 +832,26 @@
     {
       "type": 0,
       "value": ")"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.selfServiceUi.localeSelectNode.usageInfo": [
     {
       "type": 0,
-      "value": "Ṯḫíś ẘíĺĺ ḃè ůśèḋ ḟŏŕ èẋṭèŕńâĺ ćŏṁṁůńíćâṭíŏńś ŏŕ ẘḫèń ẘè ćâń'ṭ âůṭŏṁâṭíćâĺĺẏ ḋèṭèćṭ ẏŏůŕ ĺŏćâĺè ḃâśèḋ ŏń ẏŏůŕ ḋèṿíćè śèṭṭíńĝś. Ṯŏ ćḫâńĝè ṭḫè ćůŕŕèńṭ âṗṗĺíćâṭíŏń ĺâńĝůâĝè ṿíśíṭ ṭḫè "
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧħīş ẇīŀŀ ƀḗḗ ŭŭşḗḗḓ ƒǿǿř ḗḗẋŧḗḗřƞȧȧŀ ƈǿǿḿḿŭŭƞīƈȧȧŧīǿǿƞş ǿǿř ẇħḗḗƞ ẇḗḗ ƈȧȧƞ'ŧ ȧȧŭŭŧǿǿḿȧȧŧīƈȧȧŀŀẏ ḓḗḗŧḗḗƈŧ ẏǿǿŭŭř ŀǿǿƈȧȧŀḗḗ ƀȧȧşḗḗḓ ǿǿƞ ẏǿǿŭŭř ḓḗḗṽīƈḗḗ şḗḗŧŧīƞɠş. Ŧǿǿ ƈħȧȧƞɠḗḗ ŧħḗḗ ƈŭŭřřḗḗƞŧ ȧȧƥƥŀīƈȧȧŧīǿǿƞ ŀȧȧƞɠŭŭȧȧɠḗḗ ṽīşīŧ ŧħḗḗ "
     },
     {
       "children": [
         {
           "type": 0,
-          "value": "ṗŕèḟèŕèńćèś ṗâĝè"
+          "value": "ƥřḗḗƒḗḗřḗḗƞƈḗḗş ƥȧȧɠḗḗ"
         }
       ],
       "type": 8,
@@ -510,112 +860,248 @@
     {
       "type": 0,
       "value": "."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.selfServiceUi.passwordNode.label": [
     {
       "type": 0,
-      "value": "Ṕâśśẘŏŕḋ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƥȧȧşşẇǿǿřḓ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.selfServiceUi.profilePictureNode.deleteButton.label": [
     {
       "type": 0,
-      "value": "Ḋèĺèṭè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḓḗḗŀḗḗŧḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.selfServiceUi.profilePictureNode.uploadButton.label": [
     {
       "type": 0,
-      "value": "Ḉḫâńĝè ṗḫŏṭŏ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƈħȧȧƞɠḗḗ ƥħǿǿŧǿǿ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.sessionsList.title": [
     {
       "type": 0,
-      "value": "Ḁćṭíṿè Ṡèśśíŏńś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ȧƈŧīṽḗḗ Şḗḗşşīǿǿƞş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.sessionsTable.authenticatedAtHeader.label": [
     {
       "type": 0,
-      "value": "Ļâśṭ Ũśèḋ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŀȧȧşŧ Ŭşḗḗḓ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.sessionsTable.currentSessionIndicator.title": [
     {
       "type": 0,
-      "value": "Ṯḫíś íś ẏŏůŕ ćůŕŕèńṭ śèśśíŏń"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧħīş īş ẏǿǿŭŭř ƈŭŭřřḗḗƞŧ şḗḗşşīǿǿƞ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.sessionsTable.expiresAtHeader.label": [
     {
       "type": 0,
-      "value": "Ḕẋṗíŕèś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḗẋƥīřḗḗş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.sessionsTable.methodHeader.label": [
     {
       "type": 0,
-      "value": "Ḿèṭḫŏḋ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḿḗḗŧħǿǿḓ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.settings.oidcSection.title": [
     {
       "type": 0,
-      "value": "3ŕḋ Ṕâŕṭẏ Ļŏĝ-íń"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "3řḓ Ƥȧȧřŧẏ Ŀǿǿɠ-īƞ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.settings.totpSection.title": [
     {
       "type": 0,
-      "value": "Ṯẘŏ-ḟâćṭŏŕ Ḁůṭḫèńṭíćâṭíŏń"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧẇǿǿ-ƒȧȧƈŧǿǿř Ȧŭŭŧħḗḗƞŧīƈȧȧŧīǿǿƞ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.settings.totpSection.toggleButton.ariaLabel": [
     {
       "type": 0,
-      "value": "Ṯŏĝĝĺè Ṯẘŏ-ḟâćṭŏŕ âůṭḫèńṭíćâṭíŏń śèṭṭíńĝś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧǿǿɠɠŀḗḗ Ŧẇǿǿ-ƒȧȧƈŧǿǿř ȧȧŭŭŧħḗḗƞŧīƈȧȧŧīǿǿƞ şḗḗŧŧīƞɠş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.settings.webauthnSection.title": [
     {
       "type": 0,
-      "value": "Ḣâŕḋẘâŕè Ṯŏǩèńś âńḋ Ḃíŏṁèṭŕíćś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ħȧȧřḓẇȧȧřḗḗ Ŧǿǿķḗḗƞş ȧȧƞḓ Ɓīǿǿḿḗḗŧřīƈş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.settings.webauthnSection.toggleButton.ariaLabel": [
     {
       "type": 0,
-      "value": "Ṯŏĝĝĺè Ḣâŕḋẘâŕè Ṯŏǩèńś âńḋ Ḃíŏṁèṭŕíćś śèṭṭíńĝś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧǿǿɠɠŀḗḗ Ħȧȧřḓẇȧȧřḗḗ Ŧǿǿķḗḗƞş ȧȧƞḓ Ɓīǿǿḿḗḗŧřīƈş şḗḗŧŧīƞɠş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.settingsForm.changePasswordSection.title": [
     {
       "type": 0,
-      "value": "Ḉḫâńĝè Ṕâśśẘŏŕḋ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƈħȧȧƞɠḗḗ Ƥȧȧşşẇǿǿřḓ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.settingsForm.profileSection.title": [
     {
       "type": 0,
-      "value": "Ṕŕŏḟíĺè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƥřǿǿƒīŀḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "auth.verification.title": [
     {
       "type": 0,
-      "value": "Ṽèŕíḟẏ ẏŏůŕ âććŏůńṭ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ṽḗḗřīƒẏ ẏǿǿŭŭř ȧȧƈƈǿǿŭŭƞŧ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "common.dataTable.sortHeader.ariaLabel": [
+    {
+      "type": 0,
+      "value": "["
+    },
     {
       "options": {
         "asc": {
           "value": [
             {
               "type": 0,
-              "value": "Ṡŏŕṭèḋ âśćèńḋíńĝ"
+              "value": "Şǿǿřŧḗḗḓ ȧȧşƈḗḗƞḓīƞɠ"
             }
           ]
         },
@@ -623,7 +1109,7 @@
           "value": [
             {
               "type": 0,
-              "value": "Ṡŏŕṭèḋ ḋèśćèńḋíńĝ"
+              "value": "Şǿǿřŧḗḗḓ ḓḗḗşƈḗḗƞḓīƞɠ"
             }
           ]
         },
@@ -631,77 +1117,157 @@
           "value": [
             {
               "type": 0,
-              "value": "Ŋŏṭ śŏŕṭèḋ"
+              "value": "Ƞǿǿŧ şǿǿřŧḗḗḓ"
             }
           ]
         }
       },
       "type": 5,
       "value": "sort"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "common.hompageButton.label": [
     {
       "type": 0,
-      "value": "Ḡŏ ṭŏ ṭḫè ḫŏṁèṗâĝè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ɠǿǿ ŧǿǿ ŧħḗḗ ħǿǿḿḗḗƥȧȧɠḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "common.loadingSpinner.label": [
     {
       "type": 0,
-      "value": "Ļŏâḋíńĝ..."
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŀǿǿȧȧḓīƞɠ..."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "errors.errorAlert.message": [
     {
       "type": 0,
-      "value": "Ṡŏṁèṭḫíńĝ ẘèńṭ ẘŕŏńĝ :("
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Şǿǿḿḗḗŧħīƞɠ ẇḗḗƞŧ ẇřǿǿƞɠ :("
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "errors.errorAlert.retryButton.label": [
     {
       "type": 0,
-      "value": "Ṯŕẏ Ḁĝâíń"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧřẏ Ȧɠȧȧīƞ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "errors.notFoundPage.errorCode": [
     {
       "type": 0,
-      "value": "Ḉŏḋè: "
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƈǿǿḓḗḗ: "
     },
     {
       "type": 1,
       "value": "code"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "errors.notFoundPage.heading": [
     {
       "type": 0,
-      "value": "Õŏŏṗś!"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ǿǿǿǿǿƥş!"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "errors.notFoundPage.message": [
     {
       "type": 0,
-      "value": "Ẅè ćâń'ṭ śèèṁ ṭŏ ḟíńḋ ṭḫâṭ ṗâĝè."
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ẇḗḗ ƈȧȧƞ'ŧ şḗḗḗḗḿ ŧǿǿ ƒīƞḓ ŧħȧȧŧ ƥȧȧɠḗḗ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "errors.notFoundPage.title": [
     {
       "type": 0,
-      "value": "Ŋŏṭ Ḟŏůńḋ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƞǿǿŧ Ƒǿǿŭŭƞḓ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "forms.saveButton.label": [
     {
       "type": 0,
-      "value": "Ṡâṿè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Şȧȧṽḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "i18n.activeLocaleSelect.deviceLocaleOption": [
     {
       "type": 0,
-      "value": "Ḁůṭŏ ("
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ȧŭŭŧǿǿ ("
     },
     {
       "type": 1,
@@ -710,28 +1276,52 @@
     {
       "type": 0,
       "value": ")"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "i18n.localErrorToast.title": [
     {
       "type": 0,
-      "value": "Ũńâḃĺè ṭŏ ĺŏâḋ ĺŏćâĺè "
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŭƞȧȧƀŀḗḗ ŧǿǿ ŀǿǿȧȧḓ ŀǿǿƈȧȧŀḗḗ "
     },
     {
       "type": 1,
       "value": "locale"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.contactUs.heading": [
     {
       "type": 0,
-      "value": "Ḉŏńṭâćṭ Ũś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƈǿǿƞŧȧȧƈŧ Ŭş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.contactUs.instructions": [
     {
       "type": 0,
-      "value": "Ḕṁâíĺ ůś âṭ "
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḗḿȧȧīŀ ŭŭş ȧȧŧ "
     },
     {
       "children": [
@@ -745,217 +1335,497 @@
     },
     {
       "type": 0,
-      "value": " ŏŕ ḟíĺĺ ŏůṭ ṭḫè ḟŏŕṁ ḃèĺŏẘ ḟŏŕ âńẏ ḟèèḋḃâćǩ, ɋůèśṭíŏńś, ṗŕŏḃĺèṁś, ŏŕ ḟèâṭůŕè ŕèɋůèśṭś."
+      "value": " ǿǿř ƒīŀŀ ǿǿŭŭŧ ŧħḗḗ ƒǿǿřḿ ƀḗḗŀǿǿẇ ƒǿǿř ȧȧƞẏ ƒḗḗḗḗḓƀȧȧƈķ, ɋŭŭḗḗşŧīǿǿƞş, ƥřǿǿƀŀḗḗḿş, ǿǿř ƒḗḗȧȧŧŭŭřḗḗ řḗḗɋŭŭḗḗşŧş."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.contactUs.title": [
     {
       "type": 0,
-      "value": "Ḉŏńṭâćṭ Ũś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƈǿǿƞŧȧȧƈŧ Ŭş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.faq.heading": [
     {
       "type": 0,
-      "value": "Ḟŕèɋůèńṭĺẏ Ḁśǩèḋ Ɋůèśṭíŏńś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƒřḗḗɋŭŭḗḗƞŧŀẏ Ȧşķḗḗḓ Ɋŭŭḗḗşŧīǿǿƞş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.faq.title": [
     {
       "type": 0,
-      "value": "ḞḀɊ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "ƑȦɊ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.home.features.alwaysUpToDate.description": [
     {
       "type": 0,
-      "value": "Ļŏŕèṁ íṗśůṁ ḋŏĺŏŕ śíṭ âṁèṭ, ćŏńśèṭèṭůŕ śâḋíṗśćíńĝ èĺíṭŕ, śèḋ ḋíâṁ ńŏńůṁẏ èíŕṁŏḋ ṭèṁṗŏŕ íńṿíḋůńṭ ůṭ ĺâḃŏŕè."
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŀǿǿřḗḗḿ īƥşŭŭḿ ḓǿǿŀǿǿř şīŧ ȧȧḿḗḗŧ, ƈǿǿƞşḗḗŧḗḗŧŭŭř şȧȧḓīƥşƈīƞɠ ḗḗŀīŧř, şḗḗḓ ḓīȧȧḿ ƞǿǿƞŭŭḿẏ ḗḗīřḿǿǿḓ ŧḗḗḿƥǿǿř īƞṽīḓŭŭƞŧ ŭŭŧ ŀȧȧƀǿǿřḗḗ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.home.features.alwaysUpToDate.title": [
     {
       "type": 0,
-      "value": "Ḁĺẘâẏś ůṗ ṭŏ ḋâṭè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ȧŀẇȧȧẏş ŭŭƥ ŧǿǿ ḓȧȧŧḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.home.features.multipleDevices.description": [
     {
       "type": 0,
-      "value": "Ļŏŕèṁ íṗśůṁ ḋŏĺŏŕ śíṭ âṁèṭ, ćŏńśèṭèṭůŕ śâḋíṗśćíńĝ èĺíṭŕ, śèḋ ḋíâṁ ńŏńůṁẏ èíŕṁŏḋ ṭèṁṗŏŕ íńṿíḋůńṭ ůṭ ĺâḃŏŕè."
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŀǿǿřḗḗḿ īƥşŭŭḿ ḓǿǿŀǿǿř şīŧ ȧȧḿḗḗŧ, ƈǿǿƞşḗḗŧḗḗŧŭŭř şȧȧḓīƥşƈīƞɠ ḗḗŀīŧř, şḗḗḓ ḓīȧȧḿ ƞǿǿƞŭŭḿẏ ḗḗīřḿǿǿḓ ŧḗḗḿƥǿǿř īƞṽīḓŭŭƞŧ ŭŭŧ ŀȧȧƀǿǿřḗḗ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.home.features.multipleDevices.title": [
     {
       "type": 0,
-      "value": "Ṡůṗṗŏŕṭ ḟŏŕ ṁůĺṭíṗĺè ḋèṿíćèś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Şŭŭƥƥǿǿřŧ ƒǿǿř ḿŭŭŀŧīƥŀḗḗ ḓḗḗṽīƈḗḗş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.home.features.secureByDefault.description": [
     {
       "type": 0,
-      "value": "Ḁṭ ṿèŕŏ èŏś èṭ âććůśâṁ èṭ ĵůśṭŏ ḋůŏ ḋŏĺŏŕèś èṭ èâ ŕèḃůṁ. Ṡṭèṭ ćĺíṭâ ǩâśḋ ĝůḃèŕĝŕèń, ńŏ śèâ ṭâǩíṁâṭâ śâńćṭůś."
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ȧŧ ṽḗḗřǿǿ ḗḗǿǿş ḗḗŧ ȧȧƈƈŭŭşȧȧḿ ḗḗŧ ĵŭŭşŧǿǿ ḓŭŭǿǿ ḓǿǿŀǿǿřḗḗş ḗḗŧ ḗḗȧȧ řḗḗƀŭŭḿ. Şŧḗḗŧ ƈŀīŧȧȧ ķȧȧşḓ ɠŭŭƀḗḗřɠřḗḗƞ, ƞǿǿ şḗḗȧȧ ŧȧȧķīḿȧȧŧȧȧ şȧȧƞƈŧŭŭş."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.home.features.secureByDefault.title": [
     {
       "type": 0,
-      "value": "Ṡèćůŕè ḃẏ ḋèḟâůĺṭ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Şḗḗƈŭŭřḗḗ ƀẏ ḓḗḗƒȧȧŭŭŀŧ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.home.features.statistics.description": [
     {
       "type": 0,
-      "value": "Ḁṭ ṿèŕŏ èŏś èṭ âććůśâṁ èṭ ĵůśṭŏ ḋůŏ ḋŏĺŏŕèś èṭ èâ ŕèḃůṁ. Ṡṭèṭ ćĺíṭâ ǩâśḋ ĝůḃèŕĝŕèń, ńŏ śèâ ṭâǩíṁâṭâ śâńćṭůś."
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ȧŧ ṽḗḗřǿǿ ḗḗǿǿş ḗḗŧ ȧȧƈƈŭŭşȧȧḿ ḗḗŧ ĵŭŭşŧǿǿ ḓŭŭǿǿ ḓǿǿŀǿǿřḗḗş ḗḗŧ ḗḗȧȧ řḗḗƀŭŭḿ. Şŧḗḗŧ ƈŀīŧȧȧ ķȧȧşḓ ɠŭŭƀḗḗřɠřḗḗƞ, ƞǿǿ şḗḗȧȧ ŧȧȧķīḿȧȧŧȧȧ şȧȧƞƈŧŭŭş."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.home.features.statistics.title": [
     {
       "type": 0,
-      "value": "Ḭńćŕèḋíḃĺè śṭâṭíśṭíćś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Īƞƈřḗḗḓīƀŀḗḗ şŧȧȧŧīşŧīƈş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.home.getStartedCtaButton": [
     {
       "type": 0,
-      "value": "Ḡèṭ śṭâŕṭèḋ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ɠḗḗŧ şŧȧȧřŧḗḗḓ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.home.introductionText": [
     {
       "type": 0,
-      "value": "Ḁć èůíśṁŏḋ ṿèĺ śíṭ ṁâèćèńâś íḋ ṗèĺĺèńṭèśɋůè èů śèḋ ćŏńśèćṭèṭůŕ. Ḿâĺèśůâḋâ âḋíṗíśćíńĝ śâĝíṭṭíś ṿèĺ ńůĺĺâ ńèć."
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ȧƈ ḗḗŭŭīşḿǿǿḓ ṽḗḗŀ şīŧ ḿȧȧḗḗƈḗḗƞȧȧş īḓ ƥḗḗŀŀḗḗƞŧḗḗşɋŭŭḗḗ ḗḗŭŭ şḗḗḓ ƈǿǿƞşḗḗƈŧḗḗŧŭŭř. Ḿȧȧŀḗḗşŭŭȧȧḓȧȧ ȧȧḓīƥīşƈīƞɠ şȧȧɠīŧŧīş ṽḗḗŀ ƞŭŭŀŀȧȧ ƞḗḗƈ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.home.tagLine": [
     {
       "type": 0,
-      "value": "Õṗíńíŏńâṭèḋ, ṗŕŏḋůćṭíŏń-ŕèâḋẏ, ḟůĺĺ-ḟèâṭůŕèḋ ṠââṠ ḃŏíĺèŕṗĺâṭè."
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ǿƥīƞīǿǿƞȧȧŧḗḗḓ, ƥřǿǿḓŭŭƈŧīǿǿƞ-řḗḗȧȧḓẏ, ƒŭŭŀŀ-ƒḗḗȧȧŧŭŭřḗḗḓ ŞȧȧȧȧŞ ƀǿǿīŀḗḗřƥŀȧȧŧḗḗ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.privacyPolicy.heading": [
     {
       "type": 0,
-      "value": "Ṕŕíṿâćẏ Ṕŏĺíćẏ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƥřīṽȧȧƈẏ Ƥǿǿŀīƈẏ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.privacyPolicy.title": [
     {
       "type": 0,
-      "value": "Ṕŕíṿâćẏ Ṕŏĺíćẏ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƥřīṽȧȧƈẏ Ƥǿǿŀīƈẏ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.termsAndConditions.heading": [
     {
       "type": 0,
-      "value": "Ṯèŕṁś âńḋ Ḉŏńḋíṭíŏńś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧḗḗřḿş ȧȧƞḓ Ƈǿǿƞḓīŧīǿǿƞş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pages.termsAndConditions.title": [
     {
       "type": 0,
-      "value": "Ṯèŕṁś âńḋ Ḉŏńḋíṭíŏńś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧḗḗřḿş ȧȧƞḓ Ƈǿǿƞḓīŧīǿǿƞş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pagination.nextPage.label": [
     {
       "type": 0,
-      "value": "Ŋèẋṭ Ṕâĝè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƞḗḗẋŧ Ƥȧȧɠḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "pagination.previousPage.label": [
     {
       "type": 0,
-      "value": "Ṕŕèṿíŏůś Ṕâĝè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƥřḗḗṽīǿǿŭŭş Ƥȧȧɠḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "sessions.sessionsList.refreshButton.ariaLabel": [
     {
       "type": 0,
-      "value": "Ŕèḟŕèśḫ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Řḗḗƒřḗḗşħ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "settings.appPreferences.activeLocale.label": [
     {
       "type": 0,
-      "value": "Ļâńĝůâĝè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŀȧȧƞɠŭŭȧȧɠḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "settings.appPreferences.colorMode.label": [
     {
       "type": 0,
-      "value": "Ḉŏĺŏŕ Ḿŏḋè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƈǿǿŀǿǿř Ḿǿǿḓḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "settings.appPreferences.title": [
     {
       "type": 0,
-      "value": "Ṕŕèḟèŕèńćèś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƥřḗḗƒḗḗřḗḗƞƈḗḗş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "settings.appPreferencesLink.label": [
     {
       "type": 0,
-      "value": "Ṡèṭṭíńĝś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Şḗḗŧŧīƞɠş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "settings.settingsPage.preferencesLink.label": [
     {
       "type": 0,
-      "value": "Ṕŕèḟèŕèńćèś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƥřḗḗƒḗḗřḗḗƞƈḗḗş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "settings.settingsPage.profileLink.label": [
     {
       "type": 0,
-      "value": "Ṕŕŏḟíĺè & Ļŏĝíń"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƥřǿǿƒīŀḗḗ & Ŀǿǿɠīƞ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "settings.settingsPage.sessionsLink.label": [
     {
       "type": 0,
-      "value": "Ṡèśśíŏńś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Şḗḗşşīǿǿƞş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "sorting.sortMenu.sortByGroupTitle": [
     {
       "type": 0,
-      "value": "Ṡŏŕṭ ḃẏ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Şǿǿřŧ ƀẏ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "sorting.sortMenu.sortOrderAscending": [
     {
       "type": 0,
-      "value": "Ḁśćèńḋíńĝ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ȧşƈḗḗƞḓīƞɠ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "sorting.sortMenu.sortOrderDescending": [
     {
       "type": 0,
-      "value": "Ḋèśćèńḋíńĝ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḓḗḗşƈḗḗƞḓīƞɠ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "sorting.sortMenu.sortOrderGroupTitle": [
     {
       "type": 0,
-      "value": "Ṡŏŕṭ ŏŕḋèŕ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Şǿǿřŧ ǿǿřḓḗḗř"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "theme.colorModeSelect.darkMode.label": [
     {
       "type": 0,
-      "value": "Ḋâŕǩ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḓȧȧřķ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "theme.colorModeSelect.lightMode.label": [
     {
       "type": 0,
-      "value": "Ļíĝḫṭ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŀīɠħŧ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "theme.colorModeSwitcher.switchColorModeLabel": [
     {
       "type": 0,
-      "value": "Ṡẘíṭćḫ ṭŏ "
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Şẇīŧƈħ ŧǿǿ "
     },
     {
       "options": {
@@ -963,7 +1833,7 @@
           "value": [
             {
               "type": 0,
-              "value": "ḋâŕǩ"
+              "value": "ḓȧȧřķ"
             }
           ]
         },
@@ -971,7 +1841,7 @@
           "value": [
             {
               "type": 0,
-              "value": "ĺíĝḫṭ"
+              "value": "ŀīɠħŧ"
             }
           ]
         },
@@ -985,31 +1855,63 @@
     },
     {
       "type": 0,
-      "value": " ṁŏḋè"
+      "value": " ḿǿǿḓḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.deleteConfirmation.cancelButton.label": [
     {
       "type": 0,
-      "value": "Ḉâńćèĺ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƈȧȧƞƈḗḗŀ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.deleteConfirmation.confirmButton.label": [
     {
       "type": 0,
-      "value": "Ÿèś, ḋèĺèṭè íṭ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ẏḗḗş, ḓḗḗŀḗḗŧḗḗ īŧ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.deleteConfirmation.header": [
     {
       "type": 0,
-      "value": "Ḋèĺèṭè Ṯḫíńĝ?"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḓḗḗŀḗḗŧḗḗ Ŧħīƞɠ?"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.deleteConfirmation.message": [
     {
       "type": 0,
-      "value": "Ḁŕè ẏŏů śůŕè ẏŏů ẘâńṭ ṭŏ ḋèĺèṭè ṭḫè Ṯḫíńĝ '"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ȧřḗḗ ẏǿǿŭŭ şŭŭřḗḗ ẏǿǿŭŭ ẇȧȧƞŧ ŧǿǿ ḓḗḗŀḗḗŧḗḗ ŧħḗḗ Ŧħīƞɠ '"
     },
     {
       "children": [
@@ -1024,144 +1926,332 @@
     {
       "type": 0,
       "value": "'?"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.deleteThingLink.ariaLabel": [
     {
       "type": 0,
-      "value": "Ḋèĺèṭè Ṯḫíńĝ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḓḗḗŀḗḗŧḗḗ Ŧħīƞɠ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.editThingLink.ariaLabel": [
     {
       "type": 0,
-      "value": "Ḕḋíṭ Ṯḫíńĝ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḗḓīŧ Ŧħīƞɠ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingCreate.title": [
     {
       "type": 0,
-      "value": "Ŋèẘ Ṯḫíńĝ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƞḗḗẇ Ŧħīƞɠ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingDetails.createdField.label": [
     {
       "type": 0,
-      "value": "Ḉŕèâṭèḋ:"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƈřḗḗȧȧŧḗḗḓ:"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingDetails.updatedField.label": [
     {
       "type": 0,
-      "value": "Ũṗḋâṭèḋ:"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŭƥḓȧȧŧḗḗḓ:"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingEdit.title": [
     {
       "type": 0,
-      "value": "Ḕḋíṭ Ṯḫíńĝ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḗḓīŧ Ŧħīƞɠ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingForm.description.label": [
     {
       "type": 0,
-      "value": "Ḋèśćŕíṗṭíŏń"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḓḗḗşƈřīƥŧīǿǿƞ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingForm.isPublic.label": [
     {
       "type": 0,
-      "value": "Ṕůḃĺíć"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƥŭŭƀŀīƈ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingForm.name.label": [
     {
       "type": 0,
-      "value": "Ŋâṁè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƞȧȧḿḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingLoadError.notFound": [
     {
       "type": 0,
-      "value": "Ṯḫè Ṯḫíńĝ ẏŏů âŕè ĺŏŏǩíńĝ ḟŏŕ ćŏůĺḋń'ṭ ḃè ḟŏůńḋ."
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧħḗḗ Ŧħīƞɠ ẏǿǿŭŭ ȧȧřḗḗ ŀǿǿǿǿķīƞɠ ƒǿǿř ƈǿǿŭŭŀḓƞ'ŧ ƀḗḗ ƒǿǿŭŭƞḓ."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingsList.addButton.ariaLabel": [
     {
       "type": 0,
-      "value": "Ḁḋḋ ńèẘ Ṯḫíńĝ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ȧḓḓ ƞḗḗẇ Ŧħīƞɠ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingsList.addButton.label": [
     {
       "type": 0,
-      "value": "Ŋèẘ ṭḫíńĝ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƞḗḗẇ ŧħīƞɠ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingsList.ownFilter.all": [
     {
       "type": 0,
-      "value": "Ḁĺĺ Ṯḫíńĝś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ȧŀŀ Ŧħīƞɠş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingsList.ownFilter.mine": [
     {
       "type": 0,
-      "value": "Ḿẏ Ṯḫíńĝś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḿẏ Ŧħīƞɠş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingsList.refreshButton.ariaLabel": [
     {
       "type": 0,
-      "value": "Ŕèḟŕèśḫ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Řḗḗƒřḗḗşħ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingsList.search.placeholder": [
     {
       "type": 0,
-      "value": "Ḟíĺṭèŕ ḃẏ ńâṁè ŏŕ ḋèśćŕíṗṭíŏń..."
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƒīŀŧḗḗř ƀẏ ƞȧȧḿḗḗ ǿǿř ḓḗḗşƈřīƥŧīǿǿƞ..."
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingsList.title": [
     {
       "type": 0,
-      "value": "Ṯḫíńĝś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ŧħīƞɠş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingsTable.createdHeader.label": [
     {
       "type": 0,
-      "value": "Ḉŕèâṭèḋ"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƈřḗḗȧȧŧḗḗḓ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingsTable.descriptionHeader.label": [
     {
       "type": 0,
-      "value": "Ḋèśćŕíṗṭíŏń"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ḓḗḗşƈřīƥŧīǿǿƞ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingsTable.nameHeader.label": [
     {
       "type": 0,
-      "value": "Ŋâṁè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƞȧȧḿḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "things.thingsTable.publicHeader.label": [
     {
       "type": 0,
-      "value": "Ṕůḃĺíć"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ƥŭŭƀŀīƈ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "user.userMenu.profileLink": [
     {
       "type": 0,
-      "value": "Ÿŏůŕ Ṕŕŏḟíĺè"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ẏǿǿŭŭř Ƥřǿǿƒīŀḗḗ"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ],
   "user.userMenu.thingsLink": [
     {
       "type": 0,
-      "value": "Ÿŏůŕ Ṯḫíńĝś"
+      "value": "["
+    },
+    {
+      "type": 0,
+      "value": "Ẏǿǿŭŭř Ŧħīƞɠş"
+    },
+    {
+      "type": 0,
+      "value": "]"
     }
   ]
 }

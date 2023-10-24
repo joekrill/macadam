@@ -1,5 +1,5 @@
-import { LocaleCode } from "../constants";
-import en from "./en.json";
+import { LocaleCode } from "./constants";
+import en from "./messages/en.json";
 
 export type LocaleMessages = typeof en;
 
@@ -14,6 +14,6 @@ export const getMessages = (locale: LocaleCode) => MESSAGES[locale];
  * Attempts to asynchronously load messages and polyfills for a specific locale.
  */
 export const loadMessages = async (locale: LocaleCode) => {
-  const { default: messages } = await import(`./${locale}.json`);
+  const { default: messages } = await import(`./messages/${locale}.json`);
   MESSAGES[locale] = messages;
 };

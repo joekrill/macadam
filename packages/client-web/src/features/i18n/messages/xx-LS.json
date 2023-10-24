@@ -354,14 +354,18 @@
       "value": "Don't have an account yet? "
     },
     {
-      "type": 0,
-      "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.loginForm.oidcDividerText": [
+      "children": [
+        {
+          "type": 0,
+          "value": "Sign up!"
+        }
+      ],
+      "type": 8,
+      "value": "link"
+    },
     {
       "type": 0,
-      "value": "orSSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "auth.loginFormTitle.2fa": [
@@ -442,6 +446,10 @@
     {
       "type": 0,
       "value": "Already have an account? "
+    },
+    {
+      "type": 1,
+      "value": "loginLink"
     },
     {
       "type": 0,
@@ -604,6 +612,36 @@
   ],
   "common.dataTable.sortHeader.ariaLabel": [
     {
+      "options": {
+        "asc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Sorted ascending"
+            }
+          ]
+        },
+        "desc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Sorted descending"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Not sorted"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "sort"
+    },
+    {
       "type": 0,
       "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
@@ -636,6 +674,10 @@
     {
       "type": 0,
       "value": "Code: "
+    },
+    {
+      "type": 1,
+      "value": "code"
     },
     {
       "type": 0,
@@ -684,6 +726,10 @@
     {
       "type": 0,
       "value": "Unable to load locale "
+    },
+    {
+      "type": 1,
+      "value": "locale"
     },
     {
       "type": 0,

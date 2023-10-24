@@ -240,6 +240,36 @@
       "value": "[javascript]"
     },
     {
+      "options": {
+        "browser_location_change_required": {
+          "value": [
+          ]
+        },
+        "other": {
+          "value": [
+          ]
+        },
+        "session_aal2_required": {
+          "value": [
+            {
+              "type": 0,
+              "value": "2FA required. "
+            }
+          ]
+        },
+        "session_refresh_required": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Reauthentication required. "
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "reason"
+    },
+    {
       "type": 0,
       "value": "Redirecting..."
     }
@@ -338,12 +368,6 @@
       "value": "link"
     }
   ],
-  "auth.loginForm.oidcDividerText": [
-    {
-      "type": 0,
-      "value": "[javascript]or"
-    }
-  ],
   "auth.loginFormTitle.2fa": [
     {
       "type": 0,
@@ -378,6 +402,32 @@
     {
       "type": 0,
       "value": "[javascript]"
+    },
+    {
+      "options": {
+        "hide": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Mask"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+          ]
+        },
+        "show": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Reveal"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "action"
     },
     {
       "type": 0,
@@ -564,6 +614,36 @@
     {
       "type": 0,
       "value": "[javascript]"
+    },
+    {
+      "options": {
+        "asc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Sorted ascending"
+            }
+          ]
+        },
+        "desc": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Sorted descending"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Not sorted"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "sort"
     }
   ],
   "common.hompageButton.label": [

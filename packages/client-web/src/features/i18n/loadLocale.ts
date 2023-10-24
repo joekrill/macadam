@@ -1,5 +1,5 @@
 import { LocaleCode } from "./constants";
-import { loadMessages } from "./messages/index";
+import { loadMessages } from "./loadMessages";
 import { loadLocalePolyfills } from "./polyfills/loadLocalePolyfills";
 
 /**

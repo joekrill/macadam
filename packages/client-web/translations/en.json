@@ -94,10 +94,6 @@
     "defaultMessage": "Don't have an account yet? <link>Sign up!</link>",
     "description": "The message shown on the login page that directs the user to create an account instead of logging in."
   },
-  "auth.loginForm.oidcDividerText": {
-    "defaultMessage": "or",
-    "description": "The text displayed in the divider that shows additional login options"
-  },
   "auth.loginFormTitle.2fa": {
     "defaultMessage": "Two-Factor Authentication",
     "description": "The title displayed at the top of the login form when requesting the user's 2FA code"

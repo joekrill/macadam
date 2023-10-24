@@ -364,12 +364,6 @@
       "value": "link"
     }
   ],
-  "auth.loginForm.oidcDividerText": [
-    {
-      "type": 0,
-      "value": "OR"
-    }
-  ],
   "auth.loginFormTitle.2fa": [
     {
       "type": 0,

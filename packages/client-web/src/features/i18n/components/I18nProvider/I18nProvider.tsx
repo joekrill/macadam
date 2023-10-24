@@ -3,7 +3,7 @@ import { IntlProvider } from "react-intl";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import { initializeLocalization } from "../../actions/initializeLocalization";
 import { DEFAULT_LOCALE } from "../../constants";
-import { getMessages } from "../../messages";
+import { getMessages } from "../../loadMessages";
 import { selectActiveLocale } from "../../selectors/selectActiveLocale";
 import { LocaleErrorNotifier } from "../LocaleErrorNotifier/LocaleErrorNotifier";
 

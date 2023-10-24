@@ -2,6 +2,7 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig, loadEnv } from "vite";
 import { checker } from "vite-plugin-checker";
+import eslint from "vite-plugin-eslint";
 import svgr from "vite-plugin-svgr"; // allows you to import svgs as react components
 
 export default defineConfig(({ mode }) => {
@@ -25,9 +26,14 @@ export default defineConfig(({ mode }) => {
       checker({
         typescript: true,
       }),
-      // eslint({
-      //   exclude: ["/virtual:/", "/node_modules/"],
-      // }),
+      // eslint is currently causing this error when running tests:
+      // "DeprecationWarning: The 'typeParameters' property is deprecated on TSTypeReference nodes. Use 'typeArguments' instead. See https://typescript-eslint.io/linting/troubleshooting#the-key-property-is-deprecated-on-type-nodes-use-key-instead-warnings."
+      mode !== "test" &&
+        eslint({
+          // Fix for storybook issue: https://github.com/gxmari007/vite-plugin-eslint/pull/52
+          // @ts-ignore: This is typed incorrectly - Regexes are ok here
+          exclude: [/virtual:/, /node_modules/],
+        }),
     ],
     define: envWithProcessPrefix,
     test: {

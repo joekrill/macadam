@@ -5,8 +5,8 @@ import {
   useSession,
 } from "@macadam/api-client";
 import { Outlet } from "react-router-dom";
-import { LoginModal } from "../features/auth/components/flows/login/LoginModal";
 import { VerifyEmailNotificationBanner } from "../features/auth/components/VerifyEmailNotificationBanner/VerifyEmailNotificationBanner";
+import { LoginModal } from "../features/auth/components/flows/login/LoginModal";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { useAppSelector } from "./hooks";
@@ -34,6 +34,7 @@ export const AppLayout = () => {
       )}
       <Flex
         direction="column"
+        bg={colorMode === "dark" ? "gray.900" : "gray.50"}
         sx={{
           minHeight: "100vh",
           "@supports (-webkit-touch-callout: none)": {
@@ -47,13 +48,7 @@ export const AppLayout = () => {
           />
         )}
         <Header position="sticky" top="0px" zIndex="sticky" />
-        <Box
-          bg={colorMode === "dark" ? "gray.900" : "gray.50"}
-          flex={1}
-          px={{ base: "2", sm: "4" }}
-          pt="6"
-          pb="12"
-        >
+        <Box flex={1} px={{ base: "2", sm: "4" }} pt="6" pb="12">
           <Outlet />
         </Box>
         <Footer position="sticky" top="100vh" />

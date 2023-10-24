@@ -1,15 +1,18 @@
 import {
   Box,
   BoxProps,
+  Flex,
   Heading,
   Icon,
   Stack,
   StackDivider,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { FaRegGem } from "react-icons/fa";
 import { FormattedMessage } from "react-intl";
 import { ActiveLocaleSelect } from "../../../features/i18n/components/ActiveLocaleSelect/ActiveLocaleSelect";
+import { ColorModeSwitcher } from "../../../features/theme/components/ColorModeSwitcher/ColorModeSwitcher";
 import { FooterLinkGrid } from "./FooterLinkGrid";
 import { FooterSocialMediaLinks } from "./FooterSocialMediaLinks";
 
@@ -22,17 +25,18 @@ export const Footer = (props: FooterProps) => (
   <Box
     as="footer"
     role="contentinfo"
-    mx="auto"
-    maxW="container.lg"
+    width="full"
+    bg={useColorModeValue("white", "gray.700")}
     py="12"
     px={{ base: "4", md: "8" }}
     {...props}
   >
-    <Stack spacing="8" divider={<StackDivider />}>
+    <Stack mx="auto" maxW="container.lg" spacing="8" divider={<StackDivider />}>
       <Stack
         as="nav"
         direction={{ base: "column", lg: "row" }}
-        spacing={{ base: "10", lg: "28" }}
+        spacing={{ base: "8", lg: "28" }}
+        alignItems="center"
       >
         <Stack flex="1" direction="column">
           <Heading fontSize="xl" display="flex" mb={2} alignItems="center">
@@ -68,7 +72,14 @@ export const Footer = (props: FooterProps) => (
             }}
           />
         </Text>
-        <ActiveLocaleSelect size="sm" width="unset" />
+        <Flex
+          justifyContent="space-between"
+          alignItems="center"
+          direction={{ base: "row", md: "row-reverse" }}
+        >
+          <ActiveLocaleSelect size="sm" width="unset" mx="1" />
+          <ColorModeSwitcher variant="ghost" color="current" mx="1" />
+        </Flex>
       </Stack>
     </Stack>
   </Box>

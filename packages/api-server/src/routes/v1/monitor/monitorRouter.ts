@@ -1,6 +1,6 @@
 import Router from "@koa/router";
 import { DefaultContext, DefaultState } from "koa";
-import { tunnelRequest } from "../../../features/sentry/tunnelRequest";
+import { tunnelRequest } from "../../../features/sentry/tunnelRequest.js";
 
 /**
  * The monitor router is used to tunnel sentry requests through our API

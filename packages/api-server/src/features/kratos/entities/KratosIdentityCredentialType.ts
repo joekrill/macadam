@@ -5,8 +5,8 @@ import {
   PrimaryKey,
   Property,
 } from "@mikro-orm/core";
-import { KratosIdentityCredential } from "./KratosIdentityCredential";
-import { KratosIdentityCredentialIdentifier } from "./KratosIdentityCredentialIdentifier";
+import { KratosIdentityCredential } from "./KratosIdentityCredential.js";
+import { KratosIdentityCredentialIdentifier } from "./KratosIdentityCredentialIdentifier.js";
 
 @Entity({ tableName: "identity_credential_types" })
 export class KratosIdentityCredentialType {

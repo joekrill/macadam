@@ -1,8 +1,9 @@
 import { EntityCaseNamingStrategy, Options } from "@mikro-orm/core";
+import { TsMorphMetadataProvider } from "@mikro-orm/reflection";
 import { SqlHighlighter } from "@mikro-orm/sql-highlighter";
 import { URL } from "url";
-import { OrmConfigOptions } from "../db/ormConfig";
-import { entities } from "./entities";
+import { OrmConfigOptions } from "../db/ormConfig.js";
+import { entities } from "./entities/index.js";
 
 export const kratosOrmConfig = ({
   clientUrl,
@@ -16,6 +17,7 @@ export const kratosOrmConfig = ({
   return {
     entities: [...entities],
     debug: environment === "development",
+    metadataProvider: TsMorphMetadataProvider,
     highlighter: new SqlHighlighter(),
 
     // Use `EntityCaseNamingStrategy` so we can maintain parity with the

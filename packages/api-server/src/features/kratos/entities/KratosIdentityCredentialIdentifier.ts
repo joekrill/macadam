@@ -1,7 +1,7 @@
 import { Entity, ManyToOne, Property } from "@mikro-orm/core";
-import { KratosBaseEntity } from "./KratosBaseEntity";
-import { KratosIdentityCredential } from "./KratosIdentityCredential";
-import { KratosIdentityCredentialType } from "./KratosIdentityCredentialType";
+import { KratosBaseEntity } from "./KratosBaseEntity.js";
+import { KratosIdentityCredential } from "./KratosIdentityCredential.js";
+import { KratosIdentityCredentialType } from "./KratosIdentityCredentialType.js";
 
 @Entity({ tableName: "identity_credential_identifiers" })
 export class KratosIdentityCredentialIdentifier extends KratosBaseEntity {

@@ -1,6 +1,6 @@
 import { FlatQueryOrderMap, QueryOrder } from "@mikro-orm/core";
-import { parseSortString } from "./parseSortString";
-import { validateFields } from "./validateFields";
+import { parseSortString } from "./parseSortString.js";
+import { validateFields } from "./validateFields.js";
 
 export const sortStringToOrderBy = (
   param: string | null,

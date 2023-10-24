@@ -5,9 +5,9 @@ import {
   OneToMany,
   Property,
 } from "@mikro-orm/core";
-import { KratosBaseEntity } from "./KratosBaseEntity";
-import { KratosIdentity } from "./KratosIdentity";
-import { KratosIdentityRecoveryToken } from "./KratosIdentityRecoveryToken";
+import { KratosBaseEntity } from "./KratosBaseEntity.js";
+import { KratosIdentity } from "./KratosIdentity.js";
+import { KratosIdentityRecoveryToken } from "./KratosIdentityRecoveryToken.js";
 
 @Entity({ tableName: "identity_recovery_addresses" })
 export class KratosIdentityRecoveryAddress extends KratosBaseEntity {

@@ -1,5 +1,5 @@
 import { STATUS_CODES } from "http";
-import { isHttpError } from "http-errors";
+import httpErrors from "http-errors";
 import { Middleware } from "koa";
 import { ZodError } from "zod";
 
@@ -29,7 +29,7 @@ export const errorHandler =
         return;
       }
 
-      if (isHttpError(error)) {
+      if (httpErrors.isHttpError(error)) {
         const { expose, headers, name, message, status, statusCode, ...body } =
           error;
         if (headers) {

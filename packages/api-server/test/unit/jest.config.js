@@ -1,18 +1,26 @@
-module.exports = {
+export default {
   // -- Files--
   rootDir: "../../src",
   testMatch: ["**/*.test.{js,mjs,ts}"],
   testPathIgnorePatterns: ["int.test.ts"],
 
   // -- Behavior --
-  automock: true,
-  unmockedModulePathPatterns: [
-    "@shopify/jest-koa-mocks",
-    // the debug module seems to be causing problems with `automock`
-    "debug",
-  ],
   preset: "ts-jest",
   testEnvironment: "node",
+  extensionsToTreatAsEsm: [".ts"],
+  moduleNameMapper: {
+    "^(\\.{1,2}/.*)\\.js$": "$1",
+  },
+  transform: {
+    // '^.+\\.[tj]sx?$' to process js/ts with `ts-jest`
+    // '^.+\\.m?[tj]sx?$' to process js/ts/mjs/mts with `ts-jest`
+    "^.+\\.[tj]sx?$": [
+      "ts-jest",
+      {
+        useESM: true,
+      },
+    ],
+  },
 
   // -- Coverage --
   collectCoverage: true,

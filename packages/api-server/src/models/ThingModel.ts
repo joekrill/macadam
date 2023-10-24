@@ -1,7 +1,7 @@
 import { ParameterizedContext } from "koa";
 import { z } from "zod";
-import { Thing } from "../features/db/entities/Thing";
-import { BaseModel } from "./BaseModel";
+import { Thing } from "../features/db/entities/Thing.js";
+import { BaseModel } from "./BaseModel.js";
 
 const thingCreateSchema = z.object({
   name: z.string().min(3),

@@ -1,6 +1,6 @@
 import { Dictionary, FilterQuery, MetadataStorage } from "@mikro-orm/core";
 import { FilterDef } from "@mikro-orm/core/typings";
-import { AppAbility, AppSubject } from "../../auth/AppAbility";
+import { AppAbility, AppSubject } from "../../auth/AppAbility.js";
 
 export interface AbilityFilterOptions
   extends Omit<FilterDef, "cond" | "name" | "args"> {

@@ -1,4 +1,4 @@
-import { ParsedField } from "./parseField";
+import { ParsedField } from "./parseField.js";
 
 /**
  * Filters an array of `ParsedField`'s ensuring that the `field`

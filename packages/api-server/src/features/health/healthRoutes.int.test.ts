@@ -1,7 +1,8 @@
+import { afterEach, beforeEach, describe, expect, it } from "@jest/globals";
 import Koa from "koa";
 import pino from "pino";
 import request from "supertest";
-import { createApp } from "../../app";
+import { createApp } from "../../app.js";
 
 describe("/health", () => {
   let app: Koa;

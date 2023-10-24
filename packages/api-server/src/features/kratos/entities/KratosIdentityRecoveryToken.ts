@@ -1,6 +1,6 @@
 import { Entity, ManyToOne, Property } from "@mikro-orm/core";
-import { KratosBaseEntity } from "./KratosBaseEntity";
-import { KratosIdentityRecoveryAddress } from "./KratosIdentityRecoveryAddress";
+import { KratosBaseEntity } from "./KratosBaseEntity.js";
+import { KratosIdentityRecoveryAddress } from "./KratosIdentityRecoveryAddress.js";
 
 @Entity({ tableName: "identity_recovery_tokens" })
 export class KratosIdentityRecoveryToken extends KratosBaseEntity {

@@ -1,5 +1,5 @@
-import { AuditLogSubscriber } from "./AuditLogSubscriber";
-import { TimestampSubscriber } from "./TimestampSubscriber";
+import { AuditLogSubscriber } from "./AuditLogSubscriber.js";
+import { TimestampSubscriber } from "./TimestampSubscriber.js";
 
 export const subscribers = [
   new TimestampSubscriber(),

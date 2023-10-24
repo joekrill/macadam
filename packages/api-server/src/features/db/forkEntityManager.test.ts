@@ -1,20 +1,16 @@
+import { beforeEach, describe, expect, it, jest } from "@jest/globals";
 import { MikroORM } from "@mikro-orm/core";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
-import { createMockContext } from "@shopify/jest-koa-mocks";
-import { Middleware, ParameterizedContext } from "koa";
-import { forkEntityManager } from "./forkEntityManager";
-import { DbContext } from "./initializeDb";
-
-jest.mock("@mikro-orm/core");
-jest.unmock("./forkEntityManager");
+import { Middleware, Next, ParameterizedContext } from "koa";
+import { forkEntityManager } from "./forkEntityManager.js";
 
 describe("forkEntityManager", () => {
   let instance: Middleware;
   let contextMock: ParameterizedContext;
-  const nextMock = jest.fn().mockReturnValue(Promise.resolve());
+  const nextMock = jest.fn<Next>().mockReturnValue(Promise.resolve());
   const flushMock = jest.fn();
   const clearMock = jest.fn();
-  const forkMock = jest.fn().mockImplementation(() => ({
+  const forkMock = jest.fn(() => ({
     flush: flushMock,
     clear: clearMock,
     setFilterParams: jest.fn(),
@@ -27,9 +23,10 @@ describe("forkEntityManager", () => {
   } as unknown as MikroORM<PostgreSqlDriver>;
 
   beforeEach(() => {
-    contextMock = createMockContext<DbContext>({
-      customProperties: { db: { orm: ormMock } },
-    });
+    contextMock = {
+      db: { orm: ormMock },
+      state: { requestId: "xxx" },
+    } as unknown as ParameterizedContext;
     nextMock.mockReset();
     instance = forkEntityManager();
   });

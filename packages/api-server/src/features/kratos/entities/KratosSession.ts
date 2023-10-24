@@ -1,7 +1,7 @@
 import { Entity, Filter, ManyToOne, Property } from "@mikro-orm/core";
-import { AbilityFilter } from "../../db/decorators/AbilityFilter";
-import { KratosBaseEntity } from "./KratosBaseEntity";
-import { KratosIdentity } from "./KratosIdentity";
+import { AbilityFilter } from "../../db/decorators/AbilityFilter.js";
+import { KratosBaseEntity } from "./KratosBaseEntity.js";
+import { KratosIdentity } from "./KratosIdentity.js";
 
 @Entity({ tableName: "sessions" })
 @AbilityFilter()

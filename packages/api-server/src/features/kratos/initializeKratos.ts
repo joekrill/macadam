@@ -7,10 +7,10 @@ import {
 } from "@ory/kratos-client";
 import createHttpError from "http-errors";
 import Koa from "koa";
-import { OrmConfigOptions } from "../db/ormConfig";
-import { kratosOrmConfig } from "./kratosOrmConfig";
-import { lazyLoadSession } from "./lazyLoadSession";
-import { lazyLoadXSessionToken } from "./lazyLoadXSessionToken";
+import { OrmConfigOptions } from "../db/ormConfig.js";
+import { kratosOrmConfig } from "./kratosOrmConfig.js";
+import { lazyLoadSession } from "./lazyLoadSession.js";
+import { lazyLoadXSessionToken } from "./lazyLoadXSessionToken.js";
 
 export interface KratosContext {
   kratos: {

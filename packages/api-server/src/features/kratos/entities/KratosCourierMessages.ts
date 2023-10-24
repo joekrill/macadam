@@ -1,5 +1,5 @@
 import { BlobType, Entity, Property } from "@mikro-orm/core";
-import { KratosBaseEntity } from "./KratosBaseEntity";
+import { KratosBaseEntity } from "./KratosBaseEntity.js";
 
 @Entity({ tableName: "courier_messages", abstract: false })
 export class KratosCourierMessages extends KratosBaseEntity {

@@ -1,6 +1,6 @@
 import { AbilityBuilder } from "@casl/ability";
 import { Session } from "@ory/kratos-client";
-import { AppAbility } from "./AppAbility";
+import { AppAbility } from "./AppAbility.js";
 
 /**
  * Gets an AppAbility based on a particular session.

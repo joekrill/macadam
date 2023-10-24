@@ -5,8 +5,8 @@ import {
   Middleware,
   ParameterizedContext,
 } from "koa";
-import { abilityFor } from "./abilityFor";
-import { AppAbility, AppAbilityTuple } from "./AppAbility";
+import { AppAbility, AppAbilityTuple } from "./AppAbility.js";
+import { abilityFor } from "./abilityFor.js";
 
 export interface AbilityState {
   ability?: AppAbility;

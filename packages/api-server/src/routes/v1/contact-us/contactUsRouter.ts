@@ -1,12 +1,12 @@
 import Router from "@koa/router";
 import { ensure as ensureError } from "errorish";
 import { DefaultState } from "koa";
-import { ability } from "../../../features/auth/ability";
+import { ability } from "../../../features/auth/ability.js";
 import {
   ContactUsMessage,
   ContactUsMessageStatus,
-} from "../../../features/db/entities/ContactUsMessage";
-import { contactUsCreateSchema } from "./contactUsSchemas";
+} from "../../../features/db/entities/ContactUsMessage.js";
+import { contactUsCreateSchema } from "./contactUsSchemas.js";
 
 export const contactUsRouter = new Router<DefaultState>();
 

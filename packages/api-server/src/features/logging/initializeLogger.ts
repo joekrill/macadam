@@ -1,6 +1,6 @@
 import Koa from "koa";
 import pino from "pino";
-import { logOnError } from "./logOnError";
+import { logOnError } from "./logOnError.js";
 
 export interface LoggerContext {
   logger: pino.Logger;

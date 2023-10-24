@@ -1,14 +1,12 @@
-import { createMockContext } from "@shopify/jest-koa-mocks";
-import { Middleware, ParameterizedContext } from "koa";
+import { beforeEach, expect, it, jest } from "@jest/globals";
+import { Middleware, Next, ParameterizedContext } from "koa";
 import pino from "pino";
-import { logRequests } from "./logRequests";
-
-jest.unmock("./logRequests");
+import { logRequests } from "./logRequests.js";
 
 let logRequestsMiddleware: Middleware;
 let baseLoggerMock: jest.Mocked<pino.Logger>;
 let childLoggerMock: jest.Mocked<pino.Logger>;
-const nextMock = jest.fn();
+const nextMock = jest.fn<Next>();
 let contextMock: ParameterizedContext;
 
 beforeEach(() => {
@@ -23,11 +21,13 @@ beforeEach(() => {
     child: jest.fn(() => childLoggerMock),
   } as unknown as jest.Mocked<pino.Logger>;
   logRequestsMiddleware = logRequests(baseLoggerMock);
-  contextMock = createMockContext();
+  contextMock = {
+    state: {},
+  } as ParameterizedContext;
   nextMock.mockReset();
 });
 
-test("logs the request using the `info` level", async () => {
+it("logs the request using the `info` level", async () => {
   await logRequestsMiddleware(contextMock, nextMock);
   expect(childLoggerMock.info).toHaveBeenCalledWith(
     expect.objectContaining({

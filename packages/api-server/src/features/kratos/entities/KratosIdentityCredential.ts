@@ -5,10 +5,10 @@ import {
   OneToMany,
   Property,
 } from "@mikro-orm/core";
-import { KratosBaseEntity } from "./KratosBaseEntity";
-import { KratosIdentity } from "./KratosIdentity";
-import { KratosIdentityCredentialIdentifier } from "./KratosIdentityCredentialIdentifier";
-import { KratosIdentityCredentialType } from "./KratosIdentityCredentialType";
+import { KratosBaseEntity } from "./KratosBaseEntity.js";
+import { KratosIdentity } from "./KratosIdentity.js";
+import { KratosIdentityCredentialIdentifier } from "./KratosIdentityCredentialIdentifier.js";
+import { KratosIdentityCredentialType } from "./KratosIdentityCredentialType.js";
 
 @Entity({ tableName: "identity_credentials" })
 export class KratosIdentityCredential extends KratosBaseEntity {

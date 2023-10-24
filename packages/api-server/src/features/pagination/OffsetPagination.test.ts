@@ -1,7 +1,9 @@
+import { describe, expect, it } from "@jest/globals";
 import { FindOptions } from "@mikro-orm/core";
-import { OffsetPagination, OffsetPaginationOptions } from "./OffsetPagination";
-
-jest.unmock("./OffsetPagination");
+import {
+  OffsetPagination,
+  OffsetPaginationOptions,
+} from "./OffsetPagination.js";
 
 describe.each<
   [

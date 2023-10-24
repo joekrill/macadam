@@ -1,13 +1,26 @@
-module.exports = {
+export default {
   // -- Files--
   rootDir: "../../src",
   testMatch: ["**/*.int.test.{js,mjs,ts}"],
   setupFilesAfterEnv: ["../test/integration/jest.setup.js"],
 
   // -- Behavior --
-  automock: false,
   preset: "ts-jest",
   testEnvironment: "node",
+  extensionsToTreatAsEsm: [".ts"],
+  moduleNameMapper: {
+    "^(\\.{1,2}/.*)\\.js$": "$1",
+  },
+  transform: {
+    // '^.+\\.[tj]sx?$' to process js/ts with `ts-jest`
+    // '^.+\\.m?[tj]sx?$' to process js/ts/mjs/mts with `ts-jest`
+    "^.+\\.m?ts$": [
+      "ts-jest",
+      {
+        useESM: true,
+      },
+    ],
+  },
 
   // -- Coverage --
   collectCoverage: true,

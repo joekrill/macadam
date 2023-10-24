@@ -1,16 +1,25 @@
+import {
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  jest,
+} from "@jest/globals";
 import { AbstractSqlDriver, SqlEntityManager } from "@mikro-orm/postgresql";
 import { FrontendApi } from "@ory/kratos-client";
 import pino from "pino";
 import request from "supertest";
-import { createApp } from "../../../app";
-import { Thing } from "../../../features/db/entities/Thing";
+import type { createApp } from "../../../app.js";
+import { Thing } from "../../../features/db/entities/Thing.js";
 
-jest.mock("@ory/kratos-client");
-jest.unmock("@mikro-orm/migrations");
-
-let app: Awaited<ReturnType<typeof createApp>>;
-let em: SqlEntityManager<AbstractSqlDriver>;
-const FrontendApiMock = FrontendApi as jest.Mock<FrontendApi>;
+const FrontendApiMock = jest.fn<() => FrontendApi>();
+jest.unstable_mockModule("@ory/kratos-client", () => ({
+  Configuration: jest.fn(),
+  FrontendApi: FrontendApiMock,
+  IdentityApi: jest.fn(),
+}));
+jest.setTimeout(30000);
 
 const initApp = async ({ identityId }: { identityId?: string } = {}) => {
   // @ts-ignore
@@ -39,7 +48,10 @@ const initApp = async ({ identityId }: { identityId?: string } = {}) => {
     };
   });
 
-  app = await createApp({
+  // Dynamically load the app code so that the mocks get applies
+  const { createApp } = await import("../../../app.js");
+
+  const app = await createApp({
     environment: "test",
     dbUrl: "sqlite::memory:",
     logger: pino({ enabled: false }),
@@ -47,19 +59,24 @@ const initApp = async ({ identityId }: { identityId?: string } = {}) => {
     kratosDbUrl: "sqlite::memory:",
   });
   await app.context.db.orm.getMigrator().up();
-
-  em = app.context.db.orm.em.fork();
-
-  // Remove any test data
-  await em.nativeDelete("Thing", {}, { filters: false });
+  return app;
 };
 
 describe("authenticated", () => {
+  let app: Awaited<ReturnType<typeof createApp>>;
+  let em: SqlEntityManager<AbstractSqlDriver>;
+
   beforeEach(async () => {
-    await initApp({ identityId: "123" });
+    app = await initApp({ identityId: "123" });
+    em = app.context.db.orm.em.fork();
+
+    // Remove any existing data
+    await em.nativeDelete("Thing", {}, { filters: false });
   });
 
   afterEach(async () => {
+    await em.flush();
+    em.clear();
     await app.context.shutdown();
   });
 
@@ -424,8 +441,10 @@ describe("authenticated", () => {
 });
 
 describe("unauthenticated", () => {
+  let app: Awaited<ReturnType<typeof createApp>>;
+
   beforeEach(async () => {
-    await initApp();
+    app = await initApp();
   });
 
   afterEach(async () => {

@@ -1,5 +1,5 @@
-import { NotFound } from "http-errors";
+import httpErrors from "http-errors";
 
 export const notFound = () => () => {
-  throw new NotFound();
+  throw new httpErrors.NotFound();
 };

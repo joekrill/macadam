@@ -1,6 +1,6 @@
 import { RuleToQueryConverter } from "@casl/ability/extra";
 import deepMapKeys from "deep-map-keys";
-import { AppAbility } from "./AppAbility";
+import { AppAbility } from "./AppAbility.js";
 
 /**
  *

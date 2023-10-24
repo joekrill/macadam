@@ -1,5 +1,5 @@
 import { EntityName, Utils } from "@mikro-orm/core";
-import { ForkEntityManagerState } from "../db/forkEntityManager";
+import { ForkEntityManagerState } from "../db/forkEntityManager.js";
 
 const SORTABLE_FIELDS_CACHE: Record<string, string[]> = {};
 

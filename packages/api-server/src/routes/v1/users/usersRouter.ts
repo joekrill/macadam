@@ -1,7 +1,7 @@
 import { packRules } from "@casl/ability/extra";
 import Router from "@koa/router";
 import { DefaultState } from "koa";
-import { ability, AbilityState } from "../../../features/auth/ability";
+import { ability, AbilityState } from "../../../features/auth/ability.js";
 
 export const usersRouter = new Router<DefaultState & AbilityState>();
 

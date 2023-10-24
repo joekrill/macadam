@@ -1,5 +1,5 @@
 import { EventSubscriber, FlushEventArgs } from "@mikro-orm/core";
-import { AuditLog } from "../entities/AuditLog";
+import { AuditLog } from "../entities/AuditLog.js";
 
 export class AuditLogSubscriber implements EventSubscriber {
   async onFlush(args: FlushEventArgs): Promise<void> {

@@ -8,10 +8,10 @@ import {
 } from "@casl/ability";
 import { rulesToQuery } from "@casl/ability/extra";
 import { Utils } from "@mikro-orm/core";
-import { Forbidden } from "http-errors";
-import { entities as dbEntities } from "../db/entities";
-import { entities as kratosEntities } from "../kratos/entities";
-import { ruleToDbQuery } from "./ruleToDbQuery";
+import httpErrors from "http-errors";
+import { entities as dbEntities } from "../db/entities/index.js";
+import { entities as kratosEntities } from "../kratos/entities/index.js";
+import { ruleToDbQuery } from "./ruleToDbQuery.js";
 
 const entities = [...dbEntities, ...kratosEntities] as const;
 
@@ -40,7 +40,7 @@ export class AppAbility extends Ability<AppAbilityTuple> {
     );
 
     if (result === null) {
-      throw new Forbidden();
+      throw new httpErrors.Forbidden();
     }
 
     return result;
@@ -95,7 +95,7 @@ export class AppAbility extends Ability<AppAbilityTuple> {
    */
   ensureCan(...args: CanParameters<AppAbilityTuple>) {
     if (!this.can(...args)) {
-      throw new Forbidden();
+      throw new httpErrors.Forbidden();
     }
   }
 }

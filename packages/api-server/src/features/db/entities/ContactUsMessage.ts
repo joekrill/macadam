@@ -1,5 +1,5 @@
 import { Entity, Property } from "@mikro-orm/core";
-import { UuidEntity } from "./UuidEntity";
+import { UuidEntity } from "./UuidEntity.js";
 
 export enum ContactUsMessageStatus {
   SENT = "sent",

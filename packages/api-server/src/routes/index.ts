@@ -1,7 +1,7 @@
 import Router from "@koa/router";
 import compose from "koa-compose";
-import { healthRouter } from "./healthRouter";
-import { v1Router } from "./v1/v1Router";
+import { healthRouter } from "./healthRouter.js";
+import { v1Router } from "./v1/v1Router.js";
 
 export interface ApiRoutesOptions {
   prefix?: string;

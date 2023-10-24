@@ -1,12 +1,12 @@
 import Router from "@koa/router";
 import { FilterQuery } from "@mikro-orm/core";
-import { ability } from "../../../features/auth/ability";
+import { ability } from "../../../features/auth/ability.js";
 import {
   authenticationRequired,
   AuthenticationRequiredState,
-} from "../../../features/auth/authenticationRequired";
-import { Thing } from "../../../features/db/entities/Thing";
-import { ThingModel } from "../../../models/ThingModel";
+} from "../../../features/auth/authenticationRequired.js";
+import { Thing } from "../../../features/db/entities/Thing.js";
+import { ThingModel } from "../../../models/ThingModel.js";
 
 export const thingsRouter = new Router();
 

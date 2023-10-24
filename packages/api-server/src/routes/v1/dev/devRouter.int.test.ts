@@ -1,6 +1,7 @@
+import { afterEach, beforeEach, describe, expect, it } from "@jest/globals";
 import pino from "pino";
 import request from "supertest";
-import { createApp } from "../../../app";
+import { createApp } from "../../../app.js";
 
 let app: Awaited<ReturnType<typeof createApp>>;
 

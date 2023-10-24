@@ -1,6 +1,6 @@
 import { ensure as ensureError } from "errorish";
 import pino from "pino";
-import { createApp } from "./app";
+import { createApp } from "./app.js";
 
 export const logger = pino(
   { serializers: pino.stdSerializers },

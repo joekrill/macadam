@@ -1,14 +1,14 @@
-import { KratosBaseEntity } from "./KratosBaseEntity";
-import { KratosCourierMessages } from "./KratosCourierMessages";
-import { KratosIdentity } from "./KratosIdentity";
-import { KratosIdentityCredential } from "./KratosIdentityCredential";
-import { KratosIdentityCredentialIdentifier } from "./KratosIdentityCredentialIdentifier";
-import { KratosIdentityCredentialType } from "./KratosIdentityCredentialType";
-import { KratosIdentityRecoveryAddress } from "./KratosIdentityRecoveryAddress";
-import { KratosIdentityRecoveryToken } from "./KratosIdentityRecoveryToken";
-import { KratosIdentityVerifiableAddress } from "./KratosIdentityVerifiableAddress";
-import { KratosIdentityVerificationToken } from "./KratosIdentityVerificationToken";
-import { KratosSession } from "./KratosSession";
+import { KratosBaseEntity } from "./KratosBaseEntity.js";
+import { KratosCourierMessages } from "./KratosCourierMessages.js";
+import { KratosIdentity } from "./KratosIdentity.js";
+import { KratosIdentityCredential } from "./KratosIdentityCredential.js";
+import { KratosIdentityCredentialIdentifier } from "./KratosIdentityCredentialIdentifier.js";
+import { KratosIdentityCredentialType } from "./KratosIdentityCredentialType.js";
+import { KratosIdentityRecoveryAddress } from "./KratosIdentityRecoveryAddress.js";
+import { KratosIdentityRecoveryToken } from "./KratosIdentityRecoveryToken.js";
+import { KratosIdentityVerifiableAddress } from "./KratosIdentityVerifiableAddress.js";
+import { KratosIdentityVerificationToken } from "./KratosIdentityVerificationToken.js";
+import { KratosSession } from "./KratosSession.js";
 
 export const entities = [
   KratosBaseEntity,

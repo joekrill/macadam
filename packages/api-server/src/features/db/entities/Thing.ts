@@ -1,7 +1,7 @@
 import { Entity, Filter, OptionalProps, Property } from "@mikro-orm/core";
-import { AbilityFilter } from "../decorators/AbilityFilter";
-import { TextSearchFilter } from "../decorators/TextSearchFilter";
-import { UuidEntity } from "./UuidEntity";
+import { AbilityFilter } from "../decorators/AbilityFilter.js";
+import { TextSearchFilter } from "../decorators/TextSearchFilter.js";
+import { UuidEntity } from "./UuidEntity.js";
 
 @Entity()
 @AbilityFilter()

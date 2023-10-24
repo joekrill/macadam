@@ -1,78 +1,54 @@
-import { createMockContext } from "@shopify/jest-koa-mocks";
-import { Middleware, ParameterizedContext } from "koa";
-import { Counter, Histogram, Registry } from "prom-client";
-import { metricsCollector } from "./metricsCollector";
+import {
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  jest,
+} from "@jest/globals";
+import { Middleware, Next, ParameterizedContext } from "koa";
+import type {
+  Counter,
+  CounterConfiguration,
+  Histogram,
+  HistogramConfiguration,
+} from "prom-client";
 
-jest.unmock("./metricsCollector");
+const CounterMock = jest.fn<(c: CounterConfiguration<any>) => Counter>();
+const HistogramMock = jest.fn<(c: HistogramConfiguration<any>) => Histogram>();
+const RegistryMock = jest.fn();
 
-const CounterMock = Counter as jest.Mock<Counter<any>, [{ name: string }]>;
-const HistogramMock = Histogram as jest.Mock<
-  Histogram<any>,
-  [{ name: string }]
->;
-
-const RegistryMock = Registry as unknown as jest.Mock<Registry>;
+jest.unstable_mockModule("prom-client", () => ({
+  collectDefaultMetrics: jest.fn(),
+  Counter: CounterMock,
+  Histogram: HistogramMock,
+  Registry: RegistryMock,
+}));
 
 describe("metricsCollector", () => {
+  let metricsCollector: () => Middleware;
   let instance: Middleware;
-  let contextMock: ParameterizedContext;
-  const nextMock = jest.fn();
-  let httpRequestCountMock: Counter<any>;
-  let httpRequestDurationSecondsMock: Histogram<any>;
+  const nextMock = jest.fn<Next>();
 
-  beforeEach(() => {
-    httpRequestCountMock = {
-      get: jest.fn(),
-      inc: jest.fn(),
-      labels: jest.fn(),
-      remove: jest.fn(),
-      reset: jest.fn(),
-    };
-    const defaultCounterImplementation = CounterMock.getMockImplementation();
-    CounterMock.mockImplementation(({ name }) => {
-      switch (name) {
-        case "http_requests_total":
-          return httpRequestCountMock;
-        default:
-          return defaultCounterImplementation as unknown as Counter<any>;
-      }
-    });
-
-    httpRequestDurationSecondsMock = {
-      get: jest.fn(),
-      labels: jest.fn(),
-      observe: jest.fn(),
-      remove: jest.fn(),
-      reset: jest.fn(),
-      startTimer: jest.fn(),
-      zero: jest.fn(),
-    };
-
-    const defaultHistogramImplementation =
-      HistogramMock.getMockImplementation();
-    HistogramMock.mockImplementation(({ name }) => {
-      switch (name) {
-        case "http_request_duration_seconds":
-          return httpRequestDurationSecondsMock;
-        default:
-          return defaultHistogramImplementation as unknown as Histogram<any>;
-      }
-    });
-
-    instance = metricsCollector();
+  beforeAll(async () => {
+    const metricsCollectorModule = await import("./metricsCollector.js");
+    metricsCollector = metricsCollectorModule.metricsCollector;
   });
 
   describe("initialization", () => {
-    beforeEach(() => {});
+    beforeEach(async () => {
+      instance = metricsCollector();
+    });
 
     it("creates a new registry instance for collection", () => {
-      expect(Registry).toHaveBeenCalledTimes(1);
-      expect(Counter).toHaveBeenCalledWith(
+      expect(RegistryMock.mock.instances).toHaveLength(1);
+      expect(CounterMock).toHaveBeenCalledWith(
         expect.objectContaining({
           registers: expect.arrayContaining([RegistryMock.mock.instances[0]]),
         }),
       );
-      expect(Histogram).toHaveBeenCalledWith(
+      expect(HistogramMock).toHaveBeenCalledWith(
         expect.objectContaining({
           registers: expect.arrayContaining([RegistryMock.mock.instances[0]]),
         }),
@@ -81,65 +57,113 @@ describe("metricsCollector", () => {
   });
 
   describe("middleware", () => {
+    let contextMock: ParameterizedContext;
+    const httpRequestsTotalIncMock = jest.fn();
+    const httpRequestDurationSecondsObserveMock = jest.fn();
+
+    beforeEach(() => {
+      CounterMock.mockImplementation(
+        ({ name }) =>
+          ({
+            get: jest.fn(),
+            inc:
+              name === "http_requests_total"
+                ? httpRequestsTotalIncMock
+                : jest.fn(),
+            labels: jest.fn(),
+            reset: jest.fn(),
+            remove: jest.fn(),
+          }) as Counter,
+      );
+      HistogramMock.mockImplementation(
+        ({ name }) =>
+          ({
+            get: jest.fn(),
+            labels: jest.fn(),
+            observe:
+              name === "http_request_duration_seconds"
+                ? httpRequestDurationSecondsObserveMock
+                : jest.fn(),
+            remove: jest.fn(),
+            reset: jest.fn(),
+            startTimer: jest.fn(),
+            zero: jest.fn(),
+          }) as Histogram,
+      );
+    });
+
+    afterEach(() => {
+      httpRequestsTotalIncMock.mockClear();
+      httpRequestDurationSecondsObserveMock.mockClear();
+      CounterMock.mockReset();
+      HistogramMock.mockReset();
+    });
+
     describe("when `excludeFromMetrics` is false", () => {
-      const state = { excludeFromMetrics: false };
+      beforeEach(() => {
+        contextMock = {
+          state: { excludeFromMetrics: false },
+        } as unknown as ParameterizedContext;
+        instance = metricsCollector();
+      });
 
       it("increments the request counter", async () => {
-        contextMock = createMockContext({ state });
         await instance(contextMock, nextMock);
-        expect(httpRequestCountMock.inc).toHaveBeenCalled();
+        expect(httpRequestsTotalIncMock).toHaveBeenCalledTimes(1);
       });
 
       describe("when `state.responseTime` is undefined", () => {
+        beforeEach(() => {
+          contextMock.state.responseTime = undefined;
+        });
+
         it("observes the request duration", async () => {
-          contextMock = createMockContext({ state });
           await instance(contextMock, nextMock);
-          expect(httpRequestDurationSecondsMock.observe).not.toHaveBeenCalled();
+          expect(httpRequestDurationSecondsObserveMock).not.toHaveBeenCalled();
         });
       });
 
       describe("when `state.responseTime` has a value", () => {
         beforeEach(() => {
-          contextMock = createMockContext({
-            state: { ...state, responseTime: 300 },
-          });
+          contextMock.state.responseTime = 300;
         });
 
         it("observes the request duration", async () => {
           await instance(contextMock, nextMock);
-          expect(httpRequestDurationSecondsMock.observe).toHaveBeenCalled();
+          expect(httpRequestDurationSecondsObserveMock).toHaveBeenCalledTimes(
+            1,
+          );
         });
       });
 
       describe("when `state.responseTime` is 0", () => {
         beforeEach(() => {
-          contextMock = createMockContext({
-            state: { ...state, responseTime: 0 },
-          });
+          contextMock.state.responseTime = 0;
         });
 
         it("observes the request duration", async () => {
           await instance(contextMock, nextMock);
-          expect(httpRequestDurationSecondsMock.observe).toHaveBeenCalled();
+          expect(httpRequestDurationSecondsObserveMock).toHaveBeenCalledTimes(
+            1,
+          );
         });
       });
     });
 
     describe("when `excludeFromMetrics` is true", () => {
       beforeEach(() => {
-        contextMock = createMockContext({
-          state: { excludeFromMetrics: true, responseTime: 1000 },
-        });
+        contextMock.state.excludeFromMetrics = true;
+        contextMock.state.responseTime = 3000;
       });
 
       it("does not increment the request counter", async () => {
         await instance(contextMock, nextMock);
-        expect(httpRequestCountMock.inc).not.toHaveBeenCalled();
+        expect(httpRequestsTotalIncMock).not.toHaveBeenCalled();
       });
 
       it("does not observe the request duration", async () => {
         await instance(contextMock, nextMock);
-        expect(httpRequestDurationSecondsMock.observe).not.toHaveBeenCalled();
+        expect(httpRequestDurationSecondsObserveMock).not.toHaveBeenCalled();
       });
     });
   });

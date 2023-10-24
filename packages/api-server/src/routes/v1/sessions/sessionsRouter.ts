@@ -1,14 +1,14 @@
 import Router from "@koa/router";
 import { EntityRepository, QueryOrder } from "@mikro-orm/core";
 import { DefaultState } from "koa";
-import { ability, AbilityState } from "../../../features/auth/ability";
+import { AbilityState, ability } from "../../../features/auth/ability.js";
 import {
-  authenticationRequired,
   AuthenticationRequiredState,
-} from "../../../features/auth/authenticationRequired";
-import { KratosSession } from "../../../features/kratos/entities/KratosSession";
-import { OffsetPagination } from "../../../features/pagination/OffsetPagination";
-import { sortStringToOrderBy } from "../../../features/sorting/sortStringToOrderBy";
+  authenticationRequired,
+} from "../../../features/auth/authenticationRequired.js";
+import { KratosSession } from "../../../features/kratos/entities/KratosSession.js";
+import { OffsetPagination } from "../../../features/pagination/OffsetPagination.js";
+import { sortStringToOrderBy } from "../../../features/sorting/sortStringToOrderBy.js";
 
 export interface SessionsRouterState extends DefaultState, AbilityState {
   kratosSession?: KratosSession;

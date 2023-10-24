@@ -1,6 +1,6 @@
 import { Entity, ManyToOne, Property } from "@mikro-orm/core";
-import { KratosBaseEntity } from "./KratosBaseEntity";
-import { KratosIdentityVerifiableAddress } from "./KratosIdentityVerifiableAddress";
+import { KratosBaseEntity } from "./KratosBaseEntity.js";
+import { KratosIdentityVerifiableAddress } from "./KratosIdentityVerifiableAddress.js";
 
 @Entity({ tableName: "identity_verification_tokens" })
 export class KratosIdentityVerificationToken extends KratosBaseEntity {

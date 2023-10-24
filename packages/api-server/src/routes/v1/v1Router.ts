@@ -1,11 +1,11 @@
 import Router from "@koa/router";
-import { contactUsRouter } from "./contact-us/contactUsRouter";
-import { devRouter } from "./dev/devRouter";
-import { monitorRouter } from "./monitor/monitorRouter";
-import { sessionsRouter } from "./sessions/sessionsRouter";
-import { thingsRouter } from "./things/thingsRouter";
-import { userRouter } from "./user/userRouter";
-import { usersRouter } from "./users/usersRouter";
+import { contactUsRouter } from "./contact-us/contactUsRouter.js";
+import { devRouter } from "./dev/devRouter.js";
+import { monitorRouter } from "./monitor/monitorRouter.js";
+import { sessionsRouter } from "./sessions/sessionsRouter.js";
+import { thingsRouter } from "./things/thingsRouter.js";
+import { userRouter } from "./user/userRouter.js";
+import { usersRouter } from "./users/usersRouter.js";
 
 export const v1Router = new Router();
 

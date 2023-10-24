@@ -1,4 +1,4 @@
-import { ParsedField, parseField } from "./parseField";
+import { ParsedField, parseField } from "./parseField.js";
 
 /**
  * Parse a string that specifies zero or more sorting fields and directions.

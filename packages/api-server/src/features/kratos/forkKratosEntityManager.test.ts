@@ -1,20 +1,15 @@
+import { beforeEach, describe, expect, it, jest } from "@jest/globals";
 import { MikroORM } from "@mikro-orm/core";
-import { FrontendApi, IdentityApi } from "@ory/kratos-client";
-import { createMockContext } from "@shopify/jest-koa-mocks";
-import { Middleware, ParameterizedContext } from "koa";
-import { forkKratosEntityManager } from "./forkKratosEntityManager";
-import { KratosContext } from "./initializeKratos";
-
-jest.mock("@mikro-orm/core");
-jest.unmock("./forkKratosEntityManager");
+import { Middleware, Next, ParameterizedContext } from "koa";
+import { forkKratosEntityManager } from "./forkKratosEntityManager.js";
 
 describe("forkKratosEntityManager", () => {
   let instance: Middleware;
   let contextMock: ParameterizedContext;
-  const nextMock = jest.fn().mockReturnValue(Promise.resolve());
+  const nextMock = jest.fn<Next>().mockReturnValue(Promise.resolve());
   const flushMock = jest.fn();
   const clearMock = jest.fn();
-  const forkMock = jest.fn().mockImplementation(() => ({
+  const forkMock = jest.fn(() => ({
     flush: flushMock,
     clear: clearMock,
   }));
@@ -26,15 +21,12 @@ describe("forkKratosEntityManager", () => {
   } as unknown as MikroORM;
 
   beforeEach(() => {
-    contextMock = createMockContext<Partial<KratosContext>>({
-      customProperties: {
-        kratos: {
-          orm: ormMock,
-          frontendApi: new FrontendApi(),
-          identityApi: new IdentityApi(),
-        },
+    contextMock = {
+      state: {},
+      kratos: {
+        orm: ormMock,
       },
-    });
+    } as unknown as ParameterizedContext;
     nextMock.mockReset();
     instance = forkKratosEntityManager();
   });

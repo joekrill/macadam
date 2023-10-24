@@ -4,13 +4,13 @@ import { TsMorphMetadataProvider } from "@mikro-orm/reflection";
 import { SqlHighlighter } from "@mikro-orm/sql-highlighter";
 import pino from "pino";
 import { URL } from "url";
-import { entities } from "./entities";
-import { subscribers } from "./subscribers";
+import { entities } from "./entities/index.js";
+import { subscribers } from "./subscribers/index.js";
 
 export interface OrmConfigOptions
   extends Omit<Partial<Options<PostgreSqlDriver>>, "logger"> {
-  environment: string;
   clientUrl: string;
+  environment: string;
   logger?: pino.Logger;
 }
 
@@ -23,6 +23,9 @@ export const ormConfig = ({
   const url = new URL(clientUrl);
   const ormLogger = logger?.child({});
 
+  const migrationsPath = "./build/features/db/migrations";
+  const migrationspathTs = "./src/features/db/migrations";
+
   return {
     entities: [...entities],
     subscribers,
@@ -31,18 +34,19 @@ export const ormConfig = ({
     metadataProvider: TsMorphMetadataProvider,
     ...(ormLogger ? { logger: (message) => ormLogger.debug(message) } : {}),
     migrations: {
-      path: "./src/features/db/migrations",
+      glob: "!(*.d).{js,ts,mjs,mts,cjs,cts}",
+      path: environment === "test" ? migrationspathTs : migrationsPath,
+      pathTs: migrationspathTs,
       tableName: "migrations",
       transactional: true,
       safe: true,
       emit: "ts",
       allOrNothing: true,
       dropTables: false,
-      // snapshot: true,
     },
 
-    // When using the CLI,
-    tsNode: environment === "development",
+    // Ensure this doesn't get enabled.
+    tsNode: false,
 
     // SQLite is supported using something like `sqlite:/absolute/path/db.sqlite`
     // or `sqlite:relative/path/db.sqlite`

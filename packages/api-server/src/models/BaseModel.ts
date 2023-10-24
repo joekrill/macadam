@@ -13,13 +13,13 @@ import {
   wrap,
 } from "@mikro-orm/core";
 import { ParameterizedContext } from "koa";
-import { AppSubject } from "../features/auth/AppAbility";
+import { AppSubject } from "../features/auth/AppAbility.js";
 import {
   OffsetPagination,
   OffsetPaginationOptions,
-} from "../features/pagination/OffsetPagination";
-import { entitySortFields } from "../features/sorting/entitySortFields";
-import { sortStringToOrderBy } from "../features/sorting/sortStringToOrderBy";
+} from "../features/pagination/OffsetPagination.js";
+import { entitySortFields } from "../features/sorting/entitySortFields.js";
+import { sortStringToOrderBy } from "../features/sorting/sortStringToOrderBy.js";
 
 export interface ModelListOptions<T> {
   searchable?: boolean;

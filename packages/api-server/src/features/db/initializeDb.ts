@@ -2,7 +2,7 @@ import { MikroORM } from "@mikro-orm/core";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
 import createHttpError from "http-errors";
 import Koa from "koa";
-import { ormConfig, OrmConfigOptions } from "./ormConfig";
+import { ormConfig, OrmConfigOptions } from "./ormConfig.js";
 
 export interface DbContext {
   db: {

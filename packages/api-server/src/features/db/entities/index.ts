@@ -1,8 +1,8 @@
-import { AuditLog } from "./AuditLog";
-import { ContactUsMessage } from "./ContactUsMessage";
-import { Thing } from "./Thing";
-import { TimestampedEntity } from "./TimestampedEntity";
-import { UuidEntity } from "./UuidEntity";
+import { AuditLog } from "./AuditLog.js";
+import { ContactUsMessage } from "./ContactUsMessage.js";
+import { Thing } from "./Thing.js";
+import { TimestampedEntity } from "./TimestampedEntity.js";
+import { UuidEntity } from "./UuidEntity.js";
 
 export const entities = [
   AuditLog,

@@ -1,34 +1,42 @@
-import { createMockContext } from "@shopify/jest-koa-mocks";
-import { Middleware, ParameterizedContext } from "koa";
-import { v4 } from "uuid";
-import { requestId } from "./requestId";
-
-jest.unmock("./requestId");
-
-const v4UuidMock = v4 as jest.Mock;
+import { beforeEach, describe, expect, it, jest } from "@jest/globals";
+import { Middleware, Next, ParameterizedContext } from "koa";
 
 describe("requestId", () => {
+  const v4UuidMock = jest.fn();
+  jest.unstable_mockModule("uuid", () => ({
+    v4: v4UuidMock,
+  }));
+
   let instance: Middleware;
-  const nextMock = jest.fn();
+  const nextMock = jest.fn<Next>();
+  const setMock = jest.fn();
   let contextMock: ParameterizedContext;
   const mockUuid = "a41e1b45-f819-4daa-b41a-3e1594506bd3";
 
-  beforeEach(() => {
+  beforeEach(async () => {
+    const { requestId } = await import("./requestId.js");
     instance = requestId();
-    contextMock = createMockContext();
+    v4UuidMock.mockImplementation(() => mockUuid);
+    contextMock = {
+      state: {},
+      request: {
+        headers: {},
+      },
+      set: setMock,
+    } as unknown as ParameterizedContext;
     v4UuidMock.mockReset();
     v4UuidMock.mockReturnValue(mockUuid);
+    setMock.mockReset();
   });
 
-  test("sets `context.state.requestId` to the value returned by v4()", async () => {
+  it("sets `context.state.requestId` to the value returned by v4()", async () => {
     await instance(contextMock, nextMock);
     expect(contextMock.state.requestId).toBe(mockUuid);
   });
 
-  test("sets a `Request-ID` to the value returned by v4()", async () => {
-    contextMock.set = jest.fn();
+  it("sets a `Request-ID` to the value returned by v4()", async () => {
     await instance(contextMock, nextMock);
-    expect(contextMock.set).toHaveBeenCalledWith("Request-ID", mockUuid);
+    expect(setMock).toHaveBeenCalledWith("Request-ID", mockUuid);
   });
 
   describe("when there is a `request-id` header", () => {
@@ -37,12 +45,12 @@ describe("requestId", () => {
       contextMock.request.headers["request-id"] = mockRequestIdHeader;
     });
 
-    test("sets `context.state.requestId` to the `request-id` header value", async () => {
+    it("sets `context.state.requestId` to the `request-id` header value", async () => {
       await instance(contextMock, nextMock);
       expect(contextMock.state.requestId).toBe(mockRequestIdHeader);
     });
 
-    test("sets a `Request-ID` to the `request-id` header value", async () => {
+    it("sets a `Request-ID` to the `request-id` header value", async () => {
       contextMock.set = jest.fn();
       await instance(contextMock, nextMock);
       expect(contextMock.set).toHaveBeenCalledWith(
@@ -51,7 +59,7 @@ describe("requestId", () => {
       );
     });
 
-    test("does not call v4()", async () => {
+    it("does not call v4()", async () => {
       await instance(contextMock, nextMock);
       expect(v4UuidMock).not.toHaveBeenCalled();
     });
@@ -63,12 +71,12 @@ describe("requestId", () => {
       contextMock.request.headers["x-request-id"] = mockXRequestIdHeader;
     });
 
-    test("sets `context.state.requestId` to the `x-request-id` header value", async () => {
+    it("sets `context.state.requestId` to the `x-request-id` header value", async () => {
       await instance(contextMock, nextMock);
       expect(contextMock.state.requestId).toBe(mockXRequestIdHeader);
     });
 
-    test("sets a `Request-ID` to the `x-request-id` header value", async () => {
+    it("sets a `Request-ID` to the `x-request-id` header value", async () => {
       contextMock.set = jest.fn();
       await instance(contextMock, nextMock);
       expect(contextMock.set).toHaveBeenCalledWith(
@@ -77,7 +85,7 @@ describe("requestId", () => {
       );
     });
 
-    test("does not call v4()", async () => {
+    it("does not call v4()", async () => {
       await instance(contextMock, nextMock);
       expect(v4UuidMock).not.toHaveBeenCalled();
     });

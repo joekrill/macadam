@@ -6747,6 +6747,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mikro-orm/migrations", "virtual:bcd16a35578e611198ca5900a64801a5f9a3a73d25204ba234774779e626e3646024561528eba264e32fac5950c4604e04e9cb6c4220cf97d38b39a8a7917803#npm:5.8.4"],\
             ["@mikro-orm/postgresql", "virtual:bcd16a35578e611198ca5900a64801a5f9a3a73d25204ba234774779e626e3646024561528eba264e32fac5950c4604e04e9cb6c4220cf97d38b39a8a7917803#npm:5.8.4"],\
             ["@mikro-orm/reflection", "virtual:bcd16a35578e611198ca5900a64801a5f9a3a73d25204ba234774779e626e3646024561528eba264e32fac5950c4604e04e9cb6c4220cf97d38b39a8a7917803#npm:5.8.4"],\
+            ["@mikro-orm/sql-highlighter", "npm:1.0.1"],\
             ["@mikro-orm/sqlite", "virtual:bcd16a35578e611198ca5900a64801a5f9a3a73d25204ba234774779e626e3646024561528eba264e32fac5950c4604e04e9cb6c4220cf97d38b39a8a7917803#npm:5.8.4"],\
             ["@opentelemetry/api", "npm:1.6.0"],\
             ["@opentelemetry/auto-instrumentations-node", "virtual:bcd16a35578e611198ca5900a64801a5f9a3a73d25204ba234774779e626e3646024561528eba264e32fac5950c4604e04e9cb6c4220cf97d38b39a8a7917803#npm:0.39.2"],\
@@ -7328,6 +7329,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@mikro-orm/core",\
             "@types/mikro-orm__core"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@mikro-orm/sql-highlighter", [\
+        ["npm:1.0.1", {\
+          "packageLocation": "./.yarn/cache/@mikro-orm-sql-highlighter-npm-1.0.1-853d8fcc20-a5bb30ed9e.zip/node_modules/@mikro-orm/sql-highlighter/",\
+          "packageDependencies": [\
+            ["@mikro-orm/sql-highlighter", "npm:1.0.1"],\
+            ["ansi-colors", "npm:4.1.3"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -14936,6 +14947,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/ansi-color-npm-0.2.1-f7243d10a4-f3b809a91d.zip/node_modules/ansi-color/",\
           "packageDependencies": [\
             ["ansi-color", "npm:0.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["ansi-colors", [\
+        ["npm:4.1.3", {\
+          "packageLocation": "./.yarn/cache/ansi-colors-npm-4.1.3-8ffd0ae6c7-a9c2ec8420.zip/node_modules/ansi-colors/",\
+          "packageDependencies": [\
+            ["ansi-colors", "npm:4.1.3"]\
           ],\
           "linkType": "HARD"\
         }]\

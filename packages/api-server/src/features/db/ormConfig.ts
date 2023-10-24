@@ -1,6 +1,7 @@
 import { Options } from "@mikro-orm/core";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
 import { TsMorphMetadataProvider } from "@mikro-orm/reflection";
+import { SqlHighlighter } from "@mikro-orm/sql-highlighter";
 import pino from "pino";
 import { URL } from "url";
 import { entities } from "./entities";
@@ -26,6 +27,7 @@ export const ormConfig = ({
     entities: [...entities],
     subscribers,
     debug: environment === "development",
+    highlighter: new SqlHighlighter(),
     metadataProvider: TsMorphMetadataProvider,
     ...(ormLogger ? { logger: (message) => ormLogger.debug(message) } : {}),
     migrations: {

@@ -4,6 +4,8 @@
 // learn more: https://github.com/testing-library/jest-dom
 import "@testing-library/jest-dom";
 
+window.URL.createObjectURL = window.URL.createObjectURL || function () {};
+
 // Polyfill matchMedia (used by Chakra)
 window.matchMedia =
   window.matchMedia ||

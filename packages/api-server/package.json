@@ -14,8 +14,9 @@
     "test:watch": "jest --watch",
     "test:unit": "jest --projects test/unit",
     "test:integration": "jest --projects test/integration",
-    "migrate:up": "mikro-orm migration:up",
-    "migrate:create": "mikro-orm migration:create",
+    "migration:up": "mikro-orm migration:up",
+    "migration:create": "mikro-orm migration:create",
+    "schema:dump": "mikro-orm schema:create --dump",
     "cache:generate": "mikro-orm cache:generate",
     "typecheck": "tsc --noEmit"
   },

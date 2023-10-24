@@ -1,5 +1,6 @@
 export * from "./api/appApi";
 export * from "./api/hooks/useValidationError";
+export * from "./api/schemas/common";
 export * from "./api/schemas/errors";
 export * from "./api/schemas/links";
 export * from "./api/schemas/pagination";

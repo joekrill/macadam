@@ -52,7 +52,7 @@ x-kratos-defaults: &kratos-defaults
 x-api-server-defaults: &api-server-defaults
   <<: *service-defaults
   image: node:18.13
-  command: ["yarn", "workspace", "@macadam/api-server", "run", "migrate:up"]
+  command: ["yarn", "workspace", "@macadam/api-server", "run", "migration:up"]
   working_dir: /var/macadam
   depends_on:
     postgres:
@@ -248,7 +248,7 @@ services:
 
   api-server-migrate:
     <<: *api-server-defaults
-    command: ["yarn", "workspace", "@macadam/api-server", "run", "migrate:up"]
+    command: ["yarn", "workspace", "@macadam/api-server", "run", "migration:up"]
     restart: on-failure
     depends_on:
       yarn:

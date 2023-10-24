@@ -12,6 +12,6 @@ if (!process.env.DB_URL) {
 }
 
 export default ormConfig({
-  clientUrl: process.env.DB_URL || "sqlite::memory",
+  clientUrl: process.env.DB_URL || "sqlite::memory:",
   environment: process.env.NODE_ENV || "development",
 });

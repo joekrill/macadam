@@ -2,7 +2,7 @@
 
 ## Creating migrations
 
-`docker compose exec api-server yarn run migrate:create`
+`docker compose exec api-server yarn run migration:create`
 
 ## References
 

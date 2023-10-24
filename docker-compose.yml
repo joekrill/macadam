@@ -10,93 +10,12 @@ volumes:
   grafana_data:
   clickhouse_data:
   geoip_data:
+  yarn_unplugged:
 
 x-service-defaults: &service-defaults
   restart: unless-stopped
   networks:
     - sass-starter-net
-
-x-kratos-defaults: &kratos-defaults
-  <<: *service-defaults
-  image: oryd/kratos:v0.11
-  depends_on:
-    postgres:
-      condition: service_healthy
-    redis:
-      condition: service_healthy
-  environment:
-    COURIER_SMTP_CONNECTION_URI: smtp://mail:1025/?disable_starttls=true
-    DSN: postgres://kratos:kratos!@postgres:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
-    SQA_OPT_OUT: "true"
-    LOG_FORMAT: text
-    LOG_LEVEL: debug # trace
-    LOG_LEAK_SENSITIVE_VALUES: "true"
-    SESSION_COOKIE_NAME: macadam_session_dev
-    SECRETS_COOKIE: PLEASE-CHANGE-ME-I-AM-VERY-INSECURE
-    SERVE_PUBLIC_BASE_URL: https://${DOMAIN_NAME:-localtest.me}/kratos/public
-    SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://${DOMAIN_NAME:-localtest.me}
-    SELFSERVICE_ALLOWED_RETURN_URLS: https://${DOMAIN_NAME:-localtest.me},http://${DOMAIN_NAME:-localtest.me}
-    SELFSERVICE_FLOWS_ERROR_UI_URL: https://${DOMAIN_NAME:-localtest.me}/auth-error
-    SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://${DOMAIN_NAME:-localtest.me}/settings
-    SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://${DOMAIN_NAME:-localtest.me}/account/recover
-    SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://${DOMAIN_NAME:-localtest.me}/account/verify
-    SELFSERVICE_FLOWS_VERIFICATION_AFTER_DEFAULT_BROWSER_RETURN_URL: https://${DOMAIN_NAME:-localtest.me}
-    SELFSERVICE_FLOWS_LOGOUT_AFTER_DEFAULT_BROWSER_RETURN_URL: https://${DOMAIN_NAME:-localtest.me}
-    SELFSERVICE_FLOWS_LOGIN_UI_URL: https://${DOMAIN_NAME:-localtest.me}/login
-    SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://${DOMAIN_NAME:-localtest.me}/signup
-    SELFSERVICE_METHODS_WEBAUTHN_CONFIG_RP_ID: ${DOMAIN_NAME:-localtest.me}
-  volumes:
-    - ./services/kratos/config:/etc/config/kratos
-    - ./services/kratos/templates:/conf/courier-templates
-
-x-api-server-defaults: &api-server-defaults
-  <<: *service-defaults
-  image: node:18.13
-  command: ["yarn", "workspace", "@macadam/api-server", "run", "migration:up"]
-  working_dir: /var/macadam
-  depends_on:
-    postgres:
-      condition: service_healthy
-    redis:
-      condition: service_healthy
-  restart: on-failure
-  environment:
-    DB_URL: postgresql://macadam:macadam!@postgres:5432/macadam
-    KRATOS_DB_URL: postgresql://macadam:macadam!@postgres:5432/kratos
-    KRATOS_ADMIN_URL: http://kratos:4434/
-    KRATOS_PUBLIC_URL: http://kratos:4433/
-    NODE_ENV: development
-    PORT: 4000
-    REDIS_URL: redis://redis:6380/0
-    # Key should match API_PROJECT_KEY in `seed_macadam.py` with dashes stripped
-    SENTRY_DSN: http://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip-web:8080/2
-    # If we tunnel glitchtip requests, make sure they are mapped to the correct internal URL
-    # This first value should match the `VITE_SENTRY_DSN` value for client-web, while the second should be the actual sentry server.
-    # as it is accessible from the api-server
-    SENTRY_TUNNELABLE_DSNS: "http://239d589a58d24675be8159b19718b22e@glitchtip-web:8080/1"
-    SMTP_MAIL_TO: contact@macadam.com
-    SMTP_URI: smtp://mail:1025/?disable_starttls=true
-  volumes:
-    - .:/var/macadam
-
-x-glitchtip-defaults: &glitchtip-defaults
-  <<: *service-defaults
-  profiles: ["error-tracking"]
-  image: glitchtip/glitchtip
-  depends_on:
-    postgres:
-      condition: service_healthy
-  environment:
-    DATABASE_URL: postgresql://glitchtip:glitchtip!@postgres:5432/glitchtip
-    SECRET_KEY: change_me # best to run openssl rand -hex 32
-    EMAIL_URL: smtp://mail:1025/?skip_ssl_verify=true # https://glitchtip.com/documentation/install#configuration
-    DEFAULT_FROM_EMAIL: glitchtip@example.com
-    APP_URL: https://glitchtip.${DOMAIN_NAME:-localtest.me}
-    GLITCHTIP_DOMAIN: https://glitchtip.${DOMAIN_NAME:-localtest.me}
-    SERVER_PORT: 80
-    ENABLE_OPEN_USER_REGISTRATION: "true"
-    CELERY_WORKER_CONCURRENCY: 2 # Set to 2 to prevent excessive memory usage. Change it or remove to set it to the number of cpu cores.
-    I_PAID_FOR_GLITCHTIP: "false"
 
 services:
   caddy:
@@ -106,7 +25,6 @@ services:
       sass-starter-net:
         aliases:
           - glitchtip.${DOMAIN_NAME:-localtest.me}
-    # hostname: ${DOMAIN_NAME:-localtest.me}
     environment:
       - DOMAIN_NAME=${DOMAIN_NAME:-localtest.me}
     ports:
@@ -174,53 +92,81 @@ services:
     image: redis
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
+      timeout: 5s
+      interval: 5s
       start_period: 10s
+      retries: 10
+    environment:
+      ALLOW_EMPTY_PASSWORD: "true"
 
   ###################################################################
   # Kratos
   ###################################################################
 
-  kratos-migrate:
-    <<: *kratos-defaults
-    command: -c /etc/config/kratos/kratos.yml migrate sql -e --yes
-    restart: on-failure
+  kratos: &kratos
+    <<: *service-defaults
+    image: oryd/kratos:v1.0
+    command: serve -c /etc/config/kratos/kratos.yml --dev
     depends_on:
       postgres:
         condition: service_healthy
-
-  kratos:
-    <<: *kratos-defaults
-    command: serve -c /etc/config/kratos/kratos.yml --dev
-    healthcheck:
-      test: wget --no-verbose --tries=1 --spider http://localhost:4433/health/ready
-      interval: 60s
-      retries: 5
-      start_period: 20s
-      timeout: 10s
-    depends_on:
+      redis:
+        condition: service_healthy
       kratos-migrate:
         condition: service_completed_successfully
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:4433/health/ready
+      interval: 10s
+      timeout: 10s
+      start_period: 30s
+      retries: 5
+    environment:
+      COURIER_SMTP_CONNECTION_URI: smtp://mail:1025/?disable_starttls=true
+      DSN: postgres://kratos:kratos!@postgres:5432/kratos?sslmode=disable&max_conns=20&max_idle_conns=4
+      SQA_OPT_OUT: "true"
+      LOG_FORMAT: text
+      LOG_LEVEL: info #debug # trace
+      SESSION_COOKIE_NAME: macadam_session
+      SECRETS_COOKIE: PLEASE-CHANGE-ME-I-AM-VERY-INSECURE
+      SERVE_PUBLIC_BASE_URL: https://${DOMAIN_NAME:-localtest.me}/kratos/public
+      SELFSERVICE_DEFAULT_BROWSER_RETURN_URL: https://${DOMAIN_NAME:-localtest.me}
+      SELFSERVICE_ALLOWED_RETURN_URLS: https://${DOMAIN_NAME:-localtest.me},http://${DOMAIN_NAME:-localtest.me}
+      SELFSERVICE_FLOWS_ERROR_UI_URL: https://${DOMAIN_NAME:-localtest.me}/auth-error
+      SELFSERVICE_FLOWS_SETTINGS_UI_URL: https://${DOMAIN_NAME:-localtest.me}/settings
+      SELFSERVICE_FLOWS_RECOVERY_UI_URL: https://${DOMAIN_NAME:-localtest.me}/account/recover
+      SELFSERVICE_FLOWS_VERIFICATION_UI_URL: https://${DOMAIN_NAME:-localtest.me}/account/verify
+      SELFSERVICE_FLOWS_VERIFICATION_AFTER_DEFAULT_BROWSER_RETURN_URL: https://${DOMAIN_NAME:-localtest.me}
+      SELFSERVICE_FLOWS_LOGOUT_AFTER_DEFAULT_BROWSER_RETURN_URL: https://${DOMAIN_NAME:-localtest.me}
+      SELFSERVICE_FLOWS_LOGIN_UI_URL: https://${DOMAIN_NAME:-localtest.me}/login
+      SELFSERVICE_FLOWS_REGISTRATION_UI_URL: https://${DOMAIN_NAME:-localtest.me}/signup
+      SELFSERVICE_METHODS_WEBAUTHN_CONFIG_RP_ID: ${DOMAIN_NAME:-localtest.me}
+    volumes:
+      - ./services/kratos/config:/etc/config/kratos
+      - ./services/kratos/templates:/conf/courier-templates
+
+  kratos-migrate:
+    <<: *kratos
+    command: -c /etc/config/kratos/kratos.yml migrate sql -e --yes
+    restart: on-failure
+    healthcheck: {}
+    depends_on:
       postgres:
         condition: service_healthy
-    # ports:
-    #   - "4434:4434"
-    #   - "4433:4433"
 
   kratos-courier:
-    <<: *kratos-defaults
+    <<: *kratos
     command: courier watch --expose-metrics-port 4434 -c /etc/config/kratos/kratos.yml
     restart: on-failure
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://localhost:4434/metrics/prometheus
-      interval: 60s
-      retries: 5
-      start_period: 20s
+      interval: 10s
       timeout: 10s
-    depends_on:
-      kratos-migrate:
-        condition: service_completed_successfully
-      postgres:
-        condition: service_healthy
+      start_period: 20s
+      retries: 5
+
+  ###################################################################
+  # Mail catcher
+  ###################################################################
 
   mail:
     <<: *service-defaults
@@ -241,23 +187,9 @@ services:
   # Macadam
   ###################################################################
 
-  yarn:
-    <<: *api-server-defaults
-    command: ["yarn"]
-    restart: on-failure
-
-  api-server-migrate:
-    <<: *api-server-defaults
-    command: ["yarn", "workspace", "@macadam/api-server", "run", "migration:up"]
-    restart: on-failure
-    depends_on:
-      yarn:
-        condition: service_completed_successfully
-      postgres:
-        condition: service_healthy
-
-  api-server:
-    <<: *api-server-defaults
+  api-server: &api-server
+    <<: *service-defaults
+    image: node:18.13
     command: ["yarn", "workspace", "@macadam/api-server", "run", "start:dev"]
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://localhost:4000/api/health
@@ -265,6 +197,7 @@ services:
       retries: 10
       start_period: 20s
       timeout: 10s
+    working_dir: /var/macadam
     depends_on:
       api-server-migrate:
         condition: service_completed_successfully
@@ -272,14 +205,53 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+    restart: on-failure
+    environment:
+      DB_URL: postgresql://macadam:macadam!@postgres:5432/macadam
+      KRATOS_DB_URL: postgresql://macadam:macadam!@postgres:5432/kratos
+      KRATOS_ADMIN_URL: http://kratos:4434/
+      KRATOS_PUBLIC_URL: http://kratos:4433/
+      NODE_ENV: development
+      PORT: 4000
+      REDIS_URL: redis://redis:6380/0
+      # Key should match API_PROJECT_KEY in `seed_macadam.py` with dashes stripped
+      SENTRY_DSN: http://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip-web:8080/2
+      # If we tunnel glitchtip requests, make sure they are mapped to the correct internal URL
+      # This first value should match the `VITE_SENTRY_DSN` value for client-web, while the second should be the actual sentry server.
+      # as it is accessible from the api-server
+      SENTRY_TUNNELABLE_DSNS: "http://239d589a58d24675be8159b19718b22e@glitchtip-web:8080/1"
+      SMTP_MAIL_TO: contact@macadam.com
+      SMTP_URI: smtp://mail:1025/?disable_starttls=true
+    volumes:
+      - .:/var/macadam
+      - yarn_unplugged:/var/macadam/.yarn/unplugged/
+
+  yarn:
+    <<: *api-server
+    command: ["yarn"]
+    healthcheck: {}
+    depends_on: []
+
+  api-server-migrate:
+    <<: *api-server
+    command: ["yarn", "workspace", "@macadam/api-server", "run", "migration:up"]
+    healthcheck: {}
+    depends_on:
+      yarn:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
 
   api-client-builder:
     <<: *service-defaults
     build:
       context: .
       dockerfile: ./packages/api-client/dev.Dockerfile
+    healthcheck: {}
+    depends_on: []
     volumes:
       - .:/var/macadam
+      - yarn_unplugged:/var/macadam/.yarn/unplugged/
 
   client-web:
     <<: *service-defaults
@@ -308,6 +280,7 @@ services:
       VITE_PLAUSIBLE_HOST: https://plausible.${DOMAIN_NAME:-localtest.me}
     volumes:
       - .:/var/macadam
+      - yarn_unplugged:/var/macadam/.yarn/unplugged/
 
   client-web-storybook:
     <<: *service-defaults
@@ -324,6 +297,7 @@ services:
         condition: service_completed_successfully
     volumes:
       - .:/var/macadam
+      - yarn_unplugged:/var/macadam/.yarn/unplugged/
 
   expo-cli:
     <<: *service-defaults
@@ -334,6 +308,7 @@ services:
     working_dir: /var/macadam/packages/client-mobile
     volumes:
       - .:/var/macadam
+      - yarn_unplugged:/var/macadam/.yarn/unplugged/
 
   ###################################################################
   # Metrics
@@ -492,33 +467,51 @@ services:
       - geoip_data:/geoip:ro
       - ./services/plausible/seeds:/app/priv/repo/seeds
 
-  ###################################################################
-  # GlitchTip
-  ###################################################################
+  # ###################################################################
+  # # GlitchTip (`--profile error-tracking`)
+  # ###################################################################
 
-  glitchtip-migrate:
-    <<: *glitchtip-defaults
-    command: bash -c "./manage.py migrate && ./manage.py seed_macadam"
-    restart: on-failure
-    volumes:
-      - ./services/glitchtip/commands/seed_macadam.py:/code/glitchtip/management/commands/seed_macadam.py
-
-  glitchtip-web:
-    <<: *glitchtip-defaults
-    # NOTE: On AMD64 you will be spamemd with messages like:
-    # "*** uWSGI listen queue of socket ":8000" (fd: 3) full !!! (26472960/64) ***"
-    # I can't figure out how to fix this. Rebuilding the docker image fails on
-    # AMD64 when installing symbolic (see: https://github.com/getsentry/symbolic/issues/76).
-    # There seems to be no other adverse effects, though, so I've given up on this for now.
+  # NOTE: On ARM64 you will be spamemd with messages like:
+  # "*** uWSGI listen queue of socket ":8000" (fd: 3) full !!! (26472960/64) ***"
+  # I can't figure out how to fix this. Rebuilding the docker image fails on
+  # ARM64 when installing symbolic (see: https://github.com/getsentry/symbolic/issues/76).
+  # There seems to be no other adverse effects, though, so I've given up on this for now.
+  glitchtip: &glitchtip
+    <<: *service-defaults
+    profiles: ["error-tracking"]
     image: glitchtip/glitchtip
     depends_on:
       postgres:
         condition: service_healthy
+      redis:
+        condition: service_healthy
       glitchtip-migrate:
         condition: service_completed_successfully
+    environment:
+      DATABASE_URL: postgresql://glitchtip:glitchtip!@postgres:5432/glitchtip
+      REDIS_URL: redis://redis:6379/1
+      SECRET_KEY: change_me # best to run openssl rand -hex 32
+      EMAIL_URL: smtp://mail:1025/?skip_ssl_verify=true # https://glitchtip.com/documentation/install#configuration
+      DEFAULT_FROM_EMAIL: glitchtip@macadam.com
+      APP_URL: https://glitchtip.${DOMAIN_NAME:-localtest.me}
+      GLITCHTIP_DOMAIN: https://glitchtip.${DOMAIN_NAME:-localtest.me}
+      SERVER_PORT: 80
+      ENABLE_OPEN_USER_REGISTRATION: "true"
+      CELERY_WORKER_CONCURRENCY: 2 # Set to 2 to prevent excessive memory usage. Change it or remove to set it to the number of cpu cores.
+      I_PAID_FOR_GLITCHTIP: "false"
+
+  glitchtip-migrate:
+    <<: *glitchtip
+    command: bash -c "./manage.py migrate && ./manage.py seed_macadam"
+    restart: on-failure
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./docker-services/glitchtip/commands/seed_macadam.py:/code/glitchtip/management/commands/seed_macadam.py
 
   glitchtip-worker:
-    <<: *glitchtip-defaults
+    <<: *glitchtip
     command: celery -A glitchtip worker -B -l INFO
     depends_on:
       postgres:

@@ -119,7 +119,7 @@ Commands using `exec` assume that the accompanying service/container is up and r
 - Create/update the `plausible` database seed file:
 
   ```sh
-  docker-compose exec postgres pg_dump -U plausible plausible > services/postgres/docker-entrypoint-initdb.d/01-plausible-seed.sql
+  docker-compose exec postgres pg_dump -U plausible plausible > services/postgres/imports/plausible.sql
   ```
 
 ## Project Structure

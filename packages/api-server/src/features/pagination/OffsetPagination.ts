@@ -39,6 +39,10 @@ export class OffsetPagination {
     this.offset = (this.page - 1) * this.limit;
   }
 
+  /**
+   * Returns a subset of `FindOptions` properties that limits the results
+   * to the current page.
+   */
   findOptions<T>(): FindOptions<T> {
     return {
       limit: this.limit,
@@ -46,6 +50,12 @@ export class OffsetPagination {
     };
   }
 
+  /**
+   * Returns metadata descripting the current pagination state.
+   *
+   * @param count The number of records in the current page.
+   * @param total The total number of records avaialble.
+   */
   meta(count: number, total?: number) {
     return {
       pagination: {

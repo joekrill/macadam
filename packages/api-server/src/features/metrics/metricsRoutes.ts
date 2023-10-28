@@ -18,11 +18,11 @@ export const metricsRoutes = ({ prefix }: MetricsRoutesOptions) => {
   router.get("/", async (ctx) => {
     ctx.state.excludeFromMetrics = true;
 
-    if (ctx.state.metricsRegister) {
-      ctx.set("Content-Type", ctx.state.metricsRegister.contentType);
-      ctx.body = await ctx.state.metricsRegister.metrics();
+    if (ctx.metrics.registry) {
+      ctx.set("Content-Type", ctx.metrics.registry.contentType);
+      ctx.body = await ctx.metrics.registry.metrics();
     } else {
-      ctx.throw(500, "metricsRegister was not defined");
+      ctx.throw(500, "`ctx.metrics.registry` was not defined");
     }
   });
 

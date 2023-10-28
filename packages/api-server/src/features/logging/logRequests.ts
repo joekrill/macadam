@@ -29,7 +29,6 @@ export const logRequests =
             "state.entityManager",
             "state.kratosEntityManager",
             "state.logger",
-            "state.metricsRegister",
             "state.session",
             "state.urlSearchParams",
           ],

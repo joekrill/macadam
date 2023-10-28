@@ -1,33 +1,12 @@
 import { Middleware } from "koa";
-import {
-  collectDefaultMetrics,
-  Counter,
-  Histogram,
-  Registry,
-} from "prom-client";
+import { Counter, Histogram, Registry } from "prom-client";
 
-export interface MetricsCollectorState {
-  /**
-   * When set to `true` (by some other middleware, for example), will cause
-   * a given request to not be included in metric collection.
-   */
-  excludeFromMetrics?: boolean;
-
-  /**
-   * The prometheus metrics registry for the current app middleware instance.
-   */
-  metricsRegister?: Registry;
-}
-
-export const metricsCollector = (): Middleware => {
-  const register = new Registry();
-  collectDefaultMetrics({ register });
-
+export const metricsCollector = (registry: Registry): Middleware => {
   const httpRequestCount = new Counter({
     name: "http_requests_total",
     help: "Number of HTTP requests",
     labelNames: ["method", "code"],
-    registers: [register],
+    registers: [registry],
   });
 
   const httpRequestDurationSeconds = new Histogram({
@@ -35,14 +14,13 @@ export const metricsCollector = (): Middleware => {
     help: "Duration of HTTP requests in seconds",
     labelNames: ["code", "path"],
     buckets: [0.01, 0.1, 0.25, 0.5, 1, 1.5, 5, 10],
-    registers: [register],
+    registers: [registry],
   });
 
   return async (ctx, next): Promise<void> => {
-    ctx.state.metricsRegister = register;
     await next();
 
-    if (ctx.state.excludeFromMetrics) {
+    if (ctx.state.excludeFromMetrics === true) {
       return;
     }
 

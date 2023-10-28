@@ -19,7 +19,7 @@ import {
   InitializeMailerOptions,
   initializeMailer,
 } from "./features/mailer/initializeMailer.js";
-import { metricsCollector } from "./features/metrics/metricsCollector.js";
+import { initializeMetrics } from "./features/metrics/initializeMetrics.js";
 import { metricsRoutes } from "./features/metrics/metricsRoutes.js";
 import { urlSearchParams } from "./features/querystring/urlSearchParams.js";
 import { rateLimit } from "./features/rateLimit/rateLimit.js";
@@ -109,6 +109,7 @@ export const createApp = async ({
 
   initializeLogger(app, { logger });
   initializeGracefulShutdown(app, { defaultShutdownWaitMs });
+  initializeMetrics(app);
 
   if (sentry?.dsn) {
     initializeSentry(app, {
@@ -140,7 +141,6 @@ export const createApp = async ({
     }),
   );
   app.use(urlSearchParams());
-  app.use(metricsCollector());
   app.use(responseTime());
   app.use(
     requestId({

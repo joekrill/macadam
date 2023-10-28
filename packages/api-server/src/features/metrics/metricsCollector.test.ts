@@ -8,11 +8,12 @@ import {
   jest,
 } from "@jest/globals";
 import { Middleware, Next, ParameterizedContext } from "koa";
-import type {
+import {
   Counter,
   CounterConfiguration,
   Histogram,
   HistogramConfiguration,
+  Registry,
 } from "prom-client";
 
 const CounterMock = jest.fn<(c: CounterConfiguration<any>) => Counter>();
@@ -27,18 +28,25 @@ jest.unstable_mockModule("prom-client", () => ({
 }));
 
 describe("metricsCollector", () => {
-  let metricsCollector: () => Middleware;
+  let createMetricsCollector: () => Middleware;
   let instance: Middleware;
   const nextMock = jest.fn<Next>();
 
   beforeAll(async () => {
     const metricsCollectorModule = await import("./metricsCollector.js");
-    metricsCollector = metricsCollectorModule.metricsCollector;
+    createMetricsCollector = () =>
+      metricsCollectorModule.metricsCollector(RegistryMock() as Registry);
+  });
+
+  beforeEach(() => {
+    CounterMock.mockReset();
+    HistogramMock.mockReset();
+    RegistryMock.mockReset();
   });
 
   describe("initialization", () => {
     beforeEach(async () => {
-      instance = metricsCollector();
+      instance = createMetricsCollector();
     });
 
     it("creates a new registry instance for collection", () => {
@@ -104,7 +112,7 @@ describe("metricsCollector", () => {
         contextMock = {
           state: { excludeFromMetrics: false },
         } as unknown as ParameterizedContext;
-        instance = metricsCollector();
+        instance = createMetricsCollector();
       });
 
       it("increments the request counter", async () => {

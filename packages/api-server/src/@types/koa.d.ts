@@ -12,7 +12,10 @@ import {
   LoggerState,
 } from "../features/logging/initializeLogger";
 import { MailerContext } from "../features/mailer/initializeMailer";
-import { MetricsCollectorState } from "../features/metrics/metricsCollector";
+import {
+  MetricsContext,
+  MetricsState,
+} from "../features/metrics/initializeMetrics.js";
 import { URLSearchParamsState } from "../features/querystring/urlSearchParams";
 import { RedisContext } from "../features/redis/initializeRedis";
 import { RequestIdState } from "../features/requestId/requestId";
@@ -30,6 +33,7 @@ declare module "koa" {
       KratosContext,
       LoggerContext,
       MailerContext,
+      MetricsContext,
       RedisContext,
       SentryContext,
       ShutdownContext {}
@@ -40,7 +44,7 @@ declare module "koa" {
       ForkKratosEntityManagerState,
       KratosState,
       LoggerState,
-      MetricsCollectorState,
+      MetricsState,
       RequestIdState,
       ResponseTimeState,
       AbilityState,

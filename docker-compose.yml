@@ -249,7 +249,9 @@ services:
       context: .
       dockerfile: ./packages/api-client/dev.Dockerfile
     healthcheck: {}
-    depends_on: []
+    depends_on:
+      yarn:
+        condition: service_completed_successfully
     volumes:
       - .:/var/macadam
       - yarn_unplugged:/var/macadam/.yarn/unplugged/

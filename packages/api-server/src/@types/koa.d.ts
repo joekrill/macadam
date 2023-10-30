@@ -1,5 +1,6 @@
 import "koa";
 import { AbilityState } from "../features/auth/ability";
+import { CacheContext } from "../features/cache/initializeCache.js";
 import { ForkEntityManagerState } from "../features/db/forkEntityManager";
 import { DbContext } from "../features/db/initializeDb";
 import { ForkKratosEntityManagerState } from "../features/kratos/forkKratosEntityManager";
@@ -29,7 +30,8 @@ declare module "koa" {
   }
 
   interface DefaultContext
-    extends DbContext,
+    extends CacheContext,
+      DbContext,
       KratosContext,
       LoggerContext,
       MailerContext,

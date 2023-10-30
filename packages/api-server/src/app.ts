@@ -3,6 +3,7 @@ import Koa from "koa";
 import { koaBody } from "koa-body";
 import helmet from "koa-helmet";
 import pino from "pino";
+import { initializeCache } from "./features/cache/initializeCache.js";
 import { forkEntityManager } from "./features/db/forkEntityManager.js";
 import { initializeDb } from "./features/db/initializeDb.js";
 import { errorHandler } from "./features/errors/errorHandler.js";
@@ -128,6 +129,8 @@ export const createApp = async ({
   if (redisUrl) {
     await initializeRedis(app, { url: redisUrl });
   }
+
+  await initializeCache(app);
 
   app.use(errorHandler());
   app.use(

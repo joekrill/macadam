@@ -214,7 +214,7 @@ services:
       KRATOS_PUBLIC_URL: http://kratos:4433/
       NODE_ENV: development
       PORT: 4000
-      REDIS_URL: redis://redis:6380/0
+      REDIS_URL: redis://redis:6379/0
       # Key should match API_PROJECT_KEY in `seed_macadam.py` with dashes stripped
       SENTRY_DSN: http://31e5d0461ecc46ce9f32af55e9f4af88@glitchtip-web:8080/2
       # If we tunnel glitchtip requests, make sure they are mapped to the correct internal URL

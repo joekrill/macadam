@@ -12,6 +12,7 @@ export const configSchema = z
     METRICS_PATH: z.string().optional(),
     NODE_ENV: z.string().default("development"),
     PORT: z.coerce.number().default(4000),
+    REDIS_URL: z.string().optional(),
     SENTRY_DSN: z.string().optional(),
     SENTRY_TUNNELABLE_DSNS: z
       .string()

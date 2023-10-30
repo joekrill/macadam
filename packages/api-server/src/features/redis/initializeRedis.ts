@@ -17,14 +17,15 @@ export const initializeRedis = async (
   app: Koa,
   { url }: InitializeRedisOptions,
 ) => {
+  app.context.logger.debug({ url }, "Redis connecting");
   const redis = new IORedis(url);
-  app.context.logger.debug("Redis connecting");
-  await redis.connect();
-  app.context.logger.debug("Redis connected");
+  app.context.logger.debug({ url }, "Redis connected");
+
+  app.context.redis = redis;
 
   app.context.addShutdownListener(async () => {
-    app.context.logger.debug("Redis connection closing");
+    app.context.logger.debug({ url }, "Redis connection closing");
     await redis.disconnect(false);
-    app.context.logger.debug("Redis connection closed");
+    app.context.logger.debug({ url }, "Redis connection closed");
   });
 };

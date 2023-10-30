@@ -38,6 +38,7 @@ process.on("unhandledRejection", (reason, promise) => {
             }
           : undefined,
       metricsPath: config.METRICS_PATH,
+      redisUrl: config.REDIS_URL,
       sentry: config.SENTRY_DSN
         ? {
             dsn: config.SENTRY_DSN,

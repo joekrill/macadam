@@ -34,7 +34,10 @@ export const rateLimit = ({
   return async (ctx, next: () => Promise<void>): Promise<void> => {
     if (!rateLimiter) {
       rateLimiter = ctx.redis
-        ? new RateLimiterRedis({ storeClient: ctx.redis, ...mergedOptions })
+        ? new RateLimiterRedis({
+            storeClient: ctx.redis,
+            ...mergedOptions,
+          })
         : new RateLimiterMemory(mergedOptions);
     }
     let rateLimiterRes: RateLimiterRes | undefined = undefined;

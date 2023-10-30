@@ -82,7 +82,7 @@ services:
       postgres:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgres://macadam:macadam!@postgres:5432/macadam?sslmode=disable
+      PGWEB_DATABASE_URL: postgres://macadam:macadam!@postgres:5432/macadam?sslmode=disable
 
   ###################################################################
   # Redis

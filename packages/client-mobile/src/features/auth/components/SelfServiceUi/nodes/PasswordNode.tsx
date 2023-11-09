@@ -19,7 +19,6 @@ export const PasswordNode = ({
     onclick,
     ...attributes
   } = node.attributes;
-  console.log("PasswordNode", { node });
 
   return (
     <NodeFormControlWrapper

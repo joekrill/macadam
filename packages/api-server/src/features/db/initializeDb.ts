@@ -20,10 +20,11 @@ export type InitializeDbOptions = Omit<
  * and adds a listener to shutdown gracefully.
  */
 export const initializeDb = async (app: Koa, options: InitializeDbOptions) => {
+  const logger = app.context.logger.child({ module: "db" });
   const orm = await MikroORM.init<PostgreSqlDriver>(
     ormConfig({
       environment: app.env,
-      logger: app.context.logger,
+      logger,
       findOneOrFailHandler: (entityName: string) =>
         httpErrors(404, `${entityName} not found`),
       ...options,
@@ -34,10 +35,10 @@ export const initializeDb = async (app: Koa, options: InitializeDbOptions) => {
 
   app.context.addShutdownListener(async () => {
     const start = performance.now();
-    app.context.logger.info({ db: "app" }, "Database connection closing...");
+    logger.info("Database connection closing...");
     await orm.close();
-    app.context.logger.info(
-      { db: "app", took: (performance.now() - start).toFixed() },
+    logger.info(
+      { duration: (performance.now() - start).toFixed() },
       "Database connection closed",
     );
   });

@@ -38,6 +38,7 @@ export const initializeKratos = async (
   app: Koa,
   { publicUrl, ...ormOptions }: InitializeKratosOptions,
 ) => {
+  const logger = app.context.logger.child({ module: "kratos" });
   const config = new Configuration({ basePath: publicUrl });
   const frontendApi = new FrontendApi(config);
   const identityApi = new IdentityApi(config);
@@ -48,7 +49,7 @@ export const initializeKratos = async (
   const orm = await MikroORM.init(
     kratosOrmConfig({
       environment: app.env,
-      logger: app.context.logger,
+      logger,
       findOneOrFailHandler: (entityName: string) =>
         httpErrors(404, `${entityName} not found`),
       ...ormOptions,
@@ -63,10 +64,10 @@ export const initializeKratos = async (
 
   app.context.addShutdownListener(async () => {
     const start = performance.now();
-    app.context.logger.info({ db: "kratos" }, "Database connection closing...");
+    logger.info("Database connection closing...");
     await orm.close();
-    app.context.logger.info(
-      { db: "kratos", took: (performance.now() - start).toFixed() },
+    logger.info(
+      { duration: (performance.now() - start).toFixed() },
       "Database connection closed",
     );
   });

@@ -17,8 +17,10 @@ export interface MetricsState {
 }
 
 export const initializeMetrics = async (app: Koa) => {
+  const logger = app.context.logger.child({ module: "metrics" });
   const registry = new Registry();
   app.context.metrics = { registry };
   collectDefaultMetrics({ register: registry });
   app.use(metricsCollector(registry));
+  logger.info("Metrics initialized");
 };

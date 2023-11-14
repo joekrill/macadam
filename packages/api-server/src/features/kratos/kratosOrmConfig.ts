@@ -17,7 +17,6 @@ export const kratosOrmConfig = ({
   ...options
 }: OrmConfigOptions): Options => {
   const url = new URL(clientUrl);
-  const ormLogger = logger?.child({ db: "kratos" });
 
   return {
     entities: [...entities],
@@ -34,10 +33,10 @@ export const kratosOrmConfig = ({
     // the logger property is still needed even though we `loggerFactory` is
     // also specified because it is what is returned when calling `em.get('config')`
     // and is used in some places (i.e. migrations)
-    ...(ormLogger ? { logger: (message) => ormLogger.debug(message) } : {}),
+    ...(logger ? { logger: (message) => logger.debug(message) } : {}),
     loggerFactory: (loggerOptions) =>
-      ormLogger
-        ? new PinoLogger({ logger: ormLogger, ...loggerOptions })
+      logger
+        ? new PinoLogger({ logger, ...loggerOptions })
         : new SimpleLogger(loggerOptions),
 
     // SQLite is supported using something like `sqlite:/absolute/path/db.sqlite`

@@ -1,6 +1,7 @@
 import * as Sentry from "@sentry/node";
 import { NodeOptions } from "@sentry/node";
 import Koa, { DefaultContext, DefaultState, ParameterizedContext } from "koa";
+import { redactUrl } from "../logging/redactUrl.js";
 
 export interface SentryContext {
   sentry?: {
@@ -27,16 +28,23 @@ export interface InitializeSentryOptions extends NodeOptions {
  */
 export const initializeSentry = (
   app: Koa,
-  options: InitializeSentryOptions,
+  { dsn, ...options }: InitializeSentryOptions,
 ) => {
+  const logger = app.context.logger.child({
+    module: "sentry",
+    dsn: redactUrl(dsn),
+  });
+
   Sentry.init({
+    dsn,
     environment: app.env,
     ...options,
   });
+  logger.info(options, "Sentry initialized");
 
   Object.defineProperty(app.context, "sentry", {
     value: {
-      dsn: options.dsn,
+      dsn,
       tunnelableDsns: options.tunnelableDsns || [],
       instance: Sentry,
     },
@@ -84,9 +92,13 @@ export const initializeSentry = (
   );
 
   app.context.addShutdownListener(async () => {
-    app.context.logger.debug("Sentry connection closing...");
+    const start = performance.now();
+    logger.info("Sentry connection closing...");
     // See: https://docs.sentry.io/platforms/node/guides/koa/configuration/draining/
     await Sentry.close();
-    app.context.logger.debug("Sentry connection closed");
+    logger.info(
+      { duration: performance.now() - start },
+      "Sentry connection closed.",
+    );
   });
 };

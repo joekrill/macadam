@@ -1,6 +1,7 @@
 import Koa from "koa";
 import { createTransport, Transporter } from "nodemailer";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
+import { redactUrl } from "../logging/redactUrl.js";
 
 export interface MailerContext {
   mailer?: {
@@ -19,13 +20,20 @@ export interface InitializeMailerOptions {
  */
 export const initializeMailer = (
   app: Koa,
-  { smtpUri, smtpMailTo: defaultMailTo }: InitializeMailerOptions,
+  options: InitializeMailerOptions,
 ) => {
+  const logger = app.context.logger.child({ module: "mailer" });
   const transporter = createTransport({
-    url: smtpUri,
+    url: options.smtpUri,
   });
+
   app.context.mailer = {
-    defaultMailTo,
+    defaultMailTo: options.smtpMailTo,
     transporter,
   };
+
+  logger.info(
+    { ...options, smtpUri: redactUrl(options.smtpUri) },
+    "Mailer initialized",
+  );
 };

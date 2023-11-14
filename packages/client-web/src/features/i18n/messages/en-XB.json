@@ -1246,6 +1246,34 @@
       "value": "‬"
     }
   ],
+  "forms.cancelButton.label": [
+    {
+      "type": 0,
+      "value": "‮"
+    },
+    {
+      "type": 0,
+      "value": "Ↄɐuɔǝʅ"
+    },
+    {
+      "type": 0,
+      "value": "‬"
+    }
+  ],
+  "forms.createButton.label": [
+    {
+      "type": 0,
+      "value": "‮"
+    },
+    {
+      "type": 0,
+      "value": "Ↄɹǝɐʇǝ"
+    },
+    {
+      "type": 0,
+      "value": "‬"
+    }
+  ],
   "forms.saveButton.label": [
     {
       "type": 0,
@@ -1267,15 +1295,11 @@
     },
     {
       "type": 0,
-      "value": "∀nʇo ("
+      "value": "ᗡǝɟɐnʅʇ - "
     },
     {
       "type": 1,
       "value": "locale"
-    },
-    {
-      "type": 0,
-      "value": ")"
     },
     {
       "type": 0,

@@ -21,8 +21,17 @@ import { LocaleCode } from "../constants";
  */
 export const loadLocalePolyfills = async (locale: LocaleCode) => {
   switch (locale) {
-    case "en": {
+    case "en":
+    case "en-US": {
       await loadLocalePolyfillsEn();
+      return;
+    }
+    case "en-GB": {
+      await loadLocalePolyfillsEnGb();
+      return;
+    }
+    case "en-CA": {
+      await loadLocalePolyfillsEnCa();
       return;
     }
     case "es": {
@@ -51,6 +60,52 @@ const loadLocalePolyfillsEn = () => {
       : Promise.resolve(),
     shouldPolyfillRelativetimeformat("en")
       ? import("@formatjs/intl-relativetimeformat/locale-data/en")
+      : Promise.resolve(),
+  ]);
+};
+
+const loadLocalePolyfillsEnGb = () => {
+  return Promise.allSettled([
+    shouldPolyfillDisplayNames("en-GB")
+      ? import("@formatjs/intl-displaynames/locale-data/en-GB")
+      : Promise.resolve(),
+    shouldPolyfillListFormat("en-GB")
+      ? import("@formatjs/intl-listformat/locale-data/en-GB")
+      : Promise.resolve(),
+    shouldPolyfillPluralRules("en")
+      ? import("@formatjs/intl-pluralrules/locale-data/en")
+      : Promise.resolve(),
+    shouldPolyfillNumberFormat("en-GB")
+      ? import("@formatjs/intl-numberformat/locale-data/en-GB")
+      : Promise.resolve(),
+    shouldPolyfillDateTimeFormat("en-GB")
+      ? import("@formatjs/intl-datetimeformat/locale-data/en-GB")
+      : Promise.resolve(),
+    shouldPolyfillRelativetimeformat("en-GB")
+      ? import("@formatjs/intl-relativetimeformat/locale-data/en-GB")
+      : Promise.resolve(),
+  ]);
+};
+
+const loadLocalePolyfillsEnCa = () => {
+  return Promise.allSettled([
+    shouldPolyfillDisplayNames("en-CA")
+      ? import("@formatjs/intl-displaynames/locale-data/en-CA")
+      : Promise.resolve(),
+    shouldPolyfillListFormat("en-CA")
+      ? import("@formatjs/intl-listformat/locale-data/en-CA")
+      : Promise.resolve(),
+    shouldPolyfillPluralRules("en")
+      ? import("@formatjs/intl-pluralrules/locale-data/en")
+      : Promise.resolve(),
+    shouldPolyfillNumberFormat("en-CA")
+      ? import("@formatjs/intl-numberformat/locale-data/en-CA")
+      : Promise.resolve(),
+    shouldPolyfillDateTimeFormat("en-CA")
+      ? import("@formatjs/intl-datetimeformat/locale-data/en-CA")
+      : Promise.resolve(),
+    shouldPolyfillRelativetimeformat("en-CA")
+      ? import("@formatjs/intl-relativetimeformat/locale-data/en-CA")
       : Promise.resolve(),
   ]);
 };

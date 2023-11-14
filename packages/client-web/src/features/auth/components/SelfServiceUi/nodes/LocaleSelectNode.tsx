@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import { useIntl } from "react-intl";
 import { LocaleSelect } from "../../../../i18n/components/LocaleSelect/LocaleSelect";
 import { DEFAULT_LOCALE } from "../../../../i18n/constants";
-import { getLocaleDisplayName } from "../../../../i18n/getLocaleDisplayName";
 import { AppPreferencesLink } from "../../../../settings/components/AppPreferencesLink/AppPreferencesLink";
 import { SelfServiceUiNodeInputProps } from "../SelfServiceUiNodeInput";
 import { NodeFormControlWrapper } from "./NodeFormControlWrapper";
@@ -16,7 +15,7 @@ export const LocaleSelectNode = ({
   onChange,
   value,
 }: LocaleSelectNodeProps) => {
-  const { formatMessage } = useIntl();
+  const { formatMessage, formatDisplayName } = useIntl();
   const { label, node_type: _, onclick, ...attributes } = node.attributes;
 
   return (
@@ -54,7 +53,7 @@ export const LocaleSelectNode = ({
             defaultMessage: "Default ({locale})",
           },
           {
-            locale: getLocaleDisplayName(DEFAULT_LOCALE),
+            locale: formatDisplayName(DEFAULT_LOCALE, { type: "language" }),
           },
         )}
       />

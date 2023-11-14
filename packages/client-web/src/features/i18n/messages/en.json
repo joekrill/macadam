@@ -686,6 +686,18 @@
       "value": "Not Found"
     }
   ],
+  "forms.cancelButton.label": [
+    {
+      "type": 0,
+      "value": "Cancel"
+    }
+  ],
+  "forms.createButton.label": [
+    {
+      "type": 0,
+      "value": "Create"
+    }
+  ],
   "forms.saveButton.label": [
     {
       "type": 0,
@@ -695,15 +707,11 @@
   "i18n.activeLocaleSelect.deviceLocaleOption": [
     {
       "type": 0,
-      "value": "Auto ("
+      "value": "Default - "
     },
     {
       "type": 1,
       "value": "locale"
-    },
-    {
-      "type": 0,
-      "value": ")"
     }
   ],
   "i18n.localErrorToast.title": [

@@ -702,6 +702,18 @@
       "value": "Not FoundSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "forms.cancelButton.label": [
+    {
+      "type": 0,
+      "value": "CancelSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "forms.createButton.label": [
+    {
+      "type": 0,
+      "value": "CreateSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "forms.saveButton.label": [
     {
       "type": 0,
@@ -711,7 +723,7 @@
   "i18n.activeLocaleSelect.deviceLocaleOption": [
     {
       "type": 0,
-      "value": "Auto ("
+      "value": "Default - "
     },
     {
       "type": 1,
@@ -719,7 +731,7 @@
     },
     {
       "type": 0,
-      "value": ")SSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "i18n.localErrorToast.title": [

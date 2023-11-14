@@ -234,11 +234,17 @@
     "defaultMessage": "Not Found",
     "description": "The title shown in the browser tab/window for the not found page"
   },
+  "forms.cancelButton.label": {
+    "defaultMessage": "Cancel"
+  },
+  "forms.createButton.label": {
+    "defaultMessage": "Create"
+  },
   "forms.saveButton.label": {
     "defaultMessage": "Save"
   },
   "i18n.activeLocaleSelect.deviceLocaleOption": {
-    "defaultMessage": "Auto ({locale})"
+    "defaultMessage": "Default - {locale}"
   },
   "i18n.localErrorToast.title": {
     "defaultMessage": "Unable to load locale {locale}",

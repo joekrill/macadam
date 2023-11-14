@@ -698,6 +698,18 @@
       "value": "[javascript]Not Found"
     }
   ],
+  "forms.cancelButton.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Cancel"
+    }
+  ],
+  "forms.createButton.label": [
+    {
+      "type": 0,
+      "value": "[javascript]Create"
+    }
+  ],
   "forms.saveButton.label": [
     {
       "type": 0,
@@ -707,15 +719,11 @@
   "i18n.activeLocaleSelect.deviceLocaleOption": [
     {
       "type": 0,
-      "value": "[javascript]Auto ("
+      "value": "[javascript]Default - "
     },
     {
       "type": 1,
       "value": "locale"
-    },
-    {
-      "type": 0,
-      "value": ")"
     }
   ],
   "i18n.localErrorToast.title": [

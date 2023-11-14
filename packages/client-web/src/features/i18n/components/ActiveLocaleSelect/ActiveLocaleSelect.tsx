@@ -3,12 +3,15 @@ import { createContext, useContext } from "react";
 import { useIntl } from "react-intl";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import { selectLocale } from "../../actions/selectLocale";
-import { deviceLocaleToken, LocaleCode } from "../../constants";
-import { getLocaleDisplayName } from "../../getLocaleDisplayName";
+import { LocaleCode, deviceLocaleToken } from "../../constants";
 import { selectDeviceLocale } from "../../selectors/selectDeviceLocale";
 import { selectPendingLocale } from "../../selectors/selectPendingLocale";
 import { selectSelectedLocale } from "../../selectors/selectSelectedLocale";
-import { LocaleSelect, LocaleSelectProps } from "../LocaleSelect/LocaleSelect";
+import {
+  DefaultLocaleDisplayNameOptions,
+  LocaleSelect,
+  LocaleSelectProps,
+} from "../LocaleSelect/LocaleSelect";
 
 export const ActiveLocaleSelectContext = createContext({
   selectPendingLocale,
@@ -22,7 +25,7 @@ export interface ActiveLocaleSelectProps extends LocaleSelectProps {}
  * Renders a dropdown for selecting the active locale for the application.
  */
 export const ActiveLocaleSelect = (props: ActiveLocaleSelectProps) => {
-  const { formatMessage } = useIntl();
+  const { formatMessage, formatDisplayName } = useIntl();
   const dispatch = useAppDispatch();
   const ctx = useContext(ActiveLocaleSelectContext);
   const pendingLocale = useAppSelector((s) => ctx.selectPendingLocale(s));
@@ -36,10 +39,13 @@ export const ActiveLocaleSelect = (props: ActiveLocaleSelectProps) => {
       placeholder={formatMessage(
         {
           id: "i18n.activeLocaleSelect.deviceLocaleOption",
-          defaultMessage: "Auto ({locale})",
+          defaultMessage: "Default - {locale}",
         },
         {
-          locale: getLocaleDisplayName(deviceLocale),
+          locale: formatDisplayName(
+            deviceLocale,
+            DefaultLocaleDisplayNameOptions,
+          ),
         },
       )}
       value={value === deviceLocaleToken ? "" : value}

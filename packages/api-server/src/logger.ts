@@ -2,7 +2,14 @@ import assert from "assert";
 import pino from "pino";
 
 export const logger = pino(
-  { serializers: pino.stdSerializers },
+  {
+    serializers: pino.stdSerializers,
+    transport: process.env.LOG_PRETTY
+      ? {
+          target: "pino-pretty",
+        }
+      : undefined,
+  },
   pino.destination({ sync: false }),
 );
 

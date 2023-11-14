@@ -210,6 +210,7 @@ services:
       KRATOS_DB_URL: postgresql://macadam:macadam!@postgres:5432/kratos
       KRATOS_ADMIN_URL: http://kratos:4434/
       KRATOS_PUBLIC_URL: http://kratos:4433/
+      LOG_PRETTY: "true"
       NODE_ENV: development
       PORT: 4000
       REDIS_URL: redis://redis:6379/0

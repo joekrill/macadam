@@ -7,8 +7,7 @@
     "build/"
   ],
   "scripts": {
-    "start:dev": "tsc-watch --onSuccess \"yarn run start:dev:run\"",
-    "start:dev:run": "node --experimental-modules ./build/server.js | pino-pretty",
+    "start:dev": "tsc-watch --noClear --onSuccess \"node -r ../../.pnp.cjs --experimental-modules ./build/server.js\"",
     "start": "node build/server.js",
     "build": "tsc",
     "test": "yarn node --no-warnings --experimental-vm-modules $(yarn bin jest)",

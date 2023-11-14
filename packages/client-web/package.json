@@ -21,7 +21,6 @@
     "@formatjs/intl-relativetimeformat": "^11.2.10",
     "@hookform/resolvers": "^3.3.2",
     "@macadam/api-client": "^1.0.0",
-    "@mdx-js/react": "^2.3.0",
     "@reduxjs/toolkit": "^1.9.7",
     "@sentry/integrations": "^7.80.1",
     "@sentry/react": "^7.80.1",

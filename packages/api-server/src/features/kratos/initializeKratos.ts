@@ -45,7 +45,6 @@ export const initializeKratos = async (
   app.use(lazyLoadXSessionToken());
   app.use(lazyLoadSession());
 
-  app.context.logger.debug("Kratos Database connecting");
   const orm = await MikroORM.init(
     kratosOrmConfig({
       environment: app.env,
@@ -55,7 +54,6 @@ export const initializeKratos = async (
       ...ormOptions,
     }),
   );
-  app.context.logger.debug("Kratos Database connected");
 
   app.context.kratos = {
     frontendApi,
@@ -64,8 +62,12 @@ export const initializeKratos = async (
   };
 
   app.context.addShutdownListener(async () => {
-    app.context.logger.debug("Kratos Database connection closing");
+    const start = performance.now();
+    app.context.logger.info({ db: "kratos" }, "Database connection closing...");
     await orm.close();
-    app.context.logger.debug("Kratos Database connection closed");
+    app.context.logger.info(
+      { db: "kratos", took: (performance.now() - start).toFixed() },
+      "Database connection closed",
+    );
   });
 };

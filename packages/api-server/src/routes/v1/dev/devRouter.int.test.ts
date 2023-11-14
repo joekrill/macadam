@@ -1,20 +1,12 @@
 import { afterEach, beforeEach, describe, expect, it } from "@jest/globals";
-import pino from "pino";
 import request from "supertest";
 import { createApp } from "../../../app.js";
+import { createAppTestOptions } from "../../../test/createAppTestOptions.js";
 
 let app: Awaited<ReturnType<typeof createApp>>;
 
 beforeEach(async () => {
-  app = await createApp({
-    environment: "test",
-    dbUrl: "sqlite::memory:",
-    logger: pino({ enabled: false }),
-    kratos: {
-      publicUrl: "",
-      clientUrl: "sqlite::memory:",
-    },
-  });
+  app = await createApp(createAppTestOptions);
 });
 
 afterEach(async () => {

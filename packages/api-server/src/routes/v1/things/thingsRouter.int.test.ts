@@ -8,10 +8,10 @@ import {
 } from "@jest/globals";
 import { AbstractSqlDriver, SqlEntityManager } from "@mikro-orm/postgresql";
 import { FrontendApi } from "@ory/kratos-client";
-import pino from "pino";
 import request from "supertest";
 import type { createApp } from "../../../app.js";
 import { Thing } from "../../../features/db/entities/Thing.js";
+import { createAppTestOptions } from "../../../test/createAppTestOptions.js";
 
 const FrontendApiMock = jest.fn<() => FrontendApi>();
 jest.unstable_mockModule("@ory/kratos-client", () => ({
@@ -51,15 +51,7 @@ const initApp = async ({ identityId }: { identityId?: string } = {}) => {
   // Dynamically load the app code so that the mocks get applies
   const { createApp } = await import("../../../app.js");
 
-  const app = await createApp({
-    environment: "test",
-    dbUrl: "sqlite::memory:",
-    logger: pino({ enabled: false }),
-    kratos: {
-      publicUrl: "",
-      clientUrl: "sqlite::memory:",
-    },
-  });
+  const app = await createApp(createAppTestOptions);
   await app.context.db.orm.getMigrator().up();
   return app;
 };

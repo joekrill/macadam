@@ -1,9 +1,10 @@
-import { Options } from "@mikro-orm/core";
+import { Options, SimpleLogger } from "@mikro-orm/core";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
 import { TsMorphMetadataProvider } from "@mikro-orm/reflection";
 import { SqlHighlighter } from "@mikro-orm/sql-highlighter";
 import pino from "pino";
 import { URL } from "url";
+import { PinoLogger } from "./PinoLogger.js";
 import { entities } from "./entities/index.js";
 import { subscribers } from "./subscribers/index.js";
 
@@ -21,7 +22,7 @@ export const ormConfig = ({
   ...options
 }: OrmConfigOptions): Options<PostgreSqlDriver> => {
   const url = new URL(clientUrl);
-  const ormLogger = logger?.child({});
+  const ormLogger = logger?.child({ db: "app" });
 
   const migrationsPath = "./build/features/db/migrations";
   const migrationspathTs = "./src/features/db/migrations";
@@ -32,7 +33,16 @@ export const ormConfig = ({
     debug: environment === "development",
     highlighter: new SqlHighlighter(),
     metadataProvider: TsMorphMetadataProvider,
+
+    // the logger property is still needed even though we `loggerFactory` is
+    // also specified because it is what is returned when calling `em.get('config')`
+    // and is used in some places (i.e. migrations)
     ...(ormLogger ? { logger: (message) => ormLogger.debug(message) } : {}),
+    loggerFactory: (loggerOptions) =>
+      ormLogger
+        ? new PinoLogger({ logger: ormLogger, ...loggerOptions })
+        : new SimpleLogger(loggerOptions),
+
     migrations: {
       glob: "!(*.d).{js,ts,mjs,mts,cjs,cts}",
       path: environment === "test" ? migrationspathTs : migrationsPath,

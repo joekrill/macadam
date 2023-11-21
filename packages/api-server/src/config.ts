@@ -7,6 +7,7 @@ export const configSchema = z
     HEALTH_PATH: z.string().optional(),
     KRATOS_DB_URL: z.string(),
     KRATOS_PUBLIC_URL: z.string(),
+    KRATOS_SESSION_COOKIE_NAME: z.string(),
     LISTEN_ADDRESS: z.string().ip().default("0.0.0.0"),
     LOG_LEVEL: z.enum(levels).optional(),
     METRICS_PATH: z.string().optional(),

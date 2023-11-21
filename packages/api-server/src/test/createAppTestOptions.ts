@@ -8,5 +8,6 @@ export const createAppTestOptions: AppOptions = {
   kratos: {
     publicUrl: "",
     clientUrl: "sqlite::memory:",
+    sessionCookieName: "kratos_session",
   },
 };

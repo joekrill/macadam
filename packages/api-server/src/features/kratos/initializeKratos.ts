@@ -17,6 +17,7 @@ export interface KratosContext {
     frontendApi: FrontendApi;
     identityApi: IdentityApi;
     orm: MikroORM;
+    sessionCookieName: string;
   };
 }
 
@@ -29,6 +30,7 @@ export interface KratosState {
 export interface InitializeKratosOptions
   extends Omit<OrmConfigOptions, "environment" | "logger"> {
   publicUrl: string;
+  sessionCookieName: string;
 }
 
 /**
@@ -36,7 +38,7 @@ export interface InitializeKratosOptions
  */
 export const initializeKratos = async (
   app: Koa,
-  { publicUrl, ...ormOptions }: InitializeKratosOptions,
+  { publicUrl, sessionCookieName, ...ormOptions }: InitializeKratosOptions,
 ) => {
   const logger = app.context.logger.child({ module: "kratos" });
   const config = new Configuration({ basePath: publicUrl });
@@ -60,6 +62,7 @@ export const initializeKratos = async (
     frontendApi,
     identityApi,
     orm,
+    sessionCookieName,
   };
 
   app.context.addShutdownListener(async () => {

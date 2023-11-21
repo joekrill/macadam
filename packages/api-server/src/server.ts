@@ -28,6 +28,7 @@ process.on("unhandledRejection", (reason, promise) => {
       kratos: {
         clientUrl: config.KRATOS_DB_URL,
         publicUrl: config.KRATOS_PUBLIC_URL,
+        sessionCookieName: config.KRATOS_SESSION_COOKIE_NAME,
       },
       logger,
       mailer:

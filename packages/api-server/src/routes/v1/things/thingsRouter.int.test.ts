@@ -59,9 +59,14 @@ const initApp = async ({ identityId }: { identityId?: string } = {}) => {
 describe("authenticated", () => {
   let app: Awaited<ReturnType<typeof createApp>>;
   let em: SqlEntityManager<AbstractSqlDriver>;
+  let cookies: string[];
 
   beforeEach(async () => {
     app = await initApp({ identityId: "123" });
+
+    // Requests must include a session cookie otherwise the session lookup
+    // will be skipped.
+    cookies = [`${createAppTestOptions.kratos.sessionCookieName}=XX`];
     em = app.context.db.orm.em.fork();
 
     // Remove any existing data
@@ -79,6 +84,7 @@ describe("authenticated", () => {
       it("returns an empty array things", async () => {
         const response = await request(app.callback())
           .get("/api/v1/things")
+          .set("Cookie", cookies)
           .send();
         expect(response.status).toBe(200);
         expect(response.body).toMatchObject({
@@ -100,6 +106,7 @@ describe("authenticated", () => {
       it("returns all things", async () => {
         const response = await request(app.callback())
           .get("/api/v1/things")
+          .set("Cookie", cookies)
           .send();
         expect(response.status).toBe(200);
         expect(response.body).toMatchObject({
@@ -142,6 +149,7 @@ describe("authenticated", () => {
         beforeEach(async () => {
           response = await request(app.callback())
             .get("/api/v1/things")
+            .set("Cookie", cookies)
             .query(query)
             .send();
         });
@@ -161,6 +169,9 @@ describe("authenticated", () => {
       it("returns 10 items by default", async () => {
         const response = await request(app.callback())
           .get("/api/v1/things")
+          .set("Cookie", [
+            `${createAppTestOptions.kratos.sessionCookieName}=XX`,
+          ])
           .send();
         expect(response.status).toBe(200);
         expect(response.body).toMatchObject({
@@ -175,9 +186,10 @@ describe("authenticated", () => {
         });
       });
 
-      it("returns pagination metadat", async () => {
+      it("returns pagination metadata", async () => {
         const response = await request(app.callback())
           .get("/api/v1/things")
+          .set("Cookie", cookies)
           .send();
         expect(response.body).toMatchObject({
           pagination: expect.objectContaining({
@@ -198,6 +210,7 @@ describe("authenticated", () => {
       it("returns a 201", async () => {
         const response = await request(app.callback())
           .post("/api/v1/things")
+          .set("Cookie", cookies)
           .send({
             name: "hello!",
             description: "a simple greeting",
@@ -218,6 +231,7 @@ describe("authenticated", () => {
       it("returns a 201", async () => {
         const response = await request(app.callback())
           .post("/api/v1/things")
+          .set("Cookie", cookies)
           .send({
             description: "I'm nameless!",
           });
@@ -247,6 +261,7 @@ describe("authenticated", () => {
       it("returns a 404", async () => {
         const response = await request(app.callback())
           .delete(`/api/v1/things/2342342343232`)
+          .set("Cookie", cookies)
           .send();
         expect(response.status).toBe(404);
       });
@@ -258,6 +273,7 @@ describe("authenticated", () => {
       beforeEach(async () => {
         response = await request(app.callback())
           .delete(`/api/v1/things/${ownedThing.id}`)
+          .set("Cookie", cookies)
           .send();
       });
 
@@ -284,6 +300,7 @@ describe("authenticated", () => {
       beforeEach(async () => {
         response = await request(app.callback())
           .delete(`/api/v1/things/${unownedThing.id}`)
+          .set("Cookie", cookies)
           .send();
       });
 
@@ -309,6 +326,7 @@ describe("authenticated", () => {
       it("returns a 404", async () => {
         const response = await request(app.callback())
           .patch(`/api/v1/things/XXXXXX`)
+          .set("Cookie", cookies)
           .send({ name: "new name" });
         expect(response.status).toBe(404);
       });
@@ -320,6 +338,7 @@ describe("authenticated", () => {
       beforeEach(async () => {
         response = await request(app.callback())
           .patch(`/api/v1/things/${ownedThing.id}`)
+          .set("Cookie", cookies)
           .send({
             description: "a description!",
           });
@@ -369,6 +388,7 @@ describe("authenticated", () => {
       beforeEach(async () => {
         response = await request(app.callback())
           .patch(`/api/v1/things/${unownedThing.id}`)
+          .set("Cookie", cookies)
           .send({ description: "hi there" });
       });
 
@@ -390,6 +410,7 @@ describe("authenticated", () => {
       it("returns a 404", async () => {
         const response = await request(app.callback())
           .put(`/api/v1/things/XXXXXX`)
+          .set("Cookie", cookies)
           .send({ name: "new name" });
         expect(response.status).toBe(404);
       });
@@ -401,6 +422,7 @@ describe("authenticated", () => {
       beforeEach(async () => {
         response = await request(app.callback())
           .put(`/api/v1/things/${thing.id}`)
+          .set("Cookie", cookies)
           .send({
             name: "A new name!",
           });

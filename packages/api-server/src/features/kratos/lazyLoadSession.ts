@@ -30,10 +30,18 @@ export const lazyLoadSession =
         value: async function () {
           if (!loaded) {
             try {
+              const cookie = ctx.cookies.get(ctx.kratos.sessionCookieName);
+              if (!cookie && !ctx.state.xSessionToken) {
+                ctx.state.logger.debug(
+                  "Kratos session: no session token/cookie found, skipping fetch",
+                );
+                return;
+              }
+
               ctx.state.logger.debug("Fetching Kratos session");
               const response = await ctx.kratos.frontendApi.toSession({
                 xSessionToken: ctx.state.xSessionToken,
-                cookie: ctx.request.headers["cookie"],
+                cookie: `${ctx.kratos.sessionCookieName}=${cookie}`,
               });
               session = response.data;
               if (session?.identity) {

@@ -20,7 +20,7 @@ import {
   FaSignOutAlt,
   FaUserCog,
 } from "react-icons/fa";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { Link as RouterLink } from "react-router-dom";
 import { useLoginLink } from "../../../auth/components/LoginLink/useLoginLink";
 import { LogoutButtonLabel } from "../../../auth/components/LogoutButton/LogoutButton";
@@ -33,6 +33,7 @@ import { CurrentUserMenuHeader } from "./CurrentUserMenuHeader";
 export type CurrentUserMenuProps = Omit<MenuProps, "isLazy" | "children">;
 
 export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
+  const { formatMessage } = useIntl();
   const { isLoggedIn, isUnknown } = useSession();
   const preferencesLink = useAppPreferencesLink();
   const registrationLink = useRegistrationLink();
@@ -50,11 +51,22 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
       <MenuButton
         isLoading={isUnknown}
         as={Button}
-        rounded="full"
         variant="link"
         cursor="pointer"
-        rightIcon={<Icon as={FaCaretDown} boxSize="0.75em" />}
+        colorScheme={useColorModeValue("whiteAlpha", "gray")}
+        rightIcon={<Icon as={FaCaretDown} boxSize="4" />}
+        leftIcon={
+          <CurrentUserAvatar
+            bg={useColorModeValue("blue.400", "blue.200")}
+            size="sm"
+          />
+        }
         iconSpacing="0.1em"
+        size="sm"
+        aria-label={formatMessage({
+          id: "user.userMenu.label",
+          defaultMessage: "User menu",
+        })}
       >
         <CurrentUserAvatar size="sm" />
       </MenuButton>

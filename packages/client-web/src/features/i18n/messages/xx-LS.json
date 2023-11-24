@@ -1178,6 +1178,12 @@
       "value": "PublicSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
+  "user.userMenu.label": [
+    {
+      "type": 0,
+      "value": "User menuSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
   "user.userMenu.profileLink": [
     {
       "type": 0,

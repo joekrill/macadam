@@ -55,7 +55,11 @@ export const Header = (props: HeaderProps) => {
               <LoginButton px="5" size="sm" colorScheme={buttonSchema} />
             </>
           )}
-          <ColorModeSwitcher variant="ghost" color="current" size="sm" />
+          <ColorModeSwitcher
+            variant="outline"
+            colorScheme={useColorModeValue("whiteAlpha", "gray")}
+            size="sm"
+          />
           <CurrentUserMenu />
         </HStack>
       </Flex>

@@ -1154,6 +1154,12 @@
       "value": "PUBLIC"
     }
   ],
+  "user.userMenu.label": [
+    {
+      "type": 0,
+      "value": "USER MENU"
+    }
+  ],
   "user.userMenu.profileLink": [
     {
       "type": 0,

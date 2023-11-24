@@ -1166,6 +1166,12 @@
       "value": "[javascript]Public"
     }
   ],
+  "user.userMenu.label": [
+    {
+      "type": 0,
+      "value": "[javascript]User menu"
+    }
+  ],
   "user.userMenu.profileLink": [
     {
       "type": 0,

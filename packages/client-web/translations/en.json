@@ -438,6 +438,9 @@
   "things.thingsTable.publicHeader.label": {
     "defaultMessage": "Public"
   },
+  "user.userMenu.label": {
+    "defaultMessage": "User menu"
+  },
   "user.userMenu.profileLink": {
     "defaultMessage": "Your Profile"
   },

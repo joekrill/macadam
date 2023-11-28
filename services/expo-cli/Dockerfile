@@ -1,4 +1,4 @@
-FROM node:18.13
+FROM node:20.10
 
 LABEL name="Expo for Docker"
 

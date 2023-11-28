@@ -1,12 +1,5 @@
 import Koa from "koa";
-import { Registry, collectDefaultMetrics } from "prom-client";
 import { metricsCollector } from "./metricsCollector.js";
-
-export interface MetricsContext {
-  metrics: {
-    registry: Registry;
-  };
-}
 
 export interface MetricsState {
   /**
@@ -18,9 +11,6 @@ export interface MetricsState {
 
 export const initializeMetrics = async (app: Koa) => {
   const logger = app.context.logger.child({ module: "metrics" });
-  const registry = new Registry();
-  app.context.metrics = { registry };
-  collectDefaultMetrics({ register: registry });
-  app.use(metricsCollector(registry));
+  app.use(metricsCollector());
   logger.info("Metrics initialized");
 };

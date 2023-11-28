@@ -38,7 +38,6 @@ process.on("unhandledRejection", (reason, promise) => {
               smtpUri: config.SMTP_URI,
             }
           : undefined,
-      metricsPath: config.METRICS_PATH,
       redisUrl: config.REDIS_URL,
       sentry: config.SENTRY_DSN
         ? {

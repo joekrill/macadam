@@ -228,7 +228,7 @@ describe("authenticated", () => {
     });
 
     describe("with invalid body", () => {
-      it("returns a 201", async () => {
+      it("returns a 400", async () => {
         const response = await request(app.callback())
           .post("/api/v1/things")
           .set("Cookie", cookies)

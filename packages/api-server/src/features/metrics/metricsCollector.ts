@@ -1,22 +1,20 @@
+import { metrics } from "@opentelemetry/api";
 import { Middleware } from "koa";
-import { Counter, Histogram, Registry } from "prom-client";
 
-export const metricsCollector = (registry: Registry): Middleware => {
-  const httpRequestCount = new Counter({
-    name: "http_requests_total",
-    help: "Number of HTTP requests",
-    labelNames: ["method", "code"],
-    registers: [registry],
-  });
+const meter = metrics.getMeter("api-server");
 
-  const httpRequestDurationSeconds = new Histogram({
-    name: "http_request_duration_seconds",
-    help: "Duration of HTTP requests in seconds",
-    labelNames: ["code", "path"],
-    buckets: [0.01, 0.1, 0.25, 0.5, 1, 1.5, 5, 10],
-    registers: [registry],
-  });
+const httpRequestCount = meter.createCounter("http_requests_total", {
+  description: "Number of HTTP requests",
+});
 
+const httpRequestDurationSeconds = meter.createHistogram(
+  "http_request_duration_seconds",
+  {
+    description: "Duration of HTTP requests in seconds",
+  },
+);
+
+export const metricsCollector = (): Middleware => {
   return async (ctx, next): Promise<void> => {
     await next();
 
@@ -24,16 +22,13 @@ export const metricsCollector = (registry: Registry): Middleware => {
       return;
     }
 
-    httpRequestCount.inc({ method: ctx.method, code: ctx.status });
+    httpRequestCount.add(1, { method: ctx.method, code: ctx.status });
 
     if (ctx.state.responseTime !== undefined) {
-      httpRequestDurationSeconds.observe(
-        {
-          code: String(ctx.status),
-          path: ctx.path,
-        },
-        ctx.state.responseTime / 1000,
-      );
+      httpRequestDurationSeconds.record(ctx.state.responseTime / 1000, {
+        code: String(ctx.status),
+        path: ctx.path,
+      });
     }
   };
 };

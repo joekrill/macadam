@@ -10,7 +10,6 @@ export const configSchema = z
     KRATOS_SESSION_COOKIE_NAME: z.string(),
     LISTEN_ADDRESS: z.string().ip().default("0.0.0.0"),
     LOG_LEVEL: z.enum(levels).optional(),
-    METRICS_PATH: z.string().optional(),
     NODE_ENV: z.string().default("development"),
     PORT: z.coerce.number().default(4000),
     REDIS_URL: z.string().optional(),

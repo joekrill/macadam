@@ -1,112 +1,133 @@
+{
+	admin :2019
+	servers {
+		metrics
+	}
+}
+
 localhost, {$DOMAIN_NAME}, joes-macbook {
-  encode zstd gzip
-  tls internal
-  handle {
-    handle_path /kratos/public/* {
-      reverse_proxy http://kratos:4433
-    }
-    reverse_proxy /api/* api-server:4000
-    reverse_proxy client-web:5173
-  }
+	encode zstd gzip
+	tls internal
+	handle {
+		handle_path /kratos/public/* {
+			reverse_proxy http://kratos:4433
+		}
+		reverse_proxy /api/* api-server:4000
+		reverse_proxy client-web:5173
+	}
 }
 
 *.localhost, *.{$DOMAIN_NAME} {
-  encode zstd gzip
-  tls internal
+	encode zstd gzip
+	tls internal
 
-  @root host localhost, {$DOMAIN_NAME} 
-  handle @root {
-    handle_path /kratos/public/* {
-      reverse_proxy http://kratos:4433
-    }
-    reverse_proxy /api/* api-server:4000
-    reverse_proxy client-web:5173
-  }
+	@root host localhost, {$DOMAIN_NAME}
+	handle @root {
+		handle_path /kratos/public/* {
+			reverse_proxy http://kratos:4433
+		}
+		reverse_proxy /api/* api-server:4000
+		reverse_proxy client-web:5173
+	}
 
-  # direct access to the underlying api-server
-  @echo host echo.localhost, echo.{$DOMAIN_NAME} 
+	# Used as a "black hole" for services not running in developer
+	# And can be used for debugging request headers.
+	@echo host echo.localhost, echo.{$DOMAIN_NAME}
 	handle @echo {
 		reverse_proxy echo:80
 	}
 
-  # direct access to the underlying api-server
-  @api host api.localhost, api.{$DOMAIN_NAME} 
+	# direct access to the underlying api-server
+	@api host api.localhost, api.{$DOMAIN_NAME}
 	handle @api {
 		reverse_proxy api-server:4000
 	}
 
-  # redirect reuests that use the "www" subdomains
-  @www host www.{$DOMAIN_NAME} 
-  handle @www {
-    redir https://{$DOMAIN_NAME}{uri}
-  } 
+	# Redirect requests that use the "www" subdomains
+	@www host www.{$DOMAIN_NAME}
+	handle @www {
+		redir https://{$DOMAIN_NAME}{uri}
+	}
 
-  @mail host mail.localhost, mail.{$DOMAIN_NAME}
+	# MailDev instance
+	@mail host mail.localhost, mail.{$DOMAIN_NAME}
 	handle @mail {
 		reverse_proxy mail:1080
 	}
 
-  @pgweb host pgweb.{$DOMAIN_NAME}
+	# pgweb instance
+	@pgweb host pgweb.{$DOMAIN_NAME}
 	handle @pgweb {
 		reverse_proxy pgweb:8081
 	}
-  
-  @storybook host storybook.{$DOMAIN_NAME} 
-  handle @storybook {
-    reverse_proxy client-web-storybook:6006
-  }
 
-  @glitchtip host glitchtip.{$DOMAIN_NAME} 
-  handle @glitchtip {
-    reverse_proxy glitchtip-web:8080 :8080 {
-      lb_policy first
-      lb_try_duration 5s
-      fail_duration 10s
-      transport http {
-    		dial_timeout 600ms
-	    }
-    }
-  }
+	@storybook host storybook.{$DOMAIN_NAME}
+	handle @storybook {
+		reverse_proxy client-web-storybook:6006
+	}
 
-  @kratos host kratos.{$DOMAIN_NAME} 
-  handle @kratos {
-    reverse_proxy kratos:4433
-  }
+	@glitchtip host glitchtip.{$DOMAIN_NAME}
+	handle @glitchtip {
+		reverse_proxy glitchtip-web:8080 :8080 {
+			lb_policy first
+			lb_try_duration 5s
+			fail_duration 10s
+			transport http {
+				dial_timeout 600ms
+			}
+		}
+	}
 
-  @kratos-admin host kratos-admin.{$DOMAIN_NAME} 
-  handle @kratos-admin {
-    reverse_proxy kratos:4434
-  }
+	@kratos host kratos.{$DOMAIN_NAME}
+	handle @kratos {
+		reverse_proxy kratos:4433
+	}
 
-  @kratos-courier host kratos-courier.{$DOMAIN_NAME} 
-  handle @kratos-courier {
-    reverse_proxy kratos-courier:4434
-  }
+	@kratos-admin host kratos-admin.{$DOMAIN_NAME}
+	handle @kratos-admin {
+		reverse_proxy kratos:4434
+	}
 
-  @plausible host plausible.{$DOMAIN_NAME} 
-  handle @plausible {
-    reverse_proxy plausible:8000 :8080 {
-      lb_policy first
-      lb_try_duration 5s
-      fail_duration 10s
-      transport http {
-    		dial_timeout 600ms
-	    }
-    }
-  }
+	@kratos-courier host kratos-courier.{$DOMAIN_NAME}
+	handle @kratos-courier {
+		reverse_proxy kratos-courier:4434
+	}
 
-  @prometheus host prometheus.{$DOMAIN_NAME} 
-  handle @prometheus {
-    reverse_proxy prometheus:9090
-  }
+	@plausible host plausible.{$DOMAIN_NAME}
+	handle @plausible {
+		reverse_proxy plausible:8000 :8080 {
+			lb_policy first
+			lb_try_duration 5s
+			fail_duration 10s
+			transport http {
+				dial_timeout 600ms
+			}
+		}
+	}
 
-  @grafana host grafana.{$DOMAIN_NAME} 
-  handle @grafana {
-    reverse_proxy grafana:3000
-  }
+	# i.e: https://otel-zpages.localtest.me/debug/servicez
+	@otel-zpages host otel-zpages.{$DOMAIN_NAME}
+	handle @otel-zpages {
+		reverse_proxy otel-collector:55679
+	}
+
+	@jaeger host jaeger.{$DOMAIN_NAME}
+	handle @jaeger {
+		reverse_proxy jaeger:16686
+	}
+
+	@prometheus host prometheus.{$DOMAIN_NAME}
+	handle @prometheus {
+		reverse_proxy prometheus:9090
+	}
+
+	@grafana host grafana.{$DOMAIN_NAME}
+	handle @grafana {
+		reverse_proxy grafana:3000
+	}
 }
 
 # For healthcheck and fallback 
 :8080 {
-  respond "ok"
+	respond "ok"
 }

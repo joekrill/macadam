@@ -1,6 +1,6 @@
 ## This is expected to be built in the context of the repo root directory!
 
-FROM node:18.13 AS builder
+FROM node:20.10 AS builder
 
 WORKDIR /var/macadam
 ENV NODE_ENV production

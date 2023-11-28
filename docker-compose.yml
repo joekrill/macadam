@@ -189,7 +189,7 @@ services:
 
   api-server: &api-server
     <<: *service-defaults
-    image: node:18.13
+    image: node:20.10
     command: ["yarn", "workspace", "@macadam/api-server", "run", "start:dev"]
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://localhost:4000/api/health
@@ -199,6 +199,8 @@ services:
       timeout: 10s
     working_dir: /var/macadam
     depends_on:
+      yarn:
+        condition: service_completed_successfully
       api-server-migrate:
         condition: service_completed_successfully
       postgres:
@@ -223,10 +225,12 @@ services:
       SENTRY_TUNNELABLE_DSNS: "http://239d589a58d24675be8159b19718b22e@glitchtip-web:8080/1"
       SMTP_MAIL_TO: contact@macadam.com
       SMTP_URI: smtp://mail:1025/?disable_starttls=true
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4317
     volumes:
       - .:/var/macadam
       - yarn_unplugged:/var/macadam/.yarn/unplugged/
 
+  # Ensures dependencies are up-to-date/pulled before running api-server commands
   yarn:
     <<: *api-server
     command: ["yarn"]
@@ -234,6 +238,7 @@ services:
     healthcheck: {}
     depends_on: []
 
+  # Runs database migrations
   api-server-migrate:
     <<: *api-server
     command: ["yarn", "workspace", "@macadam/api-server", "run", "migration:up"]
@@ -245,6 +250,7 @@ services:
       postgres:
         condition: service_healthy
 
+  # Builds the `api-client` package (and rebuilds on file changes)
   api-client-builder:
     <<: *service-defaults
     build:
@@ -316,12 +322,42 @@ services:
       - yarn_unplugged:/var/macadam/.yarn/unplugged/
 
   ###################################################################
-  # Metrics
+  # Telemetry (`--profile telemetry`)
   ###################################################################
+
+  otel-collector:
+    <<: *service-defaults
+    profiles: ["telemetry"]
+    image: otel/opentelemetry-collector-contrib:0.89.0
+    deploy:
+      resources:
+        limits:
+          memory: 125M
+    restart: unless-stopped
+    volumes:
+      - ./services/otel-collector/otel-collector-config.yaml:/etc/otelcol-contrib/config.yaml
+
+  jaeger:
+    <<: *service-defaults
+    profiles: ["telemetry"]
+    image: jaegertracing/all-in-one:1.51
+    command:
+      - "--memory.max-traces=8000"
+      - "--query.base-path=/jaeger/ui"
+      - "--prometheus.server-url=http://prometheus"
+      - "--prometheus.query.normalize-calls=true"
+      - "--prometheus.query.normalize-duration=true"
+    deploy:
+      resources:
+        limits:
+          memory: 300M
+    restart: unless-stopped
+    environment:
+      - METRICS_STORAGE_TYPE=prometheus
 
   prometheus:
     <<: *service-defaults
-    profiles: ["metrics"]
+    profiles: ["telemetry"]
     image: prom/prometheus:v2.37.1
     volumes:
       - ./services/prometheus:/etc/prometheus/
@@ -338,7 +374,7 @@ services:
 
   grafana:
     <<: *service-defaults
-    profiles: ["metrics"]
+    profiles: ["telemetry"]
     image: grafana/grafana:9.0.9
     depends_on:
       - prometheus
@@ -353,7 +389,7 @@ services:
       org.label-schema.group: "monitoring"
 
   # alertmanager:
-  #   profiles: ["metrics"]
+  #   profiles: ["telemetry"]
   #   image: prom/alertmanager:v0.24.0
   #   volumes:
   #     - ./services/alertmanager:/etc/alertmanager
@@ -367,7 +403,7 @@ services:
   #     org.label-schema.group: "monitoring"
 
   # nodeexporter:
-  #   profiles: ["metrics"]
+  #   profiles: ["telemetry"]
   #   image: prom/node-exporter:v1.0.1
   #   volumes:
   #     - /proc:/host/proc:ro
@@ -384,10 +420,10 @@ services:
 
   postgres-exporter:
     <<: *service-defaults
-    profiles: ["metrics"]
+    profiles: ["telemetry"]
     image: wrouesnel/postgres_exporter:v0.8.0
     environment:
-      DATA_SOURCE_NAME: postgres://macadam:macadam!@postgres:5432/macadam?sslmode=disable
+      DATA_SOURCE_NAME: postgres://dressmyrun:dressmyrun!@postgres:5432/dressmyrun?sslmode=disable
     labels:
       org.label-schema.group: "monitoring"
 
@@ -473,7 +509,7 @@ services:
   # # GlitchTip (`--profile error-tracking`)
   # ###################################################################
 
-  # NOTE: On ARM64 you will be spamemd with messages like:
+  # NOTE: On ARM64 you will be spammed with messages like:
   # "*** uWSGI listen queue of socket ":8000" (fd: 3) full !!! (26472960/64) ***"
   # I can't figure out how to fix this. Rebuilding the docker image fails on
   # ARM64 when installing symbolic (see: https://github.com/getsentry/symbolic/issues/76).

@@ -21,7 +21,6 @@ import {
   initializeMailer,
 } from "./features/mailer/initializeMailer.js";
 import { initializeMetrics } from "./features/metrics/initializeMetrics.js";
-import { metricsRoutes } from "./features/metrics/metricsRoutes.js";
 import { urlSearchParams } from "./features/querystring/urlSearchParams.js";
 import { rateLimit } from "./features/rateLimit/rateLimit.js";
 import { initializeRedis } from "./features/redis/initializeRedis.js";
@@ -77,11 +76,6 @@ export interface AppOptions {
   mailer?: InitializeMailerOptions;
 
   /**
-   * The path to serve Prometheus-style metrics from
-   */
-  metricsPath?: string;
-
-  /**
    * The connection URL to a redis instance to use (i.e. "redis://redis:6380/0")
    * for caching.
    */
@@ -102,7 +96,6 @@ export const createApp = async ({
   kratos,
   logger,
   mailer,
-  metricsPath = "/metrics",
   redisUrl,
   sentry,
 }: AppOptions) => {
@@ -136,9 +129,7 @@ export const createApp = async ({
   app.use(
     logRequests(logger, {
       pathLevels: {
-        // Reduce logging levels for metrics and health endpoints because
-        // they are only used internally.
-        [metricsPath]: "trace",
+        // Reduce logging level for /health because it's only used internally.
         [healthPath]: "trace",
       },
     }),
@@ -159,9 +150,8 @@ export const createApp = async ({
   app.use(helmet({ contentSecurityPolicy: false }));
   app.use(cors());
 
-  // Metrics and health routes don't need body parsing or entity manager,
+  // Health routes don't need body parsing or entity manager,
   // so they can be applied first.
-  app.use(metricsRoutes({ prefix: metricsPath }));
   app.use(healthRoutes({ prefix: healthPath }));
 
   // koa-body was preferred over koa-bodyparser because koa-bodyparser

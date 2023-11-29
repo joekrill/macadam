@@ -64,8 +64,6 @@ export const rateLimit = ({
         ctx.set("RateLimit-Limit", String(rateLimiter.points));
         ctx.set("RateLimit-Remaining", String(rateLimiterRes.remainingPoints));
         ctx.set("RateLimit-Reset", String(rateLimiterRes.msBeforeNext / 1000));
-      } else {
-        ctx.set("Hello", "123");
       }
     }
   };

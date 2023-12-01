@@ -9,30 +9,40 @@ export const logRequests =
   (logger: pino.Logger, options?: LogRequestsOptions): Middleware =>
   async (ctx, next): Promise<void> => {
     ctx.state.logger = logger.child(
-      { id: ctx.state.requestId },
+      { requestId: ctx.state.requestId },
       {
         serializers: {
-          state: (state: DefaultState) =>
-            typeof state === "object"
+          state: ({
+            _session,
+            ability,
+            entityManager,
+            excludeFromMetrics,
+            kratosEntityManager,
+            logger,
+            requestId,
+            session,
+            urlSearchParams,
+            xSessionToken,
+            responseTime,
+            ...state
+          }: DefaultState) => ({
+            session: _session
               ? {
-                  requestId: state.requestId,
-                  responseTime: state.responseTime,
-                  session: state._session,
-                  _props: Object.keys(state).filter((key) => !!state[key]),
+                  id: _session.id,
+                  identityId: _session.identity.id,
+                  active: _session.active,
+                  aal: _session.authenticator_assurance_level,
+                  authenticated_at: _session.authenticated_at,
+                  issued_at: _session.issued_at,
+                  expires_at: _session.expires_at,
                 }
-              : `[could not serialize state: ${typeof state}]`,
-        },
-        redact: {
-          // These aren't useful at all in our output and just bloat our logs.
-          paths: [
-            "state.ability",
-            "state.entityManager",
-            "state.kratosEntityManager",
-            "state.logger",
-            "state.session",
-            "state.urlSearchParams",
-          ],
-          remove: true,
+              : null,
+            excludeFromMetrics,
+            requestId,
+
+            // Anything else just output a list of property names.
+            additionalProps: Object.keys(state).filter((key) => !!state[key]),
+          }),
         },
       },
     );
@@ -41,9 +51,11 @@ export const logRequests =
     const logMethod = options?.pathLevels?.[ctx.path] || "info";
     ctx.state.logger[logMethod](
       {
+        requestId: ctx.state.requestId,
+        responseTime: ctx.state.responseTime,
+        state: ctx.state,
         req: ctx.req,
         res: ctx.res,
-        responseTime: ctx.state.responseTime,
       },
       "request",
     );

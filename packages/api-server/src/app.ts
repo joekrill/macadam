@@ -126,15 +126,6 @@ export const createApp = async ({
   await initializeCache(app);
 
   app.use(errorHandler());
-  app.use(
-    logRequests(logger, {
-      pathLevels: {
-        // Reduce logging level for /health because it's only used internally.
-        [healthPath]: "trace",
-      },
-    }),
-  );
-  app.use(urlSearchParams());
   app.use(responseTime());
   app.use(
     requestId({
@@ -146,7 +137,16 @@ export const createApp = async ({
       ],
     }),
   );
+  app.use(
+    logRequests(logger, {
+      pathLevels: {
+        // Reduce logging level for /health because it's only used internally.
+        [healthPath]: "trace",
+      },
+    }),
+  );
   app.use(rateLimit());
+  app.use(urlSearchParams());
   app.use(helmet({ contentSecurityPolicy: false }));
   app.use(cors());
 

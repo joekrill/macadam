@@ -17,10 +17,10 @@ export const LoadingSpinner = ({ children }: LoadingSpinnerProps) => {
         color="blue.600"
         size="xl"
         label={formatMessage({
-          id: "common.loadingSpinner.label",
+          id: "common.loadingSpinner.ariaLabel",
           defaultMessage: "Loading...",
           description:
-            "The screen reader text to show for the spinning loading indicator",
+            "The accessible text to show for the spinning loading indicator",
         })}
       />
       {children && <Text color={textColor}>{children}</Text>}

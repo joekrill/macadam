@@ -1,25 +1,17 @@
 {
-  "api.errors.fetchErrorMessage": [
+  "api.error.generic.heading": [
     {
       "type": 0,
-      "value": "Unexpected client error ("
-    },
-    {
-      "type": 1,
-      "value": "error"
-    },
-    {
-      "type": 0,
-      "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "Something went wrongSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "api.errors.genericMessage": [
+  "api.error.other.message": [
     {
       "type": 0,
       "value": "An unknown error occurred. Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "api.errors.genericMessageWithCode": [
+  "api.error.otherWithCode.message": [
     {
       "type": 0,
       "value": "The server returned an unexpected resonse ("
@@ -33,7 +25,7 @@
       "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "api.errors.genericMessageWithMessage": [
+  "api.error.otherWithMessage.message": [
     {
       "type": 0,
       "value": "Error: "
@@ -63,13 +55,7 @@
       "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "api.errors.genericTitle": [
-    {
-      "type": 0,
-      "value": "Something went wrongSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "api.errors.parsingErrorMessage": [
+  "api.error.parsingError.message": [
     {
       "type": 0,
       "value": "Error parsing server response ("
@@ -83,158 +69,21 @@
       "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "app.contactUsForm.emailField.label": [
+  "api.error.requestFailure.message": [
     {
       "type": 0,
-      "value": "EmailSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "app.contactUsForm.emailField.placeholder": [
-    {
-      "type": 0,
-      "value": "Your EmailSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "app.contactUsForm.messageField.label": [
-    {
-      "type": 0,
-      "value": "MessageSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "app.contactUsForm.messageField.placeholder": [
-    {
-      "type": 0,
-      "value": "Your MessageSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "app.contactUsForm.nameField.label": [
-    {
-      "type": 0,
-      "value": "NameSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "app.contactUsForm.nameField.placeholder": [
-    {
-      "type": 0,
-      "value": "Your NameSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "app.contactUsForm.sendButton.label": [
-    {
-      "type": 0,
-      "value": "Send MessageSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "app.contactUsSuccess.message": [
-    {
-      "type": 0,
-      "value": "Thanks for your message. We'll get back to you soon.SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "app.contactUsSuccess.title": [
-    {
-      "type": 0,
-      "value": "Message sent!SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "app.footer.copyrightNotice": [
-    {
-      "type": 0,
-      "value": "© "
-    },
-    {
-      "style": {
-        "parsedOptions": {
-          "year": "numeric"
-        },
-        "pattern": "yyyy",
-        "type": 1
-      },
-      "type": 3,
-      "value": "now"
-    },
-    {
-      "type": 0,
-      "value": " "
+      "value": "Unexpected client error ("
     },
     {
       "type": 1,
-      "value": "appName"
+      "value": "error"
     },
     {
       "type": 0,
-      "value": ". All rights reserved.SSSSSSSSSSSSSSSSSSSSSSSSS"
+      "value": "). Please try again.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "app.footer.linkGroups.legal": [
-    {
-      "type": 0,
-      "value": "LegalSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "app.footer.linkGroups.resources": [
-    {
-      "type": 0,
-      "value": "ResourcesSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "app.footer.links.contact.label": [
-    {
-      "type": 0,
-      "value": "ContactSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "app.footer.links.faq.label": [
-    {
-      "type": 0,
-      "value": "FAQSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "app.footer.links.privacy.label": [
-    {
-      "type": 0,
-      "value": "PrivacySSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "app.footer.links.termsAndConditions.label": [
-    {
-      "type": 0,
-      "value": "TermsSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.VerifyEmailNotificationBanner.emailSentMessage": [
-    {
-      "type": 0,
-      "value": "Please confirm your email. We've send a message to "
-    },
-    {
-      "children": [
-        {
-          "type": 1,
-          "value": "emailAddress"
-        }
-      ],
-      "type": 8,
-      "value": "e"
-    },
-    {
-      "type": 0,
-      "value": ".SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.VerifyEmailNotificationBanner.resendButton.label": [
-    {
-      "type": 0,
-      "value": "Resend emailSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.deleteSessionLink.ariaLabel": [
-    {
-      "type": 0,
-      "value": "Delete SessionSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.flowError.redirecting": [
+  "auth.flowError.redirecting.message": [
     {
       "options": {
         "browser_location_change_required": {
@@ -348,7 +197,7 @@
       "value": "You're already logged in.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.login.signUpInsteadMessage": [
+  "auth.login.signUpInstead.message": [
     {
       "type": 0,
       "value": "Don't have an account yet? "
@@ -368,37 +217,37 @@
       "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.loginFormTitle.2fa": [
+  "auth.loginForm.2fa.heading": [
     {
       "type": 0,
       "value": "Two-Factor AuthenticationSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.loginFormTitle.confirmAccess": [
+  "auth.loginForm.confirmAccess.heading": [
     {
       "type": 0,
       "value": "Confirm accessSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.loginFormTitle.login": [
+  "auth.loginForm.login.heading": [
     {
       "type": 0,
       "value": "Log in to your accountSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.loginLink.label": [
+  "auth.loginLink.text": [
     {
       "type": 0,
       "value": "Log InSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.logoutButton.label": [
+  "auth.logoutButton.text": [
     {
       "type": 0,
       "value": "Log OutSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.passwordInput.togglePasswordVisibility.label": [
+  "auth.passwordInput.togglePasswordVisibility.tooltip": [
     {
       "options": {
         "hide": {
@@ -430,19 +279,19 @@
       "value": " passwordSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.recovery.title": [
+  "auth.recovery.heading": [
     {
       "type": 0,
       "value": "Recover your accountSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.recoveryLink.label": [
+  "auth.recoveryLink.text": [
     {
       "type": 0,
       "value": "Forgot your password?SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.registration.alreadyHaveAccountLink": [
+  "auth.registration.alreadyHaveAccount.message": [
     {
       "type": 0,
       "value": "Already have an account? "
@@ -456,19 +305,19 @@
       "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.registration.title": [
+  "auth.registration.heading": [
     {
       "type": 0,
       "value": "Create your accountSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.registrationForm.oidcDividerText": [
+  "auth.registrationForm.oidcDivider.text": [
     {
       "type": 0,
       "value": "orSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.registrationLink.label": [
+  "auth.registrationLink.text": [
     {
       "type": 0,
       "value": "Sign UpSSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -520,13 +369,13 @@
       "value": "PasswordSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.selfServiceUi.profilePictureNode.deleteButton.label": [
+  "auth.selfServiceUi.profilePictureNode.deleteButton.text": [
     {
       "type": 0,
       "value": "DeleteSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.selfServiceUi.profilePictureNode.uploadButton.label": [
+  "auth.selfServiceUi.profilePictureNode.uploadButton.text": [
     {
       "type": 0,
       "value": "Change photoSSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -538,37 +387,49 @@
       "value": "Active SessionsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.sessionsTable.authenticatedAtHeader.label": [
+  "auth.sessionsTable.authenticatedAt.columnHeading": [
     {
       "type": 0,
       "value": "Last UsedSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.sessionsTable.currentSessionIndicator.title": [
+  "auth.sessionsTable.currentSessionIndicator.tooltip": [
     {
       "type": 0,
       "value": "This is your current sessionSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.sessionsTable.expiresAtHeader.label": [
+  "auth.sessionsTable.expiresAt.columnHeading": [
     {
       "type": 0,
       "value": "ExpiresSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.sessionsTable.methodHeader.label": [
+  "auth.sessionsTable.method.columnHeading": [
     {
       "type": 0,
       "value": "MethodSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.settings.oidcSection.title": [
+  "auth.settings.changePasswordSection.heading": [
+    {
+      "type": 0,
+      "value": "Change PasswordSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.settings.oidcSection.heading": [
     {
       "type": 0,
       "value": "3rd Party Log-inSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.settings.totpSection.title": [
+  "auth.settings.profileSection.heading": [
+    {
+      "type": 0,
+      "value": "ProfileSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "auth.settings.totpSection.heading": [
     {
       "type": 0,
       "value": "Two-factor AuthenticationSSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -580,7 +441,7 @@
       "value": "Toggle Two-factor authentication settingsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.settings.webauthnSection.title": [
+  "auth.settings.webauthnSection.heading": [
     {
       "type": 0,
       "value": "Hardware Tokens and BiometricsSSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -592,19 +453,7 @@
       "value": "Toggle Hardware Tokens and Biometrics settingsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "auth.settingsForm.changePasswordSection.title": [
-    {
-      "type": 0,
-      "value": "Change PasswordSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.settingsForm.profileSection.title": [
-    {
-      "type": 0,
-      "value": "ProfileSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "auth.verification.title": [
+  "auth.verification.heading": [
     {
       "type": 0,
       "value": "Verify your accountSSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -646,16 +495,102 @@
       "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "common.hompageButton.label": [
+  "common.hompageButton.text": [
     {
       "type": 0,
       "value": "Go to the homepageSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "common.loadingSpinner.label": [
+  "common.loadingSpinner.ariaLabel": [
     {
       "type": 0,
       "value": "Loading...SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "contactUs.form.emailField.label": [
+    {
+      "type": 0,
+      "value": "EmailSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "contactUs.form.emailField.placeholder": [
+    {
+      "type": 0,
+      "value": "Your EmailSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "contactUs.form.messageField.label": [
+    {
+      "type": 0,
+      "value": "MessageSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "contactUs.form.messageField.placeholder": [
+    {
+      "type": 0,
+      "value": "Your MessageSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "contactUs.form.nameField.label": [
+    {
+      "type": 0,
+      "value": "NameSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "contactUs.form.nameField.placeholder": [
+    {
+      "type": 0,
+      "value": "Your NameSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "contactUs.form.sendButton.text": [
+    {
+      "type": 0,
+      "value": "Send MessageSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "contactUs.page.heading": [
+    {
+      "type": 0,
+      "value": "Contact UsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "contactUs.page.instructions": [
+    {
+      "type": 0,
+      "value": "Email us at "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "emailAddress"
+        }
+      ],
+      "type": 8,
+      "value": "mailto"
+    },
+    {
+      "type": 0,
+      "value": " or fill out the form below for any feedback, questions, problems, or feature requests.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "contactUs.page.title": [
+    {
+      "type": 0,
+      "value": "Contact UsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "contactUs.success.message": [
+    {
+      "type": 0,
+      "value": "Thanks for your message. We'll get back to you soon.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "contactUs.success.title": [
+    {
+      "type": 0,
+      "value": "Message sent!SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "errors.errorAlert.message": [
@@ -664,7 +599,7 @@
       "value": "Something went wrong :(SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "errors.errorAlert.retryButton.label": [
+  "errors.errorAlert.retryButton.text": [
     {
       "type": 0,
       "value": "Try AgainSSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -702,22 +637,165 @@
       "value": "Not FoundSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "forms.cancelButton.label": [
+  "faq.page.heading": [
+    {
+      "type": 0,
+      "value": "Frequently Asked QuestionsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "faq.page.title": [
+    {
+      "type": 0,
+      "value": "FAQSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "footer.copyrightNotice": [
+    {
+      "type": 0,
+      "value": "© "
+    },
+    {
+      "style": {
+        "parsedOptions": {
+          "year": "numeric"
+        },
+        "pattern": "yyyy",
+        "type": 1
+      },
+      "type": 3,
+      "value": "now"
+    },
+    {
+      "type": 0,
+      "value": " "
+    },
+    {
+      "type": 1,
+      "value": "appName"
+    },
+    {
+      "type": 0,
+      "value": ". All rights reserved.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "footer.linkGroup.legal.heading": [
+    {
+      "type": 0,
+      "value": "LegalSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "footer.linkGroup.resources.heading": [
+    {
+      "type": 0,
+      "value": "ResourcesSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "footer.links.contactUs.text": [
+    {
+      "type": 0,
+      "value": "ContactSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "footer.links.faq.text": [
+    {
+      "type": 0,
+      "value": "FAQSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "footer.links.privacyPolicy.text": [
+    {
+      "type": 0,
+      "value": "PrivacySSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "footer.links.termsAndConditions.text": [
+    {
+      "type": 0,
+      "value": "TermsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "forms.cancelButton.text": [
     {
       "type": 0,
       "value": "CancelSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "forms.createButton.label": [
+  "forms.createButton.text": [
     {
       "type": 0,
       "value": "CreateSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "forms.saveButton.label": [
+  "forms.saveButton.text": [
     {
       "type": 0,
       "value": "SaveSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "home.page.features.alwaysUpToDate.description": [
+    {
+      "type": 0,
+      "value": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "home.page.features.alwaysUpToDate.heading": [
+    {
+      "type": 0,
+      "value": "Always up to dateSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "home.page.features.multipleDevices.description": [
+    {
+      "type": 0,
+      "value": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "home.page.features.multipleDevices.heading": [
+    {
+      "type": 0,
+      "value": "Support for multiple devicesSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "home.page.features.secureByDefault.description": [
+    {
+      "type": 0,
+      "value": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "home.page.features.secureByDefault.heading": [
+    {
+      "type": 0,
+      "value": "Secure by defaultSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "home.page.features.statistics.description": [
+    {
+      "type": 0,
+      "value": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "home.page.features.statistics.heading": [
+    {
+      "type": 0,
+      "value": "Incredible statisticsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "home.page.getStartedCtaButton.text": [
+    {
+      "type": 0,
+      "value": "Get startedSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "home.page.introductionMessage": [
+    {
+      "type": 0,
+      "value": "Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "home.page.tagLine": [
+    {
+      "type": 0,
+      "value": "Opinionated, production-ready, full-featured SaaS boilerplate.SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "i18n.activeLocaleSelect.deviceLocaleOption": [
@@ -734,7 +812,7 @@
       "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "i18n.localErrorToast.title": [
+  "i18n.localError.toastMessage": [
     {
       "type": 0,
       "value": "Unable to load locale "
@@ -748,150 +826,34 @@
       "value": "SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "pages.contactUs.heading": [
-    {
-      "type": 0,
-      "value": "Contact UsSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.contactUs.instructions": [
-    {
-      "type": 0,
-      "value": "Email us at "
-    },
-    {
-      "children": [
-        {
-          "type": 1,
-          "value": "emailAddress"
-        }
-      ],
-      "type": 8,
-      "value": "mailto"
-    },
-    {
-      "type": 0,
-      "value": " or fill out the form below for any feedback, questions, problems, or feature requests.SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.contactUs.title": [
-    {
-      "type": 0,
-      "value": "Contact UsSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.faq.heading": [
-    {
-      "type": 0,
-      "value": "Frequently Asked QuestionsSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.faq.title": [
-    {
-      "type": 0,
-      "value": "FAQSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.home.features.alwaysUpToDate.description": [
-    {
-      "type": 0,
-      "value": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.home.features.alwaysUpToDate.title": [
-    {
-      "type": 0,
-      "value": "Always up to dateSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.home.features.multipleDevices.description": [
-    {
-      "type": 0,
-      "value": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.home.features.multipleDevices.title": [
-    {
-      "type": 0,
-      "value": "Support for multiple devicesSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.home.features.secureByDefault.description": [
-    {
-      "type": 0,
-      "value": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.home.features.secureByDefault.title": [
-    {
-      "type": 0,
-      "value": "Secure by defaultSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.home.features.statistics.description": [
-    {
-      "type": 0,
-      "value": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.home.features.statistics.title": [
-    {
-      "type": 0,
-      "value": "Incredible statisticsSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.home.getStartedCtaButton": [
-    {
-      "type": 0,
-      "value": "Get startedSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.home.introductionText": [
-    {
-      "type": 0,
-      "value": "Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.home.tagLine": [
-    {
-      "type": 0,
-      "value": "Opinionated, production-ready, full-featured SaaS boilerplate.SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.privacyPolicy.heading": [
-    {
-      "type": 0,
-      "value": "Privacy PolicySSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.privacyPolicy.title": [
-    {
-      "type": 0,
-      "value": "Privacy PolicySSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.termsAndConditions.heading": [
-    {
-      "type": 0,
-      "value": "Terms and ConditionsSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pages.termsAndConditions.title": [
-    {
-      "type": 0,
-      "value": "Terms and ConditionsSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "pagination.nextPage.label": [
+  "pagination.nextPage.text": [
     {
       "type": 0,
       "value": "Next PageSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "pagination.previousPage.label": [
+  "pagination.previousPage.text": [
     {
       "type": 0,
       "value": "Previous PageSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "privacyPolicy.page.heading": [
+    {
+      "type": 0,
+      "value": "Privacy PolicySSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "privacyPolicy.page.title": [
+    {
+      "type": 0,
+      "value": "Privacy PolicySSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "sessions.deleteSessionLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Delete SessionSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "sessions.sessionsList.refreshButton.ariaLabel": [
@@ -912,37 +874,37 @@
       "value": "Color ModeSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "settings.appPreferences.title": [
+  "settings.appPreferences.heading": [
     {
       "type": 0,
       "value": "PreferencesSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "settings.appPreferencesLink.label": [
+  "settings.appPreferencesLink.text": [
     {
       "type": 0,
       "value": "SettingsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "settings.settingsPage.preferencesLink.label": [
+  "settings.settingsPage.preferencesLink.text": [
     {
       "type": 0,
       "value": "PreferencesSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "settings.settingsPage.profileLink.label": [
+  "settings.settingsPage.profileLink.text": [
     {
       "type": 0,
       "value": "Profile & LoginSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "settings.settingsPage.sessionsLink.label": [
+  "settings.settingsPage.sessionsLink.text": [
     {
       "type": 0,
       "value": "SessionsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "sorting.sortMenu.sortByGroupTitle": [
+  "sorting.sortMenu.sortByGroup.heading": [
     {
       "type": 0,
       "value": "Sort bySSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -960,25 +922,37 @@
       "value": "DescendingSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "sorting.sortMenu.sortOrderGroupTitle": [
+  "sorting.sortMenu.sortOrderGroup.heading": [
     {
       "type": 0,
       "value": "Sort orderSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "theme.colorModeSelect.darkMode.label": [
+  "termsAndConditions.page.heading": [
+    {
+      "type": 0,
+      "value": "Terms and ConditionsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "termsAndConditions.pages.title": [
+    {
+      "type": 0,
+      "value": "Terms and ConditionsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "theme.colorModeSelect.darkMode.optionText": [
     {
       "type": 0,
       "value": "DarkSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "theme.colorModeSelect.lightMode.label": [
+  "theme.colorModeSelect.lightMode.optionText": [
     {
       "type": 0,
       "value": "LightSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "theme.colorModeSwitcher.switchColorModeLabel": [
+  "theme.colorModeSwitcher.switchColorMode.fullText": [
     {
       "type": 0,
       "value": "Switch to "
@@ -1014,19 +988,19 @@
       "value": " modeSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "things.deleteConfirmation.cancelButton.label": [
+  "things.deleteConfirmation.cancelButton.text": [
     {
       "type": 0,
       "value": "CancelSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "things.deleteConfirmation.confirmButton.label": [
+  "things.deleteConfirmation.confirmButton.text": [
     {
       "type": 0,
       "value": "Yes, delete itSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "things.deleteConfirmation.header": [
+  "things.deleteConfirmation.heading": [
     {
       "type": 0,
       "value": "Delete Thing?SSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -1064,7 +1038,13 @@
       "value": "Edit ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "things.thingCreate.title": [
+  "things.loadError.notFound": [
+    {
+      "type": 0,
+      "value": "The Thing you are looking for couldn't be found.SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.thingCreate.heading": [
     {
       "type": 0,
       "value": "New ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -1082,7 +1062,7 @@
       "value": "Updated:SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "things.thingEdit.title": [
+  "things.thingEdit.heading": [
     {
       "type": 0,
       "value": "Edit ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
@@ -1106,22 +1086,22 @@
       "value": "NameSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "things.thingLoadError.notFound": [
-    {
-      "type": 0,
-      "value": "The Thing you are looking for couldn't be found.SSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
   "things.thingsList.addButton.ariaLabel": [
     {
       "type": 0,
       "value": "Add new ThingSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "things.thingsList.addButton.label": [
+  "things.thingsList.addButton.text": [
     {
       "type": 0,
       "value": "New thingSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "things.thingsList.heading": [
+    {
+      "type": 0,
+      "value": "ThingsSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
   "things.thingsList.ownFilter.all": [
@@ -1148,52 +1128,72 @@
       "value": "Filter by name or description...SSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "things.thingsList.title": [
-    {
-      "type": 0,
-      "value": "ThingsSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "things.thingsTable.createdHeader.label": [
+  "things.thingsTable.createdAt.columnHeading": [
     {
       "type": 0,
       "value": "CreatedSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "things.thingsTable.descriptionHeader.label": [
+  "things.thingsTable.description.columnHeading": [
     {
       "type": 0,
       "value": "DescriptionSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "things.thingsTable.nameHeader.label": [
-    {
-      "type": 0,
-      "value": "NameSSSSSSSSSSSSSSSSSSSSSSSSS"
-    }
-  ],
-  "things.thingsTable.publicHeader.label": [
+  "things.thingsTable.isPublic.columnHeading": [
     {
       "type": 0,
       "value": "PublicSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "user.userMenu.label": [
+  "things.thingsTable.name.columnHeading": [
+    {
+      "type": 0,
+      "value": "NameSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "user.userMenu.ariaLabel": [
     {
       "type": 0,
       "value": "User menuSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "user.userMenu.profileLink": [
+  "user.userMenu.profileLink.text": [
     {
       "type": 0,
       "value": "Your ProfileSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ],
-  "user.userMenu.thingsLink": [
+  "user.userMenu.thingsLink.text": [
     {
       "type": 0,
       "value": "Your ThingsSSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "verifyEmailNotificationBanner.emailSentMessage": [
+    {
+      "type": 0,
+      "value": "Please confirm your email. We've send a message to "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "emailAddress"
+        }
+      ],
+      "type": 8,
+      "value": "e"
+    },
+    {
+      "type": 0,
+      "value": ".SSSSSSSSSSSSSSSSSSSSSSSSS"
+    }
+  ],
+  "verifyEmailNotificationBanner.resendButton.text": [
+    {
+      "type": 0,
+      "value": "Resend emailSSSSSSSSSSSSSSSSSSSSSSSSS"
     }
   ]
 }

@@ -48,7 +48,9 @@ export const SortMenu = ({
       <MenuList>
         <MenuOptionGroup
           title={formatMessage({
-            id: "sorting.sortMenu.sortByGroupTitle",
+            id: "sorting.sortMenu.sortByGroup.heading",
+            description:
+              "The heading to show in the sort menu above the available sort fields",
             defaultMessage: "Sort by",
           })}
           type="radio"
@@ -70,7 +72,9 @@ export const SortMenu = ({
         </MenuOptionGroup>
         <MenuOptionGroup
           title={formatMessage({
-            id: "sorting.sortMenu.sortOrderGroupTitle",
+            id: "sorting.sortMenu.sortOrderGroup.heading",
+            description:
+              "The heading to show in the sort menu above the available sort order options",
             defaultMessage: "Sort order",
           })}
           type="radio"
@@ -87,12 +91,16 @@ export const SortMenu = ({
           <MenuItemOption value="asc">
             {formatMessage({
               id: "sorting.sortMenu.sortOrderAscending",
+              description:
+                "Shown in the sort menu to select ascending sort order",
               defaultMessage: "Ascending",
             })}
           </MenuItemOption>
           <MenuItemOption value="desc">
             {formatMessage({
               id: "sorting.sortMenu.sortOrderDescending",
+              description:
+                "Shown in the sort menu to select descending sort order",
               defaultMessage: "Descending",
             })}
           </MenuItemOption>

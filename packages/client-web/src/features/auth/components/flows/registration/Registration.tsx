@@ -45,14 +45,15 @@ export const Registration = ({
       <FlowHeading
         title={
           <FormattedMessage
-            id="auth.registration.title"
+            id="auth.registration.heading"
             description="The title displayed at the top of the registration form"
             defaultMessage="Create your account"
           />
         }
         subtitle={
           <FormattedMessage
-            id="auth.registration.alreadyHaveAccountLink"
+            id="auth.registration.alreadyHaveAccount.message"
+            description="The message shown on the registration form that direct the user to the log in page if they already have an account"
             defaultMessage="Already have an account? {loginLink}"
             values={{
               loginLink: <LoginLink />,

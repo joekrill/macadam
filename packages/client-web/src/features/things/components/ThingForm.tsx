@@ -67,6 +67,7 @@ export const ThingForm = ({
           <FormLabel>
             <FormattedMessage
               id="things.thingForm.name.label"
+              description="The label for the name field of the Thing form"
               defaultMessage="Name"
             />
           </FormLabel>
@@ -77,6 +78,7 @@ export const ThingForm = ({
           <FormLabel>
             <FormattedMessage
               id="things.thingForm.description.label"
+              description="The label for the description field of the Thing form"
               defaultMessage="Description"
             />
           </FormLabel>
@@ -91,6 +93,7 @@ export const ThingForm = ({
           <Checkbox {...register("isPublic")}>
             <FormattedMessage
               id="things.thingForm.isPublic.label"
+              description="The label for the public status field of the Thing form"
               defaultMessage="Public"
             />
           </Checkbox>

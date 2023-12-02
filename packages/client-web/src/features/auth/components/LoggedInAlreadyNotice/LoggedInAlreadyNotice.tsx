@@ -38,7 +38,7 @@ export const LoggedInAlreadyNotice = ({
           {username ? (
             <FormattedMessage
               id="auth.loggedInAlreadyNotice.messageWithUsername"
-              description="The message telling the user that they are already logged in when their username is available"
+              description="The message telling the user that they are already logged and they have a username which can be used as part of the message"
               defaultMessage="You're already logged in as <e>{username}</e>."
               values={{
                 username,
@@ -48,7 +48,7 @@ export const LoggedInAlreadyNotice = ({
           ) : (
             <FormattedMessage
               id="auth.loggedInAlreadyNotice.messageWithoutUsername"
-              description="The message telling the user that they are already logged in when their username is not available"
+              description="The message telling the user that they are already logged but there is no username which can be used as part of the message"
               defaultMessage="You're already logged in."
             />
           )}

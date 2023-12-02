@@ -23,9 +23,9 @@ export const PasswordInput = React.forwardRef<
 
   const label = formatMessage(
     {
-      id: "auth.passwordInput.togglePasswordVisibility.label",
+      id: "auth.passwordInput.togglePasswordVisibility.tooltip",
       description:
-        "The hint text shown when hovering over the button that toggles the visibility of the users password.",
+        "The tooltip text shown when hovering over the button that toggles the visibility of the users password.",
       defaultMessage:
         "{action, select, hide {Mask} show {Reveal} other {}} password",
     },

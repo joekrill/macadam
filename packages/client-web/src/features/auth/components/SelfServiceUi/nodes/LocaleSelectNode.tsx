@@ -30,6 +30,8 @@ export const LocaleSelectNode = ({
         formatMessage(
           {
             id: "auth.selfServiceUi.localeSelectNode.usageInfo",
+            description:
+              "A message explaining that the user's locale field of their profile is used for sending external communication and in cases where a device isn't available to provide a locale.",
             defaultMessage:
               "This will be used for external communications or when we can't automatically detect your locale based on your device settings. To change the current application language visit the <preferencesLink>preferences page</preferencesLink>.",
           },
@@ -50,6 +52,8 @@ export const LocaleSelectNode = ({
         placeholder={formatMessage(
           {
             id: "auth.selfServiceUi.localeSelectNode.defaultValue",
+            description:
+              "The option for selecting the default locale based on the users location in the locale selection dropdown box of the user's profile/registration form",
             defaultMessage: "Default ({locale})",
           },
           {

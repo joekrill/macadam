@@ -50,7 +50,7 @@ export const Login = ({
         subtitle={
           errorId !== "session_already_available" && !aal && !refresh ? (
             <FormattedMessage
-              id="auth.login.signUpInsteadMessage"
+              id="auth.login.signUpInstead.message"
               description="The message shown on the login page that directs the user to create an account instead of logging in."
               defaultMessage="Don't have an account yet? <link>Sign up!</link>"
               values={{

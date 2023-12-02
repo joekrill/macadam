@@ -26,7 +26,7 @@ export const LocaleErrorNotifier = ({ children }: LocaleErrorNotifierProps) => {
       toast({
         title: formatMessage(
           {
-            id: "i18n.localErrorToast.title",
+            id: "i18n.localError.toastMessage",
             defaultMessage: "Unable to load locale {locale}",
             description: "The toast message shown when a locale fails to load",
           },

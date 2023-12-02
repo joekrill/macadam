@@ -26,7 +26,8 @@ export const ThingLoadError = ({ error, refetch }: ThingLoadErrorProps) => {
     >
       {isNotFound && (
         <FormattedMessage
-          id="things.thingLoadError.notFound"
+          id="things.loadError.notFound"
+          description="The message shown when the Thing requested was not found"
           defaultMessage="The Thing you are looking for couldn't be found."
         />
       )}

@@ -20,7 +20,8 @@ export const ThingCreate = () => {
     <Box>
       <Heading mb="2">
         <FormattedMessage
-          id="things.thingCreate.title"
+          id="things.thingCreate.heading"
+          description="The heading shown when creating a Thing"
           defaultMessage="New Thing"
         />
       </Heading>

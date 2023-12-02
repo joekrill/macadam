@@ -36,15 +36,17 @@ export const Home = (props: HomeProps) => {
           letterSpacing="tight"
         >
           <FormattedMessage
-            id="pages.home.tagLine"
+            id="home.page.tagLine"
+            description="The application tagline shown on the home page."
             defaultMessage="Opinionated, production-ready, full-featured SaaS boilerplate."
           />
         </Heading>
         <Text mt="4" fontSize="lg">
           <FormattedMessage
-            id="pages.home.introductionText"
+            id="home.page.introductionMessage"
+            description="The introductory message shown on the home page."
             defaultMessage="Ac euismod vel sit maecenas id pellentesque eu sed consectetur.
-            Malesuada adipiscing sagittis vel nulla nec."
+              Malesuada adipiscing sagittis vel nulla nec."
           />
         </Text>
         <Button
@@ -56,7 +58,7 @@ export const Home = (props: HomeProps) => {
           fontWeight="bold"
         >
           <FormattedMessage
-            id="pages.home.getStartedCtaButton"
+            id="home.page.getStartedCtaButton.text"
             description="Get started call-to-action button text"
             defaultMessage="Get started"
           />
@@ -70,52 +72,60 @@ export const Home = (props: HomeProps) => {
         >
           <Feature
             title={formatMessage({
-              id: "pages.home.features.secureByDefault.title",
+              id: "home.page.features.secureByDefault.heading",
+              description: 'The "Secure by default" feature name',
               defaultMessage: "Secure by default",
             })}
             icon={<FcPrivacy />}
           >
             <FormattedMessage
-              id="pages.home.features.secureByDefault.description"
+              id="home.page.features.secureByDefault.description"
+              description='The "Secure by default" feature description'
               defaultMessage="At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
           kasd gubergren, no sea takimata sanctus."
             />
           </Feature>
           <Feature
             title={formatMessage({
-              id: "pages.home.features.alwaysUpToDate.title",
+              id: "home.page.features.alwaysUpToDate.heading",
+              description: 'The "Always up to date" feature name',
               defaultMessage: "Always up to date",
             })}
             icon={<FcTimeline />}
           >
             <FormattedMessage
-              id="pages.home.features.alwaysUpToDate.description"
+              id="home.page.features.alwaysUpToDate.description"
+              description='The "Always up to date" feature description'
               defaultMessage="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore."
             />
           </Feature>
           <Feature
             title={formatMessage({
-              id: "pages.home.features.statistics.title",
+              id: "home.page.features.statistics.heading",
+              description: 'The "Incredible statistics" feature name',
               defaultMessage: "Incredible statistics",
             })}
             icon={<FcDoughnutChart />}
           >
             <FormattedMessage
-              id="pages.home.features.statistics.description"
+              id="home.page.features.statistics.description"
+              description='The "Incredible statistics" feature description'
               defaultMessage="At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
               kasd gubergren, no sea takimata sanctus."
             />
           </Feature>
           <Feature
             title={formatMessage({
-              id: "pages.home.features.multipleDevices.title",
+              id: "home.page.features.multipleDevices.heading",
+              description: 'The "Support for multiple devices" feature name',
               defaultMessage: "Support for multiple devices",
             })}
             icon={<FcMultipleDevices />}
           >
             <FormattedMessage
-              id="pages.home.features.multipleDevices.description"
+              id="home.page.features.multipleDevices.description"
+              description='The "Support for multiple devices" feature description'
               defaultMessage="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore."
             />

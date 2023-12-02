@@ -106,7 +106,7 @@ export const DataTable = <TData extends object>({
                             defaultMessage:
                               "{sort, select, asc {Sorted ascending} desc {Sorted descending} other {Not sorted}}",
                             description:
-                              "The screen reader hint to show for the sort indicator in the table header",
+                              "The accessible text to show for the sort indicator in the table header",
                           },
                           {
                             sort: header.column.getIsSorted() ?? "",

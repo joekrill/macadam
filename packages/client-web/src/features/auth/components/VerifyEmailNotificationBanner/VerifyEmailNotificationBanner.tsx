@@ -19,14 +19,16 @@ export const VerifyEmailNotificationBanner = ({
     <NotificationBanner
       linkTo="/account/verify"
       linkText={formatMessage({
-        id: "auth.VerifyEmailNotificationBanner.resendButton.label",
+        id: "verifyEmailNotificationBanner.resendButton.text",
+        description:
+          "The text to display on the button used to resend the account verification email.",
         defaultMessage: "Resend email",
       })}
       {...props}
     >
       <FormattedMessage
-        id="auth.VerifyEmailNotificationBanner.emailSentMessage"
-        description="The message asking the user to confirm their email address when an email has been sent"
+        id="verifyEmailNotificationBanner.emailSentMessage"
+        description="The message displayed in the banner when the user has not yet verified their account's email address."
         defaultMessage="Please confirm your email. We've send a message to <e>{emailAddress}</e>."
         values={{
           emailAddress,

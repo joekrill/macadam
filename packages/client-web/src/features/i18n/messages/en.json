@@ -1,25 +1,17 @@
 {
-  "api.errors.fetchErrorMessage": [
+  "api.error.generic.heading": [
     {
       "type": 0,
-      "value": "Unexpected client error ("
-    },
-    {
-      "type": 1,
-      "value": "error"
-    },
-    {
-      "type": 0,
-      "value": "). Please try again."
+      "value": "Something went wrong"
     }
   ],
-  "api.errors.genericMessage": [
+  "api.error.other.message": [
     {
       "type": 0,
       "value": "An unknown error occurred. Please try again."
     }
   ],
-  "api.errors.genericMessageWithCode": [
+  "api.error.otherWithCode.message": [
     {
       "type": 0,
       "value": "The server returned an unexpected resonse ("
@@ -33,7 +25,7 @@
       "value": "). Please try again."
     }
   ],
-  "api.errors.genericMessageWithMessage": [
+  "api.error.otherWithMessage.message": [
     {
       "type": 0,
       "value": "Error: "
@@ -63,13 +55,7 @@
       "value": "). Please try again."
     }
   ],
-  "api.errors.genericTitle": [
-    {
-      "type": 0,
-      "value": "Something went wrong"
-    }
-  ],
-  "api.errors.parsingErrorMessage": [
+  "api.error.parsingError.message": [
     {
       "type": 0,
       "value": "Error parsing server response ("
@@ -83,158 +69,21 @@
       "value": "). Please try again."
     }
   ],
-  "app.contactUsForm.emailField.label": [
+  "api.error.requestFailure.message": [
     {
       "type": 0,
-      "value": "Email"
-    }
-  ],
-  "app.contactUsForm.emailField.placeholder": [
-    {
-      "type": 0,
-      "value": "Your Email"
-    }
-  ],
-  "app.contactUsForm.messageField.label": [
-    {
-      "type": 0,
-      "value": "Message"
-    }
-  ],
-  "app.contactUsForm.messageField.placeholder": [
-    {
-      "type": 0,
-      "value": "Your Message"
-    }
-  ],
-  "app.contactUsForm.nameField.label": [
-    {
-      "type": 0,
-      "value": "Name"
-    }
-  ],
-  "app.contactUsForm.nameField.placeholder": [
-    {
-      "type": 0,
-      "value": "Your Name"
-    }
-  ],
-  "app.contactUsForm.sendButton.label": [
-    {
-      "type": 0,
-      "value": "Send Message"
-    }
-  ],
-  "app.contactUsSuccess.message": [
-    {
-      "type": 0,
-      "value": "Thanks for your message. We'll get back to you soon."
-    }
-  ],
-  "app.contactUsSuccess.title": [
-    {
-      "type": 0,
-      "value": "Message sent!"
-    }
-  ],
-  "app.footer.copyrightNotice": [
-    {
-      "type": 0,
-      "value": "© "
-    },
-    {
-      "style": {
-        "parsedOptions": {
-          "year": "numeric"
-        },
-        "pattern": "yyyy",
-        "type": 1
-      },
-      "type": 3,
-      "value": "now"
-    },
-    {
-      "type": 0,
-      "value": " "
+      "value": "Unexpected client error ("
     },
     {
       "type": 1,
-      "value": "appName"
+      "value": "error"
     },
     {
       "type": 0,
-      "value": ". All rights reserved."
+      "value": "). Please try again."
     }
   ],
-  "app.footer.linkGroups.legal": [
-    {
-      "type": 0,
-      "value": "Legal"
-    }
-  ],
-  "app.footer.linkGroups.resources": [
-    {
-      "type": 0,
-      "value": "Resources"
-    }
-  ],
-  "app.footer.links.contact.label": [
-    {
-      "type": 0,
-      "value": "Contact"
-    }
-  ],
-  "app.footer.links.faq.label": [
-    {
-      "type": 0,
-      "value": "FAQ"
-    }
-  ],
-  "app.footer.links.privacy.label": [
-    {
-      "type": 0,
-      "value": "Privacy"
-    }
-  ],
-  "app.footer.links.termsAndConditions.label": [
-    {
-      "type": 0,
-      "value": "Terms"
-    }
-  ],
-  "auth.VerifyEmailNotificationBanner.emailSentMessage": [
-    {
-      "type": 0,
-      "value": "Please confirm your email. We've send a message to "
-    },
-    {
-      "children": [
-        {
-          "type": 1,
-          "value": "emailAddress"
-        }
-      ],
-      "type": 8,
-      "value": "e"
-    },
-    {
-      "type": 0,
-      "value": "."
-    }
-  ],
-  "auth.VerifyEmailNotificationBanner.resendButton.label": [
-    {
-      "type": 0,
-      "value": "Resend email"
-    }
-  ],
-  "auth.deleteSessionLink.ariaLabel": [
-    {
-      "type": 0,
-      "value": "Delete Session"
-    }
-  ],
-  "auth.flowError.redirecting": [
+  "auth.flowError.redirecting.message": [
     {
       "options": {
         "browser_location_change_required": {
@@ -348,7 +197,7 @@
       "value": "You're already logged in."
     }
   ],
-  "auth.login.signUpInsteadMessage": [
+  "auth.login.signUpInstead.message": [
     {
       "type": 0,
       "value": "Don't have an account yet? "
@@ -364,37 +213,37 @@
       "value": "link"
     }
   ],
-  "auth.loginFormTitle.2fa": [
+  "auth.loginForm.2fa.heading": [
     {
       "type": 0,
       "value": "Two-Factor Authentication"
     }
   ],
-  "auth.loginFormTitle.confirmAccess": [
+  "auth.loginForm.confirmAccess.heading": [
     {
       "type": 0,
       "value": "Confirm access"
     }
   ],
-  "auth.loginFormTitle.login": [
+  "auth.loginForm.login.heading": [
     {
       "type": 0,
       "value": "Log in to your account"
     }
   ],
-  "auth.loginLink.label": [
+  "auth.loginLink.text": [
     {
       "type": 0,
       "value": "Log In"
     }
   ],
-  "auth.logoutButton.label": [
+  "auth.logoutButton.text": [
     {
       "type": 0,
       "value": "Log Out"
     }
   ],
-  "auth.passwordInput.togglePasswordVisibility.label": [
+  "auth.passwordInput.togglePasswordVisibility.tooltip": [
     {
       "options": {
         "hide": {
@@ -426,19 +275,19 @@
       "value": " password"
     }
   ],
-  "auth.recovery.title": [
+  "auth.recovery.heading": [
     {
       "type": 0,
       "value": "Recover your account"
     }
   ],
-  "auth.recoveryLink.label": [
+  "auth.recoveryLink.text": [
     {
       "type": 0,
       "value": "Forgot your password?"
     }
   ],
-  "auth.registration.alreadyHaveAccountLink": [
+  "auth.registration.alreadyHaveAccount.message": [
     {
       "type": 0,
       "value": "Already have an account? "
@@ -448,19 +297,19 @@
       "value": "loginLink"
     }
   ],
-  "auth.registration.title": [
+  "auth.registration.heading": [
     {
       "type": 0,
       "value": "Create your account"
     }
   ],
-  "auth.registrationForm.oidcDividerText": [
+  "auth.registrationForm.oidcDivider.text": [
     {
       "type": 0,
       "value": "or"
     }
   ],
-  "auth.registrationLink.label": [
+  "auth.registrationLink.text": [
     {
       "type": 0,
       "value": "Sign Up"
@@ -512,13 +361,13 @@
       "value": "Password"
     }
   ],
-  "auth.selfServiceUi.profilePictureNode.deleteButton.label": [
+  "auth.selfServiceUi.profilePictureNode.deleteButton.text": [
     {
       "type": 0,
       "value": "Delete"
     }
   ],
-  "auth.selfServiceUi.profilePictureNode.uploadButton.label": [
+  "auth.selfServiceUi.profilePictureNode.uploadButton.text": [
     {
       "type": 0,
       "value": "Change photo"
@@ -530,37 +379,49 @@
       "value": "Active Sessions"
     }
   ],
-  "auth.sessionsTable.authenticatedAtHeader.label": [
+  "auth.sessionsTable.authenticatedAt.columnHeading": [
     {
       "type": 0,
       "value": "Last Used"
     }
   ],
-  "auth.sessionsTable.currentSessionIndicator.title": [
+  "auth.sessionsTable.currentSessionIndicator.tooltip": [
     {
       "type": 0,
       "value": "This is your current session"
     }
   ],
-  "auth.sessionsTable.expiresAtHeader.label": [
+  "auth.sessionsTable.expiresAt.columnHeading": [
     {
       "type": 0,
       "value": "Expires"
     }
   ],
-  "auth.sessionsTable.methodHeader.label": [
+  "auth.sessionsTable.method.columnHeading": [
     {
       "type": 0,
       "value": "Method"
     }
   ],
-  "auth.settings.oidcSection.title": [
+  "auth.settings.changePasswordSection.heading": [
+    {
+      "type": 0,
+      "value": "Change Password"
+    }
+  ],
+  "auth.settings.oidcSection.heading": [
     {
       "type": 0,
       "value": "3rd Party Log-in"
     }
   ],
-  "auth.settings.totpSection.title": [
+  "auth.settings.profileSection.heading": [
+    {
+      "type": 0,
+      "value": "Profile"
+    }
+  ],
+  "auth.settings.totpSection.heading": [
     {
       "type": 0,
       "value": "Two-factor Authentication"
@@ -572,7 +433,7 @@
       "value": "Toggle Two-factor authentication settings"
     }
   ],
-  "auth.settings.webauthnSection.title": [
+  "auth.settings.webauthnSection.heading": [
     {
       "type": 0,
       "value": "Hardware Tokens and Biometrics"
@@ -584,19 +445,7 @@
       "value": "Toggle Hardware Tokens and Biometrics settings"
     }
   ],
-  "auth.settingsForm.changePasswordSection.title": [
-    {
-      "type": 0,
-      "value": "Change Password"
-    }
-  ],
-  "auth.settingsForm.profileSection.title": [
-    {
-      "type": 0,
-      "value": "Profile"
-    }
-  ],
-  "auth.verification.title": [
+  "auth.verification.heading": [
     {
       "type": 0,
       "value": "Verify your account"
@@ -634,16 +483,102 @@
       "value": "sort"
     }
   ],
-  "common.hompageButton.label": [
+  "common.hompageButton.text": [
     {
       "type": 0,
       "value": "Go to the homepage"
     }
   ],
-  "common.loadingSpinner.label": [
+  "common.loadingSpinner.ariaLabel": [
     {
       "type": 0,
       "value": "Loading..."
+    }
+  ],
+  "contactUs.form.emailField.label": [
+    {
+      "type": 0,
+      "value": "Email"
+    }
+  ],
+  "contactUs.form.emailField.placeholder": [
+    {
+      "type": 0,
+      "value": "Your Email"
+    }
+  ],
+  "contactUs.form.messageField.label": [
+    {
+      "type": 0,
+      "value": "Message"
+    }
+  ],
+  "contactUs.form.messageField.placeholder": [
+    {
+      "type": 0,
+      "value": "Your Message"
+    }
+  ],
+  "contactUs.form.nameField.label": [
+    {
+      "type": 0,
+      "value": "Name"
+    }
+  ],
+  "contactUs.form.nameField.placeholder": [
+    {
+      "type": 0,
+      "value": "Your Name"
+    }
+  ],
+  "contactUs.form.sendButton.text": [
+    {
+      "type": 0,
+      "value": "Send Message"
+    }
+  ],
+  "contactUs.page.heading": [
+    {
+      "type": 0,
+      "value": "Contact Us"
+    }
+  ],
+  "contactUs.page.instructions": [
+    {
+      "type": 0,
+      "value": "Email us at "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "emailAddress"
+        }
+      ],
+      "type": 8,
+      "value": "mailto"
+    },
+    {
+      "type": 0,
+      "value": " or fill out the form below for any feedback, questions, problems, or feature requests."
+    }
+  ],
+  "contactUs.page.title": [
+    {
+      "type": 0,
+      "value": "Contact Us"
+    }
+  ],
+  "contactUs.success.message": [
+    {
+      "type": 0,
+      "value": "Thanks for your message. We'll get back to you soon."
+    }
+  ],
+  "contactUs.success.title": [
+    {
+      "type": 0,
+      "value": "Message sent!"
     }
   ],
   "errors.errorAlert.message": [
@@ -652,7 +587,7 @@
       "value": "Something went wrong :("
     }
   ],
-  "errors.errorAlert.retryButton.label": [
+  "errors.errorAlert.retryButton.text": [
     {
       "type": 0,
       "value": "Try Again"
@@ -686,22 +621,165 @@
       "value": "Not Found"
     }
   ],
-  "forms.cancelButton.label": [
+  "faq.page.heading": [
+    {
+      "type": 0,
+      "value": "Frequently Asked Questions"
+    }
+  ],
+  "faq.page.title": [
+    {
+      "type": 0,
+      "value": "FAQ"
+    }
+  ],
+  "footer.copyrightNotice": [
+    {
+      "type": 0,
+      "value": "© "
+    },
+    {
+      "style": {
+        "parsedOptions": {
+          "year": "numeric"
+        },
+        "pattern": "yyyy",
+        "type": 1
+      },
+      "type": 3,
+      "value": "now"
+    },
+    {
+      "type": 0,
+      "value": " "
+    },
+    {
+      "type": 1,
+      "value": "appName"
+    },
+    {
+      "type": 0,
+      "value": ". All rights reserved."
+    }
+  ],
+  "footer.linkGroup.legal.heading": [
+    {
+      "type": 0,
+      "value": "Legal"
+    }
+  ],
+  "footer.linkGroup.resources.heading": [
+    {
+      "type": 0,
+      "value": "Resources"
+    }
+  ],
+  "footer.links.contactUs.text": [
+    {
+      "type": 0,
+      "value": "Contact"
+    }
+  ],
+  "footer.links.faq.text": [
+    {
+      "type": 0,
+      "value": "FAQ"
+    }
+  ],
+  "footer.links.privacyPolicy.text": [
+    {
+      "type": 0,
+      "value": "Privacy"
+    }
+  ],
+  "footer.links.termsAndConditions.text": [
+    {
+      "type": 0,
+      "value": "Terms"
+    }
+  ],
+  "forms.cancelButton.text": [
     {
       "type": 0,
       "value": "Cancel"
     }
   ],
-  "forms.createButton.label": [
+  "forms.createButton.text": [
     {
       "type": 0,
       "value": "Create"
     }
   ],
-  "forms.saveButton.label": [
+  "forms.saveButton.text": [
     {
       "type": 0,
       "value": "Save"
+    }
+  ],
+  "home.page.features.alwaysUpToDate.description": [
+    {
+      "type": 0,
+      "value": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
+    }
+  ],
+  "home.page.features.alwaysUpToDate.heading": [
+    {
+      "type": 0,
+      "value": "Always up to date"
+    }
+  ],
+  "home.page.features.multipleDevices.description": [
+    {
+      "type": 0,
+      "value": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
+    }
+  ],
+  "home.page.features.multipleDevices.heading": [
+    {
+      "type": 0,
+      "value": "Support for multiple devices"
+    }
+  ],
+  "home.page.features.secureByDefault.description": [
+    {
+      "type": 0,
+      "value": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus."
+    }
+  ],
+  "home.page.features.secureByDefault.heading": [
+    {
+      "type": 0,
+      "value": "Secure by default"
+    }
+  ],
+  "home.page.features.statistics.description": [
+    {
+      "type": 0,
+      "value": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus."
+    }
+  ],
+  "home.page.features.statistics.heading": [
+    {
+      "type": 0,
+      "value": "Incredible statistics"
+    }
+  ],
+  "home.page.getStartedCtaButton.text": [
+    {
+      "type": 0,
+      "value": "Get started"
+    }
+  ],
+  "home.page.introductionMessage": [
+    {
+      "type": 0,
+      "value": "Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec."
+    }
+  ],
+  "home.page.tagLine": [
+    {
+      "type": 0,
+      "value": "Opinionated, production-ready, full-featured SaaS boilerplate."
     }
   ],
   "i18n.activeLocaleSelect.deviceLocaleOption": [
@@ -714,7 +792,7 @@
       "value": "locale"
     }
   ],
-  "i18n.localErrorToast.title": [
+  "i18n.localError.toastMessage": [
     {
       "type": 0,
       "value": "Unable to load locale "
@@ -724,150 +802,34 @@
       "value": "locale"
     }
   ],
-  "pages.contactUs.heading": [
-    {
-      "type": 0,
-      "value": "Contact Us"
-    }
-  ],
-  "pages.contactUs.instructions": [
-    {
-      "type": 0,
-      "value": "Email us at "
-    },
-    {
-      "children": [
-        {
-          "type": 1,
-          "value": "emailAddress"
-        }
-      ],
-      "type": 8,
-      "value": "mailto"
-    },
-    {
-      "type": 0,
-      "value": " or fill out the form below for any feedback, questions, problems, or feature requests."
-    }
-  ],
-  "pages.contactUs.title": [
-    {
-      "type": 0,
-      "value": "Contact Us"
-    }
-  ],
-  "pages.faq.heading": [
-    {
-      "type": 0,
-      "value": "Frequently Asked Questions"
-    }
-  ],
-  "pages.faq.title": [
-    {
-      "type": 0,
-      "value": "FAQ"
-    }
-  ],
-  "pages.home.features.alwaysUpToDate.description": [
-    {
-      "type": 0,
-      "value": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
-    }
-  ],
-  "pages.home.features.alwaysUpToDate.title": [
-    {
-      "type": 0,
-      "value": "Always up to date"
-    }
-  ],
-  "pages.home.features.multipleDevices.description": [
-    {
-      "type": 0,
-      "value": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
-    }
-  ],
-  "pages.home.features.multipleDevices.title": [
-    {
-      "type": 0,
-      "value": "Support for multiple devices"
-    }
-  ],
-  "pages.home.features.secureByDefault.description": [
-    {
-      "type": 0,
-      "value": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus."
-    }
-  ],
-  "pages.home.features.secureByDefault.title": [
-    {
-      "type": 0,
-      "value": "Secure by default"
-    }
-  ],
-  "pages.home.features.statistics.description": [
-    {
-      "type": 0,
-      "value": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus."
-    }
-  ],
-  "pages.home.features.statistics.title": [
-    {
-      "type": 0,
-      "value": "Incredible statistics"
-    }
-  ],
-  "pages.home.getStartedCtaButton": [
-    {
-      "type": 0,
-      "value": "Get started"
-    }
-  ],
-  "pages.home.introductionText": [
-    {
-      "type": 0,
-      "value": "Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec."
-    }
-  ],
-  "pages.home.tagLine": [
-    {
-      "type": 0,
-      "value": "Opinionated, production-ready, full-featured SaaS boilerplate."
-    }
-  ],
-  "pages.privacyPolicy.heading": [
-    {
-      "type": 0,
-      "value": "Privacy Policy"
-    }
-  ],
-  "pages.privacyPolicy.title": [
-    {
-      "type": 0,
-      "value": "Privacy Policy"
-    }
-  ],
-  "pages.termsAndConditions.heading": [
-    {
-      "type": 0,
-      "value": "Terms and Conditions"
-    }
-  ],
-  "pages.termsAndConditions.title": [
-    {
-      "type": 0,
-      "value": "Terms and Conditions"
-    }
-  ],
-  "pagination.nextPage.label": [
+  "pagination.nextPage.text": [
     {
       "type": 0,
       "value": "Next Page"
     }
   ],
-  "pagination.previousPage.label": [
+  "pagination.previousPage.text": [
     {
       "type": 0,
       "value": "Previous Page"
+    }
+  ],
+  "privacyPolicy.page.heading": [
+    {
+      "type": 0,
+      "value": "Privacy Policy"
+    }
+  ],
+  "privacyPolicy.page.title": [
+    {
+      "type": 0,
+      "value": "Privacy Policy"
+    }
+  ],
+  "sessions.deleteSessionLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "Delete Session"
     }
   ],
   "sessions.sessionsList.refreshButton.ariaLabel": [
@@ -888,37 +850,37 @@
       "value": "Color Mode"
     }
   ],
-  "settings.appPreferences.title": [
+  "settings.appPreferences.heading": [
     {
       "type": 0,
       "value": "Preferences"
     }
   ],
-  "settings.appPreferencesLink.label": [
+  "settings.appPreferencesLink.text": [
     {
       "type": 0,
       "value": "Settings"
     }
   ],
-  "settings.settingsPage.preferencesLink.label": [
+  "settings.settingsPage.preferencesLink.text": [
     {
       "type": 0,
       "value": "Preferences"
     }
   ],
-  "settings.settingsPage.profileLink.label": [
+  "settings.settingsPage.profileLink.text": [
     {
       "type": 0,
       "value": "Profile & Login"
     }
   ],
-  "settings.settingsPage.sessionsLink.label": [
+  "settings.settingsPage.sessionsLink.text": [
     {
       "type": 0,
       "value": "Sessions"
     }
   ],
-  "sorting.sortMenu.sortByGroupTitle": [
+  "sorting.sortMenu.sortByGroup.heading": [
     {
       "type": 0,
       "value": "Sort by"
@@ -936,25 +898,37 @@
       "value": "Descending"
     }
   ],
-  "sorting.sortMenu.sortOrderGroupTitle": [
+  "sorting.sortMenu.sortOrderGroup.heading": [
     {
       "type": 0,
       "value": "Sort order"
     }
   ],
-  "theme.colorModeSelect.darkMode.label": [
+  "termsAndConditions.page.heading": [
+    {
+      "type": 0,
+      "value": "Terms and Conditions"
+    }
+  ],
+  "termsAndConditions.pages.title": [
+    {
+      "type": 0,
+      "value": "Terms and Conditions"
+    }
+  ],
+  "theme.colorModeSelect.darkMode.optionText": [
     {
       "type": 0,
       "value": "Dark"
     }
   ],
-  "theme.colorModeSelect.lightMode.label": [
+  "theme.colorModeSelect.lightMode.optionText": [
     {
       "type": 0,
       "value": "Light"
     }
   ],
-  "theme.colorModeSwitcher.switchColorModeLabel": [
+  "theme.colorModeSwitcher.switchColorMode.fullText": [
     {
       "type": 0,
       "value": "Switch to "
@@ -990,19 +964,19 @@
       "value": " mode"
     }
   ],
-  "things.deleteConfirmation.cancelButton.label": [
+  "things.deleteConfirmation.cancelButton.text": [
     {
       "type": 0,
       "value": "Cancel"
     }
   ],
-  "things.deleteConfirmation.confirmButton.label": [
+  "things.deleteConfirmation.confirmButton.text": [
     {
       "type": 0,
       "value": "Yes, delete it"
     }
   ],
-  "things.deleteConfirmation.header": [
+  "things.deleteConfirmation.heading": [
     {
       "type": 0,
       "value": "Delete Thing?"
@@ -1040,7 +1014,13 @@
       "value": "Edit Thing"
     }
   ],
-  "things.thingCreate.title": [
+  "things.loadError.notFound": [
+    {
+      "type": 0,
+      "value": "The Thing you are looking for couldn't be found."
+    }
+  ],
+  "things.thingCreate.heading": [
     {
       "type": 0,
       "value": "New Thing"
@@ -1058,7 +1038,7 @@
       "value": "Updated:"
     }
   ],
-  "things.thingEdit.title": [
+  "things.thingEdit.heading": [
     {
       "type": 0,
       "value": "Edit Thing"
@@ -1082,22 +1062,22 @@
       "value": "Name"
     }
   ],
-  "things.thingLoadError.notFound": [
-    {
-      "type": 0,
-      "value": "The Thing you are looking for couldn't be found."
-    }
-  ],
   "things.thingsList.addButton.ariaLabel": [
     {
       "type": 0,
       "value": "Add new Thing"
     }
   ],
-  "things.thingsList.addButton.label": [
+  "things.thingsList.addButton.text": [
     {
       "type": 0,
       "value": "New thing"
+    }
+  ],
+  "things.thingsList.heading": [
+    {
+      "type": 0,
+      "value": "Things"
     }
   ],
   "things.thingsList.ownFilter.all": [
@@ -1124,52 +1104,72 @@
       "value": "Filter by name or description..."
     }
   ],
-  "things.thingsList.title": [
-    {
-      "type": 0,
-      "value": "Things"
-    }
-  ],
-  "things.thingsTable.createdHeader.label": [
+  "things.thingsTable.createdAt.columnHeading": [
     {
       "type": 0,
       "value": "Created"
     }
   ],
-  "things.thingsTable.descriptionHeader.label": [
+  "things.thingsTable.description.columnHeading": [
     {
       "type": 0,
       "value": "Description"
     }
   ],
-  "things.thingsTable.nameHeader.label": [
-    {
-      "type": 0,
-      "value": "Name"
-    }
-  ],
-  "things.thingsTable.publicHeader.label": [
+  "things.thingsTable.isPublic.columnHeading": [
     {
       "type": 0,
       "value": "Public"
     }
   ],
-  "user.userMenu.label": [
+  "things.thingsTable.name.columnHeading": [
+    {
+      "type": 0,
+      "value": "Name"
+    }
+  ],
+  "user.userMenu.ariaLabel": [
     {
       "type": 0,
       "value": "User menu"
     }
   ],
-  "user.userMenu.profileLink": [
+  "user.userMenu.profileLink.text": [
     {
       "type": 0,
       "value": "Your Profile"
     }
   ],
-  "user.userMenu.thingsLink": [
+  "user.userMenu.thingsLink.text": [
     {
       "type": 0,
       "value": "Your Things"
+    }
+  ],
+  "verifyEmailNotificationBanner.emailSentMessage": [
+    {
+      "type": 0,
+      "value": "Please confirm your email. We've send a message to "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "emailAddress"
+        }
+      ],
+      "type": 8,
+      "value": "e"
+    },
+    {
+      "type": 0,
+      "value": "."
+    }
+  ],
+  "verifyEmailNotificationBanner.resendButton.text": [
+    {
+      "type": 0,
+      "value": "Resend email"
     }
   ]
 }

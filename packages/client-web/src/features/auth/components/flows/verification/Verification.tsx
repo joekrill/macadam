@@ -33,8 +33,8 @@ export const Verification = ({ flowId, returnTo }: VerificationProps) => {
       <FlowHeading
         title={
           <FormattedMessage
-            id="auth.verification.title"
-            description="The title displayed at the top of the verification form"
+            id="auth.verification.heading"
+            description="The heading text displayed at the top of the verification form"
             defaultMessage="Verify your account"
           />
         }

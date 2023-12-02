@@ -5,8 +5,9 @@ export const useAppPreferencesLink = () => {
 
   return {
     to: "/settings",
-    label: formatMessage({
-      id: "settings.appPreferencesLink.label",
+    text: formatMessage({
+      id: "settings.appPreferencesLink.text",
+      description: "The text to display in a link to go to the Settings page",
       defaultMessage: "Settings",
     }),
   };

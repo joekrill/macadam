@@ -1,7 +1,7 @@
 import { Box, Container, Skeleton } from "@chakra-ui/react";
 import { useSession } from "@macadam/api-client";
 import { FormattedMessage } from "react-intl";
-import { Link as ReactRouterLink, Outlet, useMatch } from "react-router-dom";
+import { Outlet, Link as ReactRouterLink, useMatch } from "react-router-dom";
 import { Sidebar } from "../../common/components/Sidebar/Sidebar";
 import { SidebarNavItem } from "../../common/components/Sidebar/SidebarNavItem";
 
@@ -28,7 +28,8 @@ export const SettingsPageLayout = () => {
               to=""
             >
               <FormattedMessage
-                id="settings.settingsPage.preferencesLink.label"
+                id="settings.settingsPage.preferencesLink.text"
+                description="Text displayed for the sidebar link of the settings page that takes the user to their preferences"
                 defaultMessage="Preferences"
               />
             </SidebarNavItem>
@@ -38,7 +39,8 @@ export const SettingsPageLayout = () => {
               to="profile"
             >
               <FormattedMessage
-                id="settings.settingsPage.profileLink.label"
+                id="settings.settingsPage.profileLink.text"
+                description="Text displayed for the sidebar link of the settings page that takes the user to their profile"
                 defaultMessage="Profile & Login"
               />
             </SidebarNavItem>
@@ -48,7 +50,8 @@ export const SettingsPageLayout = () => {
               to="sessions"
             >
               <FormattedMessage
-                id="settings.settingsPage.sessionsLink.label"
+                id="settings.settingsPage.sessionsLink.text"
+                description="Text displayed for the sidebar link of the settings page that takes the user to their list of sessions"
                 defaultMessage="Sessions"
               />
             </SidebarNavItem>

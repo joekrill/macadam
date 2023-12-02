@@ -66,7 +66,8 @@ export const ContactUsForm = ({
         >
           <FormLabel>
             <FormattedMessage
-              id="app.contactUsForm.nameField.label"
+              id="contactUs.form.nameField.label"
+              description="The label to display for the name field of the Contact Us form"
               defaultMessage="Name"
             />
           </FormLabel>
@@ -78,7 +79,9 @@ export const ContactUsForm = ({
             <Input
               type="text"
               placeholder={formatMessage({
-                id: "app.contactUsForm.nameField.placeholder",
+                id: "contactUs.form.nameField.placeholder",
+                description:
+                  "The placeholder text to display when the name field of the Contact Us form is empty",
                 defaultMessage: "Your Name",
               })}
               {...register("name")}
@@ -94,7 +97,8 @@ export const ContactUsForm = ({
         >
           <FormLabel>
             <FormattedMessage
-              id="app.contactUsForm.emailField.label"
+              id="contactUs.form.emailField.label"
+              description="The label to display for the email field of the Contact Us form"
               defaultMessage="Email"
             />
           </FormLabel>
@@ -106,7 +110,9 @@ export const ContactUsForm = ({
             <Input
               type="email"
               placeholder={formatMessage({
-                id: "app.contactUsForm.emailField.placeholder",
+                id: "contactUs.form.emailField.placeholder",
+                description:
+                  "The placeholder text to display when the email field of the Contact Us form is empty",
                 defaultMessage: "Your Email",
               })}
               {...register("email")}
@@ -122,14 +128,17 @@ export const ContactUsForm = ({
         >
           <FormLabel>
             <FormattedMessage
-              id="app.contactUsForm.messageField.label"
+              id="contactUs.form.messageField.label"
+              description="The label to display for the message field of the Contact Us form"
               defaultMessage="Message"
             />
           </FormLabel>
 
           <Textarea
             placeholder={formatMessage({
-              id: "app.contactUsForm.messageField.placeholder",
+              id: "contactUs.form.messageField.placeholder",
+              description:
+                "The placeholder text to display when the message field of the Contact Us form is empty",
               defaultMessage: "Your Message",
             })}
             rows={6}
@@ -145,7 +154,8 @@ export const ContactUsForm = ({
           leftIcon={<AiOutlineSend />}
         >
           <FormattedMessage
-            id="app.contactUsForm.sendButton.label"
+            id="contactUs.form.sendButton.text"
+            description="The text to display for the Send button of the Contact Us form"
             defaultMessage="Send Message"
           />
         </SaveButton>

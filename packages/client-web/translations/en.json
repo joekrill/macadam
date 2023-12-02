@@ -1,222 +1,239 @@
 {
-  "api.errors.fetchErrorMessage": {
-    "defaultMessage": "Unexpected client error ({error}). Please try again."
+  "api.error.generic.heading": {
+    "defaultMessage": "Something went wrong",
+    "description": "The error message displayed when an API request fails for an unknown reason and an error message was provided by the server."
   },
-  "api.errors.genericMessage": {
-    "defaultMessage": "An unknown error occurred. Please try again."
+  "api.error.other.message": {
+    "defaultMessage": "An unknown error occurred. Please try again.",
+    "description": "The error message displayed when an API request fails for an unknown reason and no code or message was found."
   },
-  "api.errors.genericMessageWithCode": {
-    "defaultMessage": "The server returned an unexpected resonse ({code}). Please try again."
+  "api.error.otherWithCode.message": {
+    "defaultMessage": "The server returned an unexpected resonse ({code}). Please try again.",
+    "description": "The error message displayed when an API request fails for an unknown reason and an error code was provided by the server."
   },
-  "api.errors.genericMessageWithMessage": {
-    "defaultMessage": "Error: {message} ({code}/{name}). Please try again."
+  "api.error.otherWithMessage.message": {
+    "defaultMessage": "Error: {message} ({code}/{name}). Please try again.",
+    "description": "The error message displayed when an API request fails for an unknown reason and an error message was provided by the server."
   },
-  "api.errors.genericTitle": {
-    "defaultMessage": "Something went wrong"
+  "api.error.parsingError.message": {
+    "defaultMessage": "Error parsing server response ({error}). Please try again.",
+    "description": "The error message displayed when an API request fails because the response was not in the expected format."
   },
-  "api.errors.parsingErrorMessage": {
-    "defaultMessage": "Error parsing server response ({error}). Please try again."
+  "api.error.requestFailure.message": {
+    "defaultMessage": "Unexpected client error ({error}). Please try again.",
+    "description": "The error message displayed when an API request fails because the request failed to be sent."
   },
-  "app.contactUsForm.emailField.label": {
-    "defaultMessage": "Email"
-  },
-  "app.contactUsForm.emailField.placeholder": {
-    "defaultMessage": "Your Email"
-  },
-  "app.contactUsForm.messageField.label": {
-    "defaultMessage": "Message"
-  },
-  "app.contactUsForm.messageField.placeholder": {
-    "defaultMessage": "Your Message"
-  },
-  "app.contactUsForm.nameField.label": {
-    "defaultMessage": "Name"
-  },
-  "app.contactUsForm.nameField.placeholder": {
-    "defaultMessage": "Your Name"
-  },
-  "app.contactUsForm.sendButton.label": {
-    "defaultMessage": "Send Message"
-  },
-  "app.contactUsSuccess.message": {
-    "defaultMessage": "Thanks for your message. We'll get back to you soon."
-  },
-  "app.contactUsSuccess.title": {
-    "defaultMessage": "Message sent!"
-  },
-  "app.footer.copyrightNotice": {
-    "defaultMessage": "© {now, date, ::yyyy} {appName}. All rights reserved."
-  },
-  "app.footer.linkGroups.legal": {
-    "defaultMessage": "Legal"
-  },
-  "app.footer.linkGroups.resources": {
-    "defaultMessage": "Resources"
-  },
-  "app.footer.links.contact.label": {
-    "defaultMessage": "Contact"
-  },
-  "app.footer.links.faq.label": {
-    "defaultMessage": "FAQ"
-  },
-  "app.footer.links.privacy.label": {
-    "defaultMessage": "Privacy"
-  },
-  "app.footer.links.termsAndConditions.label": {
-    "defaultMessage": "Terms"
-  },
-  "auth.VerifyEmailNotificationBanner.emailSentMessage": {
-    "defaultMessage": "Please confirm your email. We've send a message to <e>{emailAddress}</e>.",
-    "description": "The message asking the user to confirm their email address when an email has been sent"
-  },
-  "auth.VerifyEmailNotificationBanner.resendButton.label": {
-    "defaultMessage": "Resend email"
-  },
-  "auth.deleteSessionLink.ariaLabel": {
-    "defaultMessage": "Delete Session"
-  },
-  "auth.flowError.redirecting": {
-    "defaultMessage": "{reason, select, session_refresh_required {Reauthentication required. } browser_location_change_required {} session_aal2_required {2FA required. } other {}}Redirecting..."
+  "auth.flowError.redirecting.message": {
+    "defaultMessage": "{reason, select, session_refresh_required {Reauthentication required. } browser_location_change_required {} session_aal2_required {2FA required. } other {}}Redirecting...",
+    "description": "The message shown when an authentication flow requires a redirect (for example, an action requires an additional security step like a 2FA verification)"
   },
   "auth.flowRestarted.message": {
     "defaultMessage": "The form had to be reloaded{reason, select, security_csrf_violation { because the security token expired.} security_identity_mismatch { because your session changed} self_service_flow_expired { because the form expired} self_service_flow_return_to_forbidden { because the return URL is invalid} other {}}. Please try again.",
-    "description": "The message telling the user that the form they submitted had to be reloaded"
+    "description": "The message telling the user that the form they submitted had to be reloaded (perhaps because too much time has passed since the form was generated and a security token has expired)"
   },
   "auth.loggedInAlreadyNotice.messageWithUsername": {
     "defaultMessage": "You're already logged in as <e>{username}</e>.",
-    "description": "The message telling the user that they are already logged in when their username is available"
+    "description": "The message telling the user that they are already logged and they have a username which can be used as part of the message"
   },
   "auth.loggedInAlreadyNotice.messageWithoutUsername": {
     "defaultMessage": "You're already logged in.",
-    "description": "The message telling the user that they are already logged in when their username is not available"
+    "description": "The message telling the user that they are already logged but there is no username which can be used as part of the message"
   },
-  "auth.login.signUpInsteadMessage": {
+  "auth.login.signUpInstead.message": {
     "defaultMessage": "Don't have an account yet? <link>Sign up!</link>",
     "description": "The message shown on the login page that directs the user to create an account instead of logging in."
   },
-  "auth.loginFormTitle.2fa": {
+  "auth.loginForm.2fa.heading": {
     "defaultMessage": "Two-Factor Authentication",
-    "description": "The title displayed at the top of the login form when requesting the user's 2FA code"
+    "description": "The heading text displayed at the top of the login form when requesting the user's 2FA code"
   },
-  "auth.loginFormTitle.confirmAccess": {
+  "auth.loginForm.confirmAccess.heading": {
     "defaultMessage": "Confirm access",
-    "description": "The title displayed at the top of the login form when the user is already logged in but we need them to enter their password again to reconfirm their access"
+    "description": "The heading text displayed at the top of the login form when the user is already logged in but we need them to enter their password again to reconfirm their access"
   },
-  "auth.loginFormTitle.login": {
+  "auth.loginForm.login.heading": {
     "defaultMessage": "Log in to your account",
-    "description": "The title displayed at the top of the login form when logging in"
+    "description": "The heading text displayed at the top of the login form when logging in"
   },
-  "auth.loginLink.label": {
-    "defaultMessage": "Log In"
+  "auth.loginLink.text": {
+    "defaultMessage": "Log In",
+    "description": "The text for the link that the user can click to log in"
   },
-  "auth.logoutButton.label": {
-    "defaultMessage": "Log Out"
+  "auth.logoutButton.text": {
+    "defaultMessage": "Log Out",
+    "description": "The text for the link that the user can click to log out"
   },
-  "auth.passwordInput.togglePasswordVisibility.label": {
+  "auth.passwordInput.togglePasswordVisibility.tooltip": {
     "defaultMessage": "{action, select, hide {Mask} show {Reveal} other {}} password",
-    "description": "The hint text shown when hovering over the button that toggles the visibility of the users password."
+    "description": "The tooltip text shown when hovering over the button that toggles the visibility of the users password."
   },
-  "auth.recovery.title": {
+  "auth.recovery.heading": {
     "defaultMessage": "Recover your account",
     "description": "The title displayed at the top of the password recovery form"
   },
-  "auth.recoveryLink.label": {
+  "auth.recoveryLink.text": {
     "defaultMessage": "Forgot your password?",
     "description": "The text displayed for a link that takes you to the account recovery page"
   },
-  "auth.registration.alreadyHaveAccountLink": {
-    "defaultMessage": "Already have an account? {loginLink}"
+  "auth.registration.alreadyHaveAccount.message": {
+    "defaultMessage": "Already have an account? {loginLink}",
+    "description": "The message shown on the registration form that direct the user to the log in page if they already have an account"
   },
-  "auth.registration.title": {
+  "auth.registration.heading": {
     "defaultMessage": "Create your account",
     "description": "The title displayed at the top of the registration form"
   },
-  "auth.registrationForm.oidcDividerText": {
+  "auth.registrationForm.oidcDivider.text": {
     "defaultMessage": "or",
-    "description": "The text displayed in the divider that shows additional registration options"
+    "description": "The text displayed in the divider that separates the registration form from addditional OIDC registration options"
   },
-  "auth.registrationLink.label": {
-    "defaultMessage": "Sign Up"
+  "auth.registrationLink.text": {
+    "defaultMessage": "Sign Up",
+    "description": "The text for the link that will take the user to the new user registration form"
   },
   "auth.selfServiceUi.emailNode.label": {
-    "defaultMessage": "E-Mail"
+    "defaultMessage": "E-Mail",
+    "description": "The label for the email input on the user profile or registration page."
   },
   "auth.selfServiceUi.localeSelectNode.defaultValue": {
-    "defaultMessage": "Default ({locale})"
+    "defaultMessage": "Default ({locale})",
+    "description": "The option for selecting the default locale based on the users location in the locale selection dropdown box of the user's profile/registration form"
   },
   "auth.selfServiceUi.localeSelectNode.usageInfo": {
-    "defaultMessage": "This will be used for external communications or when we can't automatically detect your locale based on your device settings. To change the current application language visit the <preferencesLink>preferences page</preferencesLink>."
+    "defaultMessage": "This will be used for external communications or when we can't automatically detect your locale based on your device settings. To change the current application language visit the <preferencesLink>preferences page</preferencesLink>.",
+    "description": "A message explaining that the user's locale field of their profile is used for sending external communication and in cases where a device isn't available to provide a locale."
   },
   "auth.selfServiceUi.passwordNode.label": {
-    "defaultMessage": "Password"
+    "defaultMessage": "Password",
+    "description": "The label for the passowrd input shown in forms."
   },
-  "auth.selfServiceUi.profilePictureNode.deleteButton.label": {
-    "defaultMessage": "Delete"
+  "auth.selfServiceUi.profilePictureNode.deleteButton.text": {
+    "defaultMessage": "Delete",
+    "description": "The text shown on the button used for removing the current profile photo."
   },
-  "auth.selfServiceUi.profilePictureNode.uploadButton.label": {
-    "defaultMessage": "Change photo"
+  "auth.selfServiceUi.profilePictureNode.uploadButton.text": {
+    "defaultMessage": "Change photo",
+    "description": "The text shown on the button used for uploading a new profile photo."
   },
   "auth.sessionsList.title": {
-    "defaultMessage": "Active Sessions"
+    "defaultMessage": "Active Sessions",
+    "description": "The text shown as the heading for the list of user's active session"
   },
-  "auth.sessionsTable.authenticatedAtHeader.label": {
-    "defaultMessage": "Last Used"
+  "auth.sessionsTable.authenticatedAt.columnHeading": {
+    "defaultMessage": "Last Used",
+    "description": "The heading text for the column showing the last used time and date for a session"
   },
-  "auth.sessionsTable.currentSessionIndicator.title": {
-    "defaultMessage": "This is your current session"
+  "auth.sessionsTable.currentSessionIndicator.tooltip": {
+    "defaultMessage": "This is your current session",
+    "description": "The tooltip/helper text shown when indicating that a particular session is the current session the user is authenticated with"
   },
-  "auth.sessionsTable.expiresAtHeader.label": {
-    "defaultMessage": "Expires"
+  "auth.sessionsTable.expiresAt.columnHeading": {
+    "defaultMessage": "Expires",
+    "description": "The heading text for the column showing when a session expires."
   },
-  "auth.sessionsTable.methodHeader.label": {
-    "defaultMessage": "Method"
+  "auth.sessionsTable.method.columnHeading": {
+    "defaultMessage": "Method",
+    "description": "The heading text for the column showing the authentication method used for a session."
   },
-  "auth.settings.oidcSection.title": {
+  "auth.settings.changePasswordSection.heading": {
+    "defaultMessage": "Change Password",
+    "description": "The heading displayed at the top of the change password section of the settings form"
+  },
+  "auth.settings.oidcSection.heading": {
     "defaultMessage": "3rd Party Log-in",
     "description": "The heading displayed at the top of the change password section of the settings form"
   },
-  "auth.settings.totpSection.title": {
+  "auth.settings.profileSection.heading": {
+    "defaultMessage": "Profile",
+    "description": "The heading displayed at the top of the profile section of the settings form"
+  },
+  "auth.settings.totpSection.heading": {
     "defaultMessage": "Two-factor Authentication",
     "description": "The heading displayed at the top of the change password section of the settings form"
   },
   "auth.settings.totpSection.toggleButton.ariaLabel": {
-    "defaultMessage": "Toggle Two-factor authentication settings"
+    "defaultMessage": "Toggle Two-factor authentication settings",
+    "description": "The accessible text for button that shows and hides the two-factor authentication settings section "
   },
-  "auth.settings.webauthnSection.title": {
+  "auth.settings.webauthnSection.heading": {
     "defaultMessage": "Hardware Tokens and Biometrics",
     "description": "The heading displayed at the top of the change password section of the settings form"
   },
   "auth.settings.webauthnSection.toggleButton.ariaLabel": {
-    "defaultMessage": "Toggle Hardware Tokens and Biometrics settings"
+    "defaultMessage": "Toggle Hardware Tokens and Biometrics settings",
+    "description": "The accessible text for button that shows and hides the hardware token and biometrics settings section "
   },
-  "auth.settingsForm.changePasswordSection.title": {
-    "defaultMessage": "Change Password",
-    "description": "The heading displayed at the top of the change password section of the settings form"
-  },
-  "auth.settingsForm.profileSection.title": {
-    "defaultMessage": "Profile",
-    "description": "The heading displayed at the top of the profile section of the settings form"
-  },
-  "auth.verification.title": {
+  "auth.verification.heading": {
     "defaultMessage": "Verify your account",
-    "description": "The title displayed at the top of the verification form"
+    "description": "The heading text displayed at the top of the verification form"
   },
   "common.dataTable.sortHeader.ariaLabel": {
     "defaultMessage": "{sort, select, asc {Sorted ascending} desc {Sorted descending} other {Not sorted}}",
-    "description": "The screen reader hint to show for the sort indicator in the table header"
+    "description": "The accessible text to show for the sort indicator in the table header"
   },
-  "common.hompageButton.label": {
-    "defaultMessage": "Go to the homepage"
+  "common.hompageButton.text": {
+    "defaultMessage": "Go to the homepage",
+    "description": "The text to display on the button used to direct the user to the home page"
   },
-  "common.loadingSpinner.label": {
+  "common.loadingSpinner.ariaLabel": {
     "defaultMessage": "Loading...",
-    "description": "The screen reader text to show for the spinning loading indicator"
+    "description": "The accessible text to show for the spinning loading indicator"
+  },
+  "contactUs.form.emailField.label": {
+    "defaultMessage": "Email",
+    "description": "The label to display for the email field of the Contact Us form"
+  },
+  "contactUs.form.emailField.placeholder": {
+    "defaultMessage": "Your Email",
+    "description": "The placeholder text to display when the email field of the Contact Us form is empty"
+  },
+  "contactUs.form.messageField.label": {
+    "defaultMessage": "Message",
+    "description": "The label to display for the message field of the Contact Us form"
+  },
+  "contactUs.form.messageField.placeholder": {
+    "defaultMessage": "Your Message",
+    "description": "The placeholder text to display when the message field of the Contact Us form is empty"
+  },
+  "contactUs.form.nameField.label": {
+    "defaultMessage": "Name",
+    "description": "The label to display for the name field of the Contact Us form"
+  },
+  "contactUs.form.nameField.placeholder": {
+    "defaultMessage": "Your Name",
+    "description": "The placeholder text to display when the name field of the Contact Us form is empty"
+  },
+  "contactUs.form.sendButton.text": {
+    "defaultMessage": "Send Message",
+    "description": "The text to display for the Send button of the Contact Us form"
+  },
+  "contactUs.page.heading": {
+    "defaultMessage": "Contact Us",
+    "description": "The text to show as the heading of the Contact Us page."
+  },
+  "contactUs.page.instructions": {
+    "defaultMessage": "Email us at <mailto>{emailAddress}</mailto> or fill out the form below for any feedback, questions, problems, or feature requests.",
+    "description": "The instructions displayed at the top of the Contact Us page directing the user to send an email or fill at a form."
+  },
+  "contactUs.page.title": {
+    "defaultMessage": "Contact Us",
+    "description": "The page title for the Contact Us page."
+  },
+  "contactUs.success.message": {
+    "defaultMessage": "Thanks for your message. We'll get back to you soon.",
+    "description": "The text shown after submitting the Contact Us form successfully"
+  },
+  "contactUs.success.title": {
+    "defaultMessage": "Message sent!",
+    "description": "The title to display above the text shown after submitting the Contact Us form successfully"
   },
   "errors.errorAlert.message": {
-    "defaultMessage": "Something went wrong :("
+    "defaultMessage": "Something went wrong :(",
+    "description": "The message to show when an unknown error has occured."
   },
-  "errors.errorAlert.retryButton.label": {
-    "defaultMessage": "Try Again"
+  "errors.errorAlert.retryButton.text": {
+    "defaultMessage": "Try Again",
+    "description": "The text to show on the retry button that may be available when an error has occured."
   },
   "errors.notFoundPage.errorCode": {
     "defaultMessage": "Code: {code}",
@@ -234,217 +251,312 @@
     "defaultMessage": "Not Found",
     "description": "The title shown in the browser tab/window for the not found page"
   },
-  "forms.cancelButton.label": {
-    "defaultMessage": "Cancel"
+  "faq.page.heading": {
+    "defaultMessage": "Frequently Asked Questions",
+    "description": "The text to show as the heading of the FAQ page."
   },
-  "forms.createButton.label": {
-    "defaultMessage": "Create"
+  "faq.page.title": {
+    "defaultMessage": "FAQ",
+    "description": "The page title for the FAQ page."
   },
-  "forms.saveButton.label": {
-    "defaultMessage": "Save"
+  "footer.copyrightNotice": {
+    "defaultMessage": "© {now, date, ::yyyy} {appName}. All rights reserved.",
+    "description": "The copyright notice displayed in the footer."
   },
-  "i18n.activeLocaleSelect.deviceLocaleOption": {
-    "defaultMessage": "Default - {locale}"
+  "footer.linkGroup.legal.heading": {
+    "defaultMessage": "Legal",
+    "description": "The heading text for the 'Legal' group of footer links"
   },
-  "i18n.localErrorToast.title": {
-    "defaultMessage": "Unable to load locale {locale}",
-    "description": "The toast message shown when a locale fails to load"
+  "footer.linkGroup.resources.heading": {
+    "defaultMessage": "Resources",
+    "description": "The heading text for the 'Resources' group of footer links"
   },
-  "pages.contactUs.heading": {
-    "defaultMessage": "Contact Us"
+  "footer.links.contactUs.text": {
+    "defaultMessage": "Contact",
+    "description": "The text for the link in the footer to the 'Contact Us' page"
   },
-  "pages.contactUs.instructions": {
-    "defaultMessage": "Email us at <mailto>{emailAddress}</mailto> or fill out the form below for any feedback, questions, problems, or feature requests."
+  "footer.links.faq.text": {
+    "defaultMessage": "FAQ",
+    "description": "The text for the link in the footer to the 'FAQ' page"
   },
-  "pages.contactUs.title": {
-    "defaultMessage": "Contact Us"
+  "footer.links.privacyPolicy.text": {
+    "defaultMessage": "Privacy",
+    "description": "The text for the link in the footer to the privacy policy page"
   },
-  "pages.faq.heading": {
-    "defaultMessage": "Frequently Asked Questions"
+  "footer.links.termsAndConditions.text": {
+    "defaultMessage": "Terms",
+    "description": "The text for the link in the footer to the Term & Conditions page"
   },
-  "pages.faq.title": {
-    "defaultMessage": "FAQ"
+  "forms.cancelButton.text": {
+    "defaultMessage": "Cancel",
+    "description": "The text to show for the 'Cancel' button used by forms across the app when cancelling an action"
   },
-  "pages.home.features.alwaysUpToDate.description": {
-    "defaultMessage": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
+  "forms.createButton.text": {
+    "defaultMessage": "Create",
+    "description": "The text to show for the 'Create' button used by forms across the app when creating an entity"
   },
-  "pages.home.features.alwaysUpToDate.title": {
-    "defaultMessage": "Always up to date"
+  "forms.saveButton.text": {
+    "defaultMessage": "Save",
+    "description": "The text to show for the 'Save' button used by forms across the app when saving changes to an entity"
   },
-  "pages.home.features.multipleDevices.description": {
-    "defaultMessage": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore."
+  "home.page.features.alwaysUpToDate.description": {
+    "defaultMessage": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.",
+    "description": "The \"Always up to date\" feature description"
   },
-  "pages.home.features.multipleDevices.title": {
-    "defaultMessage": "Support for multiple devices"
+  "home.page.features.alwaysUpToDate.heading": {
+    "defaultMessage": "Always up to date",
+    "description": "The \"Always up to date\" feature name"
   },
-  "pages.home.features.secureByDefault.description": {
-    "defaultMessage": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus."
+  "home.page.features.multipleDevices.description": {
+    "defaultMessage": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.",
+    "description": "The \"Support for multiple devices\" feature description"
   },
-  "pages.home.features.secureByDefault.title": {
-    "defaultMessage": "Secure by default"
+  "home.page.features.multipleDevices.heading": {
+    "defaultMessage": "Support for multiple devices",
+    "description": "The \"Support for multiple devices\" feature name"
   },
-  "pages.home.features.statistics.description": {
-    "defaultMessage": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus."
+  "home.page.features.secureByDefault.description": {
+    "defaultMessage": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.",
+    "description": "The \"Secure by default\" feature description"
   },
-  "pages.home.features.statistics.title": {
-    "defaultMessage": "Incredible statistics"
+  "home.page.features.secureByDefault.heading": {
+    "defaultMessage": "Secure by default",
+    "description": "The \"Secure by default\" feature name"
   },
-  "pages.home.getStartedCtaButton": {
+  "home.page.features.statistics.description": {
+    "defaultMessage": "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.",
+    "description": "The \"Incredible statistics\" feature description"
+  },
+  "home.page.features.statistics.heading": {
+    "defaultMessage": "Incredible statistics",
+    "description": "The \"Incredible statistics\" feature name"
+  },
+  "home.page.getStartedCtaButton.text": {
     "defaultMessage": "Get started",
     "description": "Get started call-to-action button text"
   },
-  "pages.home.introductionText": {
-    "defaultMessage": "Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec."
+  "home.page.introductionMessage": {
+    "defaultMessage": "Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.",
+    "description": "The introductory message shown on the home page."
   },
-  "pages.home.tagLine": {
-    "defaultMessage": "Opinionated, production-ready, full-featured SaaS boilerplate."
+  "home.page.tagLine": {
+    "defaultMessage": "Opinionated, production-ready, full-featured SaaS boilerplate.",
+    "description": "The application tagline shown on the home page."
   },
-  "pages.privacyPolicy.heading": {
-    "defaultMessage": "Privacy Policy"
+  "i18n.activeLocaleSelect.deviceLocaleOption": {
+    "defaultMessage": "Default - {locale}",
+    "description": "The option shown in the locale selection dropdown indicating the default locale as provided by the current device"
   },
-  "pages.privacyPolicy.title": {
-    "defaultMessage": "Privacy Policy"
+  "i18n.localError.toastMessage": {
+    "defaultMessage": "Unable to load locale {locale}",
+    "description": "The toast message shown when a locale fails to load"
   },
-  "pages.termsAndConditions.heading": {
-    "defaultMessage": "Terms and Conditions"
+  "pagination.nextPage.text": {
+    "defaultMessage": "Next Page",
+    "description": "The text to show for the button that takes the user to the next page of data"
   },
-  "pages.termsAndConditions.title": {
-    "defaultMessage": "Terms and Conditions"
+  "pagination.previousPage.text": {
+    "defaultMessage": "Previous Page",
+    "description": "The text to show for the button that takes the user to the previous page of data"
   },
-  "pagination.nextPage.label": {
-    "defaultMessage": "Next Page"
+  "privacyPolicy.page.heading": {
+    "defaultMessage": "Privacy Policy",
+    "description": "The text to show as the heading of the Privacy Policy page."
   },
-  "pagination.previousPage.label": {
-    "defaultMessage": "Previous Page"
+  "privacyPolicy.page.title": {
+    "defaultMessage": "Privacy Policy",
+    "description": "The page title for the Privacy Policy page."
+  },
+  "sessions.deleteSessionLink.ariaLabel": {
+    "defaultMessage": "Delete Session",
+    "description": "The accessible text to apply to the button for deleting one of the user's sessions"
   },
   "sessions.sessionsList.refreshButton.ariaLabel": {
-    "defaultMessage": "Refresh"
+    "defaultMessage": "Refresh",
+    "description": "The accessible text to show for the button to refresh the sessions list table"
   },
   "settings.appPreferences.activeLocale.label": {
-    "defaultMessage": "Language"
+    "defaultMessage": "Language",
+    "description": "The label to show above the locale selection dropdown in the user's preferences form"
   },
   "settings.appPreferences.colorMode.label": {
-    "defaultMessage": "Color Mode"
+    "defaultMessage": "Color Mode",
+    "description": "The label to show above the color mode selection dropdown in the user's preferences form"
   },
-  "settings.appPreferences.title": {
-    "defaultMessage": "Preferences"
+  "settings.appPreferences.heading": {
+    "defaultMessage": "Preferences",
+    "description": "The heading text to show for the `Preferences` sections of a user's settings"
   },
-  "settings.appPreferencesLink.label": {
-    "defaultMessage": "Settings"
+  "settings.appPreferencesLink.text": {
+    "defaultMessage": "Settings",
+    "description": "The text to display in a link to go to the Settings page"
   },
-  "settings.settingsPage.preferencesLink.label": {
-    "defaultMessage": "Preferences"
+  "settings.settingsPage.preferencesLink.text": {
+    "defaultMessage": "Preferences",
+    "description": "Text displayed for the sidebar link of the settings page that takes the user to their preferences"
   },
-  "settings.settingsPage.profileLink.label": {
-    "defaultMessage": "Profile & Login"
+  "settings.settingsPage.profileLink.text": {
+    "defaultMessage": "Profile & Login",
+    "description": "Text displayed for the sidebar link of the settings page that takes the user to their profile"
   },
-  "settings.settingsPage.sessionsLink.label": {
-    "defaultMessage": "Sessions"
+  "settings.settingsPage.sessionsLink.text": {
+    "defaultMessage": "Sessions",
+    "description": "Text displayed for the sidebar link of the settings page that takes the user to their list of sessions"
   },
-  "sorting.sortMenu.sortByGroupTitle": {
-    "defaultMessage": "Sort by"
+  "sorting.sortMenu.sortByGroup.heading": {
+    "defaultMessage": "Sort by",
+    "description": "The heading to show in the sort menu above the available sort fields"
   },
   "sorting.sortMenu.sortOrderAscending": {
-    "defaultMessage": "Ascending"
+    "defaultMessage": "Ascending",
+    "description": "Shown in the sort menu to select ascending sort order"
   },
   "sorting.sortMenu.sortOrderDescending": {
-    "defaultMessage": "Descending"
+    "defaultMessage": "Descending",
+    "description": "Shown in the sort menu to select descending sort order"
   },
-  "sorting.sortMenu.sortOrderGroupTitle": {
-    "defaultMessage": "Sort order"
+  "sorting.sortMenu.sortOrderGroup.heading": {
+    "defaultMessage": "Sort order",
+    "description": "The heading to show in the sort menu above the available sort order options"
   },
-  "theme.colorModeSelect.darkMode.label": {
-    "defaultMessage": "Dark"
+  "termsAndConditions.page.heading": {
+    "defaultMessage": "Terms and Conditions",
+    "description": "The text to show as the heading of the Terms and Conditions page."
   },
-  "theme.colorModeSelect.lightMode.label": {
-    "defaultMessage": "Light"
+  "termsAndConditions.pages.title": {
+    "defaultMessage": "Terms and Conditions",
+    "description": "The page title for the Terms and Conditions page."
   },
-  "theme.colorModeSwitcher.switchColorModeLabel": {
-    "defaultMessage": "Switch to {mode, select, dark {dark} light {light} other {}} mode"
+  "theme.colorModeSelect.darkMode.optionText": {
+    "defaultMessage": "Dark",
+    "description": "The text to display for choosing dark mode when selecting a color mode"
   },
-  "things.deleteConfirmation.cancelButton.label": {
-    "defaultMessage": "Cancel"
+  "theme.colorModeSelect.lightMode.optionText": {
+    "defaultMessage": "Light",
+    "description": "The text to display for choosing light mode when selecting a color mode"
   },
-  "things.deleteConfirmation.confirmButton.label": {
-    "defaultMessage": "Yes, delete it"
+  "theme.colorModeSwitcher.switchColorMode.fullText": {
+    "defaultMessage": "Switch to {mode, select, dark {dark} light {light} other {}} mode",
+    "description": "Longer text or tooltip text for switching the current color mode"
   },
-  "things.deleteConfirmation.header": {
-    "defaultMessage": "Delete Thing?"
+  "things.deleteConfirmation.cancelButton.text": {
+    "defaultMessage": "Cancel",
+    "description": "The text for the cancel button of the Thing delete confirmation model"
+  },
+  "things.deleteConfirmation.confirmButton.text": {
+    "defaultMessage": "Yes, delete it",
+    "description": "The text for the confirmation button of the Thing delete confirmation model"
+  },
+  "things.deleteConfirmation.heading": {
+    "defaultMessage": "Delete Thing?",
+    "description": "The text shown in the header of the Thing delete confirmation model"
   },
   "things.deleteConfirmation.message": {
     "defaultMessage": "Are you sure you want to delete the Thing ''<e>{name}</e>''?",
     "description": "The message asking the user to confirm that they want to delete a Thing"
   },
   "things.deleteThingLink.ariaLabel": {
-    "defaultMessage": "Delete Thing"
+    "defaultMessage": "Delete Thing",
+    "description": "The accessible text to apply to the button used to delete a Thing"
   },
   "things.editThingLink.ariaLabel": {
-    "defaultMessage": "Edit Thing"
+    "defaultMessage": "Edit Thing",
+    "description": "The accessible text to apply to the button used to edit a Thing"
   },
-  "things.thingCreate.title": {
-    "defaultMessage": "New Thing"
+  "things.loadError.notFound": {
+    "defaultMessage": "The Thing you are looking for couldn't be found.",
+    "description": "The message shown when the Thing requested was not found"
+  },
+  "things.thingCreate.heading": {
+    "defaultMessage": "New Thing",
+    "description": "The heading shown when creating a Thing"
   },
   "things.thingDetails.createdField.label": {
-    "defaultMessage": "Created:"
+    "defaultMessage": "Created:",
+    "description": "The label for the created date of Thing"
   },
   "things.thingDetails.updatedField.label": {
-    "defaultMessage": "Updated:"
+    "defaultMessage": "Updated:",
+    "description": "The label for the updated date of Thing"
   },
-  "things.thingEdit.title": {
-    "defaultMessage": "Edit Thing"
+  "things.thingEdit.heading": {
+    "defaultMessage": "Edit Thing",
+    "description": "The heading shown when editing a Thing"
   },
   "things.thingForm.description.label": {
-    "defaultMessage": "Description"
+    "defaultMessage": "Description",
+    "description": "The label for the description field of the Thing form"
   },
   "things.thingForm.isPublic.label": {
-    "defaultMessage": "Public"
+    "defaultMessage": "Public",
+    "description": "The label for the public status field of the Thing form"
   },
   "things.thingForm.name.label": {
-    "defaultMessage": "Name"
-  },
-  "things.thingLoadError.notFound": {
-    "defaultMessage": "The Thing you are looking for couldn't be found."
+    "defaultMessage": "Name",
+    "description": "The label for the name field of the Thing form"
   },
   "things.thingsList.addButton.ariaLabel": {
-    "defaultMessage": "Add new Thing"
+    "defaultMessage": "Add new Thing",
+    "description": "The accesible label for the button to add a new thing shown at the top of the list of Things"
   },
-  "things.thingsList.addButton.label": {
-    "defaultMessage": "New thing"
+  "things.thingsList.addButton.text": {
+    "defaultMessage": "New thing",
+    "description": "The text of the button for adding a new Thing"
+  },
+  "things.thingsList.heading": {
+    "defaultMessage": "Things",
+    "description": "The heading text shown at the top of the things list"
   },
   "things.thingsList.ownFilter.all": {
-    "defaultMessage": "All Things"
+    "defaultMessage": "All Things",
+    "description": "The text for the 'All Things' options filter"
   },
   "things.thingsList.ownFilter.mine": {
-    "defaultMessage": "My Things"
+    "defaultMessage": "My Things",
+    "description": "The text for the 'My Things' options filter"
   },
   "things.thingsList.refreshButton.ariaLabel": {
-    "defaultMessage": "Refresh"
+    "defaultMessage": "Refresh",
+    "description": "The accesible label for the Refresh button for the list of Things"
   },
   "things.thingsList.search.placeholder": {
-    "defaultMessage": "Filter by name or description..."
+    "defaultMessage": "Filter by name or description...",
+    "description": "The placeholder text for the search box filter of the places list"
   },
-  "things.thingsList.title": {
-    "defaultMessage": "Things"
+  "things.thingsTable.createdAt.columnHeading": {
+    "defaultMessage": "Created",
+    "description": "The heading text for the column showing the created date of a Thing."
   },
-  "things.thingsTable.createdHeader.label": {
-    "defaultMessage": "Created"
+  "things.thingsTable.description.columnHeading": {
+    "defaultMessage": "Description",
+    "description": "The heading text for the column showing the description of a Thing."
   },
-  "things.thingsTable.descriptionHeader.label": {
-    "defaultMessage": "Description"
+  "things.thingsTable.isPublic.columnHeading": {
+    "defaultMessage": "Public",
+    "description": "The heading text for the column showing public state of a Thing."
   },
-  "things.thingsTable.nameHeader.label": {
-    "defaultMessage": "Name"
+  "things.thingsTable.name.columnHeading": {
+    "defaultMessage": "Name",
+    "description": "The heading text for the column showing the name of a Thing."
   },
-  "things.thingsTable.publicHeader.label": {
-    "defaultMessage": "Public"
+  "user.userMenu.ariaLabel": {
+    "defaultMessage": "User menu",
+    "description": "The accessible text used to label the button that opens the user dropdown menu"
   },
-  "user.userMenu.label": {
-    "defaultMessage": "User menu"
+  "user.userMenu.profileLink.text": {
+    "defaultMessage": "Your Profile",
+    "description": "The text for the link to the user's profile page"
   },
-  "user.userMenu.profileLink": {
-    "defaultMessage": "Your Profile"
+  "user.userMenu.thingsLink.text": {
+    "defaultMessage": "Your Things",
+    "description": "The text for the link to the user's Things page"
   },
-  "user.userMenu.thingsLink": {
-    "defaultMessage": "Your Things"
+  "verifyEmailNotificationBanner.emailSentMessage": {
+    "defaultMessage": "Please confirm your email. We've send a message to <e>{emailAddress}</e>.",
+    "description": "The message displayed in the banner when the user has not yet verified their account's email address."
+  },
+  "verifyEmailNotificationBanner.resendButton.text": {
+    "defaultMessage": "Resend email",
+    "description": "The text to display on the button used to resend the account verification email."
   }
 }

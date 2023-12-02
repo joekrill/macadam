@@ -30,7 +30,7 @@ export const Recovery = ({ flowId, returnTo }: RecoveryProps) => {
       <FlowHeading
         title={
           <FormattedMessage
-            id="auth.recovery.title"
+            id="auth.recovery.heading"
             description="The title displayed at the top of the password recovery form"
             defaultMessage="Recover your account"
           />

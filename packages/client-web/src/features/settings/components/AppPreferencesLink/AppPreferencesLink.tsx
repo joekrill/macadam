@@ -9,11 +9,11 @@ export const AppPreferencesLink = ({
   onClick,
   ...props
 }: AppPreferencesLinkProps) => {
-  const { to, label } = useAppPreferencesLink();
+  const { to, text } = useAppPreferencesLink();
 
   return (
     <Link {...props} to={to} as={RouterLink}>
-      {children || label}
+      {children || text}
     </Link>
   );
 };

@@ -14,7 +14,11 @@ export const CancelButton = ({ children, ...props }: CancelButtonProps) => (
     {...props}
   >
     {children || (
-      <FormattedMessage id="forms.cancelButton.label" defaultMessage="Cancel" />
+      <FormattedMessage
+        id="forms.cancelButton.text"
+        description="The text to show for the 'Cancel' button used by forms across the app when cancelling an action"
+        defaultMessage="Cancel"
+      />
     )}
   </Button>
 );

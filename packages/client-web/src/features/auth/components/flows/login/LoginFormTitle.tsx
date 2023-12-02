@@ -9,8 +9,8 @@ export const LoginFormTitle = ({ flow }: LoginFormTitleProps) => {
   if (flow?.refresh) {
     return (
       <FormattedMessage
-        id="auth.loginFormTitle.confirmAccess"
-        description="The title displayed at the top of the login form when the user is already logged in but we need them to enter their password again to reconfirm their access"
+        id="auth.loginForm.confirmAccess.heading"
+        description="The heading text displayed at the top of the login form when the user is already logged in but we need them to enter their password again to reconfirm their access"
         defaultMessage="Confirm access"
       />
     );
@@ -19,8 +19,8 @@ export const LoginFormTitle = ({ flow }: LoginFormTitleProps) => {
   if (flow?.requested_aal === "aal2") {
     return (
       <FormattedMessage
-        id="auth.loginFormTitle.2fa"
-        description="The title displayed at the top of the login form when requesting the user's 2FA code"
+        id="auth.loginForm.2fa.heading"
+        description="The heading text displayed at the top of the login form when requesting the user's 2FA code"
         defaultMessage="Two-Factor Authentication"
       />
     );
@@ -28,8 +28,8 @@ export const LoginFormTitle = ({ flow }: LoginFormTitleProps) => {
 
   return (
     <FormattedMessage
-      id="auth.loginFormTitle.login"
-      description="The title displayed at the top of the login form when logging in"
+      id="auth.loginForm.login.heading"
+      description="The heading text displayed at the top of the login form when logging in"
       defaultMessage="Log in to your account"
     />
   );

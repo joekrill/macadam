@@ -64,7 +64,8 @@ export const Footer = (props: FooterProps) => (
       >
         <Text fontSize="sm" flex="1">
           <FormattedMessage
-            id="app.footer.copyrightNotice"
+            id="footer.copyrightNotice"
+            description="The copyright notice displayed in the footer."
             defaultMessage="© {now, date, ::yyyy} {appName}. All rights reserved."
             values={{
               now: new Date(),

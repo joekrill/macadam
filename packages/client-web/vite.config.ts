@@ -20,7 +20,18 @@ export default defineConfig(({ mode }) => {
       outDir: "build",
     },
     plugins: [
-      react(),
+      react({
+        babel: {
+          plugins: [
+            [
+              "formatjs",
+              {
+                removeDefaultMessage: true,
+              },
+            ],
+          ],
+        },
+      }),
       svgr(),
       htmlPlugin(loadEnv(mode, ".")),
       checker({
@@ -36,6 +47,12 @@ export default defineConfig(({ mode }) => {
         }),
     ],
     define: envWithProcessPrefix,
+    resolve: {
+      alias: {
+        "@formatjs/icu-messageformat-parser":
+          "@formatjs/icu-messageformat-parser/no-parser",
+      },
+    },
     test: {
       globals: true,
       environment: "jsdom",

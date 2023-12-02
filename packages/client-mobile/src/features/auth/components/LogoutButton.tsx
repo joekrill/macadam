@@ -1,11 +1,10 @@
 import { identityApi, useSessionToken } from "@macadam/api-client";
 import { Button, IButtonProps, Text } from "native-base";
-import React from "react";
 import { FormattedMessage } from "react-intl";
 
 export const LogoutButtonLabel = () => (
   <Text>
-    <FormattedMessage id="auth.logoutButton.label" defaultMessage="Log Out" />
+    <FormattedMessage id="auth.logoutButton.text" defaultMessage="Log Out" />
   </Text>
 );
 

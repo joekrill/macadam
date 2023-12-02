@@ -19,7 +19,8 @@ export const HomepageButton = (props: HomepageButtonLinkProps) => (
   >
     <chakra.span noOfLines={1}>
       <FormattedMessage
-        id="common.hompageButton.label"
+        id="common.hompageButton.text"
+        description="The text to display on the button used to direct the user to the home page"
         defaultMessage="Go to the homepage"
       />
     </chakra.span>

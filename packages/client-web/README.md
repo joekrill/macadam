@@ -43,12 +43,24 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 I18n is implemented using [Format.JS](https://formatjs.io/) and React-Intl. When possible, use the `<FormattedMessage />` or related component, or the imperative equivalents via the `useIntl()` hook.
 
-##### Message id
+##### Message `id`
 
-Message `id`s should follow the format of `<feature>.<component>.<part>' or `<feature>.<component>.<subcomponent>.<part>'. Common `part` names include:
+Message `id`s should use camelCase and generally follow the format of `<feature>.<component>.<part>' or `<feature>.<component>.<subcomponent>.<part>'. Common `part` names include:
 
-- `label`
-- `ariaLabel`
+- `title` - the text used in the browser tab/window (that is, rendered in a `<title>` tag). In cases beyond that, prefer other terms (`heading`, `tooltip`, etc) to avoid confusion.
+- `heading` - text that acts as a heading for other content. Typically rendered in a `<h1>`...`<h6>` element or `<Heading>` component).
+- `label` - text that _labels_ another field. Typically the content of a `<label>` element. To avoid confusion do not use this term to refer to button/link content or things that are not a distinct label to another element - in those cases prefer something like `text`, `message`, or qualify the label type (i.e. `ariaLabel`).
+- `text` - general purpose text content. Use this for things like button or link content. In some cases a more descriptive term may be a better choice (`message`, `helpText`, `details`)
+- `ariaLabel` - the value of an `aria-label` attribute, which isn't typically shown in the UI but is used for accessibility purposes.
+- `tooltip` - text shown in a tooltip. This could also be used as an id for text that is applied as a `title` _attribute_, which is displayed natively using tooltips.
+- `placeholder` - text used as a placeholder for empty input elements.
+- `columnHeading` - text shown in a table column header
+
+Avoid non-standard terms or using these terms in inconsistent ways, as noted, including:
+
+- `header` - Avoid using this to refer to specific heading text (prefer `heading` in those cases). This should instead be used to refer to a complete component or subcomponent.
+
+##### Usage
 
 ```tsx
 // Using <FormattedMessage>

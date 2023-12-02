@@ -42,6 +42,8 @@ export const ThingActions = ({
           <IconButton
             aria-label={formatMessage({
               id: "things.editThingLink.ariaLabel",
+              description:
+                "The accessible text to apply to the button used to edit a Thing",
               defaultMessage: "Edit Thing",
             })}
             as={RouterLink}
@@ -55,6 +57,8 @@ export const ThingActions = ({
           <IconButton
             aria-label={formatMessage({
               id: "things.deleteThingLink.ariaLabel",
+              description:
+                "The accessible text to apply to the button used to delete a Thing",
               defaultMessage: "Delete Thing",
             })}
             icon={<Icon as={FaTrash} />}

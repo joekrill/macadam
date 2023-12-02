@@ -81,7 +81,7 @@ export const ErrorAlert = ({
           >
             Try Again
             {/* <FormattedMessage
-              id="errors.errorAlert.retryButton.label"
+              id="errors.errorAlert.retryButton.text"
               defaultMessage="Try Again"
             /> */}
           </Button>

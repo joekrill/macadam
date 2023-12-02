@@ -29,7 +29,8 @@ export const ThingDeleteConfirmationModal = ({
     <ModalContent>
       <ModalHeader>
         <FormattedMessage
-          id="things.deleteConfirmation.header"
+          id="things.deleteConfirmation.heading"
+          description="The text shown in the header of the Thing delete confirmation model"
           defaultMessage="Delete Thing?"
         />
       </ModalHeader>
@@ -48,13 +49,15 @@ export const ThingDeleteConfirmationModal = ({
       <ModalFooter>
         <Button onClick={props.onClose} mr="3">
           <FormattedMessage
-            id="things.deleteConfirmation.cancelButton.label"
+            id="things.deleteConfirmation.cancelButton.text"
+            description="The text for the cancel button of the Thing delete confirmation model"
             defaultMessage="Cancel"
           />
         </Button>
         <Button colorScheme="red" onClick={() => onConfirm()}>
           <FormattedMessage
-            id="things.deleteConfirmation.confirmButton.label"
+            id="things.deleteConfirmation.confirmButton.text"
+            description="The text for the confirmation button of the Thing delete confirmation model"
             defaultMessage="Yes, delete it"
           />
         </Button>

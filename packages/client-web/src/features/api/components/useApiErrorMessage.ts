@@ -14,7 +14,9 @@ export const useApiErrorMessage = (
       if (error.status === "PARSING_ERROR") {
         return formatMessage(
           {
-            id: "api.errors.parsingErrorMessage",
+            id: "api.error.parsingError.message",
+            description:
+              "The error message displayed when an API request fails because the response was not in the expected format.",
             defaultMessage:
               "Error parsing server response ({error}). Please try again.",
           },
@@ -29,7 +31,9 @@ export const useApiErrorMessage = (
       if (error.status === "FETCH_ERROR") {
         return formatMessage(
           {
-            id: "api.errors.fetchErrorMessage",
+            id: "api.error.requestFailure.message",
+            description:
+              "The error message displayed when an API request fails because the request failed to be sent.",
             defaultMessage:
               "Unexpected client error ({error}). Please try again.",
           },
@@ -68,7 +72,9 @@ export const useApiErrorMessage = (
     if (message) {
       return formatMessage(
         {
-          id: "api.errors.genericMessageWithMessage",
+          id: "api.error.otherWithMessage.message",
+          description:
+            "The error message displayed when an API request fails for an unknown reason and an error message was provided by the server.",
           defaultMessage: "Error: {message} ({code}/{name}). Please try again.",
         },
         {
@@ -82,7 +88,9 @@ export const useApiErrorMessage = (
     if (code || name) {
       return formatMessage(
         {
-          id: "api.errors.genericMessageWithCode",
+          id: "api.error.otherWithCode.message",
+          description:
+            "The error message displayed when an API request fails for an unknown reason and an error code was provided by the server.",
           defaultMessage:
             "The server returned an unexpected resonse ({code}). Please try again.",
         },
@@ -93,7 +101,9 @@ export const useApiErrorMessage = (
     }
 
     return formatMessage({
-      id: "api.errors.genericMessage",
+      id: "api.error.other.message",
+      description:
+        "The error message displayed when an API request fails for an unknown reason and no code or message was found.",
       defaultMessage: "An unknown error occurred. Please try again.",
     });
   }, [error, formatMessage]);

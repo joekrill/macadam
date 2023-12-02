@@ -20,7 +20,8 @@ export const ContactUs = (props: ContactUsProps) => {
       <Helmet>
         <title>
           {formatMessage({
-            id: "pages.contactUs.title",
+            id: "contactUs.page.title",
+            description: "The page title for the Contact Us page.",
             defaultMessage: "Contact Us",
           })}
         </title>
@@ -28,13 +29,15 @@ export const ContactUs = (props: ContactUsProps) => {
       <ScrollToTop />
       <Heading>
         <FormattedMessage
-          id="pages.contactUs.heading"
+          id="contactUs.page.heading"
+          description="The text to show as the heading of the Contact Us page."
           defaultMessage="Contact Us"
         />
       </Heading>
       <Text py="5">
         <FormattedMessage
-          id="pages.contactUs.instructions"
+          id="contactUs.page.instructions"
+          description="The instructions displayed at the top of the Contact Us page directing the user to send an email or fill at a form."
           defaultMessage="Email us at <mailto>{emailAddress}</mailto> or fill out the form below for any feedback, questions, problems, or feature requests."
           values={{
             emailAddress: process.env.VITE_EMAIL_CONTACT,

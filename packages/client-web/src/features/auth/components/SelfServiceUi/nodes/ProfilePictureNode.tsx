@@ -98,7 +98,8 @@ export const ProfilePictureNode = ({
             {...attributes}
           >
             <FormattedMessage
-              id="auth.selfServiceUi.profilePictureNode.uploadButton.label"
+              id="auth.selfServiceUi.profilePictureNode.uploadButton.text"
+              description="The text shown on the button used for uploading a new profile photo."
               defaultMessage="Change photo"
             />
             <Input
@@ -118,7 +119,8 @@ export const ProfilePictureNode = ({
             onClick={() => onChange("")}
           >
             <FormattedMessage
-              id="auth.selfServiceUi.profilePictureNode.deleteButton.label"
+              id="auth.selfServiceUi.profilePictureNode.deleteButton.text"
+              description="The text shown on the button used for removing the current profile photo."
               defaultMessage="Delete"
             />
           </Button>

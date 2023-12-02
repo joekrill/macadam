@@ -39,6 +39,8 @@ export const ActiveLocaleSelect = (props: ActiveLocaleSelectProps) => {
       placeholder={formatMessage(
         {
           id: "i18n.activeLocaleSelect.deviceLocaleOption",
+          description:
+            "The option shown in the locale selection dropdown indicating the default locale as provided by the current device",
           defaultMessage: "Default - {locale}",
         },
         {

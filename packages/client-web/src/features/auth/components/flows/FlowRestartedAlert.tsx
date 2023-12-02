@@ -12,7 +12,7 @@ export const FlowRestartedAlert = ({ reason }: FlowRestartedAlertProps) => (
     <Text>
       <FormattedMessage
         id="auth.flowRestarted.message"
-        description="The message telling the user that the form they submitted had to be reloaded"
+        description="The message telling the user that the form they submitted had to be reloaded (perhaps because too much time has passed since the form was generated and a security token has expired)"
         defaultMessage="The form had to be reloaded{reason, select, security_csrf_violation { because the security token expired.} security_identity_mismatch { because your session changed} self_service_flow_expired { because the form expired} self_service_flow_return_to_forbidden { because the return URL is invalid} other {}}. Please try again."
         values={{ reason }}
       />

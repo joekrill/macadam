@@ -82,7 +82,8 @@ export const ThingsList = () => {
     <Box>
       <Heading mb="2">
         <FormattedMessage
-          id="things.thingsList.title"
+          id="things.thingsList.heading"
+          description="The heading text shown at the top of the things list"
           defaultMessage="Things"
         />
         <IconButton
@@ -91,6 +92,8 @@ export const ThingsList = () => {
           size="sm"
           aria-label={formatMessage({
             id: "things.thingsList.refreshButton.ariaLabel",
+            description:
+              "The accesible label for the Refresh button for the list of Things",
             defaultMessage: "Refresh",
           })}
           variant="outline"
@@ -124,6 +127,8 @@ export const ThingsList = () => {
                 onChange={(e) => setSearchInput(e.currentTarget.value)}
                 placeholder={formatMessage({
                   id: "things.thingsList.search.placeholder",
+                  description:
+                    "The placeholder text for the search box filter of the things list",
                   defaultMessage: "Filter by name or description...",
                 })}
               />
@@ -145,12 +150,14 @@ export const ThingsList = () => {
               <option value="">
                 {formatMessage({
                   id: "things.thingsList.ownFilter.all",
+                  description: "The text for the 'All Things' options filter",
                   defaultMessage: "All Things",
                 })}
               </option>
               <option value="mine">
                 {formatMessage({
                   id: "things.thingsList.ownFilter.mine",
+                  description: "The text for the 'My Things' options filter",
                   defaultMessage: "My Things",
                 })}
               </option>
@@ -162,6 +169,8 @@ export const ThingsList = () => {
             <Button
               aria-label={formatMessage({
                 id: "things.thingsList.addButton.ariaLabel",
+                description:
+                  "The accesible label for the button to add a new thing shown at the top of the list of Things",
                 defaultMessage: "Add new Thing",
               })}
               leftIcon={<HiPlusSm />}
@@ -169,7 +178,8 @@ export const ThingsList = () => {
               as={ReactRouterLink}
             >
               <FormattedMessage
-                id="things.thingsList.addButton.label"
+                id="things.thingsList.addButton.text"
+                description="The text of the button for adding a new Thing"
                 defaultMessage="New thing"
               />
             </Button>

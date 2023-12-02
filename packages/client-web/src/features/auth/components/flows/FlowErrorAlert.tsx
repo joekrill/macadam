@@ -74,7 +74,8 @@ export const FlowErrorAlert = ({
       >
         {hasRedirect && (
           <FormattedMessage
-            id="auth.flowError.redirecting"
+            id="auth.flowError.redirecting.message"
+            description="The message shown when an authentication flow requires a redirect (for example, an action requires an additional security step like a 2FA verification)"
             defaultMessage="{reason, select, session_refresh_required {Reauthentication required. } browser_location_change_required {} session_aal2_required {2FA required. } other {}}Redirecting..."
             values={{ reason: id }}
           />

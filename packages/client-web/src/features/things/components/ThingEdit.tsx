@@ -37,7 +37,8 @@ export const ThingEdit = () => {
     <Box>
       <Heading mb="2">
         <FormattedMessage
-          id="things.thingEdit.title"
+          id="things.thingEdit.heading"
+          description="The heading shown when editing a Thing"
           defaultMessage="Edit Thing"
         />
       </Heading>

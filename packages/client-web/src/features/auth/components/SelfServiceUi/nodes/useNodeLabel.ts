@@ -13,6 +13,7 @@ export const useNodeLabel = (node: UiNodeInput) => {
     case "password": {
       return formatMessage({
         id: "auth.selfServiceUi.passwordNode.label",
+        description: "The label for the passowrd input shown in forms.",
         defaultMessage: "Password",
       });
     }
@@ -26,6 +27,8 @@ export const useNodeLabel = (node: UiNodeInput) => {
     case "identifier": {
       return formatMessage({
         id: "auth.selfServiceUi.emailNode.label",
+        description:
+          "The label for the email input on the user profile or registration page.",
         defaultMessage: "E-Mail",
       });
     }

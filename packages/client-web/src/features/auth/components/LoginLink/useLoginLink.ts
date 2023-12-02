@@ -15,7 +15,8 @@ export const useLoginLink = () => {
     to: LOGIN_PATH,
     state: returnTo ? { returnTo } : undefined,
     label: formatMessage({
-      id: "auth.loginLink.label",
+      id: "auth.loginLink.text",
+      description: "The text for the link that the user can click to log in",
       defaultMessage: "Log In",
     }),
   };

@@ -25,13 +25,17 @@ export const ColorModeSelect = (props: ColorModeSelectProps) => {
     >
       <option key="dark" value="dark">
         {formatMessage({
-          id: "theme.colorModeSelect.darkMode.label",
+          id: "theme.colorModeSelect.darkMode.optionText",
+          description:
+            "The text to display for choosing dark mode when selecting a color mode",
           defaultMessage: "Dark",
         })}
       </option>
       <option key="light" value="light">
         {formatMessage({
-          id: "theme.colorModeSelect.lightMode.label",
+          id: "theme.colorModeSelect.lightMode.optionText",
+          description:
+            "The text to display for choosing light mode when selecting a color mode",
           defaultMessage: "Light",
         })}
       </option>

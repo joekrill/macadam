@@ -13,7 +13,11 @@ export const SaveButton = ({ children, ...props }: SaveButtonProps) => (
     {...props}
   >
     {children || (
-      <FormattedMessage id="forms.saveButton.label" defaultMessage="Save" />
+      <FormattedMessage
+        id="forms.saveButton.text"
+        description="The text to show for the 'Save' button used by forms across the app when saving changes to an entity"
+        defaultMessage="Save"
+      />
     )}
   </Button>
 );

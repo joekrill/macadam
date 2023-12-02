@@ -42,6 +42,7 @@ export const ThingDetails = () => {
             <chakra.span color="gray.500">
               <FormattedMessage
                 id="things.thingDetails.createdField.label"
+                description="The label for the created date of Thing"
                 defaultMessage="Created:"
               />
             </chakra.span>
@@ -54,6 +55,7 @@ export const ThingDetails = () => {
             <chakra.span color="gray.500">
               <FormattedMessage
                 id="things.thingDetails.updatedField.label"
+                description="The label for the updated date of Thing"
                 defaultMessage="Updated:"
               />
             </chakra.span>{" "}

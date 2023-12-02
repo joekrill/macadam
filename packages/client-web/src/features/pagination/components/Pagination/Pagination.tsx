@@ -79,7 +79,8 @@ export const Pagination = ({
           <Icon as={FaChevronLeft} boxSize={4} />
           <VisuallyHidden>
             <FormattedMessage
-              id="pagination.previousPage.label"
+              id="pagination.previousPage.text"
+              description="The text to show for the button that takes the user to the previous page of data"
               defaultMessage="Previous Page"
             />
           </VisuallyHidden>
@@ -115,7 +116,8 @@ export const Pagination = ({
           <Icon as={FaChevronRight} boxSize={4} />
           <VisuallyHidden>
             <FormattedMessage
-              id="pagination.nextPage.label"
+              id="pagination.nextPage.text"
+              description="The text to show for the button that takes the user to the next page of data"
               defaultMessage="Next Page"
             />
           </VisuallyHidden>

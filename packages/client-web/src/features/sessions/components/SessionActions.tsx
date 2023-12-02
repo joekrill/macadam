@@ -28,7 +28,9 @@ export const SessionActions = ({
         <IfAuthorized action="delete" subject={session}>
           <IconButton
             aria-label={formatMessage({
-              id: "auth.deleteSessionLink.ariaLabel",
+              id: "sessions.deleteSessionLink.ariaLabel",
+              description:
+                "The accessible text to apply to the button for deleting one of the user's sessions",
               defaultMessage: "Delete Session",
             })}
             icon={<Icon as={FaTrash} />}

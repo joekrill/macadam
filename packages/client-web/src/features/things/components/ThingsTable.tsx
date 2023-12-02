@@ -22,7 +22,9 @@ export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
     () => [
       columnHelper.accessor("name", {
         header: formatMessage({
-          id: "things.thingsTable.nameHeader.label",
+          id: "things.thingsTable.name.columnHeading",
+          description:
+            "The heading text for the column showing the name of a Thing.",
           defaultMessage: "Name",
         }),
         cell: (info) => (
@@ -34,7 +36,9 @@ export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
       }),
       columnHelper.accessor("description", {
         header: formatMessage({
-          id: "things.thingsTable.descriptionHeader.label",
+          id: "things.thingsTable.description.columnHeading",
+          description:
+            "The heading text for the column showing the description of a Thing.",
           defaultMessage: "Description",
         }),
         // cell: (info) => <RouterLink to={`/things/${info.row.original.id}`}>{info.getValue()}</RouterLink>,
@@ -42,7 +46,9 @@ export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
       }),
       columnHelper.accessor("createdAt", {
         header: formatMessage({
-          id: "things.thingsTable.createdHeader.label",
+          id: "things.thingsTable.createdAt.columnHeading",
+          description:
+            "The heading text for the column showing the created date of a Thing.",
           defaultMessage: "Created",
         }),
         cell: (info) => (
@@ -56,7 +62,9 @@ export const ThingsTable = ({ data = [], ...props }: ThingsTableProps) => {
       }),
       columnHelper.accessor("isPublic", {
         header: formatMessage({
-          id: "things.thingsTable.publicHeader.label",
+          id: "things.thingsTable.isPublic.columnHeading",
+          description:
+            "The heading text for the column showing public state of a Thing.",
           defaultMessage: "Public",
         }),
         cell: (info) => (

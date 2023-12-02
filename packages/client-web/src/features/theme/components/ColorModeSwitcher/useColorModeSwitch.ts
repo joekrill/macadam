@@ -9,7 +9,9 @@ export const useColorModeSwitch = () => {
   const Icon = useColorModeValue(FaRegLightbulb, FaLightbulb);
   const label = formatMessage(
     {
-      id: "theme.colorModeSwitcher.switchColorModeLabel",
+      id: "theme.colorModeSwitcher.switchColorMode.fullText",
+      description:
+        "Longer text or tooltip text for switching the current color mode",
       defaultMessage:
         "Switch to {mode, select, dark {dark} light {light} other {}} mode",
     },

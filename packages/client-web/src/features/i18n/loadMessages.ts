@@ -36,5 +36,9 @@ export const loadMessages = async (locale: LocaleCode) => {
   const { default: messages } = await import(
     `./messages/${messagesLocale}.json`
   );
-  MESSAGES[messagesLocale] = messages;
+  if (messagesLocale !== "en") {
+    MESSAGES[messagesLocale] = { ...en, ...messages };
+  } else {
+    MESSAGES[messagesLocale] = messages;
+  }
 };

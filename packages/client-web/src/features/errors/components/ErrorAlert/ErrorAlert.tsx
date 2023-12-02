@@ -64,6 +64,7 @@ export const ErrorAlert = ({
             {title || (
               <FormattedMessage
                 id="errors.errorAlert.message"
+                description="The message to show when an unknown error has occured."
                 defaultMessage="Something went wrong :("
               />
             )}
@@ -83,7 +84,8 @@ export const ErrorAlert = ({
             leftIcon={<HiRefresh />}
           >
             <FormattedMessage
-              id="errors.errorAlert.retryButton.label"
+              id="errors.errorAlert.retryButton.text"
+              description="The text to show on the retry button that may be available when an error has occured."
               defaultMessage="Try Again"
             />
           </Button>

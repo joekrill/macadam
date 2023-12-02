@@ -38,7 +38,7 @@ export const SettingsForm = ({
         <Card>
           <Heading as="h3" size="md">
             <FormattedMessage
-              id="auth.settingsForm.profileSection.title"
+              id="auth.settings.profileSection.heading"
               description="The heading displayed at the top of the profile section of the settings form"
               defaultMessage="Profile"
             />
@@ -56,7 +56,7 @@ export const SettingsForm = ({
         <Card>
           <Heading as="h3" size="md">
             <FormattedMessage
-              id="auth.settingsForm.changePasswordSection.title"
+              id="auth.settings.changePasswordSection.heading"
               description="The heading displayed at the top of the change password section of the settings form"
               defaultMessage="Change Password"
             />
@@ -74,7 +74,7 @@ export const SettingsForm = ({
         <Card>
           <Heading as="h3" size="md">
             <FormattedMessage
-              id="auth.settings.oidcSection.title"
+              id="auth.settings.oidcSection.heading"
               description="The heading displayed at the top of the change password section of the settings form"
               defaultMessage="3rd Party Log-in"
             />
@@ -93,6 +93,8 @@ export const SettingsForm = ({
           <Button
             aria-label={formatMessage({
               id: "auth.settings.totpSection.toggleButton.ariaLabel",
+              description:
+                "The accessible text for button that shows and hides the two-factor authentication settings section ",
               defaultMessage: "Toggle Two-factor authentication settings",
             })}
             onClick={onTotpToggle}
@@ -101,7 +103,7 @@ export const SettingsForm = ({
             <Heading as="h3" size="md" display="flex" alignItems="center">
               <Icon mr="3" as={isTotpOpen ? FaMinusCircle : FaPlusCircle} />
               <FormattedMessage
-                id="auth.settings.totpSection.title"
+                id="auth.settings.totpSection.heading"
                 description="The heading displayed at the top of the change password section of the settings form"
                 defaultMessage="Two-factor Authentication"
               />
@@ -125,6 +127,8 @@ export const SettingsForm = ({
           <Button
             aria-label={formatMessage({
               id: "auth.settings.webauthnSection.toggleButton.ariaLabel",
+              description:
+                "The accessible text for button that shows and hides the hardware token and biometrics settings section ",
               defaultMessage: "Toggle Hardware Tokens and Biometrics settings",
             })}
             onClick={onWebauthnToggle}
@@ -133,7 +137,7 @@ export const SettingsForm = ({
             <Heading as="h3" size="md" display="flex" alignItems="center">
               <Icon mr="3" as={isTotpOpen ? FaMinusCircle : FaPlusCircle} />
               <FormattedMessage
-                id="auth.settings.webauthnSection.title"
+                id="auth.settings.webauthnSection.heading"
                 description="The heading displayed at the top of the change password section of the settings form"
                 defaultMessage="Hardware Tokens and Biometrics"
               />

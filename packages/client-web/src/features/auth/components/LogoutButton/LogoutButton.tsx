@@ -3,7 +3,11 @@ import { useLogout } from "@macadam/api-client";
 import { FormattedMessage } from "react-intl";
 
 export const LogoutButtonLabel = () => (
-  <FormattedMessage id="auth.logoutButton.label" defaultMessage="Log Out" />
+  <FormattedMessage
+    id="auth.logoutButton.text"
+    description="The text for the link that the user can click to log out"
+    defaultMessage="Log Out"
+  />
 );
 
 export interface LogoutButtonProps extends ButtonProps {

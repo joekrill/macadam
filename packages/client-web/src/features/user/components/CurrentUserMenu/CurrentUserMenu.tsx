@@ -64,7 +64,9 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
         iconSpacing="0.1em"
         size="sm"
         aria-label={formatMessage({
-          id: "user.userMenu.label",
+          id: "user.userMenu.ariaLabel",
+          description:
+            "The accessible text used to label the button that opens the user dropdown menu",
           defaultMessage: "User menu",
         })}
       >
@@ -75,7 +77,7 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
           <CurrentUserMenuHeader hidden={!isLoggedIn} />
           <MenuDivider hidden={!isLoggedIn} />
           <MenuItem as={RouterLink} icon={<FaCog />} to={preferencesLink.to}>
-            {preferencesLink.label}
+            {preferencesLink.text}
           </MenuItem>
           <MenuItem
             as={RouterLink}
@@ -84,7 +86,8 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
             to="/settings/profile"
           >
             <FormattedMessage
-              id="user.userMenu.profileLink"
+              id="user.userMenu.profileLink.text"
+              description="The text for the link to the user's profile page"
               defaultMessage="Your Profile"
             />
           </MenuItem>
@@ -98,7 +101,8 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
             to="/things?mine=1"
           >
             <FormattedMessage
-              id="user.userMenu.thingsLink"
+              id="user.userMenu.thingsLink.text"
+              description="The text for the link to the user's Things page"
               defaultMessage="Your Things"
             />
           </MenuItem>

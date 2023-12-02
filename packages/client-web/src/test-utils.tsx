@@ -6,11 +6,12 @@ import { IntlProvider } from "react-intl";
 import { Provider as ReduxProvider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
 import { store } from "./app/store";
+import { getMessages } from "./features/i18n/loadMessages";
 import { theme } from "./features/theme/default";
 
 const AllProviders = ({ children }: { children?: React.ReactNode }) => (
   <ReduxProvider store={store}>
-    <IntlProvider locale="en">
+    <IntlProvider locale="en" messages={getMessages("en")} defaultLocale="en">
       <HelmetProvider>
         <MemoryRouter>
           <ChakraProvider theme={theme}>{children}</ChakraProvider>

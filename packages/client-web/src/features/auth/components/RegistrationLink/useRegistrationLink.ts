@@ -15,7 +15,9 @@ export const useRegistrationLink = () => {
     to: REGISTRATION_PATH,
     state: returnTo ? { returnTo } : undefined,
     label: formatMessage({
-      id: "auth.registrationLink.label",
+      id: "auth.registrationLink.text",
+      description:
+        "The text for the link that will take the user to the new user registration form",
       defaultMessage: "Sign Up",
     }),
   };

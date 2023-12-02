@@ -27,6 +27,7 @@ export const SessionsList = () => {
       <Heading mb="4" size="md">
         <FormattedMessage
           id="auth.sessionsList.title"
+          description="The text shown as the heading for the list of user's active session"
           defaultMessage="Active Sessions"
         />
         <IconButton
@@ -35,6 +36,8 @@ export const SessionsList = () => {
           size="sm"
           aria-label={formatMessage({
             id: "sessions.sessionsList.refreshButton.ariaLabel",
+            description:
+              "The accessible text to show for the button to refresh the sessions list table",
             defaultMessage: "Refresh",
           })}
           variant="outline"

@@ -8,7 +8,7 @@ export const RecoveryLink = ({ children, ...props }: RecoveryLinkProps) => (
   <Link as={RouterLink} to="/account/recovery" {...props}>
     {children || (
       <FormattedMessage
-        id="auth.recoveryLink.label"
+        id="auth.recoveryLink.text"
         description="The text displayed for a link that takes you to the account recovery page"
         defaultMessage="Forgot your password?"
       />

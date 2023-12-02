@@ -1,25 +1,17 @@
 {
-  "api.errors.fetchErrorMessage": [
+  "api.error.generic.heading": [
     {
       "type": 0,
-      "value": "UNEXPECTED CLIENT ERROR ("
-    },
-    {
-      "type": 1,
-      "value": "error"
-    },
-    {
-      "type": 0,
-      "value": "). PLEASE TRY AGAIN."
+      "value": "SOMETHING WENT WRONG"
     }
   ],
-  "api.errors.genericMessage": [
+  "api.error.other.message": [
     {
       "type": 0,
       "value": "AN UNKNOWN ERROR OCCURRED. PLEASE TRY AGAIN."
     }
   ],
-  "api.errors.genericMessageWithCode": [
+  "api.error.otherWithCode.message": [
     {
       "type": 0,
       "value": "THE SERVER RETURNED AN UNEXPECTED RESONSE ("
@@ -33,7 +25,7 @@
       "value": "). PLEASE TRY AGAIN."
     }
   ],
-  "api.errors.genericMessageWithMessage": [
+  "api.error.otherWithMessage.message": [
     {
       "type": 0,
       "value": "ERROR: "
@@ -63,13 +55,7 @@
       "value": "). PLEASE TRY AGAIN."
     }
   ],
-  "api.errors.genericTitle": [
-    {
-      "type": 0,
-      "value": "SOMETHING WENT WRONG"
-    }
-  ],
-  "api.errors.parsingErrorMessage": [
+  "api.error.parsingError.message": [
     {
       "type": 0,
       "value": "ERROR PARSING SERVER RESPONSE ("
@@ -83,158 +69,21 @@
       "value": "). PLEASE TRY AGAIN."
     }
   ],
-  "app.contactUsForm.emailField.label": [
+  "api.error.requestFailure.message": [
     {
       "type": 0,
-      "value": "EMAIL"
-    }
-  ],
-  "app.contactUsForm.emailField.placeholder": [
-    {
-      "type": 0,
-      "value": "YOUR EMAIL"
-    }
-  ],
-  "app.contactUsForm.messageField.label": [
-    {
-      "type": 0,
-      "value": "MESSAGE"
-    }
-  ],
-  "app.contactUsForm.messageField.placeholder": [
-    {
-      "type": 0,
-      "value": "YOUR MESSAGE"
-    }
-  ],
-  "app.contactUsForm.nameField.label": [
-    {
-      "type": 0,
-      "value": "NAME"
-    }
-  ],
-  "app.contactUsForm.nameField.placeholder": [
-    {
-      "type": 0,
-      "value": "YOUR NAME"
-    }
-  ],
-  "app.contactUsForm.sendButton.label": [
-    {
-      "type": 0,
-      "value": "SEND MESSAGE"
-    }
-  ],
-  "app.contactUsSuccess.message": [
-    {
-      "type": 0,
-      "value": "THANKS FOR YOUR MESSAGE. WE'LL GET BACK TO YOU SOON."
-    }
-  ],
-  "app.contactUsSuccess.title": [
-    {
-      "type": 0,
-      "value": "MESSAGE SENT!"
-    }
-  ],
-  "app.footer.copyrightNotice": [
-    {
-      "type": 0,
-      "value": "© "
-    },
-    {
-      "style": {
-        "parsedOptions": {
-          "year": "numeric"
-        },
-        "pattern": "yyyy",
-        "type": 1
-      },
-      "type": 3,
-      "value": "now"
-    },
-    {
-      "type": 0,
-      "value": " "
+      "value": "UNEXPECTED CLIENT ERROR ("
     },
     {
       "type": 1,
-      "value": "appName"
+      "value": "error"
     },
     {
       "type": 0,
-      "value": ". ALL RIGHTS RESERVED."
+      "value": "). PLEASE TRY AGAIN."
     }
   ],
-  "app.footer.linkGroups.legal": [
-    {
-      "type": 0,
-      "value": "LEGAL"
-    }
-  ],
-  "app.footer.linkGroups.resources": [
-    {
-      "type": 0,
-      "value": "RESOURCES"
-    }
-  ],
-  "app.footer.links.contact.label": [
-    {
-      "type": 0,
-      "value": "CONTACT"
-    }
-  ],
-  "app.footer.links.faq.label": [
-    {
-      "type": 0,
-      "value": "FAQ"
-    }
-  ],
-  "app.footer.links.privacy.label": [
-    {
-      "type": 0,
-      "value": "PRIVACY"
-    }
-  ],
-  "app.footer.links.termsAndConditions.label": [
-    {
-      "type": 0,
-      "value": "TERMS"
-    }
-  ],
-  "auth.VerifyEmailNotificationBanner.emailSentMessage": [
-    {
-      "type": 0,
-      "value": "PLEASE CONFIRM YOUR EMAIL. WE'VE SEND A MESSAGE TO "
-    },
-    {
-      "children": [
-        {
-          "type": 1,
-          "value": "emailAddress"
-        }
-      ],
-      "type": 8,
-      "value": "e"
-    },
-    {
-      "type": 0,
-      "value": "."
-    }
-  ],
-  "auth.VerifyEmailNotificationBanner.resendButton.label": [
-    {
-      "type": 0,
-      "value": "RESEND EMAIL"
-    }
-  ],
-  "auth.deleteSessionLink.ariaLabel": [
-    {
-      "type": 0,
-      "value": "DELETE SESSION"
-    }
-  ],
-  "auth.flowError.redirecting": [
+  "auth.flowError.redirecting.message": [
     {
       "options": {
         "browser_location_change_required": {
@@ -348,7 +197,7 @@
       "value": "YOU'RE ALREADY LOGGED IN."
     }
   ],
-  "auth.login.signUpInsteadMessage": [
+  "auth.login.signUpInstead.message": [
     {
       "type": 0,
       "value": "DON'T HAVE AN ACCOUNT YET? "
@@ -364,37 +213,37 @@
       "value": "link"
     }
   ],
-  "auth.loginFormTitle.2fa": [
+  "auth.loginForm.2fa.heading": [
     {
       "type": 0,
       "value": "TWO-FACTOR AUTHENTICATION"
     }
   ],
-  "auth.loginFormTitle.confirmAccess": [
+  "auth.loginForm.confirmAccess.heading": [
     {
       "type": 0,
       "value": "CONFIRM ACCESS"
     }
   ],
-  "auth.loginFormTitle.login": [
+  "auth.loginForm.login.heading": [
     {
       "type": 0,
       "value": "LOG IN TO YOUR ACCOUNT"
     }
   ],
-  "auth.loginLink.label": [
+  "auth.loginLink.text": [
     {
       "type": 0,
       "value": "LOG IN"
     }
   ],
-  "auth.logoutButton.label": [
+  "auth.logoutButton.text": [
     {
       "type": 0,
       "value": "LOG OUT"
     }
   ],
-  "auth.passwordInput.togglePasswordVisibility.label": [
+  "auth.passwordInput.togglePasswordVisibility.tooltip": [
     {
       "options": {
         "hide": {
@@ -426,19 +275,19 @@
       "value": " PASSWORD"
     }
   ],
-  "auth.recovery.title": [
+  "auth.recovery.heading": [
     {
       "type": 0,
       "value": "RECOVER YOUR ACCOUNT"
     }
   ],
-  "auth.recoveryLink.label": [
+  "auth.recoveryLink.text": [
     {
       "type": 0,
       "value": "FORGOT YOUR PASSWORD?"
     }
   ],
-  "auth.registration.alreadyHaveAccountLink": [
+  "auth.registration.alreadyHaveAccount.message": [
     {
       "type": 0,
       "value": "ALREADY HAVE AN ACCOUNT? "
@@ -448,19 +297,19 @@
       "value": "loginLink"
     }
   ],
-  "auth.registration.title": [
+  "auth.registration.heading": [
     {
       "type": 0,
       "value": "CREATE YOUR ACCOUNT"
     }
   ],
-  "auth.registrationForm.oidcDividerText": [
+  "auth.registrationForm.oidcDivider.text": [
     {
       "type": 0,
       "value": "OR"
     }
   ],
-  "auth.registrationLink.label": [
+  "auth.registrationLink.text": [
     {
       "type": 0,
       "value": "SIGN UP"
@@ -512,13 +361,13 @@
       "value": "PASSWORD"
     }
   ],
-  "auth.selfServiceUi.profilePictureNode.deleteButton.label": [
+  "auth.selfServiceUi.profilePictureNode.deleteButton.text": [
     {
       "type": 0,
       "value": "DELETE"
     }
   ],
-  "auth.selfServiceUi.profilePictureNode.uploadButton.label": [
+  "auth.selfServiceUi.profilePictureNode.uploadButton.text": [
     {
       "type": 0,
       "value": "CHANGE PHOTO"
@@ -530,37 +379,49 @@
       "value": "ACTIVE SESSIONS"
     }
   ],
-  "auth.sessionsTable.authenticatedAtHeader.label": [
+  "auth.sessionsTable.authenticatedAt.columnHeading": [
     {
       "type": 0,
       "value": "LAST USED"
     }
   ],
-  "auth.sessionsTable.currentSessionIndicator.title": [
+  "auth.sessionsTable.currentSessionIndicator.tooltip": [
     {
       "type": 0,
       "value": "THIS IS YOUR CURRENT SESSION"
     }
   ],
-  "auth.sessionsTable.expiresAtHeader.label": [
+  "auth.sessionsTable.expiresAt.columnHeading": [
     {
       "type": 0,
       "value": "EXPIRES"
     }
   ],
-  "auth.sessionsTable.methodHeader.label": [
+  "auth.sessionsTable.method.columnHeading": [
     {
       "type": 0,
       "value": "METHOD"
     }
   ],
-  "auth.settings.oidcSection.title": [
+  "auth.settings.changePasswordSection.heading": [
+    {
+      "type": 0,
+      "value": "CHANGE PASSWORD"
+    }
+  ],
+  "auth.settings.oidcSection.heading": [
     {
       "type": 0,
       "value": "3RD PARTY LOG-IN"
     }
   ],
-  "auth.settings.totpSection.title": [
+  "auth.settings.profileSection.heading": [
+    {
+      "type": 0,
+      "value": "PROFILE"
+    }
+  ],
+  "auth.settings.totpSection.heading": [
     {
       "type": 0,
       "value": "TWO-FACTOR AUTHENTICATION"
@@ -572,7 +433,7 @@
       "value": "TOGGLE TWO-FACTOR AUTHENTICATION SETTINGS"
     }
   ],
-  "auth.settings.webauthnSection.title": [
+  "auth.settings.webauthnSection.heading": [
     {
       "type": 0,
       "value": "HARDWARE TOKENS AND BIOMETRICS"
@@ -584,19 +445,7 @@
       "value": "TOGGLE HARDWARE TOKENS AND BIOMETRICS SETTINGS"
     }
   ],
-  "auth.settingsForm.changePasswordSection.title": [
-    {
-      "type": 0,
-      "value": "CHANGE PASSWORD"
-    }
-  ],
-  "auth.settingsForm.profileSection.title": [
-    {
-      "type": 0,
-      "value": "PROFILE"
-    }
-  ],
-  "auth.verification.title": [
+  "auth.verification.heading": [
     {
       "type": 0,
       "value": "VERIFY YOUR ACCOUNT"
@@ -634,16 +483,102 @@
       "value": "sort"
     }
   ],
-  "common.hompageButton.label": [
+  "common.hompageButton.text": [
     {
       "type": 0,
       "value": "GO TO THE HOMEPAGE"
     }
   ],
-  "common.loadingSpinner.label": [
+  "common.loadingSpinner.ariaLabel": [
     {
       "type": 0,
       "value": "LOADING..."
+    }
+  ],
+  "contactUs.form.emailField.label": [
+    {
+      "type": 0,
+      "value": "EMAIL"
+    }
+  ],
+  "contactUs.form.emailField.placeholder": [
+    {
+      "type": 0,
+      "value": "YOUR EMAIL"
+    }
+  ],
+  "contactUs.form.messageField.label": [
+    {
+      "type": 0,
+      "value": "MESSAGE"
+    }
+  ],
+  "contactUs.form.messageField.placeholder": [
+    {
+      "type": 0,
+      "value": "YOUR MESSAGE"
+    }
+  ],
+  "contactUs.form.nameField.label": [
+    {
+      "type": 0,
+      "value": "NAME"
+    }
+  ],
+  "contactUs.form.nameField.placeholder": [
+    {
+      "type": 0,
+      "value": "YOUR NAME"
+    }
+  ],
+  "contactUs.form.sendButton.text": [
+    {
+      "type": 0,
+      "value": "SEND MESSAGE"
+    }
+  ],
+  "contactUs.page.heading": [
+    {
+      "type": 0,
+      "value": "CONTACT US"
+    }
+  ],
+  "contactUs.page.instructions": [
+    {
+      "type": 0,
+      "value": "EMAIL US AT "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "emailAddress"
+        }
+      ],
+      "type": 8,
+      "value": "mailto"
+    },
+    {
+      "type": 0,
+      "value": " OR FILL OUT THE FORM BELOW FOR ANY FEEDBACK, QUESTIONS, PROBLEMS, OR FEATURE REQUESTS."
+    }
+  ],
+  "contactUs.page.title": [
+    {
+      "type": 0,
+      "value": "CONTACT US"
+    }
+  ],
+  "contactUs.success.message": [
+    {
+      "type": 0,
+      "value": "THANKS FOR YOUR MESSAGE. WE'LL GET BACK TO YOU SOON."
+    }
+  ],
+  "contactUs.success.title": [
+    {
+      "type": 0,
+      "value": "MESSAGE SENT!"
     }
   ],
   "errors.errorAlert.message": [
@@ -652,7 +587,7 @@
       "value": "SOMETHING WENT WRONG :("
     }
   ],
-  "errors.errorAlert.retryButton.label": [
+  "errors.errorAlert.retryButton.text": [
     {
       "type": 0,
       "value": "TRY AGAIN"
@@ -686,22 +621,165 @@
       "value": "NOT FOUND"
     }
   ],
-  "forms.cancelButton.label": [
+  "faq.page.heading": [
+    {
+      "type": 0,
+      "value": "FREQUENTLY ASKED QUESTIONS"
+    }
+  ],
+  "faq.page.title": [
+    {
+      "type": 0,
+      "value": "FAQ"
+    }
+  ],
+  "footer.copyrightNotice": [
+    {
+      "type": 0,
+      "value": "© "
+    },
+    {
+      "style": {
+        "parsedOptions": {
+          "year": "numeric"
+        },
+        "pattern": "yyyy",
+        "type": 1
+      },
+      "type": 3,
+      "value": "now"
+    },
+    {
+      "type": 0,
+      "value": " "
+    },
+    {
+      "type": 1,
+      "value": "appName"
+    },
+    {
+      "type": 0,
+      "value": ". ALL RIGHTS RESERVED."
+    }
+  ],
+  "footer.linkGroup.legal.heading": [
+    {
+      "type": 0,
+      "value": "LEGAL"
+    }
+  ],
+  "footer.linkGroup.resources.heading": [
+    {
+      "type": 0,
+      "value": "RESOURCES"
+    }
+  ],
+  "footer.links.contactUs.text": [
+    {
+      "type": 0,
+      "value": "CONTACT"
+    }
+  ],
+  "footer.links.faq.text": [
+    {
+      "type": 0,
+      "value": "FAQ"
+    }
+  ],
+  "footer.links.privacyPolicy.text": [
+    {
+      "type": 0,
+      "value": "PRIVACY"
+    }
+  ],
+  "footer.links.termsAndConditions.text": [
+    {
+      "type": 0,
+      "value": "TERMS"
+    }
+  ],
+  "forms.cancelButton.text": [
     {
       "type": 0,
       "value": "CANCEL"
     }
   ],
-  "forms.createButton.label": [
+  "forms.createButton.text": [
     {
       "type": 0,
       "value": "CREATE"
     }
   ],
-  "forms.saveButton.label": [
+  "forms.saveButton.text": [
     {
       "type": 0,
       "value": "SAVE"
+    }
+  ],
+  "home.page.features.alwaysUpToDate.description": [
+    {
+      "type": 0,
+      "value": "LOREM IPSUM DOLOR SIT AMET, CONSETETUR SADIPSCING ELITR, SED DIAM NONUMY EIRMOD TEMPOR INVIDUNT UT LABORE."
+    }
+  ],
+  "home.page.features.alwaysUpToDate.heading": [
+    {
+      "type": 0,
+      "value": "ALWAYS UP TO DATE"
+    }
+  ],
+  "home.page.features.multipleDevices.description": [
+    {
+      "type": 0,
+      "value": "LOREM IPSUM DOLOR SIT AMET, CONSETETUR SADIPSCING ELITR, SED DIAM NONUMY EIRMOD TEMPOR INVIDUNT UT LABORE."
+    }
+  ],
+  "home.page.features.multipleDevices.heading": [
+    {
+      "type": 0,
+      "value": "SUPPORT FOR MULTIPLE DEVICES"
+    }
+  ],
+  "home.page.features.secureByDefault.description": [
+    {
+      "type": 0,
+      "value": "AT VERO EOS ET ACCUSAM ET JUSTO DUO DOLORES ET EA REBUM. STET CLITA KASD GUBERGREN, NO SEA TAKIMATA SANCTUS."
+    }
+  ],
+  "home.page.features.secureByDefault.heading": [
+    {
+      "type": 0,
+      "value": "SECURE BY DEFAULT"
+    }
+  ],
+  "home.page.features.statistics.description": [
+    {
+      "type": 0,
+      "value": "AT VERO EOS ET ACCUSAM ET JUSTO DUO DOLORES ET EA REBUM. STET CLITA KASD GUBERGREN, NO SEA TAKIMATA SANCTUS."
+    }
+  ],
+  "home.page.features.statistics.heading": [
+    {
+      "type": 0,
+      "value": "INCREDIBLE STATISTICS"
+    }
+  ],
+  "home.page.getStartedCtaButton.text": [
+    {
+      "type": 0,
+      "value": "GET STARTED"
+    }
+  ],
+  "home.page.introductionMessage": [
+    {
+      "type": 0,
+      "value": "AC EUISMOD VEL SIT MAECENAS ID PELLENTESQUE EU SED CONSECTETUR. MALESUADA ADIPISCING SAGITTIS VEL NULLA NEC."
+    }
+  ],
+  "home.page.tagLine": [
+    {
+      "type": 0,
+      "value": "OPINIONATED, PRODUCTION-READY, FULL-FEATURED SAAS BOILERPLATE."
     }
   ],
   "i18n.activeLocaleSelect.deviceLocaleOption": [
@@ -714,7 +792,7 @@
       "value": "locale"
     }
   ],
-  "i18n.localErrorToast.title": [
+  "i18n.localError.toastMessage": [
     {
       "type": 0,
       "value": "UNABLE TO LOAD LOCALE "
@@ -724,150 +802,34 @@
       "value": "locale"
     }
   ],
-  "pages.contactUs.heading": [
-    {
-      "type": 0,
-      "value": "CONTACT US"
-    }
-  ],
-  "pages.contactUs.instructions": [
-    {
-      "type": 0,
-      "value": "EMAIL US AT "
-    },
-    {
-      "children": [
-        {
-          "type": 1,
-          "value": "emailAddress"
-        }
-      ],
-      "type": 8,
-      "value": "mailto"
-    },
-    {
-      "type": 0,
-      "value": " OR FILL OUT THE FORM BELOW FOR ANY FEEDBACK, QUESTIONS, PROBLEMS, OR FEATURE REQUESTS."
-    }
-  ],
-  "pages.contactUs.title": [
-    {
-      "type": 0,
-      "value": "CONTACT US"
-    }
-  ],
-  "pages.faq.heading": [
-    {
-      "type": 0,
-      "value": "FREQUENTLY ASKED QUESTIONS"
-    }
-  ],
-  "pages.faq.title": [
-    {
-      "type": 0,
-      "value": "FAQ"
-    }
-  ],
-  "pages.home.features.alwaysUpToDate.description": [
-    {
-      "type": 0,
-      "value": "LOREM IPSUM DOLOR SIT AMET, CONSETETUR SADIPSCING ELITR, SED DIAM NONUMY EIRMOD TEMPOR INVIDUNT UT LABORE."
-    }
-  ],
-  "pages.home.features.alwaysUpToDate.title": [
-    {
-      "type": 0,
-      "value": "ALWAYS UP TO DATE"
-    }
-  ],
-  "pages.home.features.multipleDevices.description": [
-    {
-      "type": 0,
-      "value": "LOREM IPSUM DOLOR SIT AMET, CONSETETUR SADIPSCING ELITR, SED DIAM NONUMY EIRMOD TEMPOR INVIDUNT UT LABORE."
-    }
-  ],
-  "pages.home.features.multipleDevices.title": [
-    {
-      "type": 0,
-      "value": "SUPPORT FOR MULTIPLE DEVICES"
-    }
-  ],
-  "pages.home.features.secureByDefault.description": [
-    {
-      "type": 0,
-      "value": "AT VERO EOS ET ACCUSAM ET JUSTO DUO DOLORES ET EA REBUM. STET CLITA KASD GUBERGREN, NO SEA TAKIMATA SANCTUS."
-    }
-  ],
-  "pages.home.features.secureByDefault.title": [
-    {
-      "type": 0,
-      "value": "SECURE BY DEFAULT"
-    }
-  ],
-  "pages.home.features.statistics.description": [
-    {
-      "type": 0,
-      "value": "AT VERO EOS ET ACCUSAM ET JUSTO DUO DOLORES ET EA REBUM. STET CLITA KASD GUBERGREN, NO SEA TAKIMATA SANCTUS."
-    }
-  ],
-  "pages.home.features.statistics.title": [
-    {
-      "type": 0,
-      "value": "INCREDIBLE STATISTICS"
-    }
-  ],
-  "pages.home.getStartedCtaButton": [
-    {
-      "type": 0,
-      "value": "GET STARTED"
-    }
-  ],
-  "pages.home.introductionText": [
-    {
-      "type": 0,
-      "value": "AC EUISMOD VEL SIT MAECENAS ID PELLENTESQUE EU SED CONSECTETUR. MALESUADA ADIPISCING SAGITTIS VEL NULLA NEC."
-    }
-  ],
-  "pages.home.tagLine": [
-    {
-      "type": 0,
-      "value": "OPINIONATED, PRODUCTION-READY, FULL-FEATURED SAAS BOILERPLATE."
-    }
-  ],
-  "pages.privacyPolicy.heading": [
-    {
-      "type": 0,
-      "value": "PRIVACY POLICY"
-    }
-  ],
-  "pages.privacyPolicy.title": [
-    {
-      "type": 0,
-      "value": "PRIVACY POLICY"
-    }
-  ],
-  "pages.termsAndConditions.heading": [
-    {
-      "type": 0,
-      "value": "TERMS AND CONDITIONS"
-    }
-  ],
-  "pages.termsAndConditions.title": [
-    {
-      "type": 0,
-      "value": "TERMS AND CONDITIONS"
-    }
-  ],
-  "pagination.nextPage.label": [
+  "pagination.nextPage.text": [
     {
       "type": 0,
       "value": "NEXT PAGE"
     }
   ],
-  "pagination.previousPage.label": [
+  "pagination.previousPage.text": [
     {
       "type": 0,
       "value": "PREVIOUS PAGE"
+    }
+  ],
+  "privacyPolicy.page.heading": [
+    {
+      "type": 0,
+      "value": "PRIVACY POLICY"
+    }
+  ],
+  "privacyPolicy.page.title": [
+    {
+      "type": 0,
+      "value": "PRIVACY POLICY"
+    }
+  ],
+  "sessions.deleteSessionLink.ariaLabel": [
+    {
+      "type": 0,
+      "value": "DELETE SESSION"
     }
   ],
   "sessions.sessionsList.refreshButton.ariaLabel": [
@@ -888,37 +850,37 @@
       "value": "COLOR MODE"
     }
   ],
-  "settings.appPreferences.title": [
+  "settings.appPreferences.heading": [
     {
       "type": 0,
       "value": "PREFERENCES"
     }
   ],
-  "settings.appPreferencesLink.label": [
+  "settings.appPreferencesLink.text": [
     {
       "type": 0,
       "value": "SETTINGS"
     }
   ],
-  "settings.settingsPage.preferencesLink.label": [
+  "settings.settingsPage.preferencesLink.text": [
     {
       "type": 0,
       "value": "PREFERENCES"
     }
   ],
-  "settings.settingsPage.profileLink.label": [
+  "settings.settingsPage.profileLink.text": [
     {
       "type": 0,
       "value": "PROFILE & LOGIN"
     }
   ],
-  "settings.settingsPage.sessionsLink.label": [
+  "settings.settingsPage.sessionsLink.text": [
     {
       "type": 0,
       "value": "SESSIONS"
     }
   ],
-  "sorting.sortMenu.sortByGroupTitle": [
+  "sorting.sortMenu.sortByGroup.heading": [
     {
       "type": 0,
       "value": "SORT BY"
@@ -936,25 +898,37 @@
       "value": "DESCENDING"
     }
   ],
-  "sorting.sortMenu.sortOrderGroupTitle": [
+  "sorting.sortMenu.sortOrderGroup.heading": [
     {
       "type": 0,
       "value": "SORT ORDER"
     }
   ],
-  "theme.colorModeSelect.darkMode.label": [
+  "termsAndConditions.page.heading": [
+    {
+      "type": 0,
+      "value": "TERMS AND CONDITIONS"
+    }
+  ],
+  "termsAndConditions.pages.title": [
+    {
+      "type": 0,
+      "value": "TERMS AND CONDITIONS"
+    }
+  ],
+  "theme.colorModeSelect.darkMode.optionText": [
     {
       "type": 0,
       "value": "DARK"
     }
   ],
-  "theme.colorModeSelect.lightMode.label": [
+  "theme.colorModeSelect.lightMode.optionText": [
     {
       "type": 0,
       "value": "LIGHT"
     }
   ],
-  "theme.colorModeSwitcher.switchColorModeLabel": [
+  "theme.colorModeSwitcher.switchColorMode.fullText": [
     {
       "type": 0,
       "value": "SWITCH TO "
@@ -990,19 +964,19 @@
       "value": " MODE"
     }
   ],
-  "things.deleteConfirmation.cancelButton.label": [
+  "things.deleteConfirmation.cancelButton.text": [
     {
       "type": 0,
       "value": "CANCEL"
     }
   ],
-  "things.deleteConfirmation.confirmButton.label": [
+  "things.deleteConfirmation.confirmButton.text": [
     {
       "type": 0,
       "value": "YES, DELETE IT"
     }
   ],
-  "things.deleteConfirmation.header": [
+  "things.deleteConfirmation.heading": [
     {
       "type": 0,
       "value": "DELETE THING?"
@@ -1040,7 +1014,13 @@
       "value": "EDIT THING"
     }
   ],
-  "things.thingCreate.title": [
+  "things.loadError.notFound": [
+    {
+      "type": 0,
+      "value": "THE THING YOU ARE LOOKING FOR COULDN'T BE FOUND."
+    }
+  ],
+  "things.thingCreate.heading": [
     {
       "type": 0,
       "value": "NEW THING"
@@ -1058,7 +1038,7 @@
       "value": "UPDATED:"
     }
   ],
-  "things.thingEdit.title": [
+  "things.thingEdit.heading": [
     {
       "type": 0,
       "value": "EDIT THING"
@@ -1082,22 +1062,22 @@
       "value": "NAME"
     }
   ],
-  "things.thingLoadError.notFound": [
-    {
-      "type": 0,
-      "value": "THE THING YOU ARE LOOKING FOR COULDN'T BE FOUND."
-    }
-  ],
   "things.thingsList.addButton.ariaLabel": [
     {
       "type": 0,
       "value": "ADD NEW THING"
     }
   ],
-  "things.thingsList.addButton.label": [
+  "things.thingsList.addButton.text": [
     {
       "type": 0,
       "value": "NEW THING"
+    }
+  ],
+  "things.thingsList.heading": [
+    {
+      "type": 0,
+      "value": "THINGS"
     }
   ],
   "things.thingsList.ownFilter.all": [
@@ -1124,52 +1104,72 @@
       "value": "FILTER BY NAME OR DESCRIPTION..."
     }
   ],
-  "things.thingsList.title": [
-    {
-      "type": 0,
-      "value": "THINGS"
-    }
-  ],
-  "things.thingsTable.createdHeader.label": [
+  "things.thingsTable.createdAt.columnHeading": [
     {
       "type": 0,
       "value": "CREATED"
     }
   ],
-  "things.thingsTable.descriptionHeader.label": [
+  "things.thingsTable.description.columnHeading": [
     {
       "type": 0,
       "value": "DESCRIPTION"
     }
   ],
-  "things.thingsTable.nameHeader.label": [
-    {
-      "type": 0,
-      "value": "NAME"
-    }
-  ],
-  "things.thingsTable.publicHeader.label": [
+  "things.thingsTable.isPublic.columnHeading": [
     {
       "type": 0,
       "value": "PUBLIC"
     }
   ],
-  "user.userMenu.label": [
+  "things.thingsTable.name.columnHeading": [
+    {
+      "type": 0,
+      "value": "NAME"
+    }
+  ],
+  "user.userMenu.ariaLabel": [
     {
       "type": 0,
       "value": "USER MENU"
     }
   ],
-  "user.userMenu.profileLink": [
+  "user.userMenu.profileLink.text": [
     {
       "type": 0,
       "value": "YOUR PROFILE"
     }
   ],
-  "user.userMenu.thingsLink": [
+  "user.userMenu.thingsLink.text": [
     {
       "type": 0,
       "value": "YOUR THINGS"
+    }
+  ],
+  "verifyEmailNotificationBanner.emailSentMessage": [
+    {
+      "type": 0,
+      "value": "PLEASE CONFIRM YOUR EMAIL. WE'VE SEND A MESSAGE TO "
+    },
+    {
+      "children": [
+        {
+          "type": 1,
+          "value": "emailAddress"
+        }
+      ],
+      "type": 8,
+      "value": "e"
+    },
+    {
+      "type": 0,
+      "value": "."
+    }
+  ],
+  "verifyEmailNotificationBanner.resendButton.text": [
+    {
+      "type": 0,
+      "value": "RESEND EMAIL"
     }
   ]
 }

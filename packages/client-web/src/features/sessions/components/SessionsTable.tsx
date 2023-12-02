@@ -25,7 +25,9 @@ export const SessionsTable = ({ data = [], ...props }: SessionsTableProps) => {
     () => [
       columnHelper.accessor("authenticated_at", {
         header: formatMessage({
-          id: "auth.sessionsTable.authenticatedAtHeader.label",
+          id: "auth.sessionsTable.authenticatedAt.columnHeading",
+          description:
+            "The heading text for the column showing the last used time and date for a session",
           defaultMessage: "Last Used",
         }),
         cell: (info) => {
@@ -42,7 +44,9 @@ export const SessionsTable = ({ data = [], ...props }: SessionsTableProps) => {
       }),
       columnHelper.accessor("expires_at", {
         header: formatMessage({
-          id: "auth.sessionsTable.expiresAtHeader.label",
+          id: "auth.sessionsTable.expiresAt.columnHeading",
+          description:
+            "The heading text for the column showing when a session expires.",
           defaultMessage: "Expires",
         }),
         cell: (info) => {
@@ -59,7 +63,9 @@ export const SessionsTable = ({ data = [], ...props }: SessionsTableProps) => {
       }),
       columnHelper.accessor("authentication_methods", {
         header: formatMessage({
-          id: "auth.sessionsTable.methodHeader.label",
+          id: "auth.sessionsTable.method.columnHeading",
+          description:
+            "The heading text for the column showing the authentication method used for a session.",
           defaultMessage: "Method",
         }),
         cell: (info) => (
@@ -92,7 +98,9 @@ export const SessionsTable = ({ data = [], ...props }: SessionsTableProps) => {
               boxSize="0.75em"
               as={FaAsterisk}
               title={formatMessage({
-                id: "auth.sessionsTable.currentSessionIndicator.title",
+                id: "auth.sessionsTable.currentSessionIndicator.tooltip",
+                description:
+                  "The tooltip/helper text shown when indicating that a particular session is the current session the user is authenticated with",
                 defaultMessage: "This is your current session",
               })}
             />

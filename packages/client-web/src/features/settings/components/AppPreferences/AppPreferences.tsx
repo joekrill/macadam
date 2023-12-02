@@ -16,7 +16,8 @@ export const AppPreferences = (props: AppPreferencesProps) => (
   <Box {...props}>
     <Heading mb="4" size="md">
       <FormattedMessage
-        id="settings.appPreferences.title"
+        id="settings.appPreferences.heading"
+        description="The heading text to show for the `Preferences` sections of a user's settings"
         defaultMessage="Preferences"
       />
     </Heading>
@@ -25,6 +26,7 @@ export const AppPreferences = (props: AppPreferencesProps) => (
         <FormLabel>
           <FormattedMessage
             id="settings.appPreferences.colorMode.label"
+            description="The label to show above the color mode selection dropdown in the user's preferences form"
             defaultMessage="Color Mode"
           />
         </FormLabel>
@@ -34,6 +36,7 @@ export const AppPreferences = (props: AppPreferencesProps) => (
         <FormLabel>
           <FormattedMessage
             id="settings.appPreferences.activeLocale.label"
+            description="The label to show above the locale selection dropdown in the user's preferences form"
             defaultMessage="Language"
           />
         </FormLabel>

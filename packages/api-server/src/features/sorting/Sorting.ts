@@ -14,7 +14,7 @@ export type SortingOptionsBase = {
   sortKey?: string;
 };
 
-export type SortingOptionsExplicit<T> = SortingOptionsBase & {
+export type SortingOptionsExplicit = SortingOptionsBase & {
   sortableFields: string[];
 };
 
@@ -24,7 +24,7 @@ export type SortingOptionsExtracted<T> = SortingOptionsBase & {
 };
 
 export type SortingOptions<T> =
-  | SortingOptionsExplicit<T>
+  | SortingOptionsExplicit
   | SortingOptionsExtracted<T>;
 
 /**
@@ -38,7 +38,7 @@ export class Sorting<T> {
   /**
    * The realized options that were used.
    */
-  readonly options: SortingOptionsExplicit<T>;
+  readonly options: SortingOptionsExplicit;
 
   /**
    * The `orderBy` value that can be passed to a MikroORM query.

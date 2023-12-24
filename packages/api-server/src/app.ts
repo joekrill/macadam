@@ -99,7 +99,7 @@ export const createApp = async ({
   redisUrl,
   sentry,
 }: AppOptions) => {
-  const app = new Koa({ env: environment });
+  const app = new Koa({ env: environment, proxy: true });
 
   initializeLogger(app, { logger });
   initializeGracefulShutdown(app, { defaultShutdownWaitMs });

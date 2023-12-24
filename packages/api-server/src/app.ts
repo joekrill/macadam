@@ -141,7 +141,7 @@ export const createApp = async ({
     logRequests(logger, {
       pathLevels: {
         // Reduce logging level for /health because it's only used internally.
-        [healthPath]: "trace",
+        [`${apiPath}${healthPath}`]: "trace",
       },
     }),
   );

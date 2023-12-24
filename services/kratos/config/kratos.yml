@@ -1,4 +1,4 @@
-version: v0.6.3-alpha.1
+version: v1
 
 sqa-opt-out: true
 
@@ -170,11 +170,11 @@ secrets:
 
 hashers:
   argon2:
-    parallelism: 1
-    memory: 128MB
     iterations: 2
+    parallelism: 1
     salt_length: 16
-    key_length: 16
+    key_length: 32
+    memory: 128MB
 
 identity:
   default_schema_id: user_v1

@@ -423,7 +423,7 @@ services:
     profiles: ["telemetry"]
     image: wrouesnel/postgres_exporter:v0.8.0
     environment:
-      DATA_SOURCE_NAME: postgres://dressmyrun:dressmyrun!@postgres:5432/dressmyrun?sslmode=disable
+      DATA_SOURCE_NAME: postgres://macadam:macadam!@postgres:5432/macadam?sslmode=disable
     labels:
       org.label-schema.group: "monitoring"
 

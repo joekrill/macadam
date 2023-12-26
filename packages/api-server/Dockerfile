@@ -2,7 +2,7 @@
 
 FROM node:20.10-alpine as builder
 
-WORKDIR /var/dressmyrun
+WORKDIR /var/macadam
 
 ENV NODE_ENV production
 
@@ -11,19 +11,19 @@ COPY .yarn .yarn
 COPY packages/api-server ./packages/api-server
 
 RUN \
-  yarn workspaces focus @dressmyrun/api-server && \
-  yarn workspace @dressmyrun/api-server run build 
+  yarn workspaces focus @macadam/api-server && \
+  yarn workspace @macadam/api-server run build 
 
 FROM node:20.10-alpine as app
 
-WORKDIR /var/dressmyrun
-COPY --from=builder /var/dressmyrun /var/dressmyrun
-WORKDIR /var/dressmyrun/packages/api-server
+WORKDIR /var/macadam
+COPY --from=builder /var/macadam /var/macadam
+WORKDIR /var/macadam/packages/api-server
 
 ENV NODE_ENV="production"
 ENV PORT="4000"
 EXPOSE 4000
 EXPOSE 9464
 
-WORKDIR /var/dressmyrun/packages/api-server
+WORKDIR /var/macadam/packages/api-server
 CMD ["yarn", "run", "start"]

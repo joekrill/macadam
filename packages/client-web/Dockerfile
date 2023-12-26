@@ -2,7 +2,7 @@
 
 FROM node:20.10-alpine as builder
 
-WORKDIR /var/dressmyrun
+WORKDIR /var/macadam
 ENV NODE_ENV production
 
 COPY .pnp.cjs .pnp.loader.mjs .yarnrc.yml package.json yarn.lock .eslintrc.js .eslintignore ./
@@ -12,10 +12,10 @@ COPY packages/client-web ./packages/client-web
 
 RUN \
   yarn install && \
-  yarn workspace @dressmyrun/api-client build && \
-  yarn workspace @dressmyrun/client-web build 
+  yarn workspace @macadam/api-client build && \
+  yarn workspace @macadam/client-web build 
 
 FROM nginx:1-alpine-slim
 
-COPY --from=builder /var/dressmyrun/packages/client-web/build /usr/share/nginx/html
+COPY --from=builder /var/macadam/packages/client-web/build /usr/share/nginx/html
 COPY packages/client-web/nginx.conf /etc/nginx/conf.d/default.conf

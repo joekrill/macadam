@@ -6,7 +6,7 @@ export interface LogRequestsOptions {
 }
 
 export const logRequests =
-  (logger: pino.Logger, options?: LogRequestsOptions): Middleware =>
+  (logger: pino.Logger<string>, options?: LogRequestsOptions): Middleware =>
   async (ctx, next): Promise<void> => {
     ctx.state.logger = logger.child(
       { requestId: ctx.state.requestId },

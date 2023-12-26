@@ -31,8 +31,8 @@ assert.deepEqual(
 );
 
 class PinoDiagLogger implements DiagLogger {
-  readonly logger: pino.Logger;
-  constructor(logger: pino.Logger) {
+  readonly logger: pino.Logger<string>;
+  constructor(logger: pino.Logger<string>) {
     this.logger = logger.child({});
   }
 

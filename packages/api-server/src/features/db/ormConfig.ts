@@ -12,7 +12,7 @@ export interface OrmConfigOptions
   extends Omit<Partial<Options<PostgreSqlDriver>>, "logger"> {
   clientUrl: string;
   environment: string;
-  logger?: pino.Logger;
+  logger?: pino.Logger<string>;
 }
 
 export const ormConfig = ({

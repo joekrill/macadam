@@ -4,8 +4,8 @@ import pino from "pino";
 import { logRequests } from "./logRequests.js";
 
 let logRequestsMiddleware: Middleware;
-let baseLoggerMock: jest.Mocked<pino.Logger>;
-let childLoggerMock: jest.Mocked<pino.Logger>;
+let baseLoggerMock: jest.Mocked<pino.Logger<string>>;
+let childLoggerMock: jest.Mocked<pino.Logger<string>>;
 const nextMock = jest.fn<Next>();
 let contextMock: ParameterizedContext;
 
@@ -16,10 +16,10 @@ beforeEach(() => {
     info: jest.fn(),
     debug: jest.fn(),
     trace: jest.fn(),
-  } as unknown as jest.Mocked<pino.Logger>;
+  } as unknown as jest.Mocked<pino.Logger<string>>;
   baseLoggerMock = {
     child: jest.fn(() => childLoggerMock),
-  } as unknown as jest.Mocked<pino.Logger>;
+  } as unknown as jest.Mocked<pino.Logger<string>>;
   logRequestsMiddleware = logRequests(baseLoggerMock);
   contextMock = {
     state: {},

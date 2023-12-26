@@ -68,7 +68,7 @@ export interface AppOptions {
   /**
    * The logging instance to use for writing messages.
    */
-  logger: pino.Logger;
+  logger: pino.Logger<string>;
 
   /**
    * Mailer configuration settings

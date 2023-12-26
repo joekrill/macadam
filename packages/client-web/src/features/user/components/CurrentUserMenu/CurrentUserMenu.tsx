@@ -69,9 +69,7 @@ export const CurrentUserMenu = (props: CurrentUserMenuProps) => {
             "The accessible text used to label the button that opens the user dropdown menu",
           defaultMessage: "User menu",
         })}
-      >
-        <CurrentUserAvatar size="sm" />
-      </MenuButton>
+      />
       <Portal>
         <MenuList py="1" fontSize="sm">
           <CurrentUserMenuHeader hidden={!isLoggedIn} />

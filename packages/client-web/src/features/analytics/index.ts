@@ -2,7 +2,7 @@ import Plausible, { EventOptions, PlausibleOptions } from "plausible-tracker";
 
 let plausible: ReturnType<typeof Plausible> | undefined;
 
-if (process.env.VITE_PLAUSIBLE_HOST) {
+if (process.env.VITE_PLAUSIBLE_HOST && process.env.NODE_ENV !== "test") {
   plausible = Plausible({
     // domain: VITE_DOMAIN,
     trackLocalhost: process.env.NODE_ENV === "development",

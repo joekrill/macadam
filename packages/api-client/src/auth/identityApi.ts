@@ -52,12 +52,15 @@ const baseQuery: ReturnType<typeof fetchBaseQuery> = (...args) =>
     },
   })(...args);
 
+const CURRENT_IDENTITY_TAG = { type: "Identity", id: "CURRENT" } as const;
+
 /**
  * The identity API is used to access Kratos API endpoints directly (as
  * opposed to going through the api-server).
  */
 export const identityApi = createApi({
   reducerPath: "identityApi",
+  tagTypes: ["Identity"],
   baseQuery,
   extractRehydrationInfo(action, { reducerPath }) {
     if (action.type === "persist/REHYDRATE" && action.payload) {
@@ -68,6 +71,7 @@ export const identityApi = createApi({
     whoami: build.query<WhoamiResponse, void>({
       query: () => "/sessions/whoami",
       transformResponse: (response) => whoamiResponseSchema.parse(response),
+      providesTags: () => [CURRENT_IDENTITY_TAG],
     }),
 
     /************************************************************
@@ -108,6 +112,7 @@ export const identityApi = createApi({
         validateStatus: (_response, body) =>
           loginFlowResponseSchema.safeParse(body).success,
       }),
+      invalidatesTags: [CURRENT_IDENTITY_TAG],
       transformResponse: (response) => loginFlowResponseSchema.parse(response),
       async onQueryStarted(_params, { dispatch, queryFulfilled }) {
         const { data } = await queryFulfilled;
@@ -158,6 +163,7 @@ export const identityApi = createApi({
         validateStatus: (_response, body) =>
           registrationFlowResponseSchema.safeParse(body).success,
       }),
+      invalidatesTags: [CURRENT_IDENTITY_TAG],
       transformResponse: (response) =>
         registrationFlowResponseSchema.parse(response),
       async onQueryStarted(_params, { dispatch, queryFulfilled }) {
@@ -207,6 +213,7 @@ export const identityApi = createApi({
           validateStatus: (_response, body) =>
             verificationFlowSchema.safeParse(body).success,
         }),
+        invalidatesTags: [CURRENT_IDENTITY_TAG],
         transformResponse: (response) => verificationFlowSchema.parse(response),
         async onQueryStarted(_params, { dispatch, queryFulfilled }) {
           const { data } = await queryFulfilled;
@@ -292,6 +299,7 @@ export const identityApi = createApi({
         validateStatus: (_response, body) =>
           settingsFlowSchema.safeParse(body).success,
       }),
+      invalidatesTags: [CURRENT_IDENTITY_TAG],
       transformResponse: (response) => settingsFlowSchema.parse(response),
       async onQueryStarted(_params, { dispatch, queryFulfilled }) {
         const { data } = await queryFulfilled;
@@ -346,3 +354,6 @@ export const identityApi = createApi({
     }),
   }),
 });
+
+export const invalidateIdentity = () =>
+  identityApi.util.invalidateTags([{ type: "Identity", id: "CURRENT" }]);

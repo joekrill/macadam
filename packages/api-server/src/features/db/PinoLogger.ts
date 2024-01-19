@@ -8,7 +8,7 @@ import {
 import pino from "pino";
 
 export type PinoLoggerOptions = LoggerOptions & {
-  logger: pino.Logger<string>;
+  logger: pino.Logger;
 };
 
 export class PinoLogger implements Logger {

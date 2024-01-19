@@ -1,8 +1,6 @@
 ## "v1" Milestone
 
 - CI/CD pipeline
-- OpenTelemety
-  - Versioning issues (https://github.com/open-telemetry/opentelemetry-js-contrib/issues/749)
 - Review Kratos configuration
   - https://www.ory.sh/kratos/docs/reference/configuration
 - Redirect back to original page after sign up/login using OIDC not working (always redirects to home)
@@ -16,8 +14,6 @@
 
 - (client-web) Detect session expiration and handle it somehow (modal login form? a la Gmail?)
 - Integration tests (i.e. using cypress)
-- (client-web) upgrade create-react-app
-- Figure out how to share logic between front-end/back-end while still having hot-reloading work and without ejecting
 - (api-server) Uploads
   - https://github.com/node-formidable/formidable
   - https://hub.docker.com/r/minio/minio/

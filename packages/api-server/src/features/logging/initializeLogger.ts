@@ -3,15 +3,15 @@ import pino from "pino";
 import { logOnError } from "./logOnError.js";
 
 export interface LoggerContext {
-  logger: pino.Logger<string>;
+  logger: pino.Logger;
 }
 
 export interface LoggerState {
-  logger: pino.Logger<string>;
+  logger: pino.Logger;
 }
 
 export interface InitializeLoggerOptions {
-  logger: pino.Logger<string>;
+  logger: pino.Logger;
 }
 
 /**

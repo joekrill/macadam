@@ -3,7 +3,7 @@ import { Context } from "koa";
 import pino from "pino";
 
 export const logOnError =
-  (logger: pino.Logger<string>) => (err: Error, ctx?: Context) => {
+  (logger: pino.Logger) => (err: Error, ctx?: Context) => {
     const error = ensureError(err);
 
     if (ctx?.state) {

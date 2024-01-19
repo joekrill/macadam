@@ -27,7 +27,7 @@ export const metricsCollector = (): Middleware => {
     if (ctx.state.responseTime !== undefined) {
       httpRequestDurationSeconds.record(ctx.state.responseTime / 1000, {
         code: String(ctx.status),
-        path: ctx.path,
+        path: ctx._matchedRoute,
       });
     }
   };

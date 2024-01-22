@@ -1,15 +1,22 @@
 import { Options, SimpleLogger } from "@mikro-orm/core";
-import { PostgreSqlDriver } from "@mikro-orm/postgresql";
+import { Migrator } from "@mikro-orm/migrations";
+import {
+  PostgreSqlDriver,
+  defineConfig as definePostgreSqlConfig,
+} from "@mikro-orm/postgresql";
 import { TsMorphMetadataProvider } from "@mikro-orm/reflection";
 import { SqlHighlighter } from "@mikro-orm/sql-highlighter";
+import {
+  SqliteDriver,
+  defineConfig as defineSqliteConfig,
+} from "@mikro-orm/sqlite";
 import pino from "pino";
 import { URL } from "url";
 import { PinoLogger } from "./PinoLogger.js";
 import { entities } from "./entities/index.js";
 import { subscribers } from "./subscribers/index.js";
 
-export interface OrmConfigOptions
-  extends Omit<Partial<Options<PostgreSqlDriver>>, "logger"> {
+export interface OrmConfigOptions extends Omit<Partial<Options>, "logger"> {
   clientUrl: string;
   environment: string;
   logger?: pino.Logger;
@@ -20,13 +27,14 @@ export const ormConfig = ({
   environment,
   logger,
   ...options
-}: OrmConfigOptions): Options<PostgreSqlDriver> => {
+}: OrmConfigOptions): Options => {
   const url = new URL(clientUrl);
 
   const migrationsPath = "./build/features/db/migrations";
   const migrationspathTs = "./src/features/db/migrations";
 
-  return {
+  const config: Options = {
+    extensions: [Migrator], // those would have a static `register` method
     entities: [...entities],
     subscribers,
     debug: environment === "development",
@@ -56,24 +64,25 @@ export const ormConfig = ({
 
     // Ensure this doesn't get enabled.
     tsNode: false,
-
-    // SQLite is supported using something like `sqlite:/absolute/path/db.sqlite`
-    // or `sqlite:relative/path/db.sqlite`
-    ...(url.protocol === "sqlite:"
-      ? {
-          type: "sqlite",
-          dbName: url.pathname,
-        }
-      : {}),
-
-    // For postgres, the only thing needed is the complete connection URL
-    ...(url.protocol === "postgresql:" || url.protocol === "postgres:"
-      ? {
-          type: "postgresql",
-          clientUrl,
-        }
-      : {}),
-
     ...options,
   };
+
+  switch (url.protocol) {
+    case "sqlite:": {
+      return defineSqliteConfig({
+        dbName: url.pathname,
+        ...(config as Options<SqliteDriver>),
+      });
+    }
+    case "postgresql:":
+    case "postgres:": {
+      return definePostgreSqlConfig({
+        clientUrl,
+        ...(config as Options<PostgreSqlDriver>),
+      });
+    }
+    default: {
+      throw new Error(`Unknown database type: ${url.protocol}`);
+    }
+  }
 };

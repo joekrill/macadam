@@ -6,7 +6,7 @@ import {
   it,
   jest,
 } from "@jest/globals";
-import { AbstractSqlDriver, SqlEntityManager } from "@mikro-orm/postgresql";
+import { EntityManager } from "@mikro-orm/core";
 import { FrontendApi } from "@ory/kratos-client";
 import request from "supertest";
 import type { createApp } from "../../../app.js";
@@ -58,7 +58,7 @@ const initApp = async ({ identityId }: { identityId?: string } = {}) => {
 
 describe("authenticated", () => {
   let app: Awaited<ReturnType<typeof createApp>>;
-  let em: SqlEntityManager<AbstractSqlDriver>;
+  let em: EntityManager;
   let cookies: string[];
 
   beforeEach(async () => {

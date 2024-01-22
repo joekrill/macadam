@@ -1,4 +1,3 @@
-import { entities as kratosEntites } from "../kratos/entities/index.js";
 import { entities } from "./entities/index.js";
 import { ormConfig } from "./ormConfig.js";
 
@@ -14,7 +13,7 @@ if (!process.env.DB_URL) {
 }
 
 export default ormConfig({
-  entities: [...entities, ...kratosEntites],
+  entities: [...entities],
   clientUrl: process.env.DB_URL || "sqlite::memory:",
   environment: process.env.NODE_ENV || "development",
 });

@@ -81,8 +81,8 @@
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest watch",
-    "storybook": "storybook dev -p 6006 -s public",
-    "storybook:legacy": "cross-env NODE_OPTIONS=\"$NODE_OPTIONS --openssl-legacy-provider\" storybook dev -p 6006 -s public",
+    "storybook": "storybook dev -p 6006",
+    "storybook:legacy": "cross-env NODE_OPTIONS=\"$NODE_OPTIONS --openssl-legacy-provider\" storybook dev -p 6006",
     "storybook:build": "storybook build -s public",
     "storybook:build:legacy": "cross-env NODE_OPTIONS=\"$NODE_OPTIONS --openssl-legacy-provider\" storybook build -s public",
     "svg:optimize": "svgo -r src/",
@@ -113,7 +113,6 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-mdx-gfm": "^7.6.10",
     "@storybook/mdx2-csf": "^1.1.0",
     "@storybook/react-vite": "^7.6.10",
     "@testing-library/jest-dom": "^6.2.0",

@@ -1,9 +1,9 @@
-import { PostgreSqlDriver, SqlEntityManager } from "@mikro-orm/postgresql";
+import { EntityManager } from "@mikro-orm/core";
 import { Middleware } from "koa";
 import { hostname } from "os";
 
 export interface ForkEntityManagerState {
-  entityManager?: SqlEntityManager<PostgreSqlDriver>;
+  entityManager?: EntityManager;
 }
 
 export const forkEntityManager =

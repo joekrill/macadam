@@ -3,8 +3,16 @@ import {
   Options,
   SimpleLogger,
 } from "@mikro-orm/core";
+import {
+  PostgreSqlDriver,
+  defineConfig as definePostgreSqlConfig,
+} from "@mikro-orm/postgresql";
 import { TsMorphMetadataProvider } from "@mikro-orm/reflection";
 import { SqlHighlighter } from "@mikro-orm/sql-highlighter";
+import {
+  SqliteDriver,
+  defineConfig as defineSqliteConfig,
+} from "@mikro-orm/sqlite";
 import { URL } from "url";
 import { PinoLogger } from "../db/PinoLogger.js";
 import { OrmConfigOptions } from "../db/ormConfig.js";
@@ -18,7 +26,7 @@ export const kratosOrmConfig = ({
 }: OrmConfigOptions): Options => {
   const url = new URL(clientUrl);
 
-  return {
+  const config: Options = {
     entities: [...entities],
     debug: environment === "development",
     metadataProvider: TsMorphMetadataProvider,
@@ -39,23 +47,25 @@ export const kratosOrmConfig = ({
         ? new PinoLogger({ logger, ...loggerOptions })
         : new SimpleLogger(loggerOptions),
 
-    // SQLite is supported using something like `sqlite:/absolute/path/db.sqlite`
-    // or `sqlite:relative/path/db.sqlite`
-    ...(url.protocol === "sqlite:"
-      ? {
-          type: "sqlite",
-          dbName: url.pathname,
-        }
-      : {}),
-
-    // For postgres, the only thing needed is the complete connection URL
-    ...(url.protocol === "postgresql:" || url.protocol === "postgres:"
-      ? {
-          type: "postgresql",
-          clientUrl,
-        }
-      : {}),
-
     ...options,
   };
+
+  switch (url.protocol) {
+    case "sqlite:": {
+      return defineSqliteConfig({
+        dbName: url.pathname,
+        ...(config as Options<SqliteDriver>),
+      });
+    }
+    case "postgresql:":
+    case "postgres:": {
+      return definePostgreSqlConfig({
+        clientUrl,
+        ...(config as Options<PostgreSqlDriver>),
+      });
+    }
+    default: {
+      throw new Error(`Unknown database type: ${url.protocol}`);
+    }
+  }
 };

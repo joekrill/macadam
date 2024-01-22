@@ -1,6 +1,6 @@
 import { Dictionary, MetadataStorage } from "@mikro-orm/core";
 import { FilterDef } from "@mikro-orm/core/typings";
-import { SqlEntityManager } from "@mikro-orm/postgresql";
+import { PostgreSqlDriver, SqlEntityManager } from "@mikro-orm/postgresql";
 
 const PARSER_FUNCTIONS = {
   websearch: "websearch_to_tsquery",
@@ -19,6 +19,15 @@ export interface TextSearchFilterOptions
   parser?: TextSearchParser;
 }
 
+/**
+ * Adds the ability to filter an entity using full text search.
+ *
+ * NOTE: MirkoORM now has built-in support for full text search
+ * (see https://mikro-orm.io/docs/query-conditions#full-text-searching),
+ * so we may be better of switching to that - but it's not totally clear how
+ * it could work when searching across multiple columns (perhaps the @Formula
+ * decorator will work?)
+ */
 export function TextSearchFilter({
   idColumn = "id",
   columns,
@@ -38,15 +47,15 @@ export function TextSearchFilter({
           return {};
         }
 
-        const driverType = em.config.get("type");
-        if (driverType !== "postgresql") {
+        const driver = em.config.getDriver();
+        if (!(driver instanceof PostgreSqlDriver)) {
           // TODO: implement support for sqlite, etc?
           return {};
         }
 
         const qb = em.createQueryBuilder(meta.className, "ts0");
         const columnsRaw = columns
-          .map((column) => qb.raw(`${qb.alias}.${column}`))
+          .map((column) => `${qb.alias}.${column}`)
           .join(" || ' ' || ");
 
         qb.select(idColumn).where(

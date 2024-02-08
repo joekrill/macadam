@@ -30,12 +30,12 @@
     "target": "es5",
 
     // Completeness
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
   "include": ["src", "scripts"],
   "references": [
     {
-      "path": "../api-client",
-    },
-  ],
+      "path": "../api-client"
+    }
+  ]
 }

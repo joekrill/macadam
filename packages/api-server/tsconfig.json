@@ -32,12 +32,12 @@
     "target": "ESNext",
 
     // Completeness
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
   "include": ["src"],
   "exclude": ["**/*.test.ts", "src/__mocks__", "src/coverage", "src/test"],
   "ts-node": {
     "files": true,
-    "esm": true,
-  },
+    "esm": true
+  }
 }

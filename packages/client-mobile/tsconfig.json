@@ -1,14 +1,14 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true,
+    "strict": true
   },
   "paths": {
-    "@macadam/api-client/*": ["../api-client/src/*"],
+    "@macadam/api-client/*": ["../api-client/src/*"]
   },
   "references": [
     {
-      "path": "../api-client",
-    },
-  ],
+      "path": "../api-client"
+    }
+  ]
 }

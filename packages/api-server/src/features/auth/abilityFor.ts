@@ -16,7 +16,7 @@ export const abilityFor = (session?: Session) => {
   builder.can("create", "ContactUsMessage");
   builder.can("read", "Thing", { isPublic: true });
 
-  if (session) {
+  if (session?.identity) {
     const userId = session.identity.id;
     const isVerified =
       session.identity.verifiable_addresses?.some(({ verified }) => verified) ||

@@ -41,7 +41,7 @@ thingsRouter
 
     if (ctx.state.urlSearchParams.has("filter[owned]")) {
       const session = await ctx.state.session();
-      where.createdBy = session?.identity.id;
+      where.createdBy = session?.identity?.id || "X";
     }
 
     const [things, count] = await thingRepository.findAndCount(where, {

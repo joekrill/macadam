@@ -29,7 +29,7 @@ export const logRequests =
             session: _session
               ? {
                   id: _session.id,
-                  identityId: _session.identity.id,
+                  identityId: _session?.identity?.id,
                   active: _session.active,
                   aal: _session.authenticator_assurance_level,
                   authenticated_at: _session.authenticated_at,

@@ -1,6 +1,6 @@
 ## This is expected to be built in the context of the repo root directory
 
-FROM node:20.10-alpine as builder
+FROM node:20.11-alpine as builder
 
 WORKDIR /var/macadam
 ENV NODE_ENV production

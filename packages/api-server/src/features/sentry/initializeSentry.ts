@@ -75,7 +75,7 @@ export const initializeSentry = (
           }
 
           const session = ctx.state._session;
-          if (session) {
+          if (session && session.identity) {
             event.user = {
               ...event.user,
               id: session.identity.id,

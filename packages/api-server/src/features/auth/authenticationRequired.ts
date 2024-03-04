@@ -20,7 +20,7 @@ export const authenticationRequired =
       return ctx.throw(401);
     }
 
-    ctx.state.identityId = session.identity.id;
+    ctx.state.identityId = session.identity?.id;
 
     await next();
   };

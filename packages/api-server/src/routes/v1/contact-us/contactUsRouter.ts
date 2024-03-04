@@ -22,7 +22,7 @@ contactUsRouter.use(ability()).post("/", async (ctx) => {
     data.message,
     ctx.ip,
     ctx.get("user-agent"),
-    session?.identity.id,
+    session?.identity?.id,
   );
 
   if (ctx.mailer) {
